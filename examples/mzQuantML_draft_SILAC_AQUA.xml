@@ -1,0 +1,144 @@
+<!------------------>
+<!-- PROTEIN LIST -->
+<!------------------>
+<ProteinList>
+	<protein AccesionRef=""><!--link to mzIdentML-->
+		<groupReference ref="groupA">
+			<mean_abundance> <!-- note: plus units -->
+		</groupReference>
+		<groupReference ref="groupB">
+		</groupReference>
+		<proteinRatios>		
+		</proteinRatios>
+		<peptideReferenceList>
+			<peptideRef="P1">
+		</peptideReferenceList>
+	</protein>
+</ProteinList>
+
+<!------------------>
+<!-- PEPTIDE LIST -->
+<!------------------>
+<PeptideList>
+	<!-- Note: for SILAC + AQUA 
+	-->
+	<peptide id="P1" matchedFeatureRef="X1"/>
+		<sequence/>
+		<modifications/>
+		<identificationRef=""/><!--link to mzIdentML-->
+		<cvparams..>
+			ratio
+			p-values
+			group_correlation
+			...
+		</cvparams..>
+		
+	</peptide>
+	<peptide matchedFeatureRef="X2"/>
+		<sequence/>
+		<modifications/>
+		<identificationRef=""/><!--link to mzIdentML-->
+	</peptide>
+</PeptideList>
+
+
+
+<!------------------>
+<!-- FEATURE LIST -->
+<!------------------>
+<FeatureList>
+	<!-- Note: for iTRAQ -->
+	<MatchedFeature id="X1">
+		<masterRT=""><!-- optional -->
+		<window="">
+		<group ref="A"><!-- may have mean intensity-->
+			<!-- CV VALUES: -->
+			<!-- group has 
+			mean intensity
+			standard deviation
+			rt of parent ion 
+			m/z of parent ion
+			charge state of parent ion (not mandatory)
+			-->		
+			<!-- Note: group member is equivalent to identification of the reporter ion -->
+			<group_member ref="1">
+				<!-- CV VALUES: -->
+				abundance experimentally calculated (+units) 
+				intensity
+				scores
+				.
+				.
+				m/z 
+				boundary points (in gel-based)
+			</group_member>
+			<group_member id="2">
+			</group_member>
+			<group_member id="3">
+			</group_member>
+			<group_member id="4">
+			</group_member>
+		</group>
+		<group ref="B">	
+		</group>	
+	</MatchedFeatures>
+<FeatureList>
+
+
+
+<!-- Note:
+1. Run => One raw file
+
+
+
+-->
+
+<!----------------->
+<!--   GROUPS    -->
+<!----------------->
+<!-- OPTION 1 for groups representation -->
+<groups> <!-- List of technical replicates // RUNS in label free -->
+		 <!-- List of technical replicates // RUNS in label-based. Its is needed links between groups (isn't it?) -->
+	<group id="A" name ="">
+		<groupMember id="A.1" name="">
+			<spectrumFileREF=""/>
+		</groupMember>
+		
+		
+		
+		<chemistrydetails> <!-- for SILAC and iTRAQ-->
+			<massShift="x Daltons"/>
+		</chemistrydetails>
+			
+	</group>
+	<group id="B" name="">
+		<groupMember id="B.1" name="">
+			<spectrumFileREF=""/>
+		</groupMember>
+	</group>
+</groups>
+
+<!-- OPTION 2 for groups representation -->
+<!-- in SILAC should be: -->
+	
+	<!-- Run could be 1 raw file, (or could be multiple files that are notionally merged) - likely to be difficult -->
+<run>
+	</groupA>
+	</groupB>
+</run>
+<!-- in label free should be: -->
+<run>
+	</groupA>
+</run>
+<run>
+	</groupB>
+</run>
+
+
+<!-------------------->
+<!--   PROTOCOLS    -->
+<!-------------------->
+<protocols>
+	<!--thresholds like minimum number of peptide for quantify a proteins -->
+	<!--alignment (from spectra files to FeatureList) -->
+	<!--quantExpression (in label free, from featureList to ProteinAbundanceList) -->
+</protocols>

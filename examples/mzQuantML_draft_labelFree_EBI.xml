@@ -1,0 +1,155 @@
+<mzQuantML>
+	<!-- ********* -->
+	<!-- PROTEIN LIST -->
+	<!-- ********* -->
+	<ProteinList>
+		<ProteinAmbiguityGroupQ id="PAG_1">
+			<ProteinAmbiguityGroupRef ref="pag_ref" fileref="file_ref"/>
+			<Abundance value=""/>
+			<GroupRef ref="groupA">
+				<MeanAbundance value=""/>
+				<STD value=""/>
+			</GroupRef>
+			<GroupRef ref="groupB">
+				<Abundance value=""/>
+				<STD value=""/>
+			</GroupRef>
+			<GroupMemberRef ref="GM_A_1">
+				<Abundance>
+					<cvParam name="RAW intensity" value=""/>
+				</Abundance>
+				<STD value=""/>
+			</GroupMemberRef>
+			<GroupMemberRef ref="GM_A_2">
+				<Abundance value=""/>
+				<STD value=""/>
+			</GroupMemberRef>
+			<GroupMemberRef ref="GM_A_3">
+				<Abundance value=""/>
+				<STD value=""/>
+			</GroupMemberRef>
+			<GroupMemberRef ref="GM_A_4">
+				<Abundance value=""/>
+				<STD value=""/>
+			</GroupMemberRef>
+			<GroupMemberRef ref="GM_A_5">
+				<Abundance value=""/>
+				<STD value=""/>
+			</GroupMemberRef>
+			<GroupMemberRef ref="GM_A_6">
+				<Abundance value=""/>
+				<STD value=""/>
+			</GroupMemberRef>
+			<ProteinDetectionHypothesisQ id="PDH_1">
+				<PeptideRefs>
+					<PeptideRef ref="pep1"/>
+					<PeptideRef ref="pep2"/>
+				</PeptideRefs>
+				<ProteinDetectionHypothesisRef ref="pdh_ref" fileref="file_ref"/>
+				<!-- option 1 OR 2 -->
+				<!-- option 1 -->
+				<GroupRef ref="groupA">
+					<MeanAbundance >
+					<STD value=""/>
+				</GroupRef>
+				<GroupRef ref="groupB">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupRef>
+				<GroupMemberRef ref="GM_A_1">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberRef>
+				<GroupMemberRef ref="GM_A_2">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberRef>
+				<GroupMemberRef ref="GM_A_3">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberRef>
+				<GroupMemberRef ref="GM_A_4">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberRef>
+				<GroupMemberRef ref="GM_A_5">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberRef>
+				<GroupMemberRef ref="GM_A_6">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberRef>
+				<!-- option 1 -->
+				<!-- option 2 -->
+				<GroupComparisonRef id="A/B">
+					<!-- ratio -->
+					<STD value=""/>
+				</GroupComparisonRef>
+				<GroupMemberComparisonRef ref="GM_AB_1">
+					<!-- ratio -->
+					<STD value=""/>
+				</GroupMemberComparisonRef>
+				<GroupMemberComparisonRef ref="GM_AB_2">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberComparisonRef>
+				<GroupMemberComparisonRef ref="GM_AB_3">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberComparisonRef>
+				<GroupMemberComparisonRef ref="GM_AB_4">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberComparisonRef>
+				<GroupMemberComparisonRef ref="GM_AB_5">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberComparisonRef>
+				<GroupMemberComparisonRef ref="GM_AB_6">
+					<Abundance value=""/>
+					<STD value=""/>
+				</GroupMemberComparisonRef>
+				<!-- option 2 -->
+			</ProteinDetectionHypothesisQ>
+		</ProteinAmbiguityGroupQ>
+	</ProteinList>
+	<Group id="groupingA_1" groupRef="groupA">
+		<GMRefs>
+			<GMRef ref="GM_A_1"/>
+			<GMRef ref="GM_A_2"/>
+			<GMRef ref="GM_A_3"/>
+		</GMRefs>
+	</Group>
+	<Group id="groupingA_2" groupRef="groupA">
+		<GMRefs>
+			<GMRef ref="GM_A_4"/>
+			<GMRef ref="GM_A_5"/>
+			<GMRef ref="GM_A_6"/>
+		</GMRefs>
+	</Group>
+	<!-- **************** -->
+	<!-- PEPTIDE LIST -->
+	<!-- **************** -->
+	<PeptideList>
+		<Peptide id="pep1">
+			<sequence/>
+			<modifications/>
+			<group>
+			</group>
+			<groupMember>
+				<!-- it can be either a single run or in case it was a prefractionation it can be a collection of runs -->
+				<ratio value=""/>
+			</groupMember>
+		</Peptide>
+		<Peptide id="pep2">
+			<sequence/>
+			<modifications/>
+			<group>
+			</group>
+			<groupMember>
+				<ratio value=""/>
+			</groupMember>
+		</Peptide>
+	</PeptideList>
+</mzQuantML>

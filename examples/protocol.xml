@@ -1,0 +1,56 @@
+<quality>
+<cvParams></cvParams>
+</quality>
+
+<other_files>
+  <cvParams></cvParams>
+</other_files>
+
+
+<protocol>
+  <software_ref />
+  <type id="" description=""> <!-- CV for reporter, precursor, also defining intra/inter-sample -->
+    <subtype></subtype> <!-- SILAC, iTRAQ, TMT -->
+  </type>
+  <ratio id="" name="" description="" operator="">
+    <units /> <!-- for absolute quantification -->
+    <numerator>
+      <sample_ref id="" operator="sum"></sample_ref> <!-- or groups -->
+      <fixed></fixed>
+      <accession></accession>	 
+    </numerator>
+    <denominator></denominator>
+  </ratio>
+  <min_number_pep_per_prot />
+  <normalisation><cvParam /></normalisation>
+  
+  <swParams>
+    <!-- software specific parameters -->
+    <cvParams /> 
+  </swParams>
+</protocol>
+
+
+
+<software> <!-- as in mzIdentML -->
+ <name=""/>
+ <version=""/>
+ <author="" />
+</software>
+
+
+<group_list>
+  <group id="" name="" description="" /> <!-- technical, biological reps -->
+</group_list>
+
+<samples>
+  <sample id="">
+    <raw_files>
+      <raw_file id="" name="" description=""></raw_file> <!-- mzML, raw -->
+      <modification></modification>
+      <identificaiton></identification> <!-- mzIdentML -->
+    </raw_files>
+    <group_member group_id=""/>
+    </sample>
+</samples>
+

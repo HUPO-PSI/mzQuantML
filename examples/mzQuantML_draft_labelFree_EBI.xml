@@ -4,42 +4,42 @@
 	<!-- ********* -->
 	<ProteinList>
 		<ProteinAmbiguityGroupQ id="PAG_1">
-			<ProteinAmbiguityGroupRef ref="pag_ref" fileref="file_ref"/>
+			<ProteinAmbiguityGroupedQuantitationResult ref="pag_ref" fileref="file_ref"/>
 			<Abundance value=""/>
-			<GroupRef ref="groupA">
+			<GroupedQuantitationResult ref="groupA">
 				<MeanAbundance value=""/>
 				<STD value=""/>
-			</GroupRef>
-			<GroupRef ref="groupB">
+			</GroupedQuantitationResult>
+			<GroupedQuantitationResult ref="groupB">
 				<Abundance value=""/>
 				<STD value=""/>
-			</GroupRef>
-			<GroupMemberRef ref="GM_A_1">
+			</GroupedQuantitationResult>
+			<QuantitationResult ref="GM_A_1">
 				<Abundance>
 					<cvParam name="RAW intensity" value=""/>
 				</Abundance>
 				<STD value=""/>
-			</GroupMemberRef>
-			<GroupMemberRef ref="GM_A_2">
+			</QuantitationResult>
+			<QuantitationResult ref="GM_A_2">
 				<Abundance value=""/>
 				<STD value=""/>
-			</GroupMemberRef>
-			<GroupMemberRef ref="GM_A_3">
+			</QuantitationResult>
+			<QuantitationResult ref="GM_A_3">
 				<Abundance value=""/>
 				<STD value=""/>
-			</GroupMemberRef>
-			<GroupMemberRef ref="GM_A_4">
+			</QuantitationResult>
+			<QuantitationResult ref="GM_A_4">
 				<Abundance value=""/>
 				<STD value=""/>
-			</GroupMemberRef>
-			<GroupMemberRef ref="GM_A_5">
+			</QuantitationResult>
+			<QuantitationResult ref="GM_A_5">
 				<Abundance value=""/>
 				<STD value=""/>
-			</GroupMemberRef>
-			<GroupMemberRef ref="GM_A_6">
+			</QuantitationResult>
+			<QuantitationResult ref="GM_A_6">
 				<Abundance value=""/>
 				<STD value=""/>
-			</GroupMemberRef>
+			</QuantitationResult>
 			<ProteinDetectionHypothesisQ id="PDH_1">
 				<PeptideRefs>
 					<PeptideRef ref="pep1"/>
@@ -48,39 +48,38 @@
 				<ProteinDetectionHypothesisRef ref="pdh_ref" fileref="file_ref"/>
 				<!-- option 1 OR 2 -->
 				<!-- option 1 -->
-				<GroupRef ref="groupA">
-					<MeanAbundance >
+				<GroupedQuantitationResult ref="groupA">
+					<MeanAbundance/>
 					<STD value=""/>
-				</GroupRef>
-				<GroupRef ref="groupB">
+				</GroupedQuantitationResult>
+				<GroupedQuantitationResult ref="groupB">
 					<Abundance value=""/>
 					<STD value=""/>
-				</GroupRef>
-				<GroupMemberRef ref="GM_A_1">
+				</GroupedQuantitationResult>
+				<QuantitationResult ref="GM_A_1">
 					<Abundance value=""/>
 					<STD value=""/>
-				</GroupMemberRef>
-				<GroupMemberRef ref="GM_A_2">
+				</QuantitationResult>
+				<QuantitationResult ref="GM_A_2">
 					<Abundance value=""/>
 					<STD value=""/>
-				</GroupMemberRef>
-				<GroupMemberRef ref="GM_A_3">
+				</QuantitationResult>
+				<QuantitationResult ref="GM_A_3">
 					<Abundance value=""/>
 					<STD value=""/>
-				</GroupMemberRef>
-				<GroupMemberRef ref="GM_A_4">
+				</QuantitationResult>
+				<QuantitationResult ref="GM_A_4">
 					<Abundance value=""/>
 					<STD value=""/>
-				</GroupMemberRef>
-				<GroupMemberRef ref="GM_A_5">
+				</QuantitationResult>
+				<QuantitationResult ref="GM_A_5">
 					<Abundance value=""/>
 					<STD value=""/>
-				</GroupMemberRef>
-				<GroupMemberRef ref="GM_A_6">
+				</QuantitationResult>
+				<QuantitationResult ref="GM_A_6">
 					<Abundance value=""/>
 					<STD value=""/>
-				</GroupMemberRef>
-				<!-- option 1 -->
+				</QuantitationResult>
 				<!-- option 2 -->
 				<GroupComparisonRef id="A/B">
 					<!-- ratio -->
@@ -114,20 +113,45 @@
 			</ProteinDetectionHypothesisQ>
 		</ProteinAmbiguityGroupQ>
 	</ProteinList>
-	<Group id="groupingA_1" groupRef="groupA">
-		<GMRefs>
-			<GMRef ref="GM_A_1"/>
-			<GMRef ref="GM_A_2"/>
-			<GMRef ref="GM_A_3"/>
-		</GMRefs>
-	</Group>
-	<Group id="groupingA_2" groupRef="groupA">
-		<GMRefs>
-			<GMRef ref="GM_A_4"/>
-			<GMRef ref="GM_A_5"/>
-			<GMRef ref="GM_A_6"/>
-		</GMRefs>
-	</Group>
+	
+	<Groups>
+		<Group id="groupingA_1" name="groupA">
+			<GMRefs>
+				<GMRef ref="GM_A_1"/>
+				<GMRef ref="GM_A_2"/>
+				<GMRef ref="GM_A_3"/>
+			</GMRefs>
+		</Group>
+		<Group id="groupingA_2" name="groupA">
+			<GMRefs>
+				<GMRef ref="GM_A_4"/>
+				<GMRef ref="GM_A_5"/>
+				<GMRef ref="GM_A_6"/>
+			</GMRefs>
+		</Group>
+	</Groups>
+	
+	<GroupMembers>
+		<GroupMember id="gm1">
+			<raw_files>
+				<raw_file id="" name="" description=""/>
+				<!-- mzML, raw -->
+				<modification>0Da</modification>
+				<identification/>
+				<!-- mzIdentML -->
+			</raw_files>
+		</GroupMember>
+		<GroupMember id="gm2">
+			<raw_files>
+				<raw_file id="" name="" description=""/>
+				<!-- mzML, raw -->
+				<modification>6Da</modification>
+				<identification/>
+				<!-- mzIdentML -->
+			</raw_files>
+		</GroupMember>
+	</GroupMembers>
+	
 	<!-- **************** -->
 	<!-- PEPTIDE LIST -->
 	<!-- **************** -->
@@ -152,4 +176,33 @@
 			</groupMember>
 		</Peptide>
 	</PeptideList>
+	
+	<protocol>
+		<software_ref/>
+		<type id="" description="">
+			<!-- CV for reporter, precursor, also defining intra/inter-sample -->
+			<subtype/>
+			<!-- SILAC, iTRAQ, TMT -->
+		</type>
+		<ratio id="" name="" description="" operator="">
+			<units/>
+			<!-- for absolute quantification -->
+			<numerator>
+				<group_ref id="" operator="sum"/>
+				<!-- or -->
+				<groupmember_ref id="" operator="sum"/>
+				<fixed/>
+				<accession/>
+			</numerator>
+			<denominator/>
+		</ratio>
+		<min_number_pep_per_prot/>
+		<normalisation>
+			<cvParam/>
+		</normalisation>
+		<swParams>
+			<!-- software specific parameters -->
+			<cvParams/>
+		</swParams>
+	</protocol>
 </mzQuantML>

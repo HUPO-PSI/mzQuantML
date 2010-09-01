@@ -1,0 +1,326 @@
+<MzQuantML>
+	<!-- ********* -->
+	<!-- PROTEIN LIST -->
+	<!-- ********* -->
+	<ProteinList>
+		<ProteinAmbiguityGroupQ id="PAG_1">
+			<ProteinAmbiguityGroupRef ref="pag_ref" fileref="file_ref"/>
+			<!-- do we need more than one? if no, it should be in ProteinAmbiguityGroupQ -->
+			<GroupedQuantitationResult StudyVariable_ref="30min_rep1">
+				<Param type_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<GroupedQuantitationResult StudyVariable_ref="groupB">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<QuantitationResult assay_ref="QU_A_1">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</QuantitationResult>
+			<ProteinDetectionHypothesisQ id="PDH_1">
+				<PeptideRefs>
+					<PeptideRef ref="pep1"/>
+					<PeptideRef ref="pep2"/>
+				</PeptideRefs>
+				<ProteinDetectionHypothesisRef ref="pdh_ref" fileref="file_ref"/>
+				<!-- do we need more than one? if no, it should be in ProteinDetectionHypothesisQ -->
+				<GroupedQuantitationResult StudyVariable_ref="groupA">
+					<Param measure_ref="" value="" unit=""/>
+					<!-- one or more -->
+					<!-- AND/OR -->
+					<Param ratio_ref="" value=""/>
+					<!-- one or more -->
+				</GroupedQuantitationResult>
+				<GroupedQuantitationResult StudyVariable_ref="groupB">
+					<Param measure_ref="" value="" unit=""/>
+					<!-- one or more -->
+					<!-- AND/OR -->
+					<Param ratio_ref="" value=""/>
+					<!-- one or more -->
+				</GroupedQuantitationResult>
+				<QuantitationResult assay_ref="QU_A_1">
+					<Param measure_ref="" value="" unit=""/>
+					<!-- one or more -->
+					<!-- AND/OR -->
+					<Param ratio_ref="" value=""/>
+					<!-- one or more -->
+				</QuantitationResult>
+			</ProteinDetectionHypothesisQ>
+		</ProteinAmbiguityGroupQ>
+	</ProteinList>
+	<!-- **************** -->
+	<!-- PEPTIDE LIST -->
+	<!-- **************** -->
+	<PeptideList>
+		<Peptide id="pep1">
+			<sequence/>
+			<modifications/>
+			<GroupedQuantitationResult StudyVariable_ref="groupA">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<GroupedQuantitationResult StudyVariable_ref="groupB">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<QuantitationResult assay_ref="QU_A_1">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</QuantitationResult>
+		</Peptide>
+		<Peptide id="pep2">
+			<sequence/>
+			<modifications/>
+			<GroupedQuantitationResult StudyVariable_ref="groupA">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<GroupedQuantitationResult StudyVariable_ref="groupB">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<QuantitationResult assay_ref="QU_A_1">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</QuantitationResult>
+		</Peptide>
+	</PeptideList>
+	<!--      -->
+	<StudyVariables>
+		<StudyVariable id="sv30min_rep1" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_1_rep1"/>
+				<QuantitationUnit ref="heavy30min_rep1"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<StudyVariable id="sv30min_rep2" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_1_rep2"/>
+				<QuantitationUnit ref="heavy30min_rep2"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<StudyVariable id="sv60min_rep1" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_2_rep1"/>
+				<QuantitationUnit ref="heavy60min_rep1"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<StudyVariable id="sv60min_rep2" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_2_rep2"/>
+				<QuantitationUnit ref="heavy60min_rep2"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<Assays>
+			<Assay id="30min_rep1">
+				<RawFiles>
+					<!-- multiple raw files in case of pre-fractionation -->
+					<RawFile id="raw1" name="raw1.raw" description="scx1"/>
+					<!--filename? description optional-->
+					<RawFile id="raw2" name="raw2.raw" description="scx2"/>
+					<RawFile id="raw3" name="raw3.raw" description="scx3"/>
+					<!-- mzML, raw -->
+				</RawFiles>
+				<QuantitationUnits>
+					<!-- several quantitationUnits only if there are labels in a single RUN -->
+					<QuantitationUnit id="light0min_1">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_UNLABELED"/>
+						</Label>
+					</QuantitationUnit>
+					<QuantitationUnit id="heavy30min">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_KR6_HEAVY"/>
+						</Label>
+					</QuantitationUnit>
+				</QuantitationUnits>
+				<Identification/>
+			</Assay>
+			<Assay id="60min_rep1">
+				<RawFiles>
+					<!-- multiple raw files in case of pre-fractionation -->
+					<RawFile id="raw4" name="raw4.raw" description="scx4"/>
+					<!--filename? description optional-->
+					<RawFile id="raw5" name="raw5.raw" description="scx5"/>
+					<RawFile id="raw6" name="raw6.raw" description="scx6"/>
+					<!-- mzML, raw -->
+				</RawFiles>
+				<QuantitationUnits>
+					<!-- several quantitationUnits only if there are labels in a single RUN -->
+					<QuantitationUnit id="light0min_2_rep1">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_UNLABELED"/>
+						</Label>
+					</QuantitationUnit>
+					<QuantitationUnit id="heavy60min_rep1">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_KR6_HEAVY"/>
+						</Label>
+					</QuantitationUnit>
+				</QuantitationUnits>
+				<Identification/>
+			</Assay>
+			<Assay id="30min_rep2">
+				<RawFiles>
+					<!-- multiple raw files in case of pre-fractionation -->
+					<RawFile id="raw1" name="raw1.raw" description="scx1"/>
+					<!--filename? description optional-->
+					<RawFile id="raw2" name="raw2.raw" description="scx2"/>
+					<RawFile id="raw3" name="raw3.raw" description="scx3"/>
+					<!-- mzML, raw -->
+				</RawFiles>
+				<QuantitationUnits>
+					<!-- several quantitationUnits only if there are labels in a single RUN -->
+					<QuantitationUnit id="light0min_1">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_UNLABELED"/>
+						</Label>
+					</QuantitationUnit>
+					<QuantitationUnit id="heavy30min">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_KR6_HEAVY"/>
+						</Label>
+					</QuantitationUnit>
+				</QuantitationUnits>
+				<Identification/>
+			</Assay>
+			<Assay id="60min_rep2">
+				<RawFiles>
+					<!-- multiple raw files in case of pre-fractionation -->
+					<RawFile id="raw4" name="raw4.raw" description="scx4"/>
+					<!--filename? description optional-->
+					<RawFile id="raw5" name="raw5.raw" description="scx5"/>
+					<RawFile id="raw6" name="raw6.raw" description="scx6"/>
+					<!-- mzML, raw -->
+				</RawFiles>
+				<QuantitationUnits>
+					<!-- several quantitationUnits only if there are labels in a single RUN -->
+					<QuantitationUnit id="light0min_2">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_UNLABELED"/>
+						</Label>
+					</QuantitationUnit>
+					<QuantitationUnit id="heavy60min">
+						<Label>
+							<!-- optional if labelfree -->
+							<cvParam name="SILAC_KR6_HEAVY"/>
+						</Label>
+					</QuantitationUnit>
+				</QuantitationUnits>
+				<Identification/>
+			</Assay>
+		</Assays>
+		<!-- PROTOCOL -->
+		<Protocol>
+			<Measurement id=""/>
+			<Type id="" description="">
+				<!-- CV for reporter, precursor, also defining intra/inter-sample -->
+				<subtype/>
+				<!-- SILAC, iTRAQ, TMT -->
+			</Type>
+			<Ratios>  <!-- Need several ratios in the schema?! -->
+			<Ratio id="ratio_30min_rep1" name="" description="" operator="">
+				<Units/>
+				<!-- for absolute quantification -->
+				<Numerator>
+					<QuantitationUnitRef ref="heavy30min_rep1"/>
+					<Fixed/>
+					<Accession/>
+				</Numerator>
+				<Denominator>
+					<QuantitationUnitRef ref="light0min_1_rep1"/>
+				</Denominator>
+			</Ratio>
+			<Ratio>
+			<Numerator>
+				<RatioRef/>
+			</Numerator>
+			</Ratio>
+			<Ratio id="ratio_30min_rep2" name="" description="" operator="">
+				<Units/>
+				<!-- for absolute quantification -->
+				<Numerator>
+					<QuantitationUnitRef ref="heavy30min_rep1"/>
+					<Fixed/>
+					<Accession/>
+				</Numerator>
+				<Denominator>
+					<QuantitationUnitRef ref="light0min_1_rep1"/>
+				</Denominator>
+			</Ratio>
+
+			
+			</Ratios>
+
+			<Min_number_pep_per_prot/>
+			<Normalization>
+				<cvParam/>
+			</Normalization>
+			<SoftwareRef/>
+			<SoftwareParams>
+				<!-- software specific parameters -->
+				<cvParams/>
+			</SoftwareParams>
+		</Protocol>
+		<StudyVariables>
+		<StudyVariable id="sv30min_rep1" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_1_rep1"/>
+				<QuantitationUnit ref="heavy30min_rep1"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<StudyVariable id="sv30min_rep2" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_1_rep2"/>
+				<QuantitationUnit ref="heavy30min_rep2"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<StudyVariable id="sv60min_rep1" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_2_rep1"/>
+				<QuantitationUnit ref="heavy60min_rep1"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<StudyVariable id="sv60min_rep2" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="light0min_2_rep2"/>
+				<QuantitationUnit ref="heavy60min_rep2"/>
+			</QuantitationUnits>
+		</StudyVariable>
+	</StudyVariables>
+</MzQuantML>

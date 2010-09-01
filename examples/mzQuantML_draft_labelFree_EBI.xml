@@ -4,41 +4,28 @@
 	<!-- ********* -->
 	<ProteinList>
 		<ProteinAmbiguityGroupQ id="PAG_1">
-			<ProteinAmbiguityGroupedQuantitationResult ref="pag_ref" fileref="file_ref"/>
-			<Abundance value=""/>
-			<GroupedQuantitationResult ref="groupA">
-				<MeanAbundance value=""/>
-				<STD value=""/>
+			<ProteinAmbiguityGroupRef ref="pag_ref" fileref="file_ref"/>
+			<!-- do we need more than one? if no, it should be in ProteinAmbiguityGroupQ -->
+			<GroupedQuantitationResult study_variable_ref="groupA">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
 			</GroupedQuantitationResult>
-			<GroupedQuantitationResult ref="groupB">
-				<Abundance value=""/>
-				<STD value=""/>
+			<GroupedQuantitationResult study_variable_ref="groupB">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
 			</GroupedQuantitationResult>
-			<QuantitationResult ref="GM_A_1">
-				<Abundance>
-					<cvParam name="RAW intensity" value=""/>
-				</Abundance>
-				<STD value=""/>
-			</QuantitationResult>
-			<QuantitationResult ref="GM_A_2">
-				<Abundance value=""/>
-				<STD value=""/>
-			</QuantitationResult>
-			<QuantitationResult ref="GM_A_3">
-				<Abundance value=""/>
-				<STD value=""/>
-			</QuantitationResult>
-			<QuantitationResult ref="GM_A_4">
-				<Abundance value=""/>
-				<STD value=""/>
-			</QuantitationResult>
-			<QuantitationResult ref="GM_A_5">
-				<Abundance value=""/>
-				<STD value=""/>
-			</QuantitationResult>
-			<QuantitationResult ref="GM_A_6">
-				<Abundance value=""/>
-				<STD value=""/>
+			<QuantitationResult assay_ref="QU_A_1">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
 			</QuantitationResult>
 			<ProteinDetectionHypothesisQ id="PDH_1">
 				<PeptideRefs>
@@ -46,112 +33,31 @@
 					<PeptideRef ref="pep2"/>
 				</PeptideRefs>
 				<ProteinDetectionHypothesisRef ref="pdh_ref" fileref="file_ref"/>
-				<!-- option 1 OR 2 -->
-				<!-- option 1 -->
-				<GroupedQuantitationResult ref="groupA">
-					<MeanAbundance/>
-					<STD value=""/>
+				<!-- do we need more than one? if no, it should be in ProteinDetectionHypothesisQ -->
+				<GroupedQuantitationResult study_variable_ref="groupA">
+					<Param measure_ref="" value="" unit=""/>
+					<!-- one or more -->
+					<!-- AND/OR -->
+					<Param ratio_ref="" value=""/>
+					<!-- one or more -->
 				</GroupedQuantitationResult>
-				<GroupedQuantitationResult ref="groupB">
-					<Abundance value=""/>
-					<STD value=""/>
+				<GroupedQuantitationResult study_variable_ref="groupB">
+					<Param measure_ref="" value="" unit=""/>
+					<!-- one or more -->
+					<!-- AND/OR -->
+					<Param ratio_ref="" value=""/>
+					<!-- one or more -->
 				</GroupedQuantitationResult>
-				<QuantitationResult ref="GM_A_1">
-					<Abundance value=""/>
-					<STD value=""/>
+				<QuantitationResult assay_ref="QU_A_1">
+					<Param measure_ref="" value="" unit=""/>
+					<!-- one or more -->
+					<!-- AND/OR -->
+					<Param ratio_ref="" value=""/>
+					<!-- one or more -->
 				</QuantitationResult>
-				<QuantitationResult ref="GM_A_2">
-					<Abundance value=""/>
-					<STD value=""/>
-				</QuantitationResult>
-				<QuantitationResult ref="GM_A_3">
-					<Abundance value=""/>
-					<STD value=""/>
-				</QuantitationResult>
-				<QuantitationResult ref="GM_A_4">
-					<Abundance value=""/>
-					<STD value=""/>
-				</QuantitationResult>
-				<QuantitationResult ref="GM_A_5">
-					<Abundance value=""/>
-					<STD value=""/>
-				</QuantitationResult>
-				<QuantitationResult ref="GM_A_6">
-					<Abundance value=""/>
-					<STD value=""/>
-				</QuantitationResult>
-				<!-- option 2 -->
-				<GroupComparisonRef id="A/B">
-					<!-- ratio -->
-					<STD value=""/>
-				</GroupComparisonRef>
-				<GroupMemberComparisonRef ref="GM_AB_1">
-					<!-- ratio -->
-					<STD value=""/>
-				</GroupMemberComparisonRef>
-				<GroupMemberComparisonRef ref="GM_AB_2">
-					<Abundance value=""/>
-					<STD value=""/>
-				</GroupMemberComparisonRef>
-				<GroupMemberComparisonRef ref="GM_AB_3">
-					<Abundance value=""/>
-					<STD value=""/>
-				</GroupMemberComparisonRef>
-				<GroupMemberComparisonRef ref="GM_AB_4">
-					<Abundance value=""/>
-					<STD value=""/>
-				</GroupMemberComparisonRef>
-				<GroupMemberComparisonRef ref="GM_AB_5">
-					<Abundance value=""/>
-					<STD value=""/>
-				</GroupMemberComparisonRef>
-				<GroupMemberComparisonRef ref="GM_AB_6">
-					<Abundance value=""/>
-					<STD value=""/>
-				</GroupMemberComparisonRef>
-				<!-- option 2 -->
 			</ProteinDetectionHypothesisQ>
 		</ProteinAmbiguityGroupQ>
 	</ProteinList>
-	
-	<Groups>
-		<Group id="groupingA_1" name="groupA">
-			<GMRefs>
-				<GMRef ref="GM_A_1"/>
-				<GMRef ref="GM_A_2"/>
-				<GMRef ref="GM_A_3"/>
-			</GMRefs>
-		</Group>
-		<Group id="groupingA_2" name="groupA">
-			<GMRefs>
-				<GMRef ref="GM_A_4"/>
-				<GMRef ref="GM_A_5"/>
-				<GMRef ref="GM_A_6"/>
-			</GMRefs>
-		</Group>
-	</Groups>
-	
-	<GroupMembers>
-		<GroupMember id="gm1">
-			<raw_files>
-				<raw_file id="" name="" description=""/>
-				<!-- mzML, raw -->
-				<modification>0Da</modification>
-				<identification/>
-				<!-- mzIdentML -->
-			</raw_files>
-		</GroupMember>
-		<GroupMember id="gm2">
-			<raw_files>
-				<raw_file id="" name="" description=""/>
-				<!-- mzML, raw -->
-				<modification>6Da</modification>
-				<identification/>
-				<!-- mzIdentML -->
-			</raw_files>
-		</GroupMember>
-	</GroupMembers>
-	
 	<!-- **************** -->
 	<!-- PEPTIDE LIST -->
 	<!-- **************** -->
@@ -159,24 +65,100 @@
 		<Peptide id="pep1">
 			<sequence/>
 			<modifications/>
-			<group>
-			</group>
-			<groupMember>
-				<!-- it can be either a single run or in case it was a prefractionation it can be a collection of runs -->
-				<ratio value=""/>
-			</groupMember>
+			<GroupedQuantitationResult study_variable_ref="groupA">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<GroupedQuantitationResult study_variable_ref="groupB">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<QuantitationResult assay_ref="QU_A_1">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</QuantitationResult>
 		</Peptide>
 		<Peptide id="pep2">
 			<sequence/>
 			<modifications/>
-			<group>
-			</group>
-			<groupMember>
-				<ratio value=""/>
-			</groupMember>
+			<GroupedQuantitationResult study_variable_ref="groupA">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<GroupedQuantitationResult study_variable_ref="groupB">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</GroupedQuantitationResult>
+			<QuantitationResult assay_ref="QU_A_1">
+				<Param measure_ref="" value="" unit=""/>
+				<!-- one or more -->
+				<!-- AND/OR -->
+				<Param ratio_ref="" value=""/>
+				<!-- one or more -->
+			</QuantitationResult>
 		</Peptide>
 	</PeptideList>
+	<Study_Variables>
+		<Study_Variable id="groupingA_1" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="QU_A_1"/>
+				<QuantitationUnit ref="QU_A_2"/>
+				<QuantitationUnit ref="QU_A_3"/>
+			</QuantitationUnits>
+		</Study_Variable>
+		<Study_Variable id="groupingA_2" name="groupA">
+			<QuantitationUnits>
+				<QuantitationUnit ref="QU_A_4"/>
+				<QuantitationUnit ref="QU_A_5"/>
+				<QuantitationUnit ref="QU_A_6"/>
+			</QuantitationUnits>
+		</Study_Variable>
+	</Study_Variables>
+	<Assays>
+		<Assay id="gm1">
+			<raw_files>
+				<!-- multiple raw files in case of prefractionation -->
+				<raw_file id="" name="" description=""/>
+				<!-- mzML, raw -->
+			</raw_files>
+			<QuantitationUnits>
+				<!-- several quantitationUnits only if there are labels in a single RUN -->
+				<QuantitationUnit id="">
+					<label>
+						<!-- optional if labelfree -->
+						<cvParam name="iTRAQ114"/>
+						<modification>0Da</modification>
+					</label>
+				</QuantitationUnit>
+				<QuantitationUnit id="">
+					<label>
+						<!-- optional if labelfree -->
+						<cvParam name="iTRAQ116"/>
+						<modification>6Da</modification>
+					</label>
+				</QuantitationUnit>
+			</QuantitationUnits>
+			<identification/>
+			<!-- mzIdentML -->
+		</Assay>
+	</Assays>
 	
+	<!-- PROTOCOL -->
 	<protocol>
 		<software_ref/>
 		<type id="" description="">

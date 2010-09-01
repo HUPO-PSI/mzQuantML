@@ -15,7 +15,9 @@
   <ratio id="" name="" description="" operator="">
     <units /> <!-- for absolute quantification -->
     <numerator>
-      <sample_ref id="" operator="sum"></sample_ref> <!-- or groups -->
+      <group_ref id="" operator="sum"></group_ref>
+      <!-- or -->
+      <groupmember_ref id="" operator="sum"></groupmember_ref> 
       <fixed></fixed>
       <accession></accession>	 
     </numerator>

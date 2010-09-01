@@ -1,0 +1,96 @@
+<quality>
+  <!-- should there really be quality control data at this stage?
+       should the QC/QA not be done before getting here where results 
+       are reported and only good quality data is used?
+    -->
+  <cvParams></cvParams>
+</quality>
+
+<protocol>
+  <software_ref />
+  
+  <type id="" description=""> <!-- CV for reporter, precursor, also defining intra/inter-sample -->
+    <subtype></subtype> <!-- SILAC, iTRAQ, TMT -->
+  </type>
+
+  <result_list>
+    <result_item id="">
+      <!-- quant results can be abundances -->
+      <abundance quantUnitId="" value="" units="" stdev=""></abundance> 
+      <!-- quant results can be ratios -->
+      <ratio id="" name="" description="" operator="">
+	<numerator>
+	  <studyVariableId value="" /> <!-- could also be an a group of one individual quantUnit -->
+	  <!-- or potentially -->
+	  <fixed value="" />
+	  <accession />
+	</numerator>
+	<denominator>
+	  <phenoVariable id="" />
+	</denominator>
+      </ratio>
+      <mean name="" value="" />
+      <stdev name="" value="" />
+      <!-- quant results can a statistics -->
+      <statistics>
+	<test name="" description="" />
+	<test_value name="" value="" />
+	<p_value value="" />
+      </statistics>
+    </result_item>
+    <result_item id=""></result_item>
+    <!-- more result items -->
+  </result_list>
+
+  <min_number_pep_per_prot />
+  <normalisation><cvParam /></normalisation>
+  <swParams>
+    <!-- software specific parameters -->
+    <cvParams /> 
+  </swParams>
+</protocol>
+
+
+
+<software> <!-- as in mzIdentML -->
+ <name=""/>
+ <version=""/>
+ <author="" />
+</software>
+
+
+
+<studyVariable_list>
+  <studyVariable id="1" name="TR1" cvParam="" description="technical replicates" />
+  <studyVariable id="2" name="TR2" description="technical replicates" />
+  <studyVariable id="3" name="BR1" description="biological replicates" />
+  <studyVariable id="4" name="BR2" description="biological replicates" />
+  <studyVariable id="5" name="CTRL" description="controls samples" />
+  <studyVariable id="6" name="CASE" description="case samples" />
+  <!-- could also be a time points -->
+  <studyVariable id="0" name="TP0" description="Time point 0" />
+  <studyVariable id="1" name="TP1" description="Time point 1" />
+  <studyVariable id="2" name="TP2" description="Time point 2" />
+</studyVariable_list>
+
+
+<assays>
+  <assay id="1">
+    <raw_files>
+      <raw_file id="" name="" description="" /> <!-- one ore more mzML, raw -->
+      <identification id="" name="" description="" /> <!-- one or more mzIdentML, pepXML -->
+    </raw_files>
+    <quant_unit id="1"> <!-- find a better name -->
+      <channel id="1" name="" modification=""> <!-- would be one of the reporters, light or heavy, ... -->
+	<studyGroup_membership>
+	  <memberOf studyVariable_id="1"/>
+	  <memberOf studyVariable_id="2"/>
+	</studyGroup_membership>
+      </channel>
+    </quant_unit>
+    <quant_unit id="2"></quant_unit>
+  </assay>
+  <!-- ... -->
+  <assay id="n"></assay>
+</assays>
+

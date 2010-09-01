@@ -1,0 +1,228 @@
+<MzQuantML>
+	<!-- ********* -->
+	<!-- PROTEIN LIST -->
+	<!-- ********* -->
+	<ProteinList>
+		<ProteinAmbiguityGroupQ id="PAG_1">
+			<ProteinAmbiguityGroupRef ref="A0A393" fileref="file_with_protein_identifications_of_merged_mgfs"/>
+
+			<ProteinDetectionHypothesisQ id="PDH_1">
+				<PeptideRefs>
+					<PeptideRef ref="pep1_in_this_file"/>
+					<PeptideRef ref="pep2_in_this_file"/>
+				</PeptideRefs>
+
+				<ProteinDetectionHypothesisRef ref="A0A393" fileref="file_with_protein_identifications_of_merged_mgfs"/>
+
+				<QuantitationResult assay_ref="mgf1">
+					<Param measure_ref="PeptideSpectrumMatchCountPerProtein" value="1" unit=""/>
+					<Param measure_ref="NormalizedPeptideSpectrumMatchCount" value="0.9" unit=""/>
+				</QuantitationResult>
+				<!-- ... -->
+				<QuantitationResult assay_ref="mgf25">
+					<Param measure_ref="PeptideSpectrumMatchCountPerProtein" value="2" unit=""/>
+					<Param measure_ref="NormalizedPeptideSpectrumMatchCount" value="2.3" unit=""/>
+				</QuantitationResult>
+
+				<GroupedQuantitationResult StudyVariable_ref="concentrationOfSpikeIn_5">
+					<Param measure_ref="StrictMean" value="0.2" unit=""/>
+					<Param measure_ref="LooseMean" value="1" unit=""/>
+				</GroupedQuantitationResult>
+				<GroupedQuantitationResult StudyVariable_ref="concentrationOfSpikeIn_50">
+					<Param measure_ref="StrictMean" value="0.4" unit=""/>
+					<Param measure_ref="LooseMean" value="1" unit=""/>
+				</GroupedQuantitationResult>
+				<GroupedQuantitationResult StudyVariable_ref="concentrationOfSpikeIn_100">
+					<!-- ... -->
+				</GroupedQuantitationResult>
+
+
+
+				<RelationResult>
+					<StudyVariable_ref ref="concentrationOfSpikeIn_250"/>
+					<StudyVariable_ref ref="concentrationOfSpikeIn_100"/>
+					<Param measure_ref="RatioFirstVsSecond" value="3.0" unit=""/>
+				 </RelationResult>
+				<RelationResult>
+					<StudyVariable_ref ref="concentrationOfSpikeIn_5"/>
+					<StudyVariable_ref ref="concentrationOfSpikeIn_50"/>
+					<StudyVariable_ref ref="concentrationOfSpikeIn_100"/>
+					<StudyVariable_ref ref="concentrationOfSpikeIn_250"/>
+					<StudyVariable_ref ref="concentrationOfSpikeIn_500"/>
+					<Param measure_ref="ANOVA" value="0.07" unit="p-value"/>
+				 </RelationResult>
+				...
+
+			</ProteinDetectionHypothesisQ>
+		</ProteinAmbiguityGroupQ>
+	</ProteinList>
+	
+	
+	
+	<!-- **************** -->
+	<!-- PEPTIDE LIST -->
+	<!-- **************** -->
+	<PeptideList>
+		<Peptide id="pep1" PeptideRefTomzIdentML="bla">
+			<sequence/>
+			<modifications/>
+				<GroupedQuantitationResult StudyVariable_ref="concentrationOfSpikeIn_5">
+					<Param measure_ref="StrictMean" value="0.2" unit=""/>
+					<Param measure_ref="LooseMean" value="1" unit=""/>
+				</GroupedQuantitationResult>
+				<GroupedQuantitationResult StudyVariable_ref="concentrationOfSpikeIn_50">
+					<Param measure_ref="StrictMean" value="0.4" unit=""/>
+					<Param measure_ref="LooseMean" value="1" unit=""/>
+				</GroupedQuantitationResult>
+				<GroupedQuantitationResult StudyVariable_ref="concentrationOfSpikeIn_100">
+					<!-- ... -->
+				</GroupedQuantitationResult>
+
+				<QuantitationResult assay_ref="mgf1">
+					<Param measure_ref="SpectrumCountPerPeptideWithMods" value="1" unit=""/>
+					<Param measure_ref="NormalizedPeptideSpectrumMatchCount" value="0.9" unit=""/>
+				</QuantitationResult>
+				<!-- ... -->
+				<QuantitationResult assay_ref="mgf25">
+					<Param measure_ref="SpectrumCountPerPeptideWithMods" value="2" unit=""/>
+					<Param measure_ref="NormalizedPeptideSpectrumMatchCount" value="2.3" unit=""/>
+				</QuantitationResult>
+		</Peptide>
+		...
+	</PeptideList>
+
+
+
+	<StudyVariables>
+		<StudyVariable id="concentrationOfSpikeIn_5" name="concentrationOfSpikeIn">
+			<CVParam name="experimental condition group"/> <!-- alternative: technical replicate group -->
+			<QuantitationUnits>
+				<QuantitationUnit ref="mgf1"/>
+				<QuantitationUnit ref="mgf6"/>
+				<QuantitationUnit ref="mgf11"/>
+				<QuantitationUnit ref="mgf16"/>
+				<QuantitationUnit ref="mgf21"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		<StudyVariable id="concentrationOfSpikeIn_50" name="concentrationOfSpikeIn">
+			<CVParam name="experimental condition group"/> <!-- alternative: technical replicate group -->
+			<QuantitationUnits>
+				<QuantitationUnit ref="mgf2"/>
+				<QuantitationUnit ref="mgf7"/>
+				<QuantitationUnit ref="mgf12"/>
+				<QuantitationUnit ref="mgf17"/>
+				<QuantitationUnit ref="mgf22"/>
+			</QuantitationUnits>
+		</StudyVariable>
+		...
+
+
+	</StudyVariables>
+	
+	
+	
+	<Assays>
+		<Assay id="mgf1">
+			<RawFiles>
+				<!-- multiple raw files in case of pre-fractionation -->
+				<RawFile id="" name="ORBI05316.mgf" description="concentration 5, technical replicate 1"/>
+				<!-- mzML, raw -->
+			</RawFiles>
+			<QuantitationUnits>
+				<!-- several quantitationUnits only if there are labels in a single RUN -->
+				<QuantitationUnit id="QU1"> 
+					<Label>
+						<!-- optional if labelfree -->
+						<cvParam name="labelfree"/>
+						<cvParam name="peptide spectrum match count"/>
+					</Label>
+				</QuantitationUnit>
+			</QuantitationUnits>
+			<Identification/> 	<!-- mzIdentML -->
+		</Assay>
+		<Assay id="mgf2">
+			<RawFiles>
+				<!-- multiple raw files in case of pre-fractionation -->
+				<RawFile id="" name="ORBI05317mgf" description="concentration 50, technical replicate 1"/>
+				<!-- mzML, raw -->
+			</RawFiles>
+			<QuantitationUnits>
+				<!-- several quantitationUnits only if there are labels in a single RUN -->
+				<QuantitationUnit id="">
+					<Label>
+						<!-- optional if labelfree -->
+						<cvParam name="labelfree"/>
+					</Label>
+				</QuantitationUnit>
+			</QuantitationUnits>
+			<Identification/> 	<!-- mzIdentML -->
+		</Assay>
+		...
+		<Assay id="mgf25">
+			<RawFiles>
+				<!-- multiple raw files in case of pre-fractionation -->
+				<RawFile id="" name="ORBI05366.mgf" description="concentration 500, technical replicate 5"/>
+				<!-- mzML, raw -->
+			</RawFiles>
+			<QuantitationUnits>
+				<!-- several quantitationUnits only if there are labels in a single RUN -->
+				<QuantitationUnit id="">
+					<Label>
+						<!-- optional if labelfree -->
+						<cvParam name="labelfree"/>
+					</Label>
+				</QuantitationUnit>
+			</QuantitationUnits>
+			<Identification file_ref="mzIdentML.mzid"/> 	<!-- mzIdentML -->
+		</Assay>
+		
+	</Assays>
+	
+	<!-- PROTOCOL -->
+	<Protocol>
+		
+		<Type id="T1" description="whatever">
+			<!-- CV for reporter, precursor, also defining intra/inter-sample -->
+			<subtype name="peptide spectrum match counting"/>
+			<!-- SILAC, iTRAQ, TMT -->
+		</Type>
+
+		<Ratio id="" name="" description="" operator="">
+			<Units/>
+			<!-- for absolute quantification -->
+			<Numerator>
+				<GroupedQuantitationResultRef id="" operator="sum"/>
+				<!-- or -->
+				<QuantitationResultRef id="" operator="sum"/>
+				<Fixed/>
+				<Accession/>
+			</Numerator>
+			<Denominator/>
+		</Ratio>
+
+        <StrictMean>
+			<CVParam name="treat missings like zero"/>
+        </StrictMean>		
+        <LooseMean>
+			<CVParam name="leave out missings"/>
+        </LooseMean>		
+
+
+		
+		<Min_number_pep_per_prot/> <!-- protein identification parameter?? -->
+		
+		<Normalization>
+		    <LiteratureRef PMID_ref=""/>
+			<cvParam name="normalize (by factor) total PSM count per mgf to their mean"/>
+			<!-- alternative: <cvParam name="scale (by factor) total PSM count per mgf to a fixed value" value="10000"/> -->
+			<!-- alternative: <cvParam name="normalize (by factor) total PSM count per mgf to that of specific mgf" value="500_4"/> -->
+			<!-- alternative: <cvParam name="NSAF normalization"/> -->
+		</Normalization>
+		
+		
+		<SoftwareRef>
+			Excel PivotTable and Excel Functions
+		</SoftwareRef> 
+		<SoftwareParams/> <!-- software specific parameters -->
+	</Protocol>
+</MzQuantML>

@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--  
+Problems: (3) We would need to add definitions of the measures to the protocol, and should do so using a controlled 
+          vocabulary
+
+          (5) Need a controlled vocabulary for describing modifications (steal from UNIMOD)
+-->
+
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../schema/mzQuantML_0_1.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+  <!-- ********* -->
+  <!-- PROTEIN LIST -->
+  <!-- ********* -->
+  <ProteinList>
+    <QuantProteinAmbiguityGroup>
+      <IdentificationRef id_ref="PAG_1" />
+      
+      <GroupedQuantitationResult study_variable_ref="Time 0">
+        <!-- Problem (3) first occurence -->
+        <MeasureParam measure_ref="Mean raw abundance" value=""/>
+        <MeasureParam measure_ref="Mean normalised abundance" value="" />
+        <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+        <MeasureParam measure_ref="Standard Deviation" value=""/>
+      </GroupedQuantitationResult>
+      <GroupedQuantitationResult study_variable_ref="180 days">
+        <MeasureParam measure_ref="Mean raw abundance" value=""/>
+        <MeasureParam measure_ref="Mean normalised abundance" value=""/>
+        <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+        <MeasureParam measure_ref="Standard Deviation" value=""/>
+      </GroupedQuantitationResult>
+      <!-- The 14 other grouped results would appear above -->
+      <QuantitationResult assay_ref="Patient1DiseasedTime0Rep1">
+        <MeasureParam measure_ref="Raw Abundance" value=""/>
+        <MeasureParam measure_ref="Normalised Abundance" value=""/>
+        <MeasureParam measure_ref="Spectral Counts" value=""/>
+      </QuantitationResult>
+      <!-- The remaining 15 quant results would follow here-->
+      <GlobalQuantitationResult>
+        <MeasureParam measure_ref="Anova (p)" value=""/>
+        <MeasureParam measure_ref="Maximum Fold Change" value="3.56"/>
+        <MeasureParam measure_ref="Highest Mean" value="Patient 1"/>
+        <MeasureParam measure_ref="Lowest Mean" value="Time 0"/>
+        <MeasureParam measure_ref="Maximum CV" value="Time 0"/>
+      </GlobalQuantitationResult>
+      <QuantProteinDetectionHypothesis>
+        <IdentificationRef id_ref="PDH_1"/>
+        <GroupedQuantitationResult study_variable_ref="Time 0">
+          <MeasureParam measure_ref="Mean raw abundance" value=""/>
+          <MeasureParam measure_ref="Mean normalised abundance" value="" />
+          <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+          <MeasureParam measure_ref="Standard Deviation" value=""/>
+        </GroupedQuantitationResult>
+        <GroupedQuantitationResult study_variable_ref="180 days">
+          <MeasureParam measure_ref="Mean raw abundance" value=""/>
+          <MeasureParam measure_ref="Mean normalised abundance" value=""/>
+          <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+          <MeasureParam measure_ref="Standard Deviation" value=""/>
+        </GroupedQuantitationResult>
+        <!-- The 14 other grouped results would appear above -->
+        <QuantitationResult assay_ref="Patient1DiseasedTime0Rep1">
+          <MeasureParam measure_ref="Raw Abundance" value=""/>
+          <MeasureParam measure_ref="Normalised Abundance" value=""/>
+          <MeasureParam measure_ref="Spectral Counts" value=""/>
+        </QuantitationResult>
+        <!-- The remaining 15 quant results would follow here-->
+        <PeptideRefs>
+          <PeptideRef peptide_ref="pep1"/>
+          <PeptideRef peptide_ref="pep2"/>
+        </PeptideRefs>
+      </QuantProteinDetectionHypothesis>
+    </QuantProteinAmbiguityGroup>
+  </ProteinList>
+  <!-- **************** -->
+  <!-- PEPTIDE LIST -->
+  <!-- **************** -->
+  <PeptideList>
+    <Peptide id="pep1">
+      <PeptideSequence>KLAAMTDVWK</PeptideSequence>
+      <!-- Problem (5) first occurence -->
+      <Modification>
+        <cvParam accession="MS10000001" name="Modification" cvRef="PSI-MS"/>
+      </Modification>
+      <GroupedQuantitationResult study_variable_ref="Time 0">
+        <MeasureParam measure_ref="Mean raw abundance" value=""/>
+        <MeasureParam measure_ref="Mean normalised abundance" value="" />
+        <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+        <MeasureParam measure_ref="Standard Deviation" value=""/>
+      </GroupedQuantitationResult>
+      <GroupedQuantitationResult study_variable_ref="180 days">
+        <MeasureParam measure_ref="Mean raw abundance" value=""/>
+        <MeasureParam measure_ref="Mean normalised abundance" value=""/>
+        <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+        <MeasureParam measure_ref="Standard Deviation" value=""/>
+      </GroupedQuantitationResult>
+      <!-- The 14 other grouped results would appear above -->
+      <QuantitationResult assay_ref="Patient1DiseasedTime0Rep1">
+        <MeasureParam measure_ref="Raw Abundance" value=""/>
+        <MeasureParam measure_ref="Normalised Abundance" value=""/>
+        <MeasureParam measure_ref="Spectral Counts" value=""/>
+      </QuantitationResult>
+      <!-- The remaining 15 quant results would follow here-->
+    </Peptide>
+    <Peptide id="pep2">
+      <PeptideSequence>XLATTVIK</PeptideSequence>
+      <!-- do we need more than one? if no, it should be in ProteinAmbiguityGroupQ -->
+      <GroupedQuantitationResult study_variable_ref="Time 0">
+        <MeasureParam measure_ref="Mean raw abundance" value=""/>
+        <MeasureParam measure_ref="Mean normalised abundance" value=""/>
+        <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+        <MeasureParam measure_ref="Standard Deviation" value=""/>
+      </GroupedQuantitationResult>
+      <GroupedQuantitationResult study_variable_ref="180 days">
+        <MeasureParam measure_ref="Mean raw abundance" value=""/>
+        <MeasureParam measure_ref="Mean normalised abundance" value=""/>
+        <MeasureParam measure_ref="Coefficient of Variance" value=""/>
+        <MeasureParam measure_ref="Standard Deviation" value=""/>
+      </GroupedQuantitationResult>
+      <!-- The 14 other grouped results would appear above -->
+      <QuantitationResult assay_ref="Patient1DiseasedTime0Rep1">
+        <MeasureParam measure_ref="Raw Abundance" value=""/>
+        <MeasureParam measure_ref="Normalised Abundance" value=""/>
+        <MeasureParam measure_ref="Spectral Counts" value=""/>
+      </QuantitationResult>
+    </Peptide>
+  </PeptideList>
+
+  <AssayList>
+    <Assay id="AssayPatient1DiseasedTime0Rep1">
+      <RawFiles>
+        <RawFile id="0" name="Patient1DiseasedTime0Rep1.raw" />
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient1DiseasedTime0Rep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayPatient1DiseasedTime0Rep2">
+      <RawFiles>
+        <RawFile id="1" name="Patient1DiseasedTime0Rep2.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient1DiseasedTime0Rep2" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayPatient1Diseased180DaysRep1">
+      <RawFiles>
+        <RawFile id="2" name="Patient1Diseased180DaysRep1.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient1Diseased180DaysRep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayPatient1Diseased180DaysRep2">
+      <RawFiles>
+        <RawFile id="3" name="Patient1Diseased180DaysRep2.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient1Diseased180DaysRep2" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayPatient2DiseasedTime0Rep1">
+      <RawFiles>
+        <RawFile id="4" name="Patient2DiseasedTime0Rep1.raw" />
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient2DiseasedTime0Rep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayPatient2DiseasedTime0Rep2">
+      <RawFiles>
+        <RawFile id="5" name="Patient2DiseasedTime0Rep2.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient2DiseasedTime0Rep2" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayPatient2Diseased180DaysRep1">
+      <RawFiles>
+        <RawFile id="6" name="Patient2Diseased180DaysRep1.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient2Diseased180DaysRep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayPatient2Diseased180DaysRep2">
+      <RawFiles>
+        <RawFile id="7" name="Patient2Diseased180DaysRep2.raw" />
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Patient1Diseased180DaysRep2" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl1HealthyTime0Rep1">
+      <RawFiles>
+        <RawFile id="8" name="Control1HealthyTime0Rep1.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control1HealthyTime0Rep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl1HealthyTime0Rep2">
+      <RawFiles>
+        <RawFile id="9" name="Control1HealthyTime0Rep2.raw" />
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control1HealthyTime0Rep2" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl1Healthy180DaysRep1">
+      <RawFiles>
+        <RawFile id="10" name="Control1Healthy180DaysRep1.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control1Healthy180DaysRep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl1Healthy180DaysRep2">
+      <RawFiles>
+        <RawFile id="11" name="Control1Healthy180DaysRep2.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control1Healthy180DaysRep2" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl2HealthyTime0Rep1">
+      <RawFiles>
+        <RawFile id="12" name="Control2HealthyTime0Rep1.raw" />
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control2HealthyTime0Rep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl2HealthyTime0Rep2">
+      <RawFiles>
+        <RawFile id="13" name="Control2HealthyTime0Rep2.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control2HealthyTime0Rep2" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl2Healthy180DaysRep1">
+      <RawFiles>
+        <RawFile id="14" name="Control2Healthy180DaysRep1.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control2Healthy180DaysRep1" />
+      </QuantitationUnits>
+    </Assay>
+    <Assay id="AssayControl2Healthy180DaysRep2">
+      <RawFiles>
+        <RawFile id="15" name="Control2Healthy180DaysRep2.raw"/>
+      </RawFiles>
+      <QuantitationUnits>
+        <QuantitationUnit id="Control1Healthy180DaysRep2" />
+      </QuantitationUnits>
+    </Assay>
+  </AssayList>
+
+  <StudyVariableList>
+    <!-- conditions -->
+    <StudyVariable id="Diseased" name="Diseased">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep2" />
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep2" />
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep2" />
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000000 (Phenotype)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Healthy" name="Healthy">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep2" />
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep2" />
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep2" />
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000000 (Phenotype)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <!-- patients -->
+    <StudyVariable id="Patient 1" name="Patient 1">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep2" />
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000001 (Biological Replicate)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Patient 2" name="Patient 2">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep2" />
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000001 (Biological Replicate)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Control 1" name="Control 1">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep2" />
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000001 (Biological Replicate)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Control 2" name="Control 2">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep2" />
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000001 (Biological Replicate)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <!-- Time points -->
+    <StudyVariable id="Time 0" name="Time 0">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep2" />
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep2" />
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep2" />
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000002 (Time point)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="180 days" name="180 days">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep2" />
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep2" />
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep2" />
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000002 (Time point)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <!-- Replicates -->
+    <StudyVariable id="Technical Replicates 1" name="Technical Replicates 1">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient1DiseasedTime0Rep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Technical Replicates 2" name="Technical Replicates 2">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep1" />
+        <QuantitationUnitRef ref="Patient2DiseasedTime0Rep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Technical Replicates 3" name="Technical Replicates 3">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient1Diseased180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Technical Replicates 4" name="Technical Replicates 4">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep1" />
+        <QuantitationUnitRef ref="Patient2Diseased180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Technical Replicates 5" name="Technical Replicates 5">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control1HealthyTime0Rep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Technical Replicates 6" name="Technical Replicates 6">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep1" />
+        <QuantitationUnitRef ref="Control2HealthyTime0Rep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Technical Replicates 7" name="Technical Replicates 7">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control1Healthy180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+    <StudyVariable id="Technical Replicates 8" name="Technical Replicates 8">
+      <QuantitationUnitRefs>
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep1" />
+        <QuantitationUnitRef ref="Control2Healthy180DaysRep2" />
+      </QuantitationUnitRefs>
+      <cvParam accession="MS:0000003 (Technical Replicates)" name="study variable" cvRef="PSI-MS"/>
+    </StudyVariable>
+  </StudyVariableList>
+
+  <!-- The protocol does not currently pass the schema-->
+  <ProtocolList>
+    <Protocol>
+      <!-- GroupedQuantitationResult values -->
+      <Measurement id="Mean raw abundance">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Mean normalised abundance">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Coefficient of Variance">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Standard Deviation">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <!-- QuantitationResult values -->
+      <Measurement id="Raw Abundance">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Normalised Abundance">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Spectral Counts">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <!-- GlobalQuantitationResult values -->
+      <Measurement id="ANOVA (p)">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Maximun Fold Change">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Highest Mean">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Lowest Mean">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+      <Measurement id="Maximum CV">
+        <cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+      </Measurement>
+
+      <!--      <Normalization>
+        <cvParam accession="MS:1000000 (Normalised)" name="Normalisation" cvRef="PSI-MS"/>
+      </Normalization>
+      <SoftwareRef ref="AS_progenesis_lcms"/>
+      <SoftwareParams>
+      </SoftwareParams>-->
+    </Protocol>
+  </ProtocolList>
+
+<!--  <AnalysisSoftwareList>
+    <AnalysisSoftware id="AS_progenesis_lcms" name="Progenesis LC-MS" version="3.0" URI="http://www.nonlinear.com/" >
+      <ContactRole Contact_ref="ORG_MSL">
+        <role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001207" name="Progenesis LC-MS" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>-->
+
+</mzQuantML>

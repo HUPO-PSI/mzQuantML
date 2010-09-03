@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mzQuantML xmlns="http://psidev.info/psi/pi/mzQuantML/0.1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../schema/mzQuantML_0_1.xsd"> 
+         <!-- ********* --> 
+         <!-- PROTEIN LIST --> 
+         <!-- ********* --> 
+         <ProteinList> 
+                 <QuantProteinAmbiguityGroup id="PAG_1"> 
+                         <IdentificationRef  id_ref="PAG_hit_1" file_ref="F981131.mzid"/> 
+                         <!-- do we need more than one? if no, it should be in QuantProteinAmbiguityGroup --> 
+<!--                         <GroupedQuantitationResult StudyVariable_ref="groupA"> 
+                                 <Param measure_ref="" value="" unit=""/> 
+                                 <Param ratio_ref="" value=""/> 
+                         </GroupedQuantitationResult> 
+                         <GroupedQuantitationResult StudyVariable_ref="groupB"> 
+                                 <Param measure_ref="" value="" unit=""/> 
+                                 <Param ratio_ref="" value=""/> 
+                         </GroupedQuantitationResult>
+                         <QuantitationResult assay_ref="QU_A_1"> 
+                                 <Param measure_ref="" value="" unit=""/> 
+                                 <Param ratio_ref="" value=""/> 
+                         </QuantitationResult>  -->
+                         <QuantProteinDetectionHypothesis id="PDH_1">                                  
+                                 
+                                 <IdentificationRef id_ref="PDH_APLP_DROME_0" file_ref="F981131.mzid"/> 
+                                 <!-- do we need more than one? if no, it should be in QuantProteinDetectionHypothesis --> 
+                                 <!-- <GroupedQuantitationResult StudyVariable_ref="groupA"> 
+                                         <Param measure_ref="" value="" unit=""/> 
+                                         <Param ratio_ref="" value=""/> 
+                                 </GroupedQuantitationResult> -->
+                                 <QuantitationResult assay_ref="assay_1"> 
+                                         <MeasureParam measure_ref="" value="" unit=""/> 
+                                         <RatioParam ratio_ref="protein_ratio_id_1" value="0.911"> 
+                                                 
+                                                 <cvParam name="SD(geo)" value="1.097"/>
+										 	<cvParam name="num_peps_used" value="2"/>
+										 </RatioParam>
+                                         <Param ratio_ref="protein_ratio_id_2" value="1.432"> 
+										 	<cvParam name="SD(geo)" value="1.596"/>
+										 	<cvParam name="num_peps_used" value="2"/>
+										 </Param>
+                                         <Param ratio_ref="protein_ratio_id_3" value="1.799"> 
+										 	<cvParam name="SD(geo)" value="1.466"/>
+										 	<cvParam name="num_peps_used" value="2"/>
+										 </Param>
+                                 </QuantitationResult>
+                                 <PeptideRefs> 
+                                         <PeptideRef peptide_ref="pep1"/> 
+                                         <PeptideRef peptide_ref="pep2"/> 
+                                         <PeptideRef peptide_ref="pep3"/> 
+                                 </PeptideRefs> 
+                         </QuantProteinDetectionHypothesis> 
+                 </QuantProteinAmbiguityGroup> 
+         </ProteinList> 
+         <!-- **************** --> 
+         <!-- PEPTIDE LIST --> 
+         <!-- **************** --> 
+         <PeptideList> 
+                 <Peptide id="pep1" ref="PE_66_1_APLP_DROME_0_2993_3000"> <!-- need fileref here and not above for multiple files -->
+                         <PeptideSequence>ACDIALAK</PeptideSequence>
+                         <modifications/> 
+<!--                     <GroupedQuantitationResult StudyVariable_ref="groupA"> 
+                                 <Param measure_ref="" value="" unit=""/> 
+                                 <Param ratio_ref="" value=""/> 
+                         </GroupedQuantitationResult> -->
+                         <QuantitationResult assay_ref="assay_1"> 
+                                 <Param measure_ref="" value="" unit=""/> 
+                                 <Param ratio_ref="peptide_ratio_id_1" value="1.012"/> 
+                                 <Param ratio_ref="peptide_ratio_id_2" value="1.264"/> 
+                                 <Param ratio_ref="peptide_ratio_id_3" value="2.384"/> 
+                         </QuantitationResult> 
+                 </Peptide> 
+                 <Peptide id="pep2" ref="PE_77_2_APLP_DROME_0_1371_1377"> <!-- need fileref here and not above for multiple files -->
+                         <sequence "VTQWILK"/> 
+                         <modifications /> 
+                         <QuantitationResult assay_ref="assay_1"> 
+                                 <Param measure_ref="" value="" unit=""/> 
+                                 <Param ratio_ref="peptide_ratio_id_1" value="0.831"/> 
+                                 <Param ratio_ref="peptide_ratio_id_2" value="2.520"/> 
+                                 <Param ratio_ref="peptide_ratio_id_3" value="3.069"/> 
+                         </QuantitationResult> 
+                 </Peptide> 
+                 <Peptide id="pep3" ref="PE_2_2_APLP_DROME_0_919_923"> <!-- need fileref here and not above for multiple files -->
+                         <sequence "AIALK"/> 
+                         <modifications /> 
+                         <QuantitationResult assay_ref="assay_1"> 
+                                 <Param measure_ref="" value="" unit=""/> 
+                                 <Param ratio_ref="peptide_ratio_id_1" value="-47.830"> 
+								 	<cvParam name="Rejected">
+								 </Param>
+                                 <Param ratio_ref="peptide_ratio_id_2" value="-64.400"/> 
+								 	<cvParam name="Rejected">
+								 </Param>
+                                 <Param ratio_ref="peptide_ratio_id_3" value="-66.800"/> 
+								 	<cvParam name="Rejected">
+								 </Param>
+                         </QuantitationResult> 
+                 </Peptide> 
+         </PeptideList> 
+         <StudyVariables> 
+                 <StudyVariable id="groupingA_1" name="groupA"> 
+                         <QuantitationUnits> 
+                                 <QuantitationUnit ref="QU_A_1"/> 
+                                 <QuantitationUnit ref="QU_A_2"/> 
+                                 <QuantitationUnit ref="QU_A_3"/> 
+                         </QuantitationUnits> 
+                 </StudyVariable> 
+                 <StudyVariable id="groupingA_2" name="groupA"> 
+                         <QuantitationUnits> 
+                                 <QuantitationUnit ref="QU_A_4"/> 
+                                 <QuantitationUnit ref="QU_A_5"/> 
+                                 <QuantitationUnit ref="QU_A_6"/> 
+                         </QuantitationUnits> 
+                 </StudyVariable> 
+         </StudyVariables> 
+         <Assays> 
+                 <Assay id="assay1"> 
+                         <RawFiles> 
+                                 <!-- multiple raw files in case of pre-fractionation --> 
+                                 <RawFile id="rawfile1" name="denisef28QSTARcor.mgf" description="I seem have lost it..."/> 
+                                 <!-- mzML, raw --> 
+                         </RawFiles> 
+                         <QuantitationUnits> 
+                                 <!-- several quantitationUnits only if there are labels in a single RUN --> 
+                                 <QuantitationUnit id="quant_unit_id_114" name="114 / control"> 
+                                         <Label> 
+                                                 <!-- optional if labelfree --> 
+                                                 <cvParam name="iTRAQ114"/> 
+                                                 <Modification>iTRAQ4Plex</Modification> 
+                                         </Label> 
+                                 </QuantitationUnit> 
+                                 <QuantitationUnit id="quant_unit_id_115" name="115 / 3 hours"> 
+                                         <Label> 
+                                                 <!-- optional if labelfree --> 
+                                                 <cvParam name="iTRAQ115"/> 
+                                                 <Modification>iTRAQ4Plex</Modification> 
+                                         </Label> 
+                                 </QuantitationUnit> 
+                                 <QuantitationUnit id="quant_unit_id_116" name="116 / after drug"> 
+                                         <Label> 
+                                                 <!-- optional if labelfree --> 
+                                                 <cvParam name="iTRAQ116"/> 
+                                                 <Modification>iTRAQ4Plex</Modification> 
+                                         </Label> 
+                                 </QuantitationUnit> 
+                                 <QuantitationUnit id="quant_unit_id_117" name="117 / dead"> 
+                                         <Label> 
+                                                 <!-- optional if labelfree --> 
+                                                 <cvParam name="iTRAQ117"/> 
+                                                 <Modification>iTRAQ4Plex</Modification> 
+                                         </Label> 
+                                 </QuantitationUnit> 
+                         </QuantitationUnits> 
+                         <Identification> 
+						   <Filename="F981131.mzid" />
+			      		</Identification>
+                 </Assay> 
+         </Assays> 
+          
+         <!-- PROTOCOL --> 
+         <Protocol> 
+                 <Type id="" description=""> 
+                         <!-- CV for reporter, precursor, also defining intra/inter-sample --> 
+                         <subtype/> 
+                         <!-- SILAC, iTRAQ, TMT --> 
+                 </Type> 
+                 <Ratio id="peptide_ratio_id_1" name="115/114" description="3 hours / control" operator=""> 
+                         <Units/> 
+                         <Numerator> 
+                                 <QuantitationUnitRef id="quantUnitId_1_1" ref="quant_unit_id_115" operator="none"/> 
+                         </Numerator> 
+                         <Denominator> 
+                                 <QuantitationUnitRef id="quantUnitId_1_2" ref="quant_unit_id_114" operator="none"/> 
+						 </Denominator>
+                 </Ratio> 
+                 <Ratio id="peptide_ratio_id_2" name="116/114" description="after drug / control" operator=""> 
+                         <Units/> 
+                         <Numerator> 
+                                 <QuantitationUnitRef id="quantUnitId_2_1" ref="quant_unit_id_116" operator="none"/> 
+                         </Numerator> 
+                         <Denominator> 
+                                 <QuantitationUnitRef id="quantUnitId_2_2" ref="quant_unit_id_114" operator="none"/> 
+						 </Denominator>
+                 </Ratio> 
+                 <Ratio id="peptide_ratio_id_3" name="117/114" description="dead / control" operator=""> 
+                         <Units/>  
+                         <Numerator> 
+                                 <QuantitationUnitRef id="quantUnitId_3_1" ref="quant_unit_id_117" operator="none"/> 
+                         </Numerator> 
+                         <Denominator> 
+                                 <QuantitationUnitRef id="quantUnitId_3_2" ref="quant_unit_id_114" operator="none"/> 
+						 </Denominator>
+                 </Ratio> 
+                 <Ratio id="protein_ratio_id_1" name="115/114" description="3 hours / control (weighted average)" operator=""> 
+				 		<cvParam name="Weighted average" />
+                         <Units/> 
+                         <Numerator> 
+                                 <QuantitationUnitRef id="quantUnitId_1_1" ref="quant_unit_id_115" operator="none"/> 
+                         </Numerator> 
+                         <Denominator> 
+                                 <QuantitationUnitRef id="quantUnitId_1_2" ref="quant_unit_id_114" operator="none"/> 
+						 </Denominator>
+                 </Ratio> 
+                 <Ratio id="protein_ratio_id_2" name="116/114" description="after drug / control (weighted average)" operator=""> 
+				 		<cvParam name="Weighted average" />
+                         <Units/> 
+                         <Numerator> 
+                                 <QuantitationUnitRef id="quantUnitId_2_1" ref="quant_unit_id_116" operator="none"/> 
+                         </Numerator> 
+                         <Denominator> 
+                                 <QuantitationUnitRef id="quantUnitId_2_2" ref="quant_unit_id_114" operator="none"/> 
+						 </Denominator>
+                 </Ratio> 
+                 <Ratio id="protein_ratio_id_3" name="117/114" description="dead / control (weighted average)" operator=""> 
+				 		<cvParam name="Weighted average" />
+                         <Units/>  
+                         <Numerator> 
+                                 <QuantitationUnitRef id="quantUnitId_3_1" ref="quant_unit_id_117" operator="none"/> 
+                         </Numerator> 
+                         <Denominator> 
+                                 <QuantitationUnitRef id="quantUnitId_3_2" ref="quant_unit_id_114" operator="none"/> 
+						 </Denominator>
+                 </Ratio> 
+                 <cvParam name="Min_number_pep_per_prot value" value="2"/> 
+				 <cvParam name="reporterTolerance" value="0.1" units="Da" />
+                 <Normalization> 
+                         <cvParam/> 
+                 </Normalization> 
+                 <SoftwareRef/> 
+                 <SoftwareParams> 
+                         <!-- software specific parameters --> 
+                         <cvParams/> 
+                 </SoftwareParams> 
+         </Protocol> 
+ </mzQuantML> 
+ 

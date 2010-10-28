@@ -21,7 +21,9 @@ ProtocolList (definitions of how measures or ratios are calculated, for example 
 The optional quant values at PAG, PDH or PeptideLevel can be given for single QuantUnits or for StudyVariables (i.e. groups of replicates), and these can be single measures of abundance (plus associated stats) or ratios of abundance (plus associated stats). 
 
 -->
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 mzQuantML_0_1_modified.xsd">
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../schema/mzQuantML_0_1.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
 	<!-- ********* -->
 	<!-- PROTEIN LIST -->
 	<!-- ********* -->
@@ -302,7 +304,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 	<!-- **************** -->
 	<PeptideList>
 		<Peptide id="L3_P25665_pep4_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -315,7 +317,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep6_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -328,7 +330,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep7_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -341,7 +343,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep8_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -354,7 +356,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep9_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -367,7 +369,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep10_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -380,7 +382,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep11_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -393,7 +395,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep12_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -406,7 +408,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep13_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -419,7 +421,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep20_TODO">
-			<peptideSequence>VHNPAVEK</peptideSequence>
+			<PeptideSequence>VHNPAVEK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -432,7 +434,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep21_TODO">
-			<peptideSequence>VHNPAVEK</peptideSequence>
+			<PeptideSequence>VHNPAVEK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -445,7 +447,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep22_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -458,7 +460,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep23_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -471,7 +473,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep24_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -484,7 +486,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep32_TODO">
-			<peptideSequence>VHNPAVEKR</peptideSequence>
+			<PeptideSequence>VHNPAVEKR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -497,7 +499,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep33_TODO">
-			<peptideSequence>VHNPAVEKR</peptideSequence>
+			<PeptideSequence>VHNPAVEKR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -510,7 +512,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep34_TODO">
-			<peptideSequence>DDVAELHKR</peptideSequence>
+			<PeptideSequence>DDVAELHKR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -523,7 +525,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep35_TODO">
-			<peptideSequence>DDVAELHKR</peptideSequence>
+			<PeptideSequence>DDVAELHKR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -536,7 +538,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep36_TODO">
-			<peptideSequence>KGNLDANNYR</peptideSequence>
+			<PeptideSequence>KGNLDANNYR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="1" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -549,7 +551,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep37_TODO">
-			<peptideSequence>KGNLDANNYR</peptideSequence>
+			<PeptideSequence>KGNLDANNYR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="1" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -562,7 +564,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep38_TODO">
-			<peptideSequence>KGNLDANNYR</peptideSequence>
+			<PeptideSequence>KGNLDANNYR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="1" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -575,7 +577,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep39_TODO">
-			<peptideSequence>KGNLDANNYR</peptideSequence>
+			<PeptideSequence>KGNLDANNYR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -588,7 +590,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide> 		
 		<Peptide id="L3_P25665_pep40_TODO">
-			<peptideSequence>KGNLDANNYR</peptideSequence>
+			<PeptideSequence>KGNLDANNYR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=1/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L3">
@@ -601,7 +603,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep1_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -614,7 +616,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep2_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -627,7 +629,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep3_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -640,7 +642,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep4_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -653,7 +655,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep5_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -666,7 +668,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep6_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -679,7 +681,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep7_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -692,7 +694,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep8_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -705,7 +707,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep9_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -718,7 +720,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep10_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -731,7 +733,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep11_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -744,7 +746,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep21_TODO">
-			<peptideSequence>SWFAFALQK</peptideSequence>
+			<PeptideSequence>SWFAFALQK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="9" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -757,7 +759,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep22_TODO">
-			<peptideSequence>SWFAFALQK</peptideSequence>
+			<PeptideSequence>SWFAFALQK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="9" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -770,7 +772,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep23_TODO">
-			<peptideSequence>SWFAFALQK</peptideSequence>
+			<PeptideSequence>SWFAFALQK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="9" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -783,7 +785,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep24_TODO">
-			<peptideSequence>SWFAFALQK</peptideSequence>
+			<PeptideSequence>SWFAFALQK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="9" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -796,7 +798,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep29_TODO">
-			<peptideSequence>LWVNPDCGLK</peptideSequence>
+			<PeptideSequence>LWVNPDCGLK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="9" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -809,7 +811,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep30_TODO">
-			<peptideSequence>LWVNPDCGLK</peptideSequence>
+			<PeptideSequence>LWVNPDCGLK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="10" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L5">
@@ -822,7 +824,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep7_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -835,7 +837,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep8_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -848,7 +850,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep9_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -861,7 +863,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep10_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -874,7 +876,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep11_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -887,7 +889,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep12_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -900,7 +902,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep13_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -913,7 +915,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep14_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -926,7 +928,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep15_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -939,7 +941,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep16_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -952,7 +954,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep17_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -965,7 +967,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep18_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -978,7 +980,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep19_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -991,7 +993,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep20_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1004,7 +1006,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep21_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1017,7 +1019,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep22_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1030,7 +1032,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep23_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1043,7 +1045,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep29_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1056,7 +1058,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>	
 		<Peptide id="L6_P25665_pep30_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1069,7 +1071,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>	
 		<Peptide id="L6_P25665_pep31_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1082,7 +1084,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep32_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1095,7 +1097,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>	
 		<Peptide id="L6_P25665_pep33_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1108,7 +1110,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>	
 		<Peptide id="L6_P25665_pep34_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L6">
@@ -1121,7 +1123,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep7_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1134,7 +1136,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep8_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1147,7 +1149,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep9_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1160,7 +1162,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep10_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1173,7 +1175,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep11_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1186,7 +1188,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep12_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1199,7 +1201,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep13_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1212,7 +1214,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep14_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1225,7 +1227,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep15_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1238,7 +1240,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep16_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1251,7 +1253,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep17_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1264,7 +1266,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep18_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1277,7 +1279,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep19_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1290,7 +1292,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep20_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1303,7 +1305,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep21_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1316,7 +1318,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep22_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1329,7 +1331,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep23_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1342,7 +1344,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep24_TODO">
-			<peptideSequence>TGIAEHIK</peptideSequence>
+			<PeptideSequence>TGIAEHIK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1355,7 +1357,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep33_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1368,7 +1370,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep34_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1381,7 +1383,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep35_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1394,7 +1396,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep36_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1407,7 +1409,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep37_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1420,7 +1422,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep38_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1433,7 +1435,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep39_TODO">
-			<peptideSequence>DDVAELHK</peptideSequence>
+			<PeptideSequence>DDVAELHK</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1446,7 +1448,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep40_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1459,7 +1461,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep41_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1472,7 +1474,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep42_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1485,7 +1487,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep43_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1498,7 +1500,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep44_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1511,7 +1513,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep45_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1524,7 +1526,7 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep46_TODO">
-			<peptideSequence>VKGEQFDR</peptideSequence>
+			<PeptideSequence>VKGEQFDR</PeptideSequence>
 			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>  
 			<!--Maybe <Misscleavage count=0/> -->
 			<GroupedQuantitationResult study_variable_ref="LH_L7">
@@ -1734,7 +1736,9 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 					<!-- OR studyVariables <StudyVariablesRef></StudyVariablesRef> -->
 				</Denominator>
 			</Ratio>
-			<Measurement/>
+			<Measurement>
+				<cvParam cvRef="" accession="" name=""/>
+			</Measurement>
 		</Protocol>
 	</ProtocolList>
 </mzQuantML>

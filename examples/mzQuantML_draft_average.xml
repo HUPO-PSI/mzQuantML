@@ -1,7 +1,7 @@
 <!------------------>
 <!-- PROTEIN LIST -->
 <!------------------>
-<ProteinList>
+<ProteinList> 
 	<protein AccesionRef=""><!--link to mzIdentML-->
 		<groupReference ref="groupA">
 			<mean_abundance>

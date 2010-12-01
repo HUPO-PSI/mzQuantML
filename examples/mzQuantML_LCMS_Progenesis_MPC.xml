@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../schema/mzQuantML_0_1.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+
+	<!-- ********* -->
+	<!-- PROTEIN LIST -->
+	<!-- ********* -->
+	<ProteinList>
+		<QuantProteinAmbiguityGroup>
+			<IdentificationRef id_ref="PAG_1"/>
+			<QuantProteinDetectionHypothesis>
+				<IdentificationRef id_ref="PDH_1"/> <!-- glycogenphosphorylase, P00489 -->
+				<GroupedQuantitationResult study_variable_ref="concentration 100">
+					<MeasureParam measure_ref="Mean normalized abundance" value="1525913.304"/>
+				</GroupedQuantitationResult>
+				<PeptideRefs>
+					<PeptideRef peptide_ref="pep1"/>
+					<PeptideRef peptide_ref="pep2"/>
+					<!-- 21 more peptides -->
+				</PeptideRefs>
+			</QuantProteinDetectionHypothesis>
+		</QuantProteinAmbiguityGroup>
+	</ProteinList>
+	<!-- **************** -->
+	<!-- PEPTIDE LIST -->
+	<!-- **************** -->
+	<PeptideList>
+		<Peptide id="pep1">
+			<PeptideSequence>YGNPWEK</PeptideSequence> <!-- Progenesis-Feature-ID: 467 -->
+			<GroupedQuantitationResult study_variable_ref="concentration 100">
+				<MeasureParam measure_ref="mean normalized abundance" value="30012.15113"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult assay_ref="Conc100TechRep1">
+				<MeasureParam measure_ref="normalized abundance" value="25946.94764"/>
+			</QuantitationResult>
+			<!-- TODO uncomment! QuantitationResult assay_ref="Conc100TechRep2">
+				<MeasureParam measure_ref="normalized abundance" value="29289.34633"/>
+			</QuantitationResult -->
+			<!-- three more technical replicates -->
+		</Peptide>
+		<Peptide id="pep2">
+			<PeptideSequence>VEDVDRLDQR</PeptideSequence> <!-- Progenesis-Feature-ID: 2497 -->
+			<GroupedQuantitationResult study_variable_ref="concentration 100">
+				<MeasureParam measure_ref="mean normalized abundance" value="5517.47644"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult assay_ref="Conc100TechRep1">
+				<MeasureParam measure_ref="normalized abundance" value="4879.41599"/>
+			</QuantitationResult>
+			<!-- TODO uncomment! QuantitationResult assay_ref="Conc100TechRep2">
+				<MeasureParam measure_ref="normalized abundance" value="5190.37319"/>
+			</QuantitationResult -->
+			<!-- three more technical replicates -->
+		</Peptide>
+	</PeptideList>
+
+	<AssayList>
+		<Assay id="Conc100TechRep1">
+			<RawFiles>
+				<RawFile id="rawfile0" name="Conc100TechRep1.raw"/>
+			</RawFiles>
+			<QuantitationUnits>
+				<QuantitationUnit id="Conc100TechRep1"/>
+			</QuantitationUnits>
+		</Assay>
+		<Assay id="Conc100TechRep2">
+			<RawFiles>
+				<RawFile id="rawfile1" name="Conc100TechRep2.raw"/>
+			</RawFiles>
+			<QuantitationUnits>
+				<QuantitationUnit id="Conc100TechRep2"/>
+			</QuantitationUnits>
+		</Assay>
+	</AssayList>
+
+	<StudyVariableList>
+		<!-- conditions -->
+		<StudyVariable id="Conc100" name="concentration 100">
+			<QuantitationUnitRefs>
+				<QuantitationUnitRef ref="Conc100TechRep1"/>
+				<QuantitationUnitRef ref="Conc100TechRep2"/>
+			</QuantitationUnitRefs>
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"/>
+		</StudyVariable>
+	</StudyVariableList>
+
+	<ProtocolList>
+		<Protocol>
+			<!-- GroupedQuantitationResult values -->
+			<Measurement id="mean normalized abundance">
+				<cvParam accession="MS:0000003" name="study variable" cvRef="PSI-MS"/>
+			</Measurement>
+			<Measurement id="normalized abundance">
+				<cvParam accession="MS:0000004" name="study variable" cvRef="PSI-MS"/>
+			</Measurement>
+		</Protocol>
+	</ProtocolList>
+	
+	<FeatureList>
+		<Feature FeatureID="AlignedFeature467" RT="44.30835" intensity="1.08E+05" MZ="447.2437" DataProcessingRef="ProgenesisFeatureDetection" hierarchyCvRef="aligned LC-MS runs">
+			<masstraces>
+				<masstrace MZstart="447.0801" MZstop="447.3698" RTstart="42.971" RTstop="45.638" />
+				<masstrace MZstart="447.6596" MZstop="447.8301" RTstart="42.971" RTstop="45.265"/>
+				<masstrace MZstart="448.0943" MZstop="448.367" RTstart="42.971" RTstop="45.265"/>
+				<masstrace MZstart="448.6483" MZstop="448.8699" RTstart="42.971" RTstop="45.265"/>
+			</masstraces>
+			<featureChildren>
+				<featureRef>TechRep1Feature467</featureRef>
+				<featureRef>TechRep2Feature467</featureRef>
+			</featureChildren>
+		</Feature>
+		<Feature FeatureID="TechRep1Feature467" RT="44.30835" intensity="21573" MZ="447.2437" DataProcessingRef="ProgenesisFeatureDetection" hierarchyCvRef="single LC-MS run" AssayRef="Conc100TechRep1">
+			<!-- masstraces not accessible in Progenesis 3.0 GUI or exports, to be added later -->
+		</Feature>
+		<Feature FeatureID="TechRep2Feature467" RT="44.30835" intensity="25849" MZ="447.2437" DataProcessingRef="ProgenesisFeatureDetection" hierarchyCvRef="single LC-MS run" AssayRef="Conc100TechRep2">
+			<!-- masstraces not accessible in Progenesis 3.0 GUI or exports, to be added later -->
+		</Feature>
+	</FeatureList>
+	
+	<DataProcessingList>
+		<dataProcessing id="ProgenesisFeatureDetection">
+			<processingMethod>
+				<userParam name="Progenesis (child of QuantSoftware)"/>
+				<userParam name="filter"/>
+				<userParam name="normalization yes"/>
+				<!-- TODO: collect all Progenesis parameters -->
+			</processingMethod>
+		</dataProcessing>
+	</DataProcessingList>
+
+	<!--  <AnalysisSoftwareList>
+    <AnalysisSoftware id="AS_progenesis_lcms" name="Progenesis LC-MS" version="3.0" URI="http://www.nonlinear.com/" >
+      <ContactRole Contact_ref="ORG_MSL">
+        <role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001207" name="Progenesis LC-MS" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>-->
+</mzQuantML>

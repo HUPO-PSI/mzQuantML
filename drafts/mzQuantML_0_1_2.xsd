@@ -318,7 +318,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Reference for any identifications of peptides linked with this feature - a link to an mzIdentML</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="UserParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 		<xsd:attribute name="id" use="required"/>
 		<xsd:attribute name="value" use="required"/>

@@ -11,7 +11,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:element name="ProteinList" type="ProteinListType"/>
 				<xsd:element name="PeptideList" type="PeptideListType"/>
 				<xsd:element name="AssayList" type="AssayListType"/>
-				<xsd:element name="ExperimentalValuesList" type="ExperimentalValueListType"/>
+				<xsd:element name="FeatureList" type="FeatureListType"/>
 				<xsd:element name="QuantificationsList" type="QuantificationsType"/>
 				<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="0"/>
 			</xsd:sequence>
@@ -290,14 +290,27 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="QuantitationUnitType">
 		<xsd:sequence>
-			<xsd:element name="cvParam" type="cvParamType">
-				<xsd:annotation>
-					<xsd:documentation>The type of agglomeration (i.e. mathematical operation) and  of ExperimentalValues (e.g. Phenotypic, biological replicate, time points etc.)</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="ExperimentalValueRef" maxOccurs="unbounded">
+			<xsd:element name="FeatureReferences">
 				<xsd:complexType>
-					<xsd:attribute name="ref" type="xsd:string" use="required"/>
+					<xsd:sequence>
+						<xsd:element name="GroupedFeatureRefs" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="cvParam" type="cvParamType">
+										<xsd:annotation>
+											<xsd:documentation>The type of agglomeration (i.e. mathematical operation) and  of ExperimentalValues (e.g. Phenotypic, biological replicate, time points etc.)</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+								<xsd:attribute name="FeatureRefs" type="xsd:IDREFS"/>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="cvParam" type="cvParamType">
+							<xsd:annotation>
+								<xsd:documentation>The type of agglomeration (i.e. mathematical operation) and  of ExperimentalValues (e.g. Phenotypic, biological replicate, time points etc.)</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
 			<xsd:element name="IdentificationReferences" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded">
@@ -314,7 +327,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	<xsd:complexType name="LabelType">
 		<xsd:sequence>
 			<xsd:element name="cvParam" type="cvParamType" minOccurs="0"/>
-			<xsd:element name="Modification" type="ModParamType"/>
+			<xsd:element name="Modification" type="ModParamType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="ProtocolListType">
@@ -377,41 +390,27 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:complexType name="ExperimentalValueListType">
+	<xsd:complexType name="FeatureListType">
 		<xsd:sequence>
-			<xsd:element name="ExperimentalValue" type="ExperimentalValueType" maxOccurs="unbounded"/>
+			<xsd:element name="Feature" type="FeatureType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="ExperimentalValueType">
+	<xsd:complexType name="FeatureType">
 		<xsd:complexContent>
 			<xsd:extension base="PeakType">
 				<xsd:sequence>
-					<xsd:element name="Feature" minOccurs="0" maxOccurs="unbounded">
+					<xsd:element name="masstrace" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
-							<xsd:documentation>If ExperimentalValue is no simple peak, feature related elements can be recorded.</xsd:documentation>
+							<xsd:documentation>Each masstrace has a start and a end point in each RT and MZ dimension. </xsd:documentation>
 						</xsd:annotation>
 						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="masstrace" maxOccurs="unbounded">
-									<xsd:annotation>
-										<xsd:documentation>Each masstrace has a start and a end point in each RT and MZ dimension. </xsd:documentation>
-									</xsd:annotation>
-									<xsd:complexType>
-										<xsd:attribute name="RTstart" type="xsd:double" use="required"/>
-										<xsd:attribute name="RTstop" type="xsd:double" use="required"/>
-										<xsd:attribute name="MZstart" type="xsd:double" use="required"/>
-										<xsd:attribute name="MZstop" type="xsd:double" use="required"/>
-									</xsd:complexType>
-								</xsd:element>
-								<xsd:element name="featureRef" type="xsd:IDREF" minOccurs="0" maxOccurs="unbounded">
-									<xsd:annotation>
-										<xsd:documentation>A feature might  emerge from other ExperimentalValues (e.g. a feature)</xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-							</xsd:sequence>
+							<xsd:attribute name="RTstart" type="xsd:double" use="required"/>
+							<xsd:attribute name="RTstop" type="xsd:double" use="required"/>
+							<xsd:attribute name="MZstart" type="xsd:double" use="required"/>
+							<xsd:attribute name="MZstop" type="xsd:double" use="required"/>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="IdentificationReference" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded">
+					<xsd:element name="IdentificationReferences" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
 							<xsd:documentation>Reference for any identifications of peptides linked with this feature - a link to an mzIdentML</xsd:documentation>
 						</xsd:annotation>
@@ -604,6 +603,15 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="referenceableParamGroupRef" type="ReferenceableParamGroupRefType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="cvParam" type="CVParamType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FeatureGroupType">
+		<xsd:annotation>
+			<xsd:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this mzQuantML file (paramGroupRef).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="referenceableParamGroupRef" type="ReferenceableParamGroupRefType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="cvParam" type="CVParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="ReferenceableParamGroupType">

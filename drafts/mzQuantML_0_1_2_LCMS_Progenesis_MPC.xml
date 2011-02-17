@@ -32,9 +32,9 @@
 			<QuantitationResult assay_refs="Conc100TechRep1">
 				<MeasureParam measure_ref="normalized abundance" value="25946.94764"/>
 			</QuantitationResult>
-			<QuantitationResult assay_ref="Conc100TechRep2">
+			<!--QuantitationResult assay_ref="Conc100TechRep2">
 				<MeasureParam measure_ref="normalized abundance" value="29289.34633"/>
-			</QuantitationResult>
+			</QuantitationResult -->
 			<!-- three more technical replicates -->
 		</Peptide>
 		<Peptide id="pep2">

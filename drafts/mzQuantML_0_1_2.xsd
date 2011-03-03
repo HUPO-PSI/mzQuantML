@@ -12,6 +12,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:element name="PeptideList" type="PeptideListType"/>
 				<xsd:element name="AssayList" type="AssayListType"/>
 				<xsd:element name="FeatureList" type="FeatureListType"/>
+				<xsd:element name="StudyVariableList" type="StudyVariableListType"/>
 				<xsd:element name="QuantificationsList" type="QuantificationsType"/>
 				<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="0"/>
 			</xsd:sequence>
@@ -20,6 +21,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	<xsd:complexType name="cvListType">
 		<xsd:sequence>
 			<xsd:element name="cv" type="cvType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="StudyVariableListType">
+		<xsd:sequence>
+			<xsd:element name="StudyVariable" type="StudyVariableType"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="cvType" abstract="false">
@@ -201,23 +207,19 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>This needs more work, the groupings may be illogical, may want to group ratios at StudyVariable level rather than just quantitation units</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="PeakType">
 				<xsd:sequence>
 					<xsd:element name="cvParam" type="cvParamType">
 						<xsd:annotation>
 							<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:choice>
-						<xsd:element name="QuantitationUnitRefs" type="QuantitationUnitRefsType"/>
-						<xsd:element name="StudyVariableRefs" type="StudyVariableRefsType"/>
-					</xsd:choice>
+					<xsd:sequence>
+						<xsd:element name="assay_ref" type="xsd:IDREF" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+					</xsd:sequence>
+
 				</xsd:sequence>
 				<xsd:attribute name="id" use="required"/>
 				<xsd:attribute name="name"/>
-			</xsd:extension>
-		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="QuantitationUnitRefsType"/>
 	<xsd:complexType name="AssayListType">

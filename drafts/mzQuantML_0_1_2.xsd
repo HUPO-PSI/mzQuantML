@@ -131,6 +131,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	<xsd:complexType name="RatioParamType">
 		<xsd:attribute name="value" type="xsd:string"/>
 		<xsd:attribute name="ratio_ref" type="xsd:string"/>
+		<xsd:attribute name="study_variable_numerator_ref" type="xsd:IDREF"></xsd:attribute>
+		<xsd:attribute name="study_variable_denominator_ref" type="xsd:IDREF"></xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="IdentificationRefType">
 		<xsd:attribute name="id_ref" type="xsd:string"/>

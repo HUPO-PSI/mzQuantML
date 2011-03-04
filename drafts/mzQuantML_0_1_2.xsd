@@ -8,6 +8,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	<xsd:element name="mzQuantML">
 		<xsd:complexType>
 			<xsd:sequence>
+				<xsd:element name="cvList" type="cvListType"></xsd:element>
 				<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0">
 					<xsd:annotation>
 						<xsd:documentation>The list of all proteins quantified. This element should always be provided unless there is only quantification of peptides.</xsd:documentation>
@@ -53,7 +54,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="StudyVariableListType">
 		<xsd:sequence>
-			<xsd:element name="StudyVariable" type="StudyVariableType"></xsd:element>
+			<xsd:element name="StudyVariable" type="StudyVariableType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="cvType" abstract="false">

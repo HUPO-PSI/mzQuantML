@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by Oliver Kohlbacher (Universität Tübingen) -->
 <!--
-mzIdentML version 1.0.0
+mzQuantML version 1.0.0
 Distributed under the Creative Commons license http://creativecommons.org/licenses/by/2.0/.
 -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xmlns:psi-pi="http://psidev.info/psi/pi/mzQuantML/0.1" targetNamespace="http://psidev.info/psi/pi/mzQuantML/0.1" elementFormDefault="qualified" version="0.1">
 	<xsd:element name="mzQuantML">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="ProteinList" type="ProteinListType"/>
-				<xsd:element name="PeptideList" type="PeptideListType"/>
-				<xsd:element name="AssayList" type="AssayListType"/>
-				<xsd:element name="FeatureList" type="FeatureListType"/>
-				<xsd:element name="StudyVariableList" type="StudyVariableListType"/>
-				<xsd:element name="QuantificationsList" type="QuantificationsType"/>
-				<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="0"/>
+				<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>The list of all proteins quantified. This element should always be provided unless there is only quantification of peptides.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="PeptideList" type="PeptideListType">
+					<xsd:annotation>
+						<xsd:documentation>The list of all peptides quantified.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AssayList" type="AssayListType">
+					<xsd:annotation>
+						<xsd:documentation>The list of assays represented by the file, where each assay captures the concept of one experimental run - this can be one or more raw files.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="StudyVariableList" type="StudyVariableListType">
+					<xsd:annotation>
+						<xsd:documentation>The list of experimental conditions used to group results.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="FeatureList" type="FeatureListType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>The list of features quantified from raw files</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="QuantificationsList" type="QuantificationsType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>The list of quantified values or ratios calculated from the features.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Data processing steps used to create the results</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -74,23 +102,26 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="GroupedQuantitationResult" type="GroupedQuantitationResultType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="QuantitationResult" type="QuantitationResultType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="PeptideRefs" type="PeptideRefsType" minOccurs="0"/>
+			<xsd:element name="QuantPeptideRefs" type="QuantPeptideRefsType" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:string"/>
 	</xsd:complexType>
 	<xsd:complexType name="GroupedQuantitationResultType">
 		<xsd:sequence>
-			<xsd:element name="MeasureParam" type="MeasureParamType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="RatioParam" type="RatioParamType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GroupMeasureParam" type="GroupMeasureParamType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GroupRatioParam" type="GroupRatioParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
-		<xsd:attribute name="study_variable_ref" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="QuantitationResultType">
 		<xsd:sequence>
 			<xsd:element name="MeasureParam" type="MeasureParamType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="RatioParam" type="RatioParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
-		<xsd:attribute name="assay_refs" type="xsd:IDREFS"/>
+		<xsd:attribute name="Assay_ref" type="xsd:IDREF">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the assay that this quantitation</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="GlobalQuantitationResultType">
 		<xsd:annotation>
@@ -122,44 +153,67 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="measure_ref">
+		<xsd:attribute name="QuantMeasurement_ref" type="xsd:IDREF">
 			<xsd:annotation>
-				<xsd:documentation>Reference to the measure definition in the Protocol</xsd:documentation>
+				<xsd:documentation>Reference to the QuantMeasurement element that provides the evidence trail for this measurement. If the QuantitationsList is present, this attribute MUST provided.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:complexType name="RatioParamType">
-		<xsd:attribute name="value" type="xsd:string"/>
-		<xsd:attribute name="ratio_ref" type="xsd:string"/>
-		<xsd:attribute name="study_variable_numerator_ref" type="xsd:IDREF"></xsd:attribute>
-		<xsd:attribute name="study_variable_denominator_ref" type="xsd:IDREF"></xsd:attribute>
+	<xsd:complexType name="GroupMeasureParamType">
+		<xsd:annotation>
+			<xsd:documentation>An extension of MeasureParamType to refer to the StudyVariable</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="MeasureParamType">
+				<xsd:attribute name="StudyVariable_ref"></xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>		
+	</xsd:complexType>
+	<xsd:complexType name="RatioParamType">		
+		<xsd:attribute name="value" type="xsd:double"/>
+		<xsd:attribute name="Ratio_ref" type="xsd:IDREF" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the Ratio element in the QuantificationsList. If a QuantificationList is provided, this attribute MUST be completed.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="GroupRatioParamType">
+		<xsd:annotation>
+			<xsd:documentation>An extension of RatioParamType to allow the study variables of the numerator and denominator to be referenced</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="RatioParamType">
+				<xsd:attribute name="StudyVariableNumerator_ref" type="xsd:IDREF"/>
+				<xsd:attribute name="StudyVariableDenominator_ref" type="xsd:IDREF"/>
+			</xsd:extension>
+		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="IdentificationRefType">
 		<xsd:attribute name="id_ref" type="xsd:string"/>
 		<xsd:attribute name="file_ref" type="xsd:string"/>
 	</xsd:complexType>
-	<xsd:complexType name="PeptideRefsType">
+	<xsd:complexType name="QuantPeptideRefsType">
 		<xsd:sequence>
-			<xsd:element name="PeptideRef" maxOccurs="unbounded">
+			<xsd:element name="QuantPeptideRef" maxOccurs="unbounded">
 				<xsd:complexType>
-					<xsd:attribute name="peptide_ref" type="xsd:string"/>
+					<xsd:attribute name="ref" type="xsd:string"/>
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="PeptideListType">
 		<xsd:sequence>
-			<xsd:element name="Peptide" type="PeptideType" maxOccurs="unbounded"/>
+			<xsd:element name="Peptide" type="QuantPeptideType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="PeptideType">
+	<xsd:complexType name="QuantPeptideType">
 		<xsd:sequence>
 			<xsd:element name="PeptideSequence" type="sequence">
 				<xsd:annotation>
 					<xsd:documentation> The amino acid sequence of the (poly)peptide. If a substitution modification has been found, the original sequence should be reported. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="IdentificationReferences" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Reference for any identifications of peptides - a link to an mzIdentML</xsd:documentation>
 				</xsd:annotation>
@@ -200,9 +254,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="QuantificationsType">
 		<xsd:sequence>
-			<xsd:element name="QuantitationUnits" type="QuantitationUnitsType"/>
+			<xsd:element name="QuantMeasurements" type="QuantMeasurementsType"/>
 			<xsd:element name="Ratio" type="RatioType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="Measurement" type="MeasurementType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="StudyVariableType">
@@ -212,23 +265,30 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:sequence>
 					<xsd:element name="cvParam" type="cvParamType">
 						<xsd:annotation>
-							<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc.</xsd:documentation>
+							<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc. and references to all the assays that are part of this study variable</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:sequence>
-						<xsd:element name="assay_ref" type="xsd:IDREF" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+						<xsd:element name="AssayRef" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Reference to the assay that is part of this study variable</xsd:documentation>
+							</xsd:annotation>							
+							<xsd:complexType>
+								<xsd:attribute name="Assay_ref" type="xsd:string" use="required">
+								</xsd:attribute>
+							</xsd:complexType>
+						</xsd:element>
 					</xsd:sequence>
-
 				</xsd:sequence>
 				<xsd:attribute name="id" use="required"/>
 				<xsd:attribute name="name"/>
 	</xsd:complexType>
-	<xsd:complexType name="QuantitationUnitRefsType"/>
+	<xsd:complexType name="QuantMeasurementRefsType"/>
 	<xsd:complexType name="AssayListType">
 		<xsd:sequence>
 			<xsd:element name="Assay" type="AssayType" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Describes a experimental setup (e.g. with the channel mapping in iTRAQ)</xsd:documentation>
+					<xsd:documentation>Describes a single experimental run (e.g. with the channel mapping in iTRAQ), which could constitute multiple raw files e.g. if pre-separation steps have occurred</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
@@ -242,9 +302,16 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="DataProcessingOrderElement">
+							<xsd:annotation>
+								<xsd:documentation>TODO: Consider renaming to DataProcessingStep? ARJ comment - unclear to me if this is the right place within the Assay, the same raw file could be </xsd:documentation>
+							</xsd:annotation>
 							<xsd:complexType>
 								<xsd:attribute name="rank" use="required"/>
-								<xsd:attribute name="DataprocessingRef" type="xsd:IDREF" use="required"/>
+								<xsd:attribute name="DataProcessing_ref" type="xsd:IDREF" use="required">
+									<xsd:annotation>
+										<xsd:documentation>Reference to a data processing step</xsd:documentation>
+									</xsd:annotation>
+								</xsd:attribute>
 							</xsd:complexType>
 						</xsd:element>
 					</xsd:sequence>
@@ -260,10 +327,16 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:attribute name="name" type="xsd:string"/>
 	</xsd:complexType>
 	<xsd:complexType name="RawFilesType">
+		<xsd:annotation>
+			<xsd:documentation>All raw files that constitute this Assay.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="RawFile" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A raw mass spectrometry output file that has been analysed e.g. in mzML format. The same raw file can be referenced in multiple assays, for example if it contains multiple samples differentially labelled or tagged. </xsd:documentation>
+				</xsd:annotation>
 				<xsd:complexType>
-					<xsd:attribute name="id" type="xsd:string" use="required"/>
+					<xsd:attribute name="location" type="xsd:anyURI" use="required"/>
 					<xsd:attribute name="name" type="xsd:string"/>
 				</xsd:complexType>
 			</xsd:element>
@@ -277,24 +350,33 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
             Note: Unclear at what level references to identication should be, may be at PAG, PDH, Peptide or Assay level or potentially all - this is to be resolved</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
-					<xsd:attribute name="id" type="xsd:string" use="required"/>
+					<xsd:attribute name="location" type="xsd:anyURI" use="required">
+						<xsd:annotation>
+							<xsd:documentation>
+								The location of the identification file that corresponds to this assay e.g. in mzIdentML format
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:attribute>
 					<xsd:attribute name="name" type="xsd:string"/>
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="QuantitationUnitsType">
+	<xsd:complexType name="QuantMeasurementsType">
 		<xsd:sequence>
-			<xsd:element name="QuantitationUnit" type="QuantitationUnitType" maxOccurs="unbounded">
+			<xsd:element name="QuantMeasurement" type="QuantMeasurementType" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>This is a entity to calculate with or to report (might also be the 'agglomeration' of one Value)</xsd:documentation>
+					<xsd:documentation>This represent calculations made from one or more features that may be referenced in the PeptideList or ProteinList</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="QuantitationUnitType">
+	<xsd:complexType name="QuantMeasurementType">
 		<xsd:sequence>
 			<xsd:element name="FeatureReferences">
+				<xsd:annotation>
+					<xsd:documentation>One or more Features from which the QuantMeasurement value was defined</xsd:documentation>
+				</xsd:annotation>
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="GroupedFeatureRefs" maxOccurs="unbounded">
@@ -306,7 +388,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 										</xsd:annotation>
 									</xsd:element>
 								</xsd:sequence>
-								<xsd:attribute name="FeatureRefs" type="xsd:IDREFS"/>
+								<xsd:attribute name="FeatureRefs" type="xsd:IDREF"/>
 							</xsd:complexType>
 						</xsd:element>
 						<xsd:element name="cvParam" type="cvParamType">
@@ -317,16 +399,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="IdentificationReferences" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>Reference for any identifications of peptides linked with this feature - a link to an mzIdentML</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
-		<xsd:attribute name="id" use="required"/>
-		<xsd:attribute name="value" use="required"/>
-		<xsd:attribute name="name"/>
+		<xsd:attribute name="id" use="required" type="xsd:ID"/>
+		<xsd:attribute name="value" use="required" type="xsd:double"/>
+		<xsd:attribute name="name" type="xsd:string"/>
 	</xsd:complexType>
 	<xsd:complexType name="LabelType">
 		<xsd:sequence>
@@ -348,7 +425,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="Numerator">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="QuantitationUnitRef" maxOccurs="unbounded">
+						<xsd:element name="QuantMeasurementRef" maxOccurs="unbounded">
 							<xsd:complexType>
 								<xsd:attribute name="ref" type="xsd:string" use="required"/>
 							</xsd:complexType>
@@ -359,7 +436,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="Denominator">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="QuantitationUnitRef" maxOccurs="unbounded">
+						<xsd:element name="QuantMeasurementRef" maxOccurs="unbounded">
 							<xsd:complexType>
 								<xsd:attribute name="ref" type="xsd:string" use="required"/>
 							</xsd:complexType>
@@ -372,10 +449,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="NumeratorType">
 		<xsd:choice>
-			<xsd:element name="QuantitationUnitRefs" type="QuantitationUnitRefsType"/>
+			<xsd:element name="QuantMeasurementRefs" type="QuantMeasurementRefsType"/>
 			<xsd:element name="StudyVariableRefs" type="StudyVariableRefsType"/>
 		</xsd:choice>
-		<xsd:attribute name="mathematical_operation">
+		<xsd:attribute name="mathematical_operation" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>
           This would be restricted to basics e.g. sum, multiplication etc !! In fact, this probably needs to be more complicated to define
@@ -386,9 +463,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="DenominatorType">
 		<xsd:choice>
-			<xsd:element name="QuantitationUnitRefs" type="QuantitationUnitRefsType"/>
+			<xsd:element name="QuantMeasurementRefs" type="QuantMeasurementRefsType"/>
 		</xsd:choice>
-		<xsd:attribute name="mathematical_operation">
+		<xsd:attribute name="mathematical_operation" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>This would be restricted to basics e.g. sum, multiplication etc</xsd:documentation>
 			</xsd:annotation>
@@ -400,6 +477,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="FeatureType">
+		<xsd:annotation>
+			<xsd:documentation>A region on an MS1 mass spectrum that has been quantified. If quantitative values are extracted from MS2 spectra e.g. in iTRAQ, then the MS1 Feature is included here in multiple copies, with the different quantitative values in the value attribute</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="PeakType">
 				<xsd:sequence>
@@ -413,11 +493,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 							<xsd:attribute name="MZstart" type="xsd:double" use="required"/>
 							<xsd:attribute name="MZstop" type="xsd:double" use="required"/>
 						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="IdentificationReferences" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded">
-						<xsd:annotation>
-							<xsd:documentation>Reference for any identifications of peptides linked with this feature - a link to an mzIdentML</xsd:documentation>
-						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
 				</xsd:sequence>
@@ -447,17 +522,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="MeasurementType">
-		<xsd:sequence>
-			<xsd:element name="cvParam" type="cvParamType"/>
-			<xsd:element name="QuantitationUnitRef" maxOccurs="unbounded">
-				<xsd:complexType>
-					<xsd:attribute name="ref" type="xsd:string" use="required"/>
-				</xsd:complexType>
-			</xsd:element>
-		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:string"/>
 	</xsd:complexType>
 	<xsd:group name="ParamGroup">
 		<xsd:choice>

@@ -1,46 +1,50 @@
 <mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../drafts/mzQuantML_0_1_2.xsd">
+	<cvList>
+		<cv  id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
 	<ProteinList>
 		<QuantProteinAmbiguityGroup id="PAG_1">
 			<IdentificationRef id_ref="A0A393" file_ref="file_with_protein_identifications_of_merged_mgfs"/>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="2"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
-				<MeasureParam QuantMeasurement_ref="StrictMean" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="LooseMean" value="1.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="1.5" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="1.3333333"/>
 			</QuantitationResult>
 			<GlobalQuantitationResult>
-				<MeasureParam QuantMeasurement_ref="StrictMean" value="4" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="LooseMean" value="2.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="4" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="2.5" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="1.6"/>
 			</GlobalQuantitationResult>
 			<QuantProteinDetectionHypothesis id="PDH_1">
 				<IdentificationRef id_ref="A0A393" file_ref="file_with_protein_identifications_of_merged_mgfs"/>
 				<GroupedQuantitationResult>
-					<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
 					<GroupRatioParam value="0.2"/>
 				</GroupedQuantitationResult>
 				<GroupedQuantitationResult>
-					<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
 					<GroupRatioParam value="0.4"/>
 				</GroupedQuantitationResult>
 				<GroupedQuantitationResult>
-					<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.7" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.7" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
 					<GroupRatioParam value="0.7"/>
 				</GroupedQuantitationResult>
 				<QuantitationResult Assay_ref="mgf1">
-					<MeasureParam QuantMeasurement_ref="PeptideSpectrumMatchCountPerProtein" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-					<MeasureParam QuantMeasurement_ref="NormalizedPeptideSpectrumMatchCount" value="0.9" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="QM_PSM_COUNT" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="0.9" unitAccession="" unitName="" unitCvRef="UO"/>
 				</QuantitationResult>
 				<QuantitationResult Assay_ref="mgf25">
-					<MeasureParam QuantMeasurement_ref="PeptideSpectrumMatchCountPerProtein" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
-					<MeasureParam QuantMeasurement_ref="NormalizedPeptideSpectrumMatchCount" value="2.3" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="QM_PSM_COUNT" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="2.3" unitAccession="" unitName="" unitCvRef="UO"/>
 				</QuantitationResult>
 				<QuantPeptideRefs>
 					<QuantPeptideRef ref="pep1"/>
@@ -52,23 +56,23 @@
 			<IdentificationRef id_ref="idref1" file_ref="C:\ms\mzident\identification1.mzid"/>
 			<IdentificationRef id_ref="idref2" file_ref="C:\ms\mzident\identification2.mzid"/>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.6" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.6" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.75"/>
 			</GroupedQuantitationResult>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.25"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
-				<MeasureParam QuantMeasurement_ref="StrictMean" value="1.0" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="LooseMean" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="1.0" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="1.25"/>
 			</QuantitationResult>
 			<QuantitationResult Assay_ref="mgf2">
-				<MeasureParam QuantMeasurement_ref="StrictMean" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="LooseMean" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="0.5"/>
 			</QuantitationResult>
 			<QuantPeptideRefs>
@@ -85,23 +89,23 @@
 				<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
 			</Modification>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.2"/>
 			</GroupedQuantitationResult>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.4"/>
 			</GroupedQuantitationResult>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.6" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.6" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="8" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.75"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
-				<MeasureParam QuantMeasurement_ref="SpectrumCountPerPeptideWithMods" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="NormalizedPeptideSpectrumMatchCount" value="0.9" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_COUNT_MODS" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="0.9" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="1.111111111"/>
 			</QuantitationResult>
 		</Peptide>
@@ -112,23 +116,23 @@
 				<cvParam accession="MOD:00398" name="carbamoylated residue" cvRef="PSI-MOD"/>
 			</Modification>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.3" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.3" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.3"/>
 			</GroupedQuantitationResult>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.5" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.5"/>
 			</GroupedQuantitationResult>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="StrictMean" value="0.5" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="LooseMean" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="0.25"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
-				<MeasureParam QuantMeasurement_ref="SpectrumCountPerPeptideWithMods" value="2.0" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="NormalizedPeptideSpectrumMatchCount" value="2.1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_COUNT_MODS" value="2.0" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="2.1" unitAccession="" unitName="" unitCvRef="UO"/>
 			</QuantitationResult>
 		</Peptide>
 	</PeptideList>
@@ -197,7 +201,6 @@
 			<AssayRef Assay_ref="mgf16"/>
 			<AssayRef Assay_ref="mgf21"/>
 		</StudyVariable>
-		<!--
 		<StudyVariable id="concentrationOfSpikeIn_50" name="concentrationOfSpikeIn">
 			<cvParam accession="" name="disease experimental condition group" cvRef="PSI-MS"/>
 			<AssayRef Assay_ref="mgf2"/>
@@ -206,7 +209,6 @@
 			<AssayRef Assay_ref="mgf17"/>
 			<AssayRef Assay_ref="mgf22"/>
 		</StudyVariable>
-		-->
 	</StudyVariableList>
 	<FeatureList>
 		<Feature MZ="3.14159" intensity="100.0" id="FEAT_1" RT="10.567">
@@ -228,7 +230,7 @@
 	</FeatureList>
 	<QuantificationsList>
 		<QuantMeasurements>
-			<QuantMeasurement id="StrictMean" value="10.5" name="Quant_Unit1">
+			<QuantMeasurement id="QM_STRICT" value="10.5" name="StrictMean">
 				<FeatureReferences>
 					<GroupedFeatureRefs>
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -240,7 +242,7 @@
 				</FeatureReferences>
 				<userParam name="treat missings like zero"/>
 			</QuantMeasurement>
-			<QuantMeasurement id="LooseMean" value="12.3" name="Quant_Unit2">
+			<QuantMeasurement id="QM_LOOSE" value="12.3" name="LooseMean">
 				<FeatureReferences>
 					<GroupedFeatureRefs>
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -249,7 +251,7 @@
 				</FeatureReferences>
 				<userParam name="leave out missings"/>
 			</QuantMeasurement>
-			<QuantMeasurement id="PeptideSpectrumMatchCountPerProtein" value="5.6" name="Quant_Unit3">
+			<QuantMeasurement id="QM_PSM_COUNT" value="5.6" name="PeptideSpectrumMatchCountPerProtein">
 				<FeatureReferences>
 					<GroupedFeatureRefs>
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -257,7 +259,7 @@
 					<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 				</FeatureReferences>
 			</QuantMeasurement>
-			<QuantMeasurement id="NormalizedPeptideSpectrumMatchCount" value="5.6" name="Quant_Unit3">
+			<QuantMeasurement id="QM_NORM_PSM_COUNT" value="5.6" name="NormalizedPeptideSpectrumMatchCount">
 				<FeatureReferences>
 					<GroupedFeatureRefs>
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -265,7 +267,7 @@
 					<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 				</FeatureReferences>
 			</QuantMeasurement>
-			<QuantMeasurement id="SpectrumCountPerPeptideWithMods" value="5.6" name="Quant_Unit3">
+			<QuantMeasurement id="QM_COUNT_MODS" value="5.6" name="SpectrumCountPerPeptideWithMods">
 				<FeatureReferences>
 					<GroupedFeatureRefs>
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -274,7 +276,7 @@
 				</FeatureReferences>
 			</QuantMeasurement>
 		</QuantMeasurements>
-		<Ratio id="Ratio1">
+		<Ratio id="RAT_1">
 			<Numerator>
 				<QuantMeasurementRef ref="QU1"/>
 				<QuantMeasurementRef ref="QU3"/>
@@ -283,7 +285,7 @@
 				<QuantMeasurementRef ref="QU2"/>
 			</Denominator>
 		</Ratio>
-		<Ratio id="Ratio2">
+		<Ratio id="RAT_2">
 			<Numerator>
 				<QuantMeasurementRef ref="QU1"/>
 			</Numerator>
@@ -291,7 +293,7 @@
 				<QuantMeasurementRef ref="QU2"/>
 			</Denominator>
 		</Ratio>
-		<Ratio id="Ratio3">
+		<Ratio id="RAT_3">
 			<Numerator>
 				<QuantMeasurementRef ref="QU1"/>
 			</Numerator>
@@ -299,7 +301,7 @@
 				<QuantMeasurementRef ref="QU2"/>
 			</Denominator>
 		</Ratio>
-		<Ratio id="Ratio4">
+		<Ratio id="RAT_4">
 			<Numerator>
 				<QuantMeasurementRef ref="QU1"/>
 			</Numerator>
@@ -314,7 +316,7 @@
 				<!--
 				<referenceableParamGroupRef ref="RefParGroup1"/>
 				<referenceableParamGroupRef ref="RefParGroup2"/>
-				<cvParam accession="MS:1001486" name="data filtering" value="" cvRef="PSI-MS"/>
+				<cvParam accession="MS:1001486" name="data filtering" cvRef="PSI-MS" value=""/>
 				-->
 				<userParam name="myParam1"/>
 			</processingMethod>

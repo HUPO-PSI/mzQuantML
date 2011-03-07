@@ -8,7 +8,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	<xsd:element name="mzQuantML">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="cvList" type="cvListType"></xsd:element>
+				<xsd:element name="cvList" type="cvListType"/>
 				<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0">
 					<xsd:annotation>
 						<xsd:documentation>The list of all proteins quantified. This element should always be provided unless there is only quantification of peptides.</xsd:documentation>
@@ -49,7 +49,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:element>
 	<xsd:complexType name="cvListType">
 		<xsd:sequence>
-			<xsd:element name="cv" type="cvType"/>
+			<xsd:element name="cv" type="cvType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="StudyVariableListType">
@@ -166,11 +166,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="MeasureParamType">
-				<xsd:attribute name="StudyVariable_ref"></xsd:attribute>
+				<xsd:attribute name="StudyVariable_ref"/>
 			</xsd:extension>
-		</xsd:complexContent>		
+		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="RatioParamType">		
+	<xsd:complexType name="RatioParamType">
 		<xsd:attribute name="value" type="xsd:double"/>
 		<xsd:attribute name="Ratio_ref" type="xsd:IDREF" use="optional">
 			<xsd:annotation>
@@ -263,26 +263,25 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>This needs more work, the groupings may be illogical, may want to group ratios at StudyVariable level rather than just quantitation units</xsd:documentation>
 		</xsd:annotation>
-				<xsd:sequence>
-					<xsd:element name="cvParam" type="cvParamType">
-						<xsd:annotation>
-							<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc. and references to all the assays that are part of this study variable</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:sequence>
-						<xsd:element name="AssayRef" maxOccurs="unbounded">
-							<xsd:annotation>
-								<xsd:documentation>Reference to the assay that is part of this study variable</xsd:documentation>
-							</xsd:annotation>							
-							<xsd:complexType>
-								<xsd:attribute name="Assay_ref" type="xsd:string" use="required">
-								</xsd:attribute>
-							</xsd:complexType>
-						</xsd:element>
-					</xsd:sequence>
-				</xsd:sequence>
-				<xsd:attribute name="id" use="required"/>
-				<xsd:attribute name="name"/>
+		<xsd:sequence>
+			<xsd:element name="cvParam" type="cvParamType">
+				<xsd:annotation>
+					<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc. and references to all the assays that are part of this study variable</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:sequence>
+				<xsd:element name="AssayRef" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>Reference to the assay that is part of this study variable</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:attribute name="Assay_ref" type="xsd:string" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:sequence>
+		<xsd:attribute name="id" use="required"/>
+		<xsd:attribute name="name"/>
 	</xsd:complexType>
 	<xsd:complexType name="QuantMeasurementRefsType"/>
 	<xsd:complexType name="AssayListType">
@@ -402,8 +401,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
-		<xsd:attribute name="id" use="required" type="xsd:ID"/>
-		<xsd:attribute name="value" use="required" type="xsd:double"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="value" type="xsd:double" use="required"/>
 		<xsd:attribute name="name" type="xsd:string"/>
 	</xsd:complexType>
 	<xsd:complexType name="LabelType">

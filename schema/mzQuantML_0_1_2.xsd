@@ -171,7 +171,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="RatioParamType">
-		<xsd:attribute name="value" type="xsd:double"/>
+		<xsd:attribute name="value" type="xsd:double" use="required"/>
 		<xsd:attribute name="Ratio_ref" type="xsd:IDREF" use="optional">
 			<xsd:annotation>
 				<xsd:documentation>Reference to the Ratio element in the QuantificationsList. If a QuantificationList is provided, this attribute MUST be completed.</xsd:documentation>
@@ -388,7 +388,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 										</xsd:annotation>
 									</xsd:element>
 								</xsd:sequence>
-								<xsd:attribute name="FeatureRefs" type="xsd:IDREF"/>
+								<xsd:attribute name="FeatureRefs" type="xsd:IDREF" use="required"/>
 							</xsd:complexType>
 						</xsd:element>
 						<xsd:element name="cvParam" type="cvParamType">
@@ -445,7 +445,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:string"/>
+		<xsd:attribute name="id" type="xsd:ID"/>
 	</xsd:complexType>
 	<xsd:complexType name="NumeratorType">
 		<xsd:choice>
@@ -668,82 +668,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this mzQuantML file (paramGroupRef).</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="referenceableParamGroupRef" type="ReferenceableParamGroupRefType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="cvParam" type="CVParamType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="cvParam" type="cvParamType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="FeatureGroupType">
-		<xsd:annotation>
-			<xsd:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this mzQuantML file (paramGroupRef).</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="referenceableParamGroupRef" type="ReferenceableParamGroupRefType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="cvParam" type="CVParamType" minOccurs="0" maxOccurs="unbounded"/>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="ReferenceableParamGroupType">
-		<xsd:annotation>
-			<xsd:documentation>A collection of CVParam and UserParam elements that can be referenced from elsewhere in this mzQuantML document by using the 'paramGroupRef' element in that location to reference the 'id' attribute value of this element.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="cvParam" type="CVParamType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
-		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required">
-			<xsd:annotation>
-				<xsd:documentation>The identifier with which to reference this ReferenceableParamGroup.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-	</xsd:complexType>
-	<xsd:complexType name="ReferenceableParamGroupRefType">
-		<xsd:annotation>
-			<xsd:documentation>A reference to a previously defined ParamGroup, which is a reusable container of one or more cvParams.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:attribute name="ref" type="xsd:IDREF" use="required">
-			<xsd:annotation>
-				<xsd:documentation>Reference to the id attribute in a referenceableParamGroup.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-	</xsd:complexType>
-	<xsd:complexType name="CVParamType">
-		<xsd:annotation>
-			<xsd:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:attribute name="cvRef" type="xsd:IDREF" use="required">
-			<xsd:annotation>
-				<xsd:documentation>A reference to the CV 'id' attribute as defined in the cvList in this mzQuantML file.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="accession" type="xsd:string" use="required">
-			<xsd:annotation>
-				<xsd:documentation>The accession number of the referred-to term in the named resource (e.g.: MS:000012).</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="value" type="xsd:string" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="name" type="xsd:string" use="required">
-			<xsd:annotation>
-				<xsd:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="unitAccession" type="xsd:string" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="unitName" type="xsd:string" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="unitCvRef" type="xsd:IDREF" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this mzQuantML file.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-	</xsd:complexType>
+
 </xsd:schema>

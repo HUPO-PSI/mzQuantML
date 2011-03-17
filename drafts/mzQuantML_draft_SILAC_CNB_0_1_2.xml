@@ -22,21 +22,21 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 
 -->
 <mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../drafts/mzQuantML_0_1_2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
 	<!-- ********* -->
 	<!-- PROTEIN LIST -->
 	<!-- ********* -->
 	<ProteinList>
 		<QuantProteinAmbiguityGroup>
 			<IdentificationRef id_ref="P25665_TODO" file_ref="L3.xls"/>
-			<!-- replicates average. If we have more than one replicate. Otherwise, it will contain the same result than QuantProteinDetectionHypothesis item --> 
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+			<!-- replicates average. If we have more than one replicate. Otherwise, it will contain the same result than QuantProteinDetectionHypothesis item -->
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<RatioParam value="0.99" ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.99"/>
 			</QuantitationResult>
 			<GlobalQuantitationResult>
 				<MeasureParam/>
@@ -44,53 +44,45 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</GlobalQuantitationResult>
 			<QuantProteinDetectionHypothesis>
 				<IdentificationRef id_ref="P25665_TODO" file_ref="L3.xls"/>
-				<GroupedQuantitationResult study_variable_ref="LH_L3">
-					<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+				<GroupedQuantitationResult>
 				</GroupedQuantitationResult>
-				<QuantitationResult assay_refs="SILAC_CNB_L3">
-					<RatioParam value="0.99" ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH"/>
+				<QuantitationResult Assay_ref="SILAC_CNB_L3">
+					<RatioParam value="0.99"/>
 				</QuantitationResult>
-				<PeptideRefs>
-					<PeptideRef peptide_ref="L3_P25665_pep4_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep5_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep6_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep7_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep8_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep9_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep10_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep11_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep12_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep13_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep20_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep21_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep22_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep23_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep24_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep32_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep33_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep34_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep35_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep36_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep37_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep38_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep39_TODO"/>
-					<PeptideRef peptide_ref="L3_P25665_pep40_TODO"/>
-				</PeptideRefs>
+				<QuantPeptideRefs>
+					<QuantPeptideRef ref="L3_P25665_pep4_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep5_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep6_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep7_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep8_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep9_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep10_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep11_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep12_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep13_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep20_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep21_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep22_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep23_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep24_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep32_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep33_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep34_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep35_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep36_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep37_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep38_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep39_TODO"/>
+					<QuantPeptideRef ref="L3_P25665_pep40_TODO"/>
+				</QuantPeptideRefs>
 			</QuantProteinDetectionHypothesis>
 		</QuantProteinAmbiguityGroup>
 		<QuantProteinAmbiguityGroup>
 			<IdentificationRef id_ref="P25665_TODO" file_ref="L5.xls"/>
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<RatioParam value="0.7" ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L5">
+				<RatioParam value="0.7"/>
 			</QuantitationResult>
 			<GlobalQuantitationResult>
 				<MeasureParam/>
@@ -98,46 +90,38 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</GlobalQuantitationResult>
 			<QuantProteinDetectionHypothesis>
 				<IdentificationRef file_ref="P25665_TODO" id_ref="L5.xls"/>
-				<GroupedQuantitationResult study_variable_ref="LH_L5">
-					<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+				<GroupedQuantitationResult>
 				</GroupedQuantitationResult>
-				<QuantitationResult assay_refs="SILAC_CNB_L5">
-					<RatioParam value="0.7" ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH"/>
+				<QuantitationResult Assay_ref="SILAC_CNB_L5">
+					<RatioParam value="0.7"/>
 				</QuantitationResult>
-				<PeptideRefs>
-					<PeptideRef peptide_ref="L5_P25665_pep1_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep2_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep3_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep4_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep5_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep6_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep7_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep8_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep9_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep10_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep11_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep21_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep22_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep23_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep24_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep29_TODO"/>
-					<PeptideRef peptide_ref="L5_P25665_pep30_TODO"/>
-				</PeptideRefs>
+				<QuantPeptideRefs>
+					<QuantPeptideRef ref="L5_P25665_pep1_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep2_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep3_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep4_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep5_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep6_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep7_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep8_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep9_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep10_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep11_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep21_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep22_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep23_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep24_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep29_TODO"/>
+					<QuantPeptideRef ref="L5_P25665_pep30_TODO"/>
+				</QuantPeptideRefs>
 			</QuantProteinDetectionHypothesis>
 		</QuantProteinAmbiguityGroup>
 		<QuantProteinAmbiguityGroup>
 			<IdentificationRef id_ref="P25665_TODO" file_ref="L6.xls"/>
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<RatioParam value="3" ratio_ref="light_heavy_L6_GlucoseL_SuccinateH"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L6">
+				<RatioParam value="3"/>
 			</QuantitationResult>
 			<GlobalQuantitationResult>
 				<MeasureParam/>
@@ -145,51 +129,43 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</GlobalQuantitationResult>
 			<QuantProteinDetectionHypothesis>
 				<IdentificationRef file_ref="P25665_TODO" id_ref="L6.xls"/>
-				<GroupedQuantitationResult study_variable_ref="LH_L6">
-					<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+				<GroupedQuantitationResult>
 				</GroupedQuantitationResult>
-				<QuantitationResult assay_refs="SILAC_CNB_L6">
-					<RatioParam value="3" ratio_ref="light_heavy_L6_GlucoseL_SuccinateH"/>
+				<QuantitationResult Assay_ref="SILAC_CNB_L6">
+					<RatioParam value="3"/>
 				</QuantitationResult>
-				<PeptideRefs>
-					<PeptideRef peptide_ref="L6_P25665_pep7_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep8_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep9_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep10_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep11_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep12_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep13_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep14_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep15_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep16_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep17_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep18_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep19_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep20_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep21_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep22_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep23_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep30_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep31_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep32_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep33_TODO"/>
-					<PeptideRef peptide_ref="L6_P25665_pep34_TODO"/>
-				</PeptideRefs>
+				<QuantPeptideRefs>
+					<QuantPeptideRef ref="L6_P25665_pep7_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep8_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep9_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep10_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep11_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep12_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep13_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep14_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep15_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep16_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep17_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep18_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep19_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep20_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep21_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep22_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep23_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep30_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep31_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep32_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep33_TODO"/>
+					<QuantPeptideRef ref="L6_P25665_pep34_TODO"/>
+				</QuantPeptideRefs>
 			</QuantProteinDetectionHypothesis>
 		</QuantProteinAmbiguityGroup>
 		<QuantProteinAmbiguityGroup>
 			<IdentificationRef id_ref="P25665_TODO" file_ref="L7.xls"/>
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-				<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<RatioParam value="0.6" ratio_ref="light_heavy_L7_SuccinateL_GlycerolH"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L7">
+				<RatioParam value="0.6"/>
 			</QuantitationResult>
 			<GlobalQuantitationResult>
 				<MeasureParam/>
@@ -197,49 +173,45 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 			</GlobalQuantitationResult>
 			<QuantProteinDetectionHypothesis>
 				<IdentificationRef file_ref="P25665_TODO" id_ref="L7.xls"/>
-				<GroupedQuantitationResult study_variable_ref="LH_L7">
-					<MeasureParam value="" unitName="Mascot Score" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Seq. Coverage" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="Abs. Intensity" unitAccession="" unitCvRef="" measure_ref=""/>
-					<MeasureParam value="" unitName="S/N" unitAccession="" unitCvRef="" measure_ref=""/>
+				<GroupedQuantitationResult>
 				</GroupedQuantitationResult>
-				<QuantitationResult assay_refs="SILAC_CNB_L7">
-					<RatioParam value="0.6" ratio_ref="light_heavy_L7_SuccinateL_GlycerolH"/>
+				<QuantitationResult Assay_ref="SILAC_CNB_L7">
+					<RatioParam value="0.6"/>
 				</QuantitationResult>
-				<PeptideRefs>
-					<PeptideRef peptide_ref="L7_P25665_pep7_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep8_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep9_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep10_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep11_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep12_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep13_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep14_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep15_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep16_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep17_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep18_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep19_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep20_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep21_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep22_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep23_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep24_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep33_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep34_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep35_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep36_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep37_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep38_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep39_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep40_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep41_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep42_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep43_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep44_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep45_TODO"/>
-					<PeptideRef peptide_ref="L7_P25665_pep46_TODO"/>
-				</PeptideRefs>
+				<QuantPeptideRefs>
+					<QuantPeptideRef ref="L7_P25665_pep7_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep8_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep9_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep10_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep11_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep12_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep13_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep14_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep15_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep16_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep17_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep18_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep19_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep20_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep21_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep22_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep23_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep24_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep33_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep34_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep35_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep36_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep37_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep38_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep39_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep40_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep41_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep42_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep43_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep44_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep45_TODO"/>
+					<QuantPeptideRef ref="L7_P25665_pep46_TODO"/>
+				</QuantPeptideRefs>
 			</QuantProteinDetectionHypothesis>
 		</QuantProteinAmbiguityGroup>
 	</ProteinList>
@@ -249,1260 +221,350 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 	<PeptideList>
 		<Peptide id="L3_P25665_pep4_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.160987369"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<!-- Should we remove the measure param? This info is shown within features description.
--->
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="44320319.17"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="38174678.19"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.160987369"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep5_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="100"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2101529.497"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="NAN"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="100"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep6_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.025800065"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="149485381.4"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="145725650.2"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.025800065"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep7_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.766428727"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="8750380.076"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="11417082.59"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.766428727"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep8_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.881650815"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2913825.796"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="3304965.804"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam  value="0.881650815"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep9_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.281247398"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="4131314.66"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="14689254.69"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam  value="0.281247398"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep10_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.160987369"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="38174678.19"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="44320319.17"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.160987369"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep11_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.766428727"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="11417082.59"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="8750380.076"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.766428727"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep12_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.011351727"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="13110455.62"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="13259281.93"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam  value="1.011351727"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep13_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.973745891"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1354790.816"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1391318.647"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.973745891"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep20_TODO">
 			<PeptideSequence>VHNPAVEK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.275745722"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1037505.199"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1323592.819"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.275745722"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep21_TODO">
 			<PeptideSequence>VHNPAVEK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.275745722"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1037505.199"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1323592.819"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.275745722"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep22_TODO">
 			<PeptideSequence>DDVAELHK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.00611301"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2983565.766"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2965438.015"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.00611301"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep23_TODO">
 			<PeptideSequence>VKGEQFDR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.17347108"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="860099.0574"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1009301.37"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.17347108"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep24_TODO">
 			<PeptideSequence>VKGEQFDR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.17347108"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1009301.37"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="860099.0574"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.17347108"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep32_TODO">
 			<PeptideSequence>VHNPAVEKR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.883467026"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="4088081.591"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="4627316.55"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.883467026"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep33_TODO">
 			<PeptideSequence>VHNPAVEKR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.883467026"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="4627316.55"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="4088081.591"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.883467026"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep34_TODO">
 			<PeptideSequence>DDVAELHKR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.613505096"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="10302625.33"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="16623338.48"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.613505096"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep35_TODO">
 			<PeptideSequence>DDVAELHKR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.691677131"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2522696.071"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="4267587.252"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="1.691677131"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep36_TODO">
 			<PeptideSequence>KGNLDANNYR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="1" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.967164203"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="15903009.65"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="16442926.24"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam  value="0.967164203"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep37_TODO">
 			<PeptideSequence>KGNLDANNYR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="1" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.967164203"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="15903009.65"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="16442926.24"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.967164203"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L3_P25665_pep38_TODO">
 			<PeptideSequence>KGNLDANNYR</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="1" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="0.967164203"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="15903009.65"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="16442926.24"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L3_P25665_pep39_TODO">
-			<PeptideSequence>KGNLDANNYR</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.0339505917"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="16442926.24"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="15903009.65"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L3_P25665_pep40_TODO">
-			<PeptideSequence>KGNLDANNYR</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=1/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L3">
-				<RatioParam ratio_ref="light_heavy_L3_GlucoseL_vs_GlucoseH" value="1.228488263"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L3">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="69276078.01"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="56391322.63"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L3">
+				<RatioParam value="0.967164203"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep1_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.585075719"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2734625.322"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="4673968.227"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L5">
+				<RatioParam value="0.585075719"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep2_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.987252502"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2340740.339"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2370964.2"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L5">
+				<RatioParam value="0.987252502"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep3_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.783432422"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="6163051.818"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="7866730.612"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L5">
+				<RatioParam value="0.783432422"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L5_P25665_pep4_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.642602401"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="6345888.841"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="9875295.87"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep5_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.628735111"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="231519.7543"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="368230.9928"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep6_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.562694025"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="154620.2203"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="274785.6089"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep7_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="1.0129120"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2370964.2"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2340740.339"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep8_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="1.7091804823"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="4673968.227"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2734625.322"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep9_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="1.2764342806"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="7866730.612"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="6163051.818"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep10_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="1.77716477422"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="274785.6089"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="154620.2203"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep11_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="1.5904949187"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="368230.9928"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="231519.7543"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep21_TODO">
-			<PeptideSequence>SWFAFALQK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="9" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.551956927116424"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="23244128"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="42112213.58"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep22_TODO">
-			<PeptideSequence>SWFAFALQK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="9" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.589915920869536"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="4433820.17698888"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="7516020.53806825	"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep23_TODO">
-			<PeptideSequence>SWFAFALQK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="9" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.551956927"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="42112213.5824514"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="23244128.0030404"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep24_TODO">
-			<PeptideSequence>SWFAFALQK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="9" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.547869205505103"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="5078423.81484986"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2782312.02065999"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep29_TODO">
-			<PeptideSequence>LWVNPDCGLK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="9" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="0.616323585253063"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="37359527.847458"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="60616742.1487175"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L5_P25665_pep30_TODO">
-			<PeptideSequence>LWVNPDCGLK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="10" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L5">
-				<RatioParam ratio_ref="light_heavy_L5_GlycerolL_vs_GlucoseH" value="1.6225243108293511110726032008008"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L5">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="60616742.1487175"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="37359527.847458"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L5">
+				<RatioParam value="0.642602401"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep7_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.87643765684271"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="260848749.116348"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="90684652.4192239"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L6">
+				<RatioParam value="2.87643765684271"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep8_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="3.35200449236901"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="36074021.8039495"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="10761925.2557906"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L6">
+				<RatioParam value="3.35200449236901"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L6_P25665_pep9_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="3.77052825587234"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="680290.620429036"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="180423.159372836"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep10_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.18745333319048"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="47178639.6970858"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="21567838.2625307"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep11_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="3.9868985680197"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="75056801.900617"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="18825861.9124835"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep12_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.537677711205679"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="9993196.19253841"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="18585847.9610952"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep13_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.18982855161928"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="684565.315497183"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="312611.375438948"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep14_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.18982855161928"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="684565.315497183"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="312611.375438948"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep15_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.43259598305938"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="3627840.68219131"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1491345.33948737"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep16_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="5.78949684216721"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="844613.911735078"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="145887.273930857"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep17_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.74531893886501"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1263887.73807128"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="460379.20045596"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep18_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.45715260976171946105356647490066"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="21567838.2625307"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="47178639.6970858"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep19_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.29832895581931099631712546046314"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="10761925.2557906"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="36074021.8039495"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep20_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.25082153030462018412026954340435"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="18825861.9124835"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="75056801.900617"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep21_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.25407112753167532528618597871297"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1588852.65550218"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="6253574.22914609"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep22_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.41108347089447194219850286420219"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1491345.33948737"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="3627840.68219131"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep23_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.36425640235936571148045060617736"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="460379.20045596"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1263887.73807128"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep29_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="3.22062021829295"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="3517400.75398959"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1092150.11879108"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep30_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.90165204785767"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1324531.85504142"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="456475.081503773"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep31_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.31049919960138536877208853074964"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1092150.11879108"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="3517400.75398959"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep32_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="3.06580588316543"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="969922.82807504"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="316367.984483609"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep33_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="2.60792095493042"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="894554.52169909"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="343014.430712666"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L6_P25665_pep34_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L6">
-				<RatioParam ratio_ref="light_heavy_L6_GlucoseL_SuccinateH" value="0.38344720460543262765279862641852"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L6">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="343014.430712666"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="894554.52169909"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L6">
+				<RatioParam value="3.77052825587234"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep7_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.615767675903385"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="151826739.465613"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="246564971.50954"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L7">
+				<RatioParam value="0.615767675903385"/>
 			</QuantitationResult>
 		</Peptide>
 		<Peptide id="L7_P25665_pep8_TODO">
 			<PeptideSequence>TGIAEHIK</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF_xx"/>
 			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
 			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.560892568429662"/>
+			<GroupedQuantitationResult>
 			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="18477063.5921565"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="32942250.677143"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep9_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.525023836638678"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1286714.77654583"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2450774.01586883"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep10_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.419270949582531"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1163863.80064871"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2775922.82939606"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep11_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.564223401439812"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="12800994.8555465"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="22687812.7048264"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep12_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.602609066973629"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="11063295.3027679"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="18358992.4365543"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep13_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.466090392209113"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2046704.47686565"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="4391217.9076787"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep14_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.490632516339449"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1438334.13592624"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2931591.54362105"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep15_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.4990295760593829776321578161215"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1742862.95089873"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1162660.8165266"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep16_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.6239891100696583298233732547141"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="246564971.50954"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="151826739.465613"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep17_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.7828726146251368883442478315745"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="32942250.677143"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="18477063.5921565"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep18_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.9046754265524921956501559473322"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2450774.01586883"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1286714.77654583"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep19_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.9585118165812798577745478552026"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="16292637.9871662"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="8318886.74310179"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep20_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="2.8745173831873990838081483845085"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="6988886.08633554"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2431325.03814812"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep21_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.7595938010090362274385692045615"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="999447.675399291"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="567999.088668169"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep22_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="2.3850925063987910050858445644808"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2775922.82939606"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1163863.80064871"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep23_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="2.1455065727923151096486893694132"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="4391217.9076787"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2046704.47686565"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep24_TODO">
-			<PeptideSequence>TGIAEHIK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="2.0381853356579000687273272356261"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2931591.54362105"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1438334.13592624"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep33_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.674476838578817"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="459421.387738238"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="681152.207844942"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep34_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.616380360320678"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="10425995.7112372"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="16914873.3191514"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep35_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.673942300845551"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="459421.387738238"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2171294.75109885"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep36_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="8" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.819684792786042"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2496555.15322895"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="3045750.23862936"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep37_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.6223748587312874067755309675507"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="16914873.3191514"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="10425995.7112372"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep38_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.4838065495300797831480402836851"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2171294.75109885"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1463327.38036943"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep39_TODO">
-			<PeptideSequence>DDVAELHK</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="8" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.2199811547083620568023539372278"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="3045750.23862936"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2496555.15322895"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep40_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.539598919248893"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="2215806.04858177"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="4106394.52663491"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep41_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.591394670658665"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="949135.437113334"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="1604910.36562138"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep42_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<!--<Modification avgMassDelta="0.0" location="2" monoisotopicMassDelta="0.0" residues="K"/>  //No modification  -->
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="0.55701822259997"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="6696878.27699067"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="12022727.4535686"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep43_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.6909181797094170246101420486004"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="1604910.36562138"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="949135.437113334"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep44_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.3538196831861203199444421720695"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="477096.452626931"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="352407.679214796"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep45_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.8532283226066737971012450056782"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="4106394.52663491"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="2215806.04858177"/>
-			</QuantitationResult>
-		</Peptide>
-		<Peptide id="L7_P25665_pep46_TODO">
-			<PeptideSequence>VKGEQFDR</PeptideSequence>
-			<Modification avgMassDelta="7.9427" location="2" monoisotopicMassDelta="8.014199" residues="K"/>
-			<!--Maybe <Misscleavage count=0/> -->
-			<GroupedQuantitationResult study_variable_ref="LH_L7">
-				<RatioParam ratio_ref="light_heavy_L7_SuccinateL_GlycerolH" value="1.7952734029639874446040949318546"/>
-			</GroupedQuantitationResult>
-			<QuantitationResult assay_refs="SILAC_CNB_L7">
-				<MeasureParam measure_ref="TODO:EIC" unitAccession="" unitCvRef="" unitName="" value="12022727.4535686"/>
-				<!-- Maybe Quantunitref -->
-				<MeasureParam measure_ref="TODO:P_EIC" unitAccession="" unitCvRef="" unitName="" value="6696878.27699067"/>
+			<QuantitationResult Assay_ref="SILAC_CNB_L7">
+				<RatioParam value="0.560892568429662"/>
 			</QuantitationResult>
 		</Peptide>
 	</PeptideList>
-	<!--      -->
 	<AssayList>
 		<Assay id="SILAC_CNB_L3" name="L3_GlucoseL_GlucoseH">
 			<RawFiles>
-				<RawFile id="L3" name="L3_GlucoseL_vs_GlucoseH.mgf"/>
+				<RawFile location="C:\myfolder\myspectra\spectra\L3_GlucoseL_vs_GlucoseH.mgf" name="L3_GlucoseL_vs_GlucoseH.mgf"/>
 			</RawFiles>
 			<Label>
 				<cvParam name="SILAC_Light_Heavy" accession="" cvRef=""/>
@@ -1514,13 +576,13 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 				</Modification>
 			</Label>
 			<IdentificationFiles>
-				<IdentificationFile id=""/>
+				<IdentificationFile location="C:\myfolder\myids\L3_GlucoseL_vs_GlucoseH.mzid" name="L3_GlucoseL_vs_GlucoseH.mzid"/>
 			</IdentificationFiles>
 			<cvParam accession="" name="" cvRef="" value=""/>
 		</Assay>
 		<Assay id="SILAC_CNB_L5" name="L5_GlycerolL_GlucoseH">
 			<RawFiles>
-				<RawFile id="L5" name="L5_GlycerolL_vs_GlucoseH.mgf"/>
+				<RawFile location="C:\myfolder\myspectra\spectra\L5_GlycerolL_GlucoseH.mgf" name="L5_GlycerolL_GlucoseH.mgf"/>
 			</RawFiles>
 			<Label>
 				<cvParam name="SILAC_Light_Heavy" accession="" cvRef=""/>
@@ -1532,13 +594,13 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 				</Modification>
 			</Label>
 			<IdentificationFiles>
-				<IdentificationFile id=""/>
+				<IdentificationFile location="C:\myfolder\myids\L5_GlycerolL_GlucoseH.mzid" name="L5_GlycerolL_GlucoseH.mzid"/>
 			</IdentificationFiles>
 			<cvParam accession="" name="" cvRef="" value=""/>
 		</Assay>
 		<Assay id="SILAC_CNB_L6" name="L6_GlucoseL_SuccinateH">
 			<RawFiles>
-				<RawFile id="L6" name="L6_GlucoseL_vs_SuccinateH.mgf"/>
+				<RawFile location="C:\myfolder\myspectra\spectra\L6_GlucoseL_SuccinateH.mgf" name="L6_GlucoseL_SuccinateH.mgf"/>
 			</RawFiles>
 			<Label>
 				<cvParam name="SILAC_Light_Heavy" accession="" cvRef=""/>
@@ -1550,13 +612,13 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 				</Modification>
 			</Label>
 			<IdentificationFiles>
-				<IdentificationFile id=""/>
+				<IdentificationFile location="C:\myfolder\myids\L6_GlucoseL_SuccinateH.mzid" name="L6_GlucoseL_SuccinateH.mzid"/>
 			</IdentificationFiles>
 			<cvParam accession="" name="" cvRef="" value=""/>
 		</Assay>
 		<Assay id="SILAC_CNB_L7" name="L7_SuccinateL_GlycerolH">
 			<RawFiles>
-				<RawFile id="L7" name="L7_SuccinateL_vs_GlycerolH.mgf"/>
+				<RawFile location="C:\myfolder\myspectra\spectra\L7_SuccinateL_GlycerolH.mgf" name="L7_SuccinateL_GlycerolH.mgf"/>
 			</RawFiles>
 			<Label>
 				<cvParam name="SILAC_Light_Heavy" accession="" cvRef=""/>
@@ -1568,276 +630,210 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 				</Modification>
 			</Label>
 			<IdentificationFiles>
-				<IdentificationFile id=""/>
+				<IdentificationFile location="C:\myfolder\myids\L7_SuccinateL_GlycerolH.mzid" name="L7_SuccinateL_GlycerolH.mgf.mzid"/>
 			</IdentificationFiles>
 			<cvParam accession="" name="" cvRef="" value=""/>
 		</Assay>
 	</AssayList>
-	<!-- StudyVariableList: groupings of QuantUnits – for purposes of grouping replicate values at PAG, PDH or PeptideLevel; this model has some recognised flaws that need to be fixed) -->
-	<!--	<StudyVariableList>
+	<StudyVariableList>
 		<StudyVariable id="LH_L3" name="L3_GlucoseL_vs_GlucoseH">
-			<QuantitationUnitRefs>
-				<QuantitationUnitRef ref="light_Glucose_L3"/>
-				<QuantitationUnitRef ref="heavy_Glucose_L3"/>
-			</QuantitationUnitRefs>
 			<cvParam accession="" name="" cvRef=""/>
+			<AssayRef Assay_ref="SILAC_CNB_L3"/>
 		</StudyVariable>
 		<StudyVariable id="LH_L5" name="L5_GlycerolL_GlucoseH">
-			<QuantitationUnitRefs>
-				<QuantitationUnitRef ref="light_Glycerol_L5"/>
-				<QuantitationUnitRef ref="heavy_GlucoseH_L5"/>
-			</QuantitationUnitRefs>
 			<cvParam accession="" name="" cvRef=""/>
+			<AssayRef Assay_ref="SILAC_CNB_L5"/>
 		</StudyVariable>
 		<StudyVariable id="LH_L6" name="L6_GlucoseL_SuccinateH">
-			<QuantitationUnitRefs>
-				<QuantitationUnitRef ref="light_GlucoseL_L6"/>
-				<QuantitationUnitRef ref="heavy_SuccinateH_L6"/>
-			</QuantitationUnitRefs>
 			<cvParam accession="" name="" cvRef=""/>
+			<AssayRef Assay_ref="SILAC_CNB_L6"/>
 		</StudyVariable>
 		<StudyVariable id="LH_L7" name="L7_SuccinateL_vs_GlycerolH">
-			<QuantitationUnitRefs>
-				<QuantitationUnitRef ref="light_SuccinateL_L7"/>
-				<QuantitationUnitRef ref="heavy_GlycerolH_L7"/>
-			</QuantitationUnitRefs>
 			<cvParam accession="" name="" cvRef=""/>
+			<AssayRef Assay_ref="SILAC_CNB_L7"/>
 		</StudyVariable>
 	</StudyVariableList>
--->
-	<!-- ProtocolList: (definitions of how measures or ratios are calculated, for example with references to QuantUnits) -->
-	<!--	<ProtocolList>
-		<Protocol>
-			<Ratio id="light_heavy_L3_GlucoseL_vs_GlucoseH">
-				<Numerator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="light_GlucoseL_L3"/>
-					</QuantitationUnitsRef>
-				</Numerator>
-				<Denominator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="heavy_GlucoseH_L3"/>
-					</QuantitationUnitsRef>
-				</Denominator>
-			</Ratio>
-			<Ratio id="light_heavy_L5_GlycerolL_vs_GlucoseH">
-				<Numerator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="light_GlycerolL_L5"/>
-					</QuantitationUnitsRef>
-				</Numerator>
-				<Denominator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="heavy_GlucoseH_L5"/>
-					</QuantitationUnitsRef>
-				</Denominator>
-			</Ratio>
-			<Ratio id="light_heavy_L6_GlucoseL_vs_SuccinateH">
-				<Numerator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="light_GlucoseH_L6"/>
-					</QuantitationUnitsRef>
-				</Numerator>
-				<Denominator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="heavy_SuccinateH_L6"/>
-					</QuantitationUnitsRef>
-				</Denominator>
-			</Ratio>
-			<Ratio id="light_heavy_L7_SuccinateL_GlycerolH">
-				<Numerator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="light_SuccinateL_L7"/>
-					</QuantitationUnitsRef>
-				</Numerator>
-				<Denominator>
-					<QuantitationUnitsRef>
-						<QuantitationUnitRef ref="heavy_GlycerolH_L7"/>
-					</QuantitationUnitsRef>
-				</Denominator>
-			</Ratio>
-			<Measurement>
-				<cvParam cvRef="" accession="" name=""/>
-			</Measurement>
-		</Protocol>
-	</ProtocolList> -->
+
 	<FeatureList>
 		<!-- 
 		First couple of feaures contain light and heavy forms of the same peptide. Both forms were identified by MS/MS. Thus, the feature ID starts with F_Query (Framented_query)
 		-->
 		<Feature MZ="434.747976" id="F_Query_3_3984_light" AssayRef="SILAC_CNB_L3" intensity="44320319.17" RT="386.4713632" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep4_TODO"/>
+		<userParam name="name" value="value"/>
 		</Feature>
 		<Feature MZ="438.7550785" id="F_Query_3_3970_heavy" AssayRef="SILAC_CNB_L3" intensity="38174678.19" RT="386.1286219" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep10_TODO"/>
+<!--			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep10_TODO"/>-->
+		<userParam name="name" value="value"/>
 		</Feature>
 		<!--
 		This case only contains data from MS/MS light form. Moreover, the parner "heavy form" is both not idenfitied by MS/MS and not found through the cromartogram (P_EIC).  
 -->
 		<Feature MZ="434.747976" id="F_Query_3_5073_light" AssayRef="SILAC_CNB_L3" intensity="2101529.497" RT="476.7146543" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep5_TODO"/>
+		<userParam name="name" value="value"/>
+<!--			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep5_TODO"/> -->
 		</Feature>
 		<!--
 		This case only contains data from MS/MS light form. Moreover, the parner "heavy form" is not idenfitied by MS/MS but there is a peak within the cromartogram (P_EIC) that fits with the M/z of the heavy form. For this last reason, the FeatureID starts with C (Calculated) and the id_ref is empty.  
 -->
 		<Feature MZ="434.747976" id="F_Query_3_5060_light" AssayRef="SILAC_CNB_L3" intensity="149485381.4" RT="475.8485039" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep6_TODO"/>
+		<userParam name="name" value="value"/>
+<!--			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep6_TODO"/>-->
 		</Feature>
 		<Feature MZ="-1.0" id="C_Query_3_5060_heavy" AssayRef="SILAC_CNB_L3" intensity="145725650.2" RT="-1.0" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref=""/>
+<!--			<IdentificationReferences file_ref="L3.xls" id_ref=""/>-->
 		</Feature>
 		<!-- 
 		EIC and P_EIC. Both forms were identified by MS/MS. 
 		-->
 		<Feature MZ="434.747976" id="F_Query_3_10452_light" AssayRef="SILAC_CNB_L3" intensity="8750380.076" RT="926.211323" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep7_TODO"/>
+<!--			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep7_TODO"/>-->
 		</Feature>
 		<Feature MZ="438.7550785" id="F_Query_3_10455_heavy" AssayRef="SILAC_CNB_L3" intensity="11417082.59" RT="926.2666644" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep11_TODO"/>
+	    <!-- <IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep11_TODO"/> -->
 		</Feature>
 		<!-- 
 		EIC and P_EIC. Only light form was identified by MS/MS. 
 		-->
 		<Feature MZ="434.747976" id="F_Query_3_3061_light" AssayRef="SILAC_CNB_L3" intensity="2913825.796" RT="296.2443581" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep6_TODO"/>
+	<!-- <IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep6_TODO"/> -->
 		</Feature>
 		<Feature MZ="-1.0" id="C_Query_3_3061_heavy" AssayRef="SILAC_CNB_L3" intensity="3304965.804" RT="-1.0" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref=""/>
+	<!--		<IdentificationReferences file_ref="L3.xls" id_ref=""/> -->
 		</Feature>
 		<!-- 
 		EIC and P_EIC. Only light form was identified by MS/MS. 
 		-->
 		<Feature MZ="434.747976" id="F_Query_3_11701_light" AssayRef="SILAC_CNB_L3" intensity="4131314.66" RT="1016.303321" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep6_TODO"/>
+		<!--	<IdentificationReferences file_ref="L3.xls" id_ref="L3_P25665_pep6_TODO"/>  -->
 		</Feature>
 		<Feature MZ="-1.0" id="C_Query_3_11701_heavy" AssayRef="SILAC_CNB_L3" intensity="14689254.69" RT="-1.0" charge="2">
-			<IdentificationReferences file_ref="L3.xls" id_ref=""/>
+		<!--	<IdentificationReferences file_ref="L3.xls" id_ref=""/> -->
 		</Feature>
 		<!-- 
 		Going to another run (L5). EIC and P_EIC. Both forms were identified by MS/MS. 
 		-->
 		<Feature MZ="868.488676" id="F_Query_5_8687_light" AssayRef="SILAC_CNB_L5" intensity="2734625.322" RT="1016.492628" charge="2">
-			<IdentificationReferences file_ref="L5.xls" id_ref="L5_P25665_pep1_TODO"/>
+		<!--	<IdentificationReferences file_ref="L5.xls" id_ref="L5_P25665_pep1_TODO"/> -->
 		</Feature>
 		<Feature MZ="876.502881" id="F_Query_5_8686_heavy" AssayRef="SILAC_CNB_L5" intensity="4673968.227" RT="1016.47387" charge="2">
-			<IdentificationReferences file_ref="L5.xls" id_ref="L5_P25665_pep8_TODO"/>
+		<!--	<IdentificationReferences file_ref="L5.xls" id_ref="L5_P25665_pep8_TODO"/> -->
 		</Feature>
 		<!-- 
 		Going to another run (L6). EIC and P_EIC. Only light form was identified by MS/MS. 
 		-->
 		<Feature MZ="868.488676" id="F_Query_6_5113_light" AssayRef="SILAC_CNB_L6" intensity="260848749.1" RT="473.440702" charge="2">
-			<IdentificationReferences file_ref="L6.xls" id_ref="L6_P25665_pep1_TODO"/>
+		<!--	<IdentificationReferences file_ref="L6.xls" id_ref="L6_P25665_pep1_TODO"/> -->
 		</Feature>
 		<Feature MZ="-1.0" id="F_Query_6_5113_heavy" AssayRef="SILAC_CNB_L6" intensity="90684652.42" RT="-1.0" charge="2">
-			<IdentificationReferences file_ref="L6.xls" id_ref=""/>
+		<!--	<IdentificationReferences file_ref="L6.xls" id_ref=""/> -->
 		</Feature>
 		<!-- 
 		Going to another run (L7). EIC and P_EIC. Only heavy form was identified by MS/MS. 
 		-->
 		<Feature MZ="-1.0" id="C_Query_7_11701_light" AssayRef="SILAC_CNB_L7" intensity="1162660.817" RT="-1.0" charge="2">
-			<IdentificationReferences file_ref="L6.xls" id_ref=""/>
+		<!--	<IdentificationReferences file_ref="L6.xls" id_ref=""/> -->
 		</Feature>
 		<Feature MZ="876.502881" id="F_Query_7_11701_heavy" AssayRef="SILAC_CNB_L7" intensity="1742862.951" RT="24.55444907" charge="2">
-			<IdentificationReferences file_ref="L6.xls" id_ref="L7_P25665_pep15_TODO"/>
+		<!--	<IdentificationReferences file_ref="L6.xls" id_ref="L7_P25665_pep15_TODO"/> -->
 		</Feature>
 	</FeatureList>
 	<QuantificationsList>
-		<QuantitationUnits>
-			<QuantitationUnit value="" id="light_GlucoseL_L3">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-			<QuantitationUnit value="" id="heavy_GlucoseH_L3">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-			<QuantitationUnit value="" id="light_GlycerolL_L5">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-			<QuantitationUnit value="" id="heavy_GlucoseH_L5">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-			<QuantitationUnit value="" id="light_GlucoseH_L6">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-			<QuantitationUnit value="" id="heavy_SuccinateH_L6">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-			<QuantitationUnit value="" id="light_SuccinateL_L7">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-			<QuantitationUnit value="" id="heavy_GlycerolH_L7">
-				<FeatureReferences>
-					<GroupedFeatureRefs>
-						<cvParam accession="" name="" cvRef=""/>
-					</GroupedFeatureRefs>
-					<cvParam accession="" name="" cvRef=""/>
-				</FeatureReferences>
-			</QuantitationUnit>
-		</QuantitationUnits>
-		<Ratio id="light_heavy_L3_GlucoseL_vs_GlucoseH">
+	<QuantMeasurements>
+		<QuantMeasurement value="0.0" id="light_GlucoseL_L3">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+		<QuantMeasurement value="0.0" id="light_HeavyH_L3">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+		<QuantMeasurement value="0.0" id="light_GlycerolL_L5">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+		<QuantMeasurement value="0.0" id="heavy_GlucoseH_L5">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+		<QuantMeasurement value="0.0" id="light_GlucoseL_L6">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+		<QuantMeasurement value="0.0" id="heavy_SuccinateH_L6">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+		<QuantMeasurement value="0.0" id="light_SuccinateL_L7">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+		<QuantMeasurement value="0.0" id="heavy_GlycerolH_L7">
+			<FeatureReferences>
+				<GroupedFeatureRefs>
+					<cvParam accession="" name="" cvRef=""></cvParam>
+				</GroupedFeatureRefs>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</FeatureReferences>
+		</QuantMeasurement>
+	</QuantMeasurements>
+	<Ratio id="light_heavy_L3_GlucoseL_vs_GlucoseH">
 			<Numerator>
-				<QuantitationUnitRef ref="light_GlucoseL_L3"/>
+				<QuantMeasurementRef ref="light_GlucoseL_L3"/>
 			</Numerator>
 			<Denominator>
-				<QuantitationUnitRef ref="heavy_GlucoseH_L3"/>
+				<QuantMeasurementRef ref="heavy_GlucoseH_L3"/>
 			</Denominator>
 		</Ratio>
 		<Ratio id="light_heavy_L5_GlycerolL_vs_GlucoseH">
 			<Numerator>
-				<QuantitationUnitRef ref="light_GlycerolL_L5"/>
+				<QuantMeasurementRef ref="light_GlycerolL_L5"/>
 			</Numerator>
 			<Denominator>
-				<QuantitationUnitRef ref="heavy_GlucoseH_L5"/>
+				<QuantMeasurementRef ref="heavy_GlucoseH_L5"/>
 			</Denominator>
 		</Ratio>
 		<Ratio id="light_heavy_L6_GlucoseL_vs_SuccinateH">
 			<Numerator>
-				<QuantitationUnitRef ref="light_GlucoseH_L6"/>
+				<QuantMeasurementRef ref="light_GlucoseL_L6"/>
 			</Numerator>
 			<Denominator>
-				<QuantitationUnitRef ref="heavy_SuccinateH_L6"/>
+				<QuantMeasurementRef ref="heavy_SuccinateH_L6"/>
 			</Denominator>
 		</Ratio>
 		<Ratio id="light_heavy_L7_SuccinateL_GlycerolH">
 			<Numerator>
-				<QuantitationUnitRef ref="light_SuccinateL_L7"/>
+				<QuantMeasurementRef ref="light_SuccinateL_L7"/>
 			</Numerator>
 			<Denominator>
-				<QuantitationUnitRef ref="heavy_GlycerolH_L7"/>
+				<QuantMeasurementRef ref="heavy_GlycerolH_L7"/>
 			</Denominator>
 		</Ratio>
 	</QuantificationsList>

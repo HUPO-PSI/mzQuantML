@@ -1,4 +1,4 @@
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../drafts/mzQuantML_0_1_2.xsd">
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../schema/mzQuantML_0_1_2.xsd">
 	<cvList>
 		<cv  id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
 		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
@@ -7,44 +7,39 @@
 		<QuantProteinAmbiguityGroup id="PAG_1">
 			<IdentificationRef id_ref="A0A393" file_ref="file_with_protein_identifications_of_merged_mgfs"/>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="2.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupRatioParam value="2"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
 				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="1.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.3333333"/>
+			</QuantitationResult>
+			<QuantitationResult Assay_ref="mgf2">
+				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="3" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="1.3333333"/>
 			</QuantitationResult>
 			<GlobalQuantitationResult>
-				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="4" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="2.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="2.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_LOOSE" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="1.6"/>
 			</GlobalQuantitationResult>
 			<QuantProteinDetectionHypothesis id="PDH_1">
 				<IdentificationRef id_ref="A0A393" file_ref="file_with_protein_identifications_of_merged_mgfs"/>
 				<GroupedQuantitationResult>
-					<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupRatioParam value="0.2"/>
-				</GroupedQuantitationResult>
-				<GroupedQuantitationResult>
-					<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupRatioParam value="0.4"/>
-				</GroupedQuantitationResult>
-				<GroupedQuantitationResult>
-					<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.7" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-					<GroupRatioParam value="0.7"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_PSM_COUNT" StudyVariable_ref="concentrationOfSpikeIn_5" value="15.0" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" StudyVariable_ref="concentrationOfSpikeIn_500" value="15.5" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupRatioParam value="0.9677"/>
 				</GroupedQuantitationResult>
 				<QuantitationResult Assay_ref="mgf1">
-					<MeasureParam QuantMeasurement_ref="QM_PSM_COUNT" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-					<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="0.9" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="QM_PSM_COUNT" value="10" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="8" unitAccession="" unitName="" unitCvRef="UO"/>
 				</QuantitationResult>
-				<QuantitationResult Assay_ref="mgf25">
-					<MeasureParam QuantMeasurement_ref="QM_PSM_COUNT" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
-					<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="2.3" unitAccession="" unitName="" unitCvRef="UO"/>
+				<QuantitationResult Assay_ref="mgf12">
+					<MeasureParam QuantMeasurement_ref="QM_PSM_COUNT" value="20" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="23" unitAccession="" unitName="" unitCvRef="UO"/>
 				</QuantitationResult>
 				<QuantPeptideRefs>
 					<QuantPeptideRef ref="pep1"/>
@@ -56,14 +51,9 @@
 			<IdentificationRef id_ref="idref1" file_ref="C:\ms\mzident\identification1.mzid"/>
 			<IdentificationRef id_ref="idref2" file_ref="C:\ms\mzident\identification2.mzid"/>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.6" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.7" unitAccession="" unitName="" unitCvRef="UO"/>
 				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.75"/>
-			</GroupedQuantitationResult>
-			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.25"/>
+				<GroupRatioParam value="0.875"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
 				<MeasureParam QuantMeasurement_ref="QM_STRICT" value="1.0" unitAccession="" unitName="" unitCvRef="UO"/>
@@ -89,23 +79,13 @@
 				<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
 			</Modification>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.2"/>
-			</GroupedQuantitationResult>
-			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.4"/>
-			</GroupedQuantitationResult>
-			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.6" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="8" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.75"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_COUNT_MODS" StudyVariable_ref="concentrationOfSpikeIn_5" value="11" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" StudyVariable_ref="concentrationOfSpikeIn_500" value="8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupRatioParam value="1.375"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
-				<MeasureParam QuantMeasurement_ref="QM_COUNT_MODS" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="0.9" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_COUNT_MODS" value="10" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="9" unitAccession="" unitName="" unitCvRef="UO"/>
 				<RatioParam value="1.111111111"/>
 			</QuantitationResult>
 		</Peptide>
@@ -116,30 +96,21 @@
 				<cvParam accession="MOD:00398" name="carbamoylated residue" cvRef="PSI-MOD"/>
 			</Modification>
 			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.3" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.3"/>
-			</GroupedQuantitationResult>
-			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.5" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="1" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.5"/>
-			</GroupedQuantitationResult>
-			<GroupedQuantitationResult>
-				<GroupMeasureParam QuantMeasurement_ref="QM_STRICT" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.5" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupMeasureParam QuantMeasurement_ref="QM_LOOSE" StudyVariable_ref="concentrationOfSpikeIn_500" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
-				<GroupRatioParam value="0.25"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_COUNT_MODS" StudyVariable_ref="concentrationOfSpikeIn_5" value="20" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" StudyVariable_ref="concentrationOfSpikeIn_500" value="14.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupRatioParam value="1.37931"/>
 			</GroupedQuantitationResult>
 			<QuantitationResult Assay_ref="mgf1">
-				<MeasureParam QuantMeasurement_ref="QM_COUNT_MODS" value="2.0" unitAccession="" unitName="" unitCvRef="UO"/>
-				<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="2.1" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_COUNT_MODS" value="18" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="QM_NORM_PSM_COUNT" value="12" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.5"/>
 			</QuantitationResult>
 		</Peptide>
 	</PeptideList>
 	<AssayList>
 		<Assay id="mgf1">
 			<RawFiles>
-				<RawFile location="C:\ORBI05316.mzml" name="mzMLFile1"/>
+				<RawFile location="C:\ORBI05301.mzml" name="mzMLFile1"/>
 			</RawFiles>
 			<Label>
 				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
@@ -148,7 +119,7 @@
 				</Modification>
 			</Label>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ORBI05316.mzid" name="mzIdentMLFile1"/>
+				<IdentificationFile location="C:\ORBI05301.mzid" name="mzIdentMLFile1"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="1" DataProcessing_ref="DP1"/>
@@ -157,7 +128,7 @@
 		</Assay>
 		<Assay id="mgf2">
 			<RawFiles>
-				<RawFile location="C:\ORBI05317.mzml" name="mzMLFile12"/>
+				<RawFile location="C:\ORBI05302.mzml" name="mzMLFile2"/>
 			</RawFiles>
 			<Label>
 				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
@@ -166,16 +137,16 @@
 				</Modification>
 			</Label>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ORBI05317.mzid" name="mzIdentMLFile2"/>
+				<IdentificationFile location="C:\ORBI05302.mzid" name="mzIdentMLFile2"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="2" DataProcessing_ref="DP2"/>
 			</DataProcessingOrder>
 			<cvParam accession="text" name="text" cvRef="text"/>
 		</Assay>
-		<Assay id="mgf25">
+		<Assay id="mgf11">
 			<RawFiles>
-				<RawFile location="C:\ORBI05366.mzml" name="mzMLFile3"/>
+				<RawFile location="C:\ORBI05311.mzml" name="mzMLFile11"/>
 			</RawFiles>
 			<Label>
 				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
@@ -184,7 +155,25 @@
 				</Modification>
 			</Label>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ORBI05366.mzid" name="mzIdentMLFile3"/>
+				<IdentificationFile location="C:\ORBI05311.mzid" name="mzIdentMLFile3"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="2" DataProcessing_ref="DP2"/>
+			</DataProcessingOrder>
+			<cvParam accession="text" name="text" cvRef="text"/>
+		</Assay>
+		<Assay id="mgf12">
+			<RawFiles>
+				<RawFile location="C:\ORBI05312.mzml" name="mzMLFile12"/>
+			</RawFiles>
+			<Label>
+				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
+				<Modification massDelta="0">
+					<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+				</Modification>
+			</Label>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ORBI05312.mzid" name="mzIdentMLFile3"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="2" DataProcessing_ref="DP2"/>
@@ -196,18 +185,12 @@
 		<StudyVariable id="concentrationOfSpikeIn_5" name="concentrationOfSpikeIn">
 			<cvParam accession="" name="healthy experimental condition group" cvRef="PSI-MS"/>
 			<AssayRef Assay_ref="mgf1"/>
-			<AssayRef Assay_ref="mgf6"/>
 			<AssayRef Assay_ref="mgf11"/>
-			<AssayRef Assay_ref="mgf16"/>
-			<AssayRef Assay_ref="mgf21"/>
 		</StudyVariable>
 		<StudyVariable id="concentrationOfSpikeIn_50" name="concentrationOfSpikeIn">
 			<cvParam accession="" name="disease experimental condition group" cvRef="PSI-MS"/>
 			<AssayRef Assay_ref="mgf2"/>
-			<AssayRef Assay_ref="mgf7"/>
 			<AssayRef Assay_ref="mgf12"/>
-			<AssayRef Assay_ref="mgf17"/>
-			<AssayRef Assay_ref="mgf22"/>
 		</StudyVariable>
 	</StudyVariableList>
 	<FeatureList>
@@ -227,15 +210,23 @@
 			<masstrace RTstart="9.4" MZstart="4.32" RTstop="9.5" MZstop="4.36"/>
 			<userParam name="userParameter" value="param_value"/>
 		</Feature>
+		<Feature MZ="3.65475" intensity="58.4" id="FEAT_5" RT="15.678">
+			<masstrace RTstart="15.3" MZstart="3.6" RTstop="15.8" MZstop="3.7"/>
+			<userParam name="userParameter" value="param_value"/>
+		</Feature>
+		<Feature MZ="3.45659" intensity="69.9" id="FEAT_6" RT="6.854">
+			<masstrace RTstart="6.8" MZstart="3.4" RTstop="6.9" MZstop="3.5"/>
+			<userParam name="userParameter" value="param_value"/>
+		</Feature>
 	</FeatureList>
 	<QuantificationsList>
 		<QuantMeasurements>
 			<QuantMeasurement id="QM_STRICT" value="10.5" name="StrictMean">
 				<FeatureReferences>
-					<GroupedFeatureRefs>
+					<GroupedFeatureRefs FeatureRefs="FEAT_1">
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 					</GroupedFeatureRefs>
-					<GroupedFeatureRefs>
+					<GroupedFeatureRefs FeatureRefs="FEAT_2">
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 					</GroupedFeatureRefs>
 					<cvParam accession="text" name="text" cvRef="PSi-MS"/>
@@ -244,7 +235,7 @@
 			</QuantMeasurement>
 			<QuantMeasurement id="QM_LOOSE" value="12.3" name="LooseMean">
 				<FeatureReferences>
-					<GroupedFeatureRefs>
+					<GroupedFeatureRefs FeatureRefs="FEAT_3">
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 					</GroupedFeatureRefs>
 					<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -253,7 +244,7 @@
 			</QuantMeasurement>
 			<QuantMeasurement id="QM_PSM_COUNT" value="5.6" name="PeptideSpectrumMatchCountPerProtein">
 				<FeatureReferences>
-					<GroupedFeatureRefs>
+					<GroupedFeatureRefs FeatureRefs="FEAT_4">
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 					</GroupedFeatureRefs>
 					<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -261,7 +252,7 @@
 			</QuantMeasurement>
 			<QuantMeasurement id="QM_NORM_PSM_COUNT" value="5.6" name="NormalizedPeptideSpectrumMatchCount">
 				<FeatureReferences>
-					<GroupedFeatureRefs>
+					<GroupedFeatureRefs FeatureRefs="FEAT_5">
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 					</GroupedFeatureRefs>
 					<cvParam accession="text" name="text" cvRef="PSI-MS"/>
@@ -269,7 +260,7 @@
 			</QuantMeasurement>
 			<QuantMeasurement id="QM_COUNT_MODS" value="5.6" name="SpectrumCountPerPeptideWithMods">
 				<FeatureReferences>
-					<GroupedFeatureRefs>
+					<GroupedFeatureRefs FeatureRefs="FEAT_6">
 						<cvParam accession="text" name="text" cvRef="PSI-MS"/>
 					</GroupedFeatureRefs>
 					<cvParam accession="text" name="text" cvRef="PSI-MS"/>

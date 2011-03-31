@@ -1,0 +1,269 @@
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../drafts/mzQuantML_0_1_2_alternative.xsd">
+	<!--
+		Remarks:	Attributes intensity, RT and MZ should be facultative in element <Feature>
+						QuantificationsList should be a real list (1...infinity)
+	-->
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
+	<ProteinList>
+		<QuantProteinAmbiguityGroup id="PAG_1">
+			<IdentificationRef id_ref="A0A393" file_ref="file_with_protein_identifications_of_merged_mgfs"/>
+			<GroupedQuantitationResult>
+				<GroupMeasureParam QuantMeasurement_ref="PR1" StudyVariable_ref="concentrationOfSpikeIn_5" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="PR1" StudyVariable_ref="concentrationOfSpikeIn_500" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupRatioParam value="2"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult Assay_ref="mgf1">
+				<MeasureParam QuantMeasurement_ref="PR1" value="2" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="PR1" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.3333333"/>
+			</QuantitationResult>
+			<QuantitationResult Assay_ref="mgf2">
+				<MeasureParam QuantMeasurement_ref="PR1" value="3" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="PR1" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.3333333"/>
+			</QuantitationResult>
+			<GlobalQuantitationResult>
+				<MeasureParam QuantMeasurement_ref="PR1" value="2.5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="PR1" value="5" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.6"/>
+			</GlobalQuantitationResult>
+			<QuantProteinDetectionHypothesis id="PDH_1">
+				<IdentificationRef id_ref="A0A393" file_ref="file_with_protein_identifications_of_merged_mgfs"/>
+				<GroupedQuantitationResult>
+					<GroupMeasureParam QuantMeasurement_ref="PR1" StudyVariable_ref="concentrationOfSpikeIn_5" value="15" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupMeasureParam QuantMeasurement_ref="PR1" StudyVariable_ref="concentrationOfSpikeIn_500" value="16" unitAccession="" unitName="" unitCvRef="UO"/>
+					<GroupRatioParam value="0.9677"/>
+				</GroupedQuantitationResult>
+				<QuantitationResult Assay_ref="mgf1">
+					<MeasureParam QuantMeasurement_ref="PR1" value="10" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="PR1" value="8" unitAccession="" unitName="" unitCvRef="UO"/>
+				</QuantitationResult>
+				<QuantitationResult Assay_ref="mgf12">
+					<MeasureParam QuantMeasurement_ref="PR1" value="20" unitAccession="" unitName="" unitCvRef="UO"/>
+					<MeasureParam QuantMeasurement_ref="PR1" value="23" unitAccession="" unitName="" unitCvRef="UO"/>
+				</QuantitationResult>
+				<QuantPeptideRefs>
+					<QuantPeptideRef ref="pep1"/>
+					<QuantPeptideRef ref="pep2"/>
+				</QuantPeptideRefs>
+			</QuantProteinDetectionHypothesis>
+		</QuantProteinAmbiguityGroup>
+		<QuantProteinDetectionHypothesis id="ID_QPDH">
+			<IdentificationRef id_ref="idref1" file_ref="C:\ms\mzident\identification1.mzid"/>
+			<IdentificationRef id_ref="idref2" file_ref="C:\ms\mzident\identification2.mzid"/>
+			<GroupedQuantitationResult>
+				<GroupMeasureParam QuantMeasurement_ref="PR1" StudyVariable_ref="concentrationOfSpikeIn_5" value="0.7" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="PR1" StudyVariable_ref="concentrationOfSpikeIn_500" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupRatioParam value="0.875"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult Assay_ref="mgf1">
+				<MeasureParam QuantMeasurement_ref="PR1" value="1.0" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="PR1" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.25"/>
+			</QuantitationResult>
+			<QuantitationResult Assay_ref="mgf2">
+				<MeasureParam QuantMeasurement_ref="PR1" value="0.4" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="PR1" value="0.8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="0.5"/>
+			</QuantitationResult>
+			<QuantPeptideRefs>
+				<QuantPeptideRef ref="pep1"/>
+				<QuantPeptideRef ref="pep2"/>
+			</QuantPeptideRefs>
+		</QuantProteinDetectionHypothesis>
+	</ProteinList>
+	<PeptideList>
+		<Peptide id="pep1">
+			<PeptideSequence>BLAELVIS</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF1"/>
+			<Modification>
+				<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+			</Modification>
+			<GroupedQuantitationResult>
+				<GroupMeasureParam QuantMeasurement_ref="MF1" StudyVariable_ref="concentrationOfSpikeIn_5" value="11" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="MF1" StudyVariable_ref="concentrationOfSpikeIn_500" value="8" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupRatioParam value="1.375"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult Assay_ref="mgf1">
+				<MeasureParam QuantMeasurement_ref="MF1" value="10" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="MF1" value="9" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.111111111"/>
+			</QuantitationResult>
+		</Peptide>
+		<Peptide id="pep2">
+			<PeptideSequence>BLAELVISA</PeptideSequence>
+			<IdentificationRef id_ref="ID_REF2"/>
+			<Modification>
+				<cvParam accession="MOD:00398" name="carbamoylated residue" cvRef="PSI-MOD"/>
+			</Modification>
+			<GroupedQuantitationResult>
+				<GroupMeasureParam QuantMeasurement_ref="MF1" StudyVariable_ref="concentrationOfSpikeIn_5" value="20" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupMeasureParam QuantMeasurement_ref="MF1" StudyVariable_ref="concentrationOfSpikeIn_500" value="14" unitAccession="" unitName="" unitCvRef="UO"/>
+				<GroupRatioParam value="1.37931"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult Assay_ref="mgf1">
+				<MeasureParam QuantMeasurement_ref="MF1" value="18" unitAccession="" unitName="" unitCvRef="UO"/>
+				<MeasureParam QuantMeasurement_ref="MF1" value="12" unitAccession="" unitName="" unitCvRef="UO"/>
+				<RatioParam value="1.5"/>
+			</QuantitationResult>
+		</Peptide>
+	</PeptideList>
+	<AssayList>
+		<Assay id="mgf1">
+			<RawFiles>
+				<RawFile location="C:\ORBI05301.mzml" name="mzMLFile1"/>
+			</RawFiles>
+			<Label>
+				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
+				<Modification massDelta="0">
+					<cvParam accession="MOD:00398" name="carbamoylated residue" cvRef="PSI-MOD"/>
+				</Modification>
+			</Label>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ORBI05301.mzid" name="mzIdentMLFile1"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" DataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam accession="String" name="String" cvRef="String"/>
+		</Assay>
+		<Assay id="mgf2">
+			<RawFiles>
+				<RawFile location="C:\ORBI05302.mzml" name="mzMLFile2"/>
+			</RawFiles>
+			<Label>
+				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
+				<Modification massDelta="0">
+					<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+				</Modification>
+			</Label>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ORBI05302.mzid" name="mzIdentMLFile2"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="2" DataProcessing_ref="DP2"/>
+			</DataProcessingOrder>
+			<cvParam accession="text" name="text" cvRef="text"/>
+		</Assay>
+		<Assay id="mgf11">
+			<RawFiles>
+				<RawFile location="C:\ORBI05311.mzml" name="mzMLFile11"/>
+			</RawFiles>
+			<Label>
+				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
+				<Modification massDelta="0">
+					<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+				</Modification>
+			</Label>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ORBI05311.mzid" name="mzIdentMLFile3"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="2" DataProcessing_ref="DP2"/>
+			</DataProcessingOrder>
+			<cvParam accession="text" name="text" cvRef="text"/>
+		</Assay>
+		<Assay id="mgf12">
+			<RawFiles>
+				<RawFile location="C:\ORBI05312.mzml" name="mzMLFile12"/>
+			</RawFiles>
+			<Label>
+				<cvParam accession="MS:1000745" name="retention time alignment" cvRef="PSI-MS"/>
+				<Modification massDelta="0">
+					<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+				</Modification>
+			</Label>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ORBI05312.mzid" name="mzIdentMLFile3"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="2" DataProcessing_ref="DP2"/>
+			</DataProcessingOrder>
+			<cvParam accession="text" name="text" cvRef="text"/>
+		</Assay>
+	</AssayList>
+	<StudyVariableList>
+		<StudyVariable id="concentrationOfSpikeIn_5" name="concentrationOfSpikeIn">
+			<cvParam accession="" name="healthy experimental condition group" cvRef="PSI-MS"/>
+			<AssayRef Assay_ref="mgf1"/>
+			<AssayRef Assay_ref="mgf11"/>
+		</StudyVariable>
+		<StudyVariable id="concentrationOfSpikeIn_50" name="concentrationOfSpikeIn">
+			<cvParam accession="" name="disease experimental condition group" cvRef="PSI-MS"/>
+			<AssayRef Assay_ref="mgf2"/>
+			<AssayRef Assay_ref="mgf12"/>
+		</StudyVariable>
+	</StudyVariableList>
+	<FeatureList>
+		<!-- Attributes intensity, RT and MZ should be facultative -->
+		<Feature id="FEAT_1" AssayRef="mgf1" intensity="12" MZ="1" RT="1">
+			<userParam name="userParameter" value="param_value"/>
+		</Feature>
+		<Feature id="FEAT_2" AssayRef="mgf2" intensity="13" MZ="1" RT="1">
+			<userParam name="userParameter" value="param_value"/>
+		</Feature>
+		<Feature id="FEAT_3" AssayRef="mgf11" intensity="14" MZ="1" RT="1">
+			<userParam name="userParameter" value="param_value"/>
+		</Feature>
+		<Feature id="FEAT_4" AssayRef="mgf12" intensity="15" MZ="1" RT="1">
+			<userParam name="userParameter" value="param_value"/>
+		</Feature>
+	</FeatureList>
+	<QuantificationsList>
+		<!-- QuantificationsList should be a real list -->
+		<MatchedFeature id="MF1">
+			<QuantValue value="100">
+				<cvParam accession="acc" name="treat missings like zero" cvRef="PSI-MS"/>
+			</QuantValue>
+			<References>
+				<FeatureRef feature_ref="FEAT_1"/>
+			</References>
+		</MatchedFeature>
+		<ProteinResult id="PR1">
+			<References>
+				<FeatureRef feature_ref="FEAT_2"/>
+				<MatchedFeatureRef matchedFeature_ref="MF1"/>
+			</References>
+		</ProteinResult>
+		<CrossReplicateProteinResult id="CRPR1">
+			<References>
+				<ProteinResultRef proteinResult_ref="PR1"/>
+				<ProteinResultRef proteinResult_ref="PR1"/>
+				<ProteinResultRef proteinResult_ref="PR1"/>
+			</References>
+		</CrossReplicateProteinResult>
+	</QuantificationsList>
+	<DataProcessingList>
+		<dataProcessing id="DP1">
+			<processingMethod>
+				<!--
+				<referenceableParamGroupRef ref="RefParGroup1"/>
+				<referenceableParamGroupRef ref="RefParGroup2"/>
+				<cvParam accession="MS:1001486" name="data filtering" cvRef="PSI-MS" value=""/>
+				-->
+				<userParam name="myParam1"/>
+			</processingMethod>
+			<processingMethod>
+				<!--
+				<cvParam accession="MS:1000543" name="data processing action" cvRef="PSI-MS"/>
+				-->
+			</processingMethod>
+		</dataProcessing>
+		<dataProcessing id="DP2">
+			<processingMethod>
+				<!--
+				<cvParam accession="MS:1001486" name="data filtering" cvRef="PSI-MS"/>
+				-->
+				<userParam name="myParam2"/>
+			</processingMethod>
+			<processingMethod>
+				<!--
+				<cvParam accession="MS:1000543" name="data processing action" cvRef="PSI-MS"/>
+				-->
+			</processingMethod>
+		</dataProcessing>
+	</DataProcessingList>
+</mzQuantML>

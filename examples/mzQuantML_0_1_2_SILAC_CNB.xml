@@ -123,8 +123,6 @@ The optional quant values at PAG, PDH or PeptideLevel can be given for single Qu
 				<GroupedQuantitationResult>
 				</GroupedQuantitationResult>
 				<QuantitationResult>
-				</QuantitationResult>
-				<QuantitationResult>
 						<RatioParam value="0.615767675903385" Ratio_ref="light_heavy_L7_TGIAEHIK_9"/>
 				</QuantitationResult>
 				<QuantPeptideRefs>

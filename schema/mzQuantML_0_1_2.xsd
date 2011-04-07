@@ -221,7 +221,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="Modification" type="ModificationType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="GroupedQuantitationResult" type="GroupedQuantitationResultType" nillable="false" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="QuantitationResult" type="QuantitationResultType"/>
+			<xsd:element name="QuantitationResult" type="QuantitationResultType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:string"/>
 	</xsd:complexType>
@@ -275,7 +275,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						<xsd:documentation>Reference to the assay that is part of this study variable</xsd:documentation>
 					</xsd:annotation>
 					<xsd:complexType>
-						<xsd:attribute name="Assay_ref" type="xsd:string" use="required"/>
+						<xsd:attribute name="Assay_ref" type="xsd:IDREF" use="required"/>
 					</xsd:complexType>
 				</xsd:element>
 			</xsd:sequence>
@@ -317,7 +317,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="cvParam" type="cvParamType">
+			<xsd:element name="cvParam" type="cvParamType" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>if there is a set of quasi-standard setups</xsd:documentation>
 				</xsd:annotation>
@@ -382,7 +382,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						<xsd:element name="GroupedFeatureRefs" maxOccurs="unbounded">
 							<xsd:complexType>
 								<xsd:sequence>
-									<xsd:element name="cvParam" type="cvParamType">
+									<xsd:element name="cvParam" type="cvParamType" minOccurs="0">
 										<xsd:annotation>
 											<xsd:documentation>The type of agglomeration (i.e. mathematical operation) and  of ExperimentalValues (e.g. Phenotypic, biological replicate, time points etc.)</xsd:documentation>
 										</xsd:annotation>
@@ -391,7 +391,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 								<xsd:attribute name="FeatureRefs" type="xsd:IDREF" use="required"/>
 							</xsd:complexType>
 						</xsd:element>
-						<xsd:element name="cvParam" type="cvParamType">
+						<xsd:element name="cvParam" type="cvParamType" minOccurs="0">
 							<xsd:annotation>
 								<xsd:documentation>The type of agglomeration (i.e. mathematical operation) and  of ExperimentalValues (e.g. Phenotypic, biological replicate, time points etc.)</xsd:documentation>
 							</xsd:annotation>

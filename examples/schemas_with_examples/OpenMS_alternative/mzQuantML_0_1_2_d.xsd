@@ -285,7 +285,7 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="QuantificationsLayerListType">
 		<xsd:sequence>
-			<xsd:element name="QuantificationsLayer" type="QuantificationsLayerType"/>
+			<xsd:element name="QuantificationsLayer" type="QuantificationsLayerType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="QuantificationsLayerType">
@@ -419,7 +419,7 @@ Issues:
 			</xsd:element>
 			<xsd:element name="cvParam" type="cvParamType" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>The type of Value. This has also to specifies how the value was crated. (e.g. "normalizing the referenced values" and so on, i.e. the algorithm name, not the algorithm itself)</xsd:documentation>
+					<xsd:documentation>The type of Value. This has also to specifies how the value was crated. (e.g. "normalizing the referenced values" and so on, i.e. the algorithm name, not the algorithm itself, e.g. this referres to the label modification in the respective assay element)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>

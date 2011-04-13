@@ -39,7 +39,7 @@ Issues:
 						<xsd:documentation>The list of features quantified from raw files</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="QuantificationsList" type="QuantificationsLayerListType" minOccurs="0">
+				<xsd:element name="QuantList" type="QuantificationsLayerListType" minOccurs="0">
 					<xsd:annotation>
 						<xsd:documentation>The list of quantified values or ratios calculated from the features.</xsd:documentation>
 					</xsd:annotation>
@@ -285,16 +285,17 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="QuantificationsLayerListType">
 		<xsd:sequence>
-			<xsd:element name="QuantificationsLayer" type="QuantificationsLayerType" maxOccurs="unbounded"/>
+			<xsd:element name="QuantLayer" type="QuantificationsLayerType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="QuantificationsLayerType">
 		<xsd:sequence>
-			<xsd:element name="QuantValues" type="QuantValueType" maxOccurs="unbounded"/>
+			<xsd:element name="QuantValue" type="QuantValueType" maxOccurs="unbounded"/>
+			<xsd:element name="AdditionalParams" type="ParamListType"/>
 		</xsd:sequence>
 		<xsd:attribute name="refs">
 			<xsd:annotation>
-				<xsd:documentation>TODO: decide where to put metainformation about the values concering the experimental setup</xsd:documentation>
+				<xsd:documentation>Assay</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -669,11 +670,14 @@ Issues:
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	<xsd:complexType name="ParamListType">
+		<xsd:group ref="ParamGroup" maxOccurs="unbounded"/>
+	</xsd:complexType>
 	<xsd:complexType name="PeakType">
 		<xsd:attribute name="RT" type="xsd:double" use="required"/>
 		<xsd:attribute name="MZ" type="xsd:double" use="required"/>
 		<xsd:attribute name="intensity" type="xsd:double" use="required"/>
-		<xsd:attribute name="charge"/>
+		<xsd:attribute name="charge" type="xsd:integer"/>
 	</xsd:complexType>
 	<xsd:complexType name="DataProcessingListType">
 		<xsd:annotation>

@@ -291,7 +291,7 @@ Issues:
 	<xsd:complexType name="QuantificationsLayerType">
 		<xsd:sequence>
 			<xsd:element name="QuantValue" type="QuantValueType" maxOccurs="unbounded"/>
-			<xsd:element name="AdditionalParams" type="ParamListType"/>
+			<xsd:element name="AdditionalParams" type="ParamListType" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute name="refs">
 			<xsd:annotation>

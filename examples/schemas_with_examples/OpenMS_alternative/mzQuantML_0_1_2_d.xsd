@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 rel. 2 sp1 (http://www.altova.com) by Alberto Medina-Aunon (Centro Nacional de Biotecnología, CSIC) -->
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Martin Eisenacher (Medizinisches Proteom-Center) -->
 <!--
 mzQuantML version 1.2.0d
 Distributed under the Creative Commons license http://creativecommons.org/licenses/by/2.0/.
@@ -34,10 +34,15 @@ Issues:
 						<xsd:documentation>The list of experimental conditions used to group results.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="FeatureList" type="FeatureListType" minOccurs="0">
+				<xsd:element name="FeatureList" minOccurs="0">
 					<xsd:annotation>
 						<xsd:documentation>The list of features quantified from raw files</xsd:documentation>
 					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:complexContent>
+							<xsd:extension base="FeatureListType"/>
+						</xsd:complexContent>
+					</xsd:complexType>
 				</xsd:element>
 				<xsd:element name="QuantList" type="QuantificationsLayerListType" minOccurs="0">
 					<xsd:annotation>
@@ -95,20 +100,33 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="QuantProteinAmbiguityGroupType">
 		<xsd:sequence>
-			<xsd:element name="IdentificationRef" type="IdentificationRefType" maxOccurs="unbounded"/>
-			<xsd:element name="GroupedQuantitationResult" type="GroupedQuantitationResultType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="QuantitationResult" type="QuantitationResultType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="GlobalQuantitationResult" type="GlobalQuantitationResultType" minOccurs="0"/>
-			<xsd:element name="QuantProteinDetectionHypothesis" type="QuantProteinDetectionHypothesisType" maxOccurs="unbounded"/>
+			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="QuantitationResult" type="QuantitationResultType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This contains one quantitation value for this protein ambiguity group.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="QuantProteinDetectionHypothesisRefs" type="QuantProteinDetectionHypothesisRefsType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Here the proteins can be referenced building this protein ambiguity group (actually repetition of information in mzIdentML).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:string"/>
 	</xsd:complexType>
 	<xsd:complexType name="QuantProteinDetectionHypothesisType">
 		<xsd:sequence>
 			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="GroupedQuantitationResult" type="GroupedQuantitationResultType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="QuantitationResult" type="QuantitationResultType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="QuantPeptideRefs" type="QuantPeptideRefsType" minOccurs="0"/>
+			<xsd:element name="QuantitationResult" type="QuantitationResultType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This contains one quantitation value for this protein.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="QuantPeptideRefs" type="QuantPeptideRefsType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Here the peptides can be referenced building this protein (actually repetition of information in mzIdentML).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:string"/>
 	</xsd:complexType>
@@ -119,27 +137,7 @@ Issues:
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="QuantitationResultType">
-		<xsd:attribute name="value" type="xsd:float">
-			<xsd:annotation>
-				<xsd:documentation>Booleans can be handled with a special unit?</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="error" type="xsd:float">
-			<xsd:annotation>
-				<xsd:documentation>The error associated to the value.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="unitAccession" type="xsd:string">
-			<xsd:annotation>
-				<xsd:documentation>An accession number identifying the unit within the OBO foundry Unit CV.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="unitCvRef" type="xsd:string" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this file.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="QuantValue_ref" type="xsd:IDREF">
+		<xsd:attribute name="QuantValue_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Reference to the QuantValue element that provides the evidence trail for this measurement.</xsd:documentation>
 			</xsd:annotation>
@@ -224,11 +222,20 @@ Issues:
 		<xsd:attribute name="id_ref" type="xsd:string"/>
 		<xsd:attribute name="file_ref" type="xsd:string"/>
 	</xsd:complexType>
+	<xsd:complexType name="QuantProteinDetectionHypothesisRefsType">
+		<xsd:sequence>
+			<xsd:element name="QuantProteinDetectionHypothesisRef" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:attribute name="quantProteinDetectionHypothesis_ref" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:complexType name="QuantPeptideRefsType">
 		<xsd:sequence>
 			<xsd:element name="QuantPeptideRef" maxOccurs="unbounded">
 				<xsd:complexType>
-					<xsd:attribute name="ref" type="xsd:string"/>
+					<xsd:attribute name="quantPeptide_ref" type="xsd:string"/>
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
@@ -285,19 +292,26 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="QuantificationsLayerListType">
 		<xsd:sequence>
-			<xsd:element name="QuantLayer" type="QuantificationsLayerType" maxOccurs="unbounded"/>
+			<xsd:element name="QuantLayer" type="QuantificationsLayerType" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A layer of QuantValues, for example raw values, normalized values, peptide values, protein values, group means, protein ratios. The type of layer depends partially on the quantitation method and must be described by a CV param.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="QuantificationsLayerType">
 		<xsd:sequence>
-			<xsd:element name="QuantValue" type="QuantValueType" maxOccurs="unbounded"/>
-			<xsd:element name="AdditionalParams" type="ParamListType" minOccurs="0"/>
+			<xsd:element name="QuantValue" type="QuantValueType" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>One actual quantitation value (described in attributes), together with references to other QuantValues, which have been transformed / aggregated to it.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="cvParam" type="cvParamType">
+				<xsd:annotation>
+					<xsd:documentation>The description of the layer, for example raw feature value layer, normalized feature value layer, peptide layer, protein layer, group layer. The type of layer depends partially on the quantitation method.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="refs">
-			<xsd:annotation>
-				<xsd:documentation>Assay</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="StudyVariableType">
 		<xsd:annotation>
@@ -413,17 +427,21 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="QuantValueType">
 		<xsd:sequence>
-			<xsd:element name="ValueReferences" type="xsd:IDREFS">
+			<xsd:element name="FeatureRefs" type="FeatureRefsType" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>One or more Features from which the QuantMeasurement value was defined</xsd:documentation>
+					<xsd:documentation>One or more Features from which the QuantValue was derived.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="cvParam" type="cvParamType" minOccurs="0">
+			<xsd:element name="QuantValueRefs" type="QuantValueRefsType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>References to other QuantValues, from which this QUantValue was transformed / aggregated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="cvParam" type="cvParamType" minOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>The type of Value. This has also to specifies how the value was crated. (e.g. "normalizing the referenced values" and so on, i.e. the algorithm name, not the algorithm itself, e.g. this referres to the label modification in the respective assay element)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 		<xsd:attribute name="value" type="xsd:double" use="required"/>
@@ -447,6 +465,24 @@ Issues:
 				<xsd:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="QuantValueRefsType">
+		<xsd:sequence>
+			<xsd:element name="QuantValueRef" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:attribute name="quantValue_ref" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FeatureRefsType">
+		<xsd:sequence>
+			<xsd:element name="FeatureRef" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:attribute name="feature_ref" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="LabelType">
 		<xsd:sequence>
@@ -515,9 +551,23 @@ Issues:
 		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="FeatureListType">
-		<xsd:sequence>
-			<xsd:element name="Feature" type="FeatureType" maxOccurs="unbounded"/>
-		</xsd:sequence>
+		<xsd:choice>
+			<xsd:sequence>
+				<xsd:element name="SpectraSet" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="Chromatogram" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="Feature" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:complexContent>
+							<xsd:extension base="FeatureType"/>
+						</xsd:complexContent>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:choice>
 	</xsd:complexType>
 	<xsd:complexType name="FeatureType">
 		<xsd:annotation>
@@ -526,7 +576,7 @@ Issues:
 		<xsd:complexContent>
 			<xsd:extension base="PeakType">
 				<xsd:sequence>
-					<xsd:element name="masstrace" minOccurs="0" maxOccurs="unbounded">
+					<xsd:element name="Masstrace" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
 							<xsd:documentation>Each masstrace has a start and a end point in each RT and MZ dimension. </xsd:documentation>
 						</xsd:annotation>
@@ -568,7 +618,6 @@ Issues:
 	</xsd:complexType>
 	<xsd:group name="ParamGroup">
 		<xsd:choice>
-			<xsd:element name="cvParam" type="cvParamType"/>
 			<xsd:element name="userParam" type="userParamType"/>
 		</xsd:choice>
 	</xsd:group>
@@ -670,9 +719,7 @@ Issues:
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:complexType name="ParamListType">
-		<xsd:group ref="ParamGroup" maxOccurs="unbounded"/>
-	</xsd:complexType>
+	<xsd:complexType name="ParamListType"/>
 	<xsd:complexType name="PeakType">
 		<xsd:attribute name="RT" type="xsd:double" use="required"/>
 		<xsd:attribute name="MZ" type="xsd:double" use="required"/>

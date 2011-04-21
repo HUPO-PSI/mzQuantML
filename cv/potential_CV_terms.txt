@@ -1,0 +1,63 @@
+A) potential CV terms for layer description / type of values:
+
+for LC/MS (some overlap with other methods):
+"raw feature value layer"
+"normalized feature value layer"
+"peptide with mods layer" (aggregate features for the pep having the same mod)
+"peptide sequence layer" (aggregate values of all versions of this pep seq., regardless of which mod. or unmod.)
+"peptide layer" (if we want to simplify the two preceding layers :-) )
+"protein layer"
+"group layer" or "experimental group layer" (contains e.g. means of protein values)
+"fold change layer" (or even "protein fold change layer", "peptide fold change layer")
+"standard deviation layer"
+"ANOVA p-value layer"
+
+for SILAC (some overlap with other methods):
+"light/heavy peak value layer"
+"peptide ratio layer"
+"protein ratio layer" (corresponds to "protein fold change layer" of LC/MS?)
+"group layer" (same as in LC/MS, but aggregating protein ratios)
+
+for spectral counting:
+"PSM count layer" (corresponds to "peptide layer" as containing peptide quantifications; no layers below this!)
+"protein layer" (see above)
+"group layer" (see above)
+"fold change layer" (see above)
+...
+
+for iTraq (some overlap with other methods):
+"reporter ion raw value layer" (one layer for each reporter mass??)
+"reporter ion normalized value layer"
+"peptide ratio layer"
+"protein ratio layer"
+...
+
+for SRM (some overlap with other methods):
+"transition XIC raw value layer" (corresponds to "peptide layer" as containing peptide quantifications; no layers below this!)
+"transition XIC normalized value layer" ??
+"protein layer"
+
+
+for 14N/15N labeling:
+TODO!
+
+
+
+
+
+B) potential CV terms for nature / aggregation / transformation / calculation of values:
+"feature intensity" / "feature area" (LC/MS)
+"number of MS/MS spectra" or "PSM count" (spectral counting)
+"light peak intensity" / "heavy peak intensity" and "light peak area" ?? and "heavy peak area" ?? (SILAC)
+"reporter ion intensity" (and area??) (iTraq)
+"chromatogram area" (SRM)
+
+"normalization" (or specific: "Progenesis normalization" with value "normalization factor"??)
+
+"sum of values"
+"mean of values"
+"stddev of values"
+"median of values"
+"max of values" / "min of values"
+"t-test p-value calculation" (semantic check: only two quant values must be references, both being a "mean of values")
+"ANOVA p-value calculation"(semantic check: only quant values must be references being themselves a "mean of values" each)

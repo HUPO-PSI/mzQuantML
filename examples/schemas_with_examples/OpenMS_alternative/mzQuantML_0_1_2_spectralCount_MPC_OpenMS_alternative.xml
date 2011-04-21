@@ -4,15 +4,15 @@ Spectra elements under SpectraSet
 -->
 <mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 mzQuantML_0_1_2_d.xsd">
 	<cvList>
-		<cv  id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
 		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
 	</cvList>
 	
 	<ProteinList>
 		<QuantProteinAmbiguityGroup id="PAG_1">
 			<QuantProteinDetectionHypothesisRefs>
-				<QuantProteinDetectionHypothesisRef quantProteinDetectionHypothesis_ref="PROT_HYP1"></QuantProteinDetectionHypothesisRef>
-				<QuantProteinDetectionHypothesisRef quantProteinDetectionHypothesis_ref="PROT_HYP2"></QuantProteinDetectionHypothesisRef>
+				<QuantProteinDetectionHypothesisRef quantProteinDetectionHypothesis_ref="PROT_HYP1"/>
+				<QuantProteinDetectionHypothesisRef quantProteinDetectionHypothesis_ref="PROT_HYP2"/>
 			</QuantProteinDetectionHypothesisRefs>
 		</QuantProteinAmbiguityGroup>
 		<QuantProteinDetectionHypothesis id="PROT_HYP1">
@@ -37,7 +37,8 @@ Spectra elements under SpectraSet
 		<Peptide id="pep1">
 			<PeptideSequence>BLAELVIS</PeptideSequence>
 			<Modification>
-				<userParam name="Oxidation" value=""/>	<!-- better to allow also cvParams here -->
+				<userParam name="Oxidation" value=""/>
+				<!-- better to allow also cvParams here -->
 				<!--
 				<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
 				-->
@@ -47,7 +48,8 @@ Spectra elements under SpectraSet
 		<Peptide id="pep2">
 			<PeptideSequence>BLAELVISA</PeptideSequence>
 			<Modification>
-				<userParam name="Carbamoylated residue"/>	<!-- better to allow also cvParams here -->
+				<userParam name="Carbamoylated residue"/>
+				<!-- better to allow also cvParams here -->
 				<!--
 				<cvParam accession="MOD:00398" name="carbamoylated residue" cvRef="PSI-MOD"/>
 				-->
@@ -61,6 +63,10 @@ Spectra elements under SpectraSet
 		<Peptide id="pep4">
 			<PeptideSequence>MLVELVASA</PeptideSequence>
 			<QuantitationResult QuantValue_ref="QV_PEPT_4" Assay_ref="ASS2"/>
+		</Peptide>
+		<Peptide id="pep5">
+			<PeptideSequence>MLVELVESA</PeptideSequence>
+			<QuantitationResult QuantValue_ref="QV_PEPT_5" Assay_ref="ASS2"/>
 		</Peptide>
 	</PeptideList>
 	
@@ -103,132 +109,170 @@ Spectra elements under SpectraSet
 	</StudyVariableList>
 	
 	<FeatureList>
-		<SpectraSet>
-			<Spectra id="SPECT_1" AssayRef="ASS1" ></Spectra>
-			<Spectra id="SPECT_2" AssayRef="ASS1"></Spectra>
-			<Spectra id="SPECT_3" AssayRef="ASS1"></Spectra>
-			<Spectra id="SPECT_4" AssayRef="ASS2"></Spectra>
-		</SpectraSet>
+		<SpectraSets>
+			<SpectraSet id="SPEC_SET_1">
+				<!-- count: 4 -->
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_11"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_12"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_13"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_14"/>
+			</SpectraSet>
+			<SpectraSet id="SPEC_SET_2">
+				<!-- count: 2 -->
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_21"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_22"/>
+			</SpectraSet>
+			<SpectraSet id="SPEC_SET_3">
+				<!-- count: 5 -->
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_31"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_32"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_33"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_34"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_35"/>
+			</SpectraSet>
+			<SpectraSet id="SPEC_SET_4">
+				<!-- count: 6 -->
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_41"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_42"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_43"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_44"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_45"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_46"/>
+			</SpectraSet>
+		</SpectraSets>
 	</FeatureList>
 	
 	<QuantList>
-		<!-- fragment counts -->
+		<!-- PSM spectra counts (amino acid sequence with modifications) -->
 		<QuantLayer>
 			<QuantValue id="QV_FRAG_1" value="4">
 				<FeatureRefs>
-					<FeatureRef feature_ref="SPECT_1"></FeatureRef>
+					<FeatureRef feature_ref="SPEC_SET_1"/>
 				</FeatureRefs>
-				<cvParam name="spectral count" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam name="number of MS/MS spectra for this peptide" accession="MS:1000131" cvRef="PSI-MS"/>
 			</QuantValue>
 			<QuantValue id="QV_FRAG_2" value="2">
 				<FeatureRefs>
-					<FeatureRef feature_ref="SPECT_2"></FeatureRef>
+					<FeatureRef feature_ref="SPEC_SET_2"/>
 				</FeatureRefs>
-				<cvParam name="spectral count" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam name="number of MS/MS spectra for this peptide" accession="MS:1000131" cvRef="PSI-MS"/>
 			</QuantValue>
 			<QuantValue id="QV_FRAG_3" value="5">
 				<FeatureRefs>
-					<FeatureRef feature_ref="SPECT_3"></FeatureRef>
+					<FeatureRef feature_ref="SPEC_SET_3"/>
 				</FeatureRefs>
-				<cvParam name="spectral count" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam name="number of MS/MS spectra for this peptide" accession="MS:1000131" cvRef="PSI-MS"/>
 			</QuantValue>
 			<QuantValue id="QV_FRAG_4" value="6">
 				<FeatureRefs>
-					<FeatureRef feature_ref="SPECT_4"></FeatureRef>
+					<FeatureRef feature_ref="SPEC_SET_4"/>
 				</FeatureRefs>
-				<cvParam name="spectral count" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam name="number of MS/MS spectra for this peptide" accession="MS:1000131" cvRef="PSI-MS"/>
 			</QuantValue>
 			<QuantValue id="QV_FRAG_5" value="3">
 				<FeatureRefs>
-					<FeatureRef feature_ref="SPECT_1"></FeatureRef>
+					<FeatureRef feature_ref="SPEC_SET_1"/>
 				</FeatureRefs>
-				<cvParam name="spectral count" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam name="number of MS/MS spectra for this peptide" accession="MS:1000131" cvRef="PSI-MS"/>
 			</QuantValue>
 			<QuantValue id="QV_FRAG_6" value="8">
 				<FeatureRefs>
-					<FeatureRef feature_ref="SPECT_2"></FeatureRef>
+					<FeatureRef feature_ref="SPEC_SET_2"/>
 				</FeatureRefs>
-				<cvParam name="spectral count" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam name="number of MS/MS spectra for this peptide" accession="MS:1000131" cvRef="PSI-MS"/>
 			</QuantValue>
 			<QuantValue id="QV_FRAG_7" value="9">
 				<FeatureRefs>
-					<FeatureRef feature_ref="SPECT_2"></FeatureRef>
+					<FeatureRef feature_ref="SPEC_SET_2"/>
+					<FeatureRef feature_ref="SPEC_SET_4"/>
 				</FeatureRefs>
-				<cvParam name="spectral count" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam name="number of MS/MS spectra for this peptide" accession="MS:1000131" cvRef="PSI-MS"/>
 			</QuantValue>
-			<cvParam name="fragment count layer" accession="MS:0000000" cvRef="PSI-MS"/>
+			<cvParam name="fragment spectra count layer" accession="MS:0000000" cvRef="PSI-MS"/>
 		</QuantLayer>
 		
-		<!-- peptide quantification -->
+		<!-- peptide quantification (only sequence, i.e. aggregation (sum) of modified and unmodified version of peptide) -->
 		<QuantLayer>
-			<QuantValue id="QV_PEPT_1" value="3">
+			<QuantValue id="QV_PEPT_1" value="6">
 				<QuantValueRefs>
 					<QuantValueRef quantValue_ref="QV_FRAG_1"/>
 					<QuantValueRef quantValue_ref="QV_FRAG_2"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (sum)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<QuantValue id="QV_PEPT_2" value="5.5">
+			<QuantValue id="QV_PEPT_2" value="11">
 				<QuantValueRefs>
 					<QuantValueRef quantValue_ref="QV_FRAG_3"/>
 					<QuantValueRef quantValue_ref="QV_FRAG_4"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (sum)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<QuantValue id="QV_PEPT_3" value="5">
+			<QuantValue id="QV_PEPT_3" value="10">
 				<QuantValueRefs>
 					<QuantValueRef quantValue_ref="QV_FRAG_1"/>
 					<QuantValueRef quantValue_ref="QV_FRAG_5"/>
 					<QuantValueRef quantValue_ref="QV_FRAG_6"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (sum)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<QuantValue id="QV_PEPT_4" value="6.5">
+			<QuantValue id="QV_PEPT_4" value="13">
 				<QuantValueRefs>
 					<QuantValueRef quantValue_ref="QV_FRAG_1"/>
 					<QuantValueRef quantValue_ref="QV_FRAG_7"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (sum)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<cvParam accession="MS:1000000" name="peptide layer" cvRef="PSI-MS"></cvParam>
+			<QuantValue id="QV_PEPT_5" value="17">
+				<QuantValueRefs>
+					<QuantValueRef quantValue_ref="QV_FRAG_6"/>
+					<QuantValueRef quantValue_ref="QV_FRAG_7"/>
+				</QuantValueRefs>
+				<cvParam accession="MS:1000000" name="aggregation (sum)" cvRef="PSI-MS"/>
+			</QuantValue>
+			<cvParam accession="MS:1000000" name="peptide quantification layer" cvRef="PSI-MS"/>
 		</QuantLayer>
 		
-		<!-- protein quantification -->
+		<!-- protein quantification: aggregation(mean) of peptides -->
 		<QuantLayer>
-			<QuantValue id="QV_PROT_1" value="4.25">
+			<QuantValue id="QV_PROT_1" value="8.5">
 				<QuantValueRefs>
 					<QuantValueRef quantValue_ref="QV_PEPT_1"/>
 					<QuantValueRef quantValue_ref="QV_PEPT_2"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<QuantValue id="QV_PROT_2" value="5.75">
+			<QuantValue id="QV_PROT_2" value="11.5">
 				<QuantValueRefs>
 					<QuantValueRef quantValue_ref="QV_PEPT_3"/>
 					<QuantValueRef quantValue_ref="QV_PEPT_4"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<cvParam accession="MS:1000000" name="protein layer" cvRef="PSI-MS"></cvParam>
+			<QuantValue id="QV_PROT_3" value="17">
+				<QuantValueRefs>
+					<QuantValueRef quantValue_ref="QV_PEPT_5"/>
+				</QuantValueRefs>
+				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"/>
+			</QuantValue>
+			<cvParam accession="MS:1000000" name="protein quantification layer" cvRef="PSI-MS"/>
 		</QuantLayer>
 		
-		<!-- experimental groups -->
+		<!-- experimental groups: referencing proteins -->
 		<QuantLayer>
-			<QuantValue id="QV_GRP_1" value="5.5">
+			<QuantValue id="QV_GRP_1" value="8.5">
 				<QuantValueRefs>
-					<QuantValueRef quantValue_ref="QV_PEPT_2"/>
+					<QuantValueRef quantValue_ref="QV_PROT_1"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<QuantValue id="QV_GRP_2" value="4.833">
+			<QuantValue id="QV_GRP_2" value="14.25">
 				<QuantValueRefs>
-					<QuantValueRef quantValue_ref="QV_PEPT_1"/>
-					<QuantValueRef quantValue_ref="QV_PEPT_3"/>
-					<QuantValueRef quantValue_ref="QV_PEPT_4"/>
+					<QuantValueRef quantValue_ref="QV_PROT_2"/>
+					<QuantValueRef quantValue_ref="QV_PROT_3"/>
 				</QuantValueRefs>
-				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"></cvParam>
+				<cvParam accession="MS:1000000" name="aggregation (mean)" cvRef="PSI-MS"/>
 			</QuantValue>
-			<cvParam accession="MS:1000000" name="experimental grouping layer" cvRef="PSI-MS"></cvParam>
+			<cvParam accession="MS:1000000" name="experimental grouping layer" cvRef="PSI-MS"/>
 		</QuantLayer>
 	</QuantList>
 	

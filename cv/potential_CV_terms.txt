@@ -41,8 +41,8 @@ for SRM (some overlap with other methods):
 for 14N/15N labeling:
 TODO!
 
-
-
+for parsing support:
+"no layer above/below" for each of the above layer CV Terms
 
 
 B) potential CV terms for nature / aggregation / transformation / calculation of values:
@@ -53,11 +53,17 @@ B) potential CV terms for nature / aggregation / transformation / calculation of
 "chromatogram area" (SRM)
 
 "normalization" (or specific: "Progenesis normalization" with value "normalization factor"??)
+"ratio of values" (and or better or numerator/denominator?)
 
 "sum of values"
 "mean of values"
 "stddev of values"
 "median of values"
 "max of values" / "min of values"
+
 "t-test p-value calculation" (semantic check: only two quant values must be references, both being a "mean of values")
 "ANOVA p-value calculation"(semantic check: only quant values must be references being themselves a "mean of values" each)
+
+
+C) potential CV terms for meta information of StudyVariables (and if there are quasi standard setups for Assay):
+"Case / Control " ( with group number?)

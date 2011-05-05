@@ -67,3 +67,9 @@ B) potential CV terms for nature / aggregation / transformation / calculation of
 
 C) potential CV terms for meta information of StudyVariables (and if there are quasi standard setups for Assay):
 "Case / Control " ( with group number?)
+
+D) potential Feature CV terms:
+"iTRAQ Feature" with semantics mandatory ref (not yet existing) to the Modification in the respective Assay
+"profile Feature" regular
+going along with iTRAQ: iTRAQ CV term for Assay with the semantics to forbid Assays with just one Modification (i.e. reporter ion)
+

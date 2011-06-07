@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Martin Eisenacher (Medizinisches Proteom-Center) -->
 <!--
-mzQuantML version 1.2.0d
+mzQuantML version 0.1.3
 Distributed under the Creative Commons license http://creativecommons.org/licenses/by/2.0/.
 
-(caption b: Andy's version, c: Martin's, d: Mathias' version)
 Issues:
 		different representations for the same setup?
 		value redundance?
@@ -437,7 +436,7 @@ Issues:
 					<xsd:documentation>References to other QuantValues, from which this QUantValue was transformed / aggregated.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="cvParam" type="cvParamType" minOccurs="1">
+			<xsd:element name="cvParam" type="cvParamType">
 				<xsd:annotation>
 					<xsd:documentation>The type of Value. This has also to specifies how the value was crated. (e.g. "normalizing the referenced values" and so on, i.e. the algorithm name, not the algorithm itself, e.g. this referres to the label modification in the respective assay element)</xsd:documentation>
 				</xsd:annotation>

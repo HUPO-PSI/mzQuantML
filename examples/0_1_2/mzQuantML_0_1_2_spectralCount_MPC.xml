@@ -1,4 +1,4 @@
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../schema/mzQuantML_0_1_2.xsd">
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_2.xsd">
 	<!--
 		Questions:Attributes intensity, RT and MZ should be facultative in element <Feature>
 						Attribute "FeatureRefs" in GroupedFeatureRefs in QuantificationsList\QuantMeasurements\QuantMeasurement\FeatureReferences\GroupedFeatureRefs

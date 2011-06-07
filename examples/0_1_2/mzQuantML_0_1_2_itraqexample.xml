@@ -15,279 +15,281 @@ stored in /can be followed by QuantitationResult from PeptideType.
 discussion points here: replace AssayRef in the FeatureType with a ScanFileRef that implicitly points also to the assay or include both refs? IdentificationRef in
 QuantUnit may be unnecessary. Wanted or not?
 -->
-<psi-pi:mzQuantML xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 mzQuantML_0_1_2.xsd" xmlns:psi-pi="http://psidev.info/psi/pi/mzQuantML/0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<psi-pi:cvList>
-	<psi-pi:cv URI="" fullName="" id=""/>
-</psi-pi:cvList>
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_2.xsd">
+<cvList>
+	<cv URI="" fullName="" id=""/>
+</cvList>
 
-	<psi-pi:ProteinList>
-		<psi-pi:QuantProteinAmbiguityGroup id="String">
-			<psi-pi:IdentificationRef id_ref="String" file_ref="String"/>
-			<psi-pi:GroupedQuantitationResult study_variable_ref="text">
-				<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-				<psi-pi:RatioParam ratio_ref="String" value="String"/>
-			</psi-pi:GroupedQuantitationResult>
-			<psi-pi:QuantitationResult assay_refs="ID_1">
-				<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-				<psi-pi:RatioParam ratio_ref="String" value="String"/>
-			</psi-pi:QuantitationResult>
-			<psi-pi:GlobalQuantitationResult>
-				<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-				<psi-pi:RatioParam ratio_ref="String" value="String"/>
-			</psi-pi:GlobalQuantitationResult>
-			<psi-pi:QuantProteinDetectionHypothesis id="String">
-				<psi-pi:IdentificationRef id_ref="String" file_ref="String"/>
-				<psi-pi:GroupedQuantitationResult study_variable_ref="text">
-					<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-					<psi-pi:RatioParam ratio_ref="String" value="String"/>
-				</psi-pi:GroupedQuantitationResult>
-				<psi-pi:QuantitationResult assay_refs="ID_1">
-					<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-					<psi-pi:RatioParam ratio_ref="String" value="String"/>
-				</psi-pi:QuantitationResult>
-				<psi-pi:PeptideRefs>
-					<psi-pi:PeptideRef peptide_ref="String"/>
-				</psi-pi:PeptideRefs>
-			</psi-pi:QuantProteinDetectionHypothesis>
-		</psi-pi:QuantProteinAmbiguityGroup>
-		<psi-pi:QuantProteinDetectionHypothesis id="String">
-			<psi-pi:IdentificationRef id_ref="String" file_ref="String"/>
-			<psi-pi:GroupedQuantitationResult study_variable_ref="text">
-				<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-				<psi-pi:RatioParam ratio_ref="String" value="String"/>
-			</psi-pi:GroupedQuantitationResult>
-			<psi-pi:QuantitationResult assay_refs="ID_1">
-				<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-				<psi-pi:RatioParam ratio_ref="String" value="String"/>
-			</psi-pi:QuantitationResult>
-			<psi-pi:PeptideRefs>
-				<psi-pi:PeptideRef peptide_ref="String"/>
-			</psi-pi:PeptideRefs>
-		</psi-pi:QuantProteinDetectionHypothesis>
-	</psi-pi:ProteinList>
+	<!--dummy-->
+	<ProteinList>
+		<QuantProteinAmbiguityGroup id="String">
+			<IdentificationRef id_ref="String" file_ref="String"/>
+			<GroupedQuantitationResult>
+				<GroupMeasureParam unitAccession="String" unitCvRef="String" StudyVariable_ref="text" unitName="String" QuantMeasurement_ref="ID_1" value="String"/>
+				<GroupRatioParam Ratio_ref="ID_1" StudyVariableNumerator_ref="ID_1" StudyVariableDenominator_ref="ID_1" value="3.14159265358979E0"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult Assay_ref="ID_1">
+				<MeasureParam unitAccession="String" unitCvRef="String" unitName="String" QuantMeasurement_ref="ID_1" value="String"/>
+				<RatioParam Ratio_ref="ID_1" value="3.14159265358979E0"/>
+			</QuantitationResult>
+			<GlobalQuantitationResult>
+				<MeasureParam unitAccession="String" unitCvRef="String" unitName="String" QuantMeasurement_ref="ID_1" value="String"/>
+				<RatioParam Ratio_ref="ID_1" value="3.14159265358979E0"/>
+			</GlobalQuantitationResult>
+			<QuantProteinDetectionHypothesis id="String">
+				<IdentificationRef id_ref="String" file_ref="String"/>
+				<GroupedQuantitationResult>
+					<GroupMeasureParam unitAccession="String" unitCvRef="String" StudyVariable_ref="text" unitName="String" QuantMeasurement_ref="ID_1" value="String"/>
+					<GroupRatioParam Ratio_ref="ID_1" StudyVariableNumerator_ref="ID_1" StudyVariableDenominator_ref="ID_1" value="3.14159265358979E0"/>
+				</GroupedQuantitationResult>
+				<QuantitationResult Assay_ref="ID_1">
+					<MeasureParam unitAccession="String" unitCvRef="String" unitName="String" QuantMeasurement_ref="ID_1" value="String"/>
+					<RatioParam Ratio_ref="ID_1" value="3.14159265358979E0"/>
+				</QuantitationResult>
+				<QuantPeptideRefs>
+					<QuantPeptideRef ref="String"/>
+				</QuantPeptideRefs>
+			</QuantProteinDetectionHypothesis>
+		</QuantProteinAmbiguityGroup>
+		<QuantProteinDetectionHypothesis id="String">
+			<IdentificationRef id_ref="String" file_ref="String"/>
+			<GroupedQuantitationResult>
+				<GroupMeasureParam unitAccession="String" unitCvRef="String" StudyVariable_ref="text" unitName="String" QuantMeasurement_ref="ID_1" value="String"/>
+				<GroupRatioParam Ratio_ref="ID_1" StudyVariableNumerator_ref="ID_1" StudyVariableDenominator_ref="ID_1" value="3.14159265358979E0"/>
+			</GroupedQuantitationResult>
+			<QuantitationResult Assay_ref="ID_1">
+				<MeasureParam unitAccession="String" unitCvRef="String" unitName="String" QuantMeasurement_ref="ID_1" value="String"/>
+				<RatioParam Ratio_ref="ID_1" value="3.14159265358979E0"/>
+			</QuantitationResult>
+			<QuantPeptideRefs>
+				<QuantPeptideRef ref="String"/>
+			</QuantPeptideRefs>
+		</QuantProteinDetectionHypothesis>
+	</ProteinList>
 
-	<psi-pi:PeptideList>
-		<psi-pi:Peptide id="pi_2">
-			<psi-pi:PeptideSequence>SOMESEQUENCE</psi-pi:PeptideSequence>
-				<psi-pi:IdentificationReferences id_ref="pi_2" file_ref="i_1"/>
-				<psi-pi:IdentificationReferences id_ref="pi_2" file_ref="i_0"/>
-			<psi-pi:QuantitationResult assay_refs="a_0 a_1">
-				<psi-pi:MeasureParam unitAccession="String" unitCvRef="String" measure_ref="text" unitName="String" value="String"/>
-				<psi-pi:RatioParam ratio_ref="q_p_b-substance1_vs_substance4" value="1.058155487"/>
-			</psi-pi:QuantitationResult>
-		</psi-pi:Peptide>
-	</psi-pi:PeptideList>
 
-	<psi-pi:AssayList>
-		<psi-pi:Assay id="a_0" name="String">
-			<psi-pi:RawFiles>
-				<psi-pi:RawFile id="tissue1_tr1" name="tissue1tr1.raw"/>
-				<psi-pi:RawFile id="tissue1_tr2" name="tissue1tr2.raw"/>
-			</psi-pi:RawFiles>
-			<psi-pi:Label>
-				<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="iTRAQ" value="4plex" cvRef="iTRAQ4plex"/>
-				<psi-pi:Modification massDelta="1">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="1" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-				<psi-pi:Modification massDelta="2">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="2" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-				<psi-pi:Modification massDelta="3">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="3" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-				<psi-pi:Modification massDelta="4">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="4" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-			</psi-pi:Label>
-			<psi-pi:IdentificationFiles>
-				<psi-pi:IdentificationFile id="i_0" name="tissue1all.mzIdentML"/>
-			</psi-pi:IdentificationFiles>
-			<psi-pi:DataProcessingOrder>
-				<psi-pi:DataProcessingOrderElement DataprocessingRef="ID_1" rank="somesubstance"/>
-			</psi-pi:DataProcessingOrder>
-			<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-		</psi-pi:Assay>
-		<psi-pi:Assay id="a_1" name="String">
-			<psi-pi:RawFiles>
-				<psi-pi:RawFile id="tissue2" name="tissue2tu.raw"/>
-			</psi-pi:RawFiles>
-			<psi-pi:Label>
-				<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="iTRAQ" value="4plex" cvRef="iTRAQ4plex"/>
-				<psi-pi:Modification massDelta="1">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="1" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-				<psi-pi:Modification massDelta="2">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="2" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-				<psi-pi:Modification massDelta="3">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="3" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-				<psi-pi:Modification massDelta="4">
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="4" cvRef="iTRAQ4plex"/>
-				</psi-pi:Modification>
-			</psi-pi:Label>
-			<psi-pi:IdentificationFiles>
-				<psi-pi:IdentificationFile id="i_1" name="tissue2.mzIdentML"/>
-			</psi-pi:IdentificationFiles>
-			<psi-pi:DataProcessingOrder>
-				<psi-pi:DataProcessingOrderElement DataprocessingRef="ID_1" rank="somesubstance"/>
-			</psi-pi:DataProcessingOrder>
-			<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-		</psi-pi:Assay>
-	</psi-pi:AssayList>
+	<PeptideList>
+		<Peptide id="pi_2">
+			<PeptideSequence>SOMESEQUENCE</PeptideSequence>
+				<IdentificationRef id_ref="pi_2" file_ref="i_1"/>
+				<IdentificationRef id_ref="pi_2" file_ref="i_0"/>
+			<QuantitationResult Assay_ref="a_1">
+				<MeasureParam unitAccession="String" unitCvRef="String"  QuantMeasurement_ref="text" unitName="String" value="String"/>
+				<RatioParam Ratio_ref="q_p_b-substance1_vs_substance4" value="1.058155487"/>
+			</QuantitationResult>
+		</Peptide>
+	</PeptideList>
 
-	<psi-pi:FeatureList>
-		<psi-pi:Feature charge="2" id="f_1_1" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="4327.02">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_1_2" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="2446.1">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_1_3" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="3074.21">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_1_4" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="2387.64">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
-		</psi-pi:Feature>
+	<AssayList>
+		<Assay id="a_0" name="String">
+			<RawFiles>
+				<RawFile id="tissue1_tr1" name="tissue1tr1.raw"/>
+				<RawFile id="tissue1_tr2" name="tissue1tr2.raw"/>
+			</RawFiles>
+			<Label>
+				<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="iTRAQ" value="4plex" cvRef="iTRAQ4plex"/>
+				<Modification massDelta="1">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="1" cvRef="iTRAQ4plex"/>
+				</Modification>
+				<Modification massDelta="2">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="2" cvRef="iTRAQ4plex"/>
+				</Modification>
+				<Modification massDelta="3">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="3" cvRef="iTRAQ4plex"/>
+				</Modification>
+				<Modification massDelta="4">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="4" cvRef="iTRAQ4plex"/>
+				</Modification>
+			</Label>
+			<IdentificationFiles>
+				<IdentificationFile id="i_0" name="tissue1all.mzIdentML"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement DataprocessingRef="ID_1" rank="somesubstance"/>
+			</DataProcessingOrder>
+			<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+		</Assay>
+		<Assay id="a_1" name="String">
+			<RawFiles>
+				<RawFile id="tissue2" name="tissue2tu.raw"/>
+			</RawFiles>
+			<Label>
+				<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="iTRAQ" value="4plex" cvRef="iTRAQ4plex"/>
+				<Modification massDelta="1">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="1" cvRef="iTRAQ4plex"/>
+				</Modification>
+				<Modification massDelta="2">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="2" cvRef="iTRAQ4plex"/>
+				</Modification>
+				<Modification massDelta="3">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="3" cvRef="iTRAQ4plex"/>
+				</Modification>
+				<Modification massDelta="4">
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="channel" value="4" cvRef="iTRAQ4plex"/>
+				</Modification>
+			</Label>
+			<IdentificationFiles>
+				<IdentificationFile id="i_1" name="tissue2.mzIdentML"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement DataprocessingRef="ID_1" rank="somesubstance"/>
+			</DataProcessingOrder>
+			<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+		</Assay>
+	</AssayList>
 
-		<psi-pi:Feature charge="2" id="f_2_1" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="1024.02">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_2_2" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="901.58">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_2_3" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="616.65">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_2_4" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="1000.22">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
+	<FeatureList>
+		<Feature charge="2" id="f_1_1" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="4327.02">
+			<IdentificationReferences id_ref="p_b" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
+		</Feature>
+		<Feature charge="2" id="f_1_2" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="2446.1">
+			<IdentificationReferences id_ref="p_b" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
+		</Feature>
+		<Feature charge="2" id="f_1_3" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="3074.21">
+			<IdentificationReferences id_ref="p_b" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
+		</Feature>
+		<Feature charge="2" id="f_1_4" AssayRef="a_0"  DataProcessingRef="ID_1" MZ="489.839599609375" RT="996.1531" intensity="2387.64">
+			<IdentificationReferences id_ref="p_b" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
+		</Feature>
 
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_3_1" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="1424.72">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_3_2" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="900.18">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_3_3" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="615.265">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_3_4" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="986.2">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_0"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
+		<Feature charge="2" id="f_2_1" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="1024.02">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
+		</Feature>
+		<Feature charge="2" id="f_2_2" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="901.58">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
+		</Feature>
+		<Feature charge="2" id="f_2_3" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="616.65">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
+		</Feature>
+		<Feature charge="2" id="f_2_4" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305307851563" intensity="1000.22">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
 
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_4_1" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="2407.02">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_4_2" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="1617.41">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_4_3" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="2912.02">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_4_4" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="1649.82">
-			<psi-pi:IdentificationReferences id_ref="p_a" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
-		</psi-pi:Feature>
+		</Feature>
+		<Feature charge="2" id="f_3_1" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="1424.72">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
+		</Feature>
+		<Feature charge="2" id="f_3_2" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="900.18">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
+		</Feature>
+		<Feature charge="2" id="f_3_3" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="615.265">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
+		</Feature>
+		<Feature charge="2" id="f_3_4" AssayRef="a_0"  DataProcessingRef="ID_1" RT="1003.3731" MZ="523.305297851563" intensity="986.2">
+			<IdentificationReferences id_ref="p_a" file_ref="i_0"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
 
-		<psi-pi:Feature charge="2" id="f_5_1" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="1701.57">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_5_2" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="1206.49">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_5_3" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="1706.95">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
-		</psi-pi:Feature>
-		<psi-pi:Feature charge="2" id="f_5_4" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="0">
-			<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_1"/>
-			<psi-pi:userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
-		</psi-pi:Feature>
- 	</psi-pi:FeatureList>
+		</Feature>
+		<Feature charge="2" id="f_4_1" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="2407.02">
+			<IdentificationReferences id_ref="p_a" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
+		</Feature>
+		<Feature charge="2" id="f_4_2" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="1617.41">
+			<IdentificationReferences id_ref="p_a" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
+		</Feature>
+		<Feature charge="2" id="f_4_3" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="2912.02">
+			<IdentificationReferences id_ref="p_a" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
+		</Feature>
+		<Feature charge="2" id="f_4_4" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1129.0157" MZ="539.89306640625" intensity="1649.82">
+			<IdentificationReferences id_ref="p_a" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
+		</Feature>
 
-	<psi-pi:QuantificationsList>
-		<psi-pi:QuantitationUnits>
-			<psi-pi:QuantitationUnit id="p_b-substance1" name="p_b_substance1" value="2163.51">
-				<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-				<psi-pi:FeatureReferences>
-						<psi-pi:GroupedFeatureRefs FeatureRefs="f_1_1 f_5_4">
-								<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-							</psi-pi:GroupedFeatureRefs>
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-				</psi-pi:FeatureReferences>
-				<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_1"/>
-				<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_0"/>
-				<psi-pi:UserParam unitAccession="String" unitCvRef="String" unitName="String" name="what" value="all tissues peptide p_b substance y mean"/>
-			</psi-pi:QuantitationUnit>
-			<psi-pi:QuantitationUnit id="p_b-substance4" name="p_b-substance4" value="2044.605">
-				<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-				<psi-pi:FeatureReferences>
-						<psi-pi:GroupedFeatureRefs FeatureRefs="f_1_4 f_5_1">
-								<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-							</psi-pi:GroupedFeatureRefs>
-					<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-				</psi-pi:FeatureReferences>
-				<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_1"/>
-				<psi-pi:IdentificationReferences id_ref="p_b" file_ref="i_0"/>
-				<psi-pi:UserParam unitAccession="String" unitCvRef="String" unitName="String" name="what" value="all tissues peptide p_b substance z mean"/>
-			</psi-pi:QuantitationUnit>
-		</psi-pi:QuantitationUnits>
-		<psi-pi:Ratio id="q_p_b-substance1_vs_substance4">
-			<psi-pi:Numerator>
-				<psi-pi:QuantitationUnitRef ref="p_b-substance1"/>
-			</psi-pi:Numerator>
-			<psi-pi:Denominator>
-				<psi-pi:QuantitationUnitRef ref="p_b-substance4"/>
-			</psi-pi:Denominator>
-		</psi-pi:Ratio>
-		<psi-pi:Measurement id="String">
-			<psi-pi:cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
-			<psi-pi:QuantitationUnitRef ref="String"/>
-		</psi-pi:Measurement>
-	</psi-pi:QuantificationsList>
+		<Feature charge="2" id="f_5_1" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="1701.57">
+			<IdentificationReferences id_ref="p_b" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="1"/>
+		</Feature>
+		<Feature charge="2" id="f_5_2" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="1206.49">
+			<IdentificationReferences id_ref="p_b" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="2"/>
+		</Feature>
+		<Feature charge="2" id="f_5_3" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="1706.95">
+			<IdentificationReferences id_ref="p_b" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="3"/>
+		</Feature>
+		<Feature charge="2" id="f_5_4" AssayRef="a_1"  DataProcessingRef="ID_1" RT="1133.0633" MZ="580.820373535156" intensity="0">
+			<IdentificationReferences id_ref="p_b" file_ref="i_1"/>
+			<userParam unitAccession="String" unitCvRef="String" unitName="String" name="channel" value="4"/>
+		</Feature>
+ 	</FeatureList>
 
-	<psi-pi:DataProcessingList>
-		<psi-pi:dataProcessing id="ID_1">
-			<psi-pi:processingMethod>
-				<psi-pi:referenceableParamGroupRef ref="ID_1"/>
-				<psi-pi:cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="map id's for iTRAQ spectra" value="all" cvRef="ID_1"/>
-			</psi-pi:processingMethod>
-		</psi-pi:dataProcessing>
-		<psi-pi:dataProcessing id="ID_2">
-			<psi-pi:processingMethod>
-				<psi-pi:referenceableParamGroupRef ref="ID_1"/>
-				<psi-pi:cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="quality-improvement for spectra" value="all" cvRef="ID_1"/>
-			</psi-pi:processingMethod>
-		</psi-pi:dataProcessing>
-		<psi-pi:dataProcessing id="ID_3">
-			<psi-pi:processingMethod>
-				<psi-pi:referenceableParamGroupRef ref="ID_1"/>
-				<psi-pi:cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="some preprocessing " value="all" cvRef="ID_1"/>
-			</psi-pi:processingMethod>
-		</psi-pi:dataProcessing>
-		<psi-pi:dataProcessing id="ID_4">
-			<psi-pi:processingMethod>
-				<psi-pi:referenceableParamGroupRef ref="ID_1"/>
-				<psi-pi:cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="some postprocessing" value="all" cvRef="ID_1"/>
-			</psi-pi:processingMethod>
-		</psi-pi:dataProcessing>
-	</psi-pi:DataProcessingList>
-</psi-pi:mzQuantML>
+	<QuantificationsList>
+		<QuantitationUnits>
+			<QuantitationUnit id="p_b-substance1" name="p_b_substance1" value="2163.51">
+				<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+				<FeatureReferences>
+						<GroupedFeatureRefs FeatureRefs="f_1_1 f_5_4">
+								<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+							</GroupedFeatureRefs>
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+				</FeatureReferences>
+				<IdentificationReferences id_ref="p_b" file_ref="i_1"/>
+				<IdentificationReferences id_ref="p_b" file_ref="i_0"/>
+				<UserParam unitAccession="String" unitCvRef="String" unitName="String" name="what" value="all tissues peptide p_b substance y mean"/>
+			</QuantitationUnit>
+			<QuantitationUnit id="p_b-substance4" name="p_b-substance4" value="2044.605">
+				<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+				<FeatureReferences>
+						<GroupedFeatureRefs FeatureRefs="f_1_4 f_5_1">
+								<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+							</GroupedFeatureRefs>
+					<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+				</FeatureReferences>
+				<IdentificationReferences id_ref="p_b" file_ref="i_1"/>
+				<IdentificationReferences id_ref="p_b" file_ref="i_0"/>
+				<UserParam unitAccession="String" unitCvRef="String" unitName="String" name="what" value="all tissues peptide p_b substance z mean"/>
+			</QuantitationUnit>
+		</QuantitationUnits>
+		<Ratio id="q_p_b-substance1_vs_substance4">
+			<Numerator>
+				<QuantitationUnitRef ref="p_b-substance1"/>
+			</Numerator>
+			<Denominator>
+				<QuantitationUnitRef ref="p_b-substance4"/>
+			</Denominator>
+		</Ratio>
+		<Measurement id="String">
+			<cvParam unitAccession="String" unitCvRef="String" unitName="String" accession="String" name="String" value="String" cvRef="String"/>
+			<QuantitationUnitRef ref="String"/>
+		</Measurement>
+	</QuantificationsList>
+
+	<DataProcessingList>
+		<dataProcessing id="ID_1">
+			<processingMethod>
+				<referenceableParamGroupRef ref="ID_1"/>
+				<cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="map id's for iTRAQ spectra" value="all" cvRef="ID_1"/>
+			</processingMethod>
+		</dataProcessing>
+		<dataProcessing id="ID_2">
+			<processingMethod>
+				<referenceableParamGroupRef ref="ID_1"/>
+				<cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="quality-improvement for spectra" value="all" cvRef="ID_1"/>
+			</processingMethod>
+		</dataProcessing>
+		<dataProcessing id="ID_3">
+			<processingMethod>
+				<referenceableParamGroupRef ref="ID_1"/>
+				<cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="some preprocessing " value="all" cvRef="ID_1"/>
+			</processingMethod>
+		</dataProcessing>
+		<dataProcessing id="ID_4">
+			<processingMethod>
+				<referenceableParamGroupRef ref="ID_1"/>
+				<cvParam unitAccession="String" unitCvRef="ID_1" unitName="String" accession="String" name="some postprocessing" value="all" cvRef="ID_1"/>
+			</processingMethod>
+		</dataProcessing>
+	</DataProcessingList>
+</mzQuantML>

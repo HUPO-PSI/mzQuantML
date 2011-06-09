@@ -1,4 +1,5 @@
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 mzQuantML_0_1_2_alternative.xsd">
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Martin Eisenacher (Medizinisches Proteom-Center) -->
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../drafts/mzQuantML_0_1_2_alternative.xsd">
 	<!--
 		Remarks:	Attributes intensity, RT and MZ should be facultative in element <Feature>
 						QuantificationsList should be a real list (1...infinity)

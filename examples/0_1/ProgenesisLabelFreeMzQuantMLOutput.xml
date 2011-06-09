@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!--  
 Problems: (3) We would need to add definitions of the measures to the protocol, and should do so using a controlled 
@@ -8,7 +8,7 @@ Problems: (3) We would need to add definitions of the measures to the protocol, 
 -->
 
 <mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../schema/mzQuantML_0_1.xsd"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1.xsd"
  xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
   <!-- ********* -->
   <!-- PROTEIN LIST -->

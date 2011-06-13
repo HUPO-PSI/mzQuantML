@@ -1,0 +1,338 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_4.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
+	
+	
+	<AssayList id="AssayList1">
+		<Assay id="B1" name="B1">
+			<RawFiles>
+				<RawFile location="../msmsdata/b1.raw"/>
+			</RawFiles>
+		</Assay>
+		<Assay id="B2" name="B2">
+			<RawFiles>
+				<RawFile location="../msmsdata/b2.raw"/>
+			</RawFiles>
+		</Assay>
+		<Assay id="B3" name="B3">
+			<RawFiles>
+				<RawFile location="../msmsdata/b2.raw"/>
+			</RawFiles>
+		</Assay>
+		<Assay id="E1" name="E1">
+			<RawFiles>
+				<RawFile location="../msmsdata/e1.raw"/>
+			</RawFiles>
+		</Assay>
+		<Assay id="E2" name="E2">
+			<RawFiles>
+				<RawFile location="../msmsdata/e2.raw"/>
+			</RawFiles>
+		</Assay>
+		<Assay id="E3" name="E3">
+			<RawFiles>
+				<RawFile location="../msmsdata/e2.raw"/>
+			</RawFiles>
+		</Assay>
+		
+	</AssayList>
+	
+	
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS" value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>	
+			<AssayRef assay_ref="B1"/>
+			<AssayRef assay_ref="B2"/>
+			<AssayRef assay_ref="B3"/>
+		</StudyVariable>
+		<StudyVariable id="SV_group_E" name="Group E">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS" value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<AssayRef assay_ref="E1"/>
+			<AssayRef assay_ref="E2"/>
+			<AssayRef assay_ref="E3"/>
+		</StudyVariable>
+		
+	</StudyVariableList>
+	
+	
+	<ProteinGroupList>
+		<!-- Put in some similar structure for representing protein groups -->
+		
+	</ProteinGroupList>
+	
+	
+
+	<ProteinList>
+		<QuantLayerRef quantLayer_ref="QL_1"/>
+		<Protein id="Prot_YDR238C" accession="YDR238C">
+			<IdentificationRef file_ref="local_mzid_file" id_ref="PDH123"/>	
+			<PeptideRefs>
+				<PeptideRef peptide_ref="Pep1"/>
+				<PeptideRef peptide_ref="Pep2"/>
+			</PeptideRefs>
+			
+		</Protein>
+
+		<Protein id="Prot_YDR238D" accession="YDR238D">
+			<IdentificationRef file_ref="local_mzid_file" id_ref="PDH124"/>	
+			<PeptideRefs>
+				<PeptideRef peptide_ref="Pep3"/>
+				<PeptideRef peptide_ref="Pep4"/>
+			</PeptideRefs>
+			
+
+		</Protein>
+		<Protein id="Prot_YDR238E" accession="YDR238E">
+			<IdentificationRef file_ref="local_mzid_file" id_ref="PDH125"/>
+			<PeptideRefs>
+				<PeptideRef peptide_ref="Pep5"/>
+				<PeptideRef peptide_ref="Pep6"/>
+			</PeptideRefs>
+		</Protein>
+		<!-- And so on -->
+		
+	</ProteinList>
+	
+	<PeptideList>
+		<QuantLayerRef quantLayer_ref="QL_2"/>
+		<Peptide id="Pep1">
+			<PeptideSequence>IGDYAGIK</PeptideSequence>
+			<Modification> <!-- As needed --></Modification>
+		</Peptide>
+		<Peptide id="Pep2">
+			<PeptideSequence>PEPTIDEK</PeptideSequence>
+		</Peptide>
+		<Peptide id="Pep3">
+			<PeptideSequence>PEPTIDELK</PeptideSequence>
+		</Peptide>
+		<Peptide id="Pep4">
+			<PeptideSequence>PEPTIDELLLLK</PeptideSequence>
+		</Peptide>
+		<Peptide id="Pep5">
+			<PeptideSequence>PEPTIDEMMMMK</PeptideSequence>
+		</Peptide>
+		<Peptide id="Pep6">
+			<PeptideSequence>PEPTIDEDDDDDK</PeptideSequence>
+		</Peptide>
+		<!-- And so on -->
+	</PeptideList>
+	
+	<FeatureList>
+		
+				
+		<Feature id="feature548_1" assay_ref="B1" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2548 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+		</Feature>
+		
+		<Feature id="feature548_2" assay_ref="B2" charge="2" MZ="418.729214693827" RT="27.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2548 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>			
+		</Feature>
+		
+		<Feature id="feature548_3" assay_ref="B3" charge="2" MZ="418.729214693827" RT="26.9685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2548 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>			
+		</Feature>
+		
+		<Feature id="feature548_4" assay_ref="E1" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2548 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+			
+		</Feature>
+		
+		<Feature id="feature548_5" assay_ref="E2" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2548 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+			
+		</Feature>
+		<Feature id="feature548_6" assay_ref="E3" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2548 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+			
+		</Feature>
+		
+		<Feature id="feature549_1" assay_ref="B1" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2549 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+		</Feature>
+		
+		<Feature id="feature549_2" assay_ref="B2" charge="2" MZ="418.729214693827" RT="27.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2549 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>			
+		</Feature>
+		
+		<Feature id="feature549_3" assay_ref="B3" charge="2" MZ="418.729214693827" RT="26.9685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2549 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>			
+		</Feature>
+		
+		<Feature id="feature549_4" assay_ref="E1" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2549 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+			
+		</Feature>
+		
+		<Feature id="feature549_5" assay_ref="E2" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2549 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+			
+		</Feature>
+		<Feature id="feature549_6" assay_ref="E3" charge="2" MZ="418.729214693827" RT="26.8685">	<!-- Note - intensity would be captured as a quant layer -->
+			
+			<!-- i.e. mass trace is space separated, with defined order -->
+			<Masstrace>
+				418.7139 418.7454 26.635 27.592 
+				419.2045 419.2549 26.635 27.592 
+				419.688 419.7517 26.635 27.528 
+				420.2408 420.254 826.635 27.018
+			</Masstrace>
+			
+			
+		</Feature>
+		
+		
+	</FeatureList>
+	
+	
+	
+	<MatchedFeatureList>		
+		<MatchedFeature id="MF_1">			
+			<feature_refs>feature548_1 feature548_2 feature548_3 feature548_4 feature548_5 feature548_6</feature_refs>
+			<PeptideRef peptide_ref="Pep1"/>		
+		</MatchedFeature>
+		
+		<MatchedFeature id="MF_2">			
+			<feature_refs>feature549_1 feature549_2 feature549_3 feature549_4 feature549_5 feature549_6</feature_refs>
+			<PeptideRef peptide_ref="Pep2"/>
+		</MatchedFeature>
+		
+	</MatchedFeatureList>
+			
+	<QuantLayerList>
+		<QuantLayer ID="QL_1">
+			<DataType>
+				<cvParam cvRef="NormalisedAbundance" accession="TODO" name="TODO"/>
+			</DataType>
+			<RowIndex>Prot_YDR238C Prot_YDR238D Prot_YDR238E</RowIndex>
+			<RowType>
+				<cvParam cvRef="Protein" accession="" name=""/>
+			</RowType>
+			<ColumnIndex>B1 B2 B3 E1 E2 E3</ColumnIndex>
+			<ColumnType>
+				<cvParam cvRef="Assay" accession="" name=""/>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">23304.18097	16033.65284	17037.24999	24898.79598	16740.02181	17804.14504</Row>
+				<Row index="2">93481.71436	98090.36288	16012.79674	16811.8353	47637.00813	45969.71285</Row>
+				<Row index="3">10004.67442	10622.9633	15432.60778	15150.19106	46613.73149	48911.78845</Row>
+			</DataMatrix>
+		</QuantLayer>
+		
+		<QuantLayer ID="QL_2">
+			<DataType>
+				<cvParam cvRef="NormalisedFeatureAbundance" accession="TODO" name="TODO"/>
+			</DataType>
+			<RowIndex>MF_1 MF_2</RowIndex>
+			<RowType>
+				<cvParam cvRef="MatchedFeature" accession="" name=""/>
+			</RowType>
+			<ColumnIndex>B1 B2 B3 E1 E2 E3</ColumnIndex>
+			<ColumnType>
+				<cvParam cvRef="Assay" accession="" name=""/>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">26213.66356	26889.97608	10756.09192	9961.216727	12058.34242	11029.76581</Row>
+				<Row index="2">32976.35211	35195.66061	18934.30128	17103.35435	18088.55383	19000.21694</Row>
+			</DataMatrix>
+		</QuantLayer>			
+		
+	</QuantLayerList>
+	
+	
+		
+		
+	
+	
+	<DataProcessingList>
+		<dataProcessing id="progenesis_alignment">
+			<processingMethod>
+				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
+			</processingMethod>
+		</dataProcessing>		
+	</DataProcessingList>
+	
+</mzQuantML>

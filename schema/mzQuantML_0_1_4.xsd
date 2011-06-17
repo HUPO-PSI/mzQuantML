@@ -94,13 +94,13 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="ProteinGroupListType">
 		<xsd:sequence>
-			<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="ProteinGroup" type="ProteinGroupType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinListType">
 		<xsd:sequence>
-			<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="Protein" type="ProteinType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -164,7 +164,7 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="PeptideListType">
 		<xsd:sequence>
-			<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="Peptide" type="PeptideType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -228,7 +228,7 @@ Issues:
 					<xsd:documentation>Type of data in the quant layer e.g. cvParam = "Intensity|RawAbundance|NormalisedAbundance|PeptideCount|ConfidenceScore|Anova|MaxFoldChange|...."</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RowIndex" type="listOfIDs" maxOccurs="1" minOccurs="1">
+			<xsd:element name="RowIndex" type="xsd:IDREFS" maxOccurs="1" minOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Space separated unique identifiers for each rows of data, must refer to an object in the file - Feature, MatchedFeature, ProteinGroup, Protein or Peptide </xsd:documentation>
 				</xsd:annotation>
@@ -238,7 +238,7 @@ Issues:
 					<xsd:documentation>Type of row - allowed values: Proteins|ProteinGroups|Peptides|Features|MatchedFeatures</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ColumnIndex" type="listOfIDs" maxOccurs="1" minOccurs="1">
+			<xsd:element name="ColumnIndex" type="xsd:IDREFS" maxOccurs="1" minOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Space separated unique identifiers for each column of data, must refer to an object in the file - StudyVariable, Assay, AssayList</xsd:documentation>
 				</xsd:annotation>
@@ -493,6 +493,7 @@ Issues:
 				<xsd:element name="Chromatogram" maxOccurs="unbounded"/>
 			</xsd:sequence>
 			<xsd:sequence>
+				<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="unbounded"/>
 				<xsd:element name="Feature" maxOccurs="unbounded" type="FeatureType"/>				
 			</xsd:sequence>
 		</xsd:choice>
@@ -541,7 +542,7 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="MatchedFeatureType">
 		<xsd:sequence>
-			<xsd:element name="feature_refs" type="psi-mzq:listOfIDs"/>
+			<xsd:element name="feature_refs" type="xsd:IDREFS"/>
 			<xsd:element name="PeptideRef" type="PeptideRefType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>It would be expected that a MatchedFeature can only be associated with one peptide. However, multiple peptide references are (currently) allowed in case of unclear evidence as to which MatchedFeature should be associated with which peptide object.</xsd:documentation>
@@ -724,10 +725,7 @@ Issues:
 	</xsd:complexType>
 	<xsd:simpleType name="listOfDoubles">
 		<xsd:list itemType="xsd:double"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="listOfIDs">
-		<xsd:list itemType="xsd:IDREF"/>
-	</xsd:simpleType>
+	</xsd:simpleType>	
 	<xsd:complexType name="cvParamRefType">
 		<xsd:annotation>
 			<xsd:documentation>Helper complexType to include one cvParam as a sub-element</xsd:documentation>

@@ -296,10 +296,26 @@ Sketch of an example for using data matrices to represent quant layers
 				<cvParam cvRef="Assay" accession="" name=""/>
 			</ColumnType>
 			<DataMatrix>
-				<Row index="1">23304.18097	16033.65284	17037.24999	24898.79598	16740.02181	17804.14504</Row>
-				<Row index="2">93481.71436	98090.36288	16012.79674	16811.8353	47637.00813	45969.71285</Row>
-				<Row index="3">10004.67442	10622.9633	15432.60778	15150.19106	46613.73149	48911.78845</Row>
-			</DataMatrix>
+				<Row index="0">23304.18097	16033.65284	17037.24999	24898.79598	16740.02181	17804.14504</Row>
+				<Row index="1">93481.71436	98090.36288	16012.79674	16811.8353	47637.00813	45969.71285</Row>
+				<Row index="2">10004.67442	10622.9633	15432.60778	15150.19106	46613.73149	48911.78845</Row>
+			</DataMatrix>			
+			
+			<!-- Here is a reference system to build the path back to the source of each value in each cell of the data matrix - not recommended for data export -->
+			
+			<CellSourceRef row="0" col="0">
+				<QLCellRef quantLayer_Ref="QL_2" col="0" row="0"/>
+				<QLCellRef quantLayer_Ref="QL_2" col="0" row="1"/>
+			</CellSourceRef>
+			
+			<CellSourceRef row="0" col="1">
+				<QLCellRef quantLayer_Ref="QL_2" col="1" row="0"/>
+				<QLCellRef quantLayer_Ref="QL_2" col="1" row="1"/>
+			</CellSourceRef>
+			
+			<!-- And so on for every cell in the DataMatrix above -->
+
+
 		</QuantLayer>
 		
 		<QuantLayer ID="QL_2">
@@ -315,8 +331,8 @@ Sketch of an example for using data matrices to represent quant layers
 				<cvParam cvRef="Assay" accession="" name=""/>
 			</ColumnType>
 			<DataMatrix>
-				<Row index="1">26213.66356	26889.97608	10756.09192	9961.216727	12058.34242	11029.76581</Row>
-				<Row index="2">32976.35211	35195.66061	18934.30128	17103.35435	18088.55383	19000.21694</Row>
+				<Row index="0">26213.66356	26889.97608	10756.09192	9961.216727	12058.34242	11029.76581</Row>
+				<Row index="1">32976.35211	35195.66061	18934.30128	17103.35435	18088.55383	19000.21694</Row>
 			</DataMatrix>
 		</QuantLayer>			
 		

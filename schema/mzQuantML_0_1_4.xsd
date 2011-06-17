@@ -248,7 +248,8 @@ Issues:
 					<xsd:documentation>Type of column - allowed values: StudyVariable, Assay, AssayList</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CellSourceRef" type="CellSourceRefType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 		<xsd:attribute name="ID" type="xsd:ID" use="required"/>
 	</xsd:complexType>
@@ -261,14 +262,56 @@ Issues:
 				<xsd:complexType>
 					<xsd:simpleContent>
 						<xsd:extension base="psi-mzq:listOfDoubles">
-							<xsd:attribute name="index" type="xsd:int" use="required"/>
+							<xsd:attribute name="index" type="xsd:int" use="required">
+								<xsd:annotation>
+									<xsd:documentation>Index position for this row e.g. to be referred to from elsewhere - integers should start at zero.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
 						</xsd:extension>
 					</xsd:simpleContent>
 				</xsd:complexType>				
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	
+	<xsd:complexType name="CellSourceRefType">
+		<xsd:annotation>
+			<xsd:documentation>An optional element for inserting references from a particular cell of the data matrix in this QuantLayer to positions in other QuantLayers. Note - the use of this element for data export is not generally recommended since it will hugely increase file sizes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="QLCellRef" type="QLCellRefType" minOccurs="1" maxOccurs="unbounded"/>		
+		</xsd:sequence>
+		<xsd:attribute name="col" type="xsd:int" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The column in this quant layer this references refers to.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="row" type="xsd:int" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The row in this quant layer this references refers to.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="QLCellRefType">
+		<xsd:annotation>
+			<xsd:documentation>A reference to a cell in another QuantLayer</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="quantLayer_Ref" type="xsd:IDREF"  use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to one of the QuantLayers this cell was derived from</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="col" type="xsd:int" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the column of the QuantLayer this cell was derived from</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="row" type="xsd:int"  use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the row of the QuantLayer this cell was derived from</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		
+	</xsd:complexType>
 	<xsd:complexType name="StudyVariableType">
 		<xsd:annotation>
 			<xsd:documentation>This needs more work, the groupings may be illogical, may want to group ratios at StudyVariable level rather than just quantitation units</xsd:documentation>

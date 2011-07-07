@@ -43,7 +43,7 @@ Issues:
 						<xsd:documentation>The list of features quantified from raw files</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="MatchedFeatureList" type="MatchedFeatureListType"></xsd:element>
+				<xsd:element name="MatchedFeatureList" type="MatchedFeatureListType" minOccurs="0"></xsd:element>
 				<xsd:element name="QuantLayerList" type="QuantLayerListType" minOccurs="0">
 					<xsd:annotation>
 						<xsd:documentation>The list of quantified values or ratios calculated from the features.</xsd:documentation>
@@ -525,16 +525,9 @@ Issues:
 			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID"/>
-	</xsd:complexType>
-		
+	</xsd:complexType>		
 	<xsd:complexType name="FeatureListType">
 		<xsd:choice>
-			<xsd:sequence>
-				<xsd:element name="SpectraSets" type="SpectraSetsType" maxOccurs="unbounded"/>
-			</xsd:sequence>
-			<xsd:sequence>
-				<xsd:element name="Chromatogram" maxOccurs="unbounded"/>
-			</xsd:sequence>
 			<xsd:sequence>
 				<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="unbounded"/>
 				<xsd:element name="Feature" maxOccurs="unbounded" type="FeatureType"/>				
@@ -580,11 +573,12 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="MatchedFeatureListType">
 		<xsd:sequence>
+			<xsd:element name="QuantLayerRef" type="QuantLayerRefType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="MatchedFeature" type="MatchedFeatureType" minOccurs="1" maxOccurs="unbounded"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="MatchedFeatureType">
-		<xsd:sequence>
+		<xsd:sequence>			
 			<xsd:element name="feature_refs" type="xsd:IDREFS"/>
 			<xsd:element name="PeptideRef" type="PeptideRefType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>

@@ -1,0 +1,274 @@
+<!--
+- For spectral counting the attributes RT and MZ in the Feature element make no sense.
+- Allow cvParams under the Modification element of Peptides.
+- Allow ProteinGroups for RowIndex in QuantLayer.
+-->
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_4.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
+	
+	<AssayList id="AL1">
+		<Assay id="ASS1">
+			<RawFiles>
+				<RawFile location="C:\ms\mzML\raw1.mzml" name="mzMLFile1"/>
+			</RawFiles>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification1.mzid" name="mzIdentMLFile1"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="healthy sample" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+		<Assay id="ASS2">
+			<RawFiles>
+				<RawFile location="C:\ms\mzML\raw2.mzml" name="mzMLFile2"/>
+			</RawFiles>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification2.mzid" name="mzIdentMLFile2"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="disease sample" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+	</AssayList>
+	
+	<StudyVariableList>
+		<StudyVariable id="SV_1" name="healthy group">
+			<cvParam accession="MS:0000000" name="healthy experimental condition group" cvRef="PSI-MS"/>
+			<AssayRef assay_ref="ASS1"/>
+		</StudyVariable>
+		<StudyVariable id="SV_2" name="diseased group">
+			<cvParam accession="MS:0000000" name="disease experimental condition group" cvRef="PSI-MS"/>
+			<AssayRef assay_ref="ASS2"/>
+		</StudyVariable>
+	</StudyVariableList>
+
+    
+	<ProteinGroupList>
+		<!--
+		<QuantLayerRef quantLayer_ref="QL_experimental_groups"></QuantLayerRef>
+		-->
+		<ProteinGroup id="prot_grp1"></ProteinGroup>
+		<ProteinGroup id="prot_grp2"></ProteinGroup>
+	</ProteinGroupList>
+	
+	
+	<ProteinList>
+		<QuantLayerRef quantLayer_ref="QL_protein_quantification"></QuantLayerRef>
+		<Protein accession="YDR238C" id="prot1">
+			<IdentificationRef id_ref="id1" file_ref="file1"></IdentificationRef>
+			<PeptideRefs>
+				<PeptideRef peptide_ref="pep1"></PeptideRef>
+				<PeptideRef peptide_ref="pep2"></PeptideRef>
+			</PeptideRefs>
+		</Protein>
+		<Protein accession="XYZ1ABC" id="prot2">
+			<IdentificationRef id_ref="id2" file_ref="file1"></IdentificationRef>
+			<PeptideRefs>
+				<PeptideRef peptide_ref="pep3"></PeptideRef>
+				<PeptideRef peptide_ref="pep4"></PeptideRef>
+				<PeptideRef peptide_ref="pep5"></PeptideRef>
+			</PeptideRefs>
+		</Protein>
+		<Protein accession="XYZ123A" id="prot3">
+			<IdentificationRef id_ref="id3" file_ref="file1"></IdentificationRef>
+			<PeptideRefs>
+				<PeptideRef peptide_ref="pep5"></PeptideRef>
+			</PeptideRefs>
+		</Protein>		
+	</ProteinList>
+	
+	<PeptideList>
+		<Peptide id="pep1">
+			<PeptideSequence>BLAELVIS</PeptideSequence>
+			<IdentificationRef id_ref="id1" file_ref="file1"/>
+			<Modification>
+				<userParam name="Oxidation" value=""/>
+				<!-- better to allow also cvParams here -->
+				<!--
+				<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+				-->
+			</Modification>
+		</Peptide>
+		<Peptide id="pep2">
+			<PeptideSequence>BLAELVISA</PeptideSequence>
+			<IdentificationRef id_ref="id2" file_ref="file2"/>
+			<Modification>
+				<userParam name="Carbamoylated residue"/>
+				<!-- better to allow also cvParams here -->
+				<!--
+				<cvParam accession="MOD:00398" name="carbamoylated residue" cvRef="PSI-MOD"/>
+				-->
+			</Modification>
+		</Peptide>
+		<Peptide id="pep3">
+			<PeptideSequence>MLVELVISE</PeptideSequence>
+			<IdentificationRef id_ref="id3" file_ref="file3"/>
+		</Peptide>
+		<Peptide id="pep4">
+			<PeptideSequence>MLVELVASA</PeptideSequence>
+			<IdentificationRef id_ref="id4" file_ref="file4"/>
+		</Peptide>
+		<Peptide id="pep5">
+			<PeptideSequence>MLVELVESA</PeptideSequence>
+			<IdentificationRef id_ref="id5" file_ref="file5"/>
+		</Peptide>
+	</PeptideList>
+	
+	<FeatureList>
+		<QuantLayerRef quantLayer_ref="QL_PSM_spectra_counts"/>
+		<!--For spectral counting the attributes RT and MZ of the Feature element make no sense.-->
+		<Feature MZ="100.0" id="frag1" RT="1.0"></Feature>
+		<Feature MZ="100.0" id="frag2" RT="1.0"></Feature>
+		<Feature MZ="100.0" id="frag3" RT="1.0"></Feature>
+		<Feature MZ="100.0" id="frag4" RT="1.0"></Feature>
+		<Feature MZ="100.0" id="frag5" RT="1.0"></Feature>
+		<Feature MZ="100.0" id="frag6" RT="1.0"></Feature>
+		<Feature MZ="100.0" id="frag7" RT="1.0"></Feature>
+		
+	<!--	<SpectraSets>
+			<SpectraSet id="SPEC_SET_1">
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_11"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_12"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_13"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_14"/>
+			</SpectraSet>
+			<SpectraSet id="SPEC_SET_2">
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_21"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_22"/>
+			</SpectraSet>
+			<SpectraSet id="SPEC_SET_3">
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_31"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_32"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_33"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_34"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_35"/>
+			</SpectraSet>
+			<SpectraSet id="SPEC_SET_4">
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_41"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_42"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_43"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_44"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_45"/>
+				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_46"/>
+			</SpectraSet>
+		</SpectraSets>
+		-->
+	</FeatureList>
+	
+	<QuantLayerList>
+		<!-- PSM spectra counts (amino acid sequence with modifications) -->
+		<QuantLayer ID="QL_PSM_spectra_counts">
+			<DataType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</DataType>
+			<RowIndex>frag1 frag2 frag3 frag4 frag5 frag6 frag7</RowIndex>
+			<RowType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</RowType>
+			<ColumnIndex>ASS1 ASS2</ColumnIndex>
+			<ColumnType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">1.0 2.0</Row>
+				<Row index="2">1.0 2.0</Row>
+				<Row index="3">1.0 2.0</Row>
+				<Row index="4">1.0 2.0</Row>
+				<Row index="5">1.0 2.0</Row>
+				<Row index="6">1.0 2.0</Row>
+				<Row index="7">1.0 2.0</Row>
+			</DataMatrix>
+		</QuantLayer>
+		
+		<!-- peptide quantification (only sequence, i.e. aggregation (sum) of modified and unmodified version of peptide) -->
+		<QuantLayer ID="QL_peptide_quantification">
+			<DataType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</DataType>
+			<RowIndex>pep1 pep2 pep3 pep4 pep5</RowIndex>
+			<RowType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</RowType>
+			<ColumnIndex>ASS1 ASS2</ColumnIndex>
+			<ColumnType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">1.0 2.0</Row>
+				<Row index="2">1.0 2.0</Row>
+				<Row index="3">1.0 2.0</Row>
+				<Row index="4">1.0 2.0</Row>
+				<Row index="5">1.0 2.0</Row>
+			</DataMatrix>
+		</QuantLayer>
+		
+		<!-- protein quantification: aggregation(mean) of peptides -->
+		<QuantLayer ID="QL_protein_quantification">
+			<DataType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</DataType>
+			<RowIndex>prot1 prot2 prot3</RowIndex>
+			<RowType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</RowType>
+			<ColumnIndex>ASS1 ASS2</ColumnIndex>
+			<ColumnType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">1.0 2.0</Row>
+				<Row index="2">1.0 2.0</Row>
+				<Row index="3">1.0 2.0</Row>
+			</DataMatrix>
+		</QuantLayer>
+		
+		<!-- experimental groups: referencing proteins -->
+		<!--
+		<QuantLayer ID="QL_experimental_groups">
+			<DataType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</DataType>
+			<RowIndex>prot_grp1 prot_grp2</RowIndex>
+			<RowType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</RowType>
+			<ColumnIndex>ASS1 ASS2</ColumnIndex>
+			<ColumnType>
+				<cvParam accession="" name="" cvRef=""></cvParam>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">1.0 2.0</Row>
+				<Row index="2">1.0 2.0</Row>
+			</DataMatrix>
+		</QuantLayer>
+		-->
+		
+	</QuantLayerList>
+	
+	<DataProcessingList>
+		<dataProcessing id="DP1">
+			<processingMethod>
+				<cvParam accession="MS:1001486" name="data filtering" cvRef="PSI-MS" value=""/>
+				<userParam name="myParam1"/>
+			</processingMethod>
+			<processingMethod>
+				<cvParam accession="MS:1000543" name="data processing action" cvRef="PSI-MS"/>
+			</processingMethod>
+		</dataProcessing>
+		<dataProcessing id="DP2">
+			<processingMethod>
+				<cvParam accession="MS:1001486" name="data filtering" cvRef="PSI-MS"/>
+				<userParam name="myParam2"/>
+			</processingMethod>
+			<processingMethod>
+				<cvParam accession="MS:1000543" name="data processing action" cvRef="PSI-MS"/>
+			</processingMethod>
+		</dataProcessing>
+	</DataProcessingList>
+</mzQuantML>

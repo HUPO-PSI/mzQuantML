@@ -1,148 +1,183 @@
 <!--
-- For spectral counting the attributes RT and MZ in the Feature element make no sense.
+example sketch:
+- four samples: two "diseased", two "healthy"
+- therefore: two MS/MS peak list files (here: .mgf) and two Identification files (here: mzIdentML .mzid)
+- included: quant layers for 
+  a) "peptide PSM counts" (count all PSMs for each amino acid sequence with modifications, including different charge states)
+  b) "raw protein values" (sum of peptide PSM counts for each database sequence)
+  c) "normalized protein values" (sum all raw protein counts per assay; divide each raw value by the mean of all assay sums)
+  d) "means of groups" (mean of proteins in disease and healthy group)
+  e) "ratio" (disease vs. healthy; proteins)
+
+schema comments:
+- RawFiles are really the raw files of the instrument run (i.e. .raw, .wiff, .yep, .mzML in profile mode etc.)).
+  For spectral counting these are unnecessary, as this method only relies on the PSM identifications; 
+  even if one wants to include the peak list files (i.e. .mgf, .dta) on which the identifications are based, this is not 
+  what is usually described in RawFiles; Therefore <RawFiles> should be optional for spectral counting or renamed to <BaseFiles> etc.
+- Listing the spectra used for peptide PSM count would correspond to <FeatureList>; in previous schemas there was a <SpectraSets> element
+  with <SpectraSet> sub-elements, shall we include that again as neighbour of <FeatureList>?
+- <DataProcessing> is not really clear to me, seems to be very ambiguous: calculation, that have been done on raw files / peak list files or on mzIdentML files.
+  In spectral counting we normalize onto the mean of (the sum of all proteins per data set within FDR) or similar. Reporting it in <Assay> is a bit "early", 
+  but there is no better place at the moment.
+- However we need "normalization to mean of proteins" as data processing CV term;
+  in psi-ms.obo there is "intensitiy normalization", which should be replaced by
+  a new parent term "normalization", where "intensity normalization", "normalization to mean of proteins" and "quantile normalization" should be children of.
 - Allow cvParams under the Modification element of Peptides.
 - Allow ProteinGroups for RowIndex in QuantLayer.
--->
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_4.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
 
+-->
+
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_4.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
 	<cvList>
 		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
 		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		<cv id="UNIMOD" fullName="unimod modifications ontology" URI="http://www.unimod.org/obo/unimod.obo"/>
 	</cvList>
 	
 	<AssayList id="AL1">
-		<Assay id="ASS1">
+		<Assay id="HEALTHY1">
 			<RawFiles>
-				<RawFile location="C:\ms\mzML\raw1.mzml" name="mzMLFile1"/>
+				<RawFile location="C:\ms\PeakLists\healthy1.mgf"/> <!-- see comment above -->
 			</RawFiles>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ms\mzIdent\identification1.mzid" name="mzIdentMLFile1"/>
+				<IdentificationFile location="C:\ms\mzIdent\identification1.mzid"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
 			</DataProcessingOrder>
-			<cvParam name="healthy sample" accession="MS:1000000" cvRef="PSI-MS"/>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
 		</Assay>
-		<Assay id="ASS2">
+		<Assay id="HEALTHY2">
 			<RawFiles>
-				<RawFile location="C:\ms\mzML\raw2.mzml" name="mzMLFile2"/>
+				<RawFile location="C:\ms\PeakLists\healthy2.mgf"/> <!-- see comment above -->
 			</RawFiles>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ms\mzIdent\identification2.mzid" name="mzIdentMLFile2"/>
+				<IdentificationFile location="C:\ms\mzIdent\identification3.mzid"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
 			</DataProcessingOrder>
-			<cvParam name="disease sample" accession="MS:1000000" cvRef="PSI-MS"/>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+		<Assay id="DISEASE1">
+			<RawFiles>
+				<RawFile location="C:\ms\PeakLists\disease1.mgf"/> <!-- see comment above -->
+			</RawFiles>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification2.mzid"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+		<Assay id="DISEASE2">
+			<RawFiles>
+				<RawFile location="C:\ms\PeakLists\disease2.mgf"/> <!-- see comment above -->
+			</RawFiles>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification4.mzid"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
 		</Assay>
 	</AssayList>
 	
 	<StudyVariableList>
-		<StudyVariable id="SV_1" name="healthy group">
-			<cvParam accession="MS:0000000" name="healthy experimental condition group" cvRef="PSI-MS"/>
-			<AssayRef assay_ref="ASS1"/>
+		<StudyVariable id="SV1_HEALTHY" name="healthy group">
+			<cvParam accession="MS:1000000" name="experimental condition healthy" cvRef="PSI-MS"/>
+			<AssayRef assay_ref="HEALTHY1"/>
+			<AssayRef assay_ref="HEALTHY2"/>
 		</StudyVariable>
-		<StudyVariable id="SV_2" name="diseased group">
-			<cvParam accession="MS:0000000" name="disease experimental condition group" cvRef="PSI-MS"/>
-			<AssayRef assay_ref="ASS2"/>
+		<StudyVariable id="SV2_DISEASE" name="disease group">
+			<cvParam accession="MS:1000000" name="experimental condition disease" cvRef="PSI-MS"/>
+			<AssayRef assay_ref="DISEASE1"/>
+			<AssayRef assay_ref="DISEASE2"/>
 		</StudyVariable>
 	</StudyVariableList>
 
-    
-	<ProteinGroupList>
-		<!--
-		<QuantLayerRef quantLayer_ref="QL_experimental_groups"></QuantLayerRef>
-		-->
-		<ProteinGroup id="prot_grp1"></ProteinGroup>
-		<ProteinGroup id="prot_grp2"></ProteinGroup>
-	</ProteinGroupList>
-	
-	
 	<ProteinList>
-		<QuantLayerRef quantLayer_ref="QL_protein_quantification"></QuantLayerRef>
+		<QuantLayerRef quantLayer_ref="QL_raw_protein_value_layer"/>
+		<QuantLayerRef quantLayer_ref="QL_normalized_protein_value_layer"/>
+		<QuantLayerRef quantLayer_ref="QL_protein_means_of_groups"/>
+		<QuantLayerRef quantLayer_ref="QL_protein_ratio_disease_vs_healthy"/>
 		<Protein accession="YDR238C" id="prot1">
-			<IdentificationRef id_ref="id1" file_ref="file1"></IdentificationRef>
+			<IdentificationRef file_ref="file1" id_ref="id1" />
 			<PeptideRefs>
-				<PeptideRef peptide_ref="pep1"></PeptideRef>
-				<PeptideRef peptide_ref="pep2"></PeptideRef>
+				<PeptideRef peptide_ref="pep1"/>
+				<PeptideRef peptide_ref="pep2"/>
+				
 			</PeptideRefs>
 		</Protein>
 		<Protein accession="XYZ1ABC" id="prot2">
-			<IdentificationRef id_ref="id2" file_ref="file1"></IdentificationRef>
+			<IdentificationRef file_ref="file1" id_ref="id2" />
 			<PeptideRefs>
-				<PeptideRef peptide_ref="pep3"></PeptideRef>
-				<PeptideRef peptide_ref="pep4"></PeptideRef>
-				<PeptideRef peptide_ref="pep5"></PeptideRef>
+				<PeptideRef peptide_ref="pep3"/>
+				<PeptideRef peptide_ref="pep4"/>
+				<PeptideRef peptide_ref="pep5"/>
 			</PeptideRefs>
 		</Protein>
 		<Protein accession="XYZ123A" id="prot3">
-			<IdentificationRef id_ref="id3" file_ref="file1"></IdentificationRef>
+			<IdentificationRef id_ref="id3" file_ref="file1"/>
 			<PeptideRefs>
-				<PeptideRef peptide_ref="pep5"></PeptideRef>
+				<PeptideRef peptide_ref="pep5"/>
 			</PeptideRefs>
-		</Protein>		
+		</Protein>
 	</ProteinList>
-	
 	<PeptideList>
 		<Peptide id="pep1">
-			<PeptideSequence>BLAELVIS</PeptideSequence>
-			<IdentificationRef id_ref="id1" file_ref="file1"/>
-			<Modification>
+			<PeptideSequence>BLAEMLVIS</PeptideSequence>
+			<IdentificationRef file_ref="file1" id_ref="id1" />
+			<Modification location="5">
 				<userParam name="Oxidation" value=""/>
 				<!-- better to allow also cvParams here -->
 				<!--
-				<cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+				<cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
 				-->
 			</Modification>
 		</Peptide>
 		<Peptide id="pep2">
-			<PeptideSequence>BLAELVISA</PeptideSequence>
-			<IdentificationRef id_ref="id2" file_ref="file2"/>
-			<Modification>
-				<userParam name="Carbamoylated residue"/>
+			<PeptideSequence>BLAEMLVISA</PeptideSequence>
+			<IdentificationRef file_ref="file2" id_ref="id2"/>
+			<Modification location="0">
+				<userParam name="Carbamylated residue"/>
 				<!-- better to allow also cvParams here -->
 				<!--
-				<cvParam accession="MOD:00398" name="carbamoylated residue" cvRef="PSI-MOD"/>
+				<cvParam accession="UNIMOD:5" name="Carbamyl" cvRef="UNIMOD"/>
 				-->
 			</Modification>
 		</Peptide>
 		<Peptide id="pep3">
 			<PeptideSequence>MLVELVISE</PeptideSequence>
-			<IdentificationRef id_ref="id3" file_ref="file3"/>
+			<IdentificationRef file_ref="file3" id_ref="id3" />
 		</Peptide>
 		<Peptide id="pep4">
 			<PeptideSequence>MLVELVASA</PeptideSequence>
-			<IdentificationRef id_ref="id4" file_ref="file4"/>
+			<IdentificationRef file_ref="file4" id_ref="id4"/>
 		</Peptide>
 		<Peptide id="pep5">
 			<PeptideSequence>MLVELVESA</PeptideSequence>
-			<IdentificationRef id_ref="id5" file_ref="file5"/>
+			<IdentificationRef file_ref="file5" id_ref="id5"/>
 		</Peptide>
 	</PeptideList>
-	
-	<FeatureList>
-		<QuantLayerRef quantLayer_ref="QL_PSM_spectra_counts"/>
-		<!--For spectral counting the attributes RT and MZ of the Feature element make no sense.-->
-		<Feature MZ="100.0" id="frag1" RT="1.0"></Feature>
-		<Feature MZ="100.0" id="frag2" RT="1.0"></Feature>
-		<Feature MZ="100.0" id="frag3" RT="1.0"></Feature>
-		<Feature MZ="100.0" id="frag4" RT="1.0"></Feature>
-		<Feature MZ="100.0" id="frag5" RT="1.0"></Feature>
-		<Feature MZ="100.0" id="frag6" RT="1.0"></Feature>
-		<Feature MZ="100.0" id="frag7" RT="1.0"></Feature>
-		
-	<!--	<SpectraSets>
+
+		<!--	<SpectraSets>
 			<SpectraSet id="SPEC_SET_1">
+				<PeptideRef peptide_ref="pep1"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_11"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_12"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_13"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_14"/>
 			</SpectraSet>
 			<SpectraSet id="SPEC_SET_2">
+				<PeptideRef peptide_ref="pep2"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_21"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_22"/>
 			</SpectraSet>
 			<SpectraSet id="SPEC_SET_3">
+				<PeptideRef peptide_ref="pep3"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_31"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_32"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_33"/>
@@ -150,6 +185,7 @@
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_35"/>
 			</SpectraSet>
 			<SpectraSet id="SPEC_SET_4">
+				<PeptideRef peptide_ref="pep4"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_41"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_42"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_43"/>
@@ -157,117 +193,117 @@
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_45"/>
 				<SpectrumIdentificationItemRef file_ref="mzID_Ref" spectrumIdentificationItem_ref="SII_46"/>
 			</SpectraSet>
-		</SpectraSets>
-		-->
-	</FeatureList>
-	
+		</SpectraSets> -->
+
 	<QuantLayerList>
-		<!-- PSM spectra counts (amino acid sequence with modifications) -->
-		<QuantLayer ID="QL_PSM_spectra_counts">
+		<!-- description see above a) -->
+		<QuantLayer ID="QL_peptide_PSM_count_layer">
 			<DataType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
-			</DataType>
-			<RowIndex>frag1 frag2 frag3 frag4 frag5 frag6 frag7</RowIndex>
-			<RowType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
-			</RowType>
-			<ColumnIndex>ASS1 ASS2</ColumnIndex>
-			<ColumnType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
-			</ColumnType>
-			<DataMatrix>
-				<Row index="1">1.0 2.0</Row>
-				<Row index="2">1.0 2.0</Row>
-				<Row index="3">1.0 2.0</Row>
-				<Row index="4">1.0 2.0</Row>
-				<Row index="5">1.0 2.0</Row>
-				<Row index="6">1.0 2.0</Row>
-				<Row index="7">1.0 2.0</Row>
-			</DataMatrix>
-		</QuantLayer>
-		
-		<!-- peptide quantification (only sequence, i.e. aggregation (sum) of modified and unmodified version of peptide) -->
-		<QuantLayer ID="QL_peptide_quantification">
-			<DataType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam name="raw peptide PSM counts" accession="MS:1000000" cvRef="PSI-MS"/>
 			</DataType>
 			<RowIndex>pep1 pep2 pep3 pep4 pep5</RowIndex>
 			<RowType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam name="Peptides" accession="MS:1000000" cvRef="PSI-MS"/>
 			</RowType>
-			<ColumnIndex>ASS1 ASS2</ColumnIndex>
+			<ColumnIndex>HEALTHY1 HEALTHY2 DISEASE1 DISEASE2</ColumnIndex>
 			<ColumnType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam name="Assay" accession="MS:1000000" cvRef="PSI-MS"/>
 			</ColumnType>
 			<DataMatrix>
-				<Row index="1">1.0 2.0</Row>
-				<Row index="2">1.0 2.0</Row>
-				<Row index="3">1.0 2.0</Row>
-				<Row index="4">1.0 2.0</Row>
-				<Row index="5">1.0 2.0</Row>
+				<Row index="1">1 5 3 10</Row>
+				<Row index="2">2 4 4 9</Row>
+				<Row index="3">4 3 5 8</Row>
+				<Row index="4">5 2 8 7</Row>
+				<Row index="5">8 1 9 6</Row>
 			</DataMatrix>
 		</QuantLayer>
-		
-		<!-- protein quantification: aggregation(mean) of peptides -->
-		<QuantLayer ID="QL_protein_quantification">
+
+		<!-- description see above b) -->
+		<QuantLayer ID="QL_raw_protein_value_layer">
 			<DataType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam name="raw protein values" accession="MS:1000000" cvRef="PSI-MS"/>
 			</DataType>
 			<RowIndex>prot1 prot2 prot3</RowIndex>
 			<RowType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam  name="Proteins" accession="MS:1000000" cvRef="PSI-MS"/>
 			</RowType>
-			<ColumnIndex>ASS1 ASS2</ColumnIndex>
+			<ColumnIndex>HEALTHY1 HEALTHY2 DISEASE1 DISEASE2</ColumnIndex>
 			<ColumnType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam name="Assay" accession="MS:1000000" cvRef="PSI-MS"/>
 			</ColumnType>
-			<DataMatrix>
-				<Row index="1">1.0 2.0</Row>
-				<Row index="2">1.0 2.0</Row>
-				<Row index="3">1.0 2.0</Row>
+			<DataMatrix> <!-- manual example, therefore no real values! -->
+				<Row index="1">1 2 3 4</Row> 
+				<Row index="2">1 2 3 4</Row>
+				<Row index="3">1 2 3 4</Row>
 			</DataMatrix>
 		</QuantLayer>
-		
-		<!-- experimental groups: referencing proteins -->
-		<!--
-		<QuantLayer ID="QL_experimental_groups">
+
+		<!-- description see above c) -->
+		<QuantLayer ID="QL_normalized_protein_value_layer">
 			<DataType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam name="normalized protein values" accession="MS:1000000" cvRef="PSI-MS"/>
 			</DataType>
-			<RowIndex>prot_grp1 prot_grp2</RowIndex>
+			<RowIndex>prot1 prot2 prot3</RowIndex>
 			<RowType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam  name="Proteins" accession="MS:1000000" cvRef="PSI-MS"/>
 			</RowType>
-			<ColumnIndex>ASS1 ASS2</ColumnIndex>
+			<ColumnIndex>HEALTHY1 HEALTHY2 DISEASE1 DISEASE2</ColumnIndex>
 			<ColumnType>
-				<cvParam accession="" name="" cvRef=""></cvParam>
+				<cvParam name="Assay" accession="MS:1000000" cvRef="PSI-MS"/>
 			</ColumnType>
-			<DataMatrix>
-				<Row index="1">1.0 2.0</Row>
-				<Row index="2">1.0 2.0</Row>
+			<DataMatrix> <!-- manual example, therefore no real values! -->
+				<Row index="1">0.875 5.833 0.275 3.833</Row>
+				<Row index="2">1.750 4.667 3.570 4.763</Row>
+				<Row index="3">3.500 3.500 2.704 2.667</Row>
 			</DataMatrix>
 		</QuantLayer>
-		-->
-		
+
+		<!-- description see above d) -->
+		<QuantLayer ID="QL_protein_means_of_groups">
+			<DataType>
+				<cvParam name="mean" accession="MS:100000" cvRef="PSI_MS"/>
+			</DataType>
+			<RowIndex>prot1 prot2 prot3</RowIndex>
+			<RowType>
+				<cvParam name="Proteins" accession="MS:100000" cvRef="PSI-MS"/>
+			</RowType>
+			<ColumnIndex>SV1_HEALTHY SV2_DISEASE</ColumnIndex>
+			<ColumnType>
+				<cvParam name="StudyVariable" accession="MS:100000" cvRef="PSI-MS"/>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">3.354 2.054</Row>
+				<Row index="2">3.209 4.167</Row>
+				<Row index="3">3.500 2.686</Row>
+			</DataMatrix>
+		</QuantLayer>
+
+		<!-- description see above e) -->
+		<QuantLayer ID="QL_protein_ratio_disease_vs_healthy">
+			<DataType>
+				<cvParam name="ratio" accession="MS:100000" cvRef="PSI_MS"/>
+			</DataType>
+			<RowIndex>prot1 prot2 prot3</RowIndex>
+			<RowType>
+				<cvParam name="Proteins" accession="MS:100000" cvRef="PSI-MS"/>
+			</RowType>
+			<ColumnIndex>AL1</ColumnIndex>
+			<ColumnType>
+				<cvParam name="AssayList" accession="MS:100000" cvRef="PSI-MS"/>
+			</ColumnType>
+			<DataMatrix>
+				<Row index="1">0.612</Row>
+				<Row index="2">1.299</Row>
+				<Row index="3">0.767</Row>
+			</DataMatrix>
+		</QuantLayer>
+
 	</QuantLayerList>
-	
+
 	<DataProcessingList>
 		<dataProcessing id="DP1">
 			<processingMethod>
-				<cvParam accession="MS:1001486" name="data filtering" cvRef="PSI-MS" value=""/>
-				<userParam name="myParam1"/>
-			</processingMethod>
-			<processingMethod>
-				<cvParam accession="MS:1000543" name="data processing action" cvRef="PSI-MS"/>
-			</processingMethod>
-		</dataProcessing>
-		<dataProcessing id="DP2">
-			<processingMethod>
-				<cvParam accession="MS:1001486" name="data filtering" cvRef="PSI-MS"/>
-				<userParam name="myParam2"/>
-			</processingMethod>
-			<processingMethod>
-				<cvParam accession="MS:1000543" name="data processing action" cvRef="PSI-MS"/>
+				<cvParam accession="MS:1000000" name="normalization to mean of proteins" cvRef="PSI-MS"/>
 			</processingMethod>
 		</dataProcessing>
 	</DataProcessingList>

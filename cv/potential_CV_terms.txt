@@ -1,4 +1,15 @@
+0) CVs describing quant. workflows:
+-----------------------------------
+"LC/MS label-free" / "ion counting"
+"SILAC"
+"spectral counting"
+"iTraq"
+"SRM"
+"14N / 15N metabolic labeling"
+
+
 A) potential CV terms for layer description / type of values:
+------------------------------------------------------------
 
 for LC/MS (some overlap with other methods):
 "raw feature value layer"
@@ -19,17 +30,18 @@ for SILAC (some overlap with other methods):
 "group layer" (same as in LC/MS, but aggregating protein ratios)
 
 for spectral counting:
-"PSM count layer" (corresponds to "peptide layer" as containing peptide quantifications; no layers below this!)
-"protein layer" (see above)
-"group layer" (see above)
-"fold change layer" (see above)
+"peptide PSM counts" (corresponds to "peptide layer" as containing peptide quantifications; no layers below this!)
+"raw protein values" (sum of peptide PSM counts)
+"normalized protein values"
+"mean of groups" (see above)
+"fold change" (see above)
 ...
 
 for iTraq (some overlap with other methods):
-"reporter ion raw value layer" (one layer for each reporter mass??)
-"reporter ion normalized value layer"
-"peptide ratio layer"
-"protein ratio layer"
+"reporter ion raw values" (one layer for each reporter mass??)
+"reporter ion normalized values"
+"peptide ratios"
+"protein ratios"
 ...
 
 for SRM (some overlap with other methods):
@@ -41,11 +53,12 @@ for SRM (some overlap with other methods):
 for 14N/15N labeling:
 TODO!
 
-for parsing support:
-"no layer above/below" for each of the above layer CV Terms
+
 
 
 B) potential CV terms for nature / aggregation / transformation / calculation of values:
+----------------------------------------------------------------------------------------
+
 "feature intensity" / "feature area" (LC/MS)
 "number of MS/MS spectra" or "PSM count" (spectral counting)
 "light peak intensity" / "heavy peak intensity" and "light peak area" ?? and "heavy peak area" ?? (SILAC)
@@ -53,7 +66,7 @@ B) potential CV terms for nature / aggregation / transformation / calculation of
 "chromatogram area" (SRM)
 
 "normalization" (or specific: "Progenesis normalization" with value "normalization factor"??)
-"ratio of values" (and or better or numerator/denominator?)
+"ratio of values" (or better numerator/denominator?)
 
 "sum of values"
 "mean of values"
@@ -61,15 +74,34 @@ B) potential CV terms for nature / aggregation / transformation / calculation of
 "median of values"
 "max of values" / "min of values"
 
-"t-test p-value calculation" (semantic check: only two quant values must be references, both being a "mean of values")
-"ANOVA p-value calculation"(semantic check: only quant values must be references being themselves a "mean of values" each)
+"t-test p-value calculation" (semantic check: only two quant values must be referenced, both being a "mean of values")
+"ANOVA p-value calculation"(semantic check: only quant values must be referenced being themselves a "mean of values" each)
 
 
-C) potential CV terms for meta information of StudyVariables (and if there are quasi standard setups for Assay):
-"Case / Control " ( with group number?)
 
-D) potential Feature CV terms:
+C) potential CV terms for meta information of StudyVariables:
+"experimental condition case" (with group number?)
+"experimental condition control" (with group number?)
+"experimental condition disease"
+"experimental condition healthy"
+"time series design, time point X" (with CV value for time point)
+"dilution series design, concentration X" (with CV value for concentration)
+
+
+D) quasi standard setups for Assay
+"one sample data set" (e.g. spectral counting)
+"two sample data set" (e.g. SILAC)
+"four sample data set" (e.g. iTraQ)
+
+
+E) potential Feature CV terms:
 "iTRAQ Feature" with semantics mandatory ref (not yet existing) to the Modification in the respective Assay
 "profile Feature" regular
 going along with iTRAQ: iTRAQ CV term for Assay with the semantics to forbid Assays with just one Modification (i.e. reporter ion)
 
+F) potential data processing CV terms:
+there are some terms in psi-ms.obo for data processing!
+"normalization to mean of proteins" (with CV value for normlaization factor)
+"quantile normalization"
+"Progenesis automatic alignment" as subterm of [MS:1000745 "retention time alignment"]
+"Progenesis manual alignment" as subterm of [MS:1000745 "retention time alignment"]

@@ -24,6 +24,7 @@ schema comments:
   a new parent term "normalization", where "intensity normalization", "normalization to mean of proteins" and "quantile normalization" should be children of.
 - Allow cvParams under the Modification element of Peptides.
 - Allow ProteinGroups for RowIndex in QuantLayer.
+- Add id attribute to RawFile and IdentificationFile for referencing them
 
 -->
 
@@ -231,10 +232,10 @@ schema comments:
 			<ColumnType>
 				<cvParam name="Assay" accession="MS:1000000" cvRef="PSI-MS"/>
 			</ColumnType>
-			<DataMatrix> <!-- manual example, therefore no real values! -->
-				<Row index="1">1 2 3 4</Row> 
-				<Row index="2">1 2 3 4</Row>
-				<Row index="3">1 2 3 4</Row>
+			<DataMatrix>
+				<Row index="1">3 9 7 19</Row> 
+				<Row index="2">13 6 22 21</Row>
+				<Row index="3">8 1 9 6</Row>
 			</DataMatrix>
 		</QuantLayer>
 
@@ -251,10 +252,10 @@ schema comments:
 			<ColumnType>
 				<cvParam name="Assay" accession="MS:1000000" cvRef="PSI-MS"/>
 			</ColumnType>
-			<DataMatrix> <!-- manual example, therefore no real values! -->
-				<Row index="1">0.875 5.833 0.275 3.833</Row>
-				<Row index="2">1.750 4.667 3.570 4.763</Row>
-				<Row index="3">3.500 3.500 2.704 2.667</Row>
+			<DataMatrix>
+				<Row index="1">0.097 0.290 0.226 0.613</Row>
+				<Row index="2">0.419 0.194 0.710 0.677</Row>
+				<Row index="3">0.258 0.032 0.290 0.194</Row>
 			</DataMatrix>
 		</QuantLayer>
 
@@ -272,9 +273,9 @@ schema comments:
 				<cvParam name="StudyVariable" accession="MS:100000" cvRef="PSI-MS"/>
 			</ColumnType>
 			<DataMatrix>
-				<Row index="1">3.354 2.054</Row>
-				<Row index="2">3.209 4.167</Row>
-				<Row index="3">3.500 2.686</Row>
+				<Row index="1">0.1935 0.420</Row>
+				<Row index="2">0.307 0.694</Row>
+				<Row index="3">0.145 0.242</Row>
 			</DataMatrix>
 		</QuantLayer>
 
@@ -292,9 +293,9 @@ schema comments:
 				<cvParam name="AssayList" accession="MS:100000" cvRef="PSI-MS"/>
 			</ColumnType>
 			<DataMatrix>
-				<Row index="1">0.612</Row>
-				<Row index="2">1.299</Row>
-				<Row index="3">0.767</Row>
+				<Row index="1">2.171</Row>
+				<Row index="2">2.261</Row>
+				<Row index="3">1.669</Row>
 			</DataMatrix>
 		</QuantLayer>
 

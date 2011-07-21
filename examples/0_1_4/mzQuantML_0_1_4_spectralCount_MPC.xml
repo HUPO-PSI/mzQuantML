@@ -9,22 +9,24 @@ example sketch:
   d) "means of groups" (mean of proteins in disease and healthy group)
   e) "ratio" (disease vs. healthy; proteins)
 
-schema comments:
-- RawFiles are really the raw files of the instrument run (i.e. .raw, .wiff, .yep, .mzML in profile mode etc.)).
+schema comments / issues:
+- RawFiles are really the raw files of the instrument run (i.e. .raw, .wiff, .yep, .mzML in profile mode etc.).
   For spectral counting these are unnecessary, as this method only relies on the PSM identifications; 
   even if one wants to include the peak list files (i.e. .mgf, .dta) on which the identifications are based, this is not 
-  what is usually described in RawFiles; Therefore <RawFiles> should be optional for spectral counting or renamed to <BaseFiles> etc.
-- Listing the spectra used for peptide PSM count would correspond to <FeatureList>; in previous schemas there was a <SpectraSets> element
+  what is usually described in RawFiles; Therefore <RawFiles> should be optional for spectral counting or renamed to <BaseFiles>, <UsedFiles>, <QuantFiles> etc.
+- Listing the spectra used for "peptide PSM count" would correspond to <FeatureList> in the LCMS example; in previous schemas there was a <SpectraSets> element
   with <SpectraSet> sub-elements, shall we include that again as neighbour of <FeatureList>?
-- <DataProcessing> is not really clear to me, seems to be very ambiguous: calculation, that have been done on raw files / peak list files or on mzIdentML files.
-  In spectral counting we normalize onto the mean of (the sum of all proteins per data set within FDR) or similar. Reporting it in <Assay> is a bit "early", 
+- <DataProcessing> is not really clear to me, seems to be rather ambiguous: calculations, that have been done on raw files / peak list files or on mzIdentML files?
+  In spectral counting we normalize onto the mean of (the sum of all protein counts per data set within FDR) or similar. Reporting it in <Assay> is a bit "early", 
   but there is no better place at the moment.
 - However we need "normalization to mean of proteins" as data processing CV term;
   in psi-ms.obo there is "intensitiy normalization", which should be replaced by
-  a new parent term "normalization", where "intensity normalization", "normalization to mean of proteins" and "quantile normalization" should be children of.
-- Allow cvParams under the Modification element of Peptides.
+  a new parent term "normalization". "intensity normalization", "normalization to mean of proteins" and "quantile normalization" could be children of this term.
+- Allow cvParams under the <Modification> element of <Peptide>.
 - Allow ProteinGroups for RowIndex in QuantLayer.
-- Add id attribute to RawFile and IdentificationFile for referencing them
+- In <Protein> and <Peptide> there are references to mzIdentML files. At the moment it seems that we have only modeled external references. 
+  If also internal references to mzIdentML files listed in <Assay> make sense, we need to add an "id" attribute to <RawFile> and <IdentificationFile>
+  for referencing them.
 
 -->
 

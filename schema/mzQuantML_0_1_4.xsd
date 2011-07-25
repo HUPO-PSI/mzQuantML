@@ -123,7 +123,7 @@ Issues:
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:string" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinType">
 		<xsd:sequence>
@@ -184,31 +184,38 @@ Issues:
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID"/>
 	</xsd:complexType>
-	<xsd:complexType name="ModificationType" abstract="false">
+	<xsd:complexType name="ModificationType">
 		<xsd:annotation>
-			<xsd:documentation>A molecule modification specification. If n modifications have been found on a peptide, there should be n instances of Modification. If multiple modifications are provided as cvParams, it is assumed that the modification is ambiguous i.e. one modification or another. If no CVParams are provided it is assumed that the delta has not been matched to a known modification. A neutral loss should be defined as an additional CVParam within Modification. If more complex information should be given about neutral losses (such as presence/absence on particular product ions), this can additionally be encoded within the FragmentationArray.</xsd:documentation>
+			<xsd:documentation>A molecule modification specification. If n modifications have been found on a peptide, there should be n instances of Modification. If multiple modifications are provided as cvParams, it is assumed that the modification is ambiguous i.e. one modification or another. A cvParam must be provided with the identification of the modification sourced from a suitable CV e.g. UNIMOD. If the modification is not present in the CV (and this will be checked by the semantic validator within a given tolerance window), there is a “unknown modification” CV term that must be used instead. A neutral loss should be defined as an additional CVParam within Modification. If more complex information should be given about neutral losses (such as presence/absence on particular product ions), this can additionally be encoded within the FragmentationArray. </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="cvParam" type="cvParamType" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms capturing the modification, sourced from an appropriate controlled vocabulary.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="location" type="xsd:int">
 			<xsd:annotation>
-				<xsd:documentation>Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1. Specific modifications to the N-terminus should be given the location 0. Modification to the C-terminus should be given as peptide length + 1.</xsd:documentation>
+				<xsd:documentation>Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1.
+					Specific modifications to the N-terminus should be given the location 0.
+					Modification to the C-terminus should be given as peptide length + 1.	</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="residues" type="listOfChars">
 			<xsd:annotation>
-				<xsd:documentation>Specification of the residue (amino acid) on which the modification occurs. If multiple values are given, it is assumed that the exact residue modified is unknown i.e. the modification is to ONE of the residues listed. Multiple residues would usually only be specified for PMF data.</xsd:documentation>
+				<xsd:documentation>Specification of the residue (amino acid) on which the modification occurs. If multiple values are given, it is assumed that the exact residue modified is unknown i.e. the modification is to ONE of the residues listed. Multiple residues would usually only be specified for PMF data.
+				</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="avgMassDelta" type="xsd:double">
 			<xsd:annotation>
-				<xsd:documentation> Atomic mass delta considering the natural distribution of isotopes in Daltons. </xsd:documentation>
+				<xsd:documentation>Atomic mass delta considering the natural distribution of isotopes in Daltons. </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="monoisotopicMassDelta" type="xsd:double">
 			<xsd:annotation>
-				<xsd:documentation> Atomic mass delta when assuming only the most common isotope of elements in Daltons. </xsd:documentation>
+				<xsd:documentation>Atomic mass delta when assuming only the most common isotope of elements in Daltons. </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -349,7 +356,7 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="AssayType">
 		<xsd:sequence>
-			<xsd:element name="RawFiles" type="RawFilesType"/>
+			<xsd:element name="RawFiles" type="RawFilesType" minOccurs="0"/>
 			<xsd:element name="Label" type="LabelType" minOccurs="0"/>
 			<xsd:element name="IdentificationFiles" type="IdentificationFilesType" minOccurs="0"/>
 			<xsd:element name="DataProcessingOrder" minOccurs="0">
@@ -382,7 +389,7 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="RawFilesType">
 		<xsd:annotation>
-			<xsd:documentation>All raw files that constitute this Assay.</xsd:documentation>
+			<xsd:documentation>All raw files that constitute this Assay. This is mandatory unless raw files were not used for quantification e.g. spectral counting</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="RawFile" maxOccurs="unbounded">
@@ -565,7 +572,7 @@ Issues:
 				<xsd:documentation>dataprocessing producing this feature (e.g. model fit)</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="assay_ref" type="xsd:IDREF">
+		<xsd:attribute name="assay_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The featuring Assay</xsd:documentation>
 			</xsd:annotation>
@@ -592,6 +599,7 @@ Issues:
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	<!-- TODO - likely remove SpectraSets from the XSD at a later date, not currently used -->
 	<xsd:complexType name="SpectraSetsType">
 		<xsd:sequence>
 			<xsd:element name="SpectraSet" type="SpectraSetType" maxOccurs="unbounded"/>

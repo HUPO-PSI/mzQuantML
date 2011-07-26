@@ -50,13 +50,13 @@ Sketch of an example for using data matrices to represent quant layers
 	</StudyVariableList>
 
 
-	<FeatureList RawFileGroup_ref="B1">
+	<FeatureList RawFileGroup_ref="raw1">
 		<Feature id="featureB_1" charge="2" MZ="418.172" RT="26.8685"/>
 		<Feature id="featureB_2" charge="2" MZ="421.572" RT="27.8685"/>
 		<Feature id="featureB_3" charge="2" MZ="487.729" RT="26.9685"/>
 		<Feature id="featureB_4" charge="2" MZ="518.827" RT="26.8685"/>
 	</FeatureList>
-	<FeatureList RawFileGroup_ref="E1">	
+	<FeatureList RawFileGroup_ref="raw2">	
 		<Feature id="featureE_1" charge="2" MZ="418.172" RT="26.8685"/>
 		<Feature id="featureE_2" charge="2" MZ="421.572" RT="27.8685"/>
 		<Feature id="featureE_3" charge="2" MZ="487.729" RT="26.9685"/>

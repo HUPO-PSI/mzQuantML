@@ -1,0 +1,104 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_5.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology"
+			URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../msmsdata/b1.raw" id="r1"/>
+		</RawFilesGroup>
+		<IdenficationFiles>
+			<IdentificationFile location="myidents.mzid"/>
+		</IdenficationFiles>
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+
+
+	<AssayList id="AssayList1">
+		<Assay id="B1" name="B1">
+			<raw_files_group_ref>raw1</raw_files_group_ref>
+		</Assay>
+		
+	</AssayList>
+	
+	<!-- Note StudyVariableList is mandatory, I think this is a good idea even if there is only one assay -->
+	<StudyVariableList>
+		<StudyVariable id="SV1">
+			<cvParam cvRef="" accession="" name=""/>
+			<AssayRef assay_ref="B1"/>
+		</StudyVariable>
+	</StudyVariableList>
+	
+	<!-- May want to make dataProcessing_ref mandatory? -->
+	<FeatureList RawFileGroup_ref="raw1" dataProcessing_ref="feature_quantification">
+
+		<Feature id="feature1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="feature2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="feature3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="feature4" charge="2" MZ="518.827" RT="26.8685"/>
+
+		<FeatureQuantLayer id="FQL1">
+			<FeatureColumnIndex>
+				<FeatureColumn index="0" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</FeatureColumn>
+				<FeatureColumn index="1" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</FeatureColumn>
+				<FeatureColumn index="2" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+					</DataType>
+				</FeatureColumn>
+				<FeatureColumn index="3" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+					</DataType>
+				</FeatureColumn>				
+			</FeatureColumnIndex>			
+			<DataMatrix>
+				<Row object_ref="feature1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="feature2">93481.41456 98090.36288 NaN 0.146698</Row>
+				<Row object_ref="feature3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="feature4">181.43671 398090.36288 793556 0.146698</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+
+
+	</FeatureList>
+
+
+
+
+
+	<DataProcessingList>
+		<DataProcessing id="progenesis_alignment">
+			<ProcessingMethod>
+				<userParam name=""/>
+				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
+			</ProcessingMethod>
+		</DataProcessing>
+		<DataProcessing id="feature_quantification">
+			<ProcessingMethod>
+				<userParam name=""/>
+				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
+			</ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+
+</mzQuantML>

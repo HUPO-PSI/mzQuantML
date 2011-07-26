@@ -1,0 +1,128 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_5.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology"
+			URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
+
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../msmsdata/b1.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../msmsdata/e1.raw" id="r2"/>
+		</RawFilesGroup>
+		<IdenficationFiles>
+			<IdentificationFile location="myidents.mzid"/>
+		</IdenficationFiles>
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+
+	<AssayList id="AssayList1">
+		<Assay id="B1" name="B1">
+			<raw_files_group_ref>raw1</raw_files_group_ref>
+		</Assay>
+		<Assay id="E1" name="E1">
+			<raw_files_group_ref>raw2</raw_files_group_ref>			
+		</Assay>		
+
+	</AssayList>
+
+
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
+				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<AssayRef assay_ref="B1"/>
+		</StudyVariable>
+
+
+	</StudyVariableList>
+
+
+	<FeatureList RawFileGroup_ref="B1">
+		<Feature id="featureB_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureB_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureB_3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureB_4" charge="2" MZ="518.827" RT="26.8685"/>
+	</FeatureList>
+	<FeatureList RawFileGroup_ref="E1">	
+		<Feature id="featureE_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureE_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureE_3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureE_4" charge="2" MZ="518.827" RT="26.8685"/>
+	</FeatureList>
+
+	<MatchedFeatureList>
+		<MatchedFeature id="mf1">
+			<feature_refs>featureB_1 featureE_1</feature_refs>
+		</MatchedFeature>
+		<MatchedFeature id="mf2">
+			<feature_refs>featureB_2 featureE_2</feature_refs>
+		</MatchedFeature>
+		<MatchedFeature id="mf3">
+			<feature_refs>featureB_3 featureE_3</feature_refs>
+		</MatchedFeature>
+		<MatchedFeature id="mf4">
+			<feature_refs>featureB_4 featureE_4</feature_refs>
+		</MatchedFeature>
+		<QuantLayer id="QL1">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Normalised abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<ColumnType>Assay</ColumnType>
+			<DataMatrix>
+				<Row object_ref="mf1">456567 345456</Row>
+				<Row object_ref="mf2">124234 232345</Row>
+				<Row object_ref="mf3">647956 577567</Row>
+				<Row object_ref="mf4">11567 445556</Row>				
+			</DataMatrix>
+		</QuantLayer>
+		<QuantLayer id="QL2">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Raw abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<ColumnType>Assay</ColumnType>
+			<DataMatrix>
+				<Row object_ref="mf1">456567 345456</Row>
+				<Row object_ref="mf2">124234 232345</Row>
+				<Row object_ref="mf3">647956 577567</Row>
+				<Row object_ref="mf4">11567 445556</Row>				
+			</DataMatrix>
+		</QuantLayer>	
+		
+	</MatchedFeatureList>
+	
+	
+
+
+
+	<DataProcessingList>
+		<DataProcessing id="progenesis_alignment">
+			<ProcessingMethod>
+				<userParam name=""/>
+				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
+			</ProcessingMethod>
+		</DataProcessing>
+		<DataProcessing id="feature_quantification">
+			<ProcessingMethod>
+				<userParam name=""/>
+				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
+			</ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+	
+
+</mzQuantML>

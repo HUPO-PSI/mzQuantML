@@ -1,0 +1,240 @@
+<!--
+example sketch:
+- four samples: two "diseased", two "healthy"
+- therefore: two MS/MS peak list files (here: .mgf) and two Identification files (here: mzIdentML .mzid)
+- included: quant layers for 
+  a) "peptide PSM counts" (count all PSMs for each amino acid sequence with modifications, including different charge states)
+  b) "raw protein values" (sum of peptide PSM counts for each database sequence)
+  c) "normalized protein values" (sum all raw protein counts per assay; divide each raw value by the mean of all assay sums)
+  d) "means of groups" (mean of proteins in disease and healthy group)
+  e) "ratio" (disease vs. healthy; proteins)
+
+schema comments / issues:
+- RawFiles are really the raw files of the instrument run (i.e. .raw, .wiff, .yep, .mzML in profile mode etc.).
+  For spectral counting these are unnecessary, as this method only relies on the PSM identifications; 
+  even if one wants to include the peak list files (i.e. .mgf, .dta) on which the identifications are based, this is not 
+  what is usually described in RawFiles; Therefore <RawFiles> should be optional for spectral counting or renamed to <BaseFiles>, <UsedFiles>, <QuantFiles> etc.
+- <DataProcessing> is not really clear to me, seems to be rather ambiguous: calculations, that have been done on raw files / peak list files or on mzIdentML files?
+  In spectral counting we normalize onto the mean of (the sum of all protein counts per data set within FDR) or similar. Reporting it in <Assay> is a bit "early", 
+  but there is no better place at the moment.
+- However we need "normalization to mean of proteins" as data processing CV term;
+  in psi-ms.obo there is "intensitiy normalization", which should be replaced by
+  a new parent term "normalization". "intensity normalization", "normalization to mean of proteins" and "quantile normalization" could be children of this term.
+- Why only one <IdentificationFile> in <InputFiles>?
+- In assay one should have a reference to <IdentificationFile>
+-->
+
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_5.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		<cv id="UNIMOD" fullName="unimod modifications ontology" URI="http://www.unimod.org/obo/unimod.obo"/>
+	</cvList>
+	
+	<InputFiles>
+		<RawFilesGroup id="rawh1">
+			<RawFile location="C:\ms\PeakLists\healthy1.mgf" id="rh1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="rawh2">
+			<RawFile location="C:\ms\PeakLists\healthy2.mgf" id="rh2"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="rawd1">
+			<RawFile location="C:\ms\PeakLists\disease1.mgf" id="rd1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="rawd2">
+			<RawFile location="C:\ms\PeakLists\disease2.mgf" id="rd2"/>
+		</RawFilesGroup>
+		
+		<IdenficationFiles>
+			<IdentificationFile location="C:\ms\mzIdent\identification1.mzid"/>
+			<!--
+			<IdentificationFile location="C:\ms\mzIdent\identification3.mzid"/>
+			<IdentificationFile location="C:\ms\mzIdent\identification2.mzid"/>
+			<IdentificationFile location="C:\ms\mzIdent\identification4.mzid"/>
+			-->
+		</IdenficationFiles>
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+		</SearchDatabase>	
+	</InputFiles>
+	
+	<AssayList id="AL1">
+		<Assay id="HEALTHY1">
+			<raw_files_group_ref>rawh1</raw_files_group_ref>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification1.mzid"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+		<Assay id="HEALTHY2">
+			<raw_files_group_ref>rawh2</raw_files_group_ref>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification3.mzid"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+		<Assay id="DISEASE1">
+			<raw_files_group_ref>rawd1</raw_files_group_ref>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification2.mzid"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+		<Assay id="DISEASE2">
+			<raw_files_group_ref>rawd2</raw_files_group_ref>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\identification4.mzid"/>
+			</IdentificationFiles>
+			<DataProcessingOrder>
+				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
+			</DataProcessingOrder>
+			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+		</Assay>
+	</AssayList>
+	
+	<StudyVariableList>
+		<StudyVariable id="SV1_HEALTHY" name="healthy group">
+			<cvParam accession="MS:1000000" name="experimental condition healthy" cvRef="PSI-MS"/>
+			<AssayRef assay_ref="HEALTHY1"/>
+			<AssayRef assay_ref="HEALTHY2"/>
+		</StudyVariable>
+		<StudyVariable id="SV2_DISEASE" name="disease group">
+			<cvParam accession="MS:1000000" name="experimental condition disease" cvRef="PSI-MS"/>
+			<AssayRef assay_ref="DISEASE1"/>
+			<AssayRef assay_ref="DISEASE2"/>
+		</StudyVariable>
+	</StudyVariableList>
+
+	<ProteinList>
+		<Protein accession="YDR238C" id="prot1">
+			<IdentificationRef file_ref="file1" id_ref="id1" />
+			<peptide_refs>pep1 pep2</peptide_refs>
+		</Protein>
+		<Protein accession="XYZ1ABC" id="prot2">
+			<IdentificationRef file_ref="file1" id_ref="id2" />
+			<peptide_refs>pep3 pep4 pep5</peptide_refs>
+		</Protein>
+		<Protein accession="XYZ123A" id="prot3">
+			<IdentificationRef id_ref="id3" file_ref="file1"/>
+			<peptide_refs>pep1</peptide_refs>
+		</Protein>
+		
+		<!-- description see above b) -->
+		<QuantLayer id="QL_raw_protein_value_layer">
+			<DataType>
+				<cvParam name="raw protein values" accession="MS:1000000" cvRef="PSI-MS"/>
+			</DataType>
+			<ColumnIndex>HEALTHY1 HEALTHY2 DISEASE1 DISEASE2</ColumnIndex>
+			<ColumnType>Assay</ColumnType>
+			<DataMatrix>
+				<Row object_ref="prot1">3 9 7 19</Row> 
+				<Row object_ref="prot2">13 6 22 21</Row>
+				<Row object_ref="prot3">8 1 9 6</Row>
+			</DataMatrix>
+		</QuantLayer>
+		
+		<!-- description see above c) -->
+		<QuantLayer id="QL_normalized_protein_value_layer">
+			<DataType>
+				<cvParam name="normalized protein values" accession="MS:1000000" cvRef="PSI-MS"/>
+			</DataType>
+			<ColumnIndex>HEALTHY1 HEALTHY2 DISEASE1 DISEASE2</ColumnIndex>
+			<ColumnType>Assay</ColumnType>
+			<DataMatrix>
+				<Row object_ref="prot1">0.097 0.290 0.226 0.613</Row>
+				<Row object_ref="prot2">0.419 0.194 0.710 0.677</Row>
+				<Row object_ref="prot3">0.258 0.032 0.290 0.194</Row>
+			</DataMatrix>
+		</QuantLayer>
+
+		<!-- description see above d) -->
+		<QuantLayer id="QL_protein_means_of_groups">
+			<DataType>
+				<cvParam name="mean" accession="MS:100000" cvRef="PSI_MS"/>
+			</DataType>
+			<ColumnIndex>SV1_HEALTHY SV2_DISEASE</ColumnIndex>
+			<ColumnType>StudyVariable</ColumnType>
+			<DataMatrix>
+				<Row object_ref="prot1">0.1935 0.420</Row>
+				<Row object_ref="prot2">0.307 0.694</Row>
+				<Row object_ref="prot3">0.145 0.242</Row>
+			</DataMatrix>
+		</QuantLayer>
+
+		<!-- description see above e) -->
+		<QuantLayer id="QL_protein_ratio_disease_vs_healthy">
+			<DataType>
+				<cvParam name="ratio" accession="MS:100000" cvRef="PSI_MS"/>
+			</DataType>
+			<ColumnIndex>AL1</ColumnIndex>
+			<ColumnType>AssayList</ColumnType>
+			<DataMatrix>
+				<Row object_ref="prot1">2.171</Row>
+				<Row object_ref="prot2">2.261</Row>
+				<Row object_ref="prot3">1.669</Row>
+			</DataMatrix>
+		</QuantLayer>
+	</ProteinList>
+	
+	<PeptideList>
+		<Peptide id="pep1">
+			<PeptideSequence>BLAEMLVIS</PeptideSequence>
+			<IdentificationRef file_ref="file1" id_ref="id1" />
+			<Modification location="5">
+				<cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="pep2">
+			<PeptideSequence>BLAEMLVISA</PeptideSequence>
+			<IdentificationRef file_ref="file2" id_ref="id2"/>
+			<Modification location="0">
+				<cvParam accession="UNIMOD:5" name="Carbamyl" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="pep3">
+			<PeptideSequence>MLVELVISE</PeptideSequence>
+			<IdentificationRef file_ref="file3" id_ref="id3" />
+		</Peptide>
+		<Peptide id="pep4">
+			<PeptideSequence>MLVELVASA</PeptideSequence>
+			<IdentificationRef file_ref="file4" id_ref="id4"/>
+		</Peptide>
+		<Peptide id="pep5">
+			<PeptideSequence>MLVELVESA</PeptideSequence>
+			<IdentificationRef file_ref="file5" id_ref="id5"/>
+		</Peptide>
+		
+		<!-- description see above a) -->
+		<QuantLayer id="QL_peptide_PSM_count_layer">
+			<DataType>
+				<cvParam name="raw peptide PSM counts" accession="MS:1000000" cvRef="PSI-MS"/>
+			</DataType>
+			<ColumnIndex>HEALTHY1 HEALTHY2 DISEASE1 DISEASE2</ColumnIndex>
+			<ColumnType>Assay</ColumnType>
+			<DataMatrix>
+				<Row object_ref="pep1">1 5 3 10</Row>
+				<Row object_ref="pep2">2 4 4 9</Row>
+				<Row object_ref="pep3">4 3 5 8</Row>
+				<Row object_ref="pep4">5 2 8 7</Row>
+				<Row object_ref="pep5">8 1 9 6</Row>
+			</DataMatrix>
+		</QuantLayer>
+	</PeptideList>
+
+	<DataProcessingList>
+		<DataProcessing id="DP1">
+			<ProcessingMethod>
+				<cvParam accession="MS:1000000" name="normalization to mean of proteins" cvRef="PSI-MS"/>
+			</ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+</mzQuantML>

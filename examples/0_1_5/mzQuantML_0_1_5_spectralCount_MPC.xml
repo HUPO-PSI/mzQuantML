@@ -39,40 +39,28 @@ schema comments / issues:
 	
 	<AssayList id="AL1">
 		<Assay id="HEALTHY1">
-			<IdentificationFiles> <!-- better ref to a IdentificationFile id -->
-				<IdentificationFile location="C:\ms\mzIdent\healthy1.mzid"/>
+			<IdentificationFiles>
+				<IdentificationFile location="C:\ms\mzIdent\healthy1.mzid"/> <!-- better ref to a IdentificationFile id like below -->
 			</IdentificationFiles>
-			<DataProcessingOrder>
-				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
-			</DataProcessingOrder>
-			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+			<!-- IdentificationFileRefs>healthy1</IdentificationFileRefs -->
 		</Assay>
 		<Assay id="HEALTHY2">
 			<IdentificationFiles>
 				<IdentificationFile location="C:\ms\mzIdent\healthy3.mzid"/> <!-- better ref to a IdentificationFile id -->
 			</IdentificationFiles>
-			<DataProcessingOrder>
-				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
-			</DataProcessingOrder>
-			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+			<!-- IdentificationFileRefs>healthy3</IdentificationFileRefs -->
 		</Assay>
 		<Assay id="DISEASE1">
 			<IdentificationFiles>
 				<IdentificationFile location="C:\ms\mzIdent\disease2.mzid"/>
 			</IdentificationFiles>
-			<DataProcessingOrder>
-				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
-			</DataProcessingOrder>
-			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+			<!-- IdentificationFileRefs>disease2</IdentificationFileRefs -->
 		</Assay>
 		<Assay id="DISEASE2">
 			<IdentificationFiles>
 				<IdentificationFile location="C:\ms\mzIdent\disease4.mzid"/>
 			</IdentificationFiles>
-			<DataProcessingOrder>
-				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
-			</DataProcessingOrder>
-			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
+			<!-- IdentificationFileRefs>disease4</IdentificationFileRefs -->
 		</Assay>
 	</AssayList>
 	

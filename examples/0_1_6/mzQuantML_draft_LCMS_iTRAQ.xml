@@ -1,0 +1,115 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology"
+			URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../msmsdata/b1.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../msmsdata/e1.raw" id="r2"/>
+		</RawFilesGroup>
+
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+	
+	<AssayList id="AssayList1">
+		<Assay id="_114" name="114">
+			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<cvParam cvRef="" accession="" name="iTRAQ_114"/>
+		</Assay>
+		<Assay id="_115" name="115">
+			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<cvParam cvRef="" accession="" name="iTRAQ_115"/>
+		</Assay>
+		<Assay id="_116" name="116">
+			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<cvParam cvRef="" accession="" name="iTRAQ_116"/>
+		</Assay>
+		<Assay id="_117" name="117">
+			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<cvParam cvRef="" accession="" name="iTRAQ_117"/>
+		</Assay>
+		
+	</AssayList>
+
+
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
+				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<AssayRef assay_ref="_114"/>
+		</StudyVariable>
+
+
+	</StudyVariableList>
+	
+	<ProteinList>
+		<Protein id="HSP70" accession="HSP70">
+			<peptide_refs>PEPTIDER MLEPTIDER</peptide_refs>			
+		</Protein>
+		<AssayQuantLayer id="QL2">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+			</DataType>
+			<ColumnIndex>_114 _115 _116 _117</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="HSP70">5400 10800 45000 5667</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+		
+	</ProteinList>
+	
+
+	<PeptideList>
+		<Peptide id="PEPTIDER">
+			<PeptideSequence>PEPTIDER</PeptideSequence>
+			<feature_refs>featureB_1</feature_refs>			
+		</Peptide>
+		<Peptide id="MLEPTIDER">
+			<PeptideSequence>MLEPTIDER</PeptideSequence>
+			<feature_refs>featureB_2</feature_refs>	
+		</Peptide>
+		
+		
+	</PeptideList>
+	
+	
+	<FeatureList RawFileGroup_ref="raw1" dataProcessing_ref="feature_quantification">
+		<Feature id="featureB_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureB_2" charge="2" MZ="421.572" RT="27.8685"/>
+		
+		<MS2AssayQuantLayer id="QL_iTRAQ">
+			<DataType>
+				<cvParam cvRef="" accession="" name="iTRAQ intensities"/>
+			</DataType>
+			<ColumnIndex>_114 _115 _116 _117</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="featureB_1">45667 4545 350656 36453</Row>
+				<Row object_ref="featureB_2">145667 24545 4350656 136453</Row>
+			</DataMatrix>
+		</MS2AssayQuantLayer>
+		
+		
+	</FeatureList>
+	
+	
+	<DataProcessingList>
+		<DataProcessing id="feature_quantification">
+			<ProcessingMethod><userParam name=""/></ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+
+</mzQuantML>

@@ -1,7 +1,7 @@
 <!--
 example sketch:
 - four samples: two "diseased", two "healthy"
-- therefore: two MS/MS peak list files (here: .mgf) and two Identification files (here: mzIdentML .mzid)
+- therefore: four Identification files (here: mzIdentML .mzid)
 - included: quant layers for 
   a) "peptide PSM counts" (count all PSMs for each amino acid sequence with modifications, including different charge states)
   b) "raw protein values" (sum of peptide PSM counts for each database sequence)
@@ -10,18 +10,11 @@ example sketch:
   e) "ratio" (disease vs. healthy; proteins)
 
 schema comments / issues:
-- RawFiles are really the raw files of the instrument run (i.e. .raw, .wiff, .yep, .mzML in profile mode etc.).
-  For spectral counting these are unnecessary, as this method only relies on the PSM identifications; 
-  even if one wants to include the peak list files (i.e. .mgf, .dta) on which the identifications are based, this is not 
-  what is usually described in RawFiles; Therefore <RawFiles> should be optional for spectral counting or renamed to <BaseFiles>, <UsedFiles>, <QuantFiles> etc.
 - <DataProcessing> is not really clear to me, seems to be rather ambiguous: calculations, that have been done on raw files / peak list files or on mzIdentML files?
   In spectral counting we normalize onto the mean of (the sum of all protein counts per data set within FDR) or similar. Reporting it in <Assay> is a bit "early", 
   but there is no better place at the moment.
-- However we need "normalization to mean of proteins" as data processing CV term;
-  in psi-ms.obo there is "intensitiy normalization", which should be replaced by
-  a new parent term "normalization". "intensity normalization", "normalization to mean of proteins" and "quantile normalization" could be children of this term.
 - Why only one <IdentificationFile> in <InputFiles>?
-- In assay one should have a reference to <IdentificationFile>
+- In assay one should have a reference to <IdentificationFile> (so there an "id" attribute)
 -->
 
 <mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_5.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
@@ -32,27 +25,13 @@ schema comments / issues:
 	</cvList>
 	
 	<InputFiles>
-		<RawFilesGroup id="rawh1">
-			<RawFile location="C:\ms\PeakLists\healthy1.mgf" id="rh1"/>
-		</RawFilesGroup>
-		<RawFilesGroup id="rawh2">
-			<RawFile location="C:\ms\PeakLists\healthy2.mgf" id="rh2"/>
-		</RawFilesGroup>
-		<RawFilesGroup id="rawd1">
-			<RawFile location="C:\ms\PeakLists\disease1.mgf" id="rd1"/>
-		</RawFilesGroup>
-		<RawFilesGroup id="rawd2">
-			<RawFile location="C:\ms\PeakLists\disease2.mgf" id="rd2"/>
-		</RawFilesGroup>
-		
 		<IdenficationFiles>
-			<IdentificationFile location="C:\ms\mzIdent\identification1.mzid"/>
-			<!--
-			<IdentificationFile location="C:\ms\mzIdent\identification3.mzid"/>
-			<IdentificationFile location="C:\ms\mzIdent\identification2.mzid"/>
-			<IdentificationFile location="C:\ms\mzIdent\identification4.mzid"/>
-			-->
+			<IdentificationFile location="C:\ms\mzIdent\healthy1.mzid"/>
+			<!-- IdentificationFile location="C:\ms\mzIdent\healthy3.mzid"/>
+			<IdentificationFile location="C:\ms\mzIdent\disease2.mzid"/>
+			<IdentificationFile location="C:\ms\mzIdent\disease4.mzid"/> -->
 		</IdenficationFiles>
+		
 		<SearchDatabase location="c:\mydb.fasta" id="SD1">
 			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
 		</SearchDatabase>	
@@ -60,9 +39,8 @@ schema comments / issues:
 	
 	<AssayList id="AL1">
 		<Assay id="HEALTHY1">
-			<raw_files_group_ref>rawh1</raw_files_group_ref>
-			<IdentificationFiles>
-				<IdentificationFile location="C:\ms\mzIdent\identification1.mzid"/>
+			<IdentificationFiles> <!-- better ref to a IdentificationFile id -->
+				<IdentificationFile location="C:\ms\mzIdent\healthy1.mzid"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
@@ -70,9 +48,8 @@ schema comments / issues:
 			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
 		</Assay>
 		<Assay id="HEALTHY2">
-			<raw_files_group_ref>rawh2</raw_files_group_ref>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ms\mzIdent\identification3.mzid"/>
+				<IdentificationFile location="C:\ms\mzIdent\healthy3.mzid"/> <!-- better ref to a IdentificationFile id -->
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
@@ -80,9 +57,8 @@ schema comments / issues:
 			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
 		</Assay>
 		<Assay id="DISEASE1">
-			<raw_files_group_ref>rawd1</raw_files_group_ref>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ms\mzIdent\identification2.mzid"/>
+				<IdentificationFile location="C:\ms\mzIdent\disease2.mzid"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>
@@ -90,9 +66,8 @@ schema comments / issues:
 			<cvParam name="one sample data set" accession="MS:1000000" cvRef="PSI-MS"/>
 		</Assay>
 		<Assay id="DISEASE2">
-			<raw_files_group_ref>rawd2</raw_files_group_ref>
 			<IdentificationFiles>
-				<IdentificationFile location="C:\ms\mzIdent\identification4.mzid"/>
+				<IdentificationFile location="C:\ms\mzIdent\disease4.mzid"/>
 			</IdentificationFiles>
 			<DataProcessingOrder>
 				<DataProcessingOrderElement rank="1" dataProcessing_ref="DP1"/>

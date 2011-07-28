@@ -88,7 +88,7 @@ C) potential CV terms for meta information of StudyVariables:
 "dilution series design, concentration X" (with CV value for concentration)
 
 
-D) quasi standard setups for Assay
+D) quasi standard setups for raw files (not really Assays)
 "one sample data set" (e.g. spectral counting)
 "two sample data set" (e.g. SILAC)
 "four sample data set" (e.g. iTraQ)

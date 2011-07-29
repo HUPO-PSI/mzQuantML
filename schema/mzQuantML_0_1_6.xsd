@@ -127,11 +127,6 @@ Issues:
 						<xsd:documentation>The total number of sequences in the database.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-				<xsd:attribute name="numResidues" type="xsd:long">
-					<xsd:annotation>
-						<xsd:documentation>The number of residues in the database.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -208,6 +203,11 @@ Issues:
 					<xsd:documentation>Quant layer for reporting data values about protein groups related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms for the entire list.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
@@ -235,6 +235,11 @@ Issues:
 					<xsd:documentation>Quant layer for reporting data values about proteins related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms for the entire list.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
@@ -324,17 +329,6 @@ Issues:
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="PeptideRefsType">
-		<xsd:sequence>
-			<xsd:element name="PeptideRef" maxOccurs="unbounded" type="PeptideRefType"/>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="PeptideRefType">
-		<xsd:annotation>
-			<xsd:documentation>Reference to a peptide objects</xsd:documentation>
-		</xsd:annotation>
-		<xsd:attribute name="peptide_ref" type="xsd:IDREF" use="required"/>
-	</xsd:complexType>
 	<xsd:complexType name="PeptideListType">
 		<xsd:sequence>
 			<xsd:element name="Peptide" type="PeptideType" maxOccurs="unbounded"/>
@@ -359,6 +353,11 @@ Issues:
 					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index must refer to Ratio elements defined in the file. Note, the QuantLayer in PeptideList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different peptide charge states. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms for the entire list.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
@@ -617,12 +616,7 @@ Issues:
 			</xsd:annotation>
 		</xsd:attribute>
 
-		<xsd:attribute name="processingStep_ref" type="xsd:IDREF" use="required">
-			<xsd:annotation>
-				<xsd:documentation>The data processing step that generated this data
-					type</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
+		
 	</xsd:complexType>
 	<xsd:complexType name="DataMatrixType">
 		<xsd:annotation>
@@ -743,6 +737,11 @@ Issues:
 						tagged. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional parameters about the raw files specified or the grouping process.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
 			<xsd:annotation>
@@ -771,16 +770,6 @@ Issues:
 			<xsd:element name="cvParam" type="CVParamType" minOccurs="0"/>
 			<xsd:element name="Modification" type="ModParamType" maxOccurs="unbounded"/>
 		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="ProtocolListType">
-		<xsd:sequence/>
-	</xsd:complexType>
-	<xsd:complexType name="ProtocolType">
-		<xsd:annotation>
-			<xsd:documentation>Potentially add in Statistics where means etc can be defined at
-				various levels</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence/>
 	</xsd:complexType>
 	<xsd:complexType name="RatioType">
 		<xsd:sequence>
@@ -831,6 +820,11 @@ Issues:
 					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms for the FeatureList, such as the MassTrace encoding scheme.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="RawFileGroup_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
@@ -893,6 +887,11 @@ Issues:
 					<xsd:documentation>Quant layer for reporting data values about matched features related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms for the entire list.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>

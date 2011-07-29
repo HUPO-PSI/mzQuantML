@@ -14,7 +14,7 @@ Sketch of an example for using data matrices to represent quant layers
 
 	<InputFiles>
 		<RawFilesGroup id="raw1">
-			<RawFile location="../msmsdata/silac1.raw" id="r1"/>
+			<RawFile location="../msmsdata/silac1.raw" id="r1"/>			
 		</RawFilesGroup>
 		<RawFilesGroup id="raw2">
 			<RawFile location="../msmsdata/silac2.raw" id="r2"/>
@@ -63,9 +63,9 @@ Sketch of an example for using data matrices to represent quant layers
 
 
 	<StudyVariableList>
-		<StudyVariable id="SV_group_B" name="Group B">
+		<StudyVariable id="SV_group_B" name="Group B">			
 			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
-				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>			
 			<AssayRef assay_ref="assay_L1"/>
 		</StudyVariable>
 		<StudyVariable id="SV_group_E" name="Group E">
@@ -150,22 +150,22 @@ Sketch of an example for using data matrices to represent quant layers
 		
 		<FeatureQuantLayer id="FQL1">
 			<ColumnIndex>
-				<Column index="0" processingStep_ref="feature_quantification">
+				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
 					</DataType>
 				</Column>
-				<Column index="1" processingStep_ref="feature_quantification">
+				<Column index="1">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
 					</DataType>
 				</Column>
-				<Column index="2" processingStep_ref="feature_quantification">
+				<Column index="2">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
 					</DataType>
 				</Column>
-				<Column index="3" processingStep_ref="feature_quantification">
+				<Column index="3">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
 					</DataType>
@@ -201,22 +201,22 @@ Sketch of an example for using data matrices to represent quant layers
 		
 		<FeatureQuantLayer id="FQL2">
 			<ColumnIndex>
-				<Column index="0" processingStep_ref="feature_quantification">
+				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
 					</DataType>
 				</Column>
-				<Column index="1" processingStep_ref="feature_quantification">
+				<Column index="1">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
 					</DataType>
 				</Column>
-				<Column index="2" processingStep_ref="feature_quantification">
+				<Column index="2">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
 					</DataType>
 				</Column>
-				<Column index="3" processingStep_ref="feature_quantification">
+				<Column index="3">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
 					</DataType>

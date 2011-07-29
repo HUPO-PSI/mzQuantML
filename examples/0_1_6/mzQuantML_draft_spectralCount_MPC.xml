@@ -181,10 +181,14 @@ schema comments / issues:
 			</DataMatrix>
 		</AssayQuantLayer>
 	</PeptideList>
+	
+	<SoftwareList>
+		<software id="dummy" version=""/>
+	</SoftwareList>
 
 	<DataProcessingList>
 		<DataProcessing id="DP1">
-			<ProcessingMethod>
+			<ProcessingMethod softwareRef="dummy" order="1">
 				<cvParam accession="MS:1000000" name="normalization to mean of proteins" cvRef="PSI-MS"/>
 			</ProcessingMethod>
 		</DataProcessing>

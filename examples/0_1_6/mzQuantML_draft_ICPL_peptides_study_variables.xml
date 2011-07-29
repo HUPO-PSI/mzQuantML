@@ -213,6 +213,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<ColumnIndex>E1_over_B1</ColumnIndex>
 			<DataMatrix>
 				<Row object_ref="MF1">1.83</Row>
+				<Row object_ref="MF2">-1.0</Row>				
 				<!-- repasar ratios -->
 			</DataMatrix>
 		</RatioQuantLayer>
@@ -222,6 +223,7 @@ Sketch of an example for using data matrices to represent quant layers
 			</DataType>
 			<ColumnIndex>E2_over_B2</ColumnIndex>
 			<DataMatrix>
+				<Row object_ref="MF1">-1.0</Row>
 				<Row object_ref="MF2">2.0</Row>
 				<!-- repasar ratios -->
 			</DataMatrix>

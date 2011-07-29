@@ -52,6 +52,8 @@ Issues:
 						<xsd:documentation>The list of all peptides quantified.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
+				<xsd:element name="SmallMoleculeList" type="SmallMoleculeListType" maxOccurs="1" minOccurs="0"/>
+				
 				<xsd:element name="FeatureList" minOccurs="0" maxOccurs="unbounded" type="FeatureListType">
 					<xsd:annotation>
 						<xsd:documentation>The lists of features quantified from each set of raw
@@ -250,7 +252,7 @@ Issues:
 		<xsd:sequence>
 			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<xsd:element name="protein_refs"
+			<xsd:element name="Protein_refs"
 				type="xsd:IDREFS" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>The proteins contributing to this protein group on which quantitative values are based. </xsd:documentation>
@@ -268,7 +270,7 @@ Issues:
 		<xsd:sequence>
 			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<xsd:element name="peptide_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
+			<xsd:element name="Peptide_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>The peptides used to generate the values in the QuantLayer
 						(note this should not be used to report all peptides that can support the
@@ -286,8 +288,28 @@ Issues:
 	</xsd:complexType>
 
 	<xsd:complexType name="IdentificationRefType">
-		<xsd:attribute name="id_ref" type="xsd:string"/>
-		<xsd:attribute name="file_ref" type="xsd:string"/>
+		<xsd:attribute name="id_ref" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the unique identifier of this object in the referenced external file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="IdentificationFile_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the IdentificationFile object in this file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="DBIdentificationRefType">
+		<xsd:attribute name="id_ref" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the unique identifier of this object in the referenced external file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the SearchDatabase object in this file from which this identification was made.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinDetectionHypothesisRefsType">
 		<xsd:sequence>
@@ -312,6 +334,36 @@ Issues:
 	<xsd:complexType name="PeptideListType">
 		<xsd:sequence>
 			<xsd:element name="Peptide" type="PeptideType" maxOccurs="unbounded"/>
+			<xsd:element name="GlobalQuantLayer" type="GlobalQuantLayerType" minOccurs="0"
+				maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Global values corresponding to the Peptide such as the total intensity of peptide in all assays, Anova in a quantitative peptidome experiment etc. </xsd:documentation>
+				</xsd:annotation>	
+			</xsd:element>				
+			<xsd:element name="AssayQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different assays i.e. the column index must refer to Assays defined in the file.  Note, the QuantLayer in PeptideList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different peptide charge states.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StudyVariableQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different study variables i.e. the column index must refer to StudyVariables defined in the file. Note, the QuantLayer in PeptideList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different peptide charge states.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index must refer to Ratio elements defined in the file. Note, the QuantLayer in PeptideList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different peptide charge states. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="SmallMoleculeListType">
+		<xsd:annotation>
+			<xsd:documentation>List of small molecules and data values about the small molecules</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="SmallMolecule" type="SmallMoleculeType" maxOccurs="unbounded"/>
 			<xsd:element name="GlobalQuantLayer" type="GlobalQuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
@@ -362,7 +414,40 @@ Issues:
 				</xsd:annotation>
 			</xsd:element>
 			-->
-			<xsd:element name="matched_feature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
+			<xsd:element name="MatchedFeature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Optional references to matched features on which peptide
+						values in the QuantLayer were based.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional parameters or values about this peptide.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="SmallMoleculeType">
+		<xsd:sequence>
+			
+			<xsd:element name="DBIdentificationRef" type="DBIdentificationRefType" minOccurs="0"
+				maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>External database references for the small molecule identification</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Modification" type="ModificationType" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<!--  
+				<xsd:element name="feature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+				<xsd:documentation>Optional references to features on which peptide values in
+				the QuantLayer were based.</xsd:documentation>
+				</xsd:annotation>
+				</xsd:element>
+			-->
+			<xsd:element name="MatchedFeature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Optional references to matched features on which peptide
 						values in the QuantLayer were based.</xsd:documentation>
@@ -784,12 +869,12 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="MatchedFeatureType">
 		<xsd:sequence>
-			<xsd:element name="feature_refs" type="xsd:IDREFS" minOccurs="1">
+			<xsd:element name="Feature_refs" type="xsd:IDREFS" minOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>The features that have been matched together within one raw file (label-based), across multiple raw files (label-based or label free). For MS2 based quantitation, a given feature should be assigned to all assays here.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="assay_refs" type="xsd:IDREFS" minOccurs="0">
+			<xsd:element name="Assay_refs" type="xsd:IDREFS" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>References to the assays to which the features referenced above have been assigned. This element is REQUIRED for label-based examples and the size of the list MUST always match the size of the feature_refs list.</xsd:documentation>
 				</xsd:annotation>

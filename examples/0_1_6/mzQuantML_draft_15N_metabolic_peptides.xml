@@ -1,0 +1,231 @@
+<!--
+example sketch:
+- two samples: "technical replicate 1" and "technical replicate 2"
+- therefore two raw files (here: .raw)
+- in one raw file: 14N: wild type, 15N: mutant (in the other: label switch!)
+- therefore 4 assays: WT1, MUT1 (in techrep1); WT2, MUT2 (in techrep2) 
+- included: quant layers for 
+  a) feature: "raw peak area"
+  b) feature: "normalized peak area"
+  c) matchedfeature: "ratio MUT/WT"
+
+schema comments / issues:
+- make massDelta in Label/Modification optional
+- more CVParam elements necessary in Label / Modification (e.g. to give incorporation rate etc.)?
+- 
+-->
+<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<cv id="UO" fullName="Unit Ontology"
+			URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</cvList>
+
+	<InputFiles>
+		<RawFilesGroup id="TECHREPRAW1">
+			<RawFile location="../msdata/techrep1.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="TECHREPRAW2">
+			<RawFile location="../msdata/techrep2.raw" id="r2"/>
+		</RawFilesGroup>
+		
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName>
+				<userParam name="mydb.fasta"/>
+			</DatabaseName>
+		</SearchDatabase>	
+	</InputFiles>
+	
+
+	<AssayList id="AssayList1">
+		<Assay id="assay_WT1">
+			<raw_files_group_ref>TECHREPRAW1</raw_files_group_ref>
+			<Label>
+				<Modification massDelta="0.0">
+					<cvParam accession="MS:1001XXXX" name="metabolic label 14N" cvRef="PSI_MS"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_MUT1">
+			<raw_files_group_ref>TECHREPRAW1</raw_files_group_ref>
+			<Label>
+				<Modification massDelta="0.0">
+					<cvParam accession="MS:1001XXXX" name="metabolic label 15N" cvRef="PSI_MS"/>
+					<!-- cvParam accession="MS:1001XXXX" name="incorporation rate" cvRef="PSI_MS" value="98" unitAccession="" unitCvRef="" unitName="percent"/ -->
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_MUT2"> <!-- label switch -->
+			<raw_files_group_ref>TECHREPRAW2</raw_files_group_ref>
+			<Label>
+				<Modification massDelta="0.0">
+					<cvParam accession="MS:1001XXXX" name="metabolic label 14N" cvRef="PSI_MS"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_WT2">
+			<raw_files_group_ref>TECHREPRAW2</raw_files_group_ref>
+			<Label>
+				<Modification massDelta="0.0">
+					<cvParam accession="MS:1001XXXX" name="metabolic label 15N" cvRef="PSI_MS"/>
+				</Modification>
+			</Label>
+		</Assay>
+	</AssayList>
+
+	<StudyVariableList>
+		<StudyVariable id="SV_TECHREP1">
+			<cvParam accession="MS:1001XXXX (study variable)" name="technical replicate" cvRef="PSI-MS" value="1"/>
+			<AssayRef assay_ref="assay_WT1"/>
+			<AssayRef assay_ref="assay_MUT1"/>
+		</StudyVariable>
+		<StudyVariable id="SV_TECHREP2">
+			<cvParam accession="MS:1001XXXX (study variable)" name="technical replicate" cvRef="PSI-MS" value="2"/>
+			<AssayRef assay_ref="assay_WT2"/>
+			<AssayRef assay_ref="assay_MUT2"/>
+		</StudyVariable>
+	</StudyVariableList>
+	
+	<RatioList>
+		<Ratio id="ratio_MUT_VS_WT_1" numerator_ref="assay_MUT1" denominator_ref="assay_WT1" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_MUT_VS_WT_2" numerator_ref="assay_MUT2" denominator_ref="assay_WT2" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+	</RatioList>
+	
+	
+	<PeptideList id="PepList1">
+		<Peptide id="PEPTIDER">
+			<PeptideSequence>PEPTIDER</PeptideSequence>
+			<matched_feature_refs>MF1</matched_feature_refs>
+		</Peptide>
+		<Peptide id="MLEPTIDER">
+			<PeptideSequence>MLEPTIDER</PeptideSequence>
+			<matched_feature_refs>MF2</matched_feature_refs>	
+		</Peptide>
+	</PeptideList>
+	
+	
+	<FeatureList id="featureList1" RawFileGroup_ref="TECHREPRAW1">
+		<Feature id="feature_L1" charge="2" MZ="418.172" RT="26.8"/>
+		<Feature id="feature_L2" charge="2" MZ="421.572" RT="27.8"/>
+		<Feature id="feature_L3" charge="2" MZ="487.729" RT="28.9"/>
+		<Feature id="feature_L4" charge="2" MZ="518.827" RT="29.8"/>
+		<Feature id="feature_H1" charge="2" MZ="420.172" RT="26.8"/> <!-- example handcrafted, this should be the 15N version mass of feature_L1 -->
+		<Feature id="feature_H2" charge="2" MZ="423.572" RT="27.8"/>
+		<Feature id="feature_H3" charge="2" MZ="489.729" RT="26.9"/>
+		<Feature id="feature_H4" charge="2" MZ="520.827" RT="26.8"/>
+
+		<FeatureQuantLayer id="FQL1">
+			<ColumnIndex>
+				<Column index="0" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="normalized intensity"/>
+					</DataType>
+				</Column>
+			</ColumnIndex>			
+			<DataMatrix>
+				<Row object_ref="feature_L1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_L2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_L3">193481.716 298090.36288</Row>
+				<Row object_ref="feature_L4">181.436 398090.36288</Row>
+				<Row object_ref="feature_H1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_H2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_H3">193481.716 298090.36288</Row>
+				<Row object_ref="feature_H4">181.436 398090.36288</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	
+	<FeatureList id="featureList2" RawFileGroup_ref="TECHREPRAW2">
+		<Feature id="feature_L1_2" charge="2" MZ="418.172" RT="26.8"/>
+		<Feature id="feature_L2_2" charge="2" MZ="421.572" RT="27.8"/>
+		<Feature id="feature_L3_2" charge="2" MZ="487.729" RT="28.9"/>
+		<Feature id="feature_H1_2" charge="2" MZ="420.172" RT="26.8"/> <!-- example handcrafted, this should be the 15N version mass of feature_L1 -->
+		<Feature id="feature_H2_2" charge="2" MZ="423.572" RT="27.8"/>
+		<Feature id="feature_H3_2" charge="2" MZ="489.729" RT="26.9"/>
+
+		<FeatureQuantLayer id="FQL2">
+			<ColumnIndex>
+				<Column index="0" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="normalized intensity"/>
+					</DataType>
+				</Column>
+			</ColumnIndex>			
+			<DataMatrix>
+				<Row object_ref="feature_L1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_L2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_L3">193481.716 298090.36288</Row>
+				<Row object_ref="feature_H1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_H2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_H3">193481.716 298090.36288</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+
+	</FeatureList>
+	
+
+	<MatchedFeatureList id="MFL">
+		<MatchedFeature id="MF1"> <!-- peptideA[2+] in both raw files-->			
+			<feature_refs>feature_L1 feature_H1 feature_L2 feature_H2</feature_refs>
+			<assay_refs>assay_WT1 assay_MUT1 assay_MUT2 assay_WT2</assay_refs>
+		</MatchedFeature>
+		<MatchedFeature id="MF2"> <!-- peptideB[3+] in both raw files-->			
+			<feature_refs>feature_L3 feature_H3 feature_L4 feature_H4</feature_refs>
+			<assay_refs>assay_WT1 assay_MUT1 assay_MUT2 assay_WT2</assay_refs>
+		</MatchedFeature>
+
+		<RatioQuantLayer id="RQL">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Ratio abundance"/> <!-- repeat CV term of <RatioList> element? -->
+			</DataType>
+			<ColumnIndex>ratio_MUT_VS_WT_1 ratio_MUT_VS_WT_2</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="MF1">1.5 1.6</Row>	
+				<Row object_ref="MF2">1.7 1.8</Row>
+			</DataMatrix>			
+		</RatioQuantLayer>
+
+	</MatchedFeatureList>
+		
+	<SoftwareList>
+		<Software id="MaxQuant" version="1"></Software>
+	</SoftwareList>
+	
+	
+	<DataProcessingList>
+		<DataProcessing id="feature_quantification" softwareRef="MaxQuant">
+			<ProcessingMethod order="1" >
+				<cvParam cvRef="" accession="" name="featurefinding"/>
+			</ProcessingMethod>
+			<ProcessingMethod order="2">
+				<userParam name="peak_matching"/>
+				<cvParam cvRef="" accession="" name="Params for this step to go in here..."/>
+			</ProcessingMethod>
+		</DataProcessing>
+		
+	</DataProcessingList>
+	
+
+</mzQuantML>

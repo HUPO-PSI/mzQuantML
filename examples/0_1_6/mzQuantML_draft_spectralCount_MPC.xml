@@ -10,12 +10,8 @@ example sketch:
   e) "ratio" (disease vs. healthy; proteins)
 
 schema comments / issues:
-- <DataProcessing> is not really clear to me, seems to be rather ambiguous: calculations, that have been done on raw files / peak list files or on mzIdentML files?
-  In spectral counting we normalize onto the mean of (the sum of all protein counts per data set within FDR) or similar. Reporting it in <Assay> is a bit "early", 
-  but there is no better place at the moment.
-- <RawFilesGroup> should be optional
-- <SourceFile> should be optional
-- <raw_files_group_ref> should be optional
+- change input_objects and output_objects to upper case
+
 -->
 
 <mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
@@ -41,16 +37,16 @@ schema comments / issues:
 	
 	<AssayList id="AL1">
 		<Assay id="AS_HEALTHY1">
-			<IdentificationFilesRef>IF_healthy1</IdentificationFilesRef>
+			<identificationfiles_ref>IF_healthy1</identificationfiles_ref>
 		</Assay>
 		<Assay id="AS_HEALTHY2">
-			<IdentificationFilesRef>IF_healthy3</IdentificationFilesRef>
+			<identificationfiles_ref>IF_healthy3</identificationfiles_ref>
 		</Assay>
 		<Assay id="AS_DISEASE1">
-			<IdentificationFilesRef>IF_disease2</IdentificationFilesRef>
+			<identificationfiles_ref>IF_disease2</identificationfiles_ref>
 		</Assay>
 		<Assay id="AS_DISEASE2">
-			<IdentificationFilesRef>IF_disease4</IdentificationFilesRef>
+			<identificationfiles_ref>IF_disease4</identificationfiles_ref>
 		</Assay>
 	</AssayList>
 	
@@ -71,7 +67,7 @@ schema comments / issues:
 		<Ratio id="DISEASE_VS_HEALTHY" numerator_ref="SV2_DISEASE" denominator_ref="SV1_HEALTHY"/>
 	</RatioList>
 
-	<ProteinList>
+	<ProteinList id="PROTLIST">
 		<Protein accession="YDR238C" id="prot1">
 			<IdentificationRef file_ref="file1" id_ref="id1" />
 			<peptide_refs>pep1 pep2</peptide_refs>
@@ -138,7 +134,7 @@ schema comments / issues:
 		</RatioQuantLayer>
 	</ProteinList>
 	
-	<PeptideList>
+	<PeptideList id="PEP_LIST">
 		<Peptide id="pep1">
 			<PeptideSequence>BLAEMLVIS</PeptideSequence>
 			<IdentificationRef file_ref="file1" id_ref="id1" />
@@ -183,12 +179,16 @@ schema comments / issues:
 	</PeptideList>
 	
 	<SoftwareList>
-		<software id="dummy" version=""/>
+		<Software id="MS_EXCEL" version="2007">
+			<cvParam accession="MS:1001XXXX" name="Microsoft Excel" cvRef="PSI-MS"/>
+		</Software>
 	</SoftwareList>
 
 	<DataProcessingList>
-		<DataProcessing id="DP1">
-			<ProcessingMethod softwareRef="dummy" order="1">
+		<DataProcessing id="DP1" softwareRef="MS_EXCEL" >
+			<input_object_refs>QL_raw_protein_value_layer</input_object_refs>
+			<output_object_refs>QL_normalized_protein_value_layer</output_object_refs>
+			<ProcessingMethod order="1">
 				<cvParam accession="MS:1000000" name="normalization to mean of proteins" cvRef="PSI-MS"/>
 			</ProcessingMethod>
 		</DataProcessing>

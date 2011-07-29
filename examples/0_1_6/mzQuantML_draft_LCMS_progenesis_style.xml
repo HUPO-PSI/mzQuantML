@@ -123,18 +123,21 @@ Sketch of an example for using data matrices to represent quant layers
 		
 	</MatchedFeatureList>
 	
-
-
+<SoftwareList>
+	<software id="Progenesis" version="2.3"></software>
+</SoftwareList>
+	
+	
 	<DataProcessingList>
-		<DataProcessing id="progenesis_alignment">
-			<ProcessingMethod>
+		<DataProcessing id="feature_quantification">
+			<ProcessingMethod order="1" softwareRef="Progenesis">
 				<userParam name=""/>
 				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
 			</ProcessingMethod>
 		</DataProcessing>
-		<DataProcessing id="feature_quantification">
-			<ProcessingMethod>
-				<userParam name=""/>
+		<DataProcessing id="progenesis_alignment">
+			<ProcessingMethod softwareRef="Progenesis" order="2">
+				<userParam name="2"/>
 				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
 			</ProcessingMethod>
 		</DataProcessing>

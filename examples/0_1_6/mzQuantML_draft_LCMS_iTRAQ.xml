@@ -51,6 +51,13 @@ Sketch of an example for using data matrices to represent quant layers
 			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
 				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
 			<AssayRef assay_ref="_114"/>
+			<AssayRef assay_ref="_116"/>
+		</StudyVariable>
+		<StudyVariable id="SV_group_E" name="Group E">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
+				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<AssayRef assay_ref="_115"/>
+			<AssayRef assay_ref="_117"/>
 		</StudyVariable>
 
 
@@ -76,11 +83,11 @@ Sketch of an example for using data matrices to represent quant layers
 	<PeptideList>
 		<Peptide id="PEPTIDER">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-			<feature_refs>featureB_1</feature_refs>			
+			<matched_feature_refs>MF1</matched_feature_refs>			
 		</Peptide>
 		<Peptide id="MLEPTIDER">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
-			<feature_refs>featureB_2</feature_refs>	
+			<matched_feature_refs>MF2</matched_feature_refs>	
 		</Peptide>
 		
 		
@@ -88,8 +95,8 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<FeatureList RawFileGroup_ref="raw1" dataProcessing_ref="feature_quantification">
-		<Feature id="featureB_1" charge="2" MZ="418.172" RT="26.8685"/>
-		<Feature id="featureB_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="feature1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="feature2" charge="2" MZ="421.572" RT="27.8685"/>
 		
 		<MS2AssayQuantLayer id="QL_iTRAQ">
 			<DataType>
@@ -97,18 +104,46 @@ Sketch of an example for using data matrices to represent quant layers
 			</DataType>
 			<ColumnIndex>_114 _115 _116 _117</ColumnIndex>
 			<DataMatrix>
-				<Row object_ref="featureB_1">45667 4545 350656 36453</Row>
-				<Row object_ref="featureB_2">145667 24545 4350656 136453</Row>
+				<Row object_ref="feature1">45667 4545 350656 36453</Row>
+				<Row object_ref="feature2">145667 24545 4350656 136453</Row>
 			</DataMatrix>
 		</MS2AssayQuantLayer>
+		
+		<MS2StudyVariableQuantLayer id="QL_SV_iTRAQ">
+			<DataType>
+				<cvParam cvRef="" accession="" name="iTRAQ mean intensities"/>
+			</DataType>
+			<ColumnIndex>SV_group_B SV_group_E</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="feature1">34400 565700</Row>
+				<Row object_ref="feature2">1234400 645700</Row>
+			</DataMatrix>
+		</MS2StudyVariableQuantLayer>
+		
 		
 		
 	</FeatureList>
 	
+	<MatchedFeatureList>
+		<MatchedFeature id="MF1">
+			<feature_refs>feature1 feature1 feature1 feature1</feature_refs>
+			<assay_refs>_114 _115 _116 _117</assay_refs>
+		</MatchedFeature>
+		<MatchedFeature id="MF2">
+			<feature_refs>feature2 feature2 feature2 feature2</feature_refs>
+			<assay_refs>_114 _115 _116 _117</assay_refs>
+		</MatchedFeature>
+	</MatchedFeatureList>
+	
+	
+	
+	<SoftwareList>
+		<software id="iTRACKER" version="1"></software>
+	</SoftwareList>
 	
 	<DataProcessingList>
 		<DataProcessing id="feature_quantification">
-			<ProcessingMethod><userParam name=""/></ProcessingMethod>
+			<ProcessingMethod order="1" softwareRef="iTRACKER"><userParam name=""/></ProcessingMethod>
 		</DataProcessing>
 	</DataProcessingList>
 

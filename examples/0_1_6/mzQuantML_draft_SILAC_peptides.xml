@@ -16,6 +16,9 @@ Sketch of an example for using data matrices to represent quant layers
 		<RawFilesGroup id="raw1">
 			<RawFile location="../msmsdata/silac1.raw" id="r1"/>
 		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../msmsdata/silac2.raw" id="r2"/>
+		</RawFilesGroup>
 		
 		<IdentificationFiles>
 			<IdentificationFile location="myidents.mzid" id="mzid1"/>
@@ -27,11 +30,25 @@ Sketch of an example for using data matrices to represent quant layers
 	
 
 	<AssayList id="AssayList1">
-		<Assay id="assay_L" name="assay_L">
+		<Assay id="assay_L1" name="assay_L">
 			<raw_files_group_ref>raw1</raw_files_group_ref>
 		</Assay>
-		<Assay id="assay_H" name="assay_H">
+		<Assay id="assay_H1" name="assay_H">
 			<raw_files_group_ref>raw1</raw_files_group_ref>		
+			<Label>
+				<Modification massDelta="8">
+					<cvParam cvRef="" accession="" name=""/>
+				</Modification>
+				<Modification massDelta="10">
+					<cvParam cvRef="" accession="" name=""/>
+				</Modification>				
+			</Label>			
+		</Assay>
+		<Assay id="assay_L2" name="assay_L">
+			<raw_files_group_ref>raw2</raw_files_group_ref>
+		</Assay>
+		<Assay id="assay_H2" name="assay_H">
+			<raw_files_group_ref>raw2</raw_files_group_ref>		
 			<Label>
 				<Modification massDelta="8">
 					<cvParam cvRef="" accession="" name=""/>
@@ -49,19 +66,29 @@ Sketch of an example for using data matrices to represent quant layers
 		<StudyVariable id="SV_group_B" name="Group B">
 			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
 				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
-			<AssayRef assay_ref="assay_L"/>
+			<AssayRef assay_ref="assay_L1"/>
 		</StudyVariable>
 		<StudyVariable id="SV_group_E" name="Group E">
 			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
 				value="10" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
-			<AssayRef assay_ref="assay_H"/>
+			<AssayRef assay_ref="assay_H1"/>
 		</StudyVariable>
 
 
 	</StudyVariableList>
 	
 	<RatioList>
-		<Ratio id="ratioE_B" numerator_ref="SV_group_E" denominator_ref="SV_group_B" >
+		<Ratio id="ratio_study_var_E_B" numerator_ref="SV_group_E" denominator_ref="SV_group_B" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_L1" denominator_ref="assay_H1" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L2_H2" numerator_ref="assay_L2" denominator_ref="assay_H2" >
 			<RatioCalculation>
 				<userParam name="Simple ratio calc"/>
 			</RatioCalculation>
@@ -81,9 +108,9 @@ Sketch of an example for using data matrices to represent quant layers
 			<DataType>
 				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
 			</DataType>
-			<ColumnIndex>ratioE_B</ColumnIndex>
+			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
 			<DataMatrix>
-				<Row object_ref="HSP70">1.6</Row>
+				<Row object_ref="HSP70">1.6 1.8</Row>
 			</DataMatrix>
 		</RatioQuantLayer>
 		
@@ -109,16 +136,15 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	<FeatureList RawFileGroup_ref="raw1">
 		
-		
 		<!-- Note: Unclear whether assay_ref is useful or not here, since it is not known until after feature matching has been done -->
-		<Feature id="featureB_1" assay_ref="assay_L" charge="2" MZ="418.172" RT="26.8685"/>
-		<Feature id="featureB_2" assay_ref="assay_L" charge="2" MZ="421.572" RT="27.8685"/>
-		<Feature id="featureB_3" assay_ref="assay_L" charge="2" MZ="487.729" RT="26.9685"/>
-		<Feature id="featureB_4" assay_ref="assay_L" charge="2" MZ="518.827" RT="26.8685"/>
-		<Feature id="featureE_1" assay_ref="assay_H" charge="2" MZ="418.172" RT="26.8685"/>
-		<Feature id="featureE_2" assay_ref="assay_H" charge="2" MZ="421.572" RT="27.8685"/>
-		<Feature id="featureE_3" assay_ref="assay_H" charge="2" MZ="487.729" RT="26.9685"/>
-		<Feature id="featureE_4" assay_ref="assay_H" charge="2" MZ="518.827" RT="26.8685"/>
+		<Feature id="featureB_1" assay_ref="assay_L1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureB_2" assay_ref="assay_L1" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureB_3" assay_ref="assay_L1" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureB_4" assay_ref="assay_L1" charge="2" MZ="518.827" RT="26.8685"/>
+		<Feature id="featureE_1" assay_ref="assay_H1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureE_2" assay_ref="assay_H1" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureE_3" assay_ref="assay_H1" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureE_4" assay_ref="assay_H1" charge="2" MZ="518.827" RT="26.8685"/>
 		
 		
 		<FeatureQuantLayer id="FQL1">
@@ -158,40 +184,96 @@ Sketch of an example for using data matrices to represent quant layers
 			</DataMatrix>
 		</FeatureQuantLayer>
 	</FeatureList>
+	
+	<FeatureList RawFileGroup_ref="raw2">
+		
+		<!-- Note: Unclear whether assay_ref is useful or not here, since it is not known until after feature matching has been done -->
+		<Feature id="featureB2_1" assay_ref="assay_L2" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureB2_2" assay_ref="assay_L2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureB2_3" assay_ref="assay_L2" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureB2_4" assay_ref="assay_L2" charge="2" MZ="518.827" RT="26.8685"/>
+		<Feature id="featureE2_1" assay_ref="assay_H2" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureE2_2" assay_ref="assay_H2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureE2_3" assay_ref="assay_H2" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureE2_4" assay_ref="assay_H2" charge="2" MZ="518.827" RT="26.8685"/>
+		
+		
+		<FeatureQuantLayer id="FQL2">
+			<ColumnIndex>
+				<Column index="0" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</Column>
+				<Column index="2" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+					</DataType>
+				</Column>
+				<Column index="3" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+					</DataType>
+				</Column>
+				
+			</ColumnIndex>			
+			<DataMatrix>
+				<Row object_ref="featureB_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="featureB_2">93481.41456 98090.36288 NaN 0.146698</Row>
+				<Row object_ref="featureB_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="featureB_4">181.43671 398090.36288 793556 0.146698</Row>
+				<Row object_ref="featureE_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="featureE_2">93481.41456 98090.36288 NaN 0.146698</Row>
+				<Row object_ref="featureE_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="featureE_4">181.43671 398090.36288 793556 0.146698</Row>
+				
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	
 
 	<MatchedFeatureList>
 		<MatchedFeature id="MF1">			
-			<feature_refs>featureB_1 featureE_1</feature_refs>			
+			<feature_refs>featureB_1 featureE_1 featureB2_1 featureE2_1</feature_refs>
+			<assay_refs>assay_L1 assay_H1 assay_L2 assay_H2</assay_refs>
 		</MatchedFeature>
 		<MatchedFeature id="MF2">
 			<feature_refs>featureB_2 featureE_2</feature_refs>
+			<assay_refs>assay_L1 assay_H1</assay_refs>
 		</MatchedFeature>
 		<RatioQuantLayer id="QL1">
 			<DataType>
 				<cvParam cvRef="PSI-MS" accession="TODO" name="Ratio abundance"/>
 			</DataType>
-			<ColumnIndex>ratioE_B</ColumnIndex>
+			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
 			<DataMatrix>
-				<Row object_ref="PEPTIDER">1.5</Row>	
-				<Row object_ref="MLEPTIDER">1.7</Row>
+				<Row object_ref="MF1">1.5 1.6</Row>	
+				<Row object_ref="MF2">1.7 NaN</Row>
 			</DataMatrix>			
 		</RatioQuantLayer>
 		<!-- Optional to have quant layer or not, not necessarily needed if features have intensity -->
 	</MatchedFeatureList>
 	
 	
+	<SoftwareList>
+		<software id="MaxQuant" version="1"></software>
+	</SoftwareList>
 	
-
+	
 	<DataProcessingList>
-		<DataProcessing id="progenesis_alignment">
-			<ProcessingMethod>
-				<userParam name=""/>
-			
+		<DataProcessing id="feature_quantification">
+			<ProcessingMethod order="1" softwareRef="MaxQuant">
+				<cvParam cvRef="" accession="" name="featurefinding"/>
 			</ProcessingMethod>
 		</DataProcessing>
-		<DataProcessing id="feature_quantification">
-			<ProcessingMethod>
-				<userParam name=""/>
+		<DataProcessing id="peak_matching">
+			<ProcessingMethod order="2" softwareRef="MaxQuant">
+				<userParam name="peak_matching"/>
 		
 			</ProcessingMethod>
 		</DataProcessing>

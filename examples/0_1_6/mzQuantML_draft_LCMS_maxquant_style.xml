@@ -49,6 +49,10 @@ Sketch of an example for using data matrices to represent quant layers
 
 	</StudyVariableList>
 	
+	<AnalysisSummary>
+		<cvParam cvRef="" accession="" name="analysis type:label free intensity"/>
+	</AnalysisSummary>
+	
 	<ProteinGroupList>
 		<ProteinGroup id="HSP70_HSP80">
 			<protein_refs>HSP70 HSP80</protein_refs>
@@ -74,6 +78,27 @@ Sketch of an example for using data matrices to represent quant layers
 		<Protein id="HSP80" accession="HSP80">
 			<peptide_refs>PEPTIDER MLEPTIDER</peptide_refs>
 		</Protein>
+		
+		<GlobalQuantLayer id="QL_ANOVA">
+			<ColumnIndex>
+				<Column index="0" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="" accession="" name="ANOVA"/>
+					</DataType>
+				</Column>
+				<Column index="1" processingStep_ref="feature_quantification">
+					<DataType>
+						<cvParam cvRef="" accession="" name="Max fold change"/>
+					</DataType>
+				</Column>
+
+			</ColumnIndex>		
+			<DataMatrix>
+				<Row object_ref="HSP70">0.034 4.56</Row>
+			</DataMatrix>
+		</GlobalQuantLayer>
+		
+		
 		<!-- If QuantLayer is provided on ProteinGroups, probably would not need to include protein values as well - just shown here to enumerate examples -->
 		<AssayQuantLayer id="Protein_assay_quant_layer">
 			<DataType>
@@ -85,7 +110,9 @@ Sketch of an example for using data matrices to represent quant layers
 				<Row object_ref="HSP80">5400 10800</Row>
 			</DataMatrix>
 		</AssayQuantLayer>
-
+		
+		
+		
 		
 	</ProteinList>
 	
@@ -94,11 +121,12 @@ Sketch of an example for using data matrices to represent quant layers
 		<Peptide id="PEPTIDER">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<!-- If feature refs are used, is allowed to have more than one feature from the same assay -->
-			<feature_refs>featureB_1 featureE_1</feature_refs>			
+			<!-- <feature_refs>featureB_1 featureE_1</feature_refs> -->
+			<matched_feature_refs>MF1</matched_feature_refs>
 		</Peptide>
 		<Peptide id="MLEPTIDER">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
-			<feature_refs>featureB_2 featureE_2</feature_refs>	
+			<matched_feature_refs>MF2</matched_feature_refs>
 		</Peptide>
 		
 		
@@ -198,18 +226,38 @@ Sketch of an example for using data matrices to represent quant layers
 		</FeatureQuantLayer>
 	</FeatureList>
 	
-
-
+	<MatchedFeatureList>
+		<MatchedFeature id="MF1">
+			<feature_refs>featureB_1 featureE_1</feature_refs> 
+		</MatchedFeature>
+		<MatchedFeature id="MF2">
+			<feature_refs>featureB_2 featureE_2</feature_refs>	
+		</MatchedFeature>
+		
+	</MatchedFeatureList>
 	
 	
 	
+	
+	
 
-
+	<SoftwareList>
+		<software id="MaxQuant" version="2.0.5">
+			<cvParam cvRef="MS" accession="" name="MaxQuant" value=""/>
+		</software>
+	</SoftwareList>
 
 	<DataProcessingList>
 		<DataProcessing id="feature_quantification">
-			<ProcessingMethod><userParam name=""/></ProcessingMethod>
+			<ProcessingMethod order="1" softwareRef="MaxQuant"><userParam name=""/></ProcessingMethod>
+			<ProcessingMethod order="2" softwareRef="MaxQuant">
+				<input_objects>raw1</input_objects>
+				<output_objects>FQL1</output_objects>
+				<cvParam cvRef="MS" accession="MS:1000035" name="peak picking"/>
+			</ProcessingMethod>
 		</DataProcessing>
+		
+	
 	</DataProcessingList>
 
 </mzQuantML>

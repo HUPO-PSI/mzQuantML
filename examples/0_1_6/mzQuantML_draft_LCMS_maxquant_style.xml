@@ -49,10 +49,32 @@ Sketch of an example for using data matrices to represent quant layers
 
 	</StudyVariableList>
 	
+	<ProteinGroupList>
+		<ProteinGroup id="HSP70_HSP80">
+			<protein_refs>HSP70 HSP80</protein_refs>
+			<!-- Probably want to allow CV params to specify leading protein etc -->
+		</ProteinGroup>
+		<AssayQuantLayer id="Protein_group_assay_quant_layer">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="HSP70_HSP80">5400 10800</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+	</ProteinGroupList>
+	
+
+	
 	<ProteinList>
 		<Protein id="HSP70" accession="HSP70">
 			<peptide_refs>PEPTIDER MLEPTIDER</peptide_refs>			
 		</Protein>
+		<Protein id="HSP80" accession="HSP80">
+			<peptide_refs>PEPTIDER MLEPTIDER</peptide_refs>
+		</Protein>
+		<!-- If QuantLayer is provided on ProteinGroups, probably would not need to include protein values as well - just shown here to enumerate examples -->
 		<AssayQuantLayer id="Protein_assay_quant_layer">
 			<DataType>
 				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
@@ -60,6 +82,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<ColumnIndex>B1 E1</ColumnIndex>
 			<DataMatrix>
 				<Row object_ref="HSP70">5400 10800</Row>
+				<Row object_ref="HSP80">5400 10800</Row>
 			</DataMatrix>
 		</AssayQuantLayer>
 

@@ -96,11 +96,11 @@ Sketch of an example for using data matrices to represent quant layers
 	</RatioList>
 	
 	
-	<ProteinGroupList>
+	<ProteinGroupList id="PGList1">
 		<!-- TO DO -->
 	</ProteinGroupList>
 	
-	<ProteinList>
+	<ProteinList id="PList1">
 		<Protein id="HSP70" accession="HSP70">
 			<peptide_refs>PEPTIDER MLEPTIDER</peptide_refs>			
 		</Protein>
@@ -117,11 +117,11 @@ Sketch of an example for using data matrices to represent quant layers
 		
 	</ProteinList>
 
-	<PeptideList>
+	<PeptideList id="PepList1">
 		<Peptide id="PEPTIDER">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<!-- If feature refs are used, is allowed to have more than one feature from the same assay -->
-			<matched_feature_refs>MF1</matched_feature_refs>			
+			<matched_feature_refs>MF1</matched_feature_refs>
 		</Peptide>
 		<Peptide id="MLEPTIDER">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
@@ -134,7 +134,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</PeptideList>
 	
 	
-	<FeatureList RawFileGroup_ref="raw1">
+	<FeatureList RawFileGroup_ref="raw1" id="featureList1">
 		
 		<!-- Note: Unclear whether assay_ref is useful or not here, since it is not known until after feature matching has been done -->
 		<Feature id="featureB_1" assay_ref="assay_L1" charge="2" MZ="418.172" RT="26.8685"/>
@@ -185,7 +185,7 @@ Sketch of an example for using data matrices to represent quant layers
 		</FeatureQuantLayer>
 	</FeatureList>
 	
-	<FeatureList RawFileGroup_ref="raw2">
+	<FeatureList RawFileGroup_ref="raw2" id="featureList2">
 		
 		<!-- Note: Unclear whether assay_ref is useful or not here, since it is not known until after feature matching has been done -->
 		<Feature id="featureB2_1" assay_ref="assay_L2" charge="2" MZ="418.172" RT="26.8685"/>
@@ -237,7 +237,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</FeatureList>
 	
 
-	<MatchedFeatureList>
+	<MatchedFeatureList id="MatchedFeatureList1">
 		<MatchedFeature id="MF1">			
 			<feature_refs>featureB_1 featureE_1 featureB2_1 featureE2_1</feature_refs>
 			<assay_refs>assay_L1 assay_H1 assay_L2 assay_H2</assay_refs>
@@ -261,22 +261,21 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<SoftwareList>
-		<software id="MaxQuant" version="1"></software>
+		<Software id="MaxQuant" version="1"></Software>
 	</SoftwareList>
 	
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification">
-			<ProcessingMethod order="1" softwareRef="MaxQuant">
+		<DataProcessing id="feature_quantification" softwareRef="MaxQuant">
+			<ProcessingMethod order="1" >
 				<cvParam cvRef="" accession="" name="featurefinding"/>
 			</ProcessingMethod>
-		</DataProcessing>
-		<DataProcessing id="peak_matching">
-			<ProcessingMethod order="2" softwareRef="MaxQuant">
+			<ProcessingMethod order="2">
 				<userParam name="peak_matching"/>
-		
+				<cvParam cvRef="" accession="" name="Params for this step to go in here..."/>
 			</ProcessingMethod>
 		</DataProcessing>
+		
 	</DataProcessingList>
 	
 

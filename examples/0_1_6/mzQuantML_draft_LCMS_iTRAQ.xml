@@ -63,7 +63,7 @@ Sketch of an example for using data matrices to represent quant layers
 
 	</StudyVariableList>
 	
-	<ProteinList>
+	<ProteinList id="ProtList1">
 		<Protein id="HSP70" accession="HSP70">
 			<peptide_refs>PEPTIDER MLEPTIDER</peptide_refs>			
 		</Protein>
@@ -80,7 +80,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</ProteinList>
 	
 
-	<PeptideList>
+	<PeptideList id="PepList1">
 		<Peptide id="PEPTIDER">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<matched_feature_refs>MF1</matched_feature_refs>			
@@ -94,7 +94,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</PeptideList>
 	
 	
-	<FeatureList RawFileGroup_ref="raw1" dataProcessing_ref="feature_quantification">
+	<FeatureList RawFileGroup_ref="raw1" id="FeatureList1">
 		<Feature id="feature1" charge="2" MZ="418.172" RT="26.8685"/>
 		<Feature id="feature2" charge="2" MZ="421.572" RT="27.8685"/>
 		
@@ -124,7 +124,7 @@ Sketch of an example for using data matrices to represent quant layers
 		
 	</FeatureList>
 	
-	<MatchedFeatureList>
+	<MatchedFeatureList id="MatchedFeatureList1">
 		<MatchedFeature id="MF1">
 			<feature_refs>feature1 feature1 feature1 feature1</feature_refs>
 			<assay_refs>_114 _115 _116 _117</assay_refs>
@@ -138,12 +138,12 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<SoftwareList>
-		<software id="iTRACKER" version="1"></software>
+		<Software id="iTRACKER" version="1"></Software>
 	</SoftwareList>
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification">
-			<ProcessingMethod order="1" softwareRef="iTRACKER"><userParam name=""/></ProcessingMethod>
+		<DataProcessing id="feature_quantification"  softwareRef="iTRACKER">
+			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>
 		</DataProcessing>
 	</DataProcessingList>
 

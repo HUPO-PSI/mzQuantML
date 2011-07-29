@@ -57,7 +57,7 @@ Sketch of an example for using data matrices to represent quant layers
 		<!-- Global params and values go in here -->
 	</AnalysisSummary>
 
-	<PeptideList>
+	<PeptideList id="PepList1">
 		<Peptide id="PEPTIDER">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<matched_feature_refs>mf1</matched_feature_refs>
@@ -70,20 +70,20 @@ Sketch of an example for using data matrices to represent quant layers
 	</PeptideList>
 	
 	
-	<FeatureList RawFileGroup_ref="raw1">
+	<FeatureList RawFileGroup_ref="raw1" id="FList1">
 		<Feature id="featureB_1" charge="2" MZ="418.172" RT="26.8685"/>
 		<Feature id="featureB_2" charge="2" MZ="421.572" RT="27.8685"/>
 		<Feature id="featureB_3" charge="2" MZ="487.729" RT="26.9685"/>
 		<Feature id="featureB_4" charge="2" MZ="518.827" RT="26.8685"/>
 	</FeatureList>
-	<FeatureList RawFileGroup_ref="raw2">	
+	<FeatureList RawFileGroup_ref="raw2" id="FList2">	
 		<Feature id="featureE_1" charge="2" MZ="418.172" RT="26.8685"/>
 		<Feature id="featureE_2" charge="2" MZ="421.572" RT="27.8685"/>
 		<Feature id="featureE_3" charge="2" MZ="487.729" RT="26.9685"/>
 		<Feature id="featureE_4" charge="2" MZ="518.827" RT="26.8685"/>
 	</FeatureList>
 
-	<MatchedFeatureList>
+	<MatchedFeatureList id="MFList1">
 		<MatchedFeature id="mf1">
 			<feature_refs>featureB_1 featureE_1</feature_refs>
 		</MatchedFeature>
@@ -123,24 +123,19 @@ Sketch of an example for using data matrices to represent quant layers
 		
 	</MatchedFeatureList>
 	
-<SoftwareList>
-	<software id="Progenesis" version="2.3"></software>
-</SoftwareList>
+	<SoftwareList>
+		<Software id="Progenesis" version="2.3"></Software>
+	</SoftwareList>
 	
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification">
-			<ProcessingMethod order="1" softwareRef="Progenesis">
+		<DataProcessing id="DP1"  softwareRef="Progenesis">
+			<ProcessingMethod order="1">
 				<userParam name=""/>
 				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
 			</ProcessingMethod>
 		</DataProcessing>
-		<DataProcessing id="progenesis_alignment">
-			<ProcessingMethod softwareRef="Progenesis" order="2">
-				<userParam name="2"/>
-				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
-			</ProcessingMethod>
-		</DataProcessing>
+
 	</DataProcessingList>
 	
 

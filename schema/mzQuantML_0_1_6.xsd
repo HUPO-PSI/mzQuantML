@@ -58,9 +58,9 @@ Issues:
 							files</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="MatchedFeatureList" type="MatchedFeatureListType" minOccurs="0"/>
-				<xsd:element name="SoftwareList" type="SoftwareListType" minOccurs="0" maxOccurs="1"/>
-				<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="0" maxOccurs="1">
+				<xsd:element name="MatchedFeatureList" type="MatchedFeatureListType" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="SoftwareList" type="SoftwareListType" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="1" maxOccurs="1">
 					<xsd:annotation>
 						<xsd:documentation>Data processing steps used to create the
 							results</xsd:documentation>
@@ -207,6 +207,7 @@ Issues:
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinListType">
 		<xsd:sequence>
@@ -233,6 +234,7 @@ Issues:
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="QuantLayerRefType">
 		<xsd:annotation>
@@ -251,9 +253,14 @@ Issues:
 			<xsd:element name="protein_refs"
 				type="xsd:IDREFS" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>The proteins contributing to this protein group on which quantitative values are based. TODO - may need to add some extra model to cover the case that different proteins may contribute to group within one Assay or StudyVariable. This is the same issue as when different peptides are used to form the protein values. It was decided that the simple model is better and that the correct references are implied by the downward pointers to peptide, feature etc.</xsd:documentation>
+					<xsd:documentation>The proteins contributing to this protein group on which quantitative values are based. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional parameters or values about this protein.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
@@ -268,6 +275,11 @@ Issues:
 						protein identification, only quantitation)..</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional parameters or values about this protein.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 		<xsd:attribute name="accession" type="xsd:string" use="required"/>
@@ -322,6 +334,7 @@ Issues:
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="PeptideType">
 		<xsd:sequence>
@@ -355,6 +368,11 @@ Issues:
 						values in the QuantLayer were based.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional parameters or values about this peptide.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
@@ -577,30 +595,7 @@ Issues:
 				<xsd:annotation>
 					<xsd:documentation>One or more identification files used within this assay</xsd:documentation>
 				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="DataProcessingOrder" minOccurs="0">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element name="DataProcessingOrderElement">
-							<xsd:annotation>
-								<xsd:documentation>TODO: Consider renaming to DataProcessingStep?
-									ARJ comment - unclear to me if this is the right place within
-									the Assay, the same raw file could be </xsd:documentation>
-							</xsd:annotation>
-							<xsd:complexType>
-								<xsd:attribute name="rank" use="required"/>
-								<xsd:attribute name="dataProcessing_ref" type="xsd:IDREF"
-									use="required">
-									<xsd:annotation>
-										<xsd:documentation>Reference to a data processing
-											step</xsd:documentation>
-									</xsd:annotation>
-								</xsd:attribute>
-							</xsd:complexType>
-						</xsd:element>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
+			</xsd:element>		
 			<xsd:element name="cvParam" type="CVParamType" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>if there is a set of quasi-standard
@@ -720,12 +715,7 @@ Issues:
 				<xsd:documentation>Refernece to the raw file or group of raw files from which this feature list was generated.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="dataProcessing_ref" type="xsd:IDREF">
-			<xsd:annotation>
-				<xsd:documentation>dataprocessing producing this feature list (e.g. model
-					fit)</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="FeatureType">
 		<xsd:annotation>
@@ -740,6 +730,11 @@ Issues:
 						dimension. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional parameters or values about this feature.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 			<!-- TODO decide about whether cvParams and userParams are allowed on Features, Peptides, Proteins etc? 
 			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
 			-->
@@ -785,11 +780,7 @@ Issues:
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="dataProcessing_ref" type="xsd:IDREF">
-			<xsd:annotation>
-				<xsd:documentation>dataprocessing producing the matches</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="MatchedFeatureType">
 		<xsd:sequence>
@@ -803,28 +794,17 @@ Issues:
 					<xsd:documentation>References to the assays to which the features referenced above have been assigned. This element is REQUIRED for label-based examples and the size of the list MUST always match the size of the feature_refs list.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<!-- All the pointers go downwards i.e. if you want to create a link from MatchedFeature to Peptide, you must create a peptide entry in the PeptideList  
-			<xsd:element name="PeptideRef" type="PeptideRefType" minOccurs="0" maxOccurs="unbounded">
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>It would be expected that a MatchedFeature can only be associated with one peptide. However, multiple peptide references are (currently) allowed in case of unclear evidence as to which MatchedFeature should be associated with which peptide object.</xsd:documentation>
+					<xsd:documentation>Additional parameters or values about this MatchedFeature.</xsd:documentation>
 				</xsd:annotation>
-			</xsd:element>
-			-->
+			</xsd:group>			
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required" form="unqualified">
 			<xsd:annotation>
 				<xsd:documentation>unique identifier for the feature.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-	</xsd:complexType>
-	<xsd:complexType name="StudyVariableRefsType">
-		<xsd:sequence>
-			<xsd:element name="StudyVariableRef" maxOccurs="unbounded">
-				<xsd:complexType>
-					<xsd:attribute name="studyVariable_ref" type="xsd:string" use="required"/>
-				</xsd:complexType>
-			</xsd:element>
-		</xsd:sequence>
 	</xsd:complexType>	
 	<xsd:simpleType name="listOfIntegers">
 		<xsd:list itemType="xsd:integer"/>
@@ -883,33 +863,25 @@ Issues:
 	<xsd:complexType name="DataProcessingType">
 		<xsd:annotation>
 			<xsd:documentation>Description of the way in which a particular software was
-				used.</xsd:documentation>
+				used to analyse data.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="ProcessingMethod" type="ProcessingMethodType"  maxOccurs="unbounded"/>
-				
-			
+			<xsd:element name="input_objects" minOccurs="0" maxOccurs="1" type="xsd:IDREFS">
+				<xsd:annotation>
+					<xsd:documentation>References to raw file groups, FeatureList, MatchedFeatureList, PeptideList, ProteinList or ProteinGroupList or QuantLayers.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="output_objects" minOccurs="0" maxOccurs="1" type="xsd:IDREFS">
+				<xsd:annotation>
+					<xsd:documentation>References to raw file groups, FeatureList, MatchedFeatureList, PeptideList, ProteinList or ProteinGroupList or QuantLayers.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ProcessingMethod" type="ProcessingMethodType"  maxOccurs="unbounded"/>			
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
 			<xsd:annotation>
 				<xsd:documentation>A unique identifier for this data processing that is unique
 					across all DataProcessingTypes.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-	</xsd:complexType>
-	<xsd:complexType name="ProcessingMethodType">
-		<xsd:annotation>
-			<xsd:documentation>Description of the default data processing method.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="input_objects" minOccurs="0" maxOccurs="1" type="xsd:IDREFS"/>
-			<xsd:element name="output_objects" minOccurs="0" maxOccurs="1" type="xsd:IDREFS"/>
-			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded"></xsd:group>
-		</xsd:sequence>
-		
-		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required">
-			<xsd:annotation>
-				<xsd:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="softwareRef" type="xsd:IDREF" use="required">
@@ -918,12 +890,29 @@ Issues:
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	<xsd:complexType name="ProcessingMethodType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the default data processing method.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Parameters used in the processing method.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
+		</xsd:sequence>		
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required">
+			<xsd:annotation>
+				<xsd:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
 	<xsd:complexType name="SoftwareListType">
 		<xsd:annotation>
 			<xsd:documentation>List and descriptions of software used to acquire and/or process the data in this mzML file.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="software" type="psi-mzq:SoftwareType">
+			<xsd:element maxOccurs="unbounded" name="Software" type="psi-mzq:SoftwareType">
 				<xsd:annotation>
 					<xsd:documentation>A piece of software.</xsd:documentation>
 				</xsd:annotation>

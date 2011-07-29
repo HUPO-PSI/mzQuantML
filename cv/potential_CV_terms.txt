@@ -1,6 +1,6 @@
-0) CVs describing quant. workflows:
+A) CV terms for <AnalysisSummary>
 -----------------------------------
-"LC/MS label-free" / "ion counting"
+"LC-MS label free intensity"
 "SILAC"
 "spectral counting"
 "iTraq"
@@ -8,78 +8,52 @@
 "14N / 15N metabolic labeling"
 
 
-A) potential CV terms for layer description / type of values:
-------------------------------------------------------------
 
-for LC/MS (some overlap with other methods):
-"raw feature value layer"
-"normalized feature value layer"
-"peptide with mods layer" (aggregate features for the pep having the same mod)
-"peptide sequence layer" (aggregate values of all versions of this pep seq., regardless of which mod. or unmod.)
-"peptide layer" (if we want to simplify the two preceding layers :-) )
-"protein layer"
-"group layer" or "experimental group layer" (contains e.g. means of protein values)
-"fold change layer" (or even "protein fold change layer", "peptide fold change layer")
-"standard deviation layer"
-"ANOVA p-value layer"
+B) CV terms for <DataType>:
+----------------------------------------------------------------------------------------
+"LC-MS feature intensity" (LC-MS label free)
+"LC-MS feature area" (LC-MS label free)
+"peptide PSM count" (spectral counting)
+"peak intensity" (SILAC, 15N)
+"peak area" (SILAC, 15N)
+"isotope pattern area" (SILAC, 15N)
+"reporter ion intensity" (iTraq)
+"XIC area" (SRM)
 
-for SILAC (some overlap with other methods):
-"light/heavy peak value layer"
-"peptide ratio layer"
-"protein ratio layer" (corresponds to "protein fold change layer" of LC/MS?)
-"group layer" (same as in LC/MS, but aggregating protein ratios)
+"peptide value: sum of matchedfeature values"
+"normalized peptide value"
+"protein value: sum of peptide values"
+"normalized protein value"
 
-for spectral counting:
-"peptide PSM counts" (corresponds to "peptide layer" as containing peptide quantifications; no layers below this!)
-"raw protein values" (sum of peptide PSM counts)
-"normalized protein values"
-"mean of groups" (see above)
-"fold change" (see above)
-...
+"max fold change" (global)
+
 
 for iTraq (some overlap with other methods):
 "reporter ion raw values" (one layer for each reporter mass??)
 "reporter ion normalized values"
-"peptide ratios"
-"protein ratios"
-...
 
 for SRM (some overlap with other methods):
-"transition XIC raw value layer" (corresponds to "peptide layer" as containing peptide quantifications; no layers below this!)
-"transition XIC normalized value layer" ??
-"protein layer"
+"transition XIC raw values" (corresponds to "peptide layer" as containing peptide quantifications; no layers below this!)
+"transition XIC normalized values"
 
 
-for 14N/15N labeling:
-TODO!
+"simple ratio of values"
 
+"sum"
+"mean"
+"stddev"
+"median"
+"max of values"
+"min of values"
 
-
-
-B) potential CV terms for nature / aggregation / transformation / calculation of values:
-----------------------------------------------------------------------------------------
-
-"feature intensity" / "feature area" (LC/MS)
-"number of MS/MS spectra" or "PSM count" (spectral counting)
-"light peak intensity" / "heavy peak intensity" and "light peak area" ?? and "heavy peak area" ?? (SILAC)
-"reporter ion intensity" (and area??) (iTraq)
-"chromatogram area" (SRM)
-
-"normalization" (or specific: "Progenesis normalization" with value "normalization factor"??)
-"ratio of values" (or better numerator/denominator?)
-
-"sum of values"
-"mean of values"
-"stddev of values"
-"median of values"
-"max of values" / "min of values"
-
-"t-test p-value calculation" (semantic check: only two quant values must be referenced, both being a "mean of values")
-"ANOVA p-value calculation"(semantic check: only quant values must be referenced being themselves a "mean of values" each)
+"t-test p-value"
+"ANOVA p-value"
 
 
 
-C) potential CV terms for meta information of StudyVariables:
+C) potential CV terms for meta information of StudyVariables [could also be (name,value) pairs?]:
+"technical replicate"
+"biological replicate"
 "experimental condition case" (with group number?)
 "experimental condition control" (with group number?)
 "experimental condition disease"
@@ -88,20 +62,31 @@ C) potential CV terms for meta information of StudyVariables:
 "dilution series design, concentration X" (with CV value for concentration)
 
 
-D) quasi standard setups for raw files (not really Assays)
+D) description of raw files (necessary? possible?)
 "one sample data set" (e.g. spectral counting)
 "two sample data set" (e.g. SILAC)
 "four sample data set" (e.g. iTraQ)
+"eight sample data set" (e.g. iTraQ)
 
 
-E) potential Feature CV terms:
-"iTRAQ Feature" with semantics mandatory ref (not yet existing) to the Modification in the respective Assay
-"profile Feature" regular
-going along with iTRAQ: iTRAQ CV term for Assay with the semantics to forbid Assays with just one Modification (i.e. reporter ion)
+E) description of raw file groups: How did you build the groups?
+"1D gel bands merge"
 
-F) potential data processing CV terms:
+
+F) description of feature list
+"mass trace reporting method rectangles"
+"mass trace reporting method polygons"
+
+
+G) description of feature (non-numerical data)
+"SRM transition ID"
+
+
+H) data processing:
 there are some terms in psi-ms.obo for data processing!
-"normalization to mean of proteins" (with CV value for normlaization factor)
+
+"normalization to mean of proteins, value: normalization factor"
 "quantile normalization"
 "Progenesis automatic alignment" as subterm of [MS:1000745 "retention time alignment"]
 "Progenesis manual alignment" as subterm of [MS:1000745 "retention time alignment"]
+"Progenesis normalization, value: normalization factor"

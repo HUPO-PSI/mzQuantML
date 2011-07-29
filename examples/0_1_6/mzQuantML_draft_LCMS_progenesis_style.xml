@@ -60,11 +60,11 @@ Sketch of an example for using data matrices to represent quant layers
 	<PeptideList id="PepList1">
 		<Peptide id="PEPTIDER">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-			<matched_feature_refs>mf1</matched_feature_refs>
+			<MatchedFeature_refs>mf1</MatchedFeature_refs>
 		</Peptide>
 		<Peptide id="MLPEPTIDEK">
 			<PeptideSequence>MLPEPTIDEK</PeptideSequence>
-			<matched_feature_refs>mf2</matched_feature_refs>
+			<MatchedFeature_refs>mf2</MatchedFeature_refs>
 		</Peptide>
 		
 	</PeptideList>
@@ -85,16 +85,16 @@ Sketch of an example for using data matrices to represent quant layers
 
 	<MatchedFeatureList id="MFList1">
 		<MatchedFeature id="mf1">
-			<feature_refs>featureB_1 featureE_1</feature_refs>
+			<Feature_refs>featureB_1 featureE_1</Feature_refs>
 		</MatchedFeature>
 		<MatchedFeature id="mf2">
-			<feature_refs>featureB_2 featureE_2</feature_refs>
+			<Feature_refs>featureB_2 featureE_2</Feature_refs>
 		</MatchedFeature>
 		<MatchedFeature id="mf3">
-			<feature_refs>featureB_3 featureE_3</feature_refs>
+			<Feature_refs>featureB_3 featureE_3</Feature_refs>
 		</MatchedFeature>
 		<MatchedFeature id="mf4">
-			<feature_refs>featureB_4 featureE_4</feature_refs>
+			<Feature_refs>featureB_4 featureE_4</Feature_refs>
 		</MatchedFeature>
 		<AssayQuantLayer id="QL1">
 			<DataType>

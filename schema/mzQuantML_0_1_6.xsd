@@ -284,7 +284,11 @@ Issues:
 			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>
-		<xsd:attribute name="accession" type="xsd:string" use="required"/>
+		<xsd:attribute name="accession" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>It is generally expected that accession will be unique within the ProteinList, although in rare cases it might be required to repeat the same protein, for example in a PTM quantification experiment, where different modification statuses of the same protein are being reported.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 
 	<xsd:complexType name="IdentificationRefType">
@@ -397,6 +401,8 @@ Issues:
 						reported. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="Modification" type="ModificationType" minOccurs="0"
+			maxOccurs="unbounded"/>
 			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
@@ -404,8 +410,6 @@ Issues:
 						mzIdentML</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Modification" type="ModificationType" minOccurs="0"
-			maxOccurs="unbounded"/>
 			<!--  
 			<xsd:element name="feature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
@@ -430,15 +434,15 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="SmallMoleculeType">
 		<xsd:sequence>
-			
+			<xsd:element name="Modification" type="SmallMolModificationType" minOccurs="0"
+				maxOccurs="unbounded"/>
 			<xsd:element name="DBIdentificationRef" type="DBIdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>External database references for the small molecule identification</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Modification" type="ModificationType" minOccurs="0"
-				maxOccurs="unbounded"/>
+			
 			<!--  
 				<xsd:element name="feature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
@@ -513,6 +517,39 @@ Issues:
 					elements in Daltons. </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="SmallMolModificationType">
+		<xsd:annotation>
+			<xsd:documentation>A small molecule modification specification, given by cvParams.  </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="cvParam" type="CVParamType" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms capturing the modification, sourced from an
+						appropriate controlled vocabulary.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="location" type="xsd:int">
+			<xsd:annotation>
+				<xsd:documentation>Location of the modification within the molecule.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<!-- Presume these attributes are not required
+		<xsd:attribute name="avgMassDelta" type="xsd:double">
+			<xsd:annotation>
+				<xsd:documentation>Atomic mass delta considering the natural distribution of
+					isotopes in Daltons. </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="monoisotopicMassDelta" type="xsd:double">
+			<xsd:annotation>
+				<xsd:documentation>Atomic mass delta when assuming only the most common isotope of
+					elements in Daltons. </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		-->
 	</xsd:complexType>
 	<xsd:complexType name="QuantLayerType">
 		<xsd:annotation>
@@ -820,9 +857,6 @@ Issues:
 					<xsd:documentation>Additional parameters or values about this feature.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:group>
-			<!-- TODO decide about whether cvParams and userParams are allowed on Features, Peptides, Proteins etc? 
-			<xsd:element name="userParam" type="userParamType" minOccurs="0" maxOccurs="unbounded"/>
-			-->
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required" form="unqualified">
 			<xsd:annotation>
@@ -833,11 +867,6 @@ Issues:
 		<xsd:attribute name="MZ" type="xsd:double" use="required"/>
 		<!--	<xsd:attribute name="intensity" type="xsd:double" use="required"/> -->
 		<xsd:attribute name="charge" type="xsd:integer"/>		
-		<xsd:attribute name="assay_ref" type="xsd:IDREF" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>The assay to which this feature has been assigned. This attribute is required for label-based approaches after feature matching has been performed.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="MatchedFeatureListType">
 		<xsd:sequence>
@@ -923,7 +952,7 @@ Issues:
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="massDelta" type="xsd:float" use="required">
+		<xsd:attribute name="massDelta" type="xsd:float">
 			<xsd:annotation>
 				<xsd:documentation>The mass delta of the searched modification in
 					Daltons</xsd:documentation>

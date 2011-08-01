@@ -69,7 +69,7 @@ schema comments / issues:
 
 	<ProteinList id="PROTLIST">
 		<Protein accession="YDR238C" id="prot1">
-			<IdentificationRef file_ref="file1" id_ref="id1" />
+			<IdentificationRef file_ref="file1" id_ref="id1" />			
 			<peptide_refs>pep1 pep2</peptide_refs>
 		</Protein>
 		<Protein accession="XYZ1ABC" id="prot2">

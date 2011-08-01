@@ -1,16 +1,16 @@
 <!--
 Sketch of an example for using data matrices to represent quant layers
 -->
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd"
  xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
-	<cvList>
-		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
-			URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
 			version="2.25.0"/>
-		<cv id="UO" fullName="Unit Ontology"
-			URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
-	</cvList>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</CvList>
 
 
 	<InputFiles>
@@ -32,10 +32,10 @@ Sketch of an example for using data matrices to represent quant layers
 
 	<AssayList id="AssayList1">
 		<Assay id="B1" name="B1">
-			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 		</Assay>
 		<Assay id="E1" name="E1">
-			<raw_files_group_ref>raw2</raw_files_group_ref>			
+			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>
 		</Assay>		
 
 	</AssayList>
@@ -56,6 +56,14 @@ Sketch of an example for using data matrices to represent quant layers
 		<cvParam cvRef="PSI-MS" accession="" name="Number of proteins quantified" value="1345"/>
 		<!-- Global params and values go in here -->
 	</AnalysisSummary>
+
+	
+
+	<ProteinList id="ProtList1">
+		<Protein id="HSP70" accession="HSP70">
+			<Peptide_refs>PEPTIDER MLPEPTIDEK</Peptide_refs>
+		</Protein>
+	</ProteinList>
 
 	<PeptideList id="PepList1">
 		<Peptide id="PEPTIDER">
@@ -129,7 +137,7 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<DataProcessingList>
-		<DataProcessing id="DP1"  softwareRef="Progenesis">
+		<DataProcessing id="DP1"  software_Ref="Progenesis">
 			<ProcessingMethod order="1">
 				<userParam name=""/>
 				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
@@ -139,4 +147,4 @@ Sketch of an example for using data matrices to represent quant layers
 	</DataProcessingList>
 	
 
-</mzQuantML>
+</MzQuantML>

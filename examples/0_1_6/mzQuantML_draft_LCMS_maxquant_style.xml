@@ -1,16 +1,16 @@
 <!--
 Sketch of an example for using data matrices to represent quant layers
 -->
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd"
  xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
-	<cvList>
-		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
-			URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
 			version="2.25.0"/>
-		<cv id="UO" fullName="Unit Ontology"
-			URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
-	</cvList>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</CvList>
 
 	<InputFiles>
 		<RawFilesGroup id="raw1">
@@ -73,13 +73,15 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	<ProteinList id="ProtList">
 		<Protein id="HSP70" accession="HSP70">
+			<IdentificationRef id_ref="PDH_HSP70" IdentificationFile_ref="mzid1"/>
 			<Peptide_refs>PEPTIDER MLEPTIDER</Peptide_refs>			
 		</Protein>
 		<Protein id="HSP80" accession="HSP80">
+			<IdentificationRef id_ref="PDH_HSP80" IdentificationFile_ref="mzid1"/>
 			<Peptide_refs>PEPTIDER MLEPTIDER</Peptide_refs>
 		</Protein>
 		
-		<GlobalQuantLayer id="QL_ANOVA">
+		<GlobalQuantLayer id="Global_Protein_QL">
 			<ColumnIndex>
 				<Column index="0">
 					<DataType>
@@ -95,6 +97,7 @@ Sketch of an example for using data matrices to represent quant layers
 			</ColumnIndex>		
 			<DataMatrix>
 				<Row object_ref="HSP70">0.034 4.56</Row>
+				<Row object_ref="HSP80">0.034 4.56</Row>
 			</DataMatrix>
 		</GlobalQuantLayer>
 		
@@ -120,6 +123,10 @@ Sketch of an example for using data matrices to represent quant layers
 	<PeptideList id="PepList">
 		<Peptide id="PEPTIDER">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
+			<Modification>
+				<cvParam cvRef="" accession="" name="Oxidation"/>
+			</Modification>
+			
 			<!-- If feature refs are used, is allowed to have more than one feature from the same assay -->
 			<!-- <Feature_refs>featureB_1 featureE_1</Feature_refs> -->
 			<MatchedFeature_refs>MF1</MatchedFeature_refs>
@@ -245,7 +252,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</SoftwareList>
 
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification" softwareRef="MaxQuant">
+		<DataProcessing id="feature_quantification" software_Ref="MaxQuant">
 			<input_objects>raw1</input_objects>
 			<output_objects>FQL1</output_objects>
 			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>
@@ -258,4 +265,4 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	</DataProcessingList>
 
-</mzQuantML>
+</MzQuantML>

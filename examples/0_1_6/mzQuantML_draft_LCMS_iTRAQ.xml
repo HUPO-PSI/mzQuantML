@@ -1,16 +1,16 @@
 <!--
 Sketch of an example for using data matrices to represent quant layers
 -->
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd"
  xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
-	<cvList>
-		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
-			URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
 			version="2.25.0"/>
-		<cv id="UO" fullName="Unit Ontology"
-			URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
-	</cvList>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</CvList>
 
 	<InputFiles>
 		<RawFilesGroup id="raw1">
@@ -27,19 +27,19 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	<AssayList id="AssayList1">
 		<Assay id="_114" name="114">
-			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 			<cvParam cvRef="" accession="" name="iTRAQ_114"/>
 		</Assay>
 		<Assay id="_115" name="115">
-			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 			<cvParam cvRef="" accession="" name="iTRAQ_115"/>
 		</Assay>
 		<Assay id="_116" name="116">
-			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 			<cvParam cvRef="" accession="" name="iTRAQ_116"/>
 		</Assay>
 		<Assay id="_117" name="117">
-			<raw_files_group_ref>raw1</raw_files_group_ref>
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 			<cvParam cvRef="" accession="" name="iTRAQ_117"/>
 		</Assay>
 		
@@ -140,9 +140,9 @@ Sketch of an example for using data matrices to represent quant layers
 	</SoftwareList>
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification"  softwareRef="iTRACKER">
+		<DataProcessing id="feature_quantification"  software_Ref="iTRACKER">
 			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>
 		</DataProcessing>
 	</DataProcessingList>
 
-</mzQuantML>
+</MzQuantML>

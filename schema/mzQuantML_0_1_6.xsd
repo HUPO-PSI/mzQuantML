@@ -448,7 +448,7 @@ Issues:
 	</xsd:complexType>
 	<xsd:complexType name="ModificationType">
 		<xsd:annotation>
-			<xsd:documentation>A molecule modification specification. If n modifications have been found on a peptide, there should be n instances of Modification. If multiple	modifications are provided as cvParams, it is assumed that the modification is ambiguous i.e. one modification or another. A cvParam must be provided with the identification of the modification sourced from a suitable CV e.g. UNIMOD. If the modification is not present in the CV (and this will be checked by the semantic validator within a given tolerance window), there is a “unknown modification” CVerm that must be used instead. A neutral loss should be defined as an additional CVParam within Modification. </xsd:documentation>
+			<xsd:documentation>A molecule modification specification. If n modifications have been found on a peptide, there should be n instances of Modification. If multiple	modifications are provided as cvParams, it is assumed that the modification is ambiguous i.e. one modification or another. A cvParam must be provided with the identification of the modification sourced from a suitable CV e.g. UNIMOD. If the modification is not present in the CV (and this will be checked by the semantic validator within a given tolerance window), there is an _unknown modification_CVerm that must be used instead. A neutral loss should be defined as an additional CVParam within Modification. </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="cvParam" type="CVParamType" minOccurs="1" maxOccurs="unbounded">

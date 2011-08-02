@@ -14,12 +14,12 @@ schema comments / issues:
 
 -->
 
-<mzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
-	<cvList>
-		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
-		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
-		<cv id="UNIMOD" fullName="unimod modifications ontology" URI="http://www.unimod.org/obo/unimod.obo"/>
-	</cvList>
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_6.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		<Cv id="UNIMOD" fullName="unimod modifications ontology" uri="http://www.unimod.org/obo/unimod.obo"/>
+	</CvList>
 	
 	<InputFiles>
 		<IdentificationFiles>
@@ -37,16 +37,16 @@ schema comments / issues:
 	
 	<AssayList id="AL1">
 		<Assay id="AS_HEALTHY1">
-			<identificationfiles_ref>IF_healthy1</identificationfiles_ref>
+			<IdentificationFilesRef>IF_healthy1</IdentificationFilesRef>
 		</Assay>
 		<Assay id="AS_HEALTHY2">
-			<identificationfiles_ref>IF_healthy3</identificationfiles_ref>
+			<IdentificationFilesRef>IF_healthy3</IdentificationFilesRef>
 		</Assay>
 		<Assay id="AS_DISEASE1">
-			<identificationfiles_ref>IF_disease2</identificationfiles_ref>
+			<IdentificationFilesRef>IF_disease2</IdentificationFilesRef>
 		</Assay>
 		<Assay id="AS_DISEASE2">
-			<identificationfiles_ref>IF_disease4</identificationfiles_ref>
+			<IdentificationFilesRef>IF_disease4</IdentificationFilesRef>
 		</Assay>
 	</AssayList>
 	
@@ -69,16 +69,16 @@ schema comments / issues:
 
 	<ProteinList id="PROTLIST">
 		<Protein accession="YDR238C" id="prot1">
-			<IdentificationRef file_ref="file1" id_ref="id1" />			
-			<peptide_refs>pep1 pep2</peptide_refs>
+			<IdentificationRef IdentificationFile_ref="IF_healthy1" id_ref="id1" />			
+			<Peptide_refs>pep1 pep2</Peptide_refs>
 		</Protein>
 		<Protein accession="XYZ1ABC" id="prot2">
-			<IdentificationRef file_ref="file1" id_ref="id2" />
-			<peptide_refs>pep3 pep4 pep5</peptide_refs>
+			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id2" />
+			<Peptide_refs>pep3 pep4 pep5</Peptide_refs>
 		</Protein>
 		<Protein accession="XYZ123A" id="prot3">
-			<IdentificationRef id_ref="id3" file_ref="file1"/>
-			<peptide_refs>pep1</peptide_refs>
+			<IdentificationRef IdentificationFile_ref="IF_disease2" id_ref="id3"/>
+			<Peptide_refs>pep1</Peptide_refs>
 		</Protein>
 		
 		<!-- description see above b) -->
@@ -137,29 +137,29 @@ schema comments / issues:
 	<PeptideList id="PEP_LIST">
 		<Peptide id="pep1">
 			<PeptideSequence>BLAEMLVIS</PeptideSequence>
-			<IdentificationRef file_ref="file1" id_ref="id1" />
 			<Modification location="5">
 				<cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
 			</Modification>
+			<IdentificationRef IdentificationFile_ref="IF_disease2" id_ref="id1" />
 		</Peptide>
 		<Peptide id="pep2">
 			<PeptideSequence>BLAEMLVISA</PeptideSequence>
-			<IdentificationRef file_ref="file2" id_ref="id2"/>
 			<Modification location="0">
 				<cvParam accession="UNIMOD:5" name="Carbamyl" cvRef="UNIMOD"/>
 			</Modification>
+			<IdentificationRef IdentificationFile_ref="IF_disease4" id_ref="id2"/>
 		</Peptide>
 		<Peptide id="pep3">
 			<PeptideSequence>MLVELVISE</PeptideSequence>
-			<IdentificationRef file_ref="file3" id_ref="id3" />
+			<IdentificationRef IdentificationFile_ref="IF_healthy1" id_ref="id3" />
 		</Peptide>
 		<Peptide id="pep4">
 			<PeptideSequence>MLVELVASA</PeptideSequence>
-			<IdentificationRef file_ref="file4" id_ref="id4"/>
+			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id4"/>
 		</Peptide>
 		<Peptide id="pep5">
 			<PeptideSequence>MLVELVESA</PeptideSequence>
-			<IdentificationRef file_ref="file5" id_ref="id5"/>
+			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id5"/>
 		</Peptide>
 		
 		<!-- description see above a) -->
@@ -185,12 +185,12 @@ schema comments / issues:
 	</SoftwareList>
 
 	<DataProcessingList>
-		<DataProcessing id="DP1" softwareRef="MS_EXCEL" >
-			<input_object_refs>QL_raw_protein_value_layer</input_object_refs>
-			<output_object_refs>QL_normalized_protein_value_layer</output_object_refs>
+		<DataProcessing id="DP1" software_Ref="MS_EXCEL" >
+			<InputObject_refs>QL_raw_protein_value_layer</InputObject_refs>
+			<OutputObject_refs>QL_normalized_protein_value_layer</OutputObject_refs>
 			<ProcessingMethod order="1">
 				<cvParam accession="MS:1000000" name="normalization to mean of proteins" cvRef="PSI-MS"/>
 			</ProcessingMethod>
 		</DataProcessing>
 	</DataProcessingList>
-</mzQuantML>
+</MzQuantML>

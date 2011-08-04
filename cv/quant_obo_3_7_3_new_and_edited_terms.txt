@@ -71,6 +71,20 @@ name: intensity of precursor ion
 def: "The intensity of the precursor ion." [PSI:PI]
 is_a: MS:1001798 ! quantification datatype
 
+[Term]
+id: MS:1001488
+name: Mascot Distiller
+def: "Mascot Distiller." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001139 ! quantitation software name
+
+[Term]
+id: MS:1000739
+name: WARP-LC
+def: "Bruker WARP-LC software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+is_a: MS:1001139 ! quantitation software name
+
 
 
 
@@ -241,18 +255,6 @@ is_a: MS:1001139 ! quantitation software name
 id: MS:1001824
 name: SILACAnalyzer
 def: "Software for SILAC workflow" [PSI:MS]
-is_a: MS:1001139 ! quantitation software name
-
-[Term]
-id: MS:1001825
-name: Mascot Distiller
-def: "Software for different quantitation workflows" [PSI:MS]
-is_a: MS:1001139 ! quantitation software name
-
-[Term]
-id: MS:1001826
-name: WARP-LC
-def: "Software for labeling workflows" [PSI:MS]
 is_a: MS:1001139 ! quantitation software name
 
 [Term]

@@ -1,0 +1,250 @@
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_7.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</CvList>
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../msmsdata/b1.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../msmsdata/e1.raw" id="r2"/>
+		</RawFilesGroup>
+		<IdentificationFiles>
+			<IdentificationFile location="myidents.mzid" id="mzid1"/>
+		</IdentificationFiles>
+
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+	
+	<AssayList id="AssayList1">
+		<Assay id="B1" name="B1">
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
+		</Assay>
+		<Assay id="E1" name="E1">
+			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>		
+		</Assay>		
+		
+	</AssayList>
+
+
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
+			value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<Assay_refs>B1</Assay_refs>
+		</StudyVariable>
+
+
+	</StudyVariableList>
+	
+	<AnalysisSummary>
+		<cvParam cvRef="" accession="" name="analysis type:label free intensity"/>
+	</AnalysisSummary>
+	
+	<ProteinGroupList id="PGList">
+		<ProteinGroup id="HSP70_HSP80">
+			<Protein_refs>HSP70 HSP80</Protein_refs>
+			<!-- Probably want to allow CV params to specify leading protein etc -->
+		</ProteinGroup>
+		<AssayQuantLayer id="Protein_group_assay_quant_layer">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="HSP70_HSP80">5400 10800</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+	</ProteinGroupList>
+	
+
+	
+	<ProteinList id="ProtList">
+		<Protein id="HSP70" accession="HSP70">
+			<IdentificationRef id_ref="PDH_HSP70" IdentificationFile_ref="mzid1"/>
+			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>			
+		</Protein>
+		<Protein id="HSP80" accession="HSP80">
+			<IdentificationRef id_ref="PDH_HSP80" IdentificationFile_ref="mzid1"/>
+			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>
+		</Protein>
+		
+		<GlobalQuantLayer id="Global_Protein_QL">
+			<ColumnIndex>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="" accession="" name="ANOVA"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="" accession="" name="Max fold change"/>
+					</DataType>
+				</Column>
+
+			</ColumnIndex>		
+			<DataMatrix>
+				<Row object_ref="HSP70">0.034 4.56</Row>
+				<Row object_ref="HSP80">0.034 4.56</Row>
+			</DataMatrix>
+		</GlobalQuantLayer>
+		
+		
+		<!-- If QuantLayer is provided on ProteinGroups, probably would not need to include protein values as well - just shown here to enumerate examples -->
+		<AssayQuantLayer id="Protein_assay_quant_layer">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="HSP70">5400 10800</Row>
+				<Row object_ref="HSP80">5400 10800</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+		
+		
+		
+		
+	</ProteinList>
+	
+
+	<PeptideList id="PepList" finalResult="true">
+		<PeptideConsensus id="PEPTIDER" charge="2 3">
+			<PeptideSequence>PEPTIDER</PeptideSequence>
+			<Feature_refs>f1_1 f1_5 f2_1</Feature_refs>	<!-- In this example, there is a 2+ and 3+ peptide summed together from FeatureList1 -->
+		</PeptideConsensus>
+		<PeptideConsensus id="MLEPTIDER"  charge="2">
+			<PeptideSequence>MLEPTIDER</PeptideSequence>
+			<Modification>
+				<cvParam cvRef="" accession="" name="Oxidation (M)"/>
+			</Modification>
+			<Feature_refs>f1_2 f2_2</Feature_refs>
+		</PeptideConsensus>
+		<AssayQuantLayer id="Peptide_Assay_quantlayer">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="PEPTIDER">254098 345345</Row>	<!-- i.e. in Assay B, PEPTIDER had abundance 254098 and in assay E it was 345345 -->
+				<Row object_ref="MLEPTIDER">334098 545345</Row>
+			</DataMatrix>			
+		</AssayQuantLayer>
+		
+	</PeptideList>
+	
+	
+	<FeatureList RawFileGroup_ref="raw1" id="FList1">
+		<Feature id="f1_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="f1_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="f1_3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="f1_4" charge="2" MZ="518.827" RT="26.8685"/>
+		<Feature id="f1_5" charge="3" MZ="278.627" RT="35.8685"/>	<!-- Same peptide as f1_1 in a different charge state -->
+		
+		
+		<FeatureQuantLayer id="FQL1">
+			<ColumnIndex>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+					</DataType>
+				</Column>
+				<Column index="3">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+					</DataType>
+				</Column>
+				
+			</ColumnIndex>			
+			<DataMatrix>
+				<Row object_ref="f1_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="f1_2">93481.41456 98090.36288 NaN 0.146698</Row>
+				<Row object_ref="f1_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f1_4">181.43671 398090.36288 793556 0.146698</Row>
+				
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	
+	<FeatureList RawFileGroup_ref="raw2" id="FList2">
+		<Feature id="f2_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="f2_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="f2_3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="f2_4" charge="2" MZ="518.827" RT="26.8685"/>
+		
+		<FeatureQuantLayer id="FQL2">
+			<ColumnIndex>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+					</DataType>
+				</Column>
+				<Column index="3">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+					</DataType>
+				</Column>
+				
+			</ColumnIndex>			
+			<DataMatrix>
+				<Row object_ref="f2_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="f2_2">93481.41456 98090.36288 NaN 0.146698</Row>
+				<Row object_ref="f2_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f2_4">181.43671 398090.36288 793556 0.146698</Row>
+				
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>	
+	
+	
+
+	<SoftwareList>
+		<Software id="MaxQuant" version="2.0.5">
+			<cvParam cvRef="MS" accession="" name="MaxQuant" value=""/>
+		</Software>
+	</SoftwareList>
+
+	<DataProcessingList>
+		<DataProcessing id="feature_quantification" software_Ref="MaxQuant">
+			<InputObject_refs>raw1</InputObject_refs>
+			<OutputObject_refs>FQL1 </OutputObject_refs>
+			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>
+			<ProcessingMethod order="2">
+				
+				<cvParam cvRef="MS" accession="MS:1000035" name="peak picking"/>
+			</ProcessingMethod>
+		</DataProcessing>
+		
+	
+	</DataProcessingList>
+
+</MzQuantML>

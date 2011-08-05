@@ -1,0 +1,149 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_7.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</CvList>
+
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../msmsdata/b1.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../msmsdata/e1.raw" id="r2"/>
+		</RawFilesGroup>
+		<IdentificationFiles>
+			<IdentificationFile location="myidents.mzid" id="identFile1"/>
+		</IdentificationFiles>
+		
+
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+
+	<AssayList id="AssayList1">
+		<Assay id="B1" name="B1">
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
+		</Assay>
+		<Assay id="E1" name="E1">
+			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>
+		</Assay>		
+
+	</AssayList>
+
+
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
+			value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<Assay_refs>B1</Assay_refs>
+		</StudyVariable>
+		<StudyVariable id="SV_group_E" name="Group E">
+			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
+				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<Assay_refs>E1</Assay_refs>
+		</StudyVariable>
+
+
+	</StudyVariableList>
+	
+	<AnalysisSummary>
+		<cvParam cvRef="PSI-MS" accession="" name="Label free intensity"/>
+		<cvParam cvRef="PSI-MS" accession="" name="Number of proteins quantified" value="1345"/>
+		<!-- Global params and values go in here -->
+	</AnalysisSummary>
+
+	
+
+	<ProteinList id="ProtList1">
+		<Protein id="HSP70" accession="HSP70">
+			<PeptideConsensus_refs>PEPTIDER MLPEPTIDEK</PeptideConsensus_refs>
+		</Protein>
+	</ProteinList>
+
+	<PeptideList id="PepList1" finalResult="true">
+		<PeptideConsensus id="PEPTIDER" charge="2">
+			<PeptideSequence>PEPTIDER</PeptideSequence>
+			<Feature_refs>featureB_1 featureE_1</Feature_refs>
+		</PeptideConsensus>
+		<PeptideConsensus id="MLPEPTIDEK" charge="2">
+			<PeptideSequence>MLPEPTIDEK</PeptideSequence>
+			<Feature_refs>featureB_2 featureE_2</Feature_refs>
+		</PeptideConsensus>
+		<PeptideConsensus id="unknown1" charge="2">
+			<Feature_refs>featureB_3 featureE_3</Feature_refs>
+		</PeptideConsensus>
+		<PeptideConsensus id="unknown2" charge="2">
+			<Feature_refs>featureB_4 featureE_4</Feature_refs>
+		</PeptideConsensus>	
+		
+		
+		<AssayQuantLayer id="QL1">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Normalised abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="PEPTIDER">456567 345456</Row>
+				<Row object_ref="MLPEPTIDEK">124234 232345</Row>
+				<Row object_ref="unknown1">647956 577567</Row>
+				<Row object_ref="unknown2">11567 445556</Row>				
+			</DataMatrix>
+		</AssayQuantLayer>
+		<AssayQuantLayer id="QL2">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Raw abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="PEPTIDER">456567 345456</Row>
+				<Row object_ref="MLPEPTIDEK">124234 232345</Row>
+				<Row object_ref="unknown1">647956 577567</Row>
+				<Row object_ref="unknown2">11567 445556</Row>					
+			</DataMatrix>
+		</AssayQuantLayer>			
+		
+	</PeptideList>
+	
+	
+	<FeatureList RawFileGroup_ref="raw1" id="FList1">
+		<Feature id="featureB_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureB_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureB_3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureB_4" charge="2" MZ="518.827" RT="26.8685"/>
+	</FeatureList>
+	<FeatureList RawFileGroup_ref="raw2" id="FList2">	
+		<Feature id="featureE_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="featureE_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="featureE_3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="featureE_4" charge="2" MZ="518.827" RT="26.8685"/>
+	</FeatureList>
+
+
+	
+	<SoftwareList>
+		<Software id="Progenesis" version="2.3"></Software>
+	</SoftwareList>
+	
+	
+	<DataProcessingList>
+		<DataProcessing id="DP1"  software_Ref="Progenesis">
+			<ProcessingMethod order="1">
+				<userParam name=""/>
+				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
+			</ProcessingMethod>
+		</DataProcessing>
+
+	</DataProcessingList>
+	
+
+</MzQuantML>

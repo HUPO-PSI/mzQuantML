@@ -5,6 +5,13 @@ Existing terms with modifications (mainly in is_a, but also in name, xref and / 
 ----------------------------------------------------------------------------------------------
 [xref lines allowing values are deleted to avoid reporting values in CV terms; they should be given in the data matrix of mzQuantML]
 
+Change type A)
+The following terms were inserted during the mzIdentML dvelopment below "quantification information".
+Actually they were the result of a brainstorming process.
+In the current obo they have been moved below "quantification datatype"
+and lost their value (as values are now given in schema element content).
+Some of them changed from plural to singular form.
+
 [Term]
 id: MS:1001130
 name: peptide raw area
@@ -60,16 +67,26 @@ def: "Error on absolute quantity." [PSI:PI]
 is_a: MS:1001798 ! quantification datatype
 
 [Term]
+id: MS:1001141
+name: intensity of precursor ion
+def: "The intensity of the precursor ion." [PSI:PI]
+is_a: MS:1001798 ! quantification datatype
+
+------------------
+
+Change type B) 
+Term should now be obsolete, because part of the schema (as attribute)
+
+[Term]
 id: MS:1001140
 name: quantitation software version
 def: "Quantitation software version. TODO: OBSOLETE, because part of mzQuantML schema!" [PSI:PI]
 is_a: MS:1001129 ! quantification information
 
-[Term]
-id: MS:1001141
-name: intensity of precursor ion
-def: "The intensity of the precursor ion." [PSI:PI]
-is_a: MS:1001798 ! quantification datatype
+---------------------
+
+Change type C)
+Some existing software names should be also in the "quantitation software name branch".
 
 [Term]
 id: MS:1001488
@@ -87,22 +104,31 @@ is_a: MS:1001139 ! quantitation software name
 
 
 
-
+-------------------------------------------------------------------
 
 New terms:
 ---------
+A) New branch for quantification datataypes:
+
 [Term]
 id: MS:1001798
 name: quantification datatype
 def: "The data type of the value reported in a QuantLayer for a feature, matchedfeature, peptide, protein, protein group." [PSI:MS]
 is_a: MS:1001129 ! quantification information
 
+-----------------------
+
+B) New branch containing quantification object details. This term is only introduced
+to group the following terms like "StudyVariable attribute", "RawFile attribute" etc.
 [Term]
 id: MS:1001799
 name: quantification object attribute
 def: "Attributes describing the details of an object relevant for reporting quantification workflows or values." [PSI:MS]
 is_a: MS:1001129 ! quantification information
 
+-----------------------
+
+C) New branch for study variable descriptions, e.g. experimental conditions etc.
 [Term]
 id: MS:1001800
 name: StudyVariable attribute
@@ -167,6 +193,10 @@ def: "The experimental design followed a dilution series design. The concentrati
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001800 ! StudyVariable attribute
 
+-----------------------
+
+D) New branch for raw file variable descriptions, e.g. "one sample run" etc.
+
 [Term]
 id: MS:1001810
 name: RawFile attribute
@@ -203,6 +233,10 @@ name: eight sample run
 def: "The raw file contains the run of eight samples (e.g. 8-plex iTraq)." [PSI:MS]
 is_a: MS:1001810 ! RawFile attribute
 
+-----------------------
+
+E) New branch for RawFilesGroup descriptions
+
 [Term]
 id: MS:1001816
 name: RawFilesGroup attribute
@@ -214,6 +248,10 @@ id: MS:1001817
 name: merge of runs of 1D gel bands
 def: "Attribute describing, how raw files build a raw file group." [PSI:MS]
 is_a: MS:1001816 ! RawFilesGroup attribute
+
+-----------------------
+
+F) New branch for FeatureList descriptions
 
 [Term]
 id: MS:1001818
@@ -233,6 +271,10 @@ name: mass trace reporting: polygons
 def: "The mass trace of the features of this feature list specifies polygons. Each mass trace has the syntax (RT_1,MZ_1,RT_2,MZ_2,...,RT_i,MZ_i,...,RT_n,MZ_n), where the line (RT_n,MZ_n)->(RT_1,MZ_1) is implicite." [PSI:MS]
 is_a: MS:1001818 ! FeatureList attribute
 
+-----------------------
+
+G) New branch for Feature descriptions
+
 [Term]
 id: MS:1001821
 name: Feature attribute
@@ -244,6 +286,10 @@ id: MS:1001822
 name: SRM transition ID
 def: "SRM transition ID. TODO: clarify!" [PSI:MS]
 is_a: MS:1001821 ! Feature attribute
+
+-----------------------
+
+H) Further quant. software names
 
 [Term]
 id: MS:1001823
@@ -257,11 +303,19 @@ name: SILACAnalyzer
 def: "Software for SILAC workflow" [PSI:MS]
 is_a: MS:1001139 ! quantitation software name
 
+-----------------------
+
+I) New term for software comments / customizations
+
 [Term]
 id: MS:1001827
 name: quantitation software comment / customizations
 def: "Quantitation software comment or any customizations to the default setup of the software." [PSI:PI]
 is_a: MS:1001129 ! quantification information
+
+-----------------------
+
+J) New branch for describing the overall workflow, e.g. LC/MS label-free, SILAC
 
 [Term]
 id: MS:1001828
@@ -304,6 +358,10 @@ id: MS:1001834
 name: metabolic labeling 14N / 15N
 def: "Metabolic labeling workflow (heavy and light versions of peptides, depending on number of nitrogens)." [PSI:PI]
 is_a: MS:1001828 ! quantitation analysis summary
+
+-----------------------
+
+K) Further terms for quantification data types
 
 [Term]
 id: MS:1001835
@@ -430,6 +488,10 @@ id: MS:1001854
 name: protein value: mean of peptide ratios
 def: "Protein quantification value calculated as mean of peptide ratios." [PSI:PI]
 is_a: MS:1001798 ! quantification datatype
+
+-----------------------
+
+L) New branch for describing quantification data processing
 
 [Term]
 id: MS:1001855

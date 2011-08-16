@@ -388,7 +388,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Reference for the identificat evidence for peptides from the referenced external file and unique identifier e.g. a link to an mzIdentML file and ID for the SpectrumIdentificationItem.</xsd:documentation>
 				</xsd:annotation>				
 			</xsd:element>
-			<xsd:element name="Feature_refs" type="xsd:IDREFS" minOccurs="1">
+			<xsd:element name="Feature_refs" type="xsd:IDREFS" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The features that have been matched together within one raw file (label-based), across multiple raw files (label-based or label free).</xsd:documentation>
 				</xsd:annotation>
@@ -406,11 +406,13 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 			-->
+			<!--
 			<xsd:element name="MatchedFeature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>References to the matched features that report on the peptide.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			-->
 
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
@@ -439,19 +441,20 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 			
-			<!--  
+			  
 				<xsd:element name="feature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 				<xsd:documentation>Optional references to features on which peptide values in
 				the QuantLayer were based.</xsd:documentation>
 				</xsd:annotation>
 				</xsd:element>
-			-->
+			<!--
 			<xsd:element name="MatchedFeature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>References to the matched features that report on the small molecule.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			-->
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Additional parameters or values about this small molecule.</xsd:documentation>
@@ -573,7 +576,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="ColumnType">
 		<xsd:sequence>
-			<xsd:element name="DataType" type="cvParamRefType" maxOccurs="unbounded" minOccurs="1">
+			<xsd:element name="DataType" type="cvParamRefType" maxOccurs="1" minOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Type of data in the column e.g. cvParam = "Intensity|RawAbundance|NormalisedAbundance"</xsd:documentation>
 				</xsd:annotation>
@@ -1000,8 +1003,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:annotation>
 					<xsd:documentation>Additional parameters about the software or version.</xsd:documentation>
 				</xsd:annotation>
-			</xsd:group>		</xsd:sequence>
-		
+			</xsd:group>
+		</xsd:sequence>		
 		<xsd:attribute name="id" type="xsd:ID" use="required"/>		
 		<xsd:attribute name="version" type="xsd:string" use="required">
 			<xsd:annotation>

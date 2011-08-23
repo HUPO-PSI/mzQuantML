@@ -125,7 +125,7 @@
 		<PeptideConsensus id="MLEPTIDER"  charge="2">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
 			<Modification>
-				<cvParam cvRef="" accession="" name="Oxidation (M)"/>
+				<cvParam cvRef="" accession="" name="Oxidation (M)"/>				
 			</Modification>
 			<Feature_refs>f1_2 f2_2</Feature_refs>
 		</PeptideConsensus>

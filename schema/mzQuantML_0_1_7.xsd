@@ -13,6 +13,12 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:complexType>
 			<xsd:sequence>
 				<xsd:element name="CvList" type="CvListType"/>
+				<xsd:element name="Provider" type="ProviderType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>The Provider of the mzIdentML record in terms of the contact and software. </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AuditCollection" type="AuditCollectionType" minOccurs="0"/>
 				<xsd:element name="InputFiles" type="InputFilesType" minOccurs="1" maxOccurs="1"/>
 				<xsd:element name="AssayList" type="AssayListType">
 					<xsd:annotation>
@@ -52,6 +58,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="1" maxOccurs="1">
 					<xsd:annotation>
 						<xsd:documentation>Data processing steps used to create the	results</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="BibliographicReference" type="BibliographicReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>Any bibliographic references associated with the file</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:sequence>
@@ -1143,6 +1154,199 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ProviderType">
+		<xsd:annotation>
+			<xsd:documentation>The provider of the document in terms of the Contact and the software the produced the document instance. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="IdentifiableType">
+				<xsd:sequence>
+					<xsd:element name="ContactRole" type="ContactRoleType" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>The Contact that provided the document instance.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="analysisSoftware_ref" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The Software that produced the document instance.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonType">
+		<xsd:annotation>
+			<xsd:documentation>A person's name and contact details. Any additional information such as the address, contact email etc. should be supplied using CV parameters or user parameters.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="AbstractContactType">
+				<xsd:sequence>
+					<xsd:element name="Affiliation" type="AffiliationType" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>The organization a person belongs to.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="lastName" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The Person's last/family name.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="firstName" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The Person's first name.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="midInitials" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The Person's middle initial.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AffiliationType">
+		<xsd:attribute name="organization_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>A reference to the organization this contact belongs to.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>Organizations are entities like companies, universities, government agencies. Any additional information such as the address, email etc. should be supplied either as CV parameters or as user parameters. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="AbstractContactType">
+				<xsd:sequence>
+					<xsd:element name="Parent" type="ParentOrganizationType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParentOrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>The containing organization (the university or business which a lab belongs to, etc.) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="organization_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>A reference to the organization this contact belongs to.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="AbstractContactType" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>A contact is either a person or an organization.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="IdentifiableType">
+				<xsd:sequence>
+					<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Attributes of this contact such as address, email, telephone etc.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:group>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ContactRoleType">
+		<xsd:annotation>
+			<xsd:documentation>The role that a Contact plays in an organization or with respect to the associating class. A Contact may have several Roles within scope, and as such,
+				associations to ContactRole allow the use of a Contact in a certain manner. Examples
+				might include a provider, or a data analyst. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Role" type="RoleType"/>
+		</xsd:sequence>
+		<xsd:attribute name="contact_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>When a ContactRole is used, it specifies which Contact the role is associated with. </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="RoleType">
+		<xsd:annotation>
+			<xsd:documentation>The roles (lab equipment sales, contractor, etc.) the Contact fills.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="cvParam" type="CVParamType">
+				<xsd:annotation>
+					<xsd:documentation>CV term for contact roles, such as software provider.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BibliographicReferenceType">
+		<xsd:annotation>
+			<xsd:documentation>Represents bibliographic references. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="IdentifiableType">
+				<xsd:attribute name="authors" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The names of the authors of the reference.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="publication" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The name of the journal, book etc.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="publisher" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The publisher of the publication.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="editor" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The editor(s) of the reference.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="year" type="xsd:int">
+					<xsd:annotation>
+						<xsd:documentation>The year of publication.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="volume" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The volume name or number.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="issue" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The issue name or number.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="pages" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The page numbers.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="title" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The title of the BibliographicReference.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="doi" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The DOI of the referenced publication.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AuditCollectionType">
+		<xsd:annotation>
+			<xsd:documentation>The complete set of Contacts (people and organisations) for this file. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="Person" type="PersonType"/>
+			<xsd:element name="Organization" type="OrganizationType"/>
+		</xsd:choice>
 	</xsd:complexType>
 	<xsd:complexType name="IdentifiableType" abstract="true">
 		<xsd:annotation>

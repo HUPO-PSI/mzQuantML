@@ -12,6 +12,22 @@ Sketch of an example for using data matrices to represent quant layers
 			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
 	</CvList>
 
+	<Provider id="Provider1">
+		<ContactRole contact_ref="person1">
+			<Role>
+				<cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+			</Role>
+		</ContactRole>		
+	</Provider>
+	
+	<AuditCollection>
+		<Person id="person1" firstName="Andy" lastName="Jones">
+			<Affiliation organization_ref="ULiv"/>
+		</Person>
+		<Organization id="ULiv" name="University of Liverpool"></Organization>
+	</AuditCollection>
+	
+
 
 	<InputFiles>
 		<RawFilesGroup id="raw1">
@@ -86,7 +102,6 @@ Sketch of an example for using data matrices to represent quant layers
 			<Feature_refs>featureB_4 featureE_4</Feature_refs>
 		</PeptideConsensus>	
 		
-		
 		<AssayQuantLayer id="QL1">
 			<DataType>
 				<cvParam cvRef="PSI-MS" accession="TODO" name="Normalised abundance"/>
@@ -99,10 +114,11 @@ Sketch of an example for using data matrices to represent quant layers
 				<Row object_ref="unknown2">11567 445556</Row>				
 			</DataMatrix>
 		</AssayQuantLayer>
-		<AssayQuantLayer id="QL2">
+		<AssayQuantLayer id="QL2">			
 			<DataType>
 				<cvParam cvRef="PSI-MS" accession="TODO" name="Raw abundance"/>
 			</DataType>
+			
 			<ColumnIndex>B1 E1</ColumnIndex>
 			<DataMatrix>
 				<Row object_ref="PEPTIDER">456567 345456</Row>
@@ -139,7 +155,6 @@ Sketch of an example for using data matrices to represent quant layers
 		<DataProcessing id="DP1"  software_Ref="Progenesis">
 			<ProcessingMethod order="1">
 				<userParam name=""/>
-				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
 			</ProcessingMethod>
 		</DataProcessing>
 

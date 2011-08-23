@@ -2,8 +2,9 @@
 Sketch of an example for using data matrices to represent quant layers
 -->
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_7.xsd"
- xmlns="http://psidev.info/psi/pi/mzQuantML/0.1" version="0.1.7">
+	xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../schema/mzQuantML_1_0_0-rc.xsd"
+	xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1"
+ version="1.0.0">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
 			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
@@ -86,7 +87,7 @@ Sketch of an example for using data matrices to represent quant layers
 		</Protein>
 	</ProteinList>
 
-	<PeptideList id="PepList1" finalResult="true">
+	<PeptideConsensusList id="PepList1" finalResult="true">
 		<PeptideConsensus id="PEPTIDER" charge="2">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<Feature_refs>featureB_1 featureE_1</Feature_refs>
@@ -128,7 +129,7 @@ Sketch of an example for using data matrices to represent quant layers
 			</DataMatrix>
 		</AssayQuantLayer>			
 		
-	</PeptideList>
+	</PeptideConsensusList>
 	
 	
 	<FeatureList RawFileGroup_ref="raw1" id="FList1">

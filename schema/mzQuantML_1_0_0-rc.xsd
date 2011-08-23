@@ -8,7 +8,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	xmlns="http://psidev.info/psi/pi/mzQuantML/0.1"
 	xmlns:psi-mzq="http://psidev.info/psi/pi/mzQuantML/0.1"
 	targetNamespace="http://psidev.info/psi/pi/mzQuantML/0.1" elementFormDefault="qualified"
-	version="0.1.7">
+	version="1.0.0-rc1">
 	<xsd:element name="MzQuantML">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -42,7 +42,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						<xsd:documentation>The list of all proteins quantified. This element should	always be provided unless there is only quantification of peptides.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="PeptideList" type="PeptideListType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="PeptideConsensusList" type="PeptideConsensusListType" minOccurs="0" maxOccurs="unbounded">
 					<xsd:annotation>
 						<xsd:documentation>The list of all peptides quantified.</xsd:documentation>
 					</xsd:annotation>
@@ -323,7 +323,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>	
-	<xsd:complexType name="PeptideListType">
+	<xsd:complexType name="PeptideConsensusListType">
 		<xsd:annotation>
 			<xsd:documentation>The list of all peptides objects for which quantification values are reported.</xsd:documentation>
 		</xsd:annotation>
@@ -1053,7 +1053,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="AbstractParamType">
-				<xsd:attribute name="cvRef" type="xsd:string" use="required">
+				<xsd:attribute name="cvRef" type="xsd:IDREF" use="required">
 					<xsd:annotation>
 						<xsd:documentation>A reference to the cv element from which this term originates. </xsd:documentation>
 					</xsd:annotation>
@@ -1178,7 +1178,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						</xsd:annotation>
 					</xsd:element>
 				</xsd:sequence>
-				<xsd:attribute name="analysisSoftware_ref" type="xsd:string">
+				<xsd:attribute name="analysisSoftware_ref" type="xsd:IDREF">
 					<xsd:annotation>
 						<xsd:documentation>The Software that produced the document instance.</xsd:documentation>
 					</xsd:annotation>
@@ -1375,7 +1375,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:simpleType name="versionRegex">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="(0\.1\.\d+)"/>
+			<xsd:pattern value="(1\.0\.\d+)"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>

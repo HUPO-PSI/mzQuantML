@@ -15,7 +15,7 @@ schema comments / issues:
 - for all the ListTypes (minOccurs="1" maxOccurs="unbounded") one should use the plural form, e.g.all the QuantLayers and the Rows under DataMatrix.
 -->
 
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_7.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_7.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1"  creationDate="2011-08-24T13:08:00" version="0.1.7">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
 		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
@@ -140,7 +140,6 @@ schema comments / issues:
 				<cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
 			</Modification>
 			<IdentificationRef IdentificationFile_ref="IF_disease2" id_ref="id1" />
-			<Feature_refs></Feature_refs>
 		</PeptideConsensus>
 		<PeptideConsensus id="pep2" charge="1">
 			<PeptideSequence>BLAEMLVISA</PeptideSequence>
@@ -148,22 +147,18 @@ schema comments / issues:
 				<cvParam accession="UNIMOD:5" name="Carbamyl" cvRef="UNIMOD"/>
 			</Modification>
 			<IdentificationRef IdentificationFile_ref="IF_disease4" id_ref="id2"/>
-			<Feature_refs></Feature_refs>
 		</PeptideConsensus>
 		<PeptideConsensus id="pep3" charge="1">
 			<PeptideSequence>MLVELVISE</PeptideSequence>
 			<IdentificationRef IdentificationFile_ref="IF_healthy1" id_ref="id3" />
-			<Feature_refs></Feature_refs>
 		</PeptideConsensus>
 		<PeptideConsensus id="pep4" charge="1">
 			<PeptideSequence>MLVELVASA</PeptideSequence>
 			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id4"/>
-			<Feature_refs></Feature_refs>
 		</PeptideConsensus>
 		<PeptideConsensus id="pep5" charge="1">
 			<PeptideSequence>MLVELVESA</PeptideSequence>
 			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id5"/>
-			<Feature_refs></Feature_refs>
 		</PeptideConsensus>
 	
 		<!-- description see above a) -->

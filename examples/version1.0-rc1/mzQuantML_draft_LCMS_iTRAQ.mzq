@@ -92,8 +92,8 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<FeatureList RawFileGroup_ref="raw1" id="FeatureList1">
-		<Feature id="f1_1" charge="2" MZ="418.172" RT="26.8685"/>
-		<Feature id="f1_2" charge="2" MZ="421.572" RT="27.8685"/>
+		<Feature id="f1_1" charge="2" MZ="418.172" RT="NaN"/>
+		<Feature id="f1_2" charge="2" MZ="421.572" RT="NaN"/>
 		
 		<MS2AssayQuantLayer id="QL_iTRAQ">
 			<DataType>

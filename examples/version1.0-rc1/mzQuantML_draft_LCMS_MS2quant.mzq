@@ -2,8 +2,8 @@
 Sketch of an example showing how an MS2 peptide intensity scheme could work
 -->
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_1_0_0-rc.xsd"
-	xmlns="http://psidev.info/psi/pi/mzQuantML/0.1"
+	xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../schema/mzQuantML_1_0_0-rc.xsd"
+	xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1"
 	version="1.0.0">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"

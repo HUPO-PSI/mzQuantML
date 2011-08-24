@@ -142,8 +142,8 @@ Sketch of an example for using data matrices to represent quant layers
 			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
 			<DataMatrix>
 				<Row object_ref="PEPTIDER">1.5 1.6</Row>	
-				<Row object_ref="MLEPTIDER">1.7 NaN</Row>
-				<Row object_ref="unknown1">1.9 NaN</Row>
+				<Row object_ref="MLEPTIDER">1.7 null</Row>
+				<Row object_ref="unknown1">1.9 null</Row>
 			</DataMatrix>			
 		</RatioQuantLayer>
 
@@ -190,12 +190,12 @@ Sketch of an example for using data matrices to represent quant layers
 			</ColumnIndex>			
 			<DataMatrix>
 				<Row object_ref="f1_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
-				<Row object_ref="f1_2">93481.41456 98090.36288 NaN 0.146698</Row>
-				<Row object_ref="f1_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f1_2">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f1_3">193481.71622 298090.36288 null 0.546698</Row>
 				<Row object_ref="f1_4">181.43671 398090.36288 793556 0.146698</Row>
 				<Row object_ref="f1_5">23304.18097 16033.65284 55844.77344 0.994629</Row>
-				<Row object_ref="f1_6">93481.41456 98090.36288 NaN 0.146698</Row>
-				<Row object_ref="f1_7">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f1_6">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f1_7">193481.71622 298090.36288 null 0.546698</Row>
 				<Row object_ref="f1_8">181.43671 398090.36288 793556 0.146698</Row>
 				
 			</DataMatrix>
@@ -239,12 +239,12 @@ Sketch of an example for using data matrices to represent quant layers
 			</ColumnIndex>			
 			<DataMatrix>
 				<Row object_ref="f2_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
-				<Row object_ref="f2_2">93481.41456 98090.36288 NaN 0.146698</Row>
-				<Row object_ref="f2_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f2_2">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f2_3">193481.71622 298090.36288 null 0.546698</Row>
 				<Row object_ref="f2_4">181.43671 398090.36288 793556 0.146698</Row>
 				<Row object_ref="f2_5">23304.18097 16033.65284 55844.77344 0.994629</Row>
-				<Row object_ref="f2_6">93481.41456 98090.36288 NaN 0.146698</Row>
-				<Row object_ref="f2_7">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f2_6">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f2_7">193481.71622 298090.36288 null 0.546698</Row>
 				<Row object_ref="f2_8">181.43671 398090.36288 793556 0.146698</Row>
 				
 			</DataMatrix>

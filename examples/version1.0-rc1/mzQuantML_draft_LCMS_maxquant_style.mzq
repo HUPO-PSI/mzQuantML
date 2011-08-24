@@ -1,5 +1,5 @@
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1../../schema/mzQuantML_1_0_0-rc.xsd"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../schema/mzQuantML_1_0_0-rc.xsd"
  xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1"
  version="1.0.0">
 	<CvList>
@@ -178,8 +178,8 @@
 			</ColumnIndex>			
 			<DataMatrix>
 				<Row object_ref="f1_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
-				<Row object_ref="f1_2">93481.41456 98090.36288 NaN 0.146698</Row>
-				<Row object_ref="f1_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f1_2">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f1_3">193481.71622 298090.36288 null 0.546698</Row>
 				<Row object_ref="f1_4">181.43671 398090.36288 793556 0.146698</Row>
 				
 			</DataMatrix>
@@ -218,8 +218,8 @@
 			</ColumnIndex>			
 			<DataMatrix>
 				<Row object_ref="f2_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
-				<Row object_ref="f2_2">93481.41456 98090.36288 NaN 0.146698</Row>
-				<Row object_ref="f2_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="f2_2">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f2_3">193481.71622 298090.36288 null 0.546698</Row>
 				<Row object_ref="f2_4">181.43671 398090.36288 793556 0.146698</Row>
 				
 			</DataMatrix>

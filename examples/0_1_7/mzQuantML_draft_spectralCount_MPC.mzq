@@ -10,12 +10,11 @@ example sketch:
   e) "ratio" (disease vs. healthy; proteins)
 
 schema comments / issues:
-- element <mzQuantML> should have attributes like version and creationdate
-- element <Feature_refs> in PeptideConsensus should be optional for spectral counting.
-- for all the ListTypes (minOccurs="1" maxOccurs="unbounded") one should use the plural form, e.g.all the QuantLayers and the Rows under DataMatrix.
+- no
+
 -->
 
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_7.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1"  creationDate="2011-08-24T13:08:00" version="0.1.7">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/0.1 ../../schema/mzQuantML_0_1_7.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/0.1"  creationDate="2011-08-24T15:09:00" version="0.1.7">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
 		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
@@ -53,11 +52,11 @@ schema comments / issues:
 	
 	<StudyVariableList>
 		<StudyVariable id="SV1_HEALTHY" name="healthy group">
-			<cvParam accession="MS:1000000" name="experimental condition healthy" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001813" name="experimental condition 'healthy'" cvRef="PSI-MS"/>
 			<Assay_refs>AS_HEALTHY1 AS_HEALTHY2</Assay_refs>
 		</StudyVariable>
 		<StudyVariable id="SV2_DISEASE" name="disease group">
-			<cvParam accession="MS:1000000" name="experimental condition disease" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001812" name="experimental condition 'disease'" cvRef="PSI-MS"/>
 			<Assay_refs>AS_DISEASE1 AS_DISEASE2</Assay_refs>
 		</StudyVariable>
 	</StudyVariableList>
@@ -65,6 +64,10 @@ schema comments / issues:
 	<RatioList>
 		<Ratio id="DISEASE_VS_HEALTHY" numerator_ref="SV2_DISEASE" denominator_ref="SV1_HEALTHY"/>
 	</RatioList>
+
+	<AnalysisSummary>
+		<cvParam accession="MS:1001836" name="spectral counting" cvRef="PSI-MS"/>
+	</AnalysisSummary>
 
 	<ProteinList id="PROTLIST">
 		<Protein accession="YDR238C" id="prot1">
@@ -83,7 +86,7 @@ schema comments / issues:
 		<!-- description see above b) -->
 		<AssayQuantLayer id="QL_raw_protein_value_layer">
 			<DataType>
-				<cvParam name="raw protein values" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam accession="MS:1001851" name="protein value: sum of peptide values" cvRef="PSI-MS"/>
 			</DataType>
 			<ColumnIndex>AS_HEALTHY1 AS_HEALTHY2 AS_DISEASE1 AS_DISEASE2</ColumnIndex>
 			<DataMatrix>
@@ -96,7 +99,7 @@ schema comments / issues:
 		<!-- description see above c) -->
 		<AssayQuantLayer id="QL_normalized_protein_value_layer">
 			<DataType>
-				<cvParam name="normalized protein values" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam accession="MS:1001852" name="normalized protein value" cvRef="PSI-MS"/>
 			</DataType>
 			<ColumnIndex>AS_HEALTHY1 AS_HEALTHY2 AS_DISEASE1 AS_DISEASE2</ColumnIndex>
 			<DataMatrix>
@@ -109,7 +112,7 @@ schema comments / issues:
 		<!-- description see above d) -->
 		<StudyVariableQuantLayer id="QL_protein_means_of_groups">
 			<DataType>
-				<cvParam name="mean" accession="MS:100000" cvRef="PSI_MS"/>
+				<cvParam accession="MS:000000" name="mean" cvRef="PSI-MS"/> <!-- insert final accession number -->
 			</DataType>
 			<ColumnIndex>SV1_HEALTHY SV2_DISEASE</ColumnIndex>
 			<DataMatrix>
@@ -122,7 +125,7 @@ schema comments / issues:
 		<!-- description see above e) -->
 		<RatioQuantLayer id="QL_protein_ratio_disease_vs_healthy">
 			<DataType>
-				<cvParam accession="MS:100000" name="ratio" cvRef="PSI_MS"/>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
 			</DataType>
 			<ColumnIndex>DISEASE_VS_HEALTHY</ColumnIndex>
 			<DataMatrix>
@@ -164,7 +167,7 @@ schema comments / issues:
 		<!-- description see above a) -->
 		<AssayQuantLayer id="QL_peptide_PSM_count_layer">
 			<DataType>
-				<cvParam name="raw peptide PSM counts" accession="MS:1000000" cvRef="PSI-MS"/>
+				<cvParam accession="MS:1001842" name="peptide PSM count" cvRef="PSI-MS"/>
 			</DataType>
 			<ColumnIndex>AS_HEALTHY1 AS_HEALTHY2 AS_DISEASE1 AS_DISEASE2</ColumnIndex>
 			<DataMatrix>
@@ -179,7 +182,7 @@ schema comments / issues:
 	
 	<SoftwareList>
 		<Software id="MS_EXCEL" version="2007">
-			<cvParam accession="MS:1001XXXX" name="Microsoft Excel" cvRef="PSI-MS"/>
+			<cvParam accession="MS:000000" name="Microsoft Excel" cvRef="PSI-MS"/> <!-- insert final accession number -->
 		</Software>
 	</SoftwareList>
 
@@ -188,7 +191,7 @@ schema comments / issues:
 			<InputObject_refs>QL_raw_protein_value_layer</InputObject_refs>
 			<OutputObject_refs>QL_normalized_protein_value_layer</OutputObject_refs>
 			<ProcessingMethod order="1">
-				<cvParam accession="MS:1000000" name="normalization to mean of proteins" cvRef="PSI-MS"/>
+				<cvParam accession="MS:1001862" name="normalization to mean of sum of all proteins" cvRef="PSI-MS"/>
 			</ProcessingMethod>
 		</DataProcessing>
 	</DataProcessingList>

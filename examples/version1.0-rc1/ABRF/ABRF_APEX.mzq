@@ -1,0 +1,1440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../../schema/mzQuantML_1_0_0-rc.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1"
+ version="1.0.0"
+ creationDate="2011-08-25T14:53:23.431+01:00">
+    <CvList>
+        <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
+    </CvList>
+    <InputFiles>
+        <RawFilesGroup id="rg_0">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red.raw" name="sh_072808p_E_coli_ABRF_red.raw" id="raw_0"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_1">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080729113858.raw" name="sh_072808p_E_coli_ABRF_red_080729113858.raw" id="raw_1"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_2">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080729210909.raw" name="sh_072808p_E_coli_ABRF_red_080729210909.raw" id="raw_2"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_3">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080730063917.raw" name="sh_072808p_E_coli_ABRF_red_080730063917.raw" id="raw_3"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_4">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080730160920.raw" name="sh_072808p_E_coli_ABRF_red_080730160920.raw" id="raw_4"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_5">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow.raw" name="sh_072808p_E_coli_ABRF_yellow.raw" id="raw_5"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_6">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080729065352.raw" name="sh_072808p_E_coli_ABRF_yellow_080729065352.raw" id="raw_6"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_7">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080729162405.raw" name="sh_072808p_E_coli_ABRF_yellow_080729162405.raw" id="raw_7"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_8">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080730015413.raw" name="sh_072808p_E_coli_ABRF_yellow_080730015413.raw" id="raw_8"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_9">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080730112418.raw" name="sh_072808p_E_coli_ABRF_yellow_080730112418.raw" id="raw_9"/>
+        </RawFilesGroup>
+    </InputFiles>
+    <AssayList id="AssayList_1">
+        <Assay name="sh_072808p_E_coli_ABRF_red" id="ass_0">
+            <RawFilesGroup_refs>rg_0</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080729113858" id="ass_1">
+            <RawFilesGroup_refs>rg_1</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080729210909" id="ass_2">
+            <RawFilesGroup_refs>rg_2</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080730063917" id="ass_3">
+            <RawFilesGroup_refs>rg_3</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080730160920" id="ass_4">
+            <RawFilesGroup_refs>rg_4</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow" id="ass_5">
+            <RawFilesGroup_refs>rg_5</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080729065352" id="ass_6">
+            <RawFilesGroup_refs>rg_6</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080729162405" id="ass_7">
+            <RawFilesGroup_refs>rg_7</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080730015413" id="ass_8">
+            <RawFilesGroup_refs>rg_8</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080730112418" id="ass_9">
+            <RawFilesGroup_refs>rg_9</RawFilesGroup_refs>
+        </Assay>
+    </AssayList>
+    <StudyVariableList>
+        <StudyVariable name="Red" id="SV_Red">
+            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <Assay_refs>ass_0 ass_1 ass_2 ass_3 ass_4</Assay_refs>
+        </StudyVariable>
+        <StudyVariable name="Yellow" id="SV_Yellow">
+            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <Assay_refs>ass_5 ass_6 ass_7 ass_8 ass_9</Assay_refs>
+        </StudyVariable>
+    </StudyVariableList>
+    <ProteinList id="ProtList1">
+        <Protein accession="P64581" id="prot_0"/>
+        <Protein accession="P37349" id="prot_1"/>
+        <Protein accession="P17115" id="prot_2"/>
+        <Protein accession="P77690" id="prot_3"/>
+        <Protein accession="P0A7G6" id="prot_4"/>
+        <Protein accession="P21177" id="prot_5"/>
+        <Protein accession="P0A6C8" id="prot_6"/>
+        <Protein accession="P0ACB2" id="prot_7"/>
+        <Protein accession="rev_P0AFL6" id="prot_8"/>
+        <Protein accession="P76027" id="prot_9"/>
+        <Protein accession="P0ACB7" id="prot_10"/>
+        <Protein accession="Q46925" id="prot_11"/>
+        <Protein accession="P07639" id="prot_12"/>
+        <Protein accession="P77499" id="prot_13"/>
+        <Protein accession="P27242" id="prot_14"/>
+        <Protein accession="P0A6D3" id="prot_15"/>
+        <Protein accession="P76217" id="prot_16"/>
+        <Protein accession="P21165" id="prot_17"/>
+        <Protein accession="P27431" id="prot_18"/>
+        <Protein accession="P0ADY1" id="prot_19"/>
+        <Protein accession="P0ACA3" id="prot_20"/>
+        <Protein accession="P0ADY3" id="prot_21"/>
+        <Protein accession="P21170" id="prot_22"/>
+        <Protein accession="P17117" id="prot_23"/>
+        <Protein accession="P0A7I0" id="prot_24"/>
+        <Protein accession="P0ACA7" id="prot_25"/>
+        <Protein accession="P0ADE6" id="prot_26"/>
+        <Protein accession="P0ADE8" id="prot_27"/>
+        <Protein accession="P32099" id="prot_28"/>
+        <Protein accession="P46130" id="prot_29"/>
+        <Protein accession="P07024" id="prot_30"/>
+        <Protein accession="P0A6E4" id="prot_31"/>
+        <Protein accession="P0A6E6" id="prot_32"/>
+        <Protein accession="P0A7E9" id="prot_33"/>
+        <Protein accession="P0A7E5" id="prot_34"/>
+        <Protein accession="P07762" id="prot_35"/>
+        <Protein accession="P0A993" id="prot_36"/>
+        <Protein accession="P07118" id="prot_37"/>
+        <Protein accession="P12758" id="prot_38"/>
+        <Protein accession="P0ADY7" id="prot_39"/>
+        <Protein accession="P0A991" id="prot_40"/>
+        <Protein accession="P60624" id="prot_41"/>
+        <Protein accession="P0A8X0" id="prot_42"/>
+        <Protein accession="P0ADZ4" id="prot_43"/>
+        <Protein accession="Cntm_P02533" id="prot_44"/>
+        <Protein accession="P0ACD4" id="prot_45"/>
+        <Protein accession="P0ADZ0" id="prot_46"/>
+        <Protein accession="P37330" id="prot_47"/>
+        <Protein accession="P33232" id="prot_48"/>
+        <Protein accession="P0AEZ3" id="prot_49"/>
+        <Protein accession="P0AGD3" id="prot_50"/>
+        <Protein accession="P37440" id="prot_51"/>
+        <Protein accession="P27550" id="prot_52"/>
+        <Protein accession="P0A6F3" id="prot_53"/>
+        <Protein accession="P31224" id="prot_54"/>
+        <Protein accession="P0AEZ9" id="prot_55"/>
+        <Protein accession="P0A6F1" id="prot_56"/>
+        <Protein accession="P64596" id="prot_57"/>
+        <Protein accession="P0AGD1" id="prot_58"/>
+        <Protein accession="P07014" id="prot_59"/>
+        <Protein accession="P0A6F5" id="prot_60"/>
+        <Protein accession="P0A6F9" id="prot_61"/>
+        <Protein accession="P0A7F3" id="prot_62"/>
+        <Protein accession="P07109" id="prot_63"/>
+        <Protein accession="Cntm_P02538" id="prot_64"/>
+        <Protein accession="P0A8Y5" id="prot_65"/>
+        <Protein accession="P0C0L7" id="prot_66"/>
+        <Protein accession="P0ACC7" id="prot_67"/>
+        <Protein accession="P07813" id="prot_68"/>
+        <Protein accession="P0ACC3" id="prot_69"/>
+        <Protein accession="P21151" id="prot_70"/>
+        <Protein accession="P33221" id="prot_71"/>
+        <Protein accession="P0ADC1" id="prot_72"/>
+        <Protein accession="P0C0L2" id="prot_73"/>
+        <Protein accession="P0A7K6" id="prot_74"/>
+        <Protein accession="P76268" id="prot_75"/>
+        <Protein accession="P76128" id="prot_76"/>
+        <Protein accession="P00934" id="prot_77"/>
+        <Protein accession="P77398" id="prot_78"/>
+        <Protein accession="P33599" id="prot_79"/>
+        <Protein accession="P07004" id="prot_80"/>
+        <Protein accession="P0A6G7" id="prot_81"/>
+        <Protein accession="P07003" id="prot_82"/>
+        <Protein accession="P25665" id="prot_83"/>
+        <Protein accession="rev_P33226" id="prot_84"/>
+        <Protein accession="P0ABB4" id="prot_85"/>
+        <Protein accession="P77258" id="prot_86"/>
+        <Protein accession="P08506" id="prot_87"/>
+        <Protein accession="P0ABB0" id="prot_88"/>
+        <Protein accession="P0A6H1" id="prot_89"/>
+        <Protein accession="P0AFA7" id="prot_90"/>
+        <Protein accession="P0ADB1" id="prot_91"/>
+        <Protein accession="P0A7L0" id="prot_92"/>
+        <Protein accession="P0A7L3" id="prot_93"/>
+        <Protein accession="P0ADB7" id="prot_94"/>
+        <Protein accession="P0A7L8" id="prot_95"/>
+        <Protein accession="P60906" id="prot_96"/>
+        <Protein accession="P00946" id="prot_97"/>
+        <Protein accession="P0ABA6" id="prot_98"/>
+        <Protein accession="P77243" id="prot_99"/>
+        <Protein accession="P0A6H5" id="prot_100"/>
+        <Protein accession="P0ABA0" id="prot_101"/>
+        <Protein accession="P76116" id="prot_102"/>
+        <Protein accession="P0ADA3" id="prot_103"/>
+        <Protein accession="P29012" id="prot_104"/>
+        <Protein accession="P39451" id="prot_105"/>
+        <Protein accession="P0A7M2" id="prot_106"/>
+        <Protein accession="P77395" id="prot_107"/>
+        <Protein accession="P0A7M6" id="prot_108"/>
+        <Protein accession="P35340" id="prot_109"/>
+        <Protein accession="P00954" id="prot_110"/>
+        <Protein accession="P28635" id="prot_111"/>
+        <Protein accession="P00956" id="prot_112"/>
+        <Protein accession="P00957" id="prot_113"/>
+        <Protein accession="P00959" id="prot_114"/>
+        <Protein accession="rev_P0AC62" id="prot_115"/>
+        <Protein accession="P60723" id="prot_116"/>
+        <Protein accession="P27248" id="prot_117"/>
+        <Protein accession="P0A7J3" id="prot_118"/>
+        <Protein accession="P21507" id="prot_119"/>
+        <Protein accession="P00968" id="prot_120"/>
+        <Protein accession="P0A7J7" id="prot_121"/>
+        <Protein accession="rev_P0A9Q7" id="prot_122"/>
+        <Protein accession="P00960" id="prot_123"/>
+        <Protein accession="P0A6J8" id="prot_124"/>
+        <Protein accession="P30843" id="prot_125"/>
+        <Protein accession="P0A6J5" id="prot_126"/>
+        <Protein accession="P00963" id="prot_127"/>
+        <Protein accession="P31979" id="prot_128"/>
+        <Protein accession="P00961" id="prot_129"/>
+        <Protein accession="P00962" id="prot_130"/>
+        <Protein accession="P77775" id="prot_131"/>
+        <Protein accession="P07913" id="prot_132"/>
+        <Protein accession="P77774" id="prot_133"/>
+        <Protein accession="P21513" id="prot_134"/>
+        <Protein accession="P00864" id="prot_135"/>
+        <Protein accession="P52697" id="prot_136"/>
+        <Protein accession="P0A7K2" id="prot_137"/>
+        <Protein accession="P31120" id="prot_138"/>
+        <Protein accession="P33570" id="prot_139"/>
+        <Protein accession="P77674" id="prot_140"/>
+        <Protein accession="P33363" id="prot_141"/>
+        <Protein accession="P64451" id="prot_142"/>
+        <Protein accession="P0AAT9" id="prot_143"/>
+        <Protein accession="P0AFE0" id="prot_144"/>
+        <Protein accession="P0A9Q9" id="prot_145"/>
+        <Protein accession="P77552" id="prot_146"/>
+        <Protein accession="P0AB55" id="prot_147"/>
+        <Protein accession="P76558" id="prot_148"/>
+        <Protein accession="P0AFE8" id="prot_149"/>
+        <Protein accession="P37095" id="prot_150"/>
+        <Protein accession="P0AA16" id="prot_151"/>
+        <Protein accession="P17315" id="prot_152"/>
+        <Protein accession="P11447" id="prot_153"/>
+        <Protein accession="P21367" id="prot_154"/>
+        <Protein accession="P30859" id="prot_155"/>
+        <Protein accession="P56262" id="prot_156"/>
+        <Protein accession="P0C0S1" id="prot_157"/>
+        <Protein accession="P25437" id="prot_158"/>
+        <Protein accession="P30850" id="prot_159"/>
+        <Protein accession="P0A8R0" id="prot_160"/>
+        <Protein accession="P61517" id="prot_161"/>
+        <Protein accession="P69428" id="prot_162"/>
+        <Protein accession="P11557" id="prot_163"/>
+        <Protein accession="P02931" id="prot_164"/>
+        <Protein accession="P0AFF6" id="prot_165"/>
+        <Protein accession="P02930" id="prot_166"/>
+        <Protein accession="P0C037" id="prot_167"/>
+        <Protein accession="P76372" id="prot_168"/>
+        <Protein accession="P31142" id="prot_169"/>
+        <Protein accession="Q57261" id="prot_170"/>
+        <Protein accession="P69441" id="prot_171"/>
+        <Protein accession="P77541" id="prot_172"/>
+        <Protein accession="P0AFF2" id="prot_173"/>
+        <Protein accession="P11454" id="prot_174"/>
+        <Protein accession="P05042" id="prot_175"/>
+        <Protein accession="P16700" id="prot_176"/>
+        <Protein accession="P68699" id="prot_177"/>
+        <Protein accession="P0AA04" id="prot_178"/>
+        <Protein accession="P32678" id="prot_179"/>
+        <Protein accession="P42593" id="prot_180"/>
+        <Protein accession="P31554" id="prot_181"/>
+        <Protein accession="P0AC86" id="prot_182"/>
+        <Protein accession="P0AA10" id="prot_183"/>
+        <Protein accession="P0AGJ9" id="prot_184"/>
+        <Protein accession="P31550" id="prot_185"/>
+        <Protein accession="P17993" id="prot_186"/>
+        <Protein accession="P60390" id="prot_187"/>
+        <Protein accession="P0A940" id="prot_188"/>
+        <Protein accession="P62707" id="prot_189"/>
+        <Protein accession="P69451" id="prot_190"/>
+        <Protein accession="P76578" id="prot_191"/>
+        <Protein accession="P0AFC3" id="prot_192"/>
+        <Protein accession="Cntm_P04264" id="prot_193"/>
+        <Protein accession="P02925" id="prot_194"/>
+        <Protein accession="P04079" id="prot_195"/>
+        <Protein accession="P05055" id="prot_196"/>
+        <Protein accession="P62399" id="prot_197"/>
+        <Protein accession="P0A915" id="prot_198"/>
+        <Protein accession="P0A917" id="prot_199"/>
+        <Protein accession="P0A912" id="prot_200"/>
+        <Protein accession="P0A9T0" id="prot_201"/>
+        <Protein accession="P25553" id="prot_202"/>
+        <Protein accession="P0AGK8" id="prot_203"/>
+        <Protein accession="Q46845" id="prot_204"/>
+        <Protein accession="P39325" id="prot_205"/>
+        <Protein accession="P0A9T4" id="prot_206"/>
+        <Protein accession="P0A910" id="prot_207"/>
+        <Protein accession="P77330" id="prot_208"/>
+        <Protein accession="P76373" id="prot_209"/>
+        <Protein accession="P0AB24" id="prot_210"/>
+        <Protein accession="P0C018" id="prot_211"/>
+        <Protein accession="P76585" id="prot_212"/>
+        <Protein accession="P33920" id="prot_213"/>
+        <Protein accession="P77522" id="prot_214"/>
+        <Protein accession="P41409" id="prot_215"/>
+        <Protein accession="P0ABZ6" id="prot_216"/>
+        <Protein accession="P77529" id="prot_217"/>
+        <Protein accession="P0AA25" id="prot_218"/>
+        <Protein accession="P0AED0" id="prot_219"/>
+        <Protein accession="P39342" id="prot_220"/>
+        <Protein accession="P0A927" id="prot_221"/>
+        <Protein accession="P0A9U3" id="prot_222"/>
+        <Protein accession="Q46857" id="prot_223"/>
+        <Protein accession="P61320" id="prot_224"/>
+        <Protein accession="P41407" id="prot_225"/>
+        <Protein accession="P77454" id="prot_226"/>
+        <Protein accession="P0AEE1" id="prot_227"/>
+        <Protein accession="Q46871" id="prot_228"/>
+        <Protein accession="P0AEE5" id="prot_229"/>
+        <Protein accession="P0AC62" id="prot_230"/>
+        <Protein accession="P0ABU2" id="prot_231"/>
+        <Protein accession="P0AFI7" id="prot_232"/>
+        <Protein accession="P17952" id="prot_233"/>
+        <Protein accession="P0ACY1" id="prot_234"/>
+        <Protein accession="P02359" id="prot_235"/>
+        <Protein accession="P02358" id="prot_236"/>
+        <Protein accession="P0AGE9" id="prot_237"/>
+        <Protein accession="P0A8V2" id="prot_238"/>
+        <Protein accession="P0AC53" id="prot_239"/>
+        <Protein accession="P77318" id="prot_240"/>
+        <Protein accession="P0AC59" id="prot_241"/>
+        <Protein accession="P0A9V1" id="prot_242"/>
+        <Protein accession="P0ABT2" id="prot_243"/>
+        <Protein accession="P77444" id="prot_244"/>
+        <Protein accession="P23917" id="prot_245"/>
+        <Protein accession="P0ACX3" id="prot_246"/>
+        <Protein accession="P0AB89" id="prot_247"/>
+        <Protein accession="P0A8W2" id="prot_248"/>
+        <Protein accession="P0C0V0" id="prot_249"/>
+        <Protein accession="P22259" id="prot_250"/>
+        <Protein accession="P13029" id="prot_251"/>
+        <Protein accession="P0A7D4" id="prot_252"/>
+        <Protein accession="P0AB91" id="prot_253"/>
+        <Protein accession="P22256" id="prot_254"/>
+        <Protein accession="P0ACW6" id="prot_255"/>
+        <Protein accession="P0AC44" id="prot_256"/>
+        <Protein accession="P0A7D7" id="prot_257"/>
+        <Protein accession="P0A8W8" id="prot_258"/>
+        <Protein accession="P0A9W3" id="prot_259"/>
+        <Protein accession="P39377" id="prot_260"/>
+        <Protein accession="P22634" id="prot_261"/>
+        <Protein accession="P0AC81" id="prot_262"/>
+        <Protein accession="P0AFG3" id="prot_263"/>
+        <Protein accession="P61714" id="prot_264"/>
+        <Protein accession="P0AB77" id="prot_265"/>
+        <Protein accession="P31663" id="prot_266"/>
+        <Protein accession="P04425" id="prot_267"/>
+        <Protein accession="P27302" id="prot_268"/>
+        <Protein accession="P0AFG6" id="prot_269"/>
+        <Protein accession="P31660" id="prot_270"/>
+        <Protein accession="P27306" id="prot_271"/>
+        <Protein accession="P0AFG8" id="prot_272"/>
+        <Protein accession="P0A951" id="prot_273"/>
+        <Protein accession="P0AB80" id="prot_274"/>
+        <Protein accession="P11875" id="prot_275"/>
+        <Protein accession="P37685" id="prot_276"/>
+        <Protein accession="P0A953" id="prot_277"/>
+        <Protein accession="P77581" id="prot_278"/>
+        <Protein accession="P0A6A8" id="prot_279"/>
+        <Protein accession="P0AFG0" id="prot_280"/>
+        <Protein accession="P38521" id="prot_281"/>
+        <Protein accession="P0A955" id="prot_282"/>
+        <Protein accession="P0A9X4" id="prot_283"/>
+        <Protein accession="P0A6A3" id="prot_284"/>
+        <Protein accession="P0A8T7" id="prot_285"/>
+        <Protein accession="P68679" id="prot_286"/>
+        <Protein accession="P39389" id="prot_287"/>
+        <Protein accession="P21599" id="prot_288"/>
+        <Protein accession="P31677" id="prot_289"/>
+        <Protein accession="P0AEH5" id="prot_290"/>
+        <Protein accession="P28304" id="prot_291"/>
+        <Protein accession="P02769" id="prot_292"/>
+        <Protein accession="P21499" id="prot_293"/>
+        <Protein accession="P37666" id="prot_294"/>
+        <Protein accession="P0AFH8" id="prot_295"/>
+        <Protein accession="P37665" id="prot_296"/>
+        <Protein accession="P68066" id="prot_297"/>
+        <Protein accession="P0A7B1" id="prot_298"/>
+        <Protein accession="P0AB71" id="prot_299"/>
+        <Protein accession="P0A6B7" id="prot_300"/>
+        <Protein accession="P13009" id="prot_301"/>
+        <Protein accession="P61175" id="prot_302"/>
+        <Protein accession="P69411" id="prot_303"/>
+        <Protein accession="P0ACU7" id="prot_304"/>
+        <Protein accession="P0A7B8" id="prot_305"/>
+        <Protein accession="P67910" id="prot_306"/>
+        <Protein accession="P0AC69" id="prot_307"/>
+        <Protein accession="P0ABU9" id="prot_308"/>
+        <Protein accession="P09029" id="prot_309"/>
+        <Protein accession="P0A7B5" id="prot_310"/>
+        <Protein accession="P0ABU5" id="prot_311"/>
+        <Protein accession="P00363" id="prot_312"/>
+        <Protein accession="P77173" id="prot_313"/>
+        <Protein accession="P76402" id="prot_314"/>
+        <Protein accession="P09169" id="prot_315"/>
+        <Protein accession="P0AAI9" id="prot_316"/>
+        <Protein accession="P0AAI5" id="prot_317"/>
+        <Protein accession="P0A763" id="prot_318"/>
+        <Protein accession="P36683" id="prot_319"/>
+        <Protein accession="P0A9J6" id="prot_320"/>
+        <Protein accession="P23839" id="prot_321"/>
+        <Protein accession="P0AAI3" id="prot_322"/>
+        <Protein accession="P39180" id="prot_323"/>
+        <Protein accession="P0A8J8" id="prot_324"/>
+        <Protein accession="P09551" id="prot_325"/>
+        <Protein accession="P0A6U8" id="prot_326"/>
+        <Protein accession="P00370" id="prot_327"/>
+        <Protein accession="P75691" id="prot_328"/>
+        <Protein accession="P00562" id="prot_329"/>
+        <Protein accession="P45523" id="prot_330"/>
+        <Protein accession="P00561" id="prot_331"/>
+        <Protein accession="P23830" id="prot_332"/>
+        <Protein accession="P0A698" id="prot_333"/>
+        <Protein accession="P00452" id="prot_334"/>
+        <Protein accession="P06999" id="prot_335"/>
+        <Protein accession="P04036" id="prot_336"/>
+        <Protein accession="P76536" id="prot_337"/>
+        <Protein accession="P62768" id="prot_338"/>
+        <Protein accession="P23538" id="prot_339"/>
+        <Protein accession="P0ADV7" id="prot_340"/>
+        <Protein accession="P0A6T1" id="prot_341"/>
+        <Protein accession="P10121" id="prot_342"/>
+        <Protein accession="P39177" id="prot_343"/>
+        <Protein accession="P0A6T3" id="prot_344"/>
+        <Protein accession="P23827" id="prot_345"/>
+        <Protein accession="P0ADW3" id="prot_346"/>
+        <Protein accession="P0A6T5" id="prot_347"/>
+        <Protein accession="P0A759" id="prot_348"/>
+        <Protein accession="P0A6T9" id="prot_349"/>
+        <Protein accession="P0ABN5" id="prot_350"/>
+        <Protein accession="P0A7X3" id="prot_351"/>
+        <Protein accession="P00550" id="prot_352"/>
+        <Protein accession="P39173" id="prot_353"/>
+        <Protein accession="P0A8I3" id="prot_354"/>
+        <Protein accession="P23173" id="prot_355"/>
+        <Protein accession="P33602" id="prot_356"/>
+        <Protein accession="P0AEL6" id="prot_357"/>
+        <Protein accession="P10378" id="prot_358"/>
+        <Protein accession="P0A780" id="prot_359"/>
+        <Protein accession="P0AD49" id="prot_360"/>
+        <Protein accession="P0ADS6" id="prot_361"/>
+        <Protein accession="P76422" id="prot_362"/>
+        <Protein accession="P69776" id="prot_363"/>
+        <Protein accession="P0A6W9" id="prot_364"/>
+        <Protein accession="P0A786" id="prot_365"/>
+        <Protein accession="P69783" id="prot_366"/>
+        <Protein accession="P00490" id="prot_367"/>
+        <Protein accession="P76621" id="prot_368"/>
+        <Protein accession="P37626" id="prot_369"/>
+        <Protein accession="P61889" id="prot_370"/>
+        <Protein accession="P0A884" id="prot_371"/>
+        <Protein accession="P0A7W1" id="prot_372"/>
+        <Protein accession="P0A7W7" id="prot_373"/>
+        <Protein accession="P0ABK2" id="prot_374"/>
+        <Protein accession="P00350" id="prot_375"/>
+        <Protein accession="P0ABK5" id="prot_376"/>
+        <Protein accession="P0AEK2" id="prot_377"/>
+        <Protein accession="P22188" id="prot_378"/>
+        <Protein accession="P0AEK4" id="prot_379"/>
+        <Protein accession="P0A9L3" id="prot_380"/>
+        <Protein accession="P0ADT8" id="prot_381"/>
+        <Protein accession="P0AFK0" id="prot_382"/>
+        <Protein accession="P10384" id="prot_383"/>
+        <Protein accession="P17169" id="prot_384"/>
+        <Protein accession="P0AE52" id="prot_385"/>
+        <Protein accession="P0A7V8" id="prot_386"/>
+        <Protein accession="P0A9K9" id="prot_387"/>
+        <Protein accession="P0A6V8" id="prot_388"/>
+        <Protein accession="P0A6V1" id="prot_389"/>
+        <Protein accession="P10100" id="prot_390"/>
+        <Protein accession="P0A9K3" id="prot_391"/>
+        <Protein accession="P0A7V0" id="prot_392"/>
+        <Protein accession="P0A870" id="prot_393"/>
+        <Protein accession="P09373" id="prot_394"/>
+        <Protein accession="P09372" id="prot_395"/>
+        <Protein accession="P0A7V3" id="prot_396"/>
+        <Protein accession="P0A8G6" id="prot_397"/>
+        <Protein accession="P0AD61" id="prot_398"/>
+        <Protein accession="P69797" id="prot_399"/>
+        <Protein accession="P09127" id="prot_400"/>
+        <Protein accession="P18335" id="prot_401"/>
+        <Protein accession="P0A6Y1" id="prot_402"/>
+        <Protein accession="P0A905" id="prot_403"/>
+        <Protein accession="P0ADQ7" id="prot_404"/>
+        <Protein accession="P0AEN8" id="prot_405"/>
+        <Protein accession="P25526" id="prot_406"/>
+        <Protein accession="P0AG30" id="prot_407"/>
+        <Protein accession="P25522" id="prot_408"/>
+        <Protein accession="P0AFR4" id="prot_409"/>
+        <Protein accession="P0A903" id="prot_410"/>
+        <Protein accession="P0A6Y5" id="prot_411"/>
+        <Protein accession="Cntm_P00761" id="prot_412"/>
+        <Protein accession="P0ABQ2" id="prot_413"/>
+        <Protein accession="P0A6Y8" id="prot_414"/>
+        <Protein accession="P0AC26" id="prot_415"/>
+        <Protein accession="P0A9N4" id="prot_416"/>
+        <Protein accession="P75914" id="prot_417"/>
+        <Protein accession="P05825" id="prot_418"/>
+        <Protein accession="P0ABS1" id="prot_419"/>
+        <Protein accession="P0AC41" id="prot_420"/>
+        <Protein accession="P0ACN4" id="prot_421"/>
+        <Protein accession="P75913" id="prot_422"/>
+        <Protein accession="P0A8N5" id="prot_423"/>
+        <Protein accession="P0A8N3" id="prot_424"/>
+        <Protein accession="P0AE37" id="prot_425"/>
+        <Protein accession="P02413" id="prot_426"/>
+        <Protein accession="P33195" id="prot_427"/>
+        <Protein accession="P0ADR8" id="prot_428"/>
+        <Protein accession="P62620" id="prot_429"/>
+        <Protein accession="P0AG20" id="prot_430"/>
+        <Protein accession="P09394" id="prot_431"/>
+        <Protein accession="P0A794" id="prot_432"/>
+        <Protein accession="P39831" id="prot_433"/>
+        <Protein accession="P0A9M8" id="prot_434"/>
+        <Protein accession="P06129" id="prot_435"/>
+        <Protein accession="P0AC33" id="prot_436"/>
+        <Protein accession="P0A796" id="prot_437"/>
+        <Protein accession="P23869" id="prot_438"/>
+        <Protein accession="P0AC38" id="prot_439"/>
+        <Protein accession="P0A6X7" id="prot_440"/>
+        <Protein accession="P0A799" id="prot_441"/>
+        <Protein accession="P0A9Q5" id="prot_442"/>
+        <Protein accession="P09148" id="prot_443"/>
+        <Protein accession="P0AE01" id="prot_444"/>
+        <Protein accession="P0A9Q7" id="prot_445"/>
+        <Protein accession="P0A9Q1" id="prot_446"/>
+        <Protein accession="P0AG14" id="prot_447"/>
+        <Protein accession="P30139" id="prot_448"/>
+        <Protein accession="P38038" id="prot_449"/>
+        <Protein accession="P0AF12" id="prot_450"/>
+        <Protein accession="P30138" id="prot_451"/>
+        <Protein accession="P0AG16" id="prot_452"/>
+        <Protein accession="P0AEP3" id="prot_453"/>
+        <Protein accession="P30137" id="prot_454"/>
+        <Protein accession="P30136" id="prot_455"/>
+        <Protein accession="P0AE08" id="prot_456"/>
+        <Protein accession="P0A8M0" id="prot_457"/>
+        <Protein accession="P16456" id="prot_458"/>
+        <Protein accession="P0AF18" id="prot_459"/>
+        <Protein accession="P0A8M3" id="prot_460"/>
+        <Protein accession="P0AE06" id="prot_461"/>
+        <Protein accession="P00448" id="prot_462"/>
+        <Protein accession="P24171" id="prot_463"/>
+        <Protein accession="P0AC02" id="prot_464"/>
+        <Protein accession="P0A6Z1" id="prot_465"/>
+        <Protein accession="P18843" id="prot_466"/>
+        <Protein accession="P0A6Z3" id="prot_467"/>
+        <Protein accession="P64604" id="prot_468"/>
+        <Protein accession="P0A9P4" id="prot_469"/>
+        <Protein accession="P0AE12" id="prot_470"/>
+        <Protein accession="P0A9P0" id="prot_471"/>
+        <Protein accession="P0AG00" id="prot_472"/>
+        <Protein accession="P08390" id="prot_473"/>
+        <Protein accession="P0AE18" id="prot_474"/>
+        <Protein accession="P25516" id="prot_475"/>
+        <Protein accession="P00582" id="prot_476"/>
+        <Protein accession="P0A8L1" id="prot_477"/>
+        <Protein accession="P0AD12" id="prot_478"/>
+        <Protein accession="P76658" id="prot_479"/>
+        <Protein accession="P09546" id="prot_480"/>
+        <Protein accession="P0A7Z4" id="prot_481"/>
+        <Protein accession="P23843" id="prot_482"/>
+        <Protein accession="P32705" id="prot_483"/>
+        <Protein accession="P68919" id="prot_484"/>
+        <Protein accession="P0AC19" id="prot_485"/>
+        <Protein accession="P37194" id="prot_486"/>
+        <Protein accession="P0ABP8" id="prot_487"/>
+        <Protein accession="P00579" id="prot_488"/>
+        <Protein accession="P37051" id="prot_489"/>
+        <Protein accession="P28903" id="prot_490"/>
+        <Protein accession="P23847" id="prot_491"/>
+        <Protein accession="P06149" id="prot_492"/>
+        <Protein accession="P08956" id="prot_493"/>
+        <Protein accession="P0A8B5" id="prot_494"/>
+        <Protein accession="P45464" id="prot_495"/>
+        <Protein accession="Cntm_P35527" id="prot_496"/>
+        <Protein accession="P0A825" id="prot_497"/>
+        <Protein accession="P15254" id="prot_498"/>
+        <Protein accession="P75818" id="prot_499"/>
+        <Protein accession="P23721" id="prot_500"/>
+        <Protein accession="P77739" id="prot_501"/>
+        <Protein accession="P0A9B2" id="prot_502"/>
+        <Protein accession="P0AG80" id="prot_503"/>
+        <Protein accession="P77735" id="prot_504"/>
+        <Protein accession="P07395" id="prot_505"/>
+        <Protein accession="P77737" id="prot_506"/>
+        <Protein accession="P26616" id="prot_507"/>
+        <Protein accession="P0AG78" id="prot_508"/>
+        <Protein accession="P46853" id="prot_509"/>
+        <Protein accession="P08178" id="prot_510"/>
+        <Protein accession="P60438" id="prot_511"/>
+        <Protein accession="P04805" id="prot_512"/>
+        <Protein accession="P28248" id="prot_513"/>
+        <Protein accession="P0ACI0" id="prot_514"/>
+        <Protein accession="P0ACJ8" id="prot_515"/>
+        <Protein accession="P64429" id="prot_516"/>
+        <Protein accession="P21645" id="prot_517"/>
+        <Protein accession="P43329" id="prot_518"/>
+        <Protein accession="P0A8A4" id="prot_519"/>
+        <Protein accession="P0A6L2" id="prot_520"/>
+        <Protein accession="P0A6L0" id="prot_521"/>
+        <Protein accession="P24182" id="prot_522"/>
+        <Protein accession="Cntm_P13645" id="prot_523"/>
+        <Protein accession="P0A9A6" id="prot_524"/>
+        <Protein accession="Cntm_P13647" id="prot_525"/>
+        <Protein accession="P0ABF6" id="prot_526"/>
+        <Protein accession="P0A9A9" id="prot_527"/>
+        <Protein accession="P10423" id="prot_528"/>
+        <Protein accession="P0AG63" id="prot_529"/>
+        <Protein accession="P0A6K6" id="prot_530"/>
+        <Protein accession="P0AG67" id="prot_531"/>
+        <Protein accession="P0AF28" id="prot_532"/>
+        <Protein accession="P0AFU8" id="prot_533"/>
+        <Protein accession="P0AF24" id="prot_534"/>
+        <Protein accession="P0AEQ3" id="prot_535"/>
+        <Protein accession="P0ADN0" id="prot_536"/>
+        <Protein accession="P0ACJ0" id="prot_537"/>
+        <Protein accession="P0ADN2" id="prot_538"/>
+        <Protein accession="P75800" id="prot_539"/>
+        <Protein accession="P27298" id="prot_540"/>
+        <Protein accession="P36938" id="prot_541"/>
+        <Protein accession="P0A9D2" id="prot_542"/>
+        <Protein accession="P0A805" id="prot_543"/>
+        <Protein accession="P15639" id="prot_544"/>
+        <Protein accession="P0AAC0" id="prot_545"/>
+        <Protein accession="P77757" id="prot_546"/>
+        <Protein accession="P0A707" id="prot_547"/>
+        <Protein accession="P0A9D8" id="prot_548"/>
+        <Protein accession="P23893" id="prot_549"/>
+        <Protein accession="P38489" id="prot_550"/>
+        <Protein accession="P0A705" id="prot_551"/>
+        <Protein accession="P23894" id="prot_552"/>
+        <Protein accession="P15640" id="prot_553"/>
+        <Protein accession="P30177" id="prot_554"/>
+        <Protein accession="P0AG55" id="prot_555"/>
+        <Protein accession="P30178" id="prot_556"/>
+        <Protein accession="P0ABC7" id="prot_557"/>
+        <Protein accession="P0AET8" id="prot_558"/>
+        <Protein accession="P0AG51" id="prot_559"/>
+        <Protein accession="P0ABC3" id="prot_560"/>
+        <Protein accession="P0ADK0" id="prot_561"/>
+        <Protein accession="P0A7N9" id="prot_562"/>
+        <Protein accession="P15034" id="prot_563"/>
+        <Protein accession="P0AG59" id="prot_564"/>
+        <Protein accession="P19926" id="prot_565"/>
+        <Protein accession="P04951" id="prot_566"/>
+        <Protein accession="P40191" id="prot_567"/>
+        <Protein accession="P15038" id="prot_568"/>
+        <Protein accession="P0A7N4" id="prot_569"/>
+        <Protein accession="P0A6N8" id="prot_570"/>
+        <Protein accession="P0A9C3" id="prot_571"/>
+        <Protein accession="P0A6N4" id="prot_572"/>
+        <Protein accession="P0A6N1" id="prot_573"/>
+        <Protein accession="P0A9C5" id="prot_574"/>
+        <Protein accession="P0ABD8" id="prot_575"/>
+        <Protein accession="P05791" id="prot_576"/>
+        <Protein accession="P0AG44" id="prot_577"/>
+        <Protein accession="P05793" id="prot_578"/>
+        <Protein accession="P0ABD3" id="prot_579"/>
+        <Protein accession="P0A6M8" id="prot_580"/>
+        <Protein accession="P0ABD5" id="prot_581"/>
+        <Protein accession="P0AES0" id="prot_582"/>
+        <Protein accession="P60560" id="prot_583"/>
+        <Protein accession="P0A7M9" id="prot_584"/>
+        <Protein accession="P60422" id="prot_585"/>
+        <Protein accession="P15047" id="prot_586"/>
+        <Protein accession="P0AES4" id="prot_587"/>
+        <Protein accession="P0AAD8" id="prot_588"/>
+        <Protein accession="P0AES6" id="prot_589"/>
+        <Protein accession="P0AG48" id="prot_590"/>
+        <Protein accession="Q47146" id="prot_591"/>
+        <Protein accession="P0A7U3" id="prot_592"/>
+        <Protein accession="P69811" id="prot_593"/>
+        <Protein accession="P0A862" id="prot_594"/>
+        <Protein accession="P0A8F0" id="prot_595"/>
+        <Protein accession="P09323" id="prot_596"/>
+        <Protein accession="P0ACE7" id="prot_597"/>
+        <Protein accession="P06971" id="prot_598"/>
+        <Protein accession="P0AAE0" id="prot_599"/>
+        <Protein accession="P0A867" id="prot_600"/>
+        <Protein accession="P0A7U7" id="prot_601"/>
+        <Protein accession="P0A6Q3" id="prot_602"/>
+        <Protein accession="P37903" id="prot_603"/>
+        <Protein accession="P0ABI8" id="prot_604"/>
+        <Protein accession="P0ADI4" id="prot_605"/>
+        <Protein accession="P37902" id="prot_606"/>
+        <Protein accession="P0A855" id="prot_607"/>
+        <Protein accession="P0A715" id="prot_608"/>
+        <Protein accession="P0ABJ1" id="prot_609"/>
+        <Protein accession="P60785" id="prot_610"/>
+        <Protein accession="P0A7T3" id="prot_611"/>
+        <Protein accession="P0A853" id="prot_612"/>
+        <Protein accession="P0A6P9" id="prot_613"/>
+        <Protein accession="P0A850" id="prot_614"/>
+        <Protein accession="P0A8E1" id="prot_615"/>
+        <Protein accession="P45577" id="prot_616"/>
+        <Protein accession="P0A6P7" id="prot_617"/>
+        <Protein accession="P0A717" id="prot_618"/>
+        <Protein accession="P45578" id="prot_619"/>
+        <Protein accession="P0ACF8" id="prot_620"/>
+        <Protein accession="P0AF70" id="prot_621"/>
+        <Protein accession="P0A8E7" id="prot_622"/>
+        <Protein accession="P0A6P1" id="prot_623"/>
+        <Protein accession="P0A858" id="prot_624"/>
+        <Protein accession="P0ACF4" id="prot_625"/>
+        <Protein accession="P0A7T7" id="prot_626"/>
+        <Protein accession="P69805" id="prot_627"/>
+        <Protein accession="P0ACF0" id="prot_628"/>
+        <Protein accession="P0AEU7" id="prot_629"/>
+        <Protein accession="P63284" id="prot_630"/>
+        <Protein accession="P08331" id="prot_631"/>
+        <Protein accession="P0ABJ9" id="prot_632"/>
+        <Protein accession="P0A6S7" id="prot_633"/>
+        <Protein accession="P0A746" id="prot_634"/>
+        <Protein accession="P0A749" id="prot_635"/>
+        <Protein accession="P0A7S3" id="prot_636"/>
+        <Protein accession="P60651" id="prot_637"/>
+        <Protein accession="P0A744" id="prot_638"/>
+        <Protein accession="P0A7S9" id="prot_639"/>
+        <Protein accession="P00803" id="prot_640"/>
+        <Protein accession="P0A6S0" id="prot_641"/>
+        <Protein accession="P32132" id="prot_642"/>
+        <Protein accession="P0ACG1" id="prot_643"/>
+        <Protein accession="P04825" id="prot_644"/>
+        <Protein accession="P08200" id="prot_645"/>
+        <Protein accession="P08839" id="prot_646"/>
+        <Protein accession="P0AFX4" id="prot_647"/>
+        <Protein accession="P0A9G8" id="prot_648"/>
+        <Protein accession="P0A8C1" id="prot_649"/>
+        <Protein accession="P0A7R1" id="prot_650"/>
+        <Protein accession="P0A830" id="prot_651"/>
+        <Protein accession="P0A734" id="prot_652"/>
+        <Protein accession="P0A836" id="prot_653"/>
+        <Protein accession="P63020" id="prot_654"/>
+        <Protein accession="P0A7R5" id="prot_655"/>
+        <Protein accession="P0A9G6" id="prot_656"/>
+        <Protein accession="P15288" id="prot_657"/>
+        <Protein accession="P0A6R0" id="prot_658"/>
+        <Protein accession="P0AF93" id="prot_659"/>
+        <Protein accession="P0A7R9" id="prot_660"/>
+        <Protein accession="P75823" id="prot_661"/>
+        <Protein accession="P08312" id="prot_662"/>
+        <Protein accession="P0AG86" id="prot_663"/>
+        <Protein accession="P0ABH7" id="prot_664"/>
+        <Protein accession="P0AG84" id="prot_665"/>
+        <Protein accession="P0ABH9" id="prot_666"/>
+        <AssayQuantLayer id="Prot_Assay_QL1">
+            <DataType>
+                <cvParam accession="MS:000000" cvRef="PSI-MS" name="APEX (all replicates)"/>
+            </DataType>
+            <ColumnIndex>ass_0 ass_1 ass_2 ass_3 ass_4 ass_5 ass_6 ass_7 ass_8 ass_9</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="prot_0">0.001742505 0.00796675 0.00566984 0.009953042 0.001643705 0.010063938 0.009629142 0.009939963 0.012452844 0.009687633</Row>
+                <Row object_ref="prot_1">0.001295678 0.0 0.0 0.001059334 0.0 0.0 0.0 7.11E-4 0.0 5.78E-4</Row>
+                <Row object_ref="prot_2">0.0 0.0 0.0 0.0 0.0 0.0 4.59E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_3">8.81E-4 0.002718246 0.001379786 0.0 0.0 0.0 0.002448787 0.0 8.45E-4 0.001230968</Row>
+                <Row object_ref="prot_4">0.0 0.0 9.96E-4 0.0 0.0 8.96E-4 0.0 6.1E-4 0.0 6.51E-4</Row>
+                <Row object_ref="prot_5">7.34E-4 0.0023916 0.003094028 0.002271491 0.002452986 0.001825145 0.001746116 0.002263964 0.00182806 0.001301116</Row>
+                <Row object_ref="prot_6">0.0 0.001761055 0.001643321 0.0 0.0 0.0 0.0 0.0 5.71E-4 0.001567122</Row>
+                <Row object_ref="prot_7">9.56E-4 0.0 0.0 0.002569789 0.001204249 0.0 0.0 0.001726829 0.002450792 0.002070556</Row>
+                <Row object_ref="prot_8">0.0 0.0 0.0 0.0 4.04E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_9">0.0 0.0 0.0 6.71E-4 4.84E-4 0.0 0.0 0.001199268 4.73E-4 0.0</Row>
+                <Row object_ref="prot_10">9.8E-4 9.18E-4 9.53E-4 0.002590504 9.24E-4 8.55E-4 0.001655787 0.001713879 8.63E-4 8.31E-4</Row>
+                <Row object_ref="prot_11">0.0 0.0 0.0 0.0 0.0 6.67E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_12">0.0 0.0 0.001116398 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_13">6.79E-4 0.0 0.0 8.73E-4 0.0 2.38E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_14">0.0 0.0 0.0 2.13E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_15">0.0 0.0 0.0 0.0 0.0 0.0 0.0 9.01E-4 0.0 0.0</Row>
+                <Row object_ref="prot_16">0.001761886 0.002387559 3.61E-4 0.003344547 0.002404483 9.66E-4 7.99E-4 9.39E-4 0.0 0.0</Row>
+                <Row object_ref="prot_17">0.001228574 0.0 0.003695113 0.002117061 0.003490813 0.0 3.07E-4 2.4E-4 2.75E-4 8.62E-4</Row>
+                <Row object_ref="prot_18">0.0 0.0 0.0 0.0 0.0 0.0 0.001660246 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_19">0.00127218 0.001130989 0.001817951 0.001582574 0.001712117 5.29E-4 0.001526325 3.76E-4 0.001601319 0.001544086</Row>
+                <Row object_ref="prot_20">0.0 0.0 0.0 0.001824872 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_21">0.0 0.00707554 0.005014887 6.86E-4 0.0 6.74E-4 0.003248888 0.002188692 0.006353859 0.0</Row>
+                <Row object_ref="prot_22">0.004418192 0.001970806 9.48E-4 8.19E-4 0.00297359 0.0 0.0 8.18E-4 0.001700298 8.78E-4</Row>
+                <Row object_ref="prot_23">0.0 0.001613224 0.001834695 0.001582046 5.73E-4 0.0 0.0 0.001266297 0.001661499 0.001435758</Row>
+                <Row object_ref="prot_24">0.0 0.0 0.0 0.0 0.0 0.0 0.0 2.27E-4 0.0 0.0</Row>
+                <Row object_ref="prot_25">0.0 0.001374742 5.49E-4 7.79E-4 0.0 5.24E-4 0.0 8.81E-4 4.78E-4 0.0</Row>
+                <Row object_ref="prot_26">0.00495802 0.0029138 0.004676591 0.004090731 0.0014662 0.005498533 0.003946128 0.004074321 0.004114784 0.002648321</Row>
+                <Row object_ref="prot_27">0.0 5.84E-4 0.001279713 0.0 0.0 2.4E-4 0.0 0.0 3.52E-4 0.0</Row>
+                <Row object_ref="prot_28">0.0 0.0 0.0 0.0 0.0 0.0 8.73E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_29">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 6.7E-4 0.0</Row>
+                <Row object_ref="prot_30">8.65E-4 8.84E-4 7.01E-4 8.28E-4 8.96E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_31">0.0 0.0 0.003040296 0.001766742 0.0 0.0 3.06E-4 2.93E-4 0.00169749 2.18E-4</Row>
+                <Row object_ref="prot_32">0.0 0.006121662 0.005988682 0.0 0.0 0.002393869 0.0 0.0 0.0 0.001861051</Row>
+                <Row object_ref="prot_33">0.0 0.0 4.15E-4 0.0 4.39E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_34">0.003958892 0.003493781 0.004667253 0.004899075 0.005286812 1.97E-4 7.84E-4 8.06E-4 0.001555472 0.0</Row>
+                <Row object_ref="prot_35">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.7E-4</Row>
+                <Row object_ref="prot_36">0.001500639 2.86E-4 0.002850912 0.002461539 0.001302569 0.001257118 0.001199191 0.001240511 6.36E-4 0.001199316</Row>
+                <Row object_ref="prot_37">0.001512826 0.001005369 0.001090365 6.38E-4 0.001722489 9.63E-4 2.33E-4 6.05E-4 1.7E-4 1.75E-4</Row>
+                <Row object_ref="prot_38">0.004472057 0.007871859 0.003850034 0.001788131 0.003989784 0.00372715 0.007132962 0.004826374 0.003721889 0.005385449</Row>
+                <Row object_ref="prot_39">0.0 0.0 0.0 0.0 0.004085908 0.0 0.0 0.0 0.003844726 0.001069702</Row>
+                <Row object_ref="prot_40">0.0 0.0 0.0 5.73E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_41">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002571546 0.0 0.0</Row>
+                <Row object_ref="prot_42">0.0 0.0 0.0 0.0 0.0 0.0 0.001193617 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_43">0.0 0.003140978 0.002605055 0.003277821 0.003666858 0.008118268 0.001862866 0.002519845 0.009731902 0.0</Row>
+                <Row object_ref="prot_44">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002595366 0.0 0.0</Row>
+                <Row object_ref="prot_45">6.64E-4 0.001692936 0.001097342 0.001467625 0.0 0.0 0.0 0.002119376 0.003028878 0.0</Row>
+                <Row object_ref="prot_46">0.0 0.0 0.0 0.003758263 0.002102682 8.72E-4 0.0 0.0 0.001584102 0.009899354</Row>
+                <Row object_ref="prot_47">0.0 2.62E-4 1.97E-4 0.0 3.08E-4 1.32E-4 3.78E-4 0.0 3.82E-4 0.001023192</Row>
+                <Row object_ref="prot_48">0.003120231 0.001838711 9.31E-4 8.54E-4 0.002777894 3.51E-4 0.002483666 4.12E-4 0.002592668 0.0</Row>
+                <Row object_ref="prot_49">0.002260218 9.06E-4 9.06E-4 2.79E-4 0.0 0.001983328 0.002925742 0.002013858 0.003054146 0.0</Row>
+                <Row object_ref="prot_50">0.00251912 0.0 0.0 0.0 0.0 0.0 0.0 0.002152008 0.001950349 0.0</Row>
+                <Row object_ref="prot_51">0.001374732 0.003664545 0.003906507 0.001558818 0.0 0.001144371 0.001093172 0.001017268 0.002291474 0.003316019</Row>
+                <Row object_ref="prot_52">0.004833934 0.003421369 0.004559093 0.004785542 0.006025009 0.005628403 0.006924568 0.003971954 0.004015818 0.00309783</Row>
+                <Row object_ref="prot_53">0.003374012 0.003734336 0.004777565 0.003468964 0.002990603 5.13E-4 3.72E-4 0.0 0.0 0.001325426</Row>
+                <Row object_ref="prot_54">0.0 1.69E-4 0.0 6.05E-4 0.0 0.0 5.83E-4 6.05E-4 6.12E-4 5.87E-4</Row>
+                <Row object_ref="prot_55">0.004325656 0.003038901 0.001999632 0.001629787 0.001935515 0.001239291 0.001525987 0.003559008 0.001759706 0.001747002</Row>
+                <Row object_ref="prot_56">0.0 0.0 0.0 0.0 0.0 0.002789488 0.002664965 0.002664105 0.0 0.004033826</Row>
+                <Row object_ref="prot_57">0.005819035 0.003430797 0.003656959 0.003202355 0.00345546 0.003227998 0.003007293 0.00318919 0.004836615 0.00466468</Row>
+                <Row object_ref="prot_58">0.001279561 0.0 9.73E-4 0.001331192 0.001737372 0.001498919 0.001615287 0.0 0.002067461 0.0</Row>
+                <Row object_ref="prot_59">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001163739 0.0 0.0</Row>
+                <Row object_ref="prot_60">0.010185595 0.008582351 0.01097883 0.007202591 0.0064772 0.002420331 0.002701996 7.97E-4 0.00241764 0.002720041</Row>
+                <Row object_ref="prot_61">0.014179166 0.008023511 0.006091779 0.011783731 0.016960227 0.003932825 0.011311474 0.019527505 0.007788062 0.011443105</Row>
+                <Row object_ref="prot_62">0.0 5.25E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_63">0.0 0.0 0.0 0.0 0.0 0.0 0.0 7.4E-4 0.0 0.0</Row>
+                <Row object_ref="prot_64">1.21E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_65">0.0 0.0 0.0 0.0 6.18E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_66">0.0 0.0 5.14E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_67">0.0 9.83E-4 0.00215875 0.0 0.0 0.001408995 7.38E-4 0.001793172 0.0018238 0.0</Row>
+                <Row object_ref="prot_68">1.62E-4 0.001360665 4.41E-4 0.001267398 0.001191484 2.74E-4 7.88E-4 4.41E-4 0.0 4.07E-4</Row>
+                <Row object_ref="prot_69">0.0 0.0 0.005277034 0.0 0.005065036 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_70">0.002763815 7.86E-4 4.37E-4 0.001056581 0.002213516 0.0 4.2E-4 9.18E-4 3.56E-4 0.0</Row>
+                <Row object_ref="prot_71">0.0 0.0 0.0 0.0 0.001088189 0.0 0.002139672 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_72">9.53E-4 0.0 0.0 0.0 0.001100733 8.35E-4 0.001063675 8.04E-4 7.67E-4 0.0</Row>
+                <Row object_ref="prot_73">0.0 0.0 0.0 0.001011544 0.0 0.002215711 0.0 0.004418799 0.002228661 0.0</Row>
+                <Row object_ref="prot_74">0.002658966 0.0 0.0 9.54E-4 0.0 0.004446916 0.004174941 0.0 0.0 0.004275901</Row>
+                <Row object_ref="prot_75">0.0 0.0 0.0 2.05E-4 0.0 3.24E-4 0.0 0.0 2.15E-4 0.0</Row>
+                <Row object_ref="prot_76">0.0 0.0 0.0 0.0 3.75E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_77">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001000887 0.001273466</Row>
+                <Row object_ref="prot_78">0.003964886 0.00421531 0.003744698 0.001965152 0.003533766 0.002637221 0.003791751 0.003914929 0.002638512 0.004453253</Row>
+                <Row object_ref="prot_79">0.002116186 0.001905401 0.00270828 0.001016893 0.002556494 0.001772349 0.002285259 0.001757412 0.002385554 0.001725045</Row>
+                <Row object_ref="prot_80">0.0 0.0 0.0 0.0 0.0 6.28E-4 7.16E-4 8.03E-4 4.98E-4 3.0E-4</Row>
+                <Row object_ref="prot_81">0.005317689 0.0 0.005213716 0.0 0.004898785 0.0 0.004308375 0.004547289 0.004555091 0.004431405</Row>
+                <Row object_ref="prot_82">0.00370571 8.04E-4 0.002632059 0.003071305 8.25E-4 7.69E-4 7.0E-4 0.0 0.0 7.33E-4</Row>
+                <Row object_ref="prot_83">0.002525824 0.002235782 0.002383883 0.002606552 0.002250278 0.003678762 0.003520179 0.003634534 0.002624766 0.003037447</Row>
+                <Row object_ref="prot_84">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.45E-4</Row>
+                <Row object_ref="prot_85">0.004113359 0.003639199 0.003879875 0.005939191 7.82E-4 8.39E-4 0.00409232 0.002534903 0.003414804 0.00411965</Row>
+                <Row object_ref="prot_86">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001952998 8.86E-4</Row>
+                <Row object_ref="prot_87">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 9.41E-4 0.0</Row>
+                <Row object_ref="prot_88">0.004760737 0.004913944 0.005986743 0.004582159 0.006357618 6.51E-4 6.06E-4 0.0 0.001963662 0.001257741</Row>
+                <Row object_ref="prot_89">0.0 0.0 0.0 0.0 4.33E-4 6.32E-4 7.72E-4 0.0 0.001607598 0.00156956</Row>
+                <Row object_ref="prot_90">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001014068</Row>
+                <Row object_ref="prot_91">0.0 0.012755905 0.006791594 0.0 0.012837323 0.0 0.005730203 0.005885544 0.0 0.011520769</Row>
+                <Row object_ref="prot_92">0.005821981 0.001210839 0.001315635 0.002396978 0.00257632 0.002419319 0.001135853 0.003587861 0.001807938 0.0</Row>
+                <Row object_ref="prot_93">0.005853332 0.003030633 0.003968159 0.002815687 0.00191405 0.00323574 0.00308381 0.007221154 0.00543893 0.005212307</Row>
+                <Row object_ref="prot_94">0.0 0.0 0.0 0.015588111 0.0 0.0 0.0 0.0 0.01573961 0.0</Row>
+                <Row object_ref="prot_95">0.0 0.001988043 0.0 0.0 0.0 0.0 9.68E-4 0.0 0.001227439 0.0</Row>
+                <Row object_ref="prot_96">0.0 0.0 0.0 0.0 0.0 0.0 0.0 2.16E-4 3.5E-4 0.0</Row>
+                <Row object_ref="prot_97">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.00178649 0.001275298 0.001779608</Row>
+                <Row object_ref="prot_98">0.0 4.37E-4 6.47E-4 0.001844137 0.0 2.82E-4 0.001808199 8.67E-4 6.5E-4 0.0</Row>
+                <Row object_ref="prot_99">0.002104281 0.002944925 0.003058164 5.93E-4 0.001881926 0.002773904 0.002654327 0.001813508 8.89E-4 0.001781191</Row>
+                <Row object_ref="prot_100">0.002280101 0.0 0.002870153 0.001255422 0.003380861 0.001897454 0.001210803 0.001175363 5.06E-4 0.001219011</Row>
+                <Row object_ref="prot_101">0.004683376 0.002762339 0.004417095 0.003863356 0.002779136 0.006491786 0.001238909 0.002565239 0.003890741 0.002497618</Row>
+                <Row object_ref="prot_102">0.002021318 0.006369288 8.31E-4 0.004232557 0.001385691 0.005132055 0.004091535 0.00253391 0.001558069 0.002284694</Row>
+                <Row object_ref="prot_103">0.0 0.0 0.0 0.0 0.0 0.001473743 0.0 0.0 0.001504873 0.0</Row>
+                <Row object_ref="prot_104">0.004289822 0.001069735 4.19E-4 0.002297076 0.001179848 0.002355907 9.14E-4 0.003525573 5.68E-4 8.7E-4</Row>
+                <Row object_ref="prot_105">0.0 0.0 0.001119386 0.001473348 0.00102247 0.0 0.0 0.001204608 0.0 0.0</Row>
+                <Row object_ref="prot_106">0.009102313 0.008077299 0.008610625 0.002500346 0.005387799 0.005052886 0.004840882 0.002489315 0.007574696 0.00730689</Row>
+                <Row object_ref="prot_107">0.0 0.0 0.0 9.73E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_108">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002079171</Row>
+                <Row object_ref="prot_109">8.96E-4 3.94E-4 6.73E-4 5.96E-4 6.41E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_110">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001109669 0.001080948</Row>
+                <Row object_ref="prot_111">0.004174604 0.00182961 0.005934378 0.001721832 0.003721818 0.001711707 0.0 0.001623014 0.003481675 0.001637593</Row>
+                <Row object_ref="prot_112">0.001849959 0.00163999 0.001743728 0.003059743 0.00247643 2.16E-4 0.001413071 0.001641253 0.001111746 0.002228472</Row>
+                <Row object_ref="prot_113">0.004373822 0.002148509 0.001364459 0.003207434 0.002595965 0.002829261 0.002707298 0.001597124 0.002018452 0.003893398</Row>
+                <Row object_ref="prot_114">0.0 1.95E-4 0.0 0.0 0.0 3.44E-4 2.61E-4 5.43E-4 3.46E-4 0.0</Row>
+                <Row object_ref="prot_115">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001956641</Row>
+                <Row object_ref="prot_116">0.006944042 0.00744656 0.007944612 0.006870625 0.007515143 0.007000781 0.011760874 0.010388453 0.005253693 0.010147058</Row>
+                <Row object_ref="prot_117">0.003165791 0.002011066 0.001485374 0.001297414 0.002894975 0.002589874 0.003886404 0.001335278 0.002698426 0.005186745</Row>
+                <Row object_ref="prot_118">0.001986944 0.005302351 0.007539621 0.004942363 0.005337797 0.003315642 0.004770042 0.001631814 0.003316272 0.006404453</Row>
+                <Row object_ref="prot_119">0.0 0.0 9.58E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_120">0.003533875 0.003821295 0.003703279 0.006154765 0.004194874 0.004898424 0.00437478 0.004839533 0.00456678 0.004718568</Row>
+                <Row object_ref="prot_121">0.0 0.007265548 0.007774821 0.004525271 0.0 0.0 0.002094745 0.001904947 0.001851566 0.001148698</Row>
+                <Row object_ref="prot_122">0.0 0.0 1.46E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_123">0.0 0.001723489 0.0 0.0 5.82E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_124">0.0 0.001314818 0.001142394 0.0 0.0 0.002958189 0.001164002 0.0 0.0 0.004269652</Row>
+                <Row object_ref="prot_125">0.0 0.0 0.0 0.0 0.002530569 0.0 0.0 0.0 7.85E-4 0.0</Row>
+                <Row object_ref="prot_126">0.0 0.0 0.0 0.0 0.0 0.0 9.23E-4 8.53E-4 0.0 9.57E-4</Row>
+                <Row object_ref="prot_127">0.001407993 0.0 0.0 0.0 0.0 0.0 0.0 0.002365426 0.0 0.0</Row>
+                <Row object_ref="prot_128">6.33E-4 0.0 0.0 0.0 0.0 0.0 0.0 1.96E-4 3.21E-4 2.36E-4</Row>
+                <Row object_ref="prot_129">0.001086984 9.53E-4 0.001539782 0.001351076 5.79E-4 3.7E-4 8.67E-4 0.001341483 0.0 8.74E-4</Row>
+                <Row object_ref="prot_130">0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.44E-4 0.0 4.21E-4</Row>
+                <Row object_ref="prot_131">0.0 0.0 0.0 8.63E-4 0.00253885 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_132">0.0 4.81E-4 0.0 0.001770185 0.0 0.0 0.0 5.27E-4 0.0 0.001373147</Row>
+                <Row object_ref="prot_133">0.002045171 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001715961 0.001641473</Row>
+                <Row object_ref="prot_134">0.0 1.22E-4 3.39E-4 0.0 6.66E-4 8.45E-4 2.24E-4 0.0 3.72E-4 8.51E-5</Row>
+                <Row object_ref="prot_135">0.004304629 0.001626141 0.001730206 0.002536629 0.00273739 0.003068636 0.00146803 0.001416582 0.00357538 0.002463304</Row>
+                <Row object_ref="prot_136">0.0 0.0 0.0 0.0 7.95E-4 0.002139658 0.0 6.69E-4 0.0 0.0</Row>
+                <Row object_ref="prot_137">0.006375351 0.005651185 0.002448114 0.005243793 0.00535676 0.005313413 0.007627309 0.005244283 0.007962056 0.00252384</Row>
+                <Row object_ref="prot_138">0.0 0.0 0.0 0.0 0.0 6.02E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_139">0.001433295 0.00136957 0.002190219 0.003193065 0.002067468 0.002575164 4.25E-4 0.003180256 0.001143002 0.002479867</Row>
+                <Row object_ref="prot_140">5.13E-4 0.0 0.0 8.93E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_141">0.0 2.31E-4 5.32E-4 0.0 0.0 4.26E-4 0.0 4.46E-4 3.72E-4 0.0</Row>
+                <Row object_ref="prot_142">0.002819408 0.0 0.0 0.0 0.0 0.0 0.0 8.76E-4 0.0 0.0</Row>
+                <Row object_ref="prot_143">9.34E-4 7.24E-4 0.001322489 6.45E-4 0.003116325 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_144">0.0 0.005127593 0.0 0.004297442 0.00220266 0.0 0.004411829 0.004900799 0.005527908 0.004296861</Row>
+                <Row object_ref="prot_145">0.00101476 0.0 0.001683166 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_146">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001001614</Row>
+                <Row object_ref="prot_147">0.0 0.0 0.0 0.001780549 0.003283691 0.0 0.0 0.003315498 0.0 0.0</Row>
+                <Row object_ref="prot_148">0.003269109 0.002164206 0.001209277 0.001336881 2.12E-4 0.001976457 0.001928379 0.001986182 0.002037077 0.001745558</Row>
+                <Row object_ref="prot_149">0.0 0.0 0.002332267 0.0 0.0 0.001950675 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_150">0.0 2.53E-4 8.34E-4 2.96E-4 6.89E-4 0.002505781 0.001598029 0.001650437 0.001654145 0.001608862</Row>
+                <Row object_ref="prot_151">0.002976368 0.002242398 0.0 0.00371452 0.001714886 0.0 0.0 5.39E-4 4.96E-4 0.0</Row>
+                <Row object_ref="prot_152">6.38E-4 0.0 5.49E-4 0.0 0.0 4.03E-4 0.0 5.54E-4 5.54E-4 0.0</Row>
+                <Row object_ref="prot_153">0.002009217 0.003578183 0.004781921 0.001666119 0.002707809 0.0 7.57E-4 6.87E-4 0.001682479 0.001610483</Row>
+                <Row object_ref="prot_154">0.0 0.0 0.0 0.0 0.0 9.55E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_155">0.0 2.97E-4 0.0 0.0 8.97E-4 0.0 3.27E-4 0.0 0.001803025 0.002621141</Row>
+                <Row object_ref="prot_156">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002973283</Row>
+                <Row object_ref="prot_157">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002031528 0.0</Row>
+                <Row object_ref="prot_158">0.0 6.04E-4 0.0 0.0 0.001362465 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_159">0.0 0.0 0.0 1.11E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_160">0.004293751 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_161">0.008068109 0.006757604 0.012697554 0.008730777 0.009517729 0.00664891 0.008529372 0.004131347 0.001015143 0.006467598</Row>
+                <Row object_ref="prot_162">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.003209936</Row>
+                <Row object_ref="prot_163">3.83E-4 0.0 0.0 9.3E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_164">0.009186195 0.008127273 0.007219916 0.007578527 0.012267495 0.008913307 0.007310636 0.01132219 0.007631484 0.011039189</Row>
+                <Row object_ref="prot_165">8.89E-4 7.4E-4 0.0 0.001487233 1.68E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_166">8.2E-4 0.0 0.0 0.00164881 0.003152409 0.0 0.0 0.0 6.66E-4 0.002549587</Row>
+                <Row object_ref="prot_167">0.0 0.0 0.0 0.0 0.00447475 0.0 0.0 0.0 0.0 0.005684068</Row>
+                <Row object_ref="prot_168">0.0 0.0 0.0 0.001182564 0.001236101 0.0 0.001142125 0.001205836 0.0 0.0</Row>
+                <Row object_ref="prot_169">0.0 0.002302112 0.0 0.0 0.004683846 0.002188858 0.004194039 0.0 0.002089839 0.0</Row>
+                <Row object_ref="prot_170">0.001066855 0.0 0.001665414 0.0 0.0 0.001909403 0.001854355 9.54E-4 0.001927162 0.0</Row>
+                <Row object_ref="prot_171">0.001968597 0.001611106 6.82E-4 0.003471501 0.001823646 0.001116358 5.43E-4 0.001702667 0.002569089 0.002529882</Row>
+                <Row object_ref="prot_172">0.003290898 0.001221999 0.0 0.001345527 4.52E-4 0.001579524 0.001451657 0.0 0.003160604 0.001502742</Row>
+                <Row object_ref="prot_173">0.0 0.006676809 0.002392184 0.0 0.0 0.001644006 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_174">0.001524282 8.93E-4 0.001917206 8.28E-4 0.001357045 0.00124578 0.001213067 0.001643742 8.37E-4 9.66E-5</Row>
+                <Row object_ref="prot_175">0.004114752 0.002426954 0.0025872 0.002263088 0.002441956 0.00228121 0.002183091 0.002253559 0.002278446 0.002197451</Row>
+                <Row object_ref="prot_176">0.0 0.0 2.63E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_177">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.00304052 0.0</Row>
+                <Row object_ref="prot_178">0.0 0.005890556 0.002828418 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_179">0.002337707 0.001032838 0.0 9.9E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_180">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 5.85E-4</Row>
+                <Row object_ref="prot_181">0.0 7.35E-4 0.0 0.0 0.0 2.6E-4 3.95E-4 3.06E-4 0.0 5.52E-4</Row>
+                <Row object_ref="prot_182">0.0 1.84E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_183">0.005407464 0.001037008 0.0 0.006645435 9.48E-4 0.003700757 0.001567032 0.0 0.003437576 0.002158704</Row>
+                <Row object_ref="prot_184">0.001651237 0.001431228 0.0 0.001377824 0.001493922 0.004203982 0.002679962 0.002767022 4.35E-4 0.005399499</Row>
+                <Row object_ref="prot_185">0.0 0.001770842 7.56E-4 0.0 0.0 0.0 0.0 0.0 0.001648859 0.003222979</Row>
+                <Row object_ref="prot_186">0.0 0.0 0.0 0.0 0.0 0.0 6.79E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_187">0.0 0.0 0.0 2.35E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_188">0.002043018 9.03E-4 0.0 8.41E-4 4.4E-4 0.0 0.001219541 8.39E-4 8.31E-4 8.18E-4</Row>
+                <Row object_ref="prot_189">0.002749751 0.002681427 0.005724394 0.002435279 0.00540411 0.006310469 0.007246127 0.007481523 0.006303454 0.004863013</Row>
+                <Row object_ref="prot_190">0.0 0.0 0.0 0.0 6.23E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_191">0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.97E-4 0.0 0.0</Row>
+                <Row object_ref="prot_192">0.0 0.0 0.0 0.0 0.0 0.003465238 0.002499385 0.002952119 0.00329107 0.003437887</Row>
+                <Row object_ref="prot_193">0.003418709 0.0 0.0 0.0 0.0 0.0 0.002267709 0.004214478 0.0 0.0</Row>
+                <Row object_ref="prot_194">0.001499729 0.002694565 0.0 0.001259091 0.001353976 0.0 0.0 6.89E-4 0.0 0.002450047</Row>
+                <Row object_ref="prot_195">0.002696626 7.78E-4 0.003392091 7.36E-4 0.002401246 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_196">0.001820833 8.81E-4 0.003460568 0.00151216 1.81E-4 0.00305159 0.001946111 0.002003905 0.00152166 9.73E-4</Row>
+                <Row object_ref="prot_197">0.002976198 0.002553397 3.79E-4 0.005074582 0.004106747 0.003836797 0.004892754 0.001091081 0.0 0.004926415</Row>
+                <Row object_ref="prot_198">0.012645941 0.00555324 0.005113163 0.005094778 0.005586437 0.005152927 0.0 0.00482169 0.010488869 0.010136281</Row>
+                <Row object_ref="prot_199">9.37E-4 0.0 0.007552464 0.00375044 0.0 0.0 0.006074641 0.0 7.86E-4 0.002345471</Row>
+                <Row object_ref="prot_200">0.008604403 0.0050121 0.008111939 0.007090746 0.007659603 0.00227135 0.006846944 0.002269495 0.004597694 0.004595573</Row>
+                <Row object_ref="prot_201">0.0 0.0 0.0 3.67E-4 0.0 0.002165844 0.00216223 9.9E-4 0.0 7.8E-4</Row>
+                <Row object_ref="prot_202">8.77E-4 7.9E-4 8.29E-4 6.84E-4 3.93E-4 0.0 0.001134834 0.0 0.001209896 0.0</Row>
+                <Row object_ref="prot_203">9.04E-4 0.0 0.00164776 0.001610382 0.001345435 0.0 0.001456063 0.0 0.001626699 8.6E-4</Row>
+                <Row object_ref="prot_204">0.001749166 0.0 0.0 0.0 0.001513128 0.0 0.0 0.001283846 0.0 0.0</Row>
+                <Row object_ref="prot_205">0.0 0.0 0.0 0.0 0.0 0.0 0.001164988 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_206">0.0 0.001658374 0.001761993 0.001544999 0.0 0.0 0.0 0.0 0.003129481 0.001506241</Row>
+                <Row object_ref="prot_207">0.0114383 0.007228407 0.006935115 0.008762458 0.008001199 0.006115506 0.007802507 0.006041983 0.006108707 0.007200064</Row>
+                <Row object_ref="prot_208">0.005093251 0.003504227 0.005118457 0.0 0.0051621 0.004016079 0.004983859 0.004332704 0.004590961 0.005285651</Row>
+                <Row object_ref="prot_209">0.0 0.0 0.0 0.0 0.0 3.21E-4 6.5E-4 5.75E-4 6.72E-4 4.18E-4</Row>
+                <Row object_ref="prot_210">0.001747845 7.7E-4 8.13E-4 6.21E-4 5.66E-4 0.002126917 0.001393077 0.001438476 0.001449121 0.001355213</Row>
+                <Row object_ref="prot_211">0.010852479 0.008001232 0.006822946 0.008953196 0.008051498 0.006017195 0.004317492 0.004457749 0.007513132 0.0028677</Row>
+                <Row object_ref="prot_212">0.0 0.0 0.0 0.0 8.92E-5 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_213">0.0 0.0 0.0 0.0 0.0 0.0 5.07E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_214">0.0 0.0 0.0 9.21E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_215">0.002711121 0.0 0.002568142 0.00226527 0.0 0.002266464 0.00216197 0.0 0.002266918 0.0</Row>
+                <Row object_ref="prot_216">0.0 0.0 0.0 0.0 0.0 0.0 5.44E-4 0.0 0.001484432 0.001432812</Row>
+                <Row object_ref="prot_217">0.0 0.0 0.0 0.0 7.31E-4 0.0 8.19E-4 0.0 0.0 7.15E-4</Row>
+                <Row object_ref="prot_218">0.0 0.002899732 0.003057626 0.002729467 0.002949341 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_219">0.006905955 0.011822148 0.006500263 0.01128632 0.0 0.011498594 0.022010235 0.011341037 0.005344843 0.004080808</Row>
+                <Row object_ref="prot_220">6.55E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_221">0.0 0.003120316 0.0 0.0 0.0 0.0 0.0 0.0 0.001963301 0.0</Row>
+                <Row object_ref="prot_222">0.0 0.0 6.38E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_223">0.0 8.74E-4 7.35E-4 6.15E-4 4.79E-4 9.62E-4 0.001813961 6.78E-4 0.0 0.001858474</Row>
+                <Row object_ref="prot_224">0.0 0.0 7.02E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_225">0.0 0.001951768 0.002260659 0.0 0.0 0.0 0.0 0.0 0.001855788 4.71E-4</Row>
+                <Row object_ref="prot_226">0.0 0.003307439 0.0 0.0 0.0 0.0 0.002213632 0.001920117 0.006274866 0.0</Row>
+                <Row object_ref="prot_227">0.0 0.002270453 0.0 7.94E-4 0.004542176 0.004025423 0.001967538 0.004252457 0.004353798 0.001966722</Row>
+                <Row object_ref="prot_228">4.76E-4 0.0 0.0 0.0 0.0 0.001098722 0.0 0.0 0.0 6.59E-4</Row>
+                <Row object_ref="prot_229">0.001983225 8.7E-4 0.0 7.25E-4 8.92E-4 8.31E-4 0.001520315 3.28E-4 0.001672729 7.99E-4</Row>
+                <Row object_ref="prot_230">0.002792817 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_231">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001064033 9.47E-4 0.0</Row>
+                <Row object_ref="prot_232">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 8.06E-4 0.0</Row>
+                <Row object_ref="prot_233">0.0 8.96E-4 0.0 8.28E-4 9.09E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_234">0.0 0.0 0.0 7.04E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_235">0.004033874 0.0 0.003204152 0.003360543 0.003111707 0.001371871 0.003244024 0.00331255 0.00133037 0.0</Row>
+                <Row object_ref="prot_236">0.001568494 0.001460183 0.001268376 4.94E-4 0.0 0.0 0.003434386 0.00533328 0.003432975 0.001775115</Row>
+                <Row object_ref="prot_237">0.008368835 0.004113407 0.005262008 0.006904213 0.006622797 0.007733551 0.006660158 0.003820287 0.003089981 0.005959677</Row>
+                <Row object_ref="prot_238">0.003706706 0.003935307 0.004195147 0.004281199 0.003630027 0.002774515 0.003834873 0.003654879 0.003387304 0.003860484</Row>
+                <Row object_ref="prot_239">3.86E-4 0.001227708 0.0 0.0 6.03E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_240">0.0 0.0 6.36E-4 9.85E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_241">0.0 0.0 6.18E-4 0.001055086 0.0 3.36E-4 0.0 0.0 0.001121272 9.1E-4</Row>
+                <Row object_ref="prot_242">0.001763682 8.37E-4 0.0 0.0 0.0 8.49E-4 7.43E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_243">0.001229834 0.003350738 0.0 0.002960611 0.0033728 0.004722859 0.002981769 0.003030973 0.004719498 0.006072006</Row>
+                <Row object_ref="prot_244">0.0 0.0 0.0 0.0 0.0 3.29E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_245">0.0 0.001316484 0.0 0.001229943 0.0 0.0 0.0 0.0012271 0.001198364 0.00119319</Row>
+                <Row object_ref="prot_246">0.0 0.0 0.0 0.0 0.0 0.004154553 0.0 0.0 0.004020838 0.0</Row>
+                <Row object_ref="prot_247">0.001125401 7.0E-4 7.52E-4 0.002138602 7.33E-4 3.27E-4 9.31E-4 0.0 0.002178627 0.003209611</Row>
+                <Row object_ref="prot_248">0.001213872 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_249">0.0 0.001951371 0.005230882 0.002741506 0.001963038 0.007381031 8.77E-4 0.003646147 0.004608016 0.004442874</Row>
+                <Row object_ref="prot_250">8.41E-4 0.001640061 0.002076486 6.55E-4 0.00207642 8.16E-4 4.05E-4 2.11E-4 0.0 8.24E-4</Row>
+                <Row object_ref="prot_251">3.19E-4 0.001095819 3.39E-4 0.001030351 0.0 8.55E-4 9.79E-4 2.12E-4 5.22E-4 0.00100874</Row>
+                <Row object_ref="prot_252">0.0 4.68E-4 0.0 0.0 0.0 0.00366114 0.00210157 0.004341417 0.003657801 0.007054837</Row>
+                <Row object_ref="prot_253">0.0 6.07E-4 0.0 3.44E-4 0.002549335 0.0 0.00113829 0.001136076 0.0 0.001887864</Row>
+                <Row object_ref="prot_254">0.0 8.73E-4 0.0 0.0 0.0 9.73E-4 0.00186393 0.00385089 0.0 9.32E-4</Row>
+                <Row object_ref="prot_255">0.001505441 6.92E-4 5.85E-4 0.001523399 0.00133521 0.0 0.00164827 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_256">0.006452485 0.014353021 0.01535619 0.006063872 0.00712487 0.00672584 0.006207722 0.006369783 0.006298974 0.01294861</Row>
+                <Row object_ref="prot_257">7.35E-4 0.002337898 0.003948751 0.002258945 0.004271868 0.002288641 0.002129539 0.003440215 0.002248749 0.002245211</Row>
+                <Row object_ref="prot_258">0.0 0.0 0.0 0.0 0.0 0.0 8.21E-4 0.0 0.0 4.82E-4</Row>
+                <Row object_ref="prot_259">0.001097898 5.02E-4 0.001079444 0.00141349 0.001017315 4.73E-4 9.11E-4 9.37E-4 4.74E-4 0.001376347</Row>
+                <Row object_ref="prot_260">3.3E-4 6.71E-4 9.63E-4 0.0 0.0 0.0 8.68E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_261">0.0 0.0 0.001132833 0.001360206 5.31E-4 5.83E-4 0.001639162 3.71E-4 3.83E-4 0.0</Row>
+                <Row object_ref="prot_262">0.0 0.0 0.0 0.0 0.0 0.001452561 5.23E-4 0.001557265 0.0 0.0</Row>
+                <Row object_ref="prot_263">0.005522942 0.005429216 0.006366465 0.006581433 0.005463324 0.006634799 0.003906946 0.004538099 0.004078414 0.003933038</Row>
+                <Row object_ref="prot_264">0.003321337 0.0 0.0 0.001470703 0.0 0.003900862 0.0 0.003194502 0.0 0.0</Row>
+                <Row object_ref="prot_265">0.00225942 0.001173914 0.005215902 0.002254321 0.003369942 0.002296517 0.006601801 0.006816265 0.00689154 0.004430594</Row>
+                <Row object_ref="prot_266">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.83E-4</Row>
+                <Row object_ref="prot_267">0.001725327 0.0 4.66E-4 0.002307818 0.0 0.0 0.0 6.63E-4 0.002831151 0.001766196</Row>
+                <Row object_ref="prot_268">0.002476414 0.00730755 0.007790051 0.002674418 0.002941089 0.004121642 0.003943968 0.003393069 0.004803237 0.001322112</Row>
+                <Row object_ref="prot_269">0.001232827 0.003362253 0.004779007 0.003886022 0.003383037 0.007374871 0.00604882 0.00624532 0.010523817 0.006089217</Row>
+                <Row object_ref="prot_270">0.0 0.0 0.0 0.0 0.0 4.25E-4 0.001684282 0.002087172 0.0 0.002036837</Row>
+                <Row object_ref="prot_271">0.00100454 3.12E-4 0.0 8.19E-4 0.002007375 0.0 0.001288781 8.82E-4 7.76E-4 0.001806568</Row>
+                <Row object_ref="prot_272">0.006668426 0.004424802 0.006289282 0.004126043 0.004081549 0.004852749 0.003980193 0.003424577 0.004501115 0.005008468</Row>
+                <Row object_ref="prot_273">0.0 0.0 0.0 0.0 0.0 0.0 3.43E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_274">0.0 0.0 6.81E-4 0.0 0.0 0.0 0.0 0.0 0.0 8.56E-4</Row>
+                <Row object_ref="prot_275">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 6.04E-4</Row>
+                <Row object_ref="prot_276">0.001206912 0.0 0.002573821 0.001104215 0.00241878 2.33E-4 0.0 0.0 0.0 9.09E-4</Row>
+                <Row object_ref="prot_277">0.0 0.0 0.0 0.0 0.001204788 0.001026934 0.002411502 0.003735136 0.00251759 0.0048557</Row>
+                <Row object_ref="prot_278">0.002239254 0.001121194 3.0E-4 7.88E-4 0.0 0.00900444 0.005385175 0.004448093 0.006745823 0.005421139</Row>
+                <Row object_ref="prot_279">0.0 0.0 0.0 0.0 0.00280745 0.005029033 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_280">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002138801 0.002607336 0.0</Row>
+                <Row object_ref="prot_281">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001307789 0.0</Row>
+                <Row object_ref="prot_282">4.56E-4 0.0 0.0 0.0 0.001349871 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_283">0.0 0.0 0.001110173 0.00101929 0.0 0.0 0.002074859 0.0 0.002164837 0.00207806</Row>
+                <Row object_ref="prot_284">0.0 0.0 0.0 0.0 0.0 0.001360949 0.0 0.001484791 0.0 0.0</Row>
+                <Row object_ref="prot_285">0.003189846 0.001693285 0.002707634 0.002894753 0.001703923 0.002122345 0.003046284 0.003145245 0.002914981 0.002555524</Row>
+                <Row object_ref="prot_286">0.0 0.0 0.002191939 0.0 0.002729252 0.002403667 0.0 0.0 0.0 0.002687795</Row>
+                <Row object_ref="prot_287">0.0 0.0 0.0 2.55E-4 0.0 0.0 7.41E-4 8.82E-4 0.0 0.0</Row>
+                <Row object_ref="prot_288">0.001678724 7.09E-4 0.002394383 0.0013242 0.00171191 0.0 1.7E-4 0.0 1.72E-4 2.63E-4</Row>
+                <Row object_ref="prot_289">0.0 1.89E-4 0.0 4.18E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_290">0.0 0.00360973 0.004061725 0.008101437 0.004246193 0.003120706 0.007779083 0.002995165 0.003158467 0.007872765</Row>
+                <Row object_ref="prot_291">0.0 4.89E-4 2.76E-4 0.0 0.0 3.81E-4 0.0 0.0 0.0 7.41E-4</Row>
+                <Row object_ref="prot_292">0.001662532 0.001403222 4.63E-4 0.001851013 0.00150585 0.002355379 8.96E-4 8.53E-4 0.002352996 0.001361474</Row>
+                <Row object_ref="prot_293">0.001932065 4.27E-4 8.93E-4 0.002790783 0.001720776 2.69E-4 1.97E-4 0.001563717 8.03E-4 0.002322953</Row>
+                <Row object_ref="prot_294">0.0 0.0 9.02E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_295">0.0 0.003895736 4.65E-4 0.0 0.003109411 0.002793411 0.002443546 0.001424135 0.001448863 0.001393158</Row>
+                <Row object_ref="prot_296">0.0 0.0 0.0 0.00617318 0.0 0.0 0.0 0.0027177 0.0 0.009950319</Row>
+                <Row object_ref="prot_297">0.004155094 0.005524682 0.005887109 0.00337811 0.00741326 0.005168502 0.004969556 0.0 7.22E-4 0.003322488</Row>
+                <Row object_ref="prot_298">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.89E-4 0.0</Row>
+                <Row object_ref="prot_299">0.006624272 0.007826752 0.012516554 0.010948541 0.011815063 0.016555975 0.010561524 0.010902441 0.012862554 0.010632058</Row>
+                <Row object_ref="prot_300">0.0 0.0 0.0 5.43E-4 0.0 9.35E-4 0.002716608 0.00374656 0.001663333 0.00274133</Row>
+                <Row object_ref="prot_301">0.0 0.0 0.0 0.0 1.88E-4 1.01E-4 1.29E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_302">0.00425488 0.01485416 0.008998155 0.007862564 0.011903943 8.84E-4 0.013416611 0.011071993 0.003831151 0.004666593</Row>
+                <Row object_ref="prot_303">0.0 0.0 0.0 0.004592569 0.0 0.0 0.0 0.0 0.004580037 0.0</Row>
+                <Row object_ref="prot_304">0.0 0.001224191 0.001366728 0.001270552 0.001374945 0.001108454 0.001244943 0.0 0.001240852 0.001231651</Row>
+                <Row object_ref="prot_305">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002578249 0.0 0.0</Row>
+                <Row object_ref="prot_306">0.003553255 8.63E-4 4.03E-4 0.0 0.001092145 0.002721963 0.0 0.001337557 0.001477877 0.002513858</Row>
+                <Row object_ref="prot_307">0.004035702 0.003898413 0.004140904 0.003740319 0.008195246 0.002660997 0.007092594 0.007282497 0.003360023 0.001192229</Row>
+                <Row object_ref="prot_308">6.28E-4 0.0 0.0 0.001341173 0.002136693 0.001529763 7.19E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_309">6.2E-4 0.001067738 0.001103934 3.64E-4 0.001338341 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_310">0.001011749 0.0 4.13E-4 6.33E-4 0.0 8.08E-4 1.64E-4 3.45E-4 0.0 0.001200552</Row>
+                <Row object_ref="prot_311">0.0 0.0 0.0 0.001507584 0.005876862 0.0 5.72E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_312">0.0 0.001540744 0.002083187 2.75E-4 1.92E-4 0.001260296 4.39E-4 6.08E-4 0.001201131 0.001821765</Row>
+                <Row object_ref="prot_313">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001789862</Row>
+                <Row object_ref="prot_314">6.73E-4 0.001426269 0.001519642 0.002033192 0.0 0.0 0.0 0.00168482 0.001404065 0.001960607</Row>
+                <Row object_ref="prot_315">0.002732693 0.001007304 0.001380899 0.0 0.0 8.14E-4 0.0 0.002447772 0.0 0.001166063</Row>
+                <Row object_ref="prot_316">0.0 0.0 0.0 8.19E-4 0.0 0.0 0.0 0.00108097 0.0 0.0</Row>
+                <Row object_ref="prot_317">0.0 0.0 0.0 0.0 0.0 0.002307418 0.004423429 0.0045717 0.004450224 0.004445393</Row>
+                <Row object_ref="prot_318">0.0 0.0 0.0 0.003069402 0.0 0.0 0.0 0.0 0.0 0.003341504</Row>
+                <Row object_ref="prot_319">0.001284542 9.99E-4 0.002189108 0.001378274 0.002581216 0.001446492 1.32E-4 0.001430103 9.64E-4 9.14E-4</Row>
+                <Row object_ref="prot_320">0.0 0.0 0.0 0.001255497 0.001467756 0.0 0.0 5.28E-4 0.0 0.0</Row>
+                <Row object_ref="prot_321">0.0 8.31E-4 0.0 0.0 0.0 7.8E-4 0.0 0.0 2.76E-4 0.0</Row>
+                <Row object_ref="prot_322">0.0 5.52E-4 0.0 0.0 5.45E-4 5.08E-4 0.0 0.0 1.33E-4 0.001002269</Row>
+                <Row object_ref="prot_323">5.62E-4 1.76E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_324">0.0 0.0 0.0 0.0 0.0 0.0 8.39E-4 0.0 8.81E-4 5.6E-4</Row>
+                <Row object_ref="prot_325">0.0 0.0 0.0 3.78E-4 3.31E-4 0.0 0.0 0.001661882 3.56E-4 8.62E-4</Row>
+                <Row object_ref="prot_326">0.002505941 0.00116006 7.54E-4 0.002149066 0.001197946 6.24E-4 7.42E-4 0.001087929 0.001101303 0.001082698</Row>
+                <Row object_ref="prot_327">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 7.5E-4</Row>
+                <Row object_ref="prot_328">0.001130484 7.13E-4 5.7E-4 9.8E-4 0.0 0.001012798 6.7E-4 0.002094677 0.004240782 2.63E-4</Row>
+                <Row object_ref="prot_329">0.0 1.63E-4 0.0 0.0 4.51E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_330">0.0 0.0 0.001250692 0.001178579 0.001329333 0.0 0.0 0.001217207 8.92E-4 0.0</Row>
+                <Row object_ref="prot_331">8.49E-4 4.38E-4 0.0 0.0 0.0 9.67E-4 9.12E-4 8.61E-4 9.34E-4 1.9E-4</Row>
+                <Row object_ref="prot_332">0.0 0.0 0.0 4.32E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_333">9.47E-4 8.41E-5 0.0 2.79E-4 8.14E-4 0.0 7.52E-4 3.45E-4 3.73E-4 3.79E-4</Row>
+                <Row object_ref="prot_334">0.001140579 0.001080412 0.001728145 9.96E-4 5.35E-4 0.001528959 0.001411059 4.87E-4 0.0 3.82E-4</Row>
+                <Row object_ref="prot_335">0.001429422 0.001287488 4.77E-4 0.0 0.0 9.83E-4 0.001501669 3.46E-4 0.0 0.0</Row>
+                <Row object_ref="prot_336">0.0 0.0 0.0 0.002174295 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_337">0.001453731 0.001255977 0.001496236 0.0 0.0 0.0 6.14E-4 9.91E-4 5.69E-4 0.0</Row>
+                <Row object_ref="prot_338">0.0 0.002358366 0.005818722 0.001196299 0.004139966 9.54E-4 0.002492105 0.002602505 0.00259563 0.002505928</Row>
+                <Row object_ref="prot_339">0.005123155 0.00352535 0.005368744 0.002817704 0.003547497 0.004260827 0.003171119 0.004677336 0.003783192 0.003648339</Row>
+                <Row object_ref="prot_340">0.0 0.0 0.0 0.0 0.0 0.00189459 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_341">0.0 0.0 0.0 0.001589919 2.39E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_342">0.0 4.3E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_343">0.0 0.002769254 0.0 0.0 0.0 0.0 0.0 0.0 0.002577384 0.0</Row>
+                <Row object_ref="prot_344">0.0 6.95E-4 0.0 0.0 0.0 9.34E-4 3.33E-4 0.0 6.39E-4 5.21E-4</Row>
+                <Row object_ref="prot_345">0.0 0.0 0.0 0.0 0.0 0.0 0.002180061 7.82E-4 0.0 4.8E-4</Row>
+                <Row object_ref="prot_346">0.001710522 0.001808155 0.0 0.00211332 0.001487243 0.001312445 5.85E-4 0.002066002 0.001906497 0.004160226</Row>
+                <Row object_ref="prot_347">0.002032147 0.001945672 0.002105222 0.0 0.001952068 0.00187388 0.003553869 0.001844304 0.003750345 0.001803449</Row>
+                <Row object_ref="prot_348">0.001669981 0.0 0.0 0.001771721 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_349">0.0 0.0 0.00264958 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_350">0.0 7.98E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_351">0.005015889 0.002237533 0.001774193 0.004128405 0.002117917 0.0 0.003908347 0.004152411 0.004223637 0.004065338</Row>
+                <Row object_ref="prot_352">0.0 8.93E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_353">0.004690446 0.00163175 0.0 0.004250608 0.002016625 0.00633158 0.002699582 0.001703951 0.001451949 0.001335627</Row>
+                <Row object_ref="prot_354">0.0 0.0 0.0 0.0 0.0 0.0 0.001519616 0.0 3.71E-4 0.0</Row>
+                <Row object_ref="prot_355">0.0 0.0 0.0 0.005227068 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_356">5.12E-4 1.28E-4 0.002097493 0.002752094 3.75E-4 0.0 0.001272716 0.001324752 0.00170418 8.41E-4</Row>
+                <Row object_ref="prot_357">0.002224388 0.001182821 0.0 0.002030517 0.002133324 0.0 0.0 0.0 0.001568854 0.001962804</Row>
+                <Row object_ref="prot_358">0.001062819 0.0 4.4E-4 8.95E-4 0.001574306 0.0 6.57E-4 5.24E-4 0.002710695 0.0</Row>
+                <Row object_ref="prot_359">0.0 0.001634307 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_360">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 7.8E-4 0.0</Row>
+                <Row object_ref="prot_361">0.001054325 0.0 4.6E-4 3.37E-4 0.00310739 0.0 0.0 5.9E-4 6.04E-4 0.0</Row>
+                <Row object_ref="prot_362">0.002616614 0.0 0.0 5.15E-4 0.0 0.0 0.0 0.0 8.4E-4 0.0</Row>
+                <Row object_ref="prot_363">0.012410196 0.01317556 0.01872735 0.010238299 0.022097218 0.018578368 0.009876388 0.012236675 0.016495746 0.015907754</Row>
+                <Row object_ref="prot_364">0.0 0.0 0.0 3.3E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_365">0.0 8.88E-4 0.0 0.0 0.001048038 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_366">7.87E-4 0.0 0.004664222 0.001752009 0.001854913 0.003941318 0.003872166 0.001014737 0.0 0.0</Row>
+                <Row object_ref="prot_367">4.96E-4 8.79E-4 2.08E-4 2.68E-4 4.36E-4 0.0 0.0 5.47E-4 3.52E-4 2.93E-4</Row>
+                <Row object_ref="prot_368">0.0 8.11E-4 0.0 0.00111209 0.0 0.0 0.001368594 0.0 0.001202061 0.001297108</Row>
+                <Row object_ref="prot_369">0.0 0.0 0.0 0.0 6.86E-4 0.0 0.0 0.0 0.0 0.001235917</Row>
+                <Row object_ref="prot_370">0.009956006 0.005605311 0.007682679 0.005226845 0.006446313 0.006021974 0.005042083 0.005205878 0.006015279 0.004350648</Row>
+                <Row object_ref="prot_371">0.0 0.0 0.0 7.35E-4 0.001135759 0.0 7.57E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_372">0.001387141 0.006314694 0.009007043 0.007829837 0.006376044 0.003958973 0.007600183 0.00784708 0.007933738 8.89E-4</Row>
+                <Row object_ref="prot_373">0.001521262 8.87E-4 0.0 0.003895729 0.006162277 0.0 0.001017547 0.003719148 0.001732559 0.0</Row>
+                <Row object_ref="prot_374">0.0 0.0 0.0 0.0 0.0 0.002805805 0.00243774 0.001183107 0.00301281 0.002766704</Row>
+                <Row object_ref="prot_375">0.0 6.68E-4 4.92E-4 0.001248422 0.00153301 5.67E-4 0.003165322 0.001209578 0.004001811 0.002364506</Row>
+                <Row object_ref="prot_376">0.007165413 0.006338799 0.013517374 0.008867987 0.004784922 0.005959929 0.007128762 0.008832414 0.008929954 0.007175653</Row>
+                <Row object_ref="prot_377">0.003477749 0.003098949 0.004969777 0.002896094 0.003079907 0.002924549 0.002798478 0.004334517 0.00584318 0.004225752</Row>
+                <Row object_ref="prot_378">0.0 0.0 0.0 5.46E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_379">0.003733836 0.005017359 0.005334736 0.002971827 0.0 0.004473602 0.002860156 0.004658426 0.003080546 0.0</Row>
+                <Row object_ref="prot_380">0.0 0.0 0.001262899 0.0 0.0 0.001341232 0.00167792 0.005251922 0.001675075 0.0</Row>
+                <Row object_ref="prot_381">3.85E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_382">0.0 0.0 0.0 0.0 0.0 0.0 0.0 7.75E-4 7.83E-4 0.0</Row>
+                <Row object_ref="prot_383">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001532472</Row>
+                <Row object_ref="prot_384">9.3E-4 0.0 0.001400957 5.68E-4 0.0 0.00299128 0.00145576 8.71E-4 1.85E-4 0.00217354</Row>
+                <Row object_ref="prot_385">0.0 0.0 0.0 0.0 0.00245399 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_386">0.002566994 0.004546723 0.006058666 0.007419532 0.008006751 0.005342638 0.005112329 0.007389769 0.003202019 0.006175765</Row>
+                <Row object_ref="prot_387">0.005691006 0.0 0.005372868 0.00473876 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_388">0.0 0.0 0.0 3.96E-4 0.0 0.0 0.001224241 0.001233212 0.0 0.001079712</Row>
+                <Row object_ref="prot_389">6.18E-4 0.0 4.1E-4 0.001049574 0.0 0.00101034 6.36E-4 6.95E-4 0.001107771 0.0</Row>
+                <Row object_ref="prot_390">0.0 0.0 0.0 0.0 0.0 0.001255429 0.0 0.002372685 0.0 0.003686577</Row>
+                <Row object_ref="prot_391">3.06E-4 6.08E-4 0.001009656 0.0 0.001120646 2.59E-4 0.0 5.76E-4 6.6E-4 0.001056686</Row>
+                <Row object_ref="prot_392">4.57E-4 0.001645077 0.0 0.004606155 0.003311154 0.001349982 0.001363635 0.001032281 0.0 0.002981707</Row>
+                <Row object_ref="prot_393">0.009879183 0.006992303 0.004658743 0.005705165 0.005277172 0.008216322 0.006289708 0.004870525 0.004063789 0.003957321</Row>
+                <Row object_ref="prot_394">0.005459287 0.004390889 0.005616971 0.005322746 0.005302168 0.004953143 0.006714469 0.004893595 0.004535334 0.004771278</Row>
+                <Row object_ref="prot_395">7.14E-4 5.71E-4 5.1E-4 0.0 0.003299383 0.0 0.0 8.38E-4 0.0 0.0</Row>
+                <Row object_ref="prot_396">0.002903942 0.006442969 0.004122267 0.004807319 0.005188832 0.006059085 0.003478387 0.004788992 0.003630683 0.00466929</Row>
+                <Row object_ref="prot_397">0.007954764 0.008795481 0.011253724 0.011484563 0.012393509 0.008269775 0.007913284 0.004894368 0.006608465 0.006372906</Row>
+                <Row object_ref="prot_398">2.75E-4 4.29E-4 0.0 2.42E-4 0.001425629 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_399">0.001201178 0.001044392 0.001088027 0.001976757 0.002138567 0.002001998 4.54E-4 0.002967784 0.0 0.001929262</Row>
+                <Row object_ref="prot_400">0.0 0.0 0.0 0.0 0.0 4.71E-4 0.002340409 0.002385636 3.56E-4 0.002361951</Row>
+                <Row object_ref="prot_401">0.0 0.0 0.0 0.0 0.0 6.9E-4 0.001096943 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_402">9.58E-4 0.007500996 0.011973915 0.006116002 0.00337663 0.010626827 0.006521519 0.002582679 0.006994577 0.006810094</Row>
+                <Row object_ref="prot_403">0.0 0.0 0.0 0.0 0.0 0.0 0.003002298 0.006661215 0.002252344 0.001829992</Row>
+                <Row object_ref="prot_404">0.002084568 0.002088279 0.00111159 0.002799542 0.002958671 0.002959955 0.003505091 0.004065259 0.003948061 0.003497236</Row>
+                <Row object_ref="prot_405">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.003001816 0.0</Row>
+                <Row object_ref="prot_406">0.0 0.001617701 7.93E-4 7.21E-4 7.79E-4 6.26E-4 6.65E-4 6.74E-4 7.45E-4 6.95E-4</Row>
+                <Row object_ref="prot_407">0.002053676 7.92E-4 0.002906238 0.005931703 0.00182671 0.004271286 0.005722025 0.002531961 0.004266537 0.008228913</Row>
+                <Row object_ref="prot_408">0.0 0.0 0.0 2.66E-4 3.05E-4 0.0 0.0 2.29E-4 0.0 0.0</Row>
+                <Row object_ref="prot_409">0.002254319 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_410">0.001865246 0.0 0.0 0.0 0.0 0.0 0.0 4.02E-4 0.003067638 0.0</Row>
+                <Row object_ref="prot_411">8.41E-4 0.002390973 0.002474784 0.001938964 0.001473958 0.0 5.59E-4 0.0 0.0 0.001190454</Row>
+                <Row object_ref="prot_412">0.011036253 0.006489804 0.010107231 0.008971558 0.009734797 0.005573794 0.00873014 0.005204992 0.002915223 0.002808059</Row>
+                <Row object_ref="prot_413">0.0 0.0 0.002016909 0.0 0.0 0.0 0.0 0.001744389 0.0 0.001718086</Row>
+                <Row object_ref="prot_414">0.006696823 0.005924859 0.005167689 0.006027074 0.005420072 0.004556958 0.005814024 0.00700338 0.004046126 0.005852853</Row>
+                <Row object_ref="prot_415">0.00146206 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_416">0.0 7.06E-4 0.0 0.0 0.0 0.0 0.0 5.26E-4 0.0 0.0</Row>
+                <Row object_ref="prot_417">0.0 0.0 0.0 0.001113537 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_418">0.007535353 0.006666729 0.005685535 0.006216598 0.006708611 0.007520406 0.007795904 0.005572495 0.00500803 0.004829519</Row>
+                <Row object_ref="prot_419">0.0 0.0 0.0 0.002041929 0.001509248 0.0 0.0 0.0 0.0 9.59E-4</Row>
+                <Row object_ref="prot_420">0.00487285 0.002463509 0.002626169 0.001722709 0.003718478 0.002894752 0.003877953 0.00113357 0.00173492 0.001115386</Row>
+                <Row object_ref="prot_421">7.75E-4 0.0 3.6E-4 0.0 0.0 0.0 3.07E-4 0.0 2.63E-4 0.0</Row>
+                <Row object_ref="prot_422">0.0 9.09E-4 4.47E-4 0.0 0.0 0.0 0.0 3.3E-4 0.0 0.0</Row>
+                <Row object_ref="prot_423">0.004802471 0.003034911 0.005823539 0.006225993 0.005497158 0.003423532 9.13E-4 0.003946102 0.005129589 0.003847468</Row>
+                <Row object_ref="prot_424">0.001357646 0.001184391 6.29E-4 4.33E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_425">0.0 0.0 0.0 4.73E-4 6.8E-4 0.002729114 8.85E-4 3.73E-4 9.39E-4 0.001813009</Row>
+                <Row object_ref="prot_426">8.68E-4 0.003156946 0.001806759 0.002827741 0.00468343 0.002928069 0.002632642 0.00122291 0.001391933 7.43E-4</Row>
+                <Row object_ref="prot_427">0.002871239 3.44E-4 0.004062798 0.001776737 0.001580636 0.003582646 0.001706047 0.001769787 0.002362395 0.004601468</Row>
+                <Row object_ref="prot_428">6.86E-4 3.1E-4 0.001693741 0.0 9.57E-4 0.00175167 0.001585207 0.001013032 0.001814685 0.001735365</Row>
+                <Row object_ref="prot_429">7.41E-4 0.0 0.0 6.43E-4 0.001384802 0.0 0.0 0.0 6.1E-4 2.3E-4</Row>
+                <Row object_ref="prot_430">0.0 0.0 0.0 4.26E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_431">0.002274159 0.004432851 8.55E-4 0.001006925 8.02E-4 9.99E-4 7.61E-4 3.48E-4 0.001026556 9.85E-4</Row>
+                <Row object_ref="prot_432">0.00203983 0.001840376 0.001898624 0.00171146 0.00184617 0.001727423 0.00165063 0.001696009 0.001635747 0.001637377</Row>
+                <Row object_ref="prot_433">0.0 0.0 0.0 5.01E-4 0.0 0.0 0.0 7.1E-4 0.0 0.0</Row>
+                <Row object_ref="prot_434">0.002161524 0.002550576 0.002038831 0.001783772 0.001281246 0.002397648 0.001719858 0.002368823 0.002394983 5.04E-4</Row>
+                <Row object_ref="prot_435">3.55E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_436">7.27E-4 5.91E-4 6.86E-4 0.001151501 6.54E-4 6.05E-4 5.82E-4 5.92E-4 6.06E-4 5.88E-4</Row>
+                <Row object_ref="prot_437">0.0 4.71E-4 0.001092111 9.49E-4 0.001147981 6.09E-4 0.001043894 0.001096861 0.0 0.0</Row>
+                <Row object_ref="prot_438">0.0 0.0 0.00105989 0.0 0.0 0.001835448 0.0 0.0 0.0 6.47E-4</Row>
+                <Row object_ref="prot_439">0.004221293 0.005602037 0.004976606 0.005223793 0.007516306 0.003472148 0.005878994 0.003468559 0.002630148 0.003381185</Row>
+                <Row object_ref="prot_440">0.002309662 0.002055418 0.002184517 0.001880566 0.001982775 0.001931207 0.00185019 0.001774271 0.001463452 0.001691709</Row>
+                <Row object_ref="prot_441">0.007234209 0.004571642 0.006822896 0.003410034 0.005520434 0.009454577 0.006579645 0.007642563 0.005151309 0.008279484</Row>
+                <Row object_ref="prot_442">9.81E-4 7.72E-4 0.0 9.21E-4 0.0 0.0 4.64E-4 0.0 9.36E-4 0.0</Row>
+                <Row object_ref="prot_443">6.38E-4 4.84E-4 6.04E-4 8.98E-4 0.001004454 9.6E-4 8.34E-4 5.54E-4 6.16E-4 9.9E-4</Row>
+                <Row object_ref="prot_444">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001495109 0.0 0.0</Row>
+                <Row object_ref="prot_445">0.004100162 0.003594512 0.00386704 0.002029152 0.003649947 0.001363873 0.002609376 0.002695222 0.002043535 0.003941781</Row>
+                <Row object_ref="prot_446">0.001703818 0.0 0.001030857 0.002910532 0.001544709 0.001459253 0.001436174 0.001431615 0.0 0.0</Row>
+                <Row object_ref="prot_447">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 6.88E-4</Row>
+                <Row object_ref="prot_448">0.002122333 0.001853294 0.0 0.001780328 0.0 0.0 0.0 0.00179494 0.0 0.001749549</Row>
+                <Row object_ref="prot_449">2.08E-4 0.0 0.0 0.0 0.0 0.0 1.46E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_450">0.003997899 0.004602341 0.0 0.0 0.0 0.003525258 0.0 0.004110561 0.004139829 0.003827076</Row>
+                <Row object_ref="prot_451">7.26E-4 0.003478571 9.41E-4 0.00160644 0.004069007 9.72E-4 0.003128728 0.006462025 0.00162763 0.0</Row>
+                <Row object_ref="prot_452">0.0 9.67E-4 0.001250688 0.001066125 0.002372695 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_453">0.001907993 0.0 0.0 0.0 0.0 0.0 6.15E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_454">0.0 0.002851934 0.0 0.0 0.002872158 0.0 0.0 0.002646045 0.0 0.002588989</Row>
+                <Row object_ref="prot_455">2.43E-4 0.0 3.33E-4 0.0 0.0 0.0 3.49E-4 1.42E-4 0.0 0.0</Row>
+                <Row object_ref="prot_456">0.006065133 0.008585578 0.004576232 0.003001007 0.001078535 0.008070803 0.005791588 0.003959377 0.007054102 0.003887233</Row>
+                <Row object_ref="prot_457">0.003400054 0.002946151 0.002080532 0.001869822 0.002005903 0.005653819 0.005411719 0.005587523 0.001868011 0.001647615</Row>
+                <Row object_ref="prot_458">0.001057878 0.0 0.001418909 0.0 0.001353942 0.001051014 0.001143626 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_459">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0013753</Row>
+                <Row object_ref="prot_460">4.66E-4 4.58E-4 0.0 0.001361864 8.63E-4 0.001372906 0.001313723 8.97E-4 0.001788096 0.002644994</Row>
+                <Row object_ref="prot_461">0.0 0.0 0.0 0.0 0.0 0.002949665 0.001875653 0.0 0.0 9.18E-4</Row>
+                <Row object_ref="prot_462">0.013195479 0.011723633 0.007245927 0.001336117 0.004641995 0.010989849 0.003689705 0.008632174 0.006600449 0.007912785</Row>
+                <Row object_ref="prot_463">2.12E-4 0.0 7.52E-4 0.0 0.0 0.0 0.0 0.0 2.38E-4 6.5E-4</Row>
+                <Row object_ref="prot_464">0.0 0.0 0.0 0.0 0.0 4.45E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_465">0.0 0.0 0.0 6.12E-4 0.0 1.63E-4 0.0 1.39E-4 1.8E-4 1.68E-4</Row>
+                <Row object_ref="prot_466">0.003533485 0.001150691 0.001502936 0.001343877 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_467">5.06E-4 0.001501804 0.001604497 0.002340794 0.002526056 4.38E-4 0.001346566 0.002331404 0.001413725 0.001788681</Row>
+                <Row object_ref="prot_468">0.0 0.0 0.0 5.89E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_469">0.0 0.002147738 0.002288859 0.0 0.0 0.002021396 0.003878212 0.004002596 0.002018744 0.0</Row>
+                <Row object_ref="prot_470">0.0 0.0 0.0 2.85E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_471">0.006536565 0.007710766 0.009247377 0.008987678 0.007759207 9.0E-4 0.002339333 3.74E-4 0.0018072 0.0</Row>
+                <Row object_ref="prot_472">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 9.54E-4 0.0</Row>
+                <Row object_ref="prot_473">0.00191203 0.001565144 0.001711025 0.001466278 0.003448242 0.001527233 0.001475819 0.001402821 0.001586422 9.24E-4</Row>
+                <Row object_ref="prot_474">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001170983 3.87E-4 0.001434648</Row>
+                <Row object_ref="prot_475">0.001578609 0.001397616 0.002483163 0.001303251 0.001875195 0.001313818 0.002514365 0.002163371 0.001749635 8.44E-4</Row>
+                <Row object_ref="prot_476">5.23E-4 0.0 0.0 0.0 0.0 0.0 0.0 2.65E-4 0.0 0.0</Row>
+                <Row object_ref="prot_477">6.89E-4 3.99E-4 0.0 3.4E-4 0.001573743 4.1E-4 4.26E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_478">0.0 0.0 0.0 0.001114918 4.51E-4 0.0 0.0 0.0 7.89E-4 0.0</Row>
+                <Row object_ref="prot_479">0.001884449 0.0 0.0 1.96E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_480">0.005029232 0.002831498 0.003018455 0.002263129 0.002849286 0.003041973 0.003638551 0.0022536 0.002278944 0.003662851</Row>
+                <Row object_ref="prot_481">0.002502454 0.004430191 0.007084061 0.005163837 0.00780154 0.008329132 0.004981301 0.010286244 0.00519992 0.006017482</Row>
+                <Row object_ref="prot_482">0.002185363 0.004811175 0.006936263 0.003023953 0.00654752 0.0 4.36E-4 0.0 4.19E-4 0.0</Row>
+                <Row object_ref="prot_483">0.0 0.0 0.001439552 0.0 0.0 0.0 0.001756553 0.001154416 0.001906385 0.0</Row>
+                <Row object_ref="prot_484">0.0 0.0 0.0 0.001424227 0.001708278 7.84E-4 0.0 0.0 9.7E-4 7.57E-4</Row>
+                <Row object_ref="prot_485">0.0 0.0 0.0 0.00118829 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_486">0.007304698 0.001884754 0.0 0.0 0.012323619 0.01219182 0.004190282 0.009391555 0.011459389 0.00128663</Row>
+                <Row object_ref="prot_487">0.004773401 0.002787835 0.00123134 0.00131162 0.004251387 0.003971532 0.0 0.0 0.002643951 4.08E-4</Row>
+                <Row object_ref="prot_488">3.75E-4 0.0 0.0 0.0 6.41E-4 0.0018064 0.001477221 5.94E-4 0.0 8.14E-4</Row>
+                <Row object_ref="prot_489">0.0 0.0 0.0 0.0 0.0 0.0 3.14E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_490">0.0 0.0 0.0 2.3E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_491">3.96E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_492">1.67E-4 5.0E-4 6.9E-4 0.0 2.32E-4 0.0 0.0 1.01E-4 9.85E-4 3.89E-4</Row>
+                <Row object_ref="prot_493">0.0 1.08E-4 2.18E-4 1.15E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_494">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.002371409 0.0 0.0</Row>
+                <Row object_ref="prot_495">6.44E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_496">0.0 0.003560037 0.003795098 0.002486513 0.002654291 0.003346584 0.0 0.0 0.005850011 0.00241778</Row>
+                <Row object_ref="prot_497">0.004301771 0.002852992 0.004057187 0.002634273 0.003825588 0.00894514 0.007703582 0.006186319 0.008041676 0.01120171</Row>
+                <Row object_ref="prot_498">0.001308489 0.001150246 0.002057027 0.001079384 0.0 3.51E-4 6.86E-4 7.16E-4 0.001076055 1.22E-4</Row>
+                <Row object_ref="prot_499">0.0 0.0 0.0 0.002319052 0.0 0.0 0.0 0.0 0.005584786 0.00275651</Row>
+                <Row object_ref="prot_500">7.13E-4 0.002308442 0.001061096 0.003236971 0.0 0.003036782 2.55E-4 0.001061426 0.001263974 0.002096231</Row>
+                <Row object_ref="prot_501">0.001379181 0.001826443 0.001246693 0.0 0.0 0.0 0.00180243 0.001695349 0.001186724 0.00169376</Row>
+                <Row object_ref="prot_502">0.005010586 0.003168858 0.006644553 0.004107118 0.004465329 0.006696323 0.008810533 0.00578884 0.005852769 0.005644146</Row>
+                <Row object_ref="prot_503">0.0 0.0 0.0 0.0 0.0 4.33E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_504">0.0 0.001935286 0.0 0.002491067 0.001019178 0.001169698 0.002409763 0.001147917 0.002509481 0.001193993</Row>
+                <Row object_ref="prot_505">2.85E-4 1.06E-4 9.81E-5 4.8E-4 0.0 0.001012446 6.72E-4 0.001244771 1.68E-4 0.001018361</Row>
+                <Row object_ref="prot_506">0.0 0.0 0.0 0.0 0.0 2.29E-4 0.0 0.0 0.0 1.89E-4</Row>
+                <Row object_ref="prot_507">0.0 0.0 5.28E-4 0.002540656 0.001583519 0.0 0.0 0.0 2.65E-4 0.0</Row>
+                <Row object_ref="prot_508">8.09E-4 9.04E-4 0.0 3.99E-4 0.0 0.0 9.45E-4 8.87E-4 0.001104879 0.0</Row>
+                <Row object_ref="prot_509">0.0 0.0 0.0 0.0 0.0 0.0 0.001267545 0.001309905 0.0 0.001278189</Row>
+                <Row object_ref="prot_510">7.57E-4 0.0 0.0 4.31E-4 0.00348984 0.001631201 0.0 0.003226732 0.001592505 0.006285863</Row>
+                <Row object_ref="prot_511">0.006514648 0.004610947 0.004915398 0.002140566 0.002074506 0.004334484 0.005184543 0.004281945 2.95E-4 0.002087249</Row>
+                <Row object_ref="prot_512">0.0 8.64E-4 0.001582556 6.17E-4 3.23E-4 1.89E-4 0.0 4.94E-4 6.35E-4 0.0</Row>
+                <Row object_ref="prot_513">0.001391366 4.44E-4 0.0 0.001644014 0.0 0.003041604 0.001129815 0.001145227 0.001181571 0.0</Row>
+                <Row object_ref="prot_514">0.0 0.0 0.0 0.0 4.99E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_515">0.003392034 0.00469705 0.003274661 0.005841632 0.004485358 0.004055351 0.003928729 0.002364062 0.004382712 0.007093093</Row>
+                <Row object_ref="prot_516">0.0 0.0 0.0 0.0 0.001426513 0.001343149 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_517">0.0 0.0 0.0 0.0 0.0 0.0 0.0 9.56E-4 0.0 0.0</Row>
+                <Row object_ref="prot_518">6.92E-5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_519">0.0 0.0 0.0 0.0 0.0 0.0 0.001573025 0.001708359 0.0 0.0</Row>
+                <Row object_ref="prot_520">4.68E-4 0.001222483 0.0 0.00312908 3.59E-4 0.0 0.001450118 0.003069383 7.44E-4 0.004544702</Row>
+                <Row object_ref="prot_521">0.0 0.0 0.0 9.95E-4 0.0 0.0 7.52E-4 7.84E-4 0.0 0.0</Row>
+                <Row object_ref="prot_522">0.001112049 0.001203331 0.001965011 0.002863877 2.28E-4 0.001738522 0.001074318 0.00113981 0.001152745 0.0</Row>
+                <Row object_ref="prot_523">0.003125594 0.001387648 0.00370151 0.003885363 0.002795247 0.002611245 0.00187401 0.0 0.003912513 0.001886526</Row>
+                <Row object_ref="prot_524">0.001972659 0.003509266 6.25E-4 0.001061944 0.001091897 6.58E-4 9.11E-4 0.003262461 0.002087042 0.0</Row>
+                <Row object_ref="prot_525">0.0 0.0 4.64E-4 0.0 4.14E-4 8.51E-4 0.0 0.0 4.34E-4 4.13E-4</Row>
+                <Row object_ref="prot_526">0.0 0.001783294 0.001898365 0.001666733 0.001793955 0.001679911 0.001600719 0.001656217 0.001677707 0.001617905</Row>
+                <Row object_ref="prot_527">0.003519451 0.006468344 0.002393491 0.005805219 0.00651354 0.006027566 0.005811409 0.002994988 0.002969094 0.0</Row>
+                <Row object_ref="prot_528">0.0 0.0 0.0 0.0 5.35E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_529">0.0 0.0 0.002010568 0.001547638 0.001063632 0.005467162 0.0 0.0 0.0 0.00485943</Row>
+                <Row object_ref="prot_530">0.0 0.0 0.0 0.0 8.62E-4 0.0 6.9E-4 0.0 0.001017065 0.001970689</Row>
+                <Row object_ref="prot_531">0.002135682 0.001167897 4.76E-4 0.001757161 7.57E-4 0.004144478 0.002266183 0.002924751 0.002947292 0.002045201</Row>
+                <Row object_ref="prot_532">0.0 0.0 5.32E-4 5.96E-4 0.0 4.76E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_533">0.0 0.0 0.001579404 0.001730691 0.001877483 5.76E-4 0.002828757 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_534">0.0 8.78E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_535">0.002537761 0.003804897 0.004061416 0.00328104 0.0 7.63E-4 0.001067838 0.00220671 0.0 0.0</Row>
+                <Row object_ref="prot_536">5.96E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_537">0.004476215 0.001925423 0.003929653 0.00194465 3.46E-4 3.01E-4 9.58E-4 0.002642101 0.002691131 0.002539366</Row>
+                <Row object_ref="prot_538">0.0 0.0 0.001730083 0.0 0.001599401 0.0 0.0 0.0 0.0 0.001062719</Row>
+                <Row object_ref="prot_539">0.0 0.0 0.0 0.0 0.0 1.43E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_540">0.001327311 0.0 0.001773081 9.02E-4 0.002437546 3.35E-4 0.001622092 0.0 0.0 4.22E-4</Row>
+                <Row object_ref="prot_541">6.51E-4 0.002831588 0.002660913 0.001127639 0.004197231 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_542">0.0 0.0 0.0 0.0 0.0 0.002335864 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_543">0.001343129 4.1E-4 0.005107915 0.002225967 0.0 0.001837959 0.002126809 2.49E-4 0.001796322 0.001718625</Row>
+                <Row object_ref="prot_544">0.004618604 0.002724135 0.005082007 0.006350511 0.00616781 4.34E-4 6.06E-4 8.61E-4 6.06E-4 6.15E-4</Row>
+                <Row object_ref="prot_545">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 4.39E-4 0.0</Row>
+                <Row object_ref="prot_546">0.0 0.0 0.0 0.001255443 0.0 0.0 0.0 0.00122136 0.0 0.0</Row>
+                <Row object_ref="prot_547">0.001239705 0.002091785 0.001443326 0.0 0.004961027 0.006145212 0.006650687 0.003790204 0.0 0.004379465</Row>
+                <Row object_ref="prot_548">0.003866406 0.004563233 0.002430077 0.004255128 0.002280337 0.00428963 0.002051331 0.003178544 0.003213646 0.005165159</Row>
+                <Row object_ref="prot_549">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001529895 0.0 0.001463945</Row>
+                <Row object_ref="prot_550">0.001848263 6.0E-4 3.63E-4 0.003086019 7.07E-4 0.001209383 0.001201163 0.003043823 6.73E-4 0.002830174</Row>
+                <Row object_ref="prot_551">3.75E-4 0.001549134 0.002028759 0.001073974 7.82E-4 3.96E-4 0.001057375 2.24E-4 0.001696837 0.002484432</Row>
+                <Row object_ref="prot_552">0.0 0.001906638 0.00146183 0.001548794 0.0 0.001844721 0.001763078 0.0 0.001715839 0.0</Row>
+                <Row object_ref="prot_553">0.0 0.0 0.0 0.0 0.0 0.00189846 9.17E-4 8.58E-4 4.08E-4 0.001605024</Row>
+                <Row object_ref="prot_554">0.0 0.0 0.0 0.0 0.0 0.0 5.14E-4 0.0 0.0 2.53E-4</Row>
+                <Row object_ref="prot_555">0.006976543 0.003079069 0.003285663 0.002876929 0.004657867 0.005801673 0.002771902 0.002865102 0.002896742 0.005589211</Row>
+                <Row object_ref="prot_556">0.0 0.0 0.0 0.0 0.0 0.0 0.003403372 0.001587022 0.0 0.0</Row>
+                <Row object_ref="prot_557">7.36E-4 6.6E-4 6.02E-4 0.0 5.07E-4 6.4E-4 0.001235313 0.001918541 6.3E-4 6.19E-4</Row>
+                <Row object_ref="prot_558">3.98E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.001461742 0.0 0.0</Row>
+                <Row object_ref="prot_559">0.0 0.0 0.0 0.003928474 0.0 0.0 0.0 9.31E-4 0.0 0.0</Row>
+                <Row object_ref="prot_560">0.002916067 0.001699641 0.00275137 7.98E-4 8.28E-4 8.04E-4 7.68E-4 0.001584279 8.01E-4 7.74E-4</Row>
+                <Row object_ref="prot_561">0.0 0.003183893 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_562">0.0 0.001609552 0.003163247 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_563">0.00285508 0.0012722 0.00127896 0.0 0.001167734 0.002344188 9.18E-4 0.001171081 0.0 2.57E-4</Row>
+                <Row object_ref="prot_564">0.002358181 0.007122532 0.0 0.0 0.0 0.00329295 0.003273552 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_565">0.0 0.0 0.0 0.0 0.0 0.002057382 0.003332216 0.00229548 0.002320598 0.002233628</Row>
+                <Row object_ref="prot_566">0.0 0.0 0.0 0.0 0.0 0.00324834 0.0 0.0 6.52E-4 0.0</Row>
+                <Row object_ref="prot_567">0.0 0.0 0.0 0.001550499 9.89E-4 0.0 5.16E-4 0.0 7.27E-4 0.0</Row>
+                <Row object_ref="prot_568">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.44E-4</Row>
+                <Row object_ref="prot_569">0.005693678 0.00626728 0.006981748 0.006236678 0.0 0.004518697 0.006027357 0.004231187 0.006109736 0.001851864</Row>
+                <Row object_ref="prot_570">0.0 0.0 0.0 0.0 0.0 0.0 4.03E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_571">0.0 0.0 0.0 0.0 0.001799023 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_572">0.0 0.00220412 0.006271074 0.0 0.0 0.005579604 0.005376881 8.29E-4 0.001600937 0.0</Row>
+                <Row object_ref="prot_573">0.007004941 0.007746824 0.006606664 0.008668519 0.00857504 0.014564679 0.012543146 0.019425928 0.010911365 0.01332841</Row>
+                <Row object_ref="prot_574">0.00424415 0.001098923 0.00120631 0.004636297 0.002470128 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_575">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001025932</Row>
+                <Row object_ref="prot_576">0.0 0.0 0.001339726 5.76E-4 5.41E-4 0.001193694 0.0 5.85E-4 5.44E-4 0.0</Row>
+                <Row object_ref="prot_577">0.001818975 0.003436625 0.002874834 0.001690145 0.003867613 0.005400011 0.003306113 0.007142024 0.003572174 0.003372067</Row>
+                <Row object_ref="prot_578">0.0 0.0 0.0 5.6E-4 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_579">0.0 0.001177904 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_580">0.007178614 0.008997409 0.007898872 0.004935243 0.009586517 0.005472786 0.004760788 0.003932356 0.005466702 0.005271841</Row>
+                <Row object_ref="prot_581">0.002413211 5.87E-4 0.0 4.59E-4 5.77E-4 0.0 3.86E-4 5.77E-4 0.002056708 4.98E-4</Row>
+                <Row object_ref="prot_582">0.0 0.0 4.2E-4 5.39E-4 0.0 5.68E-4 7.65E-4 0.0 0.0 7.52E-4</Row>
+                <Row object_ref="prot_583">0.0 8.79E-4 0.00113847 8.89E-4 2.59E-4 0.001023882 0.0 9.23E-4 0.001040381 0.0</Row>
+                <Row object_ref="prot_584">0.002502957 0.0 0.0 0.002101359 0.0 0.002758827 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_585">0.006315906 0.010058133 0.005956805 0.006245175 0.005622955 0.008404504 0.00401869 0.006227596 0.007225295 0.007083925</Row>
+                <Row object_ref="prot_586">0.0 0.001623876 0.00354411 0.0 0.001310036 0.001268179 0.0 0.001559044 0.0 0.001372483</Row>
+                <Row object_ref="prot_587">3.9E-4 1.59E-4 8.86E-5 0.0 7.65E-4 3.4E-4 0.001024528 7.0E-4 0.0 5.84E-4</Row>
+                <Row object_ref="prot_588">0.0 0.0 9.08E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_589">0.0 3.79E-4 2.95E-4 1.13E-4 4.14E-4 1.3E-4 3.16E-4 3.6E-4 3.84E-4 2.17E-4</Row>
+                <Row object_ref="prot_590">0.004789609 0.009230676 0.0 0.003667875 0.004546709 0.002035783 7.72E-4 8.18E-4 0.004331173 0.002039846</Row>
+                <Row object_ref="prot_591">1.36E-4 0.0 2.13E-4 4.91E-4 5.28E-4 4.66E-4 4.18E-4 4.88E-4 4.05E-4 4.81E-4</Row>
+                <Row object_ref="prot_592">0.003156932 0.005662234 0.006296129 0.002452712 0.002831964 0.002664977 0.002137034 0.002739353 0.002725238 0.002348119</Row>
+                <Row object_ref="prot_593">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001056511 0.0</Row>
+                <Row object_ref="prot_594">0.0 0.0 0.0 0.0 0.0 9.01E-4 0.0 0.0 0.0 0.002093322</Row>
+                <Row object_ref="prot_595">0.0 0.0 0.0 0.0 0.001171056 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_596">0.0 0.0 0.001301256 0.0 0.0 0.0 0.001069455 8.38E-4 0.0 0.001147931</Row>
+                <Row object_ref="prot_597">0.0 0.0 0.0 0.003718817 0.004308156 0.002643102 0.0 0.0 0.004279917 0.001699614</Row>
+                <Row object_ref="prot_598">5.76E-4 0.0 5.7E-4 0.0 4.94E-4 0.0015442 3.79E-4 0.0 0.001053006 0.0</Row>
+                <Row object_ref="prot_599">0.0 0.0 6.3E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_600">4.93E-4 0.0 7.49E-4 0.0 7.83E-4 6.8E-4 6.07E-4 8.57E-4 6.79E-4 0.0</Row>
+                <Row object_ref="prot_601">0.002213744 0.003012063 0.0 0.0 0.002632018 0.0 0.005474317 0.005228328 0.005728341 0.005528579</Row>
+                <Row object_ref="prot_602">0.0 0.0 0.0 0.0 0.0 0.0 5.93E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_603">0.0 7.62E-4 0.001166376 0.003168059 0.002400993 0.004745457 0.001959061 0.004690284 0.002362968 0.0</Row>
+                <Row object_ref="prot_604">0.0 0.0 0.0 8.46E-4 0.0 0.003186471 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_605">7.99E-4 0.006029945 9.92E-4 0.005604813 0.004547228 0.005669535 0.005406689 0.00420103 0.0 0.001360426</Row>
+                <Row object_ref="prot_606">0.004363019 0.003694957 0.002737255 0.002393143 0.001292312 0.001196823 0.001147433 0.001183511 0.0 0.001163034</Row>
+                <Row object_ref="prot_607">0.0 0.0 0.0 0.0 0.0 0.002524226 0.0 0.001172335 0.003228527 0.002405756</Row>
+                <Row object_ref="prot_608">0.002609796 0.0 0.001067337 0.001835544 4.72E-4 5.69E-4 0.001855248 0.001725599 0.001025037 9.74E-4</Row>
+                <Row object_ref="prot_609">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.00184433</Row>
+                <Row object_ref="prot_610">0.0 0.0 0.0 3.3E-4 6.55E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_611">0.006691379 0.003123061 0.002282474 0.003360305 0.0 0.003471532 0.003031916 0.003321934 0.003462779 0.003265193</Row>
+                <Row object_ref="prot_612">0.009256884 0.005118634 0.004365284 0.002863817 0.005665869 0.007217595 0.005525169 0.00522927 0.006728933 0.005098563</Row>
+                <Row object_ref="prot_613">0.0 9.56E-4 0.001010587 9.49E-4 0.0 0.008633351 0.009179096 0.008529557 0.007665558 0.008316358</Row>
+                <Row object_ref="prot_614">0.004798985 0.006368686 0.005280486 0.006598532 0.00783285 0.005321629 0.00700181 0.005914856 0.003976419 0.006407792</Row>
+                <Row object_ref="prot_615">0.001739472 0.0 0.0 0.0 0.001670526 0.00160289 0.0 0.001193947 0.0 0.0</Row>
+                <Row object_ref="prot_616">0.0 0.0 0.0 0.0 0.0 0.001061062 0.0 0.0 0.0 3.41E-4</Row>
+                <Row object_ref="prot_617">0.0 0.0 0.0 0.0 0.0 0.0 0.001486277 0.0 0.001022103 0.0</Row>
+                <Row object_ref="prot_618">0.00223173 0.00168666 0.003765227 0.003289904 0.001640045 0.0 0.003087897 0.001524195 0.001585099 0.004811452</Row>
+                <Row object_ref="prot_619">0.0 0.0 0.002175456 0.00194652 0.0 0.0 0.0 0.001934039 0.001925475 0.0</Row>
+                <Row object_ref="prot_620">0.002183282 0.004426779 0.007085705 0.002064565 0.0 0.002969059 0.003801808 0.001806749 4.83E-4 0.0</Row>
+                <Row object_ref="prot_621">0.0 0.0 0.0 0.00308102 0.0 0.0 0.004726169 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_622">0.0 0.001613143 0.0 0.0 6.61E-4 0.0 0.0 7.42E-4 0.00142674 0.0</Row>
+                <Row object_ref="prot_623">0.007585745 0.007670071 0.005110318 0.005364147 0.006753474 0.004501411 0.003449687 0.004452191 0.004482452 0.004340907</Row>
+                <Row object_ref="prot_624">8.62E-4 0.00171858 0.004055274 0.003560491 0.003850011 0.003600547 0.005123465 0.003559398 0.001678075 0.002652959</Row>
+                <Row object_ref="prot_625">7.68E-4 0.005168455 0.001301363 0.001146775 0.0 0.001921701 0.0 0.003123116 5.04E-4 0.002374804</Row>
+                <Row object_ref="prot_626">0.016406473 0.001588254 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_627">0.0 0.0 0.0 0.0 4.88E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_628">0.00380574 0.007126994 0.001037712 0.00685888 0.007381698 0.00335053 0.009825176 0.006671845 0.006800901 0.0</Row>
+                <Row object_ref="prot_629">0.001742971 0.006114501 0.0 0.005715419 0.006188808 0.001728837 0.00368813 0.001888549 0.001831635 0.003712761</Row>
+                <Row object_ref="prot_630">0.003431883 0.004337541 0.003236758 0.00485361 0.002182395 0.004892965 0.00195085 0.003625605 0.004480232 0.004713309</Row>
+                <Row object_ref="prot_631">7.75E-4 0.002055298 7.04E-4 0.001264623 0.00138157 0.0 5.32E-4 1.47E-4 6.39E-4 2.48E-4</Row>
+                <Row object_ref="prot_632">0.0 0.002469216 0.002467114 0.002422317 0.003966733 0.003872448 0.002425298 0.003830492 7.07E-4 0.004983152</Row>
+                <Row object_ref="prot_633">0.0 0.0 0.0 0.0 0.0 3.07E-4 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_634">0.0 0.0 0.0 0.0 8.94E-4 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_635">0.0 0.0 0.0 0.0 0.0 0.0 6.02E-4 0.001490698 4.22E-4 0.001460032</Row>
+                <Row object_ref="prot_636">0.004920021 0.00432979 0.004561353 0.004034604 0.0 0.0040882 0.005858547 0.00384812 0.001985593 0.005845021</Row>
+                <Row object_ref="prot_637">0.002069721 0.0 0.001190271 0.001865989 0.0 0.0 0.0 7.5E-4 7.88E-4 5.7E-4</Row>
+                <Row object_ref="prot_638">0.001490235 0.001070037 0.002742195 0.003108716 0.0 0.0 0.005899153 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_639">0.0 0.001186346 0.0 0.0 0.0 0.005667577 0.001776096 0.001864238 0.003157428 0.003637104</Row>
+                <Row object_ref="prot_640">0.0 0.001022368 0.0 0.0 3.18E-4 2.62E-4 0.0 0.0 4.0E-4 0.0</Row>
+                <Row object_ref="prot_641">0.002742097 0.001274281 0.002590126 0.001191915 0.002210693 0.002281011 0.0 0.001825954 0.002250976 0.001744213</Row>
+                <Row object_ref="prot_642">0.0 7.59E-4 0.0 0.001419332 6.68E-4 0.00214712 0.001368749 0.0 0.001419807 0.0</Row>
+                <Row object_ref="prot_643">0.0 0.0 8.0E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_644">5.89E-4 0.001021965 0.001678135 0.002446756 0.001053627 0.001463678 0.002832319 9.68E-4 9.85E-4 9.5E-4</Row>
+                <Row object_ref="prot_645">0.0 2.23E-4 2.89E-4 0.001611103 8.79E-4 0.007432878 0.003951369 0.006527571 0.004124786 0.005568861</Row>
+                <Row object_ref="prot_646">0.00128085 4.97E-4 0.001278032 0.002238986 0.003020239 0.001116833 0.002158977 0.001113107 0.00281829 0.002174265</Row>
+                <Row object_ref="prot_647">0.0 0.0 0.0 0.0 0.002579367 0.0 0.0 0.0 0.0 0.001873887</Row>
+                <Row object_ref="prot_648">7.44E-4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_649">0.004626521 0.0 0.0 0.003888993 0.004193842 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_650">0.003671442 0.003665752 0.001869489 0.003409357 0.005533172 0.005168941 0.003295765 0.001609152 0.001668228 0.001654904</Row>
+                <Row object_ref="prot_651">0.0 0.0 0.0 0.001023377 0.004579002 8.65E-4 0.0 0.001961813 0.0 0.001551144</Row>
+                <Row object_ref="prot_652">0.0 0.0 0.0 0.0 0.0 0.0 0.002107184 0.0 0.0 0.001530902</Row>
+                <Row object_ref="prot_653">0.009258683 0.00600703 0.00582151 0.003564554 0.003297146 0.00564686 0.005894659 0.005071792 0.005640583 0.004945022</Row>
+                <Row object_ref="prot_654">0.003790206 0.001846367 0.001928269 4.83E-4 0.004414273 0.0 0.0 0.003325239 0.0 0.0</Row>
+                <Row object_ref="prot_655">0.007560504 0.006668122 0.001695927 0.006206603 0.009026128 0.004213454 0.001727808 0.001659162 0.008344248 0.001921731</Row>
+                <Row object_ref="prot_656">0.0 0.0 0.0 0.001803593 0.0 0.004736317 0.005665748 0.002271596 0.00354403 0.002271168</Row>
+                <Row object_ref="prot_657">0.003027153 0.002656778 0.002749117 0.004994748 0.001313557 0.0 0.0 2.58E-4 2.91E-4 0.0</Row>
+                <Row object_ref="prot_658">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.001991272 0.0</Row>
+                <Row object_ref="prot_659">0.002311107 0.00253004 0.002610817 0.0 0.0 0.001902723 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_660">0.005433871 0.001815906 0.0 0.0 0.0 0.006806098 0.001021933 6.29E-4 0.0042023 0.001852463</Row>
+                <Row object_ref="prot_661">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.72E-4</Row>
+                <Row object_ref="prot_662">0.002311745 9.54E-4 9.08E-4 0.0 6.26E-4 0.001783261 3.82E-4 0.00285929 5.18E-4 4.23E-4</Row>
+                <Row object_ref="prot_663">0.0 0.016823539 0.0 0.0 0.0 0.0 0.005945576 0.006455312 0.007851995 0.0</Row>
+                <Row object_ref="prot_664">0.0 9.79E-4 0.0 2.39E-4 3.37E-4 0.006107313 0.006818048 0.005028241 0.006100524 0.004902558</Row>
+                <Row object_ref="prot_665">5.72E-4 7.97E-4 0.0 8.24E-4 5.7E-4 6.61E-4 8.83E-4 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_666">3.4E-4 1.42E-4 1.25E-4 2.99E-4 1.06E-4 0.0 3.6E-4 0.0 2.72E-4 8.17E-4</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+        
+    </ProteinList>
+    
+    <SoftwareList>
+        <Software version="1.0" id="APEX"/>
+    </SoftwareList>
+    <DataProcessingList>
+        <DataProcessing software_Ref="APEX" id="feature_quantification">
+            <ProcessingMethod order="1">
+                <cvParam accession="" cvRef="PSI-MS" name=""/>
+            </ProcessingMethod>
+        </DataProcessing>
+    </DataProcessingList>
+</MzQuantML>

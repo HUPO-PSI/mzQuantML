@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../../schema/mzQuantML_1_0_0-rc.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1"
+ version="1.0.0"
+ creationDate="2011-08-25T14:54:53.903+01:00">
+    <CvList>
+        <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
+    </CvList>
+    <InputFiles>
+        <RawFilesGroup id="rg_0">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red.raw" name="sh_072808p_E_coli_ABRF_red.raw" id="raw_0"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_1">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080729113858.raw" name="sh_072808p_E_coli_ABRF_red_080729113858.raw" id="raw_1"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_2">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080729210909.raw" name="sh_072808p_E_coli_ABRF_red_080729210909.raw" id="raw_2"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_3">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080730063917.raw" name="sh_072808p_E_coli_ABRF_red_080730063917.raw" id="raw_3"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_4">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_red_080730160920.raw" name="sh_072808p_E_coli_ABRF_red_080730160920.raw" id="raw_4"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_5">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow.raw" name="sh_072808p_E_coli_ABRF_yellow.raw" id="raw_5"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_6">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080729065352.raw" name="sh_072808p_E_coli_ABRF_yellow_080729065352.raw" id="raw_6"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_7">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080729162405.raw" name="sh_072808p_E_coli_ABRF_yellow_080729162405.raw" id="raw_7"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_8">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080730015413.raw" name="sh_072808p_E_coli_ABRF_yellow_080730015413.raw" id="raw_8"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_9">
+            <RawFile location="../msmsdata/sh_072808p_E_coli_ABRF_yellow_080730112418.raw" name="sh_072808p_E_coli_ABRF_yellow_080730112418.raw" id="raw_9"/>
+        </RawFilesGroup>
+    </InputFiles>
+    <AssayList id="AssayList_1">
+        <Assay name="sh_072808p_E_coli_ABRF_red" id="ass_0">
+            <RawFilesGroup_refs>rg_0</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080729113858" id="ass_1">
+            <RawFilesGroup_refs>rg_1</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080729210909" id="ass_2">
+            <RawFilesGroup_refs>rg_2</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080730063917" id="ass_3">
+            <RawFilesGroup_refs>rg_3</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_red_080730160920" id="ass_4">
+            <RawFilesGroup_refs>rg_4</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow" id="ass_5">
+            <RawFilesGroup_refs>rg_5</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080729065352" id="ass_6">
+            <RawFilesGroup_refs>rg_6</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080729162405" id="ass_7">
+            <RawFilesGroup_refs>rg_7</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080730015413" id="ass_8">
+            <RawFilesGroup_refs>rg_8</RawFilesGroup_refs>
+        </Assay>
+        <Assay name="sh_072808p_E_coli_ABRF_yellow_080730112418" id="ass_9">
+            <RawFilesGroup_refs>rg_9</RawFilesGroup_refs>
+        </Assay>
+    </AssayList>
+    <StudyVariableList>
+        <StudyVariable name="Red" id="SV_Red">
+            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <Assay_refs>ass_0 ass_1 ass_2 ass_3 ass_4</Assay_refs>
+        </StudyVariable>
+        <StudyVariable name="Yellow" id="SV_Yellow">
+            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <Assay_refs>ass_5 ass_6 ass_7 ass_8 ass_9</Assay_refs>
+        </StudyVariable>
+    </StudyVariableList>
+    <ProteinList id="ProtList1">
+        <Protein accession="P64581" id="prot_0"/>
+        <Protein accession="P37349" id="prot_1"/>
+        <Protein accession="P77690" id="prot_2"/>
+        <Protein accession="P21177" id="prot_3"/>
+        <Protein accession="P0A7G6" id="prot_4"/>
+        <Protein accession="P0A6C8" id="prot_5"/>
+        <Protein accession="P76027" id="prot_6"/>
+        <Protein accession="P0ACB7" id="prot_7"/>
+        <Protein accession="P77499" id="prot_8"/>
+        <Protein accession="P07639" id="prot_9"/>
+        <Protein accession="P76217" id="prot_10"/>
+        <Protein accession="P21165" id="prot_11"/>
+        <Protein accession="P27431" id="prot_12"/>
+        <Protein accession="P0ADY1" id="prot_13"/>
+        <Protein accession="P0ACA3" id="prot_14"/>
+        <Protein accession="P0ADY3" id="prot_15"/>
+        <Protein accession="P21170" id="prot_16"/>
+        <Protein accession="P17117" id="prot_17"/>
+        <Protein accession="P0ACA7" id="prot_18"/>
+        <Protein accession="P0ADE6" id="prot_19"/>
+        <Protein accession="P32099" id="prot_20"/>
+        <Protein accession="P07024" id="prot_21"/>
+        <Protein accession="P0A6E4" id="prot_22"/>
+        <Protein accession="P0A7E9" id="prot_23"/>
+        <Protein accession="P0A998" id="prot_24"/>
+        <Protein accession="P0A7E5" id="prot_25"/>
+        <Protein accession="P12758" id="prot_26"/>
+        <Protein accession="P07118" id="prot_27"/>
+        <Protein accession="P0A993" id="prot_28"/>
+        <Protein accession="P0ADY7" id="prot_29"/>
+        <Protein accession="P0A991" id="prot_30"/>
+        <Protein accession="P0A7E1" id="prot_31"/>
+        <Protein accession="P76002" id="prot_32"/>
+        <Protein accession="Cntm_P02534" id="prot_33"/>
+        <Protein accession="Cntm_P02533" id="prot_34"/>
+        <Protein accession="P0ADZ4" id="prot_35"/>
+        <Protein accession="P0ACD4" id="prot_36"/>
+        <Protein accession="P37330" id="prot_37"/>
+        <Protein accession="P0ADZ0" id="prot_38"/>
+        <Protein accession="P33232" id="prot_39"/>
+        <Protein accession="P0AEZ3" id="prot_40"/>
+        <Protein accession="P0AGD3" id="prot_41"/>
+        <Protein accession="P37440" id="prot_42"/>
+        <Protein accession="P27550" id="prot_43"/>
+        <Protein accession="P0A6F3" id="prot_44"/>
+        <Protein accession="P31224" id="prot_45"/>
+        <Protein accession="P0AEZ9" id="prot_46"/>
+        <Protein accession="P0A6F1" id="prot_47"/>
+        <Protein accession="P64596" id="prot_48"/>
+        <Protein accession="P07014" id="prot_49"/>
+        <Protein accession="P0A6F5" id="prot_50"/>
+        <Protein accession="P0A6F9" id="prot_51"/>
+        <Protein accession="P0AGD7" id="prot_52"/>
+        <Protein accession="Cntm_P02538" id="prot_53"/>
+        <Protein accession="P0ADZ7" id="prot_54"/>
+        <Protein accession="P0ACC7" id="prot_55"/>
+        <Protein accession="P07813" id="prot_56"/>
+        <Protein accession="P0ADC1" id="prot_57"/>
+        <Protein accession="P0C0L2" id="prot_58"/>
+        <Protein accession="P0A7K6" id="prot_59"/>
+        <Protein accession="P76268" id="prot_60"/>
+        <Protein accession="P04391" id="prot_61"/>
+        <Protein accession="P00934" id="prot_62"/>
+        <Protein accession="P77398" id="prot_63"/>
+        <Protein accession="P33599" id="prot_64"/>
+        <Protein accession="P0A6G7" id="prot_65"/>
+        <Protein accession="P07003" id="prot_66"/>
+        <Protein accession="P25665" id="prot_67"/>
+        <Protein accession="P0ABB4" id="prot_68"/>
+        <Protein accession="P0ABB0" id="prot_69"/>
+        <Protein accession="P0A6H1" id="prot_70"/>
+        <Protein accession="P0ADB1" id="prot_71"/>
+        <Protein accession="P0A7L0" id="prot_72"/>
+        <Protein accession="P0A7L3" id="prot_73"/>
+        <Protein accession="P0ADB7" id="prot_74"/>
+        <Protein accession="P60906" id="prot_75"/>
+        <Protein accession="P0A7L8" id="prot_76"/>
+        <Protein accession="P00946" id="prot_77"/>
+        <Protein accession="Cntm_P08779" id="prot_78"/>
+        <Protein accession="P0ABA6" id="prot_79"/>
+        <Protein accession="P77243" id="prot_80"/>
+        <Protein accession="P0A6H5" id="prot_81"/>
+        <Protein accession="P0ABA0" id="prot_82"/>
+        <Protein accession="P76116" id="prot_83"/>
+        <Protein accession="P0ADA5" id="prot_84"/>
+        <Protein accession="P29012" id="prot_85"/>
+        <Protein accession="P39451" id="prot_86"/>
+        <Protein accession="P0A7M2" id="prot_87"/>
+        <Protein accession="P0A7M6" id="prot_88"/>
+        <Protein accession="P35340" id="prot_89"/>
+        <Protein accession="P00954" id="prot_90"/>
+        <Protein accession="P28635" id="prot_91"/>
+        <Protein accession="P00956" id="prot_92"/>
+        <Protein accession="P00957" id="prot_93"/>
+        <Protein accession="P00959" id="prot_94"/>
+        <Protein accession="P26646" id="prot_95"/>
+        <Protein accession="P60723" id="prot_96"/>
+        <Protein accession="P27248" id="prot_97"/>
+        <Protein accession="P0A7J3" id="prot_98"/>
+        <Protein accession="P00968" id="prot_99"/>
+        <Protein accession="P0A7J7" id="prot_100"/>
+        <Protein accession="P00960" id="prot_101"/>
+        <Protein accession="P0A6J8" id="prot_102"/>
+        <Protein accession="P0A6J5" id="prot_103"/>
+        <Protein accession="P00963" id="prot_104"/>
+        <Protein accession="P31979" id="prot_105"/>
+        <Protein accession="P00961" id="prot_106"/>
+        <Protein accession="P00962" id="prot_107"/>
+        <Protein accession="P77775" id="prot_108"/>
+        <Protein accession="P07913" id="prot_109"/>
+        <Protein accession="P77774" id="prot_110"/>
+        <Protein accession="P21513" id="prot_111"/>
+        <Protein accession="P00864" id="prot_112"/>
+        <Protein accession="P52697" id="prot_113"/>
+        <Protein accession="P31120" id="prot_114"/>
+        <Protein accession="P0A7K2" id="prot_115"/>
+        <Protein accession="P33570" id="prot_116"/>
+        <Protein accession="P04693" id="prot_117"/>
+        <Protein accession="P0AAT9" id="prot_118"/>
+        <Protein accession="P0AFE0" id="prot_119"/>
+        <Protein accession="P0A9Q9" id="prot_120"/>
+        <Protein accession="P76558" id="prot_121"/>
+        <Protein accession="P37095" id="prot_122"/>
+        <Protein accession="P0AA16" id="prot_123"/>
+        <Protein accession="P17315" id="prot_124"/>
+        <Protein accession="P11447" id="prot_125"/>
+        <Protein accession="P30859" id="prot_126"/>
+        <Protein accession="P21367" id="prot_127"/>
+        <Protein accession="P56262" id="prot_128"/>
+        <Protein accession="P0C0S1" id="prot_129"/>
+        <Protein accession="Q46829" id="prot_130"/>
+        <Protein accession="P61517" id="prot_131"/>
+        <Protein accession="P37689" id="prot_132"/>
+        <Protein accession="P02931" id="prot_133"/>
+        <Protein accession="P0AFF6" id="prot_134"/>
+        <Protein accession="P02930" id="prot_135"/>
+        <Protein accession="Q57261" id="prot_136"/>
+        <Protein accession="P31142" id="prot_137"/>
+        <Protein accession="P69441" id="prot_138"/>
+        <Protein accession="P06610" id="prot_139"/>
+        <Protein accession="P11454" id="prot_140"/>
+        <Protein accession="P05042" id="prot_141"/>
+        <Protein accession="P32678" id="prot_142"/>
+        <Protein accession="P0AGJ5" id="prot_143"/>
+        <Protein accession="P31554" id="prot_144"/>
+        <Protein accession="P0AC86" id="prot_145"/>
+        <Protein accession="P0AA10" id="prot_146"/>
+        <Protein accession="P0AGJ9" id="prot_147"/>
+        <Protein accession="P31550" id="prot_148"/>
+        <Protein accession="P60390" id="prot_149"/>
+        <Protein accession="P0A940" id="prot_150"/>
+        <Protein accession="P62707" id="prot_151"/>
+        <Protein accession="P0AFC7" id="prot_152"/>
+        <Protein accession="Cntm_P04264" id="prot_153"/>
+        <Protein accession="P02925" id="prot_154"/>
+        <Protein accession="P04079" id="prot_155"/>
+        <Protein accession="P05055" id="prot_156"/>
+        <Protein accession="P06612" id="prot_157"/>
+        <Protein accession="P62399" id="prot_158"/>
+        <Protein accession="P22106" id="prot_159"/>
+        <Protein accession="P0A915" id="prot_160"/>
+        <Protein accession="P0A917" id="prot_161"/>
+        <Protein accession="P0A912" id="prot_162"/>
+        <Protein accession="P0A9T0" id="prot_163"/>
+        <Protein accession="P25553" id="prot_164"/>
+        <Protein accession="P76187" id="prot_165"/>
+        <Protein accession="P0AGK8" id="prot_166"/>
+        <Protein accession="Q46845" id="prot_167"/>
+        <Protein accession="P0A9T4" id="prot_168"/>
+        <Protein accession="P0A910" id="prot_169"/>
+        <Protein accession="P77330" id="prot_170"/>
+        <Protein accession="P76373" id="prot_171"/>
+        <Protein accession="P0AFD1" id="prot_172"/>
+        <Protein accession="P0AB24" id="prot_173"/>
+        <Protein accession="P0C018" id="prot_174"/>
+        <Protein accession="P33920" id="prot_175"/>
+        <Protein accession="P61949" id="prot_176"/>
+        <Protein accession="P0ABZ6" id="prot_177"/>
+        <Protein accession="P0AA25" id="prot_178"/>
+        <Protein accession="P0AED0" id="prot_179"/>
+        <Protein accession="P0A927" id="prot_180"/>
+        <Protein accession="Q46856" id="prot_181"/>
+        <Protein accession="P0A9U3" id="prot_182"/>
+        <Protein accession="Q46857" id="prot_183"/>
+        <Protein accession="P41407" id="prot_184"/>
+        <Protein accession="P77454" id="prot_185"/>
+        <Protein accession="P0AEE1" id="prot_186"/>
+        <Protein accession="P33916" id="prot_187"/>
+        <Protein accession="P0AEE5" id="prot_188"/>
+        <Protein accession="P0AC62" id="prot_189"/>
+        <Protein accession="P0ABU2" id="prot_190"/>
+        <Protein accession="P17952" id="prot_191"/>
+        <Protein accession="P0ACY1" id="prot_192"/>
+        <Protein accession="P02359" id="prot_193"/>
+        <Protein accession="P02358" id="prot_194"/>
+        <Protein accession="P0AGE9" id="prot_195"/>
+        <Protein accession="P0A8V2" id="prot_196"/>
+        <Protein accession="P23908" id="prot_197"/>
+        <Protein accession="P0AC53" id="prot_198"/>
+        <Protein accession="P0AGE0" id="prot_199"/>
+        <Protein accession="P77318" id="prot_200"/>
+        <Protein accession="P0AC59" id="prot_201"/>
+        <Protein accession="P0AGE6" id="prot_202"/>
+        <Protein accession="P0ABT2" id="prot_203"/>
+        <Protein accession="P37645" id="prot_204"/>
+        <Protein accession="P23917" id="prot_205"/>
+        <Protein accession="P0ACX3" id="prot_206"/>
+        <Protein accession="P0AB89" id="prot_207"/>
+        <Protein accession="P0C0V0" id="prot_208"/>
+        <Protein accession="P22259" id="prot_209"/>
+        <Protein accession="P13029" id="prot_210"/>
+        <Protein accession="P0A7D4" id="prot_211"/>
+        <Protein accession="P0AB91" id="prot_212"/>
+        <Protein accession="P22256" id="prot_213"/>
+        <Protein accession="P0ACW6" id="prot_214"/>
+        <Protein accession="P0AC44" id="prot_215"/>
+        <Protein accession="P0A7D7" id="prot_216"/>
+        <Protein accession="P0A988" id="prot_217"/>
+        <Protein accession="P0A9W3" id="prot_218"/>
+        <Protein accession="P39377" id="prot_219"/>
+        <Protein accession="P0AFG3" id="prot_220"/>
+        <Protein accession="P0AB77" id="prot_221"/>
+        <Protein accession="P61714" id="prot_222"/>
+        <Protein accession="P31663" id="prot_223"/>
+        <Protein accession="P04425" id="prot_224"/>
+        <Protein accession="P27302" id="prot_225"/>
+        <Protein accession="P0AFG6" id="prot_226"/>
+        <Protein accession="P31660" id="prot_227"/>
+        <Protein accession="P27306" id="prot_228"/>
+        <Protein accession="P0AFG8" id="prot_229"/>
+        <Protein accession="P0AB80" id="prot_230"/>
+        <Protein accession="P11875" id="prot_231"/>
+        <Protein accession="P37685" id="prot_232"/>
+        <Protein accession="P0A953" id="prot_233"/>
+        <Protein accession="P77581" id="prot_234"/>
+        <Protein accession="P0AFG0" id="prot_235"/>
+        <Protein accession="P0A955" id="prot_236"/>
+        <Protein accession="P0A9X4" id="prot_237"/>
+        <Protein accession="P0A6A3" id="prot_238"/>
+        <Protein accession="P0A8T7" id="prot_239"/>
+        <Protein accession="P68679" id="prot_240"/>
+        <Protein accession="P21599" id="prot_241"/>
+        <Protein accession="P0AEH5" id="prot_242"/>
+        <Protein accession="P28304" id="prot_243"/>
+        <Protein accession="P02769" id="prot_244"/>
+        <Protein accession="P21499" id="prot_245"/>
+        <Protein accession="P37666" id="prot_246"/>
+        <Protein accession="P0AFH8" id="prot_247"/>
+        <Protein accession="P37665" id="prot_248"/>
+        <Protein accession="P68066" id="prot_249"/>
+        <Protein accession="P07862" id="prot_250"/>
+        <Protein accession="P0AB71" id="prot_251"/>
+        <Protein accession="P0A6B7" id="prot_252"/>
+        <Protein accession="P61175" id="prot_253"/>
+        <Protein accession="P69411" id="prot_254"/>
+        <Protein accession="P0ACU7" id="prot_255"/>
+        <Protein accession="P67910" id="prot_256"/>
+        <Protein accession="P0A7B8" id="prot_257"/>
+        <Protein accession="P0AC69" id="prot_258"/>
+        <Protein accession="P0A9Y6" id="prot_259"/>
+        <Protein accession="P0ABU5" id="prot_260"/>
+        <Protein accession="P42632" id="prot_261"/>
+        <Protein accession="P00363" id="prot_262"/>
+        <Protein accession="P09169" id="prot_263"/>
+        <Protein accession="P76402" id="prot_264"/>
+        <Protein accession="P0AAI9" id="prot_265"/>
+        <Protein accession="P0AAI5" id="prot_266"/>
+        <Protein accession="P0A763" id="prot_267"/>
+        <Protein accession="P36683" id="prot_268"/>
+        <Protein accession="P23839" id="prot_269"/>
+        <Protein accession="P0AAI3" id="prot_270"/>
+        <Protein accession="P39180" id="prot_271"/>
+        <Protein accession="P0A8J8" id="prot_272"/>
+        <Protein accession="P0A6U8" id="prot_273"/>
+        <Protein accession="P00370" id="prot_274"/>
+        <Protein accession="P75691" id="prot_275"/>
+        <Protein accession="P0ABM9" id="prot_276"/>
+        <Protein accession="P45523" id="prot_277"/>
+        <Protein accession="P00562" id="prot_278"/>
+        <Protein accession="P00561" id="prot_279"/>
+        <Protein accession="P23830" id="prot_280"/>
+        <Protein accession="P0A698" id="prot_281"/>
+        <Protein accession="P00452" id="prot_282"/>
+        <Protein accession="P0ADV5" id="prot_283"/>
+        <Protein accession="P06999" id="prot_284"/>
+        <Protein accession="P04036" id="prot_285"/>
+        <Protein accession="P62768" id="prot_286"/>
+        <Protein accession="P23538" id="prot_287"/>
+        <Protein accession="P0ADV7" id="prot_288"/>
+        <Protein accession="P0A6T1" id="prot_289"/>
+        <Protein accession="P37613" id="prot_290"/>
+        <Protein accession="P0ADW3" id="prot_291"/>
+        <Protein accession="P0A6T5" id="prot_292"/>
+        <Protein accession="P0A6T9" id="prot_293"/>
+        <Protein accession="P37759" id="prot_294"/>
+        <Protein accession="P00550" id="prot_295"/>
+        <Protein accession="P0A7X3" id="prot_296"/>
+        <Protein accession="P39173" id="prot_297"/>
+        <Protein accession="P33602" id="prot_298"/>
+        <Protein accession="P10378" id="prot_299"/>
+        <Protein accession="P0AD49" id="prot_300"/>
+        <Protein accession="P0ADS6" id="prot_301"/>
+        <Protein accession="P76422" id="prot_302"/>
+        <Protein accession="P76423" id="prot_303"/>
+        <Protein accession="P69776" id="prot_304"/>
+        <Protein accession="P0A6W9" id="prot_305"/>
+        <Protein accession="P0A786" id="prot_306"/>
+        <Protein accession="P69783" id="prot_307"/>
+        <Protein accession="P00490" id="prot_308"/>
+        <Protein accession="P76621" id="prot_309"/>
+        <Protein accession="P37626" id="prot_310"/>
+        <Protein accession="P61889" id="prot_311"/>
+        <Protein accession="P0A884" id="prot_312"/>
+        <Protein accession="P0A7W1" id="prot_313"/>
+        <Protein accession="P0ABK2" id="prot_314"/>
+        <Protein accession="P0A7W7" id="prot_315"/>
+        <Protein accession="P00350" id="prot_316"/>
+        <Protein accession="P0ABK5" id="prot_317"/>
+        <Protein accession="P0AEK2" id="prot_318"/>
+        <Protein accession="P39099" id="prot_319"/>
+        <Protein accession="P0AEK4" id="prot_320"/>
+        <Protein accession="P0A9L3" id="prot_321"/>
+        <Protein accession="P0AFK0" id="prot_322"/>
+        <Protein accession="P10384" id="prot_323"/>
+        <Protein accession="P17169" id="prot_324"/>
+        <Protein accession="P0AE52" id="prot_325"/>
+        <Protein accession="P0A9K9" id="prot_326"/>
+        <Protein accession="P0A7V8" id="prot_327"/>
+        <Protein accession="P33898" id="prot_328"/>
+        <Protein accession="P0A6V8" id="prot_329"/>
+        <Protein accession="P0A6V1" id="prot_330"/>
+        <Protein accession="P0A9K3" id="prot_331"/>
+        <Protein accession="P0A870" id="prot_332"/>
+        <Protein accession="P0A7V0" id="prot_333"/>
+        <Protein accession="P09372" id="prot_334"/>
+        <Protein accession="P0A7V3" id="prot_335"/>
+        <Protein accession="P0A8G6" id="prot_336"/>
+        <Protein accession="P0AD61" id="prot_337"/>
+        <Protein accession="P0A877" id="prot_338"/>
+        <Protein accession="P69797" id="prot_339"/>
+        <Protein accession="P0AEN1" id="prot_340"/>
+        <Protein accession="P18335" id="prot_341"/>
+        <Protein accession="P0A6Y1" id="prot_342"/>
+        <Protein accession="P0A905" id="prot_343"/>
+        <Protein accession="P0ADQ7" id="prot_344"/>
+        <Protein accession="P25526" id="prot_345"/>
+        <Protein accession="P0AEN8" id="prot_346"/>
+        <Protein accession="P0AG30" id="prot_347"/>
+        <Protein accession="P0A901" id="prot_348"/>
+        <Protein accession="P0AFR4" id="prot_349"/>
+        <Protein accession="P0A903" id="prot_350"/>
+        <Protein accession="P0A6Y5" id="prot_351"/>
+        <Protein accession="Cntm_P00761" id="prot_352"/>
+        <Protein accession="P0ABQ2" id="prot_353"/>
+        <Protein accession="P0A6Y8" id="prot_354"/>
+        <Protein accession="P0AG27" id="prot_355"/>
+        <Protein accession="P05825" id="prot_356"/>
+        <Protein accession="P0AC41" id="prot_357"/>
+        <Protein accession="P75913" id="prot_358"/>
+        <Protein accession="P0A8N5" id="prot_359"/>
+        <Protein accession="P0A8N3" id="prot_360"/>
+        <Protein accession="P0AE37" id="prot_361"/>
+        <Protein accession="P02413" id="prot_362"/>
+        <Protein accession="P33195" id="prot_363"/>
+        <Protein accession="P62620" id="prot_364"/>
+        <Protein accession="P0AG20" id="prot_365"/>
+        <Protein accession="P09394" id="prot_366"/>
+        <Protein accession="P0A794" id="prot_367"/>
+        <Protein accession="P39831" id="prot_368"/>
+        <Protein accession="P0A9M8" id="prot_369"/>
+        <Protein accession="P06129" id="prot_370"/>
+        <Protein accession="P0AC33" id="prot_371"/>
+        <Protein accession="P0A796" id="prot_372"/>
+        <Protein accession="P23869" id="prot_373"/>
+        <Protein accession="P0A9M5" id="prot_374"/>
+        <Protein accession="P0AC38" id="prot_375"/>
+        <Protein accession="P0A6X7" id="prot_376"/>
+        <Protein accession="P0A799" id="prot_377"/>
+        <Protein accession="P0A9Q5" id="prot_378"/>
+        <Protein accession="P0AG18" id="prot_379"/>
+        <Protein accession="P0AE01" id="prot_380"/>
+        <Protein accession="P0A9Q7" id="prot_381"/>
+        <Protein accession="P77150" id="prot_382"/>
+        <Protein accession="P0A9Q1" id="prot_383"/>
+        <Protein accession="P38038" id="prot_384"/>
+        <Protein accession="P0AF12" id="prot_385"/>
+        <Protein accession="P09147" id="prot_386"/>
+        <Protein accession="P30138" id="prot_387"/>
+        <Protein accession="P0AG16" id="prot_388"/>
+        <Protein accession="P0AFP6" id="prot_389"/>
+        <Protein accession="P0AEP3" id="prot_390"/>
+        <Protein accession="P30137" id="prot_391"/>
+        <Protein accession="P30136" id="prot_392"/>
+        <Protein accession="P0AE08" id="prot_393"/>
+        <Protein accession="P0A8M0" id="prot_394"/>
+        <Protein accession="P16456" id="prot_395"/>
+        <Protein accession="P0A8M3" id="prot_396"/>
+        <Protein accession="P29217" id="prot_397"/>
+        <Protein accession="P0AE06" id="prot_398"/>
+        <Protein accession="P00448" id="prot_399"/>
+        <Protein accession="P24171" id="prot_400"/>
+        <Protein accession="P0A9P6" id="prot_401"/>
+        <Protein accession="P18843" id="prot_402"/>
+        <Protein accession="P10346" id="prot_403"/>
+        <Protein accession="P0A6Z3" id="prot_404"/>
+        <Protein accession="P0A9P4" id="prot_405"/>
+        <Protein accession="P0AE12" id="prot_406"/>
+        <Protein accession="P0A9P0" id="prot_407"/>
+        <Protein accession="P0AF03" id="prot_408"/>
+        <Protein accession="P08390" id="prot_409"/>
+        <Protein accession="P0A7Z0" id="prot_410"/>
+        <Protein accession="P25516" id="prot_411"/>
+        <Protein accession="P0AE18" id="prot_412"/>
+        <Protein accession="P00582" id="prot_413"/>
+        <Protein accession="P0A8L1" id="prot_414"/>
+        <Protein accession="P09546" id="prot_415"/>
+        <Protein accession="P0A7Z4" id="prot_416"/>
+        <Protein accession="P23843" id="prot_417"/>
+        <Protein accession="P32705" id="prot_418"/>
+        <Protein accession="P68919" id="prot_419"/>
+        <Protein accession="P0AC19" id="prot_420"/>
+        <Protein accession="P37194" id="prot_421"/>
+        <Protein accession="P0ABP8" id="prot_422"/>
+        <Protein accession="P00579" id="prot_423"/>
+        <Protein accession="P37051" id="prot_424"/>
+        <Protein accession="P23847" id="prot_425"/>
+        <Protein accession="P06149" id="prot_426"/>
+        <Protein accession="P08957" id="prot_427"/>
+        <Protein accession="P45464" id="prot_428"/>
+        <Protein accession="Cntm_P35527" id="prot_429"/>
+        <Protein accession="P0A825" id="prot_430"/>
+        <Protein accession="P15254" id="prot_431"/>
+        <Protein accession="P75818" id="prot_432"/>
+        <Protein accession="P23721" id="prot_433"/>
+        <Protein accession="P77739" id="prot_434"/>
+        <Protein accession="P0A9B2" id="prot_435"/>
+        <Protein accession="P0ABE2" id="prot_436"/>
+        <Protein accession="P77735" id="prot_437"/>
+        <Protein accession="P07395" id="prot_438"/>
+        <Protein accession="P26616" id="prot_439"/>
+        <Protein accession="P46853" id="prot_440"/>
+        <Protein accession="P08178" id="prot_441"/>
+        <Protein accession="P60438" id="prot_442"/>
+        <Protein accession="P04805" id="prot_443"/>
+        <Protein accession="P0A817" id="prot_444"/>
+        <Protein accession="P0ACJ8" id="prot_445"/>
+        <Protein accession="P64429" id="prot_446"/>
+        <Protein accession="P0A8A4" id="prot_447"/>
+        <Protein accession="P24186" id="prot_448"/>
+        <Protein accession="P0A6L2" id="prot_449"/>
+        <Protein accession="P05459" id="prot_450"/>
+        <Protein accession="P0A6L0" id="prot_451"/>
+        <Protein accession="P24182" id="prot_452"/>
+        <Protein accession="Cntm_P13645" id="prot_453"/>
+        <Protein accession="Cntm_P13646" id="prot_454"/>
+        <Protein accession="P0A9A6" id="prot_455"/>
+        <Protein accession="Cntm_P13647" id="prot_456"/>
+        <Protein accession="Cntm_P19012" id="prot_457"/>
+        <Protein accession="P0ABF6" id="prot_458"/>
+        <Protein accession="P0A9A9" id="prot_459"/>
+        <Protein accession="P0AG63" id="prot_460"/>
+        <Protein accession="P0A6K6" id="prot_461"/>
+        <Protein accession="P0AG67" id="prot_462"/>
+        <Protein accession="P0AF28" id="prot_463"/>
+        <Protein accession="P0AFU8" id="prot_464"/>
+        <Protein accession="P0AF24" id="prot_465"/>
+        <Protein accession="P0AEQ3" id="prot_466"/>
+        <Protein accession="P0AAB8" id="prot_467"/>
+        <Protein accession="P67087" id="prot_468"/>
+        <Protein accession="P0ACJ0" id="prot_469"/>
+        <Protein accession="P0ADN2" id="prot_470"/>
+        <Protein accession="P27298" id="prot_471"/>
+        <Protein accession="P36938" id="prot_472"/>
+        <Protein accession="P0A805" id="prot_473"/>
+        <Protein accession="P0AEU0" id="prot_474"/>
+        <Protein accession="P15639" id="prot_475"/>
+        <Protein accession="P0AAC0" id="prot_476"/>
+        <Protein accession="P77757" id="prot_477"/>
+        <Protein accession="P0A707" id="prot_478"/>
+        <Protein accession="P0A9D8" id="prot_479"/>
+        <Protein accession="P23893" id="prot_480"/>
+        <Protein accession="P38489" id="prot_481"/>
+        <Protein accession="P0A705" id="prot_482"/>
+        <Protein accession="P23894" id="prot_483"/>
+        <Protein accession="P15640" id="prot_484"/>
+        <Protein accession="P30177" id="prot_485"/>
+        <Protein accession="P0AG55" id="prot_486"/>
+        <Protein accession="P0ABC7" id="prot_487"/>
+        <Protein accession="P0AET8" id="prot_488"/>
+        <Protein accession="P0ABC3" id="prot_489"/>
+        <Protein accession="P0ADK0" id="prot_490"/>
+        <Protein accession="P0A7N9" id="prot_491"/>
+        <Protein accession="P32176" id="prot_492"/>
+        <Protein accession="P15034" id="prot_493"/>
+        <Protein accession="P0AG59" id="prot_494"/>
+        <Protein accession="P46837" id="prot_495"/>
+        <Protein accession="P19926" id="prot_496"/>
+        <Protein accession="P0A7N4" id="prot_497"/>
+        <Protein accession="P0A9C3" id="prot_498"/>
+        <Protein accession="P0A6N4" id="prot_499"/>
+        <Protein accession="P0A6N1" id="prot_500"/>
+        <Protein accession="P23882" id="prot_501"/>
+        <Protein accession="P0A9C5" id="prot_502"/>
+        <Protein accession="P05791" id="prot_503"/>
+        <Protein accession="P0AG44" id="prot_504"/>
+        <Protein accession="P05793" id="prot_505"/>
+        <Protein accession="P0ABD3" id="prot_506"/>
+        <Protein accession="P0A6M8" id="prot_507"/>
+        <Protein accession="P0ABD5" id="prot_508"/>
+        <Protein accession="P0AES0" id="prot_509"/>
+        <Protein accession="P0A7M9" id="prot_510"/>
+        <Protein accession="P60422" id="prot_511"/>
+        <Protein accession="P15047" id="prot_512"/>
+        <Protein accession="P0AES4" id="prot_513"/>
+        <Protein accession="P0AES6" id="prot_514"/>
+        <Protein accession="P0AG48" id="prot_515"/>
+        <Protein accession="Q47146" id="prot_516"/>
+        <Protein accession="P0A7U3" id="prot_517"/>
+        <Protein accession="P45565" id="prot_518"/>
+        <Protein accession="P0A862" id="prot_519"/>
+        <Protein accession="P0A8F0" id="prot_520"/>
+        <Protein accession="P0ACE7" id="prot_521"/>
+        <Protein accession="P06971" id="prot_522"/>
+        <Protein accession="P0A867" id="prot_523"/>
+        <Protein accession="P0A7U7" id="prot_524"/>
+        <Protein accession="P37903" id="prot_525"/>
+        <Protein accession="P0ABI8" id="prot_526"/>
+        <Protein accession="P37902" id="prot_527"/>
+        <Protein accession="P0ADI4" id="prot_528"/>
+        <Protein accession="P0A855" id="prot_529"/>
+        <Protein accession="P0A715" id="prot_530"/>
+        <Protein accession="P0ABJ1" id="prot_531"/>
+        <Protein accession="P60785" id="prot_532"/>
+        <Protein accession="P0A7T3" id="prot_533"/>
+        <Protein accession="P0A853" id="prot_534"/>
+        <Protein accession="P69801" id="prot_535"/>
+        <Protein accession="P0A6P9" id="prot_536"/>
+        <Protein accession="P0A850" id="prot_537"/>
+        <Protein accession="P0A8E1" id="prot_538"/>
+        <Protein accession="P0A717" id="prot_539"/>
+        <Protein accession="P45578" id="prot_540"/>
+        <Protein accession="P0ACF8" id="prot_541"/>
+        <Protein accession="P0AF70" id="prot_542"/>
+        <Protein accession="P0A8E7" id="prot_543"/>
+        <Protein accession="P0A6P1" id="prot_544"/>
+        <Protein accession="P0A858" id="prot_545"/>
+        <Protein accession="P0ACF4" id="prot_546"/>
+        <Protein accession="P0A7T7" id="prot_547"/>
+        <Protein accession="P69805" id="prot_548"/>
+        <Protein accession="P0ACF0" id="prot_549"/>
+        <Protein accession="P0AEU7" id="prot_550"/>
+        <Protein accession="P63284" id="prot_551"/>
+        <Protein accession="P08331" id="prot_552"/>
+        <Protein accession="P0ABJ9" id="prot_553"/>
+        <Protein accession="P77717" id="prot_554"/>
+        <Protein accession="P0A7S3" id="prot_555"/>
+        <Protein accession="P60651" id="prot_556"/>
+        <Protein accession="P0A744" id="prot_557"/>
+        <Protein accession="P0A7S9" id="prot_558"/>
+        <Protein accession="P0A6S0" id="prot_559"/>
+        <Protein accession="P32132" id="prot_560"/>
+        <Protein accession="P25714" id="prot_561"/>
+        <Protein accession="P0AG99" id="prot_562"/>
+        <Protein accession="P04825" id="prot_563"/>
+        <Protein accession="P0AG93" id="prot_564"/>
+        <Protein accession="P08200" id="prot_565"/>
+        <Protein accession="P08839" id="prot_566"/>
+        <Protein accession="P0AFX4" id="prot_567"/>
+        <Protein accession="P0AG90" id="prot_568"/>
+        <Protein accession="Cntm_Q04695" id="prot_569"/>
+        <Protein accession="P0A8C1" id="prot_570"/>
+        <Protein accession="P0ABH0" id="prot_571"/>
+        <Protein accession="P0A7R1" id="prot_572"/>
+        <Protein accession="P0A830" id="prot_573"/>
+        <Protein accession="P0A836" id="prot_574"/>
+        <Protein accession="P63020" id="prot_575"/>
+        <Protein accession="P0A7R5" id="prot_576"/>
+        <Protein accession="P15288" id="prot_577"/>
+        <Protein accession="P0A9G6" id="prot_578"/>
+        <Protein accession="P0A6R0" id="prot_579"/>
+        <Protein accession="P0AF93" id="prot_580"/>
+        <Protein accession="P0A7R9" id="prot_581"/>
+        <Protein accession="P75823" id="prot_582"/>
+        <Protein accession="P08312" id="prot_583"/>
+        <Protein accession="P0AG86" id="prot_584"/>
+        <Protein accession="P0ABH7" id="prot_585"/>
+        <Protein accession="P0ABH9" id="prot_586"/>
+        <AssayQuantLayer id="Prot_Assay_QL1">
+            <DataType>
+                <cvParam accession="MS:000000" cvRef="PSI-MS" name="spectral count"/>
+            </DataType>
+            <ColumnIndex>ass_0 ass_1 ass_2 ass_3 ass_4 ass_5 ass_6 ass_7 ass_8 ass_9</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="prot_0">3.0 5.0 3.0 3.0 4.0 1.0 3.0 0.0 5.0 2.0</Row>
+                <Row object_ref="prot_1">1.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_2">3.0 5.0 3.0 5.0 5.0 0.0 5.0 0.0 6.0 5.0</Row>
+                <Row object_ref="prot_3">4.0 6.0 3.0 4.0 4.0 0.0 5.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_4">3.0 4.0 4.0 4.0 4.0 0.0 4.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_5">2.0 3.0 3.0 2.0 2.0 0.0 2.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_6">1.0 1.0 2.0 2.0 2.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_7">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_8">0.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_9">1.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_10">4.0 5.0 4.0 3.0 4.0 0.0 1.0 1.0 1.0 0.0</Row>
+                <Row object_ref="prot_11">1.0 1.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_12">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_13">5.0 4.0 5.0 5.0 3.0 0.0 5.0 1.0 4.0 4.0</Row>
+                <Row object_ref="prot_14">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_15">2.0 3.0 3.0 3.0 3.0 0.0 2.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_16">4.0 4.0 5.0 3.0 3.0 0.0 4.0 1.0 2.0 3.0</Row>
+                <Row object_ref="prot_17">1.0 3.0 3.0 2.0 2.0 0.0 0.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_18">1.0 2.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_19">3.0 2.0 3.0 2.0 3.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_20">1.0 1.0 1.0 2.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_21">1.0 1.0 2.0 2.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_22">2.0 4.0 3.0 2.0 3.0 0.0 4.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_23">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_24">0.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_25">2.0 6.0 5.0 5.0 4.0 0.0 1.0 0.0 2.0 4.0</Row>
+                <Row object_ref="prot_26">7.0 10.0 7.0 9.0 8.0 0.0 11.0 4.0 10.0 9.0</Row>
+                <Row object_ref="prot_27">4.0 8.0 8.0 7.0 8.0 0.0 5.0 1.0 6.0 7.0</Row>
+                <Row object_ref="prot_28">3.0 3.0 3.0 3.0 4.0 0.0 2.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_29">1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0</Row>
+                <Row object_ref="prot_30">3.0 3.0 2.0 3.0 2.0 0.0 2.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_31">1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_32">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_33">0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_34">3.0 2.0 4.0 4.0 5.0 1.0 5.0 0.0 5.0 5.0</Row>
+                <Row object_ref="prot_35">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_36">0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_37">1.0 2.0 1.0 1.0 2.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_38">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_39">9.0 7.0 4.0 8.0 9.0 0.0 9.0 3.0 8.0 9.0</Row>
+                <Row object_ref="prot_40">5.0 5.0 5.0 5.0 5.0 0.0 5.0 0.0 5.0 5.0</Row>
+                <Row object_ref="prot_41">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_42">1.0 2.0 2.0 3.0 3.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_43">16.0 17.0 17.0 17.0 16.0 0.0 17.0 0.0 15.0 16.0</Row>
+                <Row object_ref="prot_44">12.0 11.0 9.0 11.0 11.0 0.0 6.0 0.0 3.0 8.0</Row>
+                <Row object_ref="prot_45">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_46">2.0 2.0 2.0 2.0 1.0 0.0 3.0 1.0 2.0 1.0</Row>
+                <Row object_ref="prot_47">0.0 0.0 1.0 1.0 1.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_48">2.0 3.0 3.0 2.0 2.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_49">1.0 2.0 1.0 1.0 1.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_50">49.0 49.0 46.0 51.0 47.0 0.0 23.0 5.0 22.0 24.0</Row>
+                <Row object_ref="prot_51">3.0 3.0 3.0 3.0 3.0 0.0 3.0 1.0 3.0 3.0</Row>
+                <Row object_ref="prot_52">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_53">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_54">1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_55">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_56">2.0 2.0 3.0 4.0 2.0 0.0 3.0 0.0 2.0 4.0</Row>
+                <Row object_ref="prot_57">0.0 1.0 1.0 2.0 3.0 0.0 2.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_58">1.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_59">3.0 3.0 3.0 3.0 3.0 1.0 4.0 1.0 2.0 4.0</Row>
+                <Row object_ref="prot_60">0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_61">1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_62">0.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_63">10.0 14.0 12.0 13.0 12.0 0.0 14.0 2.0 12.0 12.0</Row>
+                <Row object_ref="prot_64">3.0 5.0 6.0 4.0 5.0 0.0 4.0 0.0 5.0 6.0</Row>
+                <Row object_ref="prot_65">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_66">6.0 6.0 6.0 7.0 7.0 0.0 4.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_67">6.0 6.0 6.0 5.0 7.0 0.0 7.0 0.0 7.0 7.0</Row>
+                <Row object_ref="prot_68">20.0 23.0 21.0 20.0 19.0 8.0 20.0 8.0 19.0 23.0</Row>
+                <Row object_ref="prot_69">18.0 17.0 16.0 16.0 18.0 0.0 3.0 1.0 7.0 6.0</Row>
+                <Row object_ref="prot_70">0.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_71">3.0 3.0 3.0 3.0 3.0 0.0 3.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_72">6.0 6.0 7.0 7.0 7.0 1.0 5.0 3.0 6.0 6.0</Row>
+                <Row object_ref="prot_73">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_74">2.0 2.0 1.0 2.0 2.0 1.0 2.0 2.0 2.0 3.0</Row>
+                <Row object_ref="prot_75">1.0 1.0 1.0 1.0 1.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_76">1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0</Row>
+                <Row object_ref="prot_77">0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_78">3.0 2.0 4.0 4.0 4.0 1.0 3.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_79">3.0 2.0 2.0 3.0 3.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_80">3.0 3.0 4.0 2.0 5.0 0.0 3.0 0.0 1.0 3.0</Row>
+                <Row object_ref="prot_81">5.0 6.0 8.0 6.0 6.0 0.0 7.0 0.0 7.0 8.0</Row>
+                <Row object_ref="prot_82">6.0 5.0 5.0 5.0 3.0 0.0 3.0 0.0 5.0 4.0</Row>
+                <Row object_ref="prot_83">7.0 7.0 4.0 6.0 6.0 0.0 6.0 0.0 7.0 5.0</Row>
+                <Row object_ref="prot_84">0.0 1.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_85">3.0 1.0 3.0 3.0 1.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_86">0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_87">1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0</Row>
+                <Row object_ref="prot_88">0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_89">3.0 4.0 4.0 4.0 2.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_90">5.0 7.0 6.0 6.0 6.0 0.0 5.0 3.0 5.0 6.0</Row>
+                <Row object_ref="prot_91">4.0 5.0 6.0 5.0 5.0 0.0 3.0 1.0 5.0 4.0</Row>
+                <Row object_ref="prot_92">5.0 3.0 4.0 5.0 5.0 0.0 3.0 0.0 2.0 4.0</Row>
+                <Row object_ref="prot_93">11.0 12.0 13.0 15.0 11.0 0.0 13.0 2.0 12.0 15.0</Row>
+                <Row object_ref="prot_94">2.0 2.0 2.0 0.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_95">0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_96">6.0 8.0 7.0 5.0 6.0 0.0 5.0 2.0 6.0 5.0</Row>
+                <Row object_ref="prot_97">6.0 6.0 6.0 8.0 6.0 2.0 7.0 1.0 8.0 7.0</Row>
+                <Row object_ref="prot_98">7.0 6.0 5.0 7.0 5.0 0.0 7.0 1.0 6.0 6.0</Row>
+                <Row object_ref="prot_99">31.0 33.0 27.0 34.0 28.0 3.0 29.0 10.0 25.0 30.0</Row>
+                <Row object_ref="prot_100">4.0 6.0 6.0 6.0 5.0 0.0 6.0 2.0 4.0 5.0</Row>
+                <Row object_ref="prot_101">2.0 3.0 3.0 3.0 3.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_102">0.0 1.0 2.0 1.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_103">2.0 1.0 2.0 3.0 0.0 0.0 3.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_104">2.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_105">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_106">4.0 4.0 4.0 4.0 4.0 0.0 5.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_107">1.0 1.0 1.0 1.0 2.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_108">1.0 1.0 1.0 1.0 1.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_109">1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_110">2.0 2.0 3.0 3.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_111">1.0 2.0 3.0 3.0 4.0 0.0 1.0 1.0 3.0 2.0</Row>
+                <Row object_ref="prot_112">4.0 4.0 2.0 4.0 5.0 0.0 5.0 0.0 6.0 4.0</Row>
+                <Row object_ref="prot_113">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_114">1.0 1.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_115">4.0 2.0 3.0 4.0 3.0 2.0 4.0 3.0 5.0 3.0</Row>
+                <Row object_ref="prot_116">10.0 10.0 8.0 8.0 7.0 0.0 8.0 2.0 7.0 9.0</Row>
+                <Row object_ref="prot_117">0.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_118">2.0 1.0 1.0 1.0 2.0 0.0 1.0 0.0 2.0 0.0</Row>
+                <Row object_ref="prot_119">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_120">5.0 5.0 5.0 5.0 4.0 0.0 5.0 0.0 4.0 5.0</Row>
+                <Row object_ref="prot_121">9.0 10.0 9.0 10.0 12.0 0.0 9.0 1.0 7.0 8.0</Row>
+                <Row object_ref="prot_122">0.0 1.0 1.0 1.0 2.0 0.0 3.0 0.0 3.0 4.0</Row>
+                <Row object_ref="prot_123">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_124">5.0 7.0 8.0 7.0 7.0 0.0 6.0 0.0 7.0 6.0</Row>
+                <Row object_ref="prot_125">6.0 6.0 6.0 6.0 7.0 0.0 6.0 0.0 8.0 7.0</Row>
+                <Row object_ref="prot_126">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_127">1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_128">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_129">0.0 1.0 1.0 2.0 2.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_130">0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_131">2.0 2.0 2.0 2.0 2.0 0.0 2.0 1.0 1.0 2.0</Row>
+                <Row object_ref="prot_132">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_133">28.0 31.0 30.0 30.0 29.0 16.0 31.0 34.0 39.0 33.0</Row>
+                <Row object_ref="prot_134">2.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_135">8.0 10.0 9.0 7.0 9.0 0.0 5.0 1.0 4.0 8.0</Row>
+                <Row object_ref="prot_136">1.0 1.0 2.0 0.0 0.0 0.0 2.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_137">4.0 3.0 3.0 4.0 4.0 0.0 5.0 0.0 5.0 3.0</Row>
+                <Row object_ref="prot_138">4.0 5.0 6.0 5.0 6.0 0.0 6.0 0.0 8.0 6.0</Row>
+                <Row object_ref="prot_139">0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_140">4.0 6.0 5.0 7.0 6.0 0.0 6.0 1.0 7.0 5.0</Row>
+                <Row object_ref="prot_141">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_142">0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_143">2.0 2.0 2.0 3.0 2.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_144">2.0 2.0 2.0 2.0 3.0 0.0 4.0 0.0 2.0 4.0</Row>
+                <Row object_ref="prot_145">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_146">3.0 3.0 2.0 4.0 2.0 0.0 2.0 1.0 3.0 1.0</Row>
+                <Row object_ref="prot_147">1.0 1.0 1.0 2.0 2.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_148">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_149">0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_150">5.0 5.0 7.0 7.0 6.0 0.0 7.0 0.0 7.0 7.0</Row>
+                <Row object_ref="prot_151">10.0 10.0 9.0 9.0 11.0 0.0 10.0 5.0 10.0 7.0</Row>
+                <Row object_ref="prot_152">1.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_153">11.0 11.0 10.0 11.0 10.0 0.0 13.0 2.0 12.0 16.0</Row>
+                <Row object_ref="prot_154">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_155">5.0 5.0 5.0 4.0 4.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_156">11.0 10.0 11.0 10.0 10.0 0.0 9.0 0.0 13.0 10.0</Row>
+                <Row object_ref="prot_157">1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_158">7.0 6.0 7.0 7.0 7.0 0.0 6.0 2.0 6.0 6.0</Row>
+                <Row object_ref="prot_159">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_160">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_161">8.0 9.0 9.0 7.0 7.0 0.0 9.0 2.0 7.0 6.0</Row>
+                <Row object_ref="prot_162">5.0 6.0 6.0 6.0 6.0 0.0 5.0 1.0 7.0 5.0</Row>
+                <Row object_ref="prot_163">0.0 0.0 2.0 1.0 0.0 0.0 1.0 1.0 2.0 2.0</Row>
+                <Row object_ref="prot_164">4.0 6.0 4.0 6.0 4.0 0.0 4.0 0.0 5.0 4.0</Row>
+                <Row object_ref="prot_165">1.0 2.0 2.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_166">2.0 3.0 3.0 3.0 3.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_167">2.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_168">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_169">30.0 29.0 27.0 30.0 32.0 8.0 30.0 21.0 28.0 29.0</Row>
+                <Row object_ref="prot_170">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_171">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_172">0.0 1.0 1.0 2.0 2.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_173">3.0 3.0 3.0 4.0 2.0 0.0 3.0 1.0 3.0 4.0</Row>
+                <Row object_ref="prot_174">5.0 4.0 4.0 4.0 4.0 0.0 3.0 1.0 3.0 3.0</Row>
+                <Row object_ref="prot_175">1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_176">3.0 2.0 2.0 2.0 3.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_177">0.0 0.0 0.0 0.0 0.0 0.0 2.0 2.0 2.0 3.0</Row>
+                <Row object_ref="prot_178">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_179">5.0 5.0 5.0 5.0 3.0 3.0 5.0 2.0 6.0 3.0</Row>
+                <Row object_ref="prot_180">0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_181">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_182">0.0 2.0 1.0 1.0 2.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_183">4.0 4.0 4.0 5.0 5.0 0.0 4.0 1.0 3.0 2.0</Row>
+                <Row object_ref="prot_184">0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_185">2.0 2.0 1.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_186">4.0 4.0 5.0 5.0 4.0 0.0 3.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_187">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_188">3.0 3.0 3.0 3.0 3.0 0.0 2.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_189">1.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_190">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_191">1.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_192">1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_193">9.0 10.0 10.0 10.0 9.0 2.0 10.0 1.0 10.0 8.0</Row>
+                <Row object_ref="prot_194">5.0 5.0 4.0 6.0 5.0 2.0 6.0 2.0 7.0 3.0</Row>
+                <Row object_ref="prot_195">15.0 17.0 14.0 18.0 18.0 0.0 17.0 4.0 13.0 16.0</Row>
+                <Row object_ref="prot_196">30.0 29.0 30.0 34.0 32.0 1.0 26.0 6.0 33.0 36.0</Row>
+                <Row object_ref="prot_197">1.0 1.0 2.0 1.0 2.0 0.0 3.0 1.0 3.0 1.0</Row>
+                <Row object_ref="prot_198">2.0 2.0 2.0 2.0 2.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_199">2.0 2.0 2.0 1.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_200">3.0 2.0 2.0 2.0 2.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_201">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_202">1.0 2.0 2.0 2.0 1.0 0.0 2.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_203">11.0 13.0 13.0 13.0 10.0 0.0 13.0 3.0 11.0 10.0</Row>
+                <Row object_ref="prot_204">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_205">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_206">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_207">2.0 2.0 1.0 3.0 3.0 0.0 4.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_208">3.0 4.0 4.0 4.0 4.0 0.0 5.0 1.0 5.0 5.0</Row>
+                <Row object_ref="prot_209">5.0 5.0 4.0 3.0 4.0 0.0 2.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_210">7.0 6.0 5.0 6.0 8.0 2.0 6.0 1.0 4.0 7.0</Row>
+                <Row object_ref="prot_211">0.0 2.0 2.0 1.0 1.0 3.0 9.0 3.0 12.0 11.0</Row>
+                <Row object_ref="prot_212">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_213">0.0 1.0 1.0 1.0 2.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_214">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_215">0.0 1.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_216">2.0 6.0 4.0 4.0 6.0 0.0 2.0 1.0 4.0 5.0</Row>
+                <Row object_ref="prot_217">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_218">3.0 1.0 3.0 3.0 3.0 0.0 2.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_219">1.0 1.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_220">22.0 24.0 23.0 22.0 21.0 2.0 25.0 8.0 23.0 19.0</Row>
+                <Row object_ref="prot_221">8.0 8.0 12.0 9.0 11.0 0.0 17.0 3.0 13.0 15.0</Row>
+                <Row object_ref="prot_222">1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_223">2.0 2.0 3.0 3.0 3.0 0.0 3.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_224">2.0 1.0 1.0 2.0 2.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_225">14.0 16.0 16.0 13.0 12.0 2.0 14.0 3.0 15.0 13.0</Row>
+                <Row object_ref="prot_226">10.0 12.0 11.0 14.0 12.0 1.0 15.0 4.0 16.0 15.0</Row>
+                <Row object_ref="prot_227">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_228">4.0 4.0 4.0 5.0 5.0 0.0 5.0 1.0 5.0 6.0</Row>
+                <Row object_ref="prot_229">35.0 33.0 33.0 31.0 32.0 0.0 33.0 14.0 32.0 38.0</Row>
+                <Row object_ref="prot_230">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_231">2.0 2.0 1.0 1.0 1.0 0.0 1.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_232">4.0 4.0 4.0 5.0 4.0 0.0 1.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_233">1.0 2.0 2.0 3.0 3.0 0.0 4.0 0.0 4.0 5.0</Row>
+                <Row object_ref="prot_234">7.0 6.0 6.0 9.0 7.0 3.0 11.0 4.0 11.0 9.0</Row>
+                <Row object_ref="prot_235">2.0 2.0 2.0 1.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_236">1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0</Row>
+                <Row object_ref="prot_237">3.0 3.0 2.0 3.0 3.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_238">0.0 0.0 0.0 0.0 0.0 0.0 3.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_239">27.0 25.0 27.0 29.0 26.0 4.0 30.0 5.0 29.0 25.0</Row>
+                <Row object_ref="prot_240">1.0 0.0 1.0 0.0 1.0 1.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_241">4.0 4.0 4.0 4.0 3.0 0.0 3.0 0.0 1.0 3.0</Row>
+                <Row object_ref="prot_242">6.0 6.0 5.0 6.0 5.0 0.0 3.0 2.0 4.0 6.0</Row>
+                <Row object_ref="prot_243">2.0 1.0 2.0 3.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_244">2.0 3.0 4.0 5.0 4.0 0.0 3.0 0.0 5.0 3.0</Row>
+                <Row object_ref="prot_245">2.0 3.0 4.0 3.0 5.0 0.0 4.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_246">1.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_247">5.0 6.0 3.0 3.0 3.0 0.0 4.0 0.0 4.0 4.0</Row>
+                <Row object_ref="prot_248">3.0 3.0 3.0 3.0 3.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_249">4.0 5.0 5.0 5.0 6.0 0.0 5.0 0.0 6.0 6.0</Row>
+                <Row object_ref="prot_250">0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_251">16.0 17.0 16.0 18.0 15.0 3.0 17.0 1.0 18.0 19.0</Row>
+                <Row object_ref="prot_252">0.0 1.0 1.0 2.0 2.0 0.0 3.0 0.0 4.0 2.0</Row>
+                <Row object_ref="prot_253">3.0 3.0 5.0 5.0 5.0 0.0 5.0 1.0 5.0 5.0</Row>
+                <Row object_ref="prot_254">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_255">0.0 1.0 0.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_256">2.0 2.0 2.0 2.0 2.0 0.0 2.0 1.0 2.0 2.0</Row>
+                <Row object_ref="prot_257">1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_258">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_259">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_260">0.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_261">3.0 0.0 3.0 2.0 1.0 0.0 2.0 0.0 0.0 2.0</Row>
+                <Row object_ref="prot_262">3.0 3.0 2.0 1.0 2.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_263">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_264">1.0 2.0 2.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_265">2.0 3.0 3.0 2.0 4.0 2.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_266">2.0 0.0 1.0 1.0 2.0 2.0 6.0 0.0 7.0 6.0</Row>
+                <Row object_ref="prot_267">2.0 2.0 3.0 3.0 3.0 0.0 2.0 1.0 3.0 2.0</Row>
+                <Row object_ref="prot_268">2.0 2.0 4.0 3.0 4.0 0.0 3.0 1.0 3.0 2.0</Row>
+                <Row object_ref="prot_269">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_270">5.0 6.0 5.0 5.0 5.0 0.0 6.0 2.0 5.0 5.0</Row>
+                <Row object_ref="prot_271">1.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_272">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_273">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_274">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_275">0.0 1.0 2.0 2.0 0.0 0.0 1.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_276">1.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_277">2.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_278">0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_279">1.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_280">3.0 2.0 4.0 1.0 3.0 0.0 2.0 2.0 3.0 3.0</Row>
+                <Row object_ref="prot_281">2.0 1.0 2.0 3.0 2.0 0.0 3.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_282">3.0 5.0 5.0 4.0 5.0 0.0 4.0 0.0 3.0 4.0</Row>
+                <Row object_ref="prot_283">0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_284">2.0 1.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_285">2.0 2.0 2.0 2.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_286">3.0 4.0 5.0 4.0 5.0 0.0 4.0 0.0 3.0 4.0</Row>
+                <Row object_ref="prot_287">21.0 21.0 26.0 23.0 21.0 0.0 25.0 6.0 21.0 20.0</Row>
+                <Row object_ref="prot_288">2.0 1.0 2.0 1.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_289">1.0 1.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_290">0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_291">4.0 4.0 4.0 4.0 4.0 0.0 3.0 2.0 3.0 4.0</Row>
+                <Row object_ref="prot_292">3.0 3.0 3.0 4.0 3.0 0.0 2.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_293">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_294">1.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_295">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_296">2.0 3.0 3.0 4.0 3.0 0.0 3.0 0.0 4.0 4.0</Row>
+                <Row object_ref="prot_297">2.0 2.0 1.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_298">5.0 5.0 5.0 5.0 5.0 0.0 3.0 0.0 5.0 5.0</Row>
+                <Row object_ref="prot_299">3.0 2.0 2.0 3.0 2.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_300">0.0 2.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_301">0.0 0.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_302">2.0 2.0 1.0 2.0 1.0 0.0 2.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_303">1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0</Row>
+                <Row object_ref="prot_304">12.0 13.0 12.0 14.0 18.0 4.0 16.0 4.0 11.0 15.0</Row>
+                <Row object_ref="prot_305">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_306">2.0 2.0 2.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_307">4.0 4.0 6.0 5.0 6.0 0.0 5.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_308">2.0 4.0 1.0 3.0 3.0 0.0 2.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_309">4.0 5.0 3.0 3.0 2.0 0.0 3.0 0.0 3.0 4.0</Row>
+                <Row object_ref="prot_310">1.0 1.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_311">30.0 29.0 30.0 34.0 29.0 5.0 26.0 17.0 31.0 29.0</Row>
+                <Row object_ref="prot_312">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_313">5.0 5.0 7.0 6.0 6.0 0.0 5.0 0.0 5.0 5.0</Row>
+                <Row object_ref="prot_314">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_315">4.0 1.0 2.0 3.0 5.0 0.0 4.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_316">6.0 8.0 7.0 9.0 7.0 0.0 11.0 4.0 8.0 10.0</Row>
+                <Row object_ref="prot_317">20.0 19.0 21.0 17.0 22.0 5.0 20.0 5.0 19.0 17.0</Row>
+                <Row object_ref="prot_318">6.0 6.0 6.0 6.0 6.0 0.0 5.0 0.0 6.0 6.0</Row>
+                <Row object_ref="prot_319">0.0 0.0 0.0 0.0 0.0 0.0 0.0 2.0 0.0 0.0</Row>
+                <Row object_ref="prot_320">13.0 13.0 14.0 13.0 11.0 1.0 13.0 6.0 12.0 11.0</Row>
+                <Row object_ref="prot_321">2.0 2.0 3.0 1.0 1.0 0.0 2.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_322">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_323">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_324">4.0 5.0 4.0 4.0 3.0 0.0 4.0 1.0 4.0 3.0</Row>
+                <Row object_ref="prot_325">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_326">1.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_327">4.0 5.0 7.0 5.0 6.0 0.0 4.0 0.0 6.0 6.0</Row>
+                <Row object_ref="prot_328">1.0 1.0 1.0 0.0 0.0 1.0 1.0 2.0 1.0 1.0</Row>
+                <Row object_ref="prot_329">0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_330">3.0 3.0 2.0 3.0 2.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_331">2.0 2.0 2.0 1.0 0.0 0.0 2.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_332">16.0 19.0 16.0 17.0 17.0 0.0 15.0 2.0 12.0 13.0</Row>
+                <Row object_ref="prot_333">2.0 4.0 4.0 5.0 6.0 0.0 4.0 0.0 6.0 4.0</Row>
+                <Row object_ref="prot_334">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_335">7.0 8.0 7.0 7.0 6.0 0.0 7.0 3.0 7.0 6.0</Row>
+                <Row object_ref="prot_336">10.0 9.0 9.0 11.0 10.0 0.0 9.0 1.0 10.0 8.0</Row>
+                <Row object_ref="prot_337">2.0 3.0 4.0 4.0 4.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_338">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_339">4.0 6.0 6.0 6.0 5.0 0.0 4.0 1.0 5.0 5.0</Row>
+                <Row object_ref="prot_340">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_341">0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_342">3.0 3.0 3.0 3.0 3.0 0.0 3.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_343">3.0 6.0 6.0 5.0 5.0 0.0 5.0 1.0 5.0 6.0</Row>
+                <Row object_ref="prot_344">1.0 2.0 3.0 2.0 2.0 0.0 2.0 2.0 3.0 3.0</Row>
+                <Row object_ref="prot_345">1.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_346">0.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_347">8.0 6.0 6.0 6.0 7.0 0.0 9.0 3.0 10.0 13.0</Row>
+                <Row object_ref="prot_348">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_349">1.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_350">3.0 1.0 2.0 2.0 1.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_351">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_352">5.0 4.0 4.0 4.0 4.0 0.0 5.0 2.0 5.0 4.0</Row>
+                <Row object_ref="prot_353">0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_354">20.0 22.0 21.0 21.0 23.0 1.0 20.0 5.0 19.0 20.0</Row>
+                <Row object_ref="prot_355">0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_356">47.0 44.0 44.0 37.0 41.0 12.0 40.0 14.0 42.0 45.0</Row>
+                <Row object_ref="prot_357">15.0 12.0 13.0 14.0 14.0 1.0 14.0 3.0 10.0 11.0</Row>
+                <Row object_ref="prot_358">0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_359">12.0 13.0 15.0 14.0 13.0 0.0 11.0 1.0 14.0 13.0</Row>
+                <Row object_ref="prot_360">6.0 7.0 7.0 6.0 6.0 0.0 3.0 0.0 6.0 5.0</Row>
+                <Row object_ref="prot_361">1.0 1.0 1.0 1.0 1.0 0.0 2.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_362">3.0 3.0 3.0 3.0 4.0 0.0 3.0 1.0 4.0 2.0</Row>
+                <Row object_ref="prot_363">11.0 11.0 10.0 12.0 10.0 0.0 8.0 5.0 11.0 13.0</Row>
+                <Row object_ref="prot_364">1.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_365">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_366">1.0 2.0 1.0 2.0 2.0 0.0 1.0 0.0 0.0 2.0</Row>
+                <Row object_ref="prot_367">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_368">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_369">6.0 8.0 6.0 6.0 5.0 0.0 7.0 2.0 4.0 6.0</Row>
+                <Row object_ref="prot_370">1.0 1.0 1.0 2.0 2.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_371">4.0 4.0 4.0 5.0 5.0 0.0 2.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_372">2.0 2.0 3.0 3.0 3.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_373">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_374">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_375">17.0 17.0 21.0 18.0 16.0 0.0 17.0 7.0 11.0 15.0</Row>
+                <Row object_ref="prot_376">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_377">21.0 28.0 33.0 28.0 25.0 4.0 26.0 10.0 28.0 27.0</Row>
+                <Row object_ref="prot_378">1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_379">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_380">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_381">7.0 9.0 10.0 10.0 7.0 0.0 7.0 1.0 9.0 10.0</Row>
+                <Row object_ref="prot_382">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_383">2.0 1.0 2.0 2.0 1.0 0.0 2.0 3.0 2.0 1.0</Row>
+                <Row object_ref="prot_384">1.0 1.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_385">1.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_386">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_387">3.0 3.0 2.0 2.0 4.0 0.0 4.0 0.0 3.0 4.0</Row>
+                <Row object_ref="prot_388">2.0 3.0 2.0 3.0 3.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_389">1.0 1.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_390">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_391">2.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_392">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_393">21.0 21.0 22.0 24.0 17.0 3.0 23.0 9.0 23.0 19.0</Row>
+                <Row object_ref="prot_394">6.0 7.0 8.0 6.0 8.0 0.0 5.0 2.0 8.0 7.0</Row>
+                <Row object_ref="prot_395">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_396">3.0 3.0 2.0 1.0 1.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_397">1.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_398">0.0 0.0 0.0 0.0 0.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_399">6.0 11.0 8.0 7.0 8.0 0.0 5.0 3.0 5.0 7.0</Row>
+                <Row object_ref="prot_400">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_401">2.0 2.0 1.0 2.0 1.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_402">2.0 2.0 2.0 2.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_403">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_404">7.0 6.0 7.0 6.0 7.0 0.0 4.0 1.0 8.0 7.0</Row>
+                <Row object_ref="prot_405">3.0 3.0 3.0 3.0 3.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_406">0.0 0.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_407">20.0 19.0 20.0 20.0 18.0 0.0 14.0 3.0 14.0 11.0</Row>
+                <Row object_ref="prot_408">1.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_409">2.0 3.0 2.0 2.0 3.0 0.0 3.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_410">2.0 1.0 1.0 1.0 2.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_411">14.0 18.0 17.0 14.0 19.0 0.0 18.0 2.0 18.0 15.0</Row>
+                <Row object_ref="prot_412">2.0 0.0 1.0 3.0 3.0 0.0 3.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_413">2.0 3.0 1.0 2.0 3.0 0.0 2.0 0.0 1.0 3.0</Row>
+                <Row object_ref="prot_414">5.0 4.0 4.0 5.0 5.0 0.0 4.0 3.0 4.0 4.0</Row>
+                <Row object_ref="prot_415">18.0 14.0 21.0 18.0 20.0 0.0 20.0 2.0 18.0 18.0</Row>
+                <Row object_ref="prot_416">10.0 11.0 13.0 10.0 11.0 1.0 10.0 4.0 13.0 10.0</Row>
+                <Row object_ref="prot_417">14.0 14.0 15.0 14.0 14.0 0.0 2.0 2.0 3.0 3.0</Row>
+                <Row object_ref="prot_418">0.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_419">1.0 1.0 0.0 2.0 2.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_420">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_421">5.0 3.0 3.0 4.0 4.0 0.0 4.0 3.0 4.0 4.0</Row>
+                <Row object_ref="prot_422">4.0 6.0 3.0 4.0 5.0 0.0 4.0 2.0 4.0 4.0</Row>
+                <Row object_ref="prot_423">4.0 6.0 5.0 5.0 4.0 0.0 5.0 0.0 5.0 5.0</Row>
+                <Row object_ref="prot_424">1.0 1.0 2.0 2.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_425">2.0 2.0 2.0 2.0 2.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_426">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_427">2.0 2.0 2.0 2.0 2.0 0.0 0.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_428">1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_429">9.0 8.0 9.0 8.0 7.0 0.0 8.0 4.0 8.0 7.0</Row>
+                <Row object_ref="prot_430">9.0 12.0 8.0 11.0 7.0 3.0 19.0 6.0 18.0 18.0</Row>
+                <Row object_ref="prot_431">13.0 16.0 16.0 13.0 11.0 0.0 14.0 1.0 9.0 10.0</Row>
+                <Row object_ref="prot_432">2.0 3.0 3.0 2.0 2.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_433">3.0 7.0 5.0 4.0 6.0 0.0 4.0 0.0 7.0 4.0</Row>
+                <Row object_ref="prot_434">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_435">29.0 32.0 28.0 29.0 30.0 14.0 26.0 21.0 34.0 30.0</Row>
+                <Row object_ref="prot_436">0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_437">0.0 1.0 0.0 2.0 1.0 0.0 2.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_438">3.0 3.0 3.0 4.0 3.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_439">3.0 4.0 4.0 4.0 4.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_440">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_441">2.0 3.0 2.0 2.0 3.0 0.0 1.0 1.0 2.0 3.0</Row>
+                <Row object_ref="prot_442">9.0 9.0 9.0 10.0 9.0 2.0 8.0 3.0 8.0 8.0</Row>
+                <Row object_ref="prot_443">2.0 3.0 3.0 2.0 3.0 0.0 1.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_444">0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_445">7.0 6.0 5.0 4.0 5.0 0.0 4.0 1.0 5.0 4.0</Row>
+                <Row object_ref="prot_446">0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_447">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_448">1.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_449">2.0 2.0 2.0 2.0 2.0 1.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_450">1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_451">1.0 1.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_452">3.0 4.0 4.0 3.0 4.0 2.0 3.0 1.0 4.0 5.0</Row>
+                <Row object_ref="prot_453">11.0 12.0 15.0 14.0 13.0 1.0 13.0 3.0 18.0 13.0</Row>
+                <Row object_ref="prot_454">1.0 1.0 1.0 1.0 1.0 0.0 0.0 1.0 1.0 1.0</Row>
+                <Row object_ref="prot_455">4.0 4.0 4.0 4.0 3.0 0.0 4.0 0.0 4.0 4.0</Row>
+                <Row object_ref="prot_456">1.0 2.0 2.0 2.0 2.0 0.0 3.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_457">1.0 2.0 2.0 2.0 2.0 1.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_458">2.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_459">2.0 2.0 1.0 1.0 2.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_460">1.0 2.0 2.0 2.0 1.0 0.0 1.0 1.0 1.0 2.0</Row>
+                <Row object_ref="prot_461">1.0 1.0 2.0 1.0 3.0 0.0 1.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_462">12.0 17.0 15.0 16.0 13.0 2.0 17.0 10.0 16.0 18.0</Row>
+                <Row object_ref="prot_463">1.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_464">1.0 1.0 1.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_465">0.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_466">6.0 6.0 6.0 6.0 5.0 0.0 5.0 0.0 3.0 4.0</Row>
+                <Row object_ref="prot_467">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_468">1.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_469">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_470">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_471">8.0 5.0 5.0 5.0 5.0 0.0 6.0 0.0 5.0 6.0</Row>
+                <Row object_ref="prot_472">7.0 7.0 6.0 7.0 7.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_473">4.0 3.0 3.0 3.0 3.0 0.0 4.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_474">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_475">11.0 15.0 15.0 11.0 12.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_476">1.0 1.0 2.0 3.0 1.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_477">0.0 1.0 1.0 2.0 2.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_478">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_479">4.0 5.0 3.0 4.0 4.0 0.0 5.0 0.0 4.0 3.0</Row>
+                <Row object_ref="prot_480">0.0 0.0 0.0 0.0 0.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_481">4.0 5.0 4.0 5.0 4.0 0.0 3.0 0.0 2.0 4.0</Row>
+                <Row object_ref="prot_482">5.0 4.0 5.0 6.0 7.0 0.0 4.0 1.0 4.0 5.0</Row>
+                <Row object_ref="prot_483">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_484">1.0 1.0 1.0 1.0 2.0 0.0 2.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_485">0.0 1.0 0.0 1.0 1.0 0.0 1.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_486">12.0 11.0 9.0 10.0 9.0 0.0 8.0 3.0 9.0 8.0</Row>
+                <Row object_ref="prot_487">1.0 1.0 1.0 1.0 1.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_488">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_489">3.0 5.0 5.0 5.0 5.0 0.0 5.0 1.0 5.0 5.0</Row>
+                <Row object_ref="prot_490">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_491">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_492">1.0 1.0 1.0 1.0 2.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_493">1.0 1.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_494">2.0 1.0 1.0 1.0 1.0 0.0 2.0 0.0 2.0 1.0</Row>
+                <Row object_ref="prot_495">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_496">0.0 1.0 0.0 2.0 0.0 0.0 7.0 1.0 8.0 6.0</Row>
+                <Row object_ref="prot_497">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_498">3.0 2.0 2.0 4.0 3.0 0.0 2.0 1.0 3.0 2.0</Row>
+                <Row object_ref="prot_499">2.0 1.0 1.0 1.0 1.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_500">47.0 43.0 45.0 41.0 38.0 18.0 54.0 32.0 54.0 55.0</Row>
+                <Row object_ref="prot_501">1.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_502">3.0 2.0 3.0 3.0 3.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_503">1.0 2.0 4.0 2.0 2.0 0.0 2.0 0.0 2.0 4.0</Row>
+                <Row object_ref="prot_504">2.0 3.0 3.0 2.0 4.0 0.0 3.0 1.0 4.0 5.0</Row>
+                <Row object_ref="prot_505">2.0 2.0 2.0 1.0 2.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_506">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_507">34.0 38.0 40.0 37.0 41.0 3.0 37.0 17.0 37.0 37.0</Row>
+                <Row object_ref="prot_508">2.0 3.0 2.0 3.0 2.0 0.0 3.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_509">1.0 1.0 2.0 2.0 2.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_510">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_511">9.0 7.0 7.0 7.0 6.0 0.0 7.0 1.0 7.0 6.0</Row>
+                <Row object_ref="prot_512">4.0 4.0 4.0 4.0 4.0 0.0 5.0 0.0 5.0 4.0</Row>
+                <Row object_ref="prot_513">2.0 1.0 1.0 2.0 2.0 0.0 2.0 0.0 3.0 1.0</Row>
+                <Row object_ref="prot_514">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_515">3.0 3.0 3.0 3.0 3.0 0.0 1.0 1.0 3.0 2.0</Row>
+                <Row object_ref="prot_516">2.0 1.0 2.0 2.0 2.0 0.0 1.0 0.0 1.0 3.0</Row>
+                <Row object_ref="prot_517">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_518">2.0 2.0 2.0 2.0 2.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_519">3.0 4.0 3.0 5.0 4.0 0.0 4.0 2.0 4.0 4.0</Row>
+                <Row object_ref="prot_520">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_521">3.0 3.0 3.0 3.0 3.0 0.0 3.0 0.0 3.0 3.0</Row>
+                <Row object_ref="prot_522">3.0 1.0 2.0 2.0 2.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_523">3.0 4.0 5.0 3.0 4.0 0.0 1.0 1.0 2.0 3.0</Row>
+                <Row object_ref="prot_524">4.0 2.0 3.0 4.0 3.0 0.0 1.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_525">1.0 2.0 2.0 2.0 1.0 0.0 3.0 0.0 3.0 2.0</Row>
+                <Row object_ref="prot_526">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_527">7.0 10.0 10.0 7.0 8.0 2.0 7.0 3.0 9.0 7.0</Row>
+                <Row object_ref="prot_528">2.0 1.0 2.0 2.0 2.0 0.0 3.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_529">0.0 0.0 0.0 0.0 0.0 0.0 5.0 4.0 4.0 3.0</Row>
+                <Row object_ref="prot_530">1.0 3.0 2.0 3.0 2.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_531">3.0 2.0 3.0 2.0 3.0 0.0 3.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_532">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_533">0.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_534">40.0 39.0 44.0 37.0 41.0 9.0 41.0 28.0 43.0 42.0</Row>
+                <Row object_ref="prot_535">1.0 1.0 2.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_536">5.0 4.0 6.0 5.0 7.0 6.0 17.0 8.0 16.0 22.0</Row>
+                <Row object_ref="prot_537">16.0 26.0 26.0 24.0 22.0 2.0 22.0 5.0 24.0 25.0</Row>
+                <Row object_ref="prot_538">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_539">7.0 8.0 8.0 7.0 8.0 0.0 6.0 2.0 9.0 8.0</Row>
+                <Row object_ref="prot_540">0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_541">8.0 8.0 9.0 8.0 7.0 0.0 8.0 4.0 8.0 6.0</Row>
+                <Row object_ref="prot_542">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_543">1.0 2.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_544">9.0 9.0 7.0 9.0 9.0 0.0 7.0 1.0 8.0 9.0</Row>
+                <Row object_ref="prot_545">3.0 3.0 3.0 5.0 5.0 0.0 4.0 0.0 5.0 5.0</Row>
+                <Row object_ref="prot_546">2.0 2.0 2.0 1.0 1.0 0.0 2.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_547">1.0 2.0 3.0 2.0 2.0 0.0 2.0 1.0 1.0 1.0</Row>
+                <Row object_ref="prot_548">1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_549">2.0 2.0 2.0 2.0 2.0 0.0 2.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_550">5.0 6.0 5.0 6.0 7.0 0.0 4.0 2.0 4.0 6.0</Row>
+                <Row object_ref="prot_551">20.0 24.0 21.0 27.0 25.0 0.0 23.0 3.0 25.0 26.0</Row>
+                <Row object_ref="prot_552">2.0 3.0 1.0 4.0 3.0 0.0 3.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_553">3.0 4.0 4.0 4.0 3.0 0.0 4.0 1.0 5.0 4.0</Row>
+                <Row object_ref="prot_554">1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_555">3.0 2.0 3.0 2.0 1.0 0.0 3.0 1.0 3.0 3.0</Row>
+                <Row object_ref="prot_556">1.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_557">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_558">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_559">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_560">3.0 3.0 3.0 2.0 2.0 0.0 3.0 0.0 3.0 1.0</Row>
+                <Row object_ref="prot_561">0.0 1.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_562">0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_563">2.0 4.0 6.0 5.0 7.0 0.0 4.0 0.0 7.0 4.0</Row>
+                <Row object_ref="prot_564">0.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_565">4.0 8.0 5.0 7.0 8.0 0.0 13.0 3.0 15.0 15.0</Row>
+                <Row object_ref="prot_566">12.0 11.0 12.0 16.0 14.0 0.0 11.0 3.0 11.0 12.0</Row>
+                <Row object_ref="prot_567">0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Row>
+                <Row object_ref="prot_568">1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0</Row>
+                <Row object_ref="prot_569">1.0 2.0 2.0 2.0 3.0 1.0 2.0 0.0 2.0 3.0</Row>
+                <Row object_ref="prot_570">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_571">0.0 1.0 0.0 1.0 1.0 0.0 2.0 2.0 1.0 2.0</Row>
+                <Row object_ref="prot_572">7.0 6.0 4.0 5.0 6.0 0.0 6.0 4.0 5.0 5.0</Row>
+                <Row object_ref="prot_573">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_574">24.0 22.0 25.0 24.0 23.0 2.0 24.0 10.0 23.0 26.0</Row>
+                <Row object_ref="prot_575">1.0 1.0 1.0 1.0 1.0 0.0 0.0 1.0 1.0 0.0</Row>
+                <Row object_ref="prot_576">2.0 2.0 1.0 2.0 2.0 0.0 2.0 1.0 2.0 2.0</Row>
+                <Row object_ref="prot_577">4.0 7.0 6.0 7.0 7.0 0.0 2.0 0.0 3.0 4.0</Row>
+                <Row object_ref="prot_578">3.0 2.0 5.0 3.0 4.0 0.0 9.0 1.0 8.0 9.0</Row>
+                <Row object_ref="prot_579">1.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+                <Row object_ref="prot_580">1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0</Row>
+                <Row object_ref="prot_581">4.0 4.0 5.0 5.0 2.0 0.0 4.0 2.0 4.0 2.0</Row>
+                <Row object_ref="prot_582">2.0 2.0 1.0 2.0 2.0 0.0 1.0 0.0 2.0 2.0</Row>
+                <Row object_ref="prot_583">2.0 2.0 2.0 2.0 1.0 0.0 1.0 0.0 1.0 2.0</Row>
+                <Row object_ref="prot_584">1.0 3.0 1.0 2.0 3.0 0.0 5.0 0.0 4.0 2.0</Row>
+                <Row object_ref="prot_585">7.0 6.0 6.0 7.0 4.0 7.0 16.0 9.0 15.0 16.0</Row>
+                <Row object_ref="prot_586">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+        
+    </ProteinList>
+    
+    <SoftwareList>
+        <Software version="2.3" id="Progenesis"/>
+    </SoftwareList>
+    <DataProcessingList>
+        <DataProcessing software_Ref="Progenesis" id="feature_quantification">
+            <ProcessingMethod order="1">
+                <cvParam accession="" cvRef="PSI-MS" name=""/>
+            </ProcessingMethod>
+        </DataProcessing>
+    </DataProcessingList>
+</MzQuantML>

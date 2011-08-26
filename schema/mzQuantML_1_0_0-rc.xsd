@@ -192,7 +192,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinListType">
 		<xsd:annotation>
@@ -227,7 +231,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>	
 	<xsd:complexType name="ProteinGroupType">
 		<xsd:annotation>
@@ -250,7 +258,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinType">
 		<xsd:sequence>
@@ -270,7 +282,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 		<xsd:attribute name="accession" type="xsd:string" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The accession of the protein in the source database. In most use cases it is expected that accession will be unique within the ProteinList, although in rare cases there may be different entries for the same protein for example if quantifying different PTMs on the same protein.</xsd:documentation>
@@ -340,7 +356,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 		<xsd:attribute name="finalResult" type="xsd:boolean" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Multiple peptide lists are allowed for reporting the evidence trail to create a final peptide list, but the final result e.g. to be loaded into a database, should be flagged with finalResult=true</xsd:documentation>
@@ -375,7 +395,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="PeptideConsensusType">
 		<xsd:annotation>
@@ -409,7 +433,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 		<xsd:attribute name="charge" type="listOfIntegers" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The charge of this instance of Peptide. If more than one value is provided, it is assumed that this Peptide element is summarising multiple charge states of the Peptide. </xsd:documentation>
@@ -438,7 +466,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>	
 	<xsd:complexType name="ModificationType">
 		<xsd:annotation>
@@ -525,7 +557,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>			
 			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1"/>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="GlobalQuantLayerType">
 		<xsd:annotation>
@@ -540,7 +576,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1"/>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="ColumnIndexType">
 		<xsd:annotation>
@@ -605,7 +645,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:element>				
 			</xsd:sequence>
 		</xsd:sequence>
-		<xsd:attribute name="id" use="required" type="xsd:ID"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 		<xsd:attribute name="name" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>A human readable name for the study variable.</xsd:documentation>
@@ -623,7 +667,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="id" use="required" type="xsd:ID"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="AssayType">
 		<xsd:sequence>
@@ -644,7 +692,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 		<xsd:attribute name="name" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>Human readable name for the assay.</xsd:documentation>
@@ -723,7 +775,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>Reference to a StudyVariable or an Assay</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 		<xsd:attribute name="name" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>Optional name for the ratio.</xsd:documentation>
@@ -768,7 +824,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>Refernece to the raw file or group of raw files from which this feature list was generated.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="FeatureType">
 		<xsd:annotation>
@@ -854,7 +914,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="ProcessingMethod" type="ProcessingMethodType"  maxOccurs="unbounded"/>			
 		</xsd:sequence>
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 		<xsd:attribute name="software_Ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>This attribute must reference the 'id' of the appropriate SoftwareType.</xsd:documentation>
@@ -897,7 +961,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>		
-		<xsd:attribute name="id" type="xsd:ID" use="required"/>		
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>		
 		<xsd:attribute name="version" type="xsd:string" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The software version.</xsd:documentation>
@@ -906,12 +974,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:simpleType name="listOfDoubles">
 		<xsd:list itemType="xsd:double"/>
-	</xsd:simpleType>	
-	
+	</xsd:simpleType>		
 	<xsd:simpleType name="listOfDoublesOrNulls">
 		<xsd:list itemType="doubleOrNullType"/>		
-	</xsd:simpleType>
-	
+	</xsd:simpleType>	
 	<xsd:simpleType name="doubleOrNullType">
 		<xsd:union memberTypes="xsd:double">
 			<xsd:simpleType>

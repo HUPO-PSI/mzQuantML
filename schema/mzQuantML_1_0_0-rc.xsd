@@ -337,17 +337,17 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>				
 			<xsd:element name="AssayQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about peptides related to different assays i.e. the column index must refer to Assays defined in the file.  Note, the QuantLayer in PeptideList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different peptide charge states.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different assays i.e. the column index must refer to Assays defined in the file.  </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="StudyVariableQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about peptides related to different study variables i.e. the column index must refer to StudyVariables defined in the file. Note, the QuantLayer in PeptideList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different peptide charge states.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different study variables i.e. the column index must refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index must refer to Ratio elements defined in the file. Note, the QuantLayer in PeptideList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different peptide charge states. </xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index must refer to Ratio elements defined in the file.  </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
@@ -381,19 +381,24 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>				
 			<xsd:element name="AssayQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about small molecules related to different assays i.e. the column index must refer to Assays defined in the file.  Note, the QuantLayer in SmallMoleculeList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different charge states.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about small molecules related to different assays i.e. the column index must refer to Assays defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="StudyVariableQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about small molecules related to different study variables i.e. the column index must refer to StudyVariables defined in the file. Note, the QuantLayer in SmallMoleculeList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different charge states.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about small molecules related to different study variables i.e. the column index must refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about small molecules related to different ratios i.e. the column index must refer to Ratio elements defined in the file. Note, the QuantLayer in SmallMoleculeList should only be used instead of QuantLayers in MatchedFeatureList or FeatureList if values are summed across different charge states. </xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about small molecules related to different ratios i.e. the column index must refer to Ratio elements defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms for the entire list.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
 			<xsd:annotation>
@@ -408,7 +413,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:sequence>
 			<xsd:element name="PeptideSequence" type="sequence" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation> The amino acid sequence of the (poly)peptide. If a substitution modification has been found, the original sequence should be reported. The peptide sequence is mandatory unless this is a MatchedFeature that has not been assigned to a peptide sequence. </xsd:documentation>
+					<xsd:documentation> The amino acid sequence of the (poly)peptide. If a substitution modification has been found, the original sequence should be reported. The peptide sequence is mandatory unless this is a PeptideConsensus that has not been assigned to a peptide sequence. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Modification" type="ModificationType" minOccurs="0" maxOccurs="unbounded"/>
@@ -520,12 +525,13 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+		<!--  
 		<xsd:attribute name="location" type="xsd:int">
 			<xsd:annotation>
 				<xsd:documentation>Location of the modification within the molecule.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<!-- Presume these attributes are not required
+		-->
 		<xsd:attribute name="avgMassDelta" type="xsd:double">
 			<xsd:annotation>
 				<xsd:documentation>Atomic mass delta considering the natural distribution of
@@ -538,11 +544,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					elements in Daltons. </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		-->
 	</xsd:complexType>
 	<xsd:complexType name="QuantLayerType">
 		<xsd:annotation>
-			<xsd:documentation>A collection of data relating to the objects within the parent list type (e.g. MatchedFeature, Peptide, Protein or ProteinGroup)</xsd:documentation>
+			<xsd:documentation>A collection of data relating to the objects within the parent list type (e.g. PeptideConsensus, Protein or ProteinGroup)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="DataType" type="cvParamRefType" maxOccurs="1" minOccurs="1">
@@ -568,7 +573,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>A QuantLayer in which different data types are allowed in each column.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="ColumnIndex" type="ColumnIndexType" maxOccurs="1"
+			<xsd:element name="ColumnDefinition" type="ColumnDefinitionType" maxOccurs="1"
 				minOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Definition of the data types in each column</xsd:documentation>
@@ -582,7 +587,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:complexType name="ColumnIndexType">
+	<xsd:complexType name="ColumnDefinitionType">
 		<xsd:annotation>
 			<xsd:documentation>The definition of all the columns of data about the features</xsd:documentation>
 		</xsd:annotation>
@@ -708,11 +713,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>The raw file or collection of raw files that together form one unit of analysis. This is mandatory unless raw files were not used for quantification e.g. spectral counting. Multiple raw files should only be provided within a group if they have been used for sample pre-fractionation which are later summed together.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="RawFile" maxOccurs="unbounded" type="ExternalDataType">
-				<xsd:annotation>
-					<xsd:documentation>A raw mass spectrometry output file that has been analysed e.g. in mzML format. The same raw file can be referenced in multiple assays, for example if it contains multiple samples differentially labelled or tagged. </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+			<xsd:element name="RawFile" maxOccurs="unbounded" type="RawFileType"/>			
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Additional parameters about the raw files specified or the grouping process.</xsd:documentation>
@@ -724,7 +725,21 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>Unique identifier for the group of raw files that constitute one analysis unit.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-	</xsd:complexType>	
+	</xsd:complexType>
+	<xsd:complexType name="RawFileType">
+		<xsd:annotation>
+			<xsd:documentation>A raw mass spectrometry output file that has been analysed e.g. in mzML format. The same raw file can be referenced in multiple assays, for example if it contains multiple samples differentially labelled or tagged. Note, the name raw file does not necessarily imply that the file has not been processed, since in some quant methods, processed peak list formats such as MGF or dta can be used, which could be referenced here.  </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ExternalDataType">
+				<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>Additional parameters about the raw file.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:group>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 	<xsd:complexType name="IdentificationFilesType">
 		<xsd:annotation>
 			<xsd:documentation>All identification files associated with this quantification analysis to be referenced elsewhere.</xsd:documentation>
@@ -909,7 +924,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="OutputObject_refs" minOccurs="0" maxOccurs="1" type="xsd:IDREFS">
 				<xsd:annotation>
-					<xsd:documentation>References to raw file groups, FeatureList, MatchedFeatureList, PeptideList, ProteinList or ProteinGroupList or QuantLayers that were the outputs of the data processing step.</xsd:documentation>
+					<xsd:documentation>References to raw file groups, FeatureList, PeptideConsensusList, ProteinList or ProteinGroupList or QuantLayers that were the outputs of the data processing step.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="ProcessingMethod" type="ProcessingMethodType"  maxOccurs="unbounded"/>			

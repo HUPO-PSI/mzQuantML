@@ -80,7 +80,7 @@
 		</Protein>
 		
 		<GlobalQuantLayer id="Global_Protein_QL">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="" name="ANOVA"/>
@@ -92,7 +92,7 @@
 					</DataType>
 				</Column>
 
-			</ColumnIndex>		
+			</ColumnDefinition>		
 			<DataMatrix>
 				<Row object_ref="HSP70">0.034 4.56</Row>
 				<Row object_ref="HSP80">0.034 4.56</Row>
@@ -153,7 +153,7 @@
 		
 		
 		<FeatureQuantLayer id="FQL1">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
@@ -175,7 +175,7 @@
 					</DataType>
 				</Column>
 				
-			</ColumnIndex>			
+			</ColumnDefinition>			
 			<DataMatrix>
 				<Row object_ref="f1_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
 				<Row object_ref="f1_2">93481.41456 98090.36288 null 0.146698</Row>
@@ -193,7 +193,7 @@
 		<Feature id="f2_4" charge="2" MZ="518.827" RT="26.8685"/>
 		
 		<FeatureQuantLayer id="FQL2">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
@@ -215,7 +215,7 @@
 					</DataType>
 				</Column>
 				
-			</ColumnIndex>			
+			</ColumnDefinition>			
 			<DataMatrix>
 				<Row object_ref="f2_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
 				<Row object_ref="f2_2">93481.41456 98090.36288 null 0.146698</Row>

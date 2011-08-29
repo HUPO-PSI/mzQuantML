@@ -83,7 +83,7 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 		</Protein>
 		
 		<GlobalQuantLayer id="Global_Protein_QL">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="" name="ANOVA"/>
@@ -95,7 +95,7 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 					</DataType>
 				</Column>
 				
-			</ColumnIndex>		
+			</ColumnDefinition>		
 			<DataMatrix>
 				<Row object_ref="HSP70">0.034 4.56</Row>
 				<Row object_ref="HSP80">0.034 4.56</Row>
@@ -152,13 +152,13 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 		<Feature id="f1_2" charge="2" MZ="421.572" RT="29.8685"/>
 		
 		<FeatureQuantLayer id="fql1">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="Total MS2 feature intensity"/>
 					</DataType>
 				</Column>
-			</ColumnIndex>
+			</ColumnDefinition>
 			<DataMatrix>
 				<Row object_ref="f1_1">45678</Row>
 				<Row object_ref="f1_2">5578</Row>
@@ -173,13 +173,13 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 		<Feature id="f2_2" charge="2" MZ="421.684" RT="29.3335"/>
 		
 		<FeatureQuantLayer id="fql2">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="Total MS2 feature intensity"/>
 					</DataType>
 				</Column>
-			</ColumnIndex>
+			</ColumnDefinition>
 			<DataMatrix>
 				<Row object_ref="f2_1">23458</Row>
 				<Row object_ref="f2_2">5885</Row>

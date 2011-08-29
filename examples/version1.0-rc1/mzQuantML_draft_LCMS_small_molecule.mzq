@@ -126,7 +126,7 @@ Sketch of an example for using data matrices to represent quant layers
 		
 		
 		<FeatureQuantLayer id="FQL1">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
@@ -148,7 +148,7 @@ Sketch of an example for using data matrices to represent quant layers
 					</DataType>
 				</Column>
 				
-			</ColumnIndex>			
+			</ColumnDefinition>			
 			<DataMatrix>
 				<Row object_ref="featureB_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
 				<Row object_ref="featureB_2">93481.41456 98090.36288 NaN 0.146698</Row>
@@ -166,7 +166,7 @@ Sketch of an example for using data matrices to represent quant layers
 		<Feature id="featureE_4" charge="2" MZ="518.827" RT="26.8685"/>
 		
 		<FeatureQuantLayer id="FQL2">
-			<ColumnIndex>
+			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
 						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
@@ -188,7 +188,7 @@ Sketch of an example for using data matrices to represent quant layers
 					</DataType>
 				</Column>
 				
-			</ColumnIndex>			
+			</ColumnDefinition>			
 			<DataMatrix>
 				<Row object_ref="featureE_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
 				<Row object_ref="featureE_2">93481.41456 98090.36288 NaN 0.146698</Row>

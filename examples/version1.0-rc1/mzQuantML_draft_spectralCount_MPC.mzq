@@ -112,7 +112,7 @@ schema comments / issues:
 		<!-- description see above d) -->
 		<StudyVariableQuantLayer id="QL_protein_means_of_groups">
 			<DataType>
-				<cvParam accession="MS:000000" name="mean" cvRef="PSI-MS"/> <!-- insert final accession number -->
+				<cvParam accession="MS:1001860" name="mean of peptide ratios" cvRef="PSI-MS"/>
 			</DataType>
 			<ColumnIndex>SV1_HEALTHY SV2_DISEASE</ColumnIndex>
 			<DataMatrix>
@@ -182,7 +182,7 @@ schema comments / issues:
 	
 	<SoftwareList>
 		<Software id="MS_EXCEL" version="2007">
-			<cvParam accession="MS:000000" name="Microsoft Excel" cvRef="PSI-MS"/> <!-- insert final accession number -->
+			<cvParam accession="MS:000000" name="quantitation software name" value="Microsoft Excel" cvRef="PSI-MS"/>
 		</Software>
 	</SoftwareList>
 

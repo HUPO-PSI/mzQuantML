@@ -85,19 +85,19 @@
     </AssayList>
     <StudyVariableList>
         <StudyVariable name="D" id="SV_D">
-            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_6 ass_7 ass_8</Assay_refs>
         </StudyVariable>
         <StudyVariable name="E" id="SV_E">
-            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_9 ass_10 ass_11</Assay_refs>
         </StudyVariable>
         <StudyVariable name="B" id="SV_B">
-            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_0 ass_1 ass_2</Assay_refs>
         </StudyVariable>
         <StudyVariable name="C" id="SV_C">
-            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_3 ass_4 ass_5</Assay_refs>
         </StudyVariable>
     </StudyVariableList>
@@ -2291,12 +2291,12 @@
                 <Row object_ref="prot_1089">5.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 3.0</Row>
                 <Row object_ref="prot_1090">0.0 1.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0</Row>
             </DataMatrix>
-        </AssayQuantLayer>
-        
-    </ProteinList>
-    
+        </AssayQuantLayer>        
+    </ProteinList>   
     <SoftwareList>
-        <Software version="2.3" id="Progenesis"/>
+        <Software version="2.3" id="Progenesis">
+            <cvParam accession="MS:1001830" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Progenesis LC-MS"/>
+        </Software>
     </SoftwareList>
     <DataProcessingList>
         <DataProcessing software_Ref="Progenesis" id="feature_quantification">

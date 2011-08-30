@@ -73,11 +73,11 @@
     </AssayList>
     <StudyVariableList>
         <StudyVariable name="Red" id="SV_Red">
-            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_0 ass_1 ass_2 ass_3 ass_4</Assay_refs>
         </StudyVariable>
         <StudyVariable name="Yellow" id="SV_Yellow">
-            <cvParam accession="MS:0000000 (study variable)" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Study Variable"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_5 ass_6 ass_7 ass_8 ass_9</Assay_refs>
         </StudyVariable>
     </StudyVariableList>
@@ -1263,12 +1263,12 @@
                 <Row object_ref="prot_585">7.0 6.0 6.0 7.0 4.0 7.0 16.0 9.0 15.0 16.0</Row>
                 <Row object_ref="prot_586">1.0 1.0 1.0 1.0 1.0 0.0 1.0 0.0 1.0 1.0</Row>
             </DataMatrix>
-        </AssayQuantLayer>
-        
-    </ProteinList>
-    
+        </AssayQuantLayer>        
+    </ProteinList>    
     <SoftwareList>
-        <Software version="2.3" id="Progenesis"/>
+        <Software version="2.3" id="Progenesis">
+            <cvParam accession="MS:1001830" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="Progenesis LC-MS"/>
+        </Software>
     </SoftwareList>
     <DataProcessingList>
         <DataProcessing software_Ref="Progenesis" id="feature_quantification">

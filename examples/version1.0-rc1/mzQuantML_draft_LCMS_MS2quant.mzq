@@ -42,8 +42,7 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 	
 	<StudyVariableList>
 		<StudyVariable id="SV_group_B" name="Group B">
-			<cvParam accession="MS:0000000 (study variable)" name="concentration" cvRef="PSI-MS"
-				value="1" unitAccession="TODO" unitCvRef="TODO" unitName="TODO"/>
+			<cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
 			<Assay_refs>B1</Assay_refs>
 		</StudyVariable>
 		

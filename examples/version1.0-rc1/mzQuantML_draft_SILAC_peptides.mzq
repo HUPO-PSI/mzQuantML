@@ -30,10 +30,10 @@ Sketch of an example for using data matrices to represent quant layers
 	
 
 	<AssayList id="AssayList1">
-		<Assay id="assay_L1" name="assay_L">
+		<Assay id="assay_L1" name="assay_L1">
 			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 		</Assay>
-		<Assay id="assay_H1" name="assay_H">
+		<Assay id="assay_H1" name="assay_H1">
 			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 			<Label>
 				<Modification massDelta="8">
@@ -44,10 +44,10 @@ Sketch of an example for using data matrices to represent quant layers
 				</Modification>				
 			</Label>			
 		</Assay>
-		<Assay id="assay_L2" name="assay_L">
+		<Assay id="assay_L2" name="assay_L2">
 			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>
 		</Assay>
-		<Assay id="assay_H2" name="assay_H">
+		<Assay id="assay_H2" name="assay_H2">
 			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>	
 			<Label>
 				<Modification massDelta="8">
@@ -65,11 +65,11 @@ Sketch of an example for using data matrices to represent quant layers
 	<StudyVariableList>
 		<StudyVariable id="SV_group_B" name="Group B">			
 			<cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>	
-			<Assay_refs>assay_L1</Assay_refs>
+			<Assay_refs>assay_L1 assay_L2</Assay_refs>
 		</StudyVariable>
 		<StudyVariable id="SV_group_E" name="Group E">
 			<cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
-			<Assay_refs>assay_H1</Assay_refs>
+			<Assay_refs>assay_H1 assay_H2</Assay_refs>
 		</StudyVariable>
 
 

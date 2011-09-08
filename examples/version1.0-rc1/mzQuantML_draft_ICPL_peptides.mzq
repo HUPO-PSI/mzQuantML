@@ -105,7 +105,7 @@ Sketch of an example for using data matrices to represent quant layers
 
 	<ProteinList id="PList1">
 		<Protein id="P02769" accession="P02769">
-			<PeptideConsensus_refs>DAFLGSFYEYR KQTALVELLK</PeptideConsensus_refs>
+			<PeptideConsensus_refs>DAFLGSFYEYR KQTALVELLK YLYEIAR</PeptideConsensus_refs>
 		</Protein>
 
 		<RatioQuantLayer id="Protein_assay_quant_layer">
@@ -130,6 +130,11 @@ Sketch of an example for using data matrices to represent quant layers
 			<Feature_refs>featureB1_4 featureB2_2 featureE2_2</Feature_refs>
 			<Assay_refs>assay_L1 assay_H1 assay_L2 assay_H2</Assay_refs>
 		</PeptideConsensus>
+		<PeptideConsensus id="YLYEIAR" charge="2">
+			<PeptideSequence>YLYEIAR</PeptideSequence>
+			<Feature_refs>featureB2_1</Feature_refs>
+			<Assay_refs>assay_L2 assay_H2</Assay_refs>
+		</PeptideConsensus>
 
 		<RatioQuantLayer id="QL_1">
 			<DataType>
@@ -139,6 +144,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<DataMatrix>
 				<Row object_ref="DAFLGSFYEYR">1.39 1.83</Row>
 				<Row object_ref="KQTALVELLK">1.79 4.50</Row>
+				<Row object_ref="YLYEIAR">null 1.29</Row>				
 			</DataMatrix>
 		</RatioQuantLayer>
 	</PeptideConsensusList>
@@ -176,6 +182,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</FeatureList>
 	<!-- Raw features quantified from the second raw file-->
 	<FeatureList RawFileGroup_ref="raw2" id="FearureList2">
+		<Feature id="featureB2_1" charge="2" MZ="516.761068" RT="117.7391328"/>
 		<Feature id="featureB2_2" charge="2" MZ="729.3929875" RT="27.8685"/>
 		<Feature id="featureB2_5" charge="2" MZ="836.8857245" RT="181.58942453"/>
 		<Feature id="featureE2_2" charge="2" MZ="732.4001855" RT="27.8031"/>
@@ -198,6 +205,7 @@ Sketch of an example for using data matrices to represent quant layers
 				</Column>
 			</ColumnDefinition>
 			<DataMatrix>
+				<Row object_ref="featureB2_1">14117304.9569933 null 11.8</Row>
 				<Row object_ref="featureB2_2">13903788.2517015 null 24.3</Row>
 				<Row object_ref="featureB2_5">54054245.586112 null 83.1</Row>
 				<Row object_ref="featureE2_2">3213940.59416825 null null</Row>

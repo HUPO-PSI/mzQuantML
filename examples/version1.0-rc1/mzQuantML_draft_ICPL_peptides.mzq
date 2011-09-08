@@ -1,0 +1,221 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../schema/mzQuantML_1_0_0-rc.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1" version="1.0.0">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>			
+		<Cv id="PSI-MOD" fullName="Proteomics Standards Initiative Protein Modifications Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" version="1.2"/>
+			
+	</CvList>
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../data/4045.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../data/4046.raw" id="r2"/>
+		</RawFilesGroup>
+		<IdentificationFiles>
+			<IdentificationFile location="./data/4045.mzid" id="id_file1"/>
+			<IdentificationFile location="./data/4046.mzid" id="id_file2"/>
+		</IdentificationFiles>
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName>
+				<userParam name="mydb.fasta"/>
+			</DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+	<AssayList id="AssayList1">
+		<Assay id="assay_L1" name="assay_L1">
+			<RawFilesGroup_refs>r1</RawFilesGroup_refs>
+			<Label>
+				<Modification massDelta="6">
+					<cvParam cvRef="PSI-MOD" accession="MOD:00790" name="Bruker Daltonics SERVA-ICPL(TM) quantification chemistry, light form"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_H1" name="assay_H1">
+			<RawFilesGroup_refs>r1</RawFilesGroup_refs>
+			<Label>
+				<Modification massDelta="12">
+					<cvParam cvRef="PSI-MOD" accession="MOD:00789" name="	Bruker Daltonics SERVA-ICPL(TM) quantification chemistry, heavy form"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_L2" name="assay_L2">
+			<RawFilesGroup_refs>r2</RawFilesGroup_refs>
+			<Label>
+				<Modification massDelta="6">
+					<cvParam cvRef="PSI-MOD" accession="MOD:00790" name="Bruker Daltonics SERVA-ICPL(TM) quantification chemistry, light form"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_H2" name="assay_H2">
+			<RawFilesGroup_refs>r2</RawFilesGroup_refs>
+			<Label>
+				<Modification massDelta="12">
+					<cvParam cvRef="PSI-MOD" accession="MOD:00789" name="	Bruker Daltonics SERVA-ICPL(TM) quantification chemistry, heavy form"/>
+				</Modification>
+			</Label>
+		</Assay>
+	</AssayList>
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>	
+			<Assay_refs>assay_L1 assay_L2</Assay_refs>
+		</StudyVariable>
+		<StudyVariable id="SV_group_E" name="Group E">
+			<cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>	
+			<Assay_refs>assay_H1 assay_H2</Assay_refs>
+		</StudyVariable>
+	</StudyVariableList>
+	
+	<RatioList>
+		<Ratio id="ratioE_B" numerator_ref="SV_group_E" denominator_ref="SV_group_B">
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_L1" denominator_ref="assay_H1" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L2_H2" numerator_ref="assay_L2" denominator_ref="assay_H2" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+	</RatioList>
+
+<AnalysisSummary>
+<!-- TODO -->
+</AnalysisSummary>
+
+<ProteinGroupList id="PGLIST1">
+<!-- TODO -->
+</ProteinGroupList>
+
+	<ProteinList id="PList1">
+		<Protein id="P02769" accession="P02769">
+			<PeptideConsensus_refs>DAFLGSFYEYR KQTALVELLK</PeptideConsensus_refs>
+		</Protein>
+
+		<RatioQuantLayer id="Protein_assay_quant_layer">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+			</DataType>
+			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="P02769">1.83 2</Row>
+			</DataMatrix>
+		</RatioQuantLayer>
+	</ProteinList>
+	
+	<PeptideConsensusList id="PepList1" finalResult="true">
+		<PeptideConsensus id="DAFLGSFYEYR" charge="2">
+			<PeptideSequence>DAFLGSFYEYR</PeptideSequence>
+			<Feature_refs>featureB1_1 featureB1_3 featureE1_1 featureB2_5</Feature_refs>
+			<Assay_refs>assay_L1 assay_H1 assay_L2 assay_H2</Assay_refs>
+		</PeptideConsensus>
+		<PeptideConsensus charge="2" id="KQTALVELLK">
+			<PeptideSequence>KQTALVELLK</PeptideSequence>
+			<Feature_refs>featureB1_4 featureB2_2 featureE2_2</Feature_refs>
+			<Assay_refs>assay_L1 assay_H1 assay_L2 assay_H2</Assay_refs>
+		</PeptideConsensus>
+
+		<RatioQuantLayer id="QL_1">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="TODO" name="Ratio abundance"/>
+			</DataType>
+			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="DAFLGSFYEYR">1.39 1.83</Row>
+				<Row object_ref="KQTALVELLK">1.79 4.50</Row>
+			</DataMatrix>
+		</RatioQuantLayer>
+	</PeptideConsensusList>
+	
+	<FeatureList RawFileGroup_ref="raw1" id="featureList1">
+		<Feature id="featureB1_1" charge="2" MZ="836.8857245" RT="103.41250773"/>
+		<Feature id="featureB1_3" charge="2" MZ="836.8857245" RT="103.21965813"/>
+		<Feature id="featureB1_4" charge="2" MZ="729.3929875" RT="101.961416"/>
+		<Feature id="featureE1_1" charge="2" MZ="839.8957955" RT="103.78063307"/>
+		<FeatureQuantLayer id="FQL1">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="S/N"/>
+					</DataType>
+				</Column>
+			</ColumnDefinition>
+			<DataMatrix>
+				<Row object_ref="featureB1_1">35703868.8083188 null 31.4</Row>
+				<Row object_ref="featureB1_3">35703868.8083188 null 18.5</Row>
+				<Row object_ref="featureB1_4">10672038.2173103 null 24.6</Row>
+				<Row object_ref="featureE1_1">25632317.7094254 null 10.6</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	<!-- Raw features quantified from the second raw file-->
+	<FeatureList RawFileGroup_ref="raw2" id="FearureList2">
+		<Feature id="featureB2_2" charge="2" MZ="729.3929875" RT="27.8685"/>
+		<Feature id="featureB2_5" charge="2" MZ="836.8857245" RT="181.58942453"/>
+		<Feature id="featureE2_2" charge="2" MZ="732.4001855" RT="27.8031"/>
+		<FeatureQuantLayer id="FQL2">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="S/N"/>
+					</DataType>
+				</Column>
+			</ColumnDefinition>
+			<DataMatrix>
+				<Row object_ref="featureB2_2">13903788.2517015 null 24.3</Row>
+				<Row object_ref="featureB2_5">54054245.586112 null 83.1</Row>
+				<Row object_ref="featureE2_2">3213940.59416825 null null</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	
+	<SoftwareList>
+		<Software version="" id="sw1">
+		</Software>
+	</SoftwareList>
+	
+	<DataProcessingList>
+		<DataProcessing id="feature_quantification" software_Ref="sw1">
+			<ProcessingMethod order="1">
+				<userParam name=""/>
+				<!-- TODO: further describtion of the alignment. maybe even collecting all vectors, if this is intended? -->
+			</ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+</MzQuantML>

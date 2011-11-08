@@ -182,7 +182,7 @@ schema comments / issues:
 	
 	<SoftwareList>
 		<Software id="MS_EXCEL" version="2007">
-			<cvParam accession="MS:000000" name="quantitation software name" value="Microsoft Excel" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001139" name="quantitation software name" value="Microsoft Excel" cvRef="PSI-MS"/>
 		</Software>
 	</SoftwareList>
 

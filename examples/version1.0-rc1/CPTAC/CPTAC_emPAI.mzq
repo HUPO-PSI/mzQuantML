@@ -3116,7 +3116,7 @@
         <Protein accession="YFR019W" id="prot_3011"/>
         <AssayQuantLayer id="Prot_Assay_QL1">
             <DataType>
-                <cvParam accession="MS:000000" cvRef="PSI-MS" name="emPAI (all replicates)"/>
+                <cvParam accession="MS:1001905" cvRef="PSI-MS" name="emPAI value"/>
             </DataType>
             <ColumnIndex>ass_0 ass_1 ass_2 ass_3 ass_4 ass_5 ass_6 ass_7 ass_8 ass_9 ass_10 ass_11</ColumnIndex>
             <DataMatrix>

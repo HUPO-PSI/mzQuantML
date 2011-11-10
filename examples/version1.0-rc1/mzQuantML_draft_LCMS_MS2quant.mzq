@@ -50,7 +50,7 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 	</StudyVariableList>
 	
 	<AnalysisSummary>
-		<cvParam cvRef="PSI-MS" accession="" name="analysis type:label free intensity"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free"/>
 	</AnalysisSummary>
 	
 	<ProteinGroupList id="PGList">
@@ -85,12 +85,12 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="" name="ANOVA"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001854" name="ANOVA p-value"/>
 					</DataType>
 				</Column>
 				<Column index="1">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="" name="Max fold change"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001853" name="Max fold change"/>
 					</DataType>
 				</Column>
 				
@@ -186,9 +186,6 @@ Sketch of an example showing how an MS2 peptide intensity scheme could work
 		</FeatureQuantLayer>		
 		
 	</FeatureList>
-	
-
-	
 	
 	
 	<SoftwareList>

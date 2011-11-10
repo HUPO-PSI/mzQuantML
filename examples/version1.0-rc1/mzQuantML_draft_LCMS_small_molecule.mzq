@@ -50,7 +50,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</StudyVariableList>
 	
 	<AnalysisSummary>
-		<cvParam cvRef="PSI-MS" accession="" name="analysis type:label free intensity"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free"/>
 	</AnalysisSummary>
 	
 	
@@ -63,7 +63,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<DBIdentificationRef id_ref="C000017" SearchDatabase_ref="KEGG"/>
 			<Feature_refs>featureB_1  featureE_1</Feature_refs>
 			
-			<cvParam cvRef="PSI-MS" accession="" name="taxid" value="1456"/>
+			<cvParam cvRef="PSI-MS" accession="MS:1001467" name="taxonomy: NCBI TaxID" value="1456"/>
 			<cvParam cvRef="PSI-MS" accession="" name="reliability" value="1"/>
 			<cvParam cvRef="PSI-MS" accession="" name="URI" value="http://www.genome.jp/kegg/query?C000017"/>
 			<!-- Note: there appears to be a difference between the database in 
@@ -105,7 +105,7 @@ Sketch of an example for using data matrices to represent quant layers
 		<!-- If the search engine score is a global attribute i.e. across all assays, this could be modelled as a global quant layer or as a CVParam on SmallMolecule - to decide -->
 		<AssayQuantLayer id="SmallMol_search_engine_score">
 			<DataType>
-				<cvParam cvRef="PSI-MS" accession="" name="Search engine score"/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001153" name="search engine specific score"/>
 			</DataType>
 			<ColumnIndex>B1 E1</ColumnIndex>
 			<DataMatrix>

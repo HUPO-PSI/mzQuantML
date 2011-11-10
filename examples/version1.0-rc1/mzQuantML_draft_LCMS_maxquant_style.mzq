@@ -47,7 +47,7 @@
 	</StudyVariableList>
 	
 	<AnalysisSummary>
-		<cvParam cvRef="PSI-MS" accession="" name="analysis type:label free intensity"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free"/>
 	</AnalysisSummary>
 	
 	<ProteinGroupList id="PGList">
@@ -57,7 +57,7 @@
 		</ProteinGroup>
 		<AssayQuantLayer id="Protein_group_assay_quant_layer">
 			<DataType>
-				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001903" name="MaxQuant:feature intensity"/>
 			</DataType>
 			<ColumnIndex>B1 E1</ColumnIndex>
 			<DataMatrix>
@@ -82,12 +82,12 @@
 			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="" name="ANOVA"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001854" name="ANOVA p-value"/>
 					</DataType>
 				</Column>
 				<Column index="1">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="" name="Max fold change"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001853" name="Max fold change"/>
 					</DataType>
 				</Column>
 
@@ -102,7 +102,7 @@
 		<!-- If QuantLayer is provided on ProteinGroups, probably would not need to include protein values as well - just shown here to enumerate examples -->
 		<AssayQuantLayer id="Protein_assay_quant_layer">
 			<DataType>
-				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001903" name="MaxQuant:feature intensity"/>
 			</DataType>
 			<ColumnIndex>B1 E1</ColumnIndex>
 			<DataMatrix>
@@ -155,26 +155,25 @@
 			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001903" name="MaxQuant:feature intensity"/>
 					</DataType>
 				</Column>
 				<Column index="1">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001902" name="MaxQuant:LFQ intensity"/>
 					</DataType>
 				</Column>
 				<Column index="2">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1000011" name="mass resolution"/>						
 					</DataType>
 				</Column>
 				<Column index="3">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1001901" name="MaxQuant:PEP"/>						
 					</DataType>
-				</Column>
-				
-			</ColumnDefinition>			
+				</Column>				
+			</ColumnDefinition>				
 			<DataMatrix>
 				<Row object_ref="f1_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
 				<Row object_ref="f1_2">93481.41456 98090.36288 null 0.146698</Row>
@@ -195,25 +194,24 @@
 			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001903" name="MaxQuant:feature intensity"/>
 					</DataType>
 				</Column>
 				<Column index="1">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001902" name="MaxQuant:LFQ intensity"/>
 					</DataType>
 				</Column>
 				<Column index="2">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1000011" name="mass resolution"/>						
 					</DataType>
 				</Column>
 				<Column index="3">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1001901" name="MaxQuant:PEP"/>						
 					</DataType>
-				</Column>
-				
+				</Column>				
 			</ColumnDefinition>			
 			<DataMatrix>
 				<Row object_ref="f2_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
@@ -229,7 +227,7 @@
 
 	<SoftwareList>
 		<Software id="MaxQuant" version="2.0.5">
-			<cvParam cvRef="PSI-MS" accession="" name="MaxQuant" value=""/>
+			<cvParam cvRef="PSI-MS" accession="MS:1001583" name="MaxQuant" value=""/>
 		</Software>
 	</SoftwareList>
 

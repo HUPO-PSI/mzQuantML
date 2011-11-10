@@ -105,7 +105,7 @@ Sketch of an example for using data matrices to represent quant layers
 		</Protein>
 		<RatioQuantLayer id="Protein_assay_quant_layer">
 			<DataType>
-				<cvParam cvRef="PSI-MS" accession="TODO" name="Protein abundance"/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001134" name="protein ratio"/>
 			</DataType>
 			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
 			<DataMatrix>
@@ -135,7 +135,7 @@ Sketch of an example for using data matrices to represent quant layers
 
 		<RatioQuantLayer id="QL1">
 			<DataType>
-				<cvParam cvRef="PSI-MS" accession="TODO" name="Ratio abundance"/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001132" name="peptide ratio"/>
 			</DataType>
 			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
 			<DataMatrix>
@@ -166,26 +166,25 @@ Sketch of an example for using data matrices to represent quant layers
 			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001903" name="MaxQuant:feature intensity"/>
 					</DataType>
 				</Column>
 				<Column index="1">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001902" name="MaxQuant:LFQ intensity"/>
 					</DataType>
 				</Column>
 				<Column index="2">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1000011" name="mass resolution"/>						
 					</DataType>
 				</Column>
 				<Column index="3">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1001901" name="MaxQuant:PEP"/>						
 					</DataType>
-				</Column>
-				
-			</ColumnDefinition>			
+				</Column>				
+			</ColumnDefinition>				
 			<DataMatrix>
 				<Row object_ref="f1_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
 				<Row object_ref="f1_2">93481.41456 98090.36288 null 0.146698</Row>
@@ -215,25 +214,24 @@ Sketch of an example for using data matrices to represent quant layers
 			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001903" name="MaxQuant:feature intensity"/>
 					</DataType>
 				</Column>
 				<Column index="1">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001902" name="MaxQuant:LFQ intensity"/>
 					</DataType>
 				</Column>
 				<Column index="2">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1000011" name="mass resolution"/>						
 					</DataType>
 				</Column>
 				<Column index="3">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+						<cvParam cvRef="PSI-MS" accession="MS:1001901" name="MaxQuant:PEP"/>						
 					</DataType>
-				</Column>
-				
+				</Column>				
 			</ColumnDefinition>			
 			<DataMatrix>
 				<Row object_ref="f2_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
@@ -248,11 +246,7 @@ Sketch of an example for using data matrices to represent quant layers
 			</DataMatrix>
 		</FeatureQuantLayer>
 	</FeatureList>
-	
-
-
-	
-	
+		
 	<SoftwareList>
 		<Software id="MaxQuant" version="1"></Software>
 	</SoftwareList>

@@ -72,7 +72,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</StudyVariableList>
 	
 	<AnalysisSummary>
-		<cvParam cvRef="PSI-MS" accession="" name="Label free intensity"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free"/>
 		<cvParam cvRef="PSI-MS" accession="" name="Number of proteins quantified" value="1345"/>
 		<!-- Global params and values go in here -->
 	</AnalysisSummary>
@@ -103,7 +103,7 @@ Sketch of an example for using data matrices to represent quant layers
 		
 		<AssayQuantLayer id="QL1">
 			<DataType>
-				<cvParam cvRef="PSI-MS" accession="TODO" name="Normalised abundance"/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001891" name="Progenesis:peptide normalised abundance"/>
 			</DataType>
 			<ColumnIndex>B1 E1</ColumnIndex>
 			<DataMatrix>
@@ -115,7 +115,7 @@ Sketch of an example for using data matrices to represent quant layers
 		</AssayQuantLayer>
 		<AssayQuantLayer id="QL2">			
 			<DataType>
-				<cvParam cvRef="PSI-MS" accession="TODO" name="Raw abundance"/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001893" name="Progenesis:peptide raw abundance"/>
 			</DataType>
 			
 			<ColumnIndex>B1 E1</ColumnIndex>

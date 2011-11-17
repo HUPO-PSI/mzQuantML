@@ -73,11 +73,11 @@
     </AssayList>
     <StudyVariableList>
         <StudyVariable name="Red" id="SV_Red">
-            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS"    value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_0 ass_1 ass_2 ass_3 ass_4</Assay_refs>
         </StudyVariable>
         <StudyVariable name="Yellow" id="SV_Yellow">
-            <cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
+            <cvParam accession="MS:1001807" cvRef="PSI-MS"    value="1" name="StudyVariable attribute"/>
             <Assay_refs>ass_5 ass_6 ass_7 ass_8 ass_9</Assay_refs>
         </StudyVariable>
     </StudyVariableList>

@@ -39,7 +39,7 @@
 
 	<StudyVariableList>
 		<StudyVariable id="SV_group_B" name="Group B">
-			<cvParam accession="MS:1001807" cvRef="PSI-MS" unitCvRef="TODO" unitName="TODO" unitAccession="TODO" value="1" name="StudyVariable attribute"/>
+			<cvParam accession="MS:1001807" cvRef="PSI-MS"    value="1" name="StudyVariable attribute"/>
 			<Assay_refs>B1</Assay_refs>
 		</StudyVariable>
 

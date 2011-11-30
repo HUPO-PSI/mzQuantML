@@ -66,7 +66,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="InputFilesType">
 		<xsd:annotation>
-			<xsd:documentation>All the raw files, identification files and databases used in the quantification</xsd:documentation>
+			<xsd:documentation>All the raw files, identification files and databases used in the quantitation</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="RawFilesGroup" type="RawFilesGroupType" minOccurs="0" maxOccurs="unbounded"/>
@@ -162,7 +162,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="ProteinGroupListType">
 		<xsd:annotation>
-			<xsd:documentation>The list of all groups of proteins with conflicting evidence for which quantification values are being reported along with quantitative values about those protein groups. If quantification is done on individual proteins only, ProteinGroupsList should not be included.</xsd:documentation>
+			<xsd:documentation>The list of all groups of proteins with conflicting evidence for which quantitation values are being reported along with quantitative values about those protein groups. If quantitation is done on individual proteins only, ProteinGroupsList should not be included.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="ProteinGroup" type="ProteinGroupType" minOccurs="0" maxOccurs="unbounded"/>
@@ -200,7 +200,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="ProteinListType">
 		<xsd:annotation>
-			<xsd:documentation>The list of all individual proteins (i.e. ungrouped) for which quantification values are being reported. If quantification is done on protein groups, the constituent proteins should be listed here with no QuantLayers.</xsd:documentation>
+			<xsd:documentation>The list of all individual proteins (i.e. ungrouped) for which quantitation values are being reported. If quantitation is done on protein groups, the constituent proteins should be listed here with no QuantLayers.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Protein" type="ProteinType" minOccurs="0" maxOccurs="unbounded"/>
@@ -325,7 +325,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>	
 	<xsd:complexType name="PeptideConsensusListType">
 		<xsd:annotation>
-			<xsd:documentation>The list of all peptides objects for which quantification values are reported.</xsd:documentation>
+			<xsd:documentation>The list of all peptides objects for which quantitation values are reported.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="PeptideConsensus" type="PeptideConsensusType" maxOccurs="unbounded"/>
@@ -710,7 +710,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="RawFilesGroupType">
 		<xsd:annotation>
-			<xsd:documentation>The raw file or collection of raw files that together form one unit of analysis. This is mandatory unless raw files were not used for quantification e.g. spectral counting. Multiple raw files should only be provided within a group if they have been used for sample pre-fractionation which are later summed together.</xsd:documentation>
+			<xsd:documentation>The raw file or collection of raw files that together form one unit of analysis. This is mandatory unless raw files were not used for quantitation e.g. spectral counting. Multiple raw files should only be provided within a group if they have been used for sample pre-fractionation which are later summed together.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="RawFile" maxOccurs="unbounded" type="RawFileType"/>			
@@ -742,7 +742,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="IdentificationFilesType">
 		<xsd:annotation>
-			<xsd:documentation>All identification files associated with this quantification analysis to be referenced elsewhere.</xsd:documentation>
+			<xsd:documentation>All identification files associated with this quantitation analysis to be referenced elsewhere.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="IdentificationFile" type="IdentificationFileType" minOccurs="1" maxOccurs="unbounded"/>			

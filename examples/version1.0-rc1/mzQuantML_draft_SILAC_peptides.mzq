@@ -9,7 +9,8 @@ Sketch of an example for using data matrices to represent quant layers
 			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
 			version="2.25.0"/>
 		<Cv id="UO" fullName="Unit Ontology"
-			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		<Cv id="UNIMOD" fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo"/>
 	</CvList>
 
 	<InputFiles>
@@ -36,11 +37,11 @@ Sketch of an example for using data matrices to represent quant layers
 		<Assay id="assay_H1" name="assay_H1">
 			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
 			<Label>
-				<Modification massDelta="8">
-					<cvParam cvRef="PSI-MS" accession="" name=""/>
+				<Modification massDelta="8.014199">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
 				</Modification>
-				<Modification massDelta="10">
-					<cvParam cvRef="PSI-MS" accession="" name=""/>
+				<Modification massDelta="10.008269 ">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:267" name="Label:13C(6)15N(4)"/>
 				</Modification>				
 			</Label>			
 		</Assay>
@@ -50,13 +51,13 @@ Sketch of an example for using data matrices to represent quant layers
 		<Assay id="assay_H2" name="assay_H2">
 			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>	
 			<Label>
-				<Modification massDelta="8">
-					<cvParam cvRef="PSI-MS" accession="" name=""/>
+				<Modification massDelta="8.014199">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
 				</Modification>
-				<Modification massDelta="10">
-					<cvParam cvRef="PSI-MS" accession="" name=""/>
+				<Modification massDelta="10.008269 ">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:267" name="Label:13C(6)15N(4)"/>
 				</Modification>				
-			</Label>			
+			</Label>		
 		</Assay>
 
 	</AssayList>

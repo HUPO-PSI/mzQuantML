@@ -1,0 +1,11 @@
+labelfree (progenesis... maybe maxquant)
+
+- there SHOULD not be any ms2-quantlayers anywhere (if pure LC/MS labelfree file)
+
+- there SHOULD NOT be any Label in AssayList
+
+- InputFiles MUST contain raw files
+
+- FeatureQuantLayers SHOULD only be used if the PeptideConsensus QuantLayer could not be used, e.g. approaches that don't do alignment
+- if alignment has been done, intensity abundance value SHOULD be reported at the PeptideQuantLayer
+- if a PeptideConsensus QuantLayer is used, FeatureRefs SHOULD be given

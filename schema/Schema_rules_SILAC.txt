@@ -1,0 +1,24 @@
+SILAC
+- ONE of PeptideConsensusList, ProteinList, ProteinGroupList MUST be there
+	
+AssayList:
+	- the file SHOULD contain two or more assays references to the same rawFileGroup
+	- One of the pair of assays that reference to a common rawFileGroup must have “Label” element.
+	- The most common modifications for SILAC are the following, but there are a lot of more:
+			* massDelta="8.014199", UNIMOD:259, Label:13C(6)15N(2)
+			* massDelta="10.008269 ", UNIMOD:267, Label:13C(6)15N(4)
+
+RatioList: MAY be there
+- if numerator is referencing a StudyVariable, the denominator must to reference a StudyVariable
+- if numerator is referencing an assay, the denominator must to reference an assay
+
+
+PeptideConsensus: if exist,
+- Features are referenced at peptideConsensus level, and in the protocol, the peptide pairs are identified before to match them ?
+- MUST have Assay_refs and Feature_refs and the same number on each
+- MAY have an identificationRef?
+
+FeatureList:
+- MS2AssayQuantLayer and MS2RatioQuantLayer MUST NOT exist
+
+It MUST have one of ProteinList, ProteinGroupList or PeptideConsensus

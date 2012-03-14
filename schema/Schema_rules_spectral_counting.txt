@@ -2,10 +2,9 @@ spectral count:
 - ONE of PeptideConsensusList, ProteinList, ProteinGroupList MUST be there
 - In InputFiles there SHOULD be IdentificationFiles 
 [- There SHOULD NOT be RawFiles unless RawFiles were used directly for quantification without a separate identification step]- Note from ARJ: Hard to check this
-- in AssayList there MUST NOT be Label, MUST NOT be RawFilesGroup_Refs
-- in AssayList there MUST be IdentificationFile_Refs
-- if there is PeptideConsensusList, it MUST NOT contain <Feature_refs> and MUST NOT contain <Assay_refs>
-- There SHOULD NOT be a FeatureList, and therefore no FeatureQuantLayer (Note: A user might want to report Features in terms of m/z and RT values for some purpose)
+- in AssayList there MUST NOT be Label, 
+- There MUST be at least one of RawFilesGroup_Refs or IdentificationFile_Refs
+- There SHOULD NOT be a FeatureQuantLayer 
 
 not real rules ;-):
 [- if there is ProteinList, it MAY contain PeptideConsensus_refs

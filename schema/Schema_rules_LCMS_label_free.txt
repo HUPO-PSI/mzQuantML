@@ -8,4 +8,4 @@ labelfree (progenesis... maybe maxquant)
 
 - FeatureQuantLayers SHOULD only be used if the PeptideConsensus QuantLayer could not be used, e.g. approaches that don't do alignment
 - if alignment has been done, intensity abundance value SHOULD be reported at the PeptideQuantLayer
-- if a PeptideConsensus QuantLayer is used, FeatureRefs SHOULD be given
+- if a PeptideConsensus QuantLayer is used, FeatureRefs SHOULD be given] - make schema mandatory

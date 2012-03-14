@@ -1,6 +1,6 @@
 - iTRAQ-Reagent type MUST be present in Assay modification element
 - Label, recommendation to use PSI-MOD IDs
-- Each Assay element SHOULD reference exactly one iTRAQ reagent
+- Each Assay element MUST reference exactly one iTRAQ reagent
 - If PeptideConsensusList is present there MUST be a FeatureList present and there MUST be a MS2Quantlayer present. Feature_ref MUST be present in PeptideConsensus.
 - InputFiles MUST contain raw files
 - If there is a MS2StudyVariableQuantLayer there SHOULD be a MS2AssayQuantLayer

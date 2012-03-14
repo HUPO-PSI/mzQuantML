@@ -1,12 +1,12 @@
 - All object references of type IDREFS or IDREF should match the correct object type
-- if there is a SmallMoleculeList, there MUST NOT be a ProteinGroupList, ProteinList, PeptideConsensusList, FeatureList 
-- if there is a PeptideList, ProteinList or ProteinGroupList there MUST NOT be a SmallMoleculeList
-- If there is a StudyVariableList, there MUST be Assay_refs within
+[- if there is a SmallMoleculeList, there MUST NOT be a ProteinGroupList, ProteinList, PeptideConsensusList, FeatureList ] This rule may not be wanted
+[- if there is a PeptideList, ProteinList or ProteinGroupList there MUST NOT be a SmallMoleculeList]
+[- If there is a StudyVariableList, there MUST be Assay_refs within]
 [- if there is ProteinList, it MUST contain ONE of GlobalQuantLayer, AssayQuantLayer, RatioQuantLayer, StudyVariabeQuantLayer] - Note from Andy: I'm not sure I agree with this. One could report Proteins in a ProteinList, but put the quant values in ProteinGroupList for example
 - number of "columns" in every type of QuantLayer Row must be equal to number of items in <ColumnIndex>
 - An object MUST not be occur twice as a <Row> in any QuantLayer
 - If there is a ProteinList and a PeptideConsensusList, all proteins SHOULD have peptide_refs
-
+- There MUST be a cvParam in AnalysisSummary for the type of technique (this will be done by the mapping file)
 - The follow cvParams MUST be present:
 
 <cvParam cvRef="PSI-MS" accession="" name="ProteinGroupQuantLayers" value="false"/>
@@ -15,6 +15,7 @@
 <cvParam cvRef="PSI-MS" accession="" name="FeatureQuantLayer" value="false"/>
 
 - If the cvParam values states that a particular type of QuantLayer is present, then at least one quant layer must be present
+- There MUST be at least one QuantLayer in a file
 
 - If there is a ProteinGroupList, ProteinList or PeptideConsensusList, there SHOULD be SearchDatabase
 - The number of Rows in any QuantLayer MAY be different to number of elements in the parent list (e.g. you do not need to report a row of values for every protein)

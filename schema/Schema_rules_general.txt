@@ -1,0 +1,19 @@
+- if there is a SmallMoleculeList, there MUST NOT be a ProteinGroupList, ProteinList, PeptideConsensusList, FeatureList 
+- if there is a PeptideList, ProteinList or ProteinGroupList there MUST NOT be a SmallMoleculeList
+- If there is a StudyVariableList, there MUST be Assay_refs within
+[- if there is ProteinList, it MUST contain ONE of GlobalQuantLayer, AssayQuantLayer, RatioQuantLayer, StudyVariabeQuantLayer] - Note from Andy: I'm not sure I agree with this. One could report Proteins in a ProteinList, but put the quant values in ProteinGroupList for example
+- number of "columns" in every type of QuantLayer Row must be equal to number of items in <ColumnIndex>
+- An object MUST not be occur twice as a <Row> in any QuantLayer
+- The follow cvParams MUST be present:
+
+<cvParam cvRef="PSI-MS" accession="" name="ProteinGroupQuantLayers" value="false"/>
+<cvParam cvRef="PSI-MS" accession="" name="ProteinQuantLayers" value="true"/>
+<cvParam cvRef="PSI-MS" accession="" name="PeptideConsensusQuantLayer" value="true"/>
+<cvParam cvRef="PSI-MS" accession="" name="FeatureQuantLayer" value="false"/>
+
+- If the cvParam values states that a particular type of QuantLayer is present, then at least one quant layer must be present
+
+(- In InputFiles there SHOULD be SearchDatabase)
+(- number of Rows in AssayQuantLayer MAY be different to number of <Protein> elements in ProteinList etc.)
+(- the same protein accession MAY appear more than once in the protein list, for example differing in <Modification>)
+(- same pepetide sequence MAY appear more than once in the PeptdieConsensusList, for example differing in <Modification>)

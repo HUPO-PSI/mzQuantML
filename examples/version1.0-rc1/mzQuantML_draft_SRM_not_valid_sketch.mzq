@@ -1,0 +1,330 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../schema/mzQuantML_1_0_0-rc.xsd"
+	xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1"
+ version="1.0.0">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</CvList>
+
+	<AnalysisSummary>
+		<cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="SRM experiment with spiked in labeled references"/>
+		<cvParam cvRef="PSI-MS" accession="" name="Number of proteins quantified" value="1"/>
+<cvParam cvRef="PSI-MS" accession="" name="ProteinGroupQuantLayers" value="false"/>
+<cvParam cvRef="PSI-MS" accession="" name="ProteinQuantLayers" value="true"/>
+<cvParam cvRef="PSI-MS" accession="" name="PeptideConsensusQuantLayer" value="true"/>
+<cvParam cvRef="PSI-MS" accession="" name="FeatureQuantLayer" value="true"/>
+		<!-- Global params and values go in here -->
+	</AnalysisSummary>
+
+	<Provider id="Provider1">
+		<ContactRole contact_ref="person1">
+			<Role>
+				<cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+			</Role>
+		</ContactRole>		
+	</Provider>
+	
+	<AuditCollection>
+		<Person id="person1" firstName="Eric" lastName="Deutsch">
+			<Affiliation organization_ref="ISB"/>
+		</Person>
+		<Organization id="ISB" name="Institute for Systems Biology"></Organization>
+	</AuditCollection>
+	
+	<InputFiles>
+		<MethodFiles>
+			<MethodFile location="20081123_t45_hl_sch_1-s1.TraML" id="methodFile1">
+			  <cvParam accession="MS:100????" cvRef="PSI-MS" name="TraML file"/>
+			</MethodFile>
+		</MethodFiles>
+
+		<RawFilesGroup id="raw1">
+			<RawFile location="20081123_t45_hl_sch_1-s1.mzML" id="r1" method_Ref="methodFile1">
+			  <cvParam accession="MS:100????" cvRef="PSI-MS" name="mzML file"/>
+			</RawFile>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="20081123_t45_hl_sch_1-s2.mzML" id="r1" method_Ref="methodFile1">
+			  <cvParam accession="MS:100????" cvRef="PSI-MS" name="mzML file"/>
+			</RawFile>
+		</RawFilesGroup>
+
+		<RawFilesGroup id="raw3">
+			<RawFile location="20081123_t45_hl_sch_1-s3.mzML" id="r1" method_Ref="methodFile1">
+			  <cvParam accession="MS:100????" cvRef="PSI-MS" name="mzML file"/>
+			</RawFile>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw4">
+			<RawFile location="20081123_t45_hl_sch_1-s4.mzML" id="r1" method_Ref="methodFile1">
+			  <cvParam accession="MS:100????" cvRef="PSI-MS" name="mzML file"/>
+			</RawFile>
+		</RawFilesGroup>
+
+X		<IdentificationFiles>
+X			<IdentificationFile location="myidents.mzid" id="identFile1"/>
+X		</IdentificationFiles>
+		
+
+X		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+X			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+X		</SearchDatabase>
+	</InputFiles>
+
+		<SoftwareList>
+		<Software id="mQuest" version="2.3"></Software>
+	</SoftwareList>
+	
+	<DataProcessingList>
+		<DataProcessing id="DP1"  software_Ref="mQuest">
+			<ProcessingMethod order="1">
+				<userParam name=""/>
+			</ProcessingMethod>
+		</DataProcessing>
+
+	</DataProcessingList>
+	
+	<AssayList id="AssayList1">
+		<Assay id="assay_light_CaP_1" name="assay_L1">
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>   <!-- this shouldn't be a plural refs????? -->
+		</Assay>
+		<Assay id="assay_heavyspike_CaP_1" name="assay_H1">
+			<RawFilesGroup_refs>raw1</RawFilesGroup_refs>
+			<Label>
+				<Modification massDelta="8.014199" residues="K">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
+				</Modification>
+				<Modification massDelta="10.008269" residues="R">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:267" name="Label:13C(6)15N(4)"/>
+				</Modification>				
+			</Label>			
+		</Assay>
+		<Assay id="assay_light_control_1" name="assay_L2">
+			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>
+		</Assay>
+		<Assay id="assay_heavyspike_control_1" name="assay_H2">
+			<RawFilesGroup_refs>raw2</RawFilesGroup_refs>	
+			<Label>
+				<Modification massDelta="8.014199" residues="K">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
+				</Modification>
+				<Modification massDelta="10.008269" residues="R">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:267" name="Label:13C(6)15N(4)"/>
+				</Modification>				
+			</Label>		
+		</Assay>
+
+				<Assay id="assay_light_CaP_2" name="assay_L1">
+			<RawFilesGroup_refs>raw3</RawFilesGroup_refs>   <!-- this shouldn't be a plural refs????? -->
+		</Assay>
+		<Assay id="assay_heavyspike_CaP_2" name="assay_H1">
+			<RawFilesGroup_refs>raw3</RawFilesGroup_refs>
+			<Label>
+				<Modification massDelta="8.014199" residues="K">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
+				</Modification>
+				<Modification massDelta="10.008269" residues="R">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:267" name="Label:13C(6)15N(4)"/>
+				</Modification>				
+			</Label>			
+		</Assay>
+		<Assay id="assay_light_control_2" name="assay_L2">
+			<RawFilesGroup_refs>raw4</RawFilesGroup_refs>
+		</Assay>
+		<Assay id="assay_heavyspike_control_2" name="assay_H2">
+			<RawFilesGroup_refs>raw4</RawFilesGroup_refs>	
+			<Label>
+				<Modification massDelta="8.014199" residues="K">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
+				</Modification>
+				<Modification massDelta="10.008269" residues="R">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:267" name="Label:13C(6)15N(4)"/>
+				</Modification>				
+			</Label>		
+		</Assay>
+
+	</AssayList>
+
+<!-- Only needed if there are replicates --> <!-- Or maybe we should require this even with a single replicate -->
+	<StudyVariableList>
+		<StudyVariable id="SV_group_A" name="Cancer">
+			<cvParam accession="MS:1001807" cvRef="PSI-MS" value="CaP" name="StudyVariable attribute"/>
+			<Assay_refs>assay_light_CaP_1 assay_light_CaP_2</Assay_refs>
+		</StudyVariable>
+		<StudyVariable id="SV_group_B" name="Control">
+			<cvParam accession="MS:1001807" cvRef="PSI-MS" value="control" name="StudyVariable attribute"/>
+			<Assay_refs>assay_light_control_1 assay_light_control_2</Assay_refs>
+		</StudyVariable>
+
+	</StudyVariableList>
+	
+
+	<RatioList>
+		<Ratio id="ratio_study_var_A_B" numerator_ref="SV_group_A" denominator_ref="SV_group_B" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_light_CaP_1" denominator_ref="assay_heavy_CaP_1" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_light_CaP_2" denominator_ref="assay_heavy_CaP_2" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_light_control_1" denominator_ref="assay_heavy_control_1" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_light_control_2" denominator_ref="assay_heavy_control_2" >
+			<RatioCalculation>
+				<userParam name="Simple ratio calc"/>
+			</RatioCalculation>
+		</Ratio>
+	</RatioList>
+	
+
+	<ProteinList id="ProtList1">
+		<Protein id="P0C0L4" accession="P0C0L4">
+			<PeptideConsensus_refs>ITQVLHFTK VGDTLNLNLR</PeptideConsensus_refs>
+		</Protein>
+	</ProteinList>
+
+	<PeptideConsensusList id="PepList1" finalResult="true">
+		<PeptideConsensus id="ITQVLHFTK" charge="2">
+			<PeptideSequence>ITQVLHFTK</PeptideSequence>
+			<Feature_refs>8 features</Feature_refs>
+			<Assay_refs>all 8 assays</Assay_refs>
+		</PeptideConsensus>
+		<PeptideConsensus id="VGDTLNLNLR" charge="2">
+			<PeptideSequence>VGDTLNLNLR</PeptideSequence>
+			<Feature_refs>8 features</Feature_refs>
+			<Assay_refs>all 8 assays</Assay_refs>
+		</PeptideConsensus>
+		
+		<AssayQuantLayer id="QL1">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="SRM max apex intensity"/>
+			</DataType>
+			<ColumnIndex>A1 B1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="ITQVLHFTK">456567 345456</Row>
+				<Row object_ref="VGDTLNLNLR">124234 232345</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+		<AssayQuantLayer id="QL2">			
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="MS:1001893" name="Progenesis:peptide raw abundance"/>
+			</DataType>
+			
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="PEPTIDER">456567 345456</Row>
+				<Row object_ref="MLPEPTIDEK">124234 232345</Row>
+			</DataMatrix>
+		</AssayQuantLayer>			
+		
+	</PeptideConsensusList>
+	
+	
+	<FeatureList RawFileGroup_ref="raw1" id="featureList1">
+		<Feature id="f1_1" charge="2" MZ="418.172" RT="26.8685" chromatogram_id="45"/>   <!-- MZ is Q1 m/z -->
+		<Feature id="f1_2" charge="2" MZ="521.572" RT="27.8685" chromatogram_id="46"/>
+		<Feature id="f1_3" charge="2" MZ="487.729" RT="26.9685" chromatogram_id="47"/>
+		<Feature id="f1_4" charge="2" MZ="518.827" RT="26.8685" chromatogram_id="48"/>
+		<Feature id="f1_5" charge="2" MZ="423.172" RT="26.8685" chromatogram_id="49"/>
+		<Feature id="f1_6" charge="2" MZ="526.572" RT="27.8685" chromatogram_id="50"/>
+		<Feature id="f1_7" charge="2" MZ="493.729" RT="26.9685" chromatogram_id="51"/>
+		<Feature id="f1_8" charge="2" MZ="536.827" RT="26.8685" chromatogram_id="52"/>
+		
+		
+		<FeatureQuantLayer id="FQL1">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1001903" name="chromatogram peak height"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1001902" name="Q3 m/z"/>
+					</DataType>
+				</Column>
+			</ColumnDefinition>				
+			<DataMatrix>
+				<Row object_ref="f1_1">14243.4 564.23</Row>
+				<Row object_ref="f1_2">23498.5 458.45</Row>
+				<Row object_ref="f1_3">48484.3 684.44</Row>
+				<Row object_ref="f1_4">181.43671 398090.36288 793556 0.146698</Row>
+				<Row object_ref="f1_5">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="f1_6">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f1_7">193481.71622 298090.36288 null 0.546698</Row>
+				<Row object_ref="f1_8">181.43671 398090.36288 793556 0.146698</Row>
+				
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	
+	<FeatureList RawFileGroup_ref="raw2" id="featureList2">
+		<Feature id="f2_1" charge="2" MZ="418.172" RT="26.8685"/>
+		<Feature id="f2_2" charge="2" MZ="521.572" RT="27.8685"/>
+		<Feature id="f2_3" charge="2" MZ="487.729" RT="26.9685"/>
+		<Feature id="f2_4" charge="2" MZ="518.827" RT="26.8685"/>
+		<Feature id="f2_5" charge="2" MZ="423.172" RT="26.8685"/>
+		<Feature id="f2_6" charge="2" MZ="526.572" RT="27.8685"/>
+		<Feature id="f2_7" charge="2" MZ="493.729" RT="26.9685"/>
+		<Feature id="f2_8" charge="2" MZ="536.827" RT="26.8685"/>
+		
+		
+		<FeatureQuantLayer id="FQL2">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1001903" name="MaxQuant:feature intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1001902" name="MaxQuant:LFQ intensity"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1000011" name="mass resolution"/>						
+					</DataType>
+				</Column>
+				<Column index="3">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1001901" name="MaxQuant:PEP"/>						
+					</DataType>
+				</Column>				
+			</ColumnDefinition>			
+			<DataMatrix>
+				<Row object_ref="f2_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="f2_2">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f2_3">193481.71622 298090.36288 null 0.546698</Row>
+				<Row object_ref="f2_4">181.43671 398090.36288 793556 0.146698</Row>
+				<Row object_ref="f2_5">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="f2_6">93481.41456 98090.36288 null 0.146698</Row>
+				<Row object_ref="f2_7">193481.71622 298090.36288 null 0.546698</Row>
+				<Row object_ref="f2_8">181.43671 398090.36288 793556 0.146698</Row>
+				
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+		
+		raw3
+		
+		raw4
+
+</MzQuantML>

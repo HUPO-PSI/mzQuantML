@@ -1,0 +1,23 @@
+Semantic validation rules
+**************************
+The parser knows this is a MS2 tag-based approach due to the presence of this cvParam in AnalysisSummary: "MS2 Tag-based analysis"
+- Each Assay element MUST reference exactly one MS2-tag (iTRAQ, TMT etc) reagent (correct CV usage checked by the mapping file)
+- If PeptideConsensusList is present there MUST be a FeatureList present and there MUST be a MS2AssayQuantlayer present. 
+- InputFiles MUST contain raw files
+- If there is a MS2StudyVariableQuantLayer there SHOULD be an MS2AssayQuantLayer.
+- The term "MS2 tag-based analysis group features by peptide quantitation" describes techniques where multiple features report on the same peptide. In this case, a QuantLayer MUST be provided in the AssayQuantLayer
+- PeptideConsensusList SHOULD NOT have any QuantLayers, unless multiple features are summed for each peptide (see rule above).
+
+Mapping file and associated rules in brackets
+*************************************************
+- iTRAQ|TMT|etc Reagent type MUST be present in Assay label element e.g. using the PSI-MOD CV term
+
+The following MUST be present in AnalysisSummary with values of true or false (add cv terms to PSI-MS)
+"MS2 tag-based analysis feature level quantitation" (MS2__QuantLayer MUST be present)							= true|false
+"MS2 tag-based analysis group features by peptide quantitation" (PeptideConsensusQuantLayer MUST be present) = true|false			
+"MS2 tag-based analysis protein level quantitation" (ProteinQL MUST be present)								= true|false
+"MS2 tag-based analysis proteinGroup level quantitation" (ProteinGroupQL MUST be present)						= true|false
+
+Implementation Notes
+**********************
+- More than one feature reference from PeptideConsensus implies that multiple features report on the same peptide

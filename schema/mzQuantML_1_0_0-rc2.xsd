@@ -66,8 +66,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>All the raw files, identification files and databases used in the quantitation</xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
+		<xsd:sequence>			
 			<xsd:element name="RawFilesGroup" type="RawFilesGroupType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="MethodFiles" type="MethodFilesType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="IdentificationFiles" type="IdentificationFilesType" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="SearchDatabase" type="SearchDatabaseType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="SourceFile" type="SourceFileType" minOccurs="0" maxOccurs="unbounded"/>
@@ -732,6 +733,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						<xsd:documentation>Additional parameters about the raw file.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:group>
+				<xsd:attribute name="methodFile_ref" type="xsd:IDREF" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>An optional reference to a methods file used in association with a raw file, for example a TraML file used for SRM analysis.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -746,6 +752,22 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	<xsd:complexType name="IdentificationFileType">
 		<xsd:annotation>
 			<xsd:documentation>A single identification file associated with this analysis.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ExternalDataType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MethodFilesType">
+		<xsd:annotation>
+			<xsd:documentation>All methods files associated with this quantitation analysis to be referenced elsewhere, for example used to describe TraML files used in SRM analysis.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="MethodFile" type="MethodFileType" minOccurs="1" maxOccurs="unbounded"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MethodFileType">
+		<xsd:annotation>
+			<xsd:documentation>A single methods file associated with this analysis e.g. a TraML file used for SRM analysis.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType"/>
@@ -871,17 +893,17 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The monoisotopic peak on the mass over charge axis in daltons over charge.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="charge" type="xsd:integer" use="required">
+		<xsd:attribute name="charge" type="xsd:integer">
 			<xsd:annotation>
 				<xsd:documentation>The assumed charge of the feature, used to calculate the m/z value.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="chromatogram_id" type="xsd:IDREF">
+		<xsd:attribute name="chromatogram_id" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>The identifier of the chromatogram from which this feature was detected, for example required for SRM analyses.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="spectrum_id" type="xsd:IDREF">
+		<xsd:attribute name="spectrum_id" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>An optional identifier for an individual spectrum from which this feature was detected, required only for techniques where rt mapping is not appropriate..</xsd:documentation>
 			</xsd:annotation>

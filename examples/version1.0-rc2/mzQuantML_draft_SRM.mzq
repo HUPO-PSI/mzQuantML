@@ -189,6 +189,16 @@ Sketch of an example for using data matrices to represent quant layers
 		<Protein id="P0C0L4" accession="P0C0L4">
 			<PeptideConsensus_refs>ITQVLHFTK VGDTLNLNLR</PeptideConsensus_refs>
 		</Protein>
+		<RatioQuantLayer id="RQL1">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="" name="Ratio of intensity"/>
+			</DataType>
+			<ColumnIndex>ratio_study_var_A_B ratio_assay_L1_H1 ratio_assay_L2_H2 ratio_assay_Lc1_Hc1 ratio_assay_Lc2_Hc2</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="P0C0L4">2.65 1.56 3.45 0.89 1.23 2.34</Row>	<!-- Dummy ratio values, these have not been calculated from intensities-->
+			</DataMatrix>
+		</RatioQuantLayer>
+		
 	</ProteinList>
 
 	<PeptideConsensusList id="PepList1" finalResult="true">
@@ -235,11 +245,7 @@ Sketch of an example for using data matrices to represent quant layers
 		<Feature id="f1_2" charge="2" mz="521.572" rt="27.8685" chromatogram_id="46"/>
 		<Feature id="f1_3" charge="2" mz="487.729" rt="26.9685" chromatogram_id="47"/>
 		<Feature id="f1_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>
-		<Feature id="f1_5" charge="2" mz="423.172" rt="26.8685" chromatogram_id="49"/>
-		<Feature id="f1_6" charge="2" mz="526.572" rt="27.8685" chromatogram_id="50"/>
-		<Feature id="f1_7" charge="2" mz="493.729" rt="26.9685" chromatogram_id="51"/>
-		<Feature id="f1_8" charge="2" mz="536.827" rt="26.8685" chromatogram_id="52"/>
-		
+
 		
 		<FeatureQuantLayer id="FQL1">
 			<ColumnDefinition>
@@ -298,12 +304,7 @@ Sketch of an example for using data matrices to represent quant layers
 		<Feature id="f3_1" charge="2" mz="418.172" rt="26.8685" chromatogram_id="45"/><!-- MZ is Q1 m/z -->
 		<Feature id="f3_2" charge="2" mz="521.572" rt="27.8685" chromatogram_id="46"/>
 		<Feature id="f3_3" charge="2" mz="487.729" rt="26.9685" chromatogram_id="47"/>
-		<Feature id="f3_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>
-		<Feature id="f3_5" charge="2" mz="423.172" rt="26.8685" chromatogram_id="49"/>
-		<Feature id="f3_6" charge="2" mz="526.572" rt="27.8685" chromatogram_id="50"/>
-		<Feature id="f3_7" charge="2" mz="493.729" rt="26.9685" chromatogram_id="51"/>
-		<Feature id="f3_8" charge="2" mz="536.827" rt="26.8685" chromatogram_id="52"/>
-		
+		<Feature id="f3_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>		
 		
 		<FeatureQuantLayer id="FQL3">
 			<ColumnDefinition>
@@ -322,9 +323,7 @@ Sketch of an example for using data matrices to represent quant layers
 				<Row object_ref="f3_1">14243.4 564.23</Row>
 				<Row object_ref="f3_2">23498.5 458.45</Row>
 				<Row object_ref="f3_3">48484.3 684.44</Row>
-				<Row object_ref="f3_4">13245.1 564.87</Row>
-
-				
+				<Row object_ref="f3_4">13245.1 564.87</Row>				
 			</DataMatrix>
 		</FeatureQuantLayer>
 	</FeatureList>
@@ -333,9 +332,7 @@ Sketch of an example for using data matrices to represent quant layers
 		<Feature id="f4_1" charge="2" mz="418.172" rt="26.8685" chromatogram_id="45"/><!-- MZ is Q1 m/z -->
 		<Feature id="f4_2" charge="2" mz="521.572" rt="27.8685" chromatogram_id="46"/>
 		<Feature id="f4_3" charge="2" mz="487.729" rt="26.9685" chromatogram_id="47"/>
-		<Feature id="f4_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>
-
-		
+		<Feature id="f4_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>		
 		
 		<FeatureQuantLayer id="FQL4">
 			<ColumnDefinition>

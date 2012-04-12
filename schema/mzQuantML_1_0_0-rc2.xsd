@@ -898,14 +898,14 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The assumed charge of the feature, used to calculate the m/z value.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="chromatogram_id" type="xsd:string">
+		<xsd:attribute name="chromatogram_refs" type="xsd:string">
 			<xsd:annotation>
-				<xsd:documentation>The identifier of the chromatogram from which this feature was detected, for example required for SRM analyses.</xsd:documentation>
+				<xsd:documentation>The identifier(s) of the chromatogram from which this feature was detected, for example required for SRM analyses. Multiple values can be provided separated by spaces following the XSD:IDREFS style.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="spectrum_id" type="xsd:string">
+		<xsd:attribute name="spectrum_refs" type="xsd:string">
 			<xsd:annotation>
-				<xsd:documentation>An optional identifier for an individual spectrum from which this feature was detected, required only for techniques where rt mapping is not appropriate..</xsd:documentation>
+				<xsd:documentation>An optional identifier for an individual spectrum from which this feature was detected, required only for techniques where rt mapping is not appropriate. Multiple values can be provided separated by spaces following the XSD:IDREFS style..</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

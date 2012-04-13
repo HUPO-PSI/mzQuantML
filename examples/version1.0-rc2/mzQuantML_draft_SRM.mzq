@@ -241,10 +241,10 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<FeatureList RawFileGroup_ref="raw1" id="featureList1">
-		<Feature id="f1_1" charge="2" mz="418.172" rt="26.8685" chromatogram_id="45"/><!-- MZ is Q1 m/z -->
-		<Feature id="f1_2" charge="2" mz="521.572" rt="27.8685" chromatogram_id="46"/>
-		<Feature id="f1_3" charge="2" mz="487.729" rt="26.9685" chromatogram_id="47"/>
-		<Feature id="f1_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>
+		<Feature id="f1_1" charge="2" mz="418.172" rt="26.8685" chromatogram_refs="45"/><!-- MZ is Q1 m/z -->
+		<Feature id="f1_2" charge="2" mz="521.572" rt="27.8685" chromatogram_refs="46"/>
+		<Feature id="f1_3" charge="2" mz="487.729" rt="26.9685" chromatogram_refs="47"/>
+		<Feature id="f1_4" charge="2" mz="518.827" rt="26.8685" chromatogram_refs="48"/>
 
 		
 		<FeatureQuantLayer id="FQL1">
@@ -271,10 +271,10 @@ Sketch of an example for using data matrices to represent quant layers
 	</FeatureList>
 	
 	<FeatureList RawFileGroup_ref="raw2" id="featureList2">
-		<Feature id="f2_1" charge="2" mz="418.172" rt="26.8685" chromatogram_id="45"/><!-- MZ is Q1 m/z -->
-		<Feature id="f2_2" charge="2" mz="521.572" rt="27.8685" chromatogram_id="46"/>
-		<Feature id="f2_3" charge="2" mz="487.729" rt="26.9685" chromatogram_id="47"/>
-		<Feature id="f2_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>
+		<Feature id="f2_1" charge="2" mz="418.172" rt="26.8685" chromatogram_refs="45"/><!-- MZ is Q1 m/z -->
+		<Feature id="f2_2" charge="2" mz="521.572" rt="27.8685" chromatogram_refs="46"/>
+		<Feature id="f2_3" charge="2" mz="487.729" rt="26.9685" chromatogram_refs="47"/>
+		<Feature id="f2_4" charge="2" mz="518.827" rt="26.8685" chromatogram_refs="48"/>
 		
 		
 		<FeatureQuantLayer id="FQL2">
@@ -301,10 +301,10 @@ Sketch of an example for using data matrices to represent quant layers
 	</FeatureList>
 		
 	<FeatureList RawFileGroup_ref="raw3" id="featureList3">
-		<Feature id="f3_1" charge="2" mz="418.172" rt="26.8685" chromatogram_id="45"/><!-- MZ is Q1 m/z -->
-		<Feature id="f3_2" charge="2" mz="521.572" rt="27.8685" chromatogram_id="46"/>
-		<Feature id="f3_3" charge="2" mz="487.729" rt="26.9685" chromatogram_id="47"/>
-		<Feature id="f3_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>		
+		<Feature id="f3_1" charge="2" mz="418.172" rt="26.8685" chromatogram_refs="45"/><!-- MZ is Q1 m/z -->
+		<Feature id="f3_2" charge="2" mz="521.572" rt="27.8685" chromatogram_refs="46"/>
+		<Feature id="f3_3" charge="2" mz="487.729" rt="26.9685" chromatogram_refs="47"/>
+		<Feature id="f3_4" charge="2" mz="518.827" rt="26.8685" chromatogram_refs="48"/>		
 		
 		<FeatureQuantLayer id="FQL3">
 			<ColumnDefinition>
@@ -329,10 +329,10 @@ Sketch of an example for using data matrices to represent quant layers
 	</FeatureList>
 		
 	<FeatureList RawFileGroup_ref="raw4" id="featureList4">
-		<Feature id="f4_1" charge="2" mz="418.172" rt="26.8685" chromatogram_id="45"/><!-- MZ is Q1 m/z -->
-		<Feature id="f4_2" charge="2" mz="521.572" rt="27.8685" chromatogram_id="46"/>
-		<Feature id="f4_3" charge="2" mz="487.729" rt="26.9685" chromatogram_id="47"/>
-		<Feature id="f4_4" charge="2" mz="518.827" rt="26.8685" chromatogram_id="48"/>		
+		<Feature id="f4_1" charge="2" mz="418.172" rt="26.8685" chromatogram_refs="45"/><!-- MZ is Q1 m/z -->
+		<Feature id="f4_2" charge="2" mz="521.572" rt="27.8685" chromatogram_refs="46"/>
+		<Feature id="f4_3" charge="2" mz="487.729" rt="26.9685" chromatogram_refs="47"/>
+		<Feature id="f4_4" charge="2" mz="518.827" rt="26.8685" chromatogram_refs="48"/>		
 		
 		<FeatureQuantLayer id="FQL4">
 			<ColumnDefinition>

@@ -204,26 +204,26 @@ Sketch of an example for using data matrices to represent quant layers
 	<PeptideConsensusList id="PepList1" finalResult="true">
 		<PeptideConsensus id="ITQVLHFTK" charge="2">
 			<PeptideSequence>ITQVLHFTK</PeptideSequence>
-			<FeatureRef feature_ref="f1_1" assay_ref="assay_light_CaP_1"/>
-			<FeatureRef feature_ref="f1_2" assay_ref="assay_heavy_CaP_1"/>
-			<FeatureRef feature_ref="f2_1" assay_ref="assay_light_control_1"/>
-			<FeatureRef feature_ref="f2_2" assay_ref="assay_heavyspike_control_1"/>
-			<FeatureRef feature_ref="f3_1" assay_ref="assay_light_CaP_2"/>
-			<FeatureRef feature_ref="f3_2" assay_ref="assay_heavy_CaP_2"/>
-			<FeatureRef feature_ref="f4_1" assay_ref="assay_light_control_2"/>
-			<FeatureRef feature_ref="f4_2" assay_ref="assay_heavyspike_control_2"/>			
+			<FeatureRef feature_ref="f1_1" assay_refs="assay_light_CaP_1"/>
+			<FeatureRef feature_ref="f1_2" assay_refs="assay_heavy_CaP_1"/>
+			<FeatureRef feature_ref="f2_1" assay_refs="assay_light_control_1"/>
+			<FeatureRef feature_ref="f2_2" assay_refs="assay_heavyspike_control_1"/>
+			<FeatureRef feature_ref="f3_1" assay_refs="assay_light_CaP_2"/>
+			<FeatureRef feature_ref="f3_2" assay_refs="assay_heavy_CaP_2"/>
+			<FeatureRef feature_ref="f4_1" assay_refs="assay_light_control_2"/>
+			<FeatureRef feature_ref="f4_2" assay_refs="assay_heavyspike_control_2"/>			
 		</PeptideConsensus>
 		
 		<PeptideConsensus id="VGDTLNLNLR" charge="2">
 			<PeptideSequence>VGDTLNLNLR</PeptideSequence>
-			<FeatureRef feature_ref="f1_3" assay_ref="assay_light_CaP_1"/>
-			<FeatureRef feature_ref="f1_4" assay_ref="assay_heavy_CaP_1"/>
-			<FeatureRef feature_ref="f2_3" assay_ref="assay_light_control_1"/>
-			<FeatureRef feature_ref="f2_4" assay_ref="assay_heavyspike_control_1"/>
-			<FeatureRef feature_ref="f3_3" assay_ref="assay_light_CaP_2"/>
-			<FeatureRef feature_ref="f3_4" assay_ref="assay_heavy_CaP_2"/>
-			<FeatureRef feature_ref="f4_3" assay_ref="assay_light_control_2"/>
-			<FeatureRef feature_ref="f4_4" assay_ref="assay_heavyspike_control_2"/>		
+			<FeatureRef feature_ref="f1_3" assay_refs="assay_light_CaP_1"/>
+			<FeatureRef feature_ref="f1_4" assay_refs="assay_heavy_CaP_1"/>
+			<FeatureRef feature_ref="f2_3" assay_refs="assay_light_control_1"/>
+			<FeatureRef feature_ref="f2_4" assay_refs="assay_heavyspike_control_1"/>
+			<FeatureRef feature_ref="f3_3" assay_refs="assay_light_CaP_2"/>
+			<FeatureRef feature_ref="f3_4" assay_refs="assay_heavy_CaP_2"/>
+			<FeatureRef feature_ref="f4_3" assay_refs="assay_light_control_2"/>
+			<FeatureRef feature_ref="f4_4" assay_refs="assay_heavyspike_control_2"/>		
 		</PeptideConsensus>
 		
 		<AssayQuantLayer id="QL1">

@@ -32,7 +32,7 @@ Sketch of an example for using data matrices to represent quant layers
 		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free"/>
 		<cvParam cvRef="PSI-MS" accession="" name="label-free raw feature quantitation" value="false"/>
 		<cvParam cvRef="PSI-MS" accession="" name="label-free peptide level quantitation" value="true"/>
-		<cvParam cvRef="PSI-MS" accession="" name="label-free protein level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="" name="label-free protein level quantitation" value="true"/>
 		<cvParam cvRef="PSI-MS" accession="" name="label-free protein group level quantitation" value="false"/>
 	</AnalysisSummary>
 
@@ -100,21 +100,21 @@ Sketch of an example for using data matrices to represent quant layers
 	<PeptideConsensusList id="PepList1" finalResult="true">
 		<PeptideConsensus id="PEPTIDER" charge="2">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-			<FeatureRef feature_ref="featureB_1" assay_ref="B1"/>
-			<FeatureRef feature_ref="featureE_1" assay_ref="E1"/>
+			<FeatureRef feature_ref="featureB_1" assay_refs="B1"/>
+			<FeatureRef feature_ref="featureE_1" assay_refs="E1"/>
 		</PeptideConsensus>
 		<PeptideConsensus id="MLPEPTIDEK" charge="2">
 			<PeptideSequence>MLPEPTIDEK</PeptideSequence>
-			<FeatureRef feature_ref="featureB_2" assay_ref="B1"/>
-			<FeatureRef feature_ref="featureE_2" assay_ref="E1"/>
+			<FeatureRef feature_ref="featureB_2" assay_refs="B1"/>
+			<FeatureRef feature_ref="featureE_2" assay_refs="E1"/>
 		</PeptideConsensus>
 		<PeptideConsensus id="unknown1" charge="2">
-			<FeatureRef feature_ref="featureB_3" assay_ref="B1"/>
-			<FeatureRef feature_ref="featureE_3" assay_ref="E1"/>
+			<FeatureRef feature_ref="featureB_3" assay_refs="B1"/>
+			<FeatureRef feature_ref="featureE_3" assay_refs="E1"/>
 		</PeptideConsensus>
 		<PeptideConsensus id="unknown2" charge="2">
-			<FeatureRef feature_ref="featureB_4" assay_ref="B1"/>
-			<FeatureRef feature_ref="featureE_4" assay_ref="E1"/>
+			<FeatureRef feature_ref="featureB_4" assay_refs="B1"/>
+			<FeatureRef feature_ref="featureE_4" assay_refs="E1"/>
 		</PeptideConsensus>	
 		
 		<AssayQuantLayer id="QL1">

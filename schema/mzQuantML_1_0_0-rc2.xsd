@@ -30,9 +30,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0"/>			
 			<xsd:element name="PeptideConsensusList" type="PeptideConsensusListType" minOccurs="0" maxOccurs="unbounded"/>			
 			<xsd:element name="SmallMoleculeList" type="SmallMoleculeListType" maxOccurs="1" minOccurs="0"/>				
-			<xsd:element name="FeatureList" minOccurs="0" maxOccurs="unbounded" type="FeatureListType"/>			
-	
-					
+			<xsd:element name="FeatureList" minOccurs="0" maxOccurs="unbounded" type="FeatureListType"/>
 		</xsd:sequence>
 		<xsd:attribute name="creationDate" type="xsd:dateTime">
 			<xsd:annotation>
@@ -893,7 +891,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The monoisotopic peak on the mass over charge axis in daltons over charge.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="charge" type="xsd:integer">
+		<xsd:attribute name="charge" type="integerOrNullType">
 			<xsd:annotation>
 				<xsd:documentation>The assumed charge of the feature, used to calculate the m/z value.</xsd:documentation>
 			</xsd:annotation>
@@ -1023,9 +1021,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="assay_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
 			<xsd:annotation>
-				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses).</xsd:documentation>
+				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -1043,7 +1041,16 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:restriction>
 			</xsd:simpleType>
 		</xsd:union>
-	</xsd:simpleType>	
+	</xsd:simpleType>
+	<xsd:simpleType name="integerOrNullType">
+		<xsd:union memberTypes="xsd:integer">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:token">
+					<xsd:enumeration value="null"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
 	<xsd:simpleType name="listOfIDs">
 		<xsd:list itemType="xsd:ID"/>
 	</xsd:simpleType>
@@ -1387,7 +1394,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="listOfIntegers">
-		<xsd:list itemType="xsd:integer"/>
+		<xsd:list itemType="integerOrNullType"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="listOfFloats">
 		<xsd:list itemType="xsd:float"/>

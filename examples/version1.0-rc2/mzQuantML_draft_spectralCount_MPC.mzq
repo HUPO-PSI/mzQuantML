@@ -32,12 +32,12 @@ schema comments / issues:
 			<RawFile location="C:\ms\mzIdent\disease4.raw" id="RF_4"/>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile id="IF_healthy1" location="C:\ms\mzIdent\healthy1.mzid"/>
-			<IdentificationFile id="IF_healthy3" location="C:\ms\mzIdent\healthy3.mzid"/>
-			<IdentificationFile id="IF_disease2" location="C:\ms\mzIdent\disease2.mzid"/>
-			<IdentificationFile id="IF_disease4" location="C:\ms\mzIdent\disease4.mzid"/>
+			<IdentificationFile id="IF_healthy1" location="C:\ms\mzIdent\healthy1.mzid" SearchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_healthy3" location="C:\ms\mzIdent\healthy3.mzid" SearchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease2" location="C:\ms\mzIdent\disease2.mzid" SearchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease4" location="C:\ms\mzIdent\disease4.mzid" SearchDatabase_ref="SDB1"/>
 		</IdentificationFiles>
-		<SearchDatabase id="SD1" location="c:\mydb.fasta" >
+		<SearchDatabase id="SDB1" location="c:\mydb.fasta" >
 			<DatabaseName>
 				<userParam name="mydb.fasta"/>
 			</DatabaseName>
@@ -51,7 +51,7 @@ schema comments / issues:
 	</SoftwareList>
 
 	<DataProcessingList>
-		<DataProcessing id="DP1" software_Ref="MS_EXCEL" >
+		<DataProcessing id="DP1" software_Ref="MS_EXCEL"  order="1">
 			<InputObject_refs>QL_raw_protein_value_layer</InputObject_refs>
 			<OutputObject_refs>QL_normalized_protein_value_layer</OutputObject_refs>
 			<ProcessingMethod order="1">

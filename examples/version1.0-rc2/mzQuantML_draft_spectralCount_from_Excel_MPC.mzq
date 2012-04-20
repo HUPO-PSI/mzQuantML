@@ -1,4 +1,4 @@
-<MzQuantML creationDate="2012-04-17T00:00:00.000+02:00" version="1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2">
+<MzQuantML creationDate="2012-04-20T00:00:00.000+02:00" version="1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.22.0" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
@@ -37,7 +37,7 @@
         </Software>
     </SoftwareList>
     <DataProcessingList>
-        <DataProcessing id="DP_1" software_Ref="Microsoft_Excel_2007">
+        <DataProcessing id="DP_1" software_Ref="Microsoft_Excel_2007" order="1">
             <InputObject_refs>AQL_MEANS_OF_GROUPS</InputObject_refs>
             <ProcessingMethod order="0">
                 <cvParam cvRef="MS" accession="MS:1001862" name="normalization to mean of sum of all proteins"/>

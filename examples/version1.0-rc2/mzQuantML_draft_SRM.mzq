@@ -81,7 +81,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</SoftwareList>
 	
 	<DataProcessingList>
-		<DataProcessing id="DP1"  software_Ref="mQuest">
+		<DataProcessing id="DP1"  software_Ref="mQuest" order="1">
 			<ProcessingMethod order="1">
 				<userParam name=""/>
 			</ProcessingMethod>

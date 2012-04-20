@@ -42,7 +42,7 @@
 			<RawFile location="../msmsdata/e1.raw" id="r2"/>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile location="myidents.mzid" id="mzid1"/>
+			<IdentificationFile location="myidents.mzid" id="mzid1" SearchDatabase_ref="SD1"/>
 		</IdentificationFiles>
 
 		<SearchDatabase location="c:\mydb.fasta" id="SD1">
@@ -58,7 +58,7 @@
 	</SoftwareList>
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification" software_Ref="MaxQuant">
+		<DataProcessing id="feature_quantification" software_Ref="MaxQuant" order="1">
 			<InputObject_refs>raw1</InputObject_refs>
 			<OutputObject_refs>FQL1 </OutputObject_refs>
 			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>

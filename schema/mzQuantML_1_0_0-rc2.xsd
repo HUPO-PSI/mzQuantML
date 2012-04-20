@@ -18,8 +18,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="CvList" type="CvListType"/>
 			<xsd:element name="Provider" type="ProviderType" minOccurs="0"/>
 			<xsd:element name="AuditCollection" type="AuditCollectionType" minOccurs="0"/>
-			<xsd:element name="AnalysisSummary" type="AnalysisSummaryType" minOccurs="0"
-				maxOccurs="1"/>
+			<xsd:element name="AnalysisSummary" type="ParamListType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Summary information about the analysis in terms of the type of analysis, any global scores or metrics and global thresholds used.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="InputFiles" type="InputFilesType" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="SoftwareList" type="SoftwareListType" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="1"
@@ -49,6 +52,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	<!--
+=======
+	</xsd:complexType>
+>>>>>>> .r189
 	<xsd:complexType name="AnalysisSummaryType">
 		<xsd:annotation>
 			<xsd:documentation>Summary information about the analysis in terms of the type of analysis, any global scores or metrics and global thresholds used.</xsd:documentation>
@@ -58,6 +65,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="userParam" type="UserParamType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
+	-->
 	<xsd:complexType name="CvListType">
 		<xsd:annotation>
 			<xsd:documentation>The list of controlled vocabularies used in the file.</xsd:documentation>
@@ -70,17 +78,12 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>All the raw files, identification files and databases used in the quantitation</xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="RawFilesGroup" type="RawFilesGroupType" minOccurs="0"
-				maxOccurs="unbounded"/>
-			<xsd:element name="MethodFiles" type="MethodFilesType" minOccurs="0"
-				maxOccurs="unbounded"/>
-			<xsd:element name="IdentificationFiles" type="IdentificationFilesType" minOccurs="0"
-				maxOccurs="1"/>
-			<xsd:element name="SearchDatabase" type="SearchDatabaseType" minOccurs="0"
-				maxOccurs="unbounded"/>
-			<xsd:element name="SourceFile" type="SourceFileType" minOccurs="0" maxOccurs="unbounded"
-			/>
+		<xsd:sequence>			
+			<xsd:element name="RawFilesGroup" type="RawFilesGroupType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="MethodFiles" type="MethodFilesType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="IdentificationFiles" type="IdentificationFilesType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="SearchDatabase" type="SearchDatabaseType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="SourceFile" type="SourceFileType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="SearchDatabaseType">
@@ -785,7 +788,13 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>A single identification file associated with this analysis.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="ExternalDataType"/>
+			<xsd:extension base="ExternalDataType">
+				<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Reference to the SearchDatabase object in this file from which this identification was made.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>			
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="MethodFilesType">
@@ -998,7 +1007,12 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 		<xsd:attribute name="software_Ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
-				<xsd:documentation>This attribute must reference the 'id' of the appropriate SoftwareType.</xsd:documentation>
+				<xsd:documentation>This attribute must reference the appropriate SoftwareType.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required">
+			<xsd:annotation>
+				<xsd:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

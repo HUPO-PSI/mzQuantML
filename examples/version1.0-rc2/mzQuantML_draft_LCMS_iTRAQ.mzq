@@ -44,7 +44,12 @@ Sketch of an example for using data matrices to represent quant layers
 		<RawFilesGroup id="raw2">
 			<RawFile location="../msmsdata/e1.raw" id="r2"/>
 		</RawFilesGroup>
-
+		
+		<IdentificationFiles>
+			<IdentificationFile location="allRunIds.mzid" id="id_file1" SearchDatabase_ref="SD1"/>
+		</IdentificationFiles>
+		
+		
 		<SearchDatabase location="c:\mydb.fasta" id="SD1">
 			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
 		</SearchDatabase>
@@ -56,7 +61,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</SoftwareList>
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification"  software_Ref="iTRACKER">
+		<DataProcessing id="DP1"  software_Ref="iTRACKER">
 			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>
 		</DataProcessing>
 	</DataProcessingList>

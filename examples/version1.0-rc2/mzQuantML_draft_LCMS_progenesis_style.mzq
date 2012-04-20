@@ -44,7 +44,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<RawFile location="../msmsdata/e1.raw" id="r2"/>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile location="myidents.mzid" id="identFile1"/>
+			<IdentificationFile location="myidents.mzid" id="identFile1" SearchDatabase_ref="SD1"/>
 		</IdentificationFiles>
 		
 

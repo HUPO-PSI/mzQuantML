@@ -2,8 +2,8 @@
 Sketch of an example for using data matrices to represent quant layers
 -->
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1 ../../schema/mzQuantML_1_0_0-rc2.xsd"
- xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc1"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2"
  version="1.0.0">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
@@ -60,7 +60,7 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<DataProcessingList>
-		<DataProcessing id="DP1"  software_Ref="Progenesis">
+		<DataProcessing id="DP1"  software_Ref="Progenesis" order="1">
 			<ProcessingMethod order="1">
 				<userParam name=""/>
 			</ProcessingMethod>

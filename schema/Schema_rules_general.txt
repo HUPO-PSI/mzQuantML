@@ -12,6 +12,7 @@ Failure of a rule with a SHOULD causes a WARNING to be produced
 - The number of Rows in any QuantLayer MAY be different to number of elements in the parent list (e.g. you do not need to report a row of values for every protein)
 - In the RatioList, if the numerator is referencing a StudyVariable, the denominator MUST reference a StudyVariable
 - In the RatioList, if the numerator is referencing an Assay, the denominator MUST reference an Assay
+- Exactly one PeptideConsensusList MUST have isFinalResult=¡±true¡±
 
 Mapping file additions and associated rules
 *********************************************

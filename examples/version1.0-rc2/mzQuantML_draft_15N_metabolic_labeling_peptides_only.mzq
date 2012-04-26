@@ -1,0 +1,237 @@
+<!--
+example sketch:
+- two samples: "technical replicate 1" and "technical replicate 2"
+- therefore two raw files (here: .raw)
+- in one raw file: 14N: wild type, 15N: mutant (in the other: label switch!)
+- therefore 4 assays: WT1, MUT1 (in techrep1); WT2, MUT2 (in techrep2) 
+- included: quant layers for 
+  a) Feature: "peak intensity"
+  b) Feature: "peak area"
+  c) PeptideConsensus: "ratio MUT/WT"
+
+schema comments / issues:
+- more CVParam elements necessary in Label / Modification (e.g. to give incorporation rate etc.)?
+- <Modification> below <Label> should be optional (as in metabolic labeling no modification is presented, but actually the label is "natural N")
+-->
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2"  creationDate="2012-04-26T10:41:00" version="1.0.0">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		<Cv id="UNIMOD" fullName="the unimod modifications ontology" uri="http://www.unimod.org/obo/unimod.obo" version="2011-97-14T12:49"/>
+	</CvList>
+
+	<InputFiles>
+		<RawFilesGroup id="TECHREPRAW1">
+			<RawFile location="../msdata/techrep1.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="TECHREPRAW2">
+			<RawFile location="../msdata/techrep2.raw" id="r2"/>
+		</RawFilesGroup>
+		
+		<SearchDatabase id="SD1" location="C:\DBs\uniprot_sprot_decoy.fasta" version="2010_09" numDatabaseEntries="1038696" releaseDate="2010-08-10T00:00:00">
+			<DatabaseName>
+				<cvParam accession="MS:1001104" name="database SwissProt" cvRef="PSI-MS"/>
+			</DatabaseName>
+			<cvParam accession="MS:1001348" name="FASTA format" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001252" name="DB source EBI" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001073" name="database type amino acid" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001197" name="DB composition target+decoy" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001283" name="decoy DB accession regexp" cvRef="PSI-MS" value="^>sp\|s"/>
+			<cvParam accession="MS:1001297" name="decoy DB from SwissProt" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001451" name="decoy DB generation algorithm" cvRef="PSI-MS" value="DecoyDatabaseBuilder, part of the PeakQuant suite (http://www.medizinisches-proteom-center.de/software)"/>
+			<cvParam accession="MS:1001452" name="decoy DB type shuffle" cvRef="PSI-MS"/>
+		</SearchDatabase>	
+	</InputFiles>
+	
+
+	<SoftwareList>
+		<Software id="FindPairs" version="1">
+			<cvParam accession="MS:100XXXX" name="FindPairs" cvRef="PSI-MS"/>
+		</Software>
+	</SoftwareList>
+	
+	
+	<DataProcessingList>
+		<DataProcessing id="pep_quantification" software_Ref="FindPairs" order="1">
+			<ProcessingMethod order="0" >
+				<cvParam accession="MS:100XXXX" name="FindPairs: merge line peaks" cvRef="PSI-MS"/> <!-- TODO: add final accession here -->
+				<userParam name="Params for this step to go in here, e.g. which tolerance is used for merging" value=""/>
+			</ProcessingMethod>
+			<ProcessingMethod order="1" >
+				<cvParam accession="MS:100XXXX" name="FindPairs: peak pair matching" cvRef="PSI-MS"/> <!-- TODO: add final accession here -->
+				<userParam name="Params for this step to go in here, e.g. which is the tolerance for matching the monoisotopic 14N and 15N peaks..." value=""/>
+			</ProcessingMethod>
+			<ProcessingMethod order="2">
+				<cvParam accession="MS:100XXXX" name="FindPairs: isotopic peak pattern quantification" cvRef="PSI-MS"/> <!-- TODO: add final accession here -->
+				<userParam name="Params for this step to go in here, e.g. how many and which isotopic peaks are considered..." value=""/>
+			</ProcessingMethod>
+			<ProcessingMethod order="3">
+				<cvParam accession="MS:100XXXX" name="FindPairs: peptide ratio calculation" cvRef="PSI-MS"/> <!-- TODO: add final accession here -->
+				<userParam name="Params for this step to go in here..." value=""/>
+			</ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+	
+
+	<AssayList id="AssayList1">
+		<Assay id="assay_WT1" rawFileGroup_ref="TECHREPRAW1">
+			<Label>
+				<Modification>
+					<cvParam accession="MS:1001XXXX" name="metabolic labelling: natural N (mainly 14N)" cvRef="PSI-MS"/> <!-- TODO: insert correct accession later! -->
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_MUT1" rawFileGroup_ref="TECHREPRAW1">
+			<Label>
+				<Modification>
+					<cvParam accession="UNIMOD:994" name="Label:15N(1)" cvRef="UNIMOD"/> <!-- not really from ammonium sulfate -->
+					<!-- cvParam accession="MS:1001XXXX" name="metabolic labelling: heavy N (mainly 15N)" cvRef="PSI-MS"/ -->
+					<!-- cvParam accession="MS:1001XXXX" name="incorporation rate" cvRef="PSI_MS" value="98" unitAccession="" unitCvRef="" unitName="percent"/ -->
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_MUT2" rawFileGroup_ref="TECHREPRAW2"> <!-- label switch -->
+			<Label>
+				<Modification>
+					<cvParam accession="MS:1001XXXX" name="metabolic labelling: natural N (mainly 14N)" cvRef="PSI-MS"/> <!-- TODO: insert correct accession later! -->
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_WT2" rawFileGroup_ref="TECHREPRAW2">
+			<Label>
+				<Modification>
+					<cvParam accession="UNIMOD:994" name="Label:15N(1)" cvRef="UNIMOD"/> <!-- not really from ammonium sulfate -->
+					<!-- cvParam accession="MS:1001XXXX" name="metabolic labelling: heavy N (mainly 15N)" cvRef="PSI-MS"/ -->
+					<!-- cvParam accession="MS:1001XXXX" name="incorporation rate" cvRef="PSI_MS" value="98" unitAccession="" unitCvRef="" unitName="percent"/ -->
+				</Modification>
+			</Label>
+		</Assay>
+	</AssayList>
+
+	<StudyVariableList>
+		<StudyVariable id="SV_TECHREP1">
+			<cvParam accession="MS:1001808" name="technical replicate" cvRef="PSI-MS" value="1"/>
+			<Assay_refs>assay_WT1 assay_MUT1</Assay_refs>
+		</StudyVariable>
+		<StudyVariable id="SV_TECHREP2">
+			<cvParam accession="MS:1001808" name="technical replicate" cvRef="PSI-MS" value="2"/>
+			<Assay_refs>assay_WT2 assay_MUT2</Assay_refs>
+		</StudyVariable>
+	</StudyVariableList>
+	
+	<RatioList>
+		<Ratio id="ratio_MUT_VS_WT_1" numerator_ref="assay_MUT1" denominator_ref="assay_WT1" >
+			<RatioCalculation>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
+			</RatioCalculation>
+		</Ratio>
+		<Ratio id="ratio_MUT_VS_WT_2" numerator_ref="assay_MUT2" denominator_ref="assay_WT2" >
+			<RatioCalculation>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
+			</RatioCalculation>
+		</Ratio>
+	</RatioList>
+	
+	<PeptideConsensusList id="PepConsList1" finalResult="true">
+		<PeptideConsensus id="PEPTIDER" charge="2"> <!-- peptideA[2+] in both raw files -->
+			<PeptideSequence>PEPTIDER</PeptideSequence>
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_L1"/>
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_H1"/>
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_L2"/>
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_H2"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="MLEPTIDER" charge="3">
+			<PeptideSequence>MLEPTIDER</PeptideSequence> <!-- peptideB[3+] in both raw files -->
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_L3"/>
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_H3"/>
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_L4"/>
+			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_H4"/>
+		</PeptideConsensus>
+
+		<RatioQuantLayer id="PepRQL">
+			<DataType>
+				<cvParam accession="MS:1001132" name="peptide ratio" cvRef="PSI-MS" />
+			</DataType>
+			<ColumnIndex>ratio_MUT_VS_WT_1 ratio_MUT_VS_WT_2</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="PEPTIDER">1.5 1.6</Row>	
+				<Row object_ref="MLEPTIDER">1.7 1.8</Row>
+			</DataMatrix>			
+		</RatioQuantLayer>
+
+	</PeptideConsensusList>
+	
+	<FeatureList id="featureList1" RawFileGroup_ref="TECHREPRAW1">
+		<Feature id="feature_L1" charge="2" mz="418.172" rt="26.8"/>
+		<Feature id="feature_L2" charge="2" mz="421.572" rt="27.8"/>
+		<Feature id="feature_L3" charge="2" mz="487.729" rt="28.9"/>
+		<Feature id="feature_L4" charge="2" mz="518.827" rt="29.8"/>
+		<Feature id="feature_H1" charge="2" mz="420.172" rt="26.8"/> <!-- example handcrafted, this should be the 15N version mass of feature_L1 -->
+		<Feature id="feature_H2" charge="2" mz="423.572" rt="27.8"/>
+		<Feature id="feature_H3" charge="2" mz="489.729" rt="26.9"/>
+		<Feature id="feature_H4" charge="2" mz="520.827" rt="26.8"/>
+
+		<FeatureQuantLayer id="FQL1">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam accession="MS:1001843" name="peak intensity" cvRef="PSI-MS" />
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam accession="MS:1001845" name="peak area" cvRef="PSI-MS" />
+					</DataType>
+				</Column>
+			</ColumnDefinition>			
+			<DataMatrix>
+				<Row object_ref="feature_L1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_L2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_L3">193481.716 298090.36288</Row>
+				<Row object_ref="feature_L4">181.436 398090.36288</Row>
+				<Row object_ref="feature_H1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_H2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_H3">193481.716 298090.36288</Row>
+				<Row object_ref="feature_H4">181.436 398090.36288</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	
+	<FeatureList id="featureList2" RawFileGroup_ref="TECHREPRAW2">
+		<Feature id="feature_L1_2" charge="2" mz="418.172" rt="26.8"/>
+		<Feature id="feature_L2_2" charge="2" mz="421.572" rt="27.8"/>
+		<Feature id="feature_L3_2" charge="2" mz="487.729" rt="28.9"/>
+		<Feature id="feature_H1_2" charge="2" mz="420.172" rt="26.8"/> <!-- example handcrafted, this should be the 15N version mass of feature_L1 -->
+		<Feature id="feature_H2_2" charge="2" mz="423.572" rt="27.8"/>
+		<Feature id="feature_H3_2" charge="2" mz="489.729" rt="26.9"/>
+
+		<FeatureQuantLayer id="FQL2">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam accession="MS:1001843" name="peak intensity" cvRef="PSI-MS" />
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam accession="MS:1001845" name="peak area" cvRef="PSI-MS" />
+					</DataType>
+				</Column>
+			</ColumnDefinition>			
+			<DataMatrix>
+				<Row object_ref="feature_L1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_L2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_L3">193481.716 298090.36288</Row>
+				<Row object_ref="feature_H1">23304.180 16033.65284</Row>
+				<Row object_ref="feature_H2">93481.414 98090.36288</Row>
+				<Row object_ref="feature_H3">193481.716 298090.36288</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+
+	</FeatureList>
+
+		
+</MzQuantML>

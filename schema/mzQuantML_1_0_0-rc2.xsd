@@ -284,6 +284,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
+		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The search database from which this protein group was identified</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinType">
 		<xsd:sequence>
@@ -312,6 +317,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:attribute name="accession" type="xsd:string" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The accession of the protein in the source database. In most use cases it is expected that accession will be unique within the ProteinList, although in rare cases there may be different entries for the same protein for example if quantifying different PTMs on the same protein.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The search database from which this protein was identified</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -468,6 +478,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:attribute name="charge" type="listOfIntegers" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The charge of this instance of Peptide. If more than one value is provided, it is assumed that this Peptide element is summarising multiple charge states of the Peptide. </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The search database from which this peptide was identified</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -1465,4 +1480,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:pattern value="[ABCDEFGHIJKLMNOPQRSTUVWXYZ]*"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	
+	<!-- TO DO - Need to add in XSD:Unique for all object refs in every DataMatrix -->
 </xsd:schema>

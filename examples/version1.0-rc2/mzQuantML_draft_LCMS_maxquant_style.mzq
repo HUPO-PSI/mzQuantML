@@ -90,7 +90,7 @@
 	
 	
 	<ProteinGroupList id="PGList">
-		<ProteinGroup id="HSP70_HSP80">
+		<ProteinGroup id="HSP70_HSP80"  SearchDatabase_ref="SD1">
 			<Protein_refs>HSP70 HSP80</Protein_refs>
 			<!-- Probably want to allow CV params to specify leading protein etc -->
 		</ProteinGroup>
@@ -108,11 +108,11 @@
 
 	
 	<ProteinList id="ProtList">
-		<Protein id="HSP70" accession="HSP70">
+		<Protein id="HSP70" accession="HSP70"  SearchDatabase_ref="SD1">
 			<IdentificationRef id_ref="PDH_HSP70" IdentificationFile_ref="mzid1"/>
 			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>			
 		</Protein>
-		<Protein id="HSP80" accession="HSP80">
+		<Protein id="HSP80" accession="HSP80"  SearchDatabase_ref="SD1">
 			<IdentificationRef id_ref="PDH_HSP80" IdentificationFile_ref="mzid1"/>
 			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>
 		</Protein>
@@ -157,14 +157,14 @@
 	
 
 	<PeptideConsensusList id="PepList" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2 3">
+		<PeptideConsensus id="PEPTIDER" charge="2 3"  SearchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<FeatureRef feature_ref="f1_1" assay_refs="B1"/>
 			<FeatureRef feature_ref="f1_5" assay_refs="B1"/>
 			<FeatureRef feature_ref="f2_1" assay_refs="E1"/>
 			<!-- In this example, there is a 2+ and 3+ peptide summed together from FeatureList1 -->
 		</PeptideConsensus>
-		<PeptideConsensus id="MLEPTIDER"  charge="2">
+		<PeptideConsensus id="MLEPTIDER"  charge="2"  SearchDatabase_ref="SD1">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
 			<Modification>
 				<cvParam cvRef="PSI-MS" accession="" name="Oxidation (M)"/>				

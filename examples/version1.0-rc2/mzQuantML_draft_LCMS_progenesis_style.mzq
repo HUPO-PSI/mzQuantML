@@ -92,27 +92,27 @@ Sketch of an example for using data matrices to represent quant layers
 	
 
 	<ProteinList id="ProtList1">
-		<Protein id="HSP70" accession="HSP70">
+		<Protein id="HSP70" accession="HSP70"  SearchDatabase_ref="SD1">
 			<PeptideConsensus_refs>PEPTIDER MLPEPTIDEK</PeptideConsensus_refs>
 		</Protein>
 	</ProteinList>
 
 	<PeptideConsensusList id="PepList1" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2">
+		<PeptideConsensus id="PEPTIDER" charge="2"  SearchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<FeatureRef feature_ref="featureB_1" assay_refs="B1"/>
 			<FeatureRef feature_ref="featureE_1" assay_refs="E1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="MLPEPTIDEK" charge="2">
+		<PeptideConsensus id="MLPEPTIDEK" charge="2"  SearchDatabase_ref="SD1">
 			<PeptideSequence>MLPEPTIDEK</PeptideSequence>
 			<FeatureRef feature_ref="featureB_2" assay_refs="B1"/>
 			<FeatureRef feature_ref="featureE_2" assay_refs="E1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="unknown1" charge="2">
+		<PeptideConsensus id="unknown1" charge="2"  SearchDatabase_ref="SD1">
 			<FeatureRef feature_ref="featureB_3" assay_refs="B1"/>
 			<FeatureRef feature_ref="featureE_3" assay_refs="E1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="unknown2" charge="2">
+		<PeptideConsensus id="unknown2" charge="2" SearchDatabase_ref="SD1">
 			<FeatureRef feature_ref="featureB_4" assay_refs="B1"/>
 			<FeatureRef feature_ref="featureE_4" assay_refs="E1"/>
 		</PeptideConsensus>	

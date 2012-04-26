@@ -73,6 +73,10 @@ Sketch of an example for using data matrices to represent quant layers
 				</FileFormat>
 			</MethodFile>
 		</MethodFiles>
+		
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
+		</SearchDatabase>
 
 	</InputFiles>
 
@@ -186,7 +190,7 @@ Sketch of an example for using data matrices to represent quant layers
 	
 
 	<ProteinList id="ProtList1">
-		<Protein id="P0C0L4" accession="P0C0L4">
+		<Protein id="P0C0L4" accession="P0C0L4" SearchDatabase_ref="SD1">
 			<PeptideConsensus_refs>ITQVLHFTK VGDTLNLNLR</PeptideConsensus_refs>
 		</Protein>
 		<RatioQuantLayer id="RQL1">
@@ -202,7 +206,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</ProteinList>
 
 	<PeptideConsensusList id="PepList1" finalResult="true">
-		<PeptideConsensus id="ITQVLHFTK" charge="2">
+		<PeptideConsensus id="ITQVLHFTK" charge="2"   SearchDatabase_ref="SD1">
 			<PeptideSequence>ITQVLHFTK</PeptideSequence>
 			<FeatureRef feature_ref="f1_1" assay_refs="assay_light_CaP_1"/>
 			<FeatureRef feature_ref="f1_2" assay_refs="assay_heavy_CaP_1"/>
@@ -214,7 +218,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<FeatureRef feature_ref="f4_2" assay_refs="assay_heavyspike_control_2"/>			
 		</PeptideConsensus>
 		
-		<PeptideConsensus id="VGDTLNLNLR" charge="2">
+		<PeptideConsensus id="VGDTLNLNLR" charge="2"   SearchDatabase_ref="SD1">
 			<PeptideSequence>VGDTLNLNLR</PeptideSequence>
 			<FeatureRef feature_ref="f1_3" assay_refs="assay_light_CaP_1"/>
 			<FeatureRef feature_ref="f1_4" assay_refs="assay_heavy_CaP_1"/>

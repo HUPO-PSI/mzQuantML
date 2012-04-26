@@ -97,7 +97,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</StudyVariableList>
 	
 	<ProteinList id="ProtList1">
-		<Protein id="HSP70" accession="HSP70">
+		<Protein id="HSP70" accession="HSP70" SearchDatabase_ref="SD1">
 			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>			
 		</Protein>
 		<AssayQuantLayer id="QL2">
@@ -114,11 +114,11 @@ Sketch of an example for using data matrices to represent quant layers
 	
 
 	<PeptideConsensusList id="PepList1" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2">
+		<PeptideConsensus id="PEPTIDER" charge="2"  SearchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<FeatureRef feature_ref="f1_1" assay_refs="_114 _115 _116 _117"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="MLEPTIDER" charge="2">
+		<PeptideConsensus id="MLEPTIDER" charge="2"  SearchDatabase_ref="SD1">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
 			<FeatureRef feature_ref="f1_2" assay_refs="_114 _115 _116 _117"/>
 		</PeptideConsensus>	

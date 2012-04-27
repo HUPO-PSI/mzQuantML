@@ -23,6 +23,10 @@ schema comments / issues:
 		<Cv id="UNIMOD" fullName="the unimod modifications ontology" uri="http://www.unimod.org/obo/unimod.obo" version="2011-97-14T12:49"/>
 	</CvList>
 
+    <AnalysisSummary>
+        <cvParam cvRef="PSI-MS" accession="MS:1001839" name="metabolic labeling 14N / 15N quantitation analysis"/>
+    </AnalysisSummary>
+
 	<InputFiles>
 		<RawFilesGroup id="TECHREPRAW1">
 			<RawFile location="../msdata/techrep1.raw" id="r1"/>

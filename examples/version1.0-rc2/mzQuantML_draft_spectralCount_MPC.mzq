@@ -21,7 +21,7 @@ schema comments / issues:
 	</CvList>
 	
 	<AnalysisSummary>
-		<cvParam accession="MS:1001836" name="spectral counting" cvRef="PSI-MS"/>
+		<cvParam accession="MS:1001836" name="spectral counting quantitation analysis" cvRef="PSI-MS"/>
 	</AnalysisSummary>
 
 	<InputFiles>

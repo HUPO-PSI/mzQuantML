@@ -19,7 +19,7 @@
         </Person>
     </AuditCollection>
     <AnalysisSummary>
-        <cvParam cvRef="MS" accession="1001836" name="spectral counting quantitation analysis"/>
+        <cvParam cvRef="MS" accession="MS:1001836" name="spectral counting quantitation analysis"/>
     </AnalysisSummary>
     <InputFiles>
         <RawFilesGroup id="RF_GROUP">

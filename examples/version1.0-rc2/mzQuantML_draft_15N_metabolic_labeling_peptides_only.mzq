@@ -13,7 +13,7 @@ schema comments / issues:
 - more CVParam elements necessary in Label / Modification (e.g. to give incorporation rate etc.)?
 - <Modification> below <Label> should be optional (as in metabolic labeling no modification is presented, but actually the label is "natural N")
 -->
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2"  creationDate="2012-04-26T10:41:00" version="1.0.0">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2"  creationDate="2012-04-27T09:41:00" version="1.0.0">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
 			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
@@ -33,7 +33,7 @@ schema comments / issues:
 		
 		<SearchDatabase id="SD1" location="C:\DBs\uniprot_sprot_decoy.fasta" version="2010_09" numDatabaseEntries="1038696" releaseDate="2010-08-10T00:00:00">
 			<DatabaseName>
-				<cvParam accession="MS:1001104" name="database SwissProt" cvRef="PSI-MS"/>
+				<cvParam accession="MS:1001104" name="database SwissProt" value="uniprot_sprot_decoy.fasta" cvRef="PSI-MS"/>
 			</DatabaseName>
 			<cvParam accession="MS:1001348" name="FASTA format" cvRef="PSI-MS"/>
 			<cvParam accession="MS:1001252" name="DB source EBI" cvRef="PSI-MS"/>
@@ -136,14 +136,14 @@ schema comments / issues:
 	</RatioList>
 	
 	<PeptideConsensusList id="PepConsList1" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2"> <!-- peptideA[2+] in both raw files -->
+		<PeptideConsensus id="PEPTIDER" charge="2" SearchDatabase_ref="SD1"> <!-- peptideA[2+] in both raw files -->
 			<PeptideSequence>PEPTIDER</PeptideSequence>
 			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_L1"/>
 			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_H1"/>
 			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_L2"/>
 			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_H2"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="MLEPTIDER" charge="3">
+		<PeptideConsensus id="MLEPTIDER" charge="3" SearchDatabase_ref="SD1">
 			<PeptideSequence>MLEPTIDER</PeptideSequence> <!-- peptideB[3+] in both raw files -->
 			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_L3"/>
 			<FeatureRef assay_refs="assay_WT1 assay_MUT1 assay_MUT2 assay_WT2" feature_ref="feature_H3"/>

@@ -9,7 +9,128 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	xmlns:psi-mzq="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2"
 	targetNamespace="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2" elementFormDefault="qualified"
 	version="1.0.0-rc2">
-	<xsd:element name="MzQuantML" type="MzQuantMLType"/>
+	<xsd:element name="MzQuantML" type="MzQuantMLType">
+		<xsd:unique name="PK_PGLISTPG">
+			<xsd:selector xpath="./psi-mzq:ProteinGroupList/psi-mzq:ProteinGroup"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_PROTLISTPROT">
+			<xsd:selector xpath="./psi-mzq:ProteinList/psi-mzq:Protein"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_PEPCLISTPC">
+			<xsd:selector xpath="./psi-mzq:PeptideConsensusList/psi-mzq:PeptideConsensus"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_SMLISTSM">
+			<xsd:selector xpath="./psi-mzq:SmallMoleculeList/psi-mzq:SmallMolecule"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_FTLISTFT">
+			<xsd:selector xpath="./psi-mzq:FeatureList/psi-mzq:Feature"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:keyref name="FK_PGLGQDMROW_OBJ" refer="PK_PGLISTPG">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinGroupList/psi-mzq:GlobalQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PGLAQDMROW_OBJ" refer="PK_PGLISTPG">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinGroupList/psi-mzq:AssayQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PGLSVQDMROW_OBJ" refer="PK_PGLISTPG">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinGroupList/psi-mzq:StudyVariableQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PGLRQDMROW_OBJ" refer="PK_PGLISTPG">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinGroupList/psi-mzq:RatioQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PLGQDMROW_OBJ" refer="PK_PROTLISTPROT">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinList/psi-mzq:GlobalQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PLAQDMROW_OBJ" refer="PK_PROTLISTPROT">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinList/psi-mzq:AssayQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PLSVQDMROW_OBJ" refer="PK_PROTLISTPROT">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinList/psi-mzq:StudyVariableQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PLRQDMROW_OBJ" refer="PK_PROTLISTPROT">
+			<xsd:selector
+				xpath="./psi-mzq:ProteinList/psi-mzq:RatioQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PEPCLGQDMROW_OBJ" refer="PK_PEPCLISTPC">
+			<xsd:selector
+				xpath="./psi-mzq:PeptideConsensusList/psi-mzq:GlobalQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PEPCLAQDMROW_OBJ" refer="PK_PEPCLISTPC">
+			<xsd:selector
+				xpath="./psi-mzq:PeptideConsensusList/psi-mzq:AssayQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PEPCLSVQDMROW_OBJ" refer="PK_PEPCLISTPC">
+			<xsd:selector
+				xpath="./psi-mzq:PeptideConsensusList/psi-mzq:StudyVariableQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PEPCLRQDMROW_OBJ" refer="PK_PEPCLISTPC">
+			<xsd:selector
+				xpath="./psi-mzq:PeptideConsensusList/psi-mzq:RatioQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SMLGQDMROW_OBJ" refer="PK_SMLISTSM">
+			<xsd:selector
+				xpath="./psi-mzq:SmallMoleculeList/psi-mzq:GlobalQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SMLAQDMROW_OBJ" refer="PK_SMLISTSM">
+			<xsd:selector
+				xpath="./psi-mzq:SmallMoleculeList/psi-mzq:AssayQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SMLSVQDMROW_OBJ" refer="PK_SMLISTSM">
+			<xsd:selector
+				xpath="./psi-mzq:SmallMoleculeList/psi-mzq:StudyVariableQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SMLRQDMROW_OBJ" refer="PK_SMLISTSM">
+			<xsd:selector
+				xpath="./psi-mzq:SmallMoleculeList/psi-mzq:RatioQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_FTLFTQDMROW_OBJ" refer="PK_FTLISTFT">
+			<xsd:selector
+				xpath="./psi-mzq:FeatureList/psi-mzq:FeatureQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_FTLMS2AQDMROW_OBJ" refer="PK_FTLISTFT">
+			<xsd:selector
+				xpath="./psi-mzq:FeatureList/psi-mzq:MS2AssayQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_FTLMS2SVQDMROW_OBJ" refer="PK_FTLISTFT">
+			<xsd:selector
+				xpath="./psi-mzq:FeatureList/psi-mzq:MS2StudyVariableQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_FTLMS2RQDMROW_OBJ" refer="PK_FTLISTFT">
+			<xsd:selector
+				xpath="./psi-mzq:FeatureList/psi-mzq:MS2StudyVariableQuantLayer/psi-mzq:DataMatrix/psi-mzq:Row"/>
+			<xsd:field xpath="@object_ref"/>
+		</xsd:keyref>
+	</xsd:element>
 	<xsd:complexType name="MzQuantMLType">
 		<xsd:annotation>
 			<xsd:documentation>Root element of the instance document.</xsd:documentation>
@@ -1480,6 +1601,5 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:pattern value="[ABCDEFGHIJKLMNOPQRSTUVWXYZ]*"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	
-	<!-- TO DO - Need to add in XSD:Unique for all object refs in every DataMatrix -->
+
 </xsd:schema>

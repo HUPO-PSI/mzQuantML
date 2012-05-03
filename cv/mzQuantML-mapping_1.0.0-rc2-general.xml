@@ -104,7 +104,7 @@
             <CvTerm termAccession="MS:1XXXX" useTermName="false" useTerm="false" termName="XXXX" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule -->
 		
-		<CvMappingRule id="ProteinGroupGlobalQuantLayer_rule" cvElementPath="/MzQuantML/ProteinGroupList/GlobalQuantLayer/ColumnIndex/Column/DataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/ProteinGroupList/GlobalQuantLayer/ColumnIndex/Column/DataType" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="ProteinGroupGlobalQuantLayer_rule" cvElementPath="/MzQuantML/ProteinGroupList/GlobalQuantLayer/ColumnDefinition/Column/DataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/ProteinGroupList/GlobalQuantLayer/ColumnDefinition/Column/DataType" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 		
@@ -130,7 +130,7 @@
 			<CvTerm termAccession="MS:1XXXX" useTermName="false" useTerm="false" termName="XXXX" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule -->
 
-		<CvMappingRule id="ProteinGlobalQuantLayer_rule" cvElementPath="/MzQuantML/ProteinList/GlobalQuantLayer/ColumnIndex/Column/DataType/cvParam/@accession" requirementLevel="MUST" scopePath="/MzQuantML/ProteinList/GlobalQuantLayer/ColumnIndex/Column/DataType" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="ProteinGlobalQuantLayer_rule" cvElementPath="/MzQuantML/ProteinList/GlobalQuantLayer/ColumnDefinition/Column/DataType/cvParam/@accession" requirementLevel="MUST" scopePath="/MzQuantML/ProteinList/GlobalQuantLayer/ColumnDefinition/Column/DataType" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
@@ -212,11 +212,11 @@
 			<CvTerm termAccession="MS:1001828" useTermName="false" useTerm="false" termName="Feature attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
-		<CvMappingRule id="FeatureListe_rule" cvElementPath="/MzQuantML/FeatureList/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/FeatureList" cvTermsCombinationLogic="OR">
-			<CvTerm termAccession="MS:1001825" useTermName="false" useTerm="false" termName="FeatureListe attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+		<CvMappingRule id="FeatureList_rule" cvElementPath="/MzQuantML/FeatureList/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/FeatureList" cvTermsCombinationLogic="OR">
+			<CvTerm termAccession="MS:1001825" useTermName="false" useTerm="false" termName="FeatureList attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 		
-		<CvMappingRule id="FeatureListFeatureQuantLayer_rule" cvElementPath="/MzQuantML/FeatureList/FeatureQuantLayer/ColumnIndex/Column/DataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/FeatureList/FeatureQuantLayer/ColumnIndex/Column/DataType" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="FeatureListFeatureQuantLayer_rule" cvElementPath="/MzQuantML/FeatureList/FeatureQuantLayer/ColumnDefinition/Column/DataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/FeatureList/FeatureQuantLayer/ColumnDefinition/Column/DataType" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 

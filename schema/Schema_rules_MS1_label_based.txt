@@ -1,6 +1,6 @@
 Semantic validation rules
 **************************
-The parser knows this is a MS1 label-based approach due to the presence of this cvParam in AnalysisSummary: "MS1 Label-based analysis"
+The parser knows this is a MS1 label-based approach due to the presence of this cvParam in AnalysisSummary: id: MS:1002018 - name: MS1 Label-based analysis
 - ONE of PeptideConsensusList, ProteinList, ProteinGroupList MUST be present
 - There MUST not be any MS2QuantLayers	
 - The file MUST contain two or more assays references to the same rawFileGroup

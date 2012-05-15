@@ -809,14 +809,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="AssayListType">
 		<xsd:annotation>
-			<xsd:documentation>The list of assays represented by the file, where each assay captures the concept of one experimental run - this can be one or more raw files.</xsd:documentation>
+			<xsd:documentation>The list of assays represented by the file, where each assay captures the concept of one sample analysed - this can be one or more raw files.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Assay" type="AssayType" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>Describes a single experimental run (e.g. with the channel mapping in iTRAQ), which could constitute multiple raw files e.g. if pre-separation steps have occurred.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+			<xsd:element name="Assay" type="AssayType" maxOccurs="unbounded"/>			
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
 			<xsd:annotation>
@@ -830,6 +826,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="AssayType">
+		<xsd:annotation>
+			<xsd:documentation>Describes a single analysis of a sample (e.g. with the channel mapping in iTRAQ), which could constitute multiple raw files e.g. if pre-separation steps have occurred.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Label" type="LabelType" minOccurs="0"/>
 			<xsd:element name="IdentificationFile_Refs" type="xsd:IDREFS" minOccurs="0"

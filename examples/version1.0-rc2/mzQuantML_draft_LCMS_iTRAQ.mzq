@@ -68,16 +68,32 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	<AssayList id="AssayList1">
 		<Assay id="_114" name="114" rawFileGroup_ref="raw1">
-			<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_114"/>
+			<Label>
+				<Modification>
+					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_114"/>
+				</Modification>
+			</Label>
 		</Assay>
 		<Assay id="_115" name="115"  rawFileGroup_ref="raw1">
-			<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_115"/>
+			<Label>
+				<Modification>
+					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_115"/>
+				</Modification>
+			</Label>
 		</Assay>
 		<Assay id="_116" name="116" rawFileGroup_ref="raw1">
-			<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_116"/>
+			<Label>
+				<Modification>
+					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_116"/>
+				</Modification>
+			</Label>
 		</Assay>
 		<Assay id="_117" name="117" rawFileGroup_ref="raw1">
-			<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_117"/>
+			<Label>
+				<Modification>
+					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_117"/>
+				</Modification>
+			</Label>
 		</Assay>
 		
 	</AssayList>

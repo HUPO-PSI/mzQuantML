@@ -69,8 +69,21 @@ Sketch of an example for using data matrices to represent quant layers
 	</DataProcessingList>
 
 	<AssayList id="AssayList1">
-		<Assay id="B1" name="B1" rawFileGroup_ref="raw1"/>
-		<Assay id="E1" name="E1" rawFileGroup_ref="raw2"/>
+		<Assay id="B1" name="B1" rawFileGroup_ref="raw1">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>			
+		</Assay>
+		<Assay id="E1" name="E1" rawFileGroup_ref="raw2">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>
+		</Assay>				
+		
 	</AssayList>
 
 

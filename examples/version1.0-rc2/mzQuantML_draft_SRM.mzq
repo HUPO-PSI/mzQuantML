@@ -95,6 +95,11 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	<AssayList id="AssayList1">
 		<Assay id="assay_light_CaP_1" name="assay_L1" rawFileGroup_ref="raw1">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>
 		</Assay>
 		<Assay id="assay_heavy_CaP_1" name="assay_H1" rawFileGroup_ref="raw1">
 			<Label>
@@ -107,6 +112,11 @@ Sketch of an example for using data matrices to represent quant layers
 			</Label>			
 		</Assay>
 		<Assay id="assay_light_control_1" name="assay_L2"  rawFileGroup_ref="raw2">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>
 		</Assay>
 		<Assay id="assay_heavyspike_control_1" name="assay_H2"  rawFileGroup_ref="raw2">
 			<Label>
@@ -119,7 +129,12 @@ Sketch of an example for using data matrices to represent quant layers
 			</Label>		
 		</Assay>
 
-		<Assay id="assay_light_CaP_2" name="assay_L1" rawFileGroup_ref="raw3">		
+		<Assay id="assay_light_CaP_2" name="assay_L1" rawFileGroup_ref="raw3">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>
 		</Assay>
 		<Assay id="assay_heavy_CaP_2" name="assay_H1" rawFileGroup_ref="raw3">
 			<Label>
@@ -132,6 +147,11 @@ Sketch of an example for using data matrices to represent quant layers
 			</Label>			
 		</Assay>
 		<Assay id="assay_light_control_2" name="assay_Lc2" rawFileGroup_ref="raw4">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>
 		</Assay>
 		<Assay id="assay_heavyspike_control_2" name="assay_Hc2" rawFileGroup_ref="raw4">
 			<Label>

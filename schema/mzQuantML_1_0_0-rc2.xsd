@@ -783,18 +783,16 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>A logical grouping of assays into conditions or user-defined study variables such as wild-type versus disease or time points in a time course.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="cvParam" type="CVParamType">
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc. and references to all the assays that are part of this study variable</xsd:documentation>
+					<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc. and references to all the assays that are part of this study variable.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>			
+			<xsd:element name="Assay_refs" type="xsd:IDREFS" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Reference to the assay that is part of this study variable</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:sequence>
-				<xsd:element name="Assay_refs" type="xsd:IDREFS" minOccurs="1" maxOccurs="1">
-					<xsd:annotation>
-						<xsd:documentation>Reference to the assay that is part of this study variable</xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-			</xsd:sequence>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
 			<xsd:annotation>
@@ -819,18 +817,13 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="rawFileGroup_ref" type="xsd:IDREF">
-			<xsd:annotation>
-				<xsd:documentation>A reference to the raw file group to which this assay is assigned.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="AssayType">
 		<xsd:annotation>
 			<xsd:documentation>Describes a single analysis of a sample (e.g. with the channel mapping in iTRAQ), which could constitute multiple raw files e.g. if pre-separation steps have occurred.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Label" type="LabelType" minOccurs="0"/>
+			<xsd:element name="Label" type="LabelType" minOccurs="1"/>
 			<xsd:element name="IdentificationFile_Refs" type="xsd:IDREFS" minOccurs="0"
 				maxOccurs="1">
 				<xsd:annotation>
@@ -941,11 +934,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>A specification of labels or tags used to define the assay within the raw file, such as heavy labelling or iTRAQ tag mass.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="cvParam" type="CVParamType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>If the label cannot be described by a modification (e.g. from UNIMOD), a cvParam can be used to describe the type of label or tag applied in this assay</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="Modification" type="ModParamType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>

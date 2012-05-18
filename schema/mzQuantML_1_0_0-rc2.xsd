@@ -392,7 +392,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The search database from which this protein group was identified</xsd:documentation>
 			</xsd:annotation>
@@ -427,7 +427,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The accession of the protein in the source database. In most use cases it is expected that accession will be unique within the ProteinList, although in rare cases there may be different entries for the same protein for example if quantifying different PTMs on the same protein.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The search database from which this protein was identified</xsd:documentation>
 			</xsd:annotation>
@@ -442,7 +442,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>Reference to the unique identifier of this object in the referenced external file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="IdentificationFile_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="identificationFile_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Reference to the IdentificationFile object in this file.</xsd:documentation>
 			</xsd:annotation>
@@ -457,7 +457,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>Reference to the unique identifier of this object in the referenced external file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Reference to the SearchDatabase object in this file from which this identification was made.</xsd:documentation>
 			</xsd:annotation>
@@ -588,7 +588,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The charge of this instance of Peptide. If more than one value is provided, it is assumed that this Peptide element is summarising multiple charge states of the Peptide. </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The search database from which this peptide was identified</xsd:documentation>
 			</xsd:annotation>
@@ -824,7 +824,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Label" type="LabelType" minOccurs="1"/>
-			<xsd:element name="IdentificationFile_Refs" type="xsd:IDREFS" minOccurs="0"
+			<xsd:element name="IdentificationFile_refs" type="xsd:IDREFS" minOccurs="0"
 				maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>One or more identification files used within this assay.</xsd:documentation>
@@ -904,7 +904,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType">
-				<xsd:attribute name="SearchDatabase_ref" type="xsd:IDREF" use="required">
+				<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
 					<xsd:annotation>
 						<xsd:documentation>Reference to the SearchDatabase object in this file from which this identification was made.</xsd:documentation>
 					</xsd:annotation>
@@ -1005,7 +1005,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="RawFileGroup_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="rawFileGroup_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Refernece to the raw file or group of raw files from which this feature list was generated.</xsd:documentation>
 			</xsd:annotation>
@@ -1052,12 +1052,12 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The assumed charge of the feature, used to calculate the m/z value.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="chromatogram_refs" type="xsd:string">
+		<xsd:attribute name="Chromatogram_refs" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>The identifier(s) of the chromatogram from which this feature was detected, for example required for SRM analyses. Multiple values can be provided separated by spaces following the XSD:IDREFS style.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="spectrum_refs" type="xsd:string">
+		<xsd:attribute name="Spectrum_refs" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>An optional identifier for an individual spectrum from which this feature was detected, required only for techniques where rt mapping is not appropriate. Multiple values can be provided separated by spaces following the XSD:IDREFS style..</xsd:documentation>
 			</xsd:annotation>
@@ -1182,7 +1182,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
+		<xsd:attribute name="Assay_refs" type="xsd:IDREFS" use="required">
 			<xsd:annotation>
 				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
 			</xsd:annotation>

@@ -186,12 +186,16 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>All the raw files, identification files and databases used in the quantitation</xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>			
-			<xsd:element name="RawFilesGroup" type="RawFilesGroupType" minOccurs="0" maxOccurs="unbounded"/>
+		<xsd:sequence>
+			<xsd:element name="RawFilesGroup" type="RawFilesGroupType" minOccurs="0"
+				maxOccurs="unbounded"/>
 			<xsd:element name="MethodFiles" type="MethodFilesType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="IdentificationFiles" type="IdentificationFilesType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="SearchDatabase" type="SearchDatabaseType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="SourceFile" type="SourceFileType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="IdentificationFiles" type="IdentificationFilesType" minOccurs="0"
+				maxOccurs="1"/>
+			<xsd:element name="SearchDatabase" type="SearchDatabaseType" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xsd:element name="SourceFile" type="SourceFileType" minOccurs="0" maxOccurs="unbounded"
+			/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="SearchDatabaseType">
@@ -787,7 +791,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:annotation>
 					<xsd:documentation>The type of StudyVariable e.g. Phenotypic, biological replicate, technical replicate, time points etc. and references to all the assays that are part of this study variable.</xsd:documentation>
 				</xsd:annotation>
-			</xsd:group>			
+			</xsd:group>
 			<xsd:element name="Assay_refs" type="xsd:IDREFS" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Reference to the assay that is part of this study variable</xsd:documentation>
@@ -810,7 +814,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>The list of assays represented by the file, where each assay captures the concept of one sample analysed - this can be one or more raw files.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Assay" type="AssayType" maxOccurs="unbounded"/>			
+			<xsd:element name="Assay" type="AssayType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
 			<xsd:annotation>
@@ -846,7 +850,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>Human readable name for the assay.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute type="xsd:IDREF" name="rawFileGroup_ref">
+		<xsd:attribute type="xsd:IDREF" name="rawFilesGroup_ref">
 			<xsd:annotation>
 				<xsd:documentation>A reference to the RawFileGroup that the Assay is linked to.</xsd:documentation>
 			</xsd:annotation>
@@ -909,7 +913,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						<xsd:documentation>Reference to the SearchDatabase object in this file from which this identification was made.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-			</xsd:extension>			
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="MethodFilesType">
@@ -1005,7 +1009,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="rawFileGroup_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="rawFilesGroup_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Refernece to the raw file or group of raw files from which this feature list was generated.</xsd:documentation>
 			</xsd:annotation>
@@ -1115,7 +1119,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="software_Ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="software_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>This attribute must reference the appropriate SoftwareType.</xsd:documentation>
 			</xsd:annotation>
@@ -1409,7 +1413,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:complexContent>
 			<xsd:extension base="AbstractContactType">
 				<xsd:sequence>
-					<xsd:element name="Parent" type="ParentOrganizationType" minOccurs="0"/>
+					<xsd:element name="ParentOrganization" type="ParentOrganizationType"
+						minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

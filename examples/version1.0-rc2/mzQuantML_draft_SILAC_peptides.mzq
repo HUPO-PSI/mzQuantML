@@ -23,7 +23,8 @@ Sketch of an example for using data matrices to represent quant layers
 		</RawFilesGroup>
 		
 		<IdentificationFiles>
-			<IdentificationFile location="myidents.mzid" id="mzid1" SearchDatabase_ref="SD1"/>
+			<IdentificationFile name="Rep1 identifications" location="myidents.mzid" id="mzid1" searchDatabase_ref="SD1"/>
+			<IdentificationFile name="Rep2 identifications" location="myidents2.mzid" id="mzid2" searchDatabase_ref="SD1"/>
 		</IdentificationFiles>
 		<SearchDatabase location="c:\mydb.fasta" id="SD1">
 			<DatabaseName><userParam name="mydb.fasta"/></DatabaseName>
@@ -36,7 +37,7 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification" software_Ref="MaxQuant" order="1">
+		<DataProcessing id="feature_quantification" software_ref="MaxQuant" order="1">
 			<ProcessingMethod order="1" >
 				<cvParam cvRef="PSI-MS" accession="" name="featurefinding"/>
 			</ProcessingMethod>
@@ -49,14 +50,14 @@ Sketch of an example for using data matrices to represent quant layers
 	</DataProcessingList>
 
 	<AssayList id="AssayList1">
-		<Assay id="assay_L1" name="assay_L1" rawFileGroup_ref="raw1">
+		<Assay id="assay_L1" name="assay_L1" rawFilesGroup_ref="raw1">
 			<Label>
 				<Modification massDelta="0">
 					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
 				</Modification>
 			</Label>	
 		</Assay>
-		<Assay id="assay_H1" name="assay_H1" rawFileGroup_ref="raw1">			
+		<Assay id="assay_H1" name="assay_H1" rawFilesGroup_ref="raw1">			
 			<Label>
 				<Modification massDelta="8.014199">
 					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
@@ -66,14 +67,14 @@ Sketch of an example for using data matrices to represent quant layers
 				</Modification>				
 			</Label>			
 		</Assay>
-		<Assay id="assay_L2" name="assay_L2" rawFileGroup_ref="raw2">
+		<Assay id="assay_L2" name="assay_L2" rawFilesGroup_ref="raw2">
 			<Label>
 				<Modification massDelta="0">
 					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
 				</Modification>
 			</Label>
 		</Assay>
-		<Assay id="assay_H2" name="assay_H2"  rawFileGroup_ref="raw2">
+		<Assay id="assay_H2" name="assay_H2"  rawFilesGroup_ref="raw2">
 			<Label>
 				<Modification massDelta="8.014199">
 					<cvParam cvRef="UNIMOD" accession="UNIMOD:259" name="Label:13C(6)15N(2)"/>
@@ -124,7 +125,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</ProteinGroupList>
 	
 	<ProteinList id="PList1">
-		<Protein id="HSP70" accession="HSP70" SearchDatabase_ref="SD1">
+		<Protein id="HSP70" accession="HSP70" searchDatabase_ref="SD1">
 			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>
 			
 		</Protein>
@@ -142,19 +143,24 @@ Sketch of an example for using data matrices to represent quant layers
 	</ProteinList>
 
 	<PeptideConsensusList id="PepList1" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="PEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
+			<IdentificationRef id_refs="SII1.1  SII7.1" identificationFile_ref="mzid1" feature_ref="f1_1"/>
+			<IdentificationRef id_refs="SII2.1 SII14.1" identificationFile_ref="mzid1" feature_ref="f1_5"/>
+			<IdentificationRef id_refs="SII9.1" identificationFile_ref="mzid2" feature_ref="f2_2"/>
+			<IdentificationRef id_refs="SII12.1" identificationFile_ref="mzid2" feature_ref="f2_6"/>
+			
 			<FeatureRef feature_ref="f1_1" assay_refs="assay_L1"/>
 			<FeatureRef feature_ref="f1_5" assay_refs="assay_H1"/>
 			<FeatureRef feature_ref="f2_2" assay_refs="assay_L2"/>
 			<FeatureRef feature_ref="f2_6" assay_refs="assay_H2"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="MLEPTIDER" charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="MLEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
 			<FeatureRef feature_ref="f1_2" assay_refs="assay_L1"/>
 			<FeatureRef feature_ref="f1_6" assay_refs="assay_H1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="unknown1" charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="unknown1" charge="2"  searchDatabase_ref="SD1">
 			<FeatureRef feature_ref="f1_3" assay_refs="assay_L1"/>
 			<FeatureRef feature_ref="f1_7" assay_refs="assay_H1"/>
 		</PeptideConsensus>
@@ -179,7 +185,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</PeptideConsensusList>
 	
 	
-	<FeatureList RawFileGroup_ref="raw1" id="featureList1">
+	<FeatureList rawFilesGroup_ref="raw1" id="featureList1">
 		<Feature id="f1_1" charge="2" mz="418.172" rt="26.8685"/>
 		<Feature id="f1_2" charge="2" mz="521.572" rt="27.8685"/>
 		<Feature id="f1_3" charge="2" mz="487.729" rt="26.9685"/>
@@ -227,7 +233,7 @@ Sketch of an example for using data matrices to represent quant layers
 		</FeatureQuantLayer>
 	</FeatureList>
 	
-	<FeatureList RawFileGroup_ref="raw2" id="featureList2">
+	<FeatureList rawFilesGroup_ref="raw2" id="featureList2">
 		<Feature id="f2_1" charge="2" mz="418.172" rt="26.8685"/>
 		<Feature id="f2_2" charge="2" mz="521.572" rt="27.8685"/>
 		<Feature id="f2_3" charge="2" mz="487.729" rt="26.9685"/>

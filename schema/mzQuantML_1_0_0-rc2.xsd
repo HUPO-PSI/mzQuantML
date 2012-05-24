@@ -441,16 +441,26 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>A reference to an external identification file defined in the document, plus a unique identifier for the object in that file, such as an ID of a SpectrumIdentificationItem, ProteinDetectionHypothesis or ProteinAmbiguityGroup in mzIdentML. </xsd:documentation>
 		</xsd:annotation>
-		<xsd:attribute name="id_ref" type="xsd:string" use="required">
+		<xsd:attribute name="id_refs" type="listOfStrings" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Reference to the unique identifier of this object in the referenced external file.</xsd:documentation>
+				<xsd:documentation>One or more reference to the unique identifiers for objects identifying the relevant Peptide, Protein or Protein group in an external file.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="identificationFile_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Reference to the IdentificationFile object in this file.</xsd:documentation>
 			</xsd:annotation>
-		</xsd:attribute>
+		</xsd:attribute>		
+	</xsd:complexType>
+	<xsd:complexType name="PeptideIdentificationRefType">
+		<xsd:annotation>
+			<xsd:documentation>An extension of the IdentificationRefType to include a reference to the Feature(s) to which the Identification corresponds.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="IdentificationRefType">
+				<xsd:attribute name="feature_ref" type="xsd:IDREF" use="required"/>
+			</xsd:extension>
+		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="DBIdentificationRefType">
 		<xsd:annotation>
@@ -568,7 +578,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="Modification" type="ModificationType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0"
+			<xsd:element name="IdentificationRef" type="PeptideIdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>TO DO - write specifications for how to link to mzIdentML SIIs if appropriate. How to tell which Feature this corresponds with?? Reference for the identification evidence for peptides from the referenced external file and unique identifier e.g. a link to an mzIdentML file and ID for the SpectrumIdentificationItem.</xsd:documentation>
@@ -1186,7 +1196,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="Assay_refs" type="xsd:IDREFS" use="required">
+		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
 			<xsd:annotation>
 				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
 			</xsd:annotation>
@@ -1566,6 +1576,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:simpleType>
 	<xsd:simpleType name="listOfFloats">
 		<xsd:list itemType="xsd:float"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="listOfStrings">
+		<xsd:list itemType="xsd:string"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="listOfChars">
 		<xsd:list itemType="chars"/>

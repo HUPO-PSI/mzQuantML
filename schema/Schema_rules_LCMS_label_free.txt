@@ -2,7 +2,6 @@ Semantic validation rules
 **************************
 The parser knows this is a label-free file due to the presence of this cvParam in AnalysisSummary: id: MS:1001834 - name: LC-MS label-free quantitation analysis
 - There MUST not be any MS2QuantLayers (unless the MS2 Tag term is also present in AnalysisSummary - same for all rules)
-- There MUST NOT be any Label in AssayList 
 - InputFiles MUST contain raw files
 - One of PeptideConsensusList, ProteinList, ProteinGroupList SHOULD be present
 

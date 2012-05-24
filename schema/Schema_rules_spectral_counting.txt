@@ -2,7 +2,6 @@ Semantic validation rules
 **************************
 The parser knows this is a spectral count file due to the presence of this cvParam in AnalysisSummary: id: MS:1001836 - name: spectral counting quantitation analysis
 - One of PeptideConsensusList, ProteinList, ProteinGroupList MUST be present
-- There MUST NOT be any Label in AssayList 
 - There MUST be at least one of rawFilesGroup_Ref or identificationFile_Refs in Assay
 - There SHOULD NOT be a FeatureQuantLayer
 

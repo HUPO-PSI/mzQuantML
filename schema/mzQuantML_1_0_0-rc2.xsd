@@ -1035,7 +1035,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>A region on an MS1 mass spectrum, defined by the RT, MZ and optionally a mass trace. Quantitative values about features can be added in the associated QuantLayers.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Masstrace" minOccurs="0" maxOccurs="1" type="psi-mzq:listOfDoubles">
+			<xsd:element name="MassTrace" minOccurs="0" maxOccurs="1" type="psi-mzq:listOfDoubles">
 				<xsd:annotation>
 					<xsd:documentation>The coordinates defining the feature in RT and MZ space, given as boundary points or a series of rectangles, as encoded by the MassTraceEncoding cvParam on the FeatureList.</xsd:documentation>
 				</xsd:annotation>

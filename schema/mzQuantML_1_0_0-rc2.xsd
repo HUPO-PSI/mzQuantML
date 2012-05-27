@@ -450,7 +450,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:annotation>
 				<xsd:documentation>Reference to the IdentificationFile object in this file.</xsd:documentation>
 			</xsd:annotation>
-		</xsd:attribute>		
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="PeptideIdentificationRefType">
 		<xsd:annotation>
@@ -1196,7 +1196,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
+		<xsd:attribute name="Assay_refs" type="xsd:IDREFS" use="required">
 			<xsd:annotation>
 				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
 			</xsd:annotation>

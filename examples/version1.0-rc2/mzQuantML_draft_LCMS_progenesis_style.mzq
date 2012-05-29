@@ -44,7 +44,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<RawFile location="../msmsdata/e1.raw" id="r2"/>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile location="myidents.mzid" id="identFile1" SearchDatabase_ref="SD1"/>
+			<IdentificationFile location="myidents.mzid" id="identFile1" searchDatabase_ref="SD1"/>
 		</IdentificationFiles>
 		
 
@@ -60,7 +60,7 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<DataProcessingList>
-		<DataProcessing id="DP1"  software_Ref="Progenesis" order="1">
+		<DataProcessing id="DP1"  software_ref="Progenesis" order="1">
 			<ProcessingMethod order="1">
 				<userParam name=""/>
 			</ProcessingMethod>
@@ -69,14 +69,14 @@ Sketch of an example for using data matrices to represent quant layers
 	</DataProcessingList>
 
 	<AssayList id="AssayList1">
-		<Assay id="B1" name="B1" rawFileGroup_ref="raw1">
+		<Assay id="B1" name="B1" rawFilesGroup_ref="raw1">
 			<Label>
 				<Modification massDelta="0">
 					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
 				</Modification>
 			</Label>			
 		</Assay>
-		<Assay id="E1" name="E1" rawFileGroup_ref="raw2">
+		<Assay id="E1" name="E1" rawFilesGroup_ref="raw2">
 			<Label>
 				<Modification massDelta="0">
 					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
@@ -105,29 +105,33 @@ Sketch of an example for using data matrices to represent quant layers
 	
 
 	<ProteinList id="ProtList1">
-		<Protein id="HSP70" accession="HSP70"  SearchDatabase_ref="SD1">
+		<Protein id="HSP70" accession="HSP70"  searchDatabase_ref="SD1">
 			<PeptideConsensus_refs>PEPTIDER MLPEPTIDEK</PeptideConsensus_refs>
 		</Protein>
 	</ProteinList>
 
 	<PeptideConsensusList id="PepList1" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="PEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-			<FeatureRef feature_ref="featureB_1" assay_refs="B1"/>
-			<FeatureRef feature_ref="featureE_1" assay_refs="E1"/>
+
+			
+			<EvidenceRef feature_ref="featureB_1" assay_refs="B1"  identificationFile_ref="identFile1" id_refs="sii1234"/>
+		
+
+			<EvidenceRef feature_ref="featureE_1" assay_refs="E1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="MLPEPTIDEK" charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="MLPEPTIDEK" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>MLPEPTIDEK</PeptideSequence>
-			<FeatureRef feature_ref="featureB_2" assay_refs="B1"/>
-			<FeatureRef feature_ref="featureE_2" assay_refs="E1"/>
+			<EvidenceRef feature_ref="featureB_2" assay_refs="B1"/>
+			<EvidenceRef feature_ref="featureE_2" assay_refs="E1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="unknown1" charge="2"  SearchDatabase_ref="SD1">
-			<FeatureRef feature_ref="featureB_3" assay_refs="B1"/>
-			<FeatureRef feature_ref="featureE_3" assay_refs="E1"/>
+		<PeptideConsensus id="unknown1" charge="2"  searchDatabase_ref="SD1">
+			<EvidenceRef feature_ref="featureB_3" assay_refs="B1"/>
+			<EvidenceRef feature_ref="featureE_3" assay_refs="E1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="unknown2" charge="2" SearchDatabase_ref="SD1">
-			<FeatureRef feature_ref="featureB_4" assay_refs="B1"/>
-			<FeatureRef feature_ref="featureE_4" assay_refs="E1"/>
+		<PeptideConsensus id="unknown2" charge="2" searchDatabase_ref="SD1">
+			<EvidenceRef feature_ref="featureB_4" assay_refs="B1"/>
+			<EvidenceRef feature_ref="featureE_4" assay_refs="E1"/>
 		</PeptideConsensus>	
 		
 		<AssayQuantLayer id="QL1">
@@ -159,13 +163,13 @@ Sketch of an example for using data matrices to represent quant layers
 	</PeptideConsensusList>
 	
 	
-	<FeatureList RawFileGroup_ref="raw1" id="FList1">
+	<FeatureList rawFilesGroup_ref="raw1" id="FList1">
 		<Feature id="featureB_1" charge="2" mz="418.172" rt="26.8685"/>
 		<Feature id="featureB_2" charge="2" mz="421.572" rt="27.8685"/>
 		<Feature id="featureB_3" charge="2" mz="487.729" rt="26.9685"/>
 		<Feature id="featureB_4" charge="2" mz="518.827" rt="26.8685"/>
 	</FeatureList>
-	<FeatureList RawFileGroup_ref="raw2" id="FList2">	
+	<FeatureList rawFilesGroup_ref="raw2" id="FList2">	
 		<Feature id="featureE_1" charge="2" mz="418.172" rt="26.8685"/>
 		<Feature id="featureE_2" charge="2" mz="421.572" rt="27.8685"/>
 		<Feature id="featureE_3" charge="2" mz="487.729" rt="26.9685"/>

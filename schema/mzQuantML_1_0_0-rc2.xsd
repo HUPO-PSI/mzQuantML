@@ -452,15 +452,31 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:complexType name="PeptideIdentificationRefType">
+	<xsd:complexType name="EvidenceRefType">
 		<xsd:annotation>
-			<xsd:documentation>An extension of the IdentificationRefType to include a reference to the Feature(s) to which the Identification corresponds.</xsd:documentation>
+			<xsd:documentation>Evidence associated with the PeptideConsensus, including mandatory associations to features and optional references to identifications that have been assigned to the feature.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="IdentificationRefType">
-				<xsd:attribute name="feature_ref" type="xsd:IDREF" use="required"/>
-			</xsd:extension>
-		</xsd:complexContent>
+		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
+			<xsd:annotation>
+				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="id_refs" type="listOfStrings">
+			<xsd:annotation>
+				<xsd:documentation>One or more reference to the unique identifiers for objects identifying the relevant Peptide in an external file.This attribute MUST be present if an identificationFile_ref is given.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="identificationFile_ref" type="xsd:IDREF">
+			<xsd:annotation>
+				<xsd:documentation>Reference to the IdentificationFile object in this file. This attribute MUST be present if id_refs are given.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="feature_ref" type="xsd:IDREF" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>The feature to which this identification has been assigned.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+
 	</xsd:complexType>
 	<xsd:complexType name="DBIdentificationRefType">
 		<xsd:annotation>
@@ -578,13 +594,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="Modification" type="ModificationType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<xsd:element name="IdentificationRef" type="PeptideIdentificationRefType" minOccurs="0"
-				maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>TO DO - write specifications for how to link to mzIdentML SIIs if appropriate. How to tell which Feature this corresponds with?? Reference for the identification evidence for peptides from the referenced external file and unique identifier e.g. a link to an mzIdentML file and ID for the SpectrumIdentificationItem.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="FeatureRef" minOccurs="1" maxOccurs="unbounded" type="FeatureRefType"/>
+			<xsd:element name="EvidenceRef" minOccurs="1" maxOccurs="unbounded" type="EvidenceRefType"/>
 
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
@@ -844,11 +854,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>One or more identification files used within this assay.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="cvParam" type="CVParamType" minOccurs="0">
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Additional cvParams about the Assay.</xsd:documentation>
+					<xsd:documentation>Additional parameters about the Assay..</xsd:documentation>
 				</xsd:annotation>
-			</xsd:element>
+			</xsd:group>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
 			<xsd:annotation>
@@ -918,6 +928,13 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType">
+				<xsd:sequence>
+					<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Optional CV or user params for IdentificationFile.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:group>
+				</xsd:sequence>
 				<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
 					<xsd:annotation>
 						<xsd:documentation>Reference to the SearchDatabase object in this file from which this identification was made.</xsd:documentation>
@@ -1187,6 +1204,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	<!--  
 	<xsd:complexType name="FeatureRefType">
 		<xsd:annotation>
 			<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
@@ -1196,12 +1214,14 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="Assay_refs" type="xsd:IDREFS" use="required">
+		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
 			<xsd:annotation>
 				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	
+	-->
 	<xsd:simpleType name="listOfDoubles">
 		<xsd:list itemType="xsd:double"/>
 	</xsd:simpleType>

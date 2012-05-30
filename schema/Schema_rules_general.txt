@@ -13,6 +13,7 @@ Failure of a rule with a SHOULD causes a WARNING to be produced
 - In the RatioList, if the numerator is referencing a StudyVariable, the denominator MUST reference a StudyVariable
 - In the RatioList, if the numerator is referencing an Assay, the denominator MUST reference an Assay
 - Exactly one PeptideConsensusList MUST have isFinalResult=¡±true¡±
+- InputObject_refs and OutputOjbect_refs in DataProcessing MUST reference RawFilesGroup, FeatureList, PeptideConsensusList, ProteinList, ProteinGroupList or QuantLayers.
 
 Mapping file additions and associated rules
 *********************************************

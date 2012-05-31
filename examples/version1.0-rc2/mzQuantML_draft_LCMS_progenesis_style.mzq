@@ -113,11 +113,7 @@ Sketch of an example for using data matrices to represent quant layers
 	<PeptideConsensusList id="PepList1" finalResult="true">
 		<PeptideConsensus id="PEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-
-			
 			<EvidenceRef feature_ref="featureB_1" assay_refs="B1"  identificationFile_ref="identFile1" id_refs="sii1234"/>
-		
-
 			<EvidenceRef feature_ref="featureE_1" assay_refs="E1"/>
 		</PeptideConsensus>
 		<PeptideConsensus id="MLPEPTIDEK" charge="2"  searchDatabase_ref="SD1">

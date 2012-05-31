@@ -32,10 +32,10 @@ schema comments / issues:
 			<RawFile location="C:\ms\mzIdent\disease4.raw" id="RF_4"/>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile id="IF_healthy1" location="C:\ms\mzIdent\healthy1.mzid" SearchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_healthy3" location="C:\ms\mzIdent\healthy3.mzid" SearchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_disease2" location="C:\ms\mzIdent\disease2.mzid" SearchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_disease4" location="C:\ms\mzIdent\disease4.mzid" SearchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_healthy1" location="C:\ms\mzIdent\healthy1.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_healthy3" location="C:\ms\mzIdent\healthy3.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease2" location="C:\ms\mzIdent\disease2.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease4" location="C:\ms\mzIdent\disease4.mzid" searchDatabase_ref="SDB1"/>
 		</IdentificationFiles>
 		<SearchDatabase id="SDB1" location="c:\mydb.fasta" >
 			<DatabaseName>
@@ -51,7 +51,7 @@ schema comments / issues:
 	</SoftwareList>
 
 	<DataProcessingList>
-		<DataProcessing id="DP1" software_Ref="MS_EXCEL"  order="1">
+		<DataProcessing id="DP1" software_ref="MS_EXCEL"  order="1">
 			<InputObject_refs>QL_raw_protein_value_layer</InputObject_refs>
 			<OutputObject_refs>QL_normalized_protein_value_layer</OutputObject_refs>
 			<ProcessingMethod order="1">
@@ -62,16 +62,36 @@ schema comments / issues:
 	
 	<AssayList id="AL1">
 		<Assay id="AS_HEALTHY1">
-			<IdentificationFile_Refs>IF_healthy1</IdentificationFile_Refs>
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>	
+			<IdentificationFile_refs>IF_healthy1</IdentificationFile_refs>
 		</Assay>
 		<Assay id="AS_HEALTHY2">
-			<IdentificationFile_Refs>IF_healthy3</IdentificationFile_Refs>
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>	
+			<IdentificationFile_refs>IF_healthy3</IdentificationFile_refs>
 		</Assay>
 		<Assay id="AS_DISEASE1">
-			<IdentificationFile_Refs>IF_disease2</IdentificationFile_Refs>
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>	
+			<IdentificationFile_refs>IF_disease2</IdentificationFile_refs>
 		</Assay>
 		<Assay id="AS_DISEASE2">
-			<IdentificationFile_Refs>IF_disease4</IdentificationFile_Refs>
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>	
+			<IdentificationFile_refs>IF_disease4</IdentificationFile_refs>
 		</Assay>
 	</AssayList>
 	
@@ -91,16 +111,16 @@ schema comments / issues:
 	</RatioList>
 
 	<ProteinList id="PROTLIST">
-		<Protein accession="YDR238C" id="prot1" SearchDatabase_ref="SDB1">
-			<IdentificationRef IdentificationFile_ref="IF_healthy1" id_ref="id1" />			
+		<Protein accession="YDR238C" id="prot1" searchDatabase_ref="SDB1">
+			<IdentificationRef identificationFile_ref="IF_healthy1" id_refs="id1" />			
 			<PeptideConsensus_refs>pep1 pep2</PeptideConsensus_refs>
 		</Protein>
-		<Protein accession="XYZ1ABC" id="prot2" SearchDatabase_ref="SDB1">
-			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id2" />
+		<Protein accession="XYZ1ABC" id="prot2" searchDatabase_ref="SDB1">
+			<IdentificationRef identificationFile_ref="IF_healthy3" id_refs="id2" />
 			<PeptideConsensus_refs>pep3 pep4 pep5</PeptideConsensus_refs>
 		</Protein>
-		<Protein accession="XYZ123A" id="prot3" SearchDatabase_ref="SDB1">
-			<IdentificationRef IdentificationFile_ref="IF_disease2" id_ref="id3"/>
+		<Protein accession="XYZ123A" id="prot3" searchDatabase_ref="SDB1">
+			<IdentificationRef identificationFile_ref="IF_disease2" id_refs="id3"/>
 			<PeptideConsensus_refs>pep1</PeptideConsensus_refs>
 		</Protein>
 		
@@ -158,36 +178,31 @@ schema comments / issues:
 	</ProteinList>
 	
 	<PeptideConsensusList id="PEP_LIST" finalResult="true">
-		<PeptideConsensus id="pep1" charge="1" SearchDatabase_ref="SDB1">
+		<PeptideConsensus id="pep1" charge="1" searchDatabase_ref="SDB1">
 			<PeptideSequence>BLAEMLVIS</PeptideSequence>
 			<Modification location="5">
 				<cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
 			</Modification>
-			<IdentificationRef IdentificationFile_ref="IF_disease2" id_ref="id1" />
-			<FeatureRef assay_refs="AS_DISEASE2" feature_ref="FEAT_4"/>
+			<EvidenceRef assay_refs="AS_DISEASE2" identificationFile_ref="IF_disease2" feature_ref="FEAT_4"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="pep2" charge="1" SearchDatabase_ref="SDB1">
+		<PeptideConsensus id="pep2" charge="1" searchDatabase_ref="SDB1">
 			<PeptideSequence>BLAEMLVISA</PeptideSequence>
 			<Modification location="0">
 				<cvParam accession="UNIMOD:5" name="Carbamyl" cvRef="UNIMOD"/>
 			</Modification>
-			<IdentificationRef IdentificationFile_ref="IF_disease4" id_ref="id2"/>
-			<FeatureRef assay_refs="AS_DISEASE1" feature_ref="FEAT_2"/>
+			<EvidenceRef assay_refs="AS_DISEASE1" identificationFile_ref="IF_disease4" feature_ref="FEAT_2"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="pep3" charge="1" SearchDatabase_ref="SDB1">
+		<PeptideConsensus id="pep3" charge="1" searchDatabase_ref="SDB1">
 			<PeptideSequence>MLVELVISE</PeptideSequence>
-			<IdentificationRef IdentificationFile_ref="IF_healthy1" id_ref="id3" />
-			<FeatureRef assay_refs="AS_HEALTHY1" feature_ref="FEAT_1"/>
+			<EvidenceRef assay_refs="AS_HEALTHY1" identificationFile_ref="IF_healthy1" feature_ref="FEAT_1"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="pep4" charge="1" SearchDatabase_ref="SDB1">
+		<PeptideConsensus id="pep4" charge="1" searchDatabase_ref="SDB1">
 			<PeptideSequence>MLVELVASA</PeptideSequence>
-			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id4"/>
-			<FeatureRef assay_refs="AS_HEALTHY2" feature_ref="FEAT_2"/>
+			<EvidenceRef assay_refs="AS_HEALTHY2" identificationFile_ref="IF_healthy3" feature_ref="FEAT_2"/>
 		</PeptideConsensus>
-		<PeptideConsensus id="pep5" charge="1" SearchDatabase_ref="SDB1">
+		<PeptideConsensus id="pep5" charge="1" searchDatabase_ref="SDB1">
 			<PeptideSequence>MLVELVESA</PeptideSequence>
-			<IdentificationRef IdentificationFile_ref="IF_healthy3" id_ref="id5"/>
-			<FeatureRef assay_refs="AS_HEALTHY2" feature_ref="FEAT_2"/>
+			<EvidenceRef assay_refs="AS_HEALTHY2" identificationFile_ref="IF_healthy3" feature_ref="FEAT_2"/>
 		</PeptideConsensus>
 	
 		<!-- description see above a) -->
@@ -206,7 +221,7 @@ schema comments / issues:
 		</AssayQuantLayer>
 	</PeptideConsensusList>	
 	
-	<FeatureList RawFileGroup_ref="RFG_1" id="FEATLIST">
+	<FeatureList rawFilesGroup_ref="RFG_1" id="FEATLIST">
 		<Feature rt="null" mz="123.55" id="FEAT_1"></Feature>
 		<Feature rt="null" mz="218.34" id="FEAT_2"></Feature>
 		<Feature rt="null" mz="96.53" id="FEAT_3"></Feature>

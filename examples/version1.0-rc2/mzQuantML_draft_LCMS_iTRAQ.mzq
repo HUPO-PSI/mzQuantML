@@ -29,12 +29,12 @@ Sketch of an example for using data matrices to represent quant layers
 		<Organization id="ULiv" name="University of Liverpool"></Organization>
 	</AuditCollection>
 	
-	<AnalysisSummary>
+	<AnalysisSummary>		
 		<cvParam cvRef="PSI-MS" accession="MS:1001837" name="iTraq quantitation analysis"/> <!-- We need a general term for: "MS2 Tag-based analysis" -->
-		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis feature level quantitationn" value="true"/>
-		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis group features by peptide quantitation" value="false"/>
-		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis protein level quantitation" value="false"/>
-		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis protein group level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002024" name="MS2 tag-based analysis feature level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002025" name="MS2 tag-based analysis group features by peptide quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002026" name="MS2 tag-based analysis protein level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002027" name="MS2 tag-based analysis protein group level quantitation" value="false"/>
 	</AnalysisSummary>
 
 	<InputFiles>
@@ -46,7 +46,7 @@ Sketch of an example for using data matrices to represent quant layers
 		</RawFilesGroup>
 		
 		<IdentificationFiles>
-			<IdentificationFile location="allRunIds.mzid" id="id_file1" SearchDatabase_ref="SD1"/>
+			<IdentificationFile location="allRunIds.mzid" id="id_file1" searchDatabase_ref="SD1"/>
 		</IdentificationFiles>
 		
 		
@@ -61,34 +61,34 @@ Sketch of an example for using data matrices to represent quant layers
 	</SoftwareList>
 	
 	<DataProcessingList>
-		<DataProcessing id="DP1"  software_Ref="iTRACKER" order="1">
+		<DataProcessing id="DP1"  software_ref="iTRACKER" order="1">
 			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>
 		</DataProcessing>
 	</DataProcessingList>
 	
 	<AssayList id="AssayList1">
-		<Assay id="_114" name="114" rawFileGroup_ref="raw1">
+		<Assay id="_114" name="114" rawFilesGroup_ref="raw1">
 			<Label>
 				<Modification>
 					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_114"/>
 				</Modification>
 			</Label>
 		</Assay>
-		<Assay id="_115" name="115"  rawFileGroup_ref="raw1">
+		<Assay id="_115" name="115"  rawFilesGroup_ref="raw1">
 			<Label>
 				<Modification>
 					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_115"/>
 				</Modification>
 			</Label>
 		</Assay>
-		<Assay id="_116" name="116" rawFileGroup_ref="raw1">
+		<Assay id="_116" name="116" rawFilesGroup_ref="raw1">
 			<Label>
 				<Modification>
 					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_116"/>
 				</Modification>
 			</Label>
 		</Assay>
-		<Assay id="_117" name="117" rawFileGroup_ref="raw1">
+		<Assay id="_117" name="117" rawFilesGroup_ref="raw1">
 			<Label>
 				<Modification>
 					<cvParam cvRef="PSI-MS" accession="" name="iTRAQ_117"/>
@@ -113,7 +113,7 @@ Sketch of an example for using data matrices to represent quant layers
 	</StudyVariableList>
 	
 	<ProteinList id="ProtList1">
-		<Protein id="HSP70" accession="HSP70" SearchDatabase_ref="SD1">
+		<Protein id="HSP70" accession="HSP70" searchDatabase_ref="SD1">
 			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>			
 		</Protein>
 		<AssayQuantLayer id="QL2">
@@ -130,21 +130,20 @@ Sketch of an example for using data matrices to represent quant layers
 	
 
 	<PeptideConsensusList id="PepList1" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="PEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-			<IdentificationRef  id_ref="SII123" IdentificationFile_ref="id_file1"/>
-			<FeatureRef feature_ref="f1_1" assay_refs="_114 _115 _116 _117"/>			
+			<EvidenceRef  feature_ref="f1_1" assay_refs="_114 _115 _116 _117" id_refs="SII123" identificationFile_ref="id_file1"/>	
 		</PeptideConsensus>
-		<PeptideConsensus id="MLEPTIDER" charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="MLEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
-			<IdentificationRef  id_ref="SII124" IdentificationFile_ref="id_file1"/>
-			<FeatureRef feature_ref="f1_2" assay_refs="_114 _115 _116 _117"/>
+			<EvidenceRef  feature_ref="f1_2" assay_refs="_114 _115 _116 _117" id_refs="SII124" identificationFile_ref="id_file1"/>
+
 		</PeptideConsensus>	
 		
 	</PeptideConsensusList>
 	
 	
-	<FeatureList RawFileGroup_ref="raw1" id="FeatureList1">
+	<FeatureList rawFilesGroup_ref="raw1" id="FeatureList1">
 		<Feature id="f1_1" charge="2" mz="418.172" rt="NaN"/>
 		<Feature id="f1_2" charge="2" mz="421.572" rt="NaN"/>
 		

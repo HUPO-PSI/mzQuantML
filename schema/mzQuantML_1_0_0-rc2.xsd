@@ -139,7 +139,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="CvList" type="CvListType"/>
 			<xsd:element name="Provider" type="ProviderType" minOccurs="0"/>
 			<xsd:element name="AuditCollection" type="AuditCollectionType" minOccurs="0"/>
-			<xsd:element name="AnalysisSummary" type="ParamListType" minOccurs="0" maxOccurs="1">
+			<xsd:element name="AnalysisSummary" type="ParamListType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Summary information about the analysis in terms of the type of analysis, any global scores or metrics and global thresholds used.</xsd:documentation>
 				</xsd:annotation>
@@ -670,11 +670,15 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1.	Specific modifications to the N-terminus should be given the location 0. Modification to the C-terminus should be given as peptide length + 1.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
+		<!-- 
+			
 		<xsd:attribute name="residues" type="listOfChars">
 			<xsd:annotation>
 				<xsd:documentation>Specification of the residue (amino acid) on which the modification occurs. If multiple values are given, it is assumed that the exact residue modified is unknown i.e. the modification is to ONE of the residues listed. Multiple residues would usually only be specified for PMF data.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
+		
+		-->
 		<xsd:attribute name="avgMassDelta" type="xsd:double">
 			<xsd:annotation>
 				<xsd:documentation>Atomic mass delta considering the natural distribution of isotopes in Daltons. </xsd:documentation>
@@ -946,7 +950,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						</xsd:annotation>
 					</xsd:group>
 				</xsd:sequence>
-				<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
+				<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="optional">
 					<xsd:annotation>
 						<xsd:documentation>Reference to the SearchDatabase object in this file from which this identification was made.</xsd:documentation>
 					</xsd:annotation>

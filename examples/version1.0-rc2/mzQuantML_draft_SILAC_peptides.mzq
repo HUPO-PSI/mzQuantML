@@ -14,6 +14,14 @@ Sketch of an example for using data matrices to represent quant layers
 		<Cv id="UNIMOD" fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo"/>
 	</CvList>
 
+	<AnalysisSummary>
+		<cvParam cvRef="PSI-MS" accession="MS:1001837" name="SILAC quantitation analysis"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002001" name="MS1 label-based raw feature quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002002" name="MS1 label-based peptide level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002003" name="MS1 label-based protein level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002004" name="MS1 label-based proteingroup level quantitation" value="false"/>
+	</AnalysisSummary>
+
 	<InputFiles>
 		<RawFilesGroup id="raw1">
 			<RawFile location="../msmsdata/silac1.raw" id="r1"/>			
@@ -145,24 +153,21 @@ Sketch of an example for using data matrices to represent quant layers
 	<PeptideConsensusList id="PepList1" finalResult="true">
 		<PeptideConsensus id="PEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-			<IdentificationRef id_refs="SII1.1  SII7.1" identificationFile_ref="mzid1" feature_ref="f1_1"/>
-			<IdentificationRef id_refs="SII2.1 SII14.1" identificationFile_ref="mzid1" feature_ref="f1_5"/>
-			<IdentificationRef id_refs="SII9.1" identificationFile_ref="mzid2" feature_ref="f2_2"/>
-			<IdentificationRef id_refs="SII12.1" identificationFile_ref="mzid2" feature_ref="f2_6"/>
-			
-			<FeatureRef feature_ref="f1_1" assay_refs="assay_L1"/>
-			<FeatureRef feature_ref="f1_5" assay_refs="assay_H1"/>
-			<FeatureRef feature_ref="f2_2" assay_refs="assay_L2"/>
-			<FeatureRef feature_ref="f2_6" assay_refs="assay_H2"/>
+			<EvidenceRef id_refs="SII1.1  SII7.1" identificationFile_ref="mzid1" feature_ref="f1_1" assay_refs="assay_L1"/>
+			<EvidenceRef id_refs="SII2.1 SII14.1" identificationFile_ref="mzid1" feature_ref="f1_5" assay_refs="assay_H1"/>
+			<EvidenceRef id_refs="SII9.1" identificationFile_ref="mzid2" feature_ref="f2_2" assay_refs="assay_L2"/>
+			<EvidenceRef id_refs="SII12.1" identificationFile_ref="mzid2" feature_ref="f2_6" assay_refs="assay_H2"/>
 		</PeptideConsensus>
 		<PeptideConsensus id="MLEPTIDER" charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
-			<FeatureRef feature_ref="f1_2" assay_refs="assay_L1"/>
-			<FeatureRef feature_ref="f1_6" assay_refs="assay_H1"/>
+			<!-- No links to PSM evidence given here, this is technically valid but should be provided -->			
+			<EvidenceRef feature_ref="f1_2" assay_refs="assay_L1"/>
+			<EvidenceRef feature_ref="f1_6" assay_refs="assay_H1"/>
 		</PeptideConsensus>
 		<PeptideConsensus id="unknown1" charge="2"  searchDatabase_ref="SD1">
-			<FeatureRef feature_ref="f1_3" assay_refs="assay_L1"/>
-			<FeatureRef feature_ref="f1_7" assay_refs="assay_H1"/>
+			<!-- No links to PSM evidence given here -->
+			<EvidenceRef feature_ref="f1_3" assay_refs="assay_L1"/>
+			<EvidenceRef feature_ref="f1_7" assay_refs="assay_H1"/>
 		</PeptideConsensus>
 		
 		

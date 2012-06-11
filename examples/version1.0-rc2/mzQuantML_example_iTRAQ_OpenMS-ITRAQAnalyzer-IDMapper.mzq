@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2" version="1.0.0">
+<CvList>
+ 	<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"  uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+	<Cv id="PSI-MOD" fullName="Proteomics Standards Initiative Protein Modifications Vocabularies" uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" version="1.2"/>
+	<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+</CvList>
+	<AnalysisSummary>
+		<userParam name="QuantType" value="MS2LABEL"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1001837" name="iTraq quantitation analysis"/>
+		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis feature level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis group features by peptide quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis protein level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="" name="MS2 tag-based analysis protein group level quantitation" value="false"/>
+	</AnalysisSummary>
+		<InputFiles>
+		<RawFilesGroup id="rfg_18323375800888711856">
+			<RawFile id="r_17023346920420769479" location="/home/walzer/Desktop/mzq/data-itraq.mzML"/>
+		</RawFilesGroup>
+		<IdentificationFiles>
+			<IdentificationFile id="idf_13123815200227023490" name="/home/walzer/Desktop/mzq/data-itraq.idXML" location="/home/walzer/Desktop/mzq/data-itraq.idXML" searchDatabase_ref="sdb_5577308442300879446"/>
+		</IdentificationFiles>
+		<SearchDatabase id="sdb_5577308442300879446" location="SwissProtHuman554TD_20080526.fasta">
+			<DatabaseName>
+				<userParam name="db_version" value="SwissProtHuman554TD_20080526.fasta" />
+			</DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+	<SoftwareList>
+		<Software id="sw_12018080299977506639" version="1.6.1150">
+			<userParam name="ProteoWizard"/>
+		</Software>
+		<Software id="sw_7281334027146271628" version="1.5">
+			<userParam name="FileFilter"/>
+		</Software>
+		<Software id="sw_9701262298889638243" version="1.5.0">
+			<userParam name="FileFilter"/>
+		</Software>
+		<Software id="sw_13979952911818572991" version="1.7.0">
+			<userParam name="FileFilter"/>
+		</Software>
+		<Software id="sw_10807132586425490898" version="1.10.0">
+			<userParam name="ITRAQAnalyzer"/>
+		</Software>
+		<Software id="sw_8284085889462526101" version="1.10.0">
+			<userParam name="IDMapper"/>
+		</Software>
+	</SoftwareList>
+	<DataProcessingList>
+		<DataProcessing id="dp_575584929653971601" software_ref="sw_12018080299977506639" order="1">
+			<ProcessingMethod order="1">
+				<userParam name="Conversion to mzML format" value="ProteoWizard" />
+			</ProcessingMethod>
+		</DataProcessing>
+		<DataProcessing id="dp_4719453721931133382" software_ref="sw_7281334027146271628" order="2">
+			<ProcessingMethod order="1">
+				<userParam name="Data filtering" value="FileFilter" />
+			</ProcessingMethod>
+		</DataProcessing>
+		<DataProcessing id="dp_10233593378184442144" software_ref="sw_9701262298889638243" order="3">
+			<ProcessingMethod order="1">
+				<userParam name="Data filtering" value="FileFilter" />
+			</ProcessingMethod>
+		</DataProcessing>
+		<DataProcessing id="dp_12276687715145139165" software_ref="sw_13979952911818572991" order="4">
+			<ProcessingMethod order="1">
+				<userParam name="Data filtering" value="FileFilter" />
+			</ProcessingMethod>
+		</DataProcessing>
+		<DataProcessing id="dp_18276486996292355174" software_ref="sw_10807132586425490898" order="5">
+			<ProcessingMethod order="1">
+				<userParam name="Quantitation" value="ITRAQAnalyzer" />
+			</ProcessingMethod>
+		</DataProcessing>
+		<DataProcessing id="dp_11610460695039322871" software_ref="sw_8284085889462526101" order="6">
+			<ProcessingMethod order="1">
+				<userParam name="Identification mapping" value="IDMapper" />
+			</ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+	<AssayList id="assaylist1">
+		<Assay id="a_2049280402456477368" rawFilesGroup_ref="rfg_18323375800888711856">
+			<Label>
+				<Modification massDelta="145">
+					<cvParam cvRef="PSI-MOD" accession="MOD:01522" name="iTRAQ4plex-114 reporter fragment" value="114"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="a_3755056160283238542" rawFilesGroup_ref="rfg_18323375800888711856">
+			<Label>
+				<Modification massDelta="145">
+					<cvParam cvRef="PSI-MOD" accession="MOD:01523" name="iTRAQ4plex-115 reporter fragment" value="115"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="a_1304725192833450044" rawFilesGroup_ref="rfg_18323375800888711856">
+			<Label>
+				<Modification massDelta="145">
+					<cvParam cvRef="PSI-MOD" accession="MOD:01524" name="iTRAQ4plex-116 reporter fragment" value="116"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="a_7577906532021664507" rawFilesGroup_ref="rfg_18323375800888711856">
+			<Label>
+				<Modification massDelta="145">
+					<cvParam cvRef="PSI-MOD" accession="MOD:01525" name="iTRAQ4plex-117, mTRAQ heavy, reporter fragment" value="117"/>
+				</Modification>
+			</Label>
+		</Assay>
+	</AssayList>
+	<StudyVariableList>
+	<StudyVariable id="v_1578702969083614795" name="noname">
+			<Assay_refs>a_2049280402456477368</Assay_refs>
+	</StudyVariable>
+	<StudyVariable id="v_1782240181066403340" name="noname">
+			<Assay_refs>a_3755056160283238542</Assay_refs>
+	</StudyVariable>
+	<StudyVariable id="v_7815126720364414787" name="noname">
+			<Assay_refs>a_1304725192833450044</Assay_refs>
+	</StudyVariable>
+	<StudyVariable id="v_16727934599844175474" name="noname">
+			<Assay_refs>a_7577906532021664507</Assay_refs>
+	</StudyVariable>
+	</StudyVariableList>
+	<PeptideConsensusList  finalResult="false" id="m_13300943404505045279">
+		<PeptideConsensus id="c_14821068875628540696" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DHSGTLGPEEFK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5584442417219981640" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_18330762638526032766" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>STTSVSEEDVSSR</PeptideSequence>
+			<EvidenceRef feature_ref="f_8606479574387492396" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6622776346386293739" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LEVASISVTAFHREAER</PeptideSequence>
+			<EvidenceRef feature_ref="f_13280522108024865777" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_2133666364119591429" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GVDGAGSTSTSTAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_15346462322949648745" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6288050547263943091" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LEDFR</PeptideSequence>
+			<EvidenceRef feature_ref="f_8371420409445973493" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1732158695989913785" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GALALEEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_10046437758990853557" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15343849183214633087" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>KICLDPDAPR</PeptideSequence>
+			<EvidenceRef feature_ref="f_8815914834553071885" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11873679071191440546" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LAPEYEAAATR</PeptideSequence>
+			<EvidenceRef feature_ref="f_17370765995188564526" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12415735447376179856" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>RETDYSDGDPLDVHK</PeptideSequence>
+			<EvidenceRef feature_ref="f_7857326697179262769" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13566884221160757880" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VAEVLNDPENMEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_558411186852317172" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_2681334412065012895" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GNDIIAAAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_13685108172197135356" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4173313116057902063" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LKDDEVAQLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_14906349493966703270" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_16609658418493136646" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MGQEFVESK</PeptideSequence>
+			<EvidenceRef feature_ref="f_10191540475893500993" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_18419133473077767168" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LKDDEVAQLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_11960662366291142370" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_18286796135786753831" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EEILAQAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_7464005712800218939" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17247115572268630747" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>YLAEVAAGDDKK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2244290171802067230" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11100702847153626650" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EVEECANLSRLLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16277088681466119836" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_5485206218188532248" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SCSNPTPRHGGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_13597405633934889303" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12475587417595557278" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>STTPMSPMK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5613550994682857448" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14711385500479443800" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DGVVEITGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_11072478599929753505" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_18214957288777861207" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>CIIVEEGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_10038030724415384431" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6213795081028807336" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VEIIANDQGNR</PeptideSequence>
+			<EvidenceRef feature_ref="f_18025772268182761304" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10651602109948382471" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LDAPNEMAIMELR</PeptideSequence>
+			<EvidenceRef feature_ref="f_7792569869051789118" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15391541325902840607" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>CVELVHEEMQR</PeptideSequence>
+			<EvidenceRef feature_ref="f_8084838722586792818" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12218418422217423457" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VAEVLNDPENMEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_12071567111512614991" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_16437069041332327384" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>YDDMAACMK</PeptideSequence>
+			<EvidenceRef feature_ref="f_294047553362974579" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4296370962321716291" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VIQQSLEQEEAEHK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16275717682951304577" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17460713707430204627" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ALDGAFTEENR</PeptideSequence>
+			<EvidenceRef feature_ref="f_10270358397937336914" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4522852980213300804" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AGLGAVAVSGGGGEMNAPAPNIDDAASR</PeptideSequence>
+			<EvidenceRef feature_ref="f_10425877282757452242" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10759087789904981773" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EEEKQR</PeptideSequence>
+			<EvidenceRef feature_ref="f_3869560779644190847" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_16918356711259076964" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AQIWDTAGQER</PeptideSequence>
+			<EvidenceRef feature_ref="f_4926776061948707852" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3750851873977541148" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TLSPEFNER</PeptideSequence>
+			<EvidenceRef feature_ref="f_10019447442997059273" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12378537099327794408" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>INQEELASGTPPAR</PeptideSequence>
+			<EvidenceRef feature_ref="f_17521512382982898960" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_812762286031308843" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LEIAEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_3975558917375332616" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15560085905940463231" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LQEALER</PeptideSequence>
+			<EvidenceRef feature_ref="f_18124138786193947801" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6041831932035775945" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>NEFNLESK</PeptideSequence>
+			<EvidenceRef feature_ref="f_15474178099222983836" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11748033921120292457" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IDEYDYSKPIQGQQK</PeptideSequence>
+			<EvidenceRef feature_ref="f_7176457973411565890" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3547755514804661826" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>NESMYKK</PeptideSequence>
+			<EvidenceRef feature_ref="f_12345312444511084257" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_9668351532585954086" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EAIELR</PeptideSequence>
+			<EvidenceRef feature_ref="f_2753950270856220301" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_16312349250798211881" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IEEIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_13572265436027813416" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15173712749039221031" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GISQEQMNEFR</PeptideSequence>
+			<EvidenceRef feature_ref="f_17562976298286704588" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8057694598952611429" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GMEPPYPYLGESLSRCLR</PeptideSequence>
+			<EvidenceRef feature_ref="f_18090561812098679902" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13615999860381734318" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MVQFEENGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_1429414306419370055" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3395297737667486114" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GFVPAGESSSEAGGENYK</PeptideSequence>
+			<EvidenceRef feature_ref="f_8852496019011703249" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3379083605000720205" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>CECGSCVCIQPGSYGDTCEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_927431818734862553" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_5509733293842521366" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AGTDGKDR</PeptideSequence>
+			<EvidenceRef feature_ref="f_12384576790399157710" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4404365908649732361" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>QLGAGSIEECAAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_4697446483316817950" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17677047895242436119" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EGNGTVMGAEIR</PeptideSequence>
+			<EvidenceRef feature_ref="f_9202274751852540453" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3230359328779861369" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ATSQAER</PeptideSequence>
+			<EvidenceRef feature_ref="f_7568460075141399263" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_18332903664234896091" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EIDAALQK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2364169676555918648" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8574757897416009250" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SLDMYLETK</PeptideSequence>
+			<EvidenceRef feature_ref="f_13948763677131756022" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8407062750098532566" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>CVDIDECTQVQHLCSQGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_14734976683592930842" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6742604949200175806" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LADVVK</PeptideSequence>
+			<EvidenceRef feature_ref="f_9556752857566429802" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14519912661053998335" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>QMGLGEPSVTK</PeptideSequence>
+			<EvidenceRef feature_ref="f_55891184287815962" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14585397651413696491" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TATDAWGPSR</PeptideSequence>
+			<EvidenceRef feature_ref="f_10028979270398960541" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10666234499579733941" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LEEPSLR</PeptideSequence>
+			<EvidenceRef feature_ref="f_11711111227819808721" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14837726845227523421" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LTGAIMHFGNMKFK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5398632251410028342" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4368109996937173610" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>QDLPALEEKPR</PeptideSequence>
+			<EvidenceRef feature_ref="f_521873653347147704" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11535559046096999095" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GNILEDETAIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_14205927752896688977" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10023126314748083788" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VMELESK</PeptideSequence>
+			<EvidenceRef feature_ref="f_17434244017761933370" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12941156887684446075" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>YLAEVAAGDDKK</PeptideSequence>
+			<EvidenceRef feature_ref="f_10322049968768438606" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8644267134971516158" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IEFER</PeptideSequence>
+			<EvidenceRef feature_ref="f_3544003924805269434" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_341058793857967922" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SVFLCDMDVFDAYLPWR</PeptideSequence>
+			<EvidenceRef feature_ref="f_14995321990482686518" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7788893392922954025" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IFDEAKTAQEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_15080903512819021190" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15724151553831405042" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ELGLNPEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_10855049793806440302" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17145053642172545711" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EFIEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_4495289395011375306" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6215203556898660583" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DSLGDSGYASQHK</PeptideSequence>
+			<EvidenceRef feature_ref="f_9801016132617166139" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14031973791701087884" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>CEEYWPSK</PeptideSequence>
+			<EvidenceRef feature_ref="f_14709527046883897965" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8129692896567068530" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IGFEEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_653202907588213338" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_5133587058692402764" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EAESLIAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_11895260649360060426" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11715928676036674804" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AQLVDMK</PeptideSequence>
+			<EvidenceRef feature_ref="f_15200513063599846439" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_5128550939601974293" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LMSDLR</PeptideSequence>
+			<EvidenceRef feature_ref="f_15024609124611328715" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17975736353359344968" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SREDMIDIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2861073320138533203" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8685901870145470892" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ELAEYFNEYPINLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5199286245585226142" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10454813044811340977" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GTTEGSAVCVFTMK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2873602512314845443" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12590516365335023759" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AAEEIGIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_863648856835264620" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_2668817500253198132" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AIVAGDQNVEYK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16120187397928518596" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14547366252253996091" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GTSQNDPNWVVR</PeptideSequence>
+			<EvidenceRef feature_ref="f_8138868886110419994" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4949153216394908110" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SMIADTVAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_14299847731007665988" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10306725080119202315" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TTWGDGGENSPCNVVSK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2322876240516675804" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14693778060680786424" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EEILAQAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_8638722969446179052" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7540496057563109968" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>FAEGLEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2294604529681385076" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13681414427235994834" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DHSGTLGPEEFK</PeptideSequence>
+			<EvidenceRef feature_ref="f_8728314563627928297" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3763290467066728203" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DLWGAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_6252105987453474100" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1358822093000337773" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TPSLPTTPGGAR</PeptideSequence>
+			<EvidenceRef feature_ref="f_502364713802520854" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8702906004706827582" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GEGGILINSQGER</PeptideSequence>
+			<EvidenceRef feature_ref="f_316125273706809835" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3787673664999218469" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GMPGMPGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_11780627647249581766" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14213139068562419313" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>NQGIEEALK</PeptideSequence>
+			<EvidenceRef feature_ref="f_18398446524551505893" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_9360377179474931012" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>QMVETELK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5309329818509595177" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1440314849104648063" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TIELDGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_12644370745166826912" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3581756347396508909" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IEVDASTRR</PeptideSequence>
+			<EvidenceRef feature_ref="f_2954766616688141743" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13406915890516580337" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DLGDFTSHEIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2071892567971190728" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_350598479887641745" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EGILPER</PeptideSequence>
+			<EvidenceRef feature_ref="f_297398733587951658" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11897190170936997372" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AELGSQEGYVPK</PeptideSequence>
+			<EvidenceRef feature_ref="f_15803583334050133492" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11274243291139506700" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MMQLNRAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16971095144513466712" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_9723021137457296473" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TGLQEVEVK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16946766653516756550" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_16287977150454680931" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ELNLEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_981565697873880950" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_9846308384863797535" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ALEEAMEQK</PeptideSequence>
+			<EvidenceRef feature_ref="f_10127973284100290273" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1198134208151860509" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>YDDMAACMK</PeptideSequence>
+			<EvidenceRef feature_ref="f_6899393603440563401" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_5064729615507098827" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IQSNKGSSYK</PeptideSequence>
+			<EvidenceRef feature_ref="f_12258568055052744953" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10722837194630425718" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LDVGNAEVK</PeptideSequence>
+			<EvidenceRef feature_ref="f_17257835949082228313" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6750258147501329147" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LQEMEGTVK</PeptideSequence>
+			<EvidenceRef feature_ref="f_12887771470572017387" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3575617686708301390" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IYIDSNNNPER</PeptideSequence>
+			<EvidenceRef feature_ref="f_13318640667400551095" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7192877719482389093" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LEITEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_4839223859155171497" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12902852379081230653" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MSRPPPTGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_12223664900264258545" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7251559649690722786" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EVQEFYK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5531051430768473685" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_5469626030403344061" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ASSLIEEAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2813903926508566475" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_8565702103982040442" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DGMLLAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_12163748961203877271" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14205156559653101297" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>KDYEEIGPSICR</PeptideSequence>
+			<EvidenceRef feature_ref="f_10737033483685472290" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13016062361849675821" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LLDELEIAQIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16636874705432794631" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4171290128476974978" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DCTELVLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_4488588968409804326" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6855477672002521795" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LHDAMSLIDAFK</PeptideSequence>
+			<EvidenceRef feature_ref="f_2525699950848565807" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10267675148478339230" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ELEIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16444502380916145449" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14119745261343177443" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TSLDREQR</PeptideSequence>
+			<EvidenceRef feature_ref="f_15700607021480443082" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_5023950554687293412" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DETVSDCSPHIANIGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_13376558462900337056" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6103789239655665911" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>FTIDTK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16702343492381975459" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13351713410080628742" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GVQVETISPGDGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_17511320088732223583" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4099906203535930903" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EDAETIRAGLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_9087409501659467585" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7690793966411561192" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SSSGGSSLAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_7815266780769078215" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14440978297351405531" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VTDANYGELQEHK</PeptideSequence>
+			<EvidenceRef feature_ref="f_979768160379954938" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15445033153562918491" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GALALEEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5768977402168512935" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_2809205180038291517" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EMIESMK</PeptideSequence>
+			<EvidenceRef feature_ref="f_1631680965149525054" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7384082994230201482" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ASSLIEEAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_18035275354003007425" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17408255565081836538" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ELLMDGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_9403986985474282875" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_384880772030536362" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>QLAMNSIK</PeptideSequence>
+			<EvidenceRef feature_ref="f_18411803487479379780" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1815813395731425703" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ETVQTTEDQILKR</PeptideSequence>
+			<EvidenceRef feature_ref="f_12645238004444485840" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_453247266582424213" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>WKPDYDSAASEYGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_13487837928884885770" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13576850021651360337" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>FEGLEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_954945241854537443" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13338805802448794264" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SLSSSLDDTEVKK</PeptideSequence>
+			<EvidenceRef feature_ref="f_18337724486836123795" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11805021017665295115" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>YGEMPVDK</PeptideSequence>
+			<EvidenceRef feature_ref="f_18158330146222923714" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15957849091555922118" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>NVQLTENEIR</PeptideSequence>
+			<EvidenceRef feature_ref="f_6170983825930468875" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7831853720308800807" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EQIFEASK</PeptideSequence>
+			<EvidenceRef feature_ref="f_8721594042704975450" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_9057411336753500475" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LKDDEVAQLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5875589602460954528" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_9094985111891818451" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>AELSSGPGAGGMMK</PeptideSequence>
+			<EvidenceRef feature_ref="f_8551862340166846465" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11606507233504936371" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DHGGALGPEEFK</PeptideSequence>
+			<EvidenceRef feature_ref="f_13499996949605971151" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4427348406738079569" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MADGPRCK</PeptideSequence>
+			<EvidenceRef feature_ref="f_3167263741368254935" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15192022007515325245" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>WLDSSR</PeptideSequence>
+			<EvidenceRef feature_ref="f_4457831556613094164" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1799186391171939044" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TFEDITR</PeptideSequence>
+			<EvidenceRef feature_ref="f_2775356107374834010" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1063258645208330395" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VGWAGNGILCGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_5493072240997817262" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10847796267308011460" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DTVQIHDITGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_13800446718889327993" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_215878702615527665" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LQLEACETR</PeptideSequence>
+			<EvidenceRef feature_ref="f_754812755734158458" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15493360035986076942" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ELGSGNFGTVK</PeptideSequence>
+			<EvidenceRef feature_ref="f_3779670575762151009" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12054140814374745631" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>TITELGEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_11278851705097030245" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4699471917352896612" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IDIAGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_10523392603087860249" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12058830981951065600" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>NQGIEEALK</PeptideSequence>
+			<EvidenceRef feature_ref="f_17722871402512160247" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_3571864968188520379" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DTIQHQQGEAVWVSEGK</PeptideSequence>
+			<EvidenceRef feature_ref="f_17620880481858799333" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13337004309178388510" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GGQYNVNQR</PeptideSequence>
+			<EvidenceRef feature_ref="f_12798272356814837098" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10195184032527474731" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>NGLLDLVEYR</PeptideSequence>
+			<EvidenceRef feature_ref="f_6176229719258036305" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4232709653717068583" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LVPNPDQK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16996194287851293708" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_7243358019491893944" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ILADATAK</PeptideSequence>
+			<EvidenceRef feature_ref="f_16864791538866931202" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_2433896701336567687" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>CGTSGEHLISEALQER</PeptideSequence>
+			<EvidenceRef feature_ref="f_14057481997587996926" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_13589742493644829801" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VQMEELSK</PeptideSequence>
+			<EvidenceRef feature_ref="f_7412633243599464881" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1692496886529540723" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SFHVAVDGFTVVEM</PeptideSequence>
+			<EvidenceRef feature_ref="f_13035323783824697211" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_2968808490058257460" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>QMPEPEQLK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5580002204666680385" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17615247595818381392" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>STTSVSEEDVSSR</PeptideSequence>
+			<EvidenceRef feature_ref="f_7105430725213802012" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17404601520719049843" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MQAALLYALR</PeptideSequence>
+			<EvidenceRef feature_ref="f_1756190191060248031" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_14233846753301866556" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>IIAPPER</PeptideSequence>
+			<EvidenceRef feature_ref="f_1623565755938140710" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_9655554728197515842" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LQEMEGTVK</PeptideSequence>
+			<EvidenceRef feature_ref="f_7176904481053704629" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_17552411295741143139" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DYLIDGSR</PeptideSequence>
+			<EvidenceRef feature_ref="f_12788990058441729016" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_10022241516104426751" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GLESTTLADK</PeptideSequence>
+			<EvidenceRef feature_ref="f_1081712048412351600" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_2544694582656726997" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>LGEWNEK</PeptideSequence>
+			<EvidenceRef feature_ref="f_5800505453280287053" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_1687295150674644787" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>VDKLDASESLR</PeptideSequence>
+			<EvidenceRef feature_ref="f_11751739914784926203" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_16530469195548132186" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MEVEQLR</PeptideSequence>
+			<EvidenceRef feature_ref="f_14477686577952837707" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12240463962054622401" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DLLPSR</PeptideSequence>
+			<EvidenceRef feature_ref="f_7594610378758466058" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_6173449642415236436" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>EMHFHPK</PeptideSequence>
+			<EvidenceRef feature_ref="f_17754185222812655108" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_12074684251445725895" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>DHSGTLGPEEFK</PeptideSequence>
+			<EvidenceRef feature_ref="f_9306047326251166378" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_11951018997074397418" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>SAMNKHNNEAGR</PeptideSequence>
+			<EvidenceRef feature_ref="f_15162529808317114703" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15412307668281736483" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>GSVSVMLRLSAGAR</PeptideSequence>
+			<EvidenceRef feature_ref="f_4751495415933394732" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_185554750629993521" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>MADKDGDLIATK</PeptideSequence>
+			<EvidenceRef feature_ref="f_15407605750240189734" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_4486710711310026185" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>YLAEVAAGDDKK</PeptideSequence>
+			<EvidenceRef feature_ref="f_523695399994516760" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="c_15345974300604586045" charge="0" searchDatabase_ref="sdb_5577308442300879446">
+			<PeptideSequence>ALTNEAENWADNEPNNKR</PeptideSequence>
+			<EvidenceRef feature_ref="f_17219646209022722625" assay_refs="a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507" id_refs="Mascot_2011-02-16T17:17:10" identificationFile_ref="idf_13123815200227023490"/>
+		</PeptideConsensus>
+	</PeptideConsensusList>	
+	<FeatureList id="featurelist1" rawFilesGroup_ref="rfg_18323375800888711856">
+		<Feature id="f_5584442417219981640" rt="2076.4381" mz="535.610229492188" charge="0"/>
+		<Feature id="f_8606479574387492396" rt="2158.5749" mz="509.917694091797" charge="0"/>
+		<Feature id="f_13280522108024865777" rt="2030.62" mz="687.038757324219" charge="0"/>
+		<Feature id="f_15346462322949648745" rt="2147.6516" mz="763.905395507812" charge="0"/>
+		<Feature id="f_8371420409445973493" rt="2003.7919" mz="412.225341796875" charge="0"/>
+		<Feature id="f_10046437758990853557" rt="2097.5317" mz="559.837707519531" charge="0"/>
+		<Feature id="f_8815914834553071885" rt="2063.622" mz="491.609375" charge="0"/>
+		<Feature id="f_17370765995188564526" rt="2100.8617" mz="668.355224609375" charge="0"/>
+		<Feature id="f_7857326697179262769" rt="2001.25" mz="545.532348632812" charge="0"/>
+		<Feature id="f_558411186852317172" rt="2044.1726" mz="896.453125" charge="0"/>
+		<Feature id="f_13685108172197135356" rt="2016.8866" mz="580.84814453125" charge="0"/>
+		<Feature id="f_14906349493966703270" rt="2097.9925" mz="795.975952148438" charge="0"/>
+		<Feature id="f_10191540475893500993" rt="2094.7752" mz="671.850219726562" charge="0"/>
+		<Feature id="f_11960662366291142370" rt="2094.3118" mz="530.986328125" charge="0"/>
+		<Feature id="f_7464005712800218939" rt="2017.4174" mz="595.354614257812" charge="0"/>
+		<Feature id="f_2244290171802067230" rt="2176.4316" mz="571.324829101562" charge="0"/>
+		<Feature id="f_16277088681466119836" rt="2000.7817" mz="617.013549804688" charge="0"/>
+		<Feature id="f_13597405633934889303" rt="2167.4919" mz="735.362731933594" charge="0"/>
+		<Feature id="f_5613550994682857448" rt="2170.8399" mz="642.330871582031" charge="0"/>
+		<Feature id="f_11072478599929753505" rt="2141.5656" mz="603.354675292969" charge="0"/>
+		<Feature id="f_10038030724415384431" rt="2085.379" mz="618.349853515625" charge="0"/>
+		<Feature id="f_11376336121320571212" rt="2027.3019" mz="568.632446289062" charge="0"/>
+		<Feature id="f_18025772268182761304" rt="2085.8383" mz="686.868957519531" charge="0"/>
+		<Feature id="f_7792569869051789118" rt="2155.1586" mz="831.911071777344" charge="0"/>
+		<Feature id="f_8084838722586792818" rt="2051.4688" mz="525.257934570312" charge="0"/>
+		<Feature id="f_12071567111512614991" rt="2040.1017" mz="597.971069335938" charge="0"/>
+		<Feature id="f_294047553362974579" rt="2107.1316" mz="696.813781738281" charge="0"/>
+		<Feature id="f_16275717682951304577" rt="2057.1819" mz="652.680908203125" charge="0"/>
+		<Feature id="f_10270358397937336914" rt="2197.0236" mz="683.838684082031" charge="0"/>
+		<Feature id="f_10425877282757452242" rt="2118.3345" mz="890.437866210938" charge="0"/>
+		<Feature id="f_3869560779644190847" rt="2075.5016" mz="553.807861328125" charge="0"/>
+		<Feature id="f_4926776061948707852" rt="2179.5617" mz="709.861694335938" charge="0"/>
+		<Feature id="f_10019447442997059273" rt="2141.0616" mz="618.821594238281" charge="0"/>
+		<Feature id="f_17521512382982898960" rt="2070.3381" mz="813.932250976562" charge="0"/>
+		<Feature id="f_3975558917375332616" rt="2192.8019" mz="495.806823730469" charge="0"/>
+		<Feature id="f_18124138786193947801" rt="2010.6261" mz="501.788635253906" charge="0"/>
+		<Feature id="f_15474178099222983836" rt="2084.9316" mz="634.840209960938" charge="0"/>
+		<Feature id="f_7176457973411565890" rt="2082.7148" mz="748.736083984375" charge="0"/>
+		<Feature id="f_12345312444511084257" rt="2050.3617" mz="666.374694824219" charge="0"/>
+		<Feature id="f_2753950270856220301" rt="2011.0925" mz="437.759063720703" charge="0"/>
+		<Feature id="f_13572265436027813416" rt="2171.3266" mz="460.288665771484" charge="0"/>
+		<Feature id="f_17802208520663264867" rt="2037.2611" mz="750.340942382812" charge="0"/>
+		<Feature id="f_17562976298286704588" rt="2170.4016" mz="741.859680175781" charge="0"/>
+		<Feature id="f_18090561812098679902" rt="2168.362" mz="604.06640625" charge="0"/>
+		<Feature id="f_16604620828921303845" rt="2134.2919" mz="746.845947265625" charge="0"/>
+		<Feature id="f_1429414306419370055" rt="2072.9337" mz="627.307983398438" charge="0"/>
+		<Feature id="f_8852496019011703249" rt="2125.3782" mz="692.004272460938" charge="0"/>
+		<Feature id="f_927431818734862553" rt="2120.9216" mz="885.700866699219" charge="0"/>
+		<Feature id="f_18139750704429664401" rt="2098.5117" mz="813.855102539062" charge="0"/>
+		<Feature id="f_12384576790399157710" rt="2110.3416" mz="554.299682617188" charge="0"/>
+		<Feature id="f_4697446483316817950" rt="2048.0849" mz="811.426574707031" charge="0"/>
+		<Feature id="f_9202274751852540453" rt="2013.1522" mz="689.350036621094" charge="0"/>
+		<Feature id="f_7568460075141399263" rt="2184.0209" mz="453.744384765625" charge="0"/>
+		<Feature id="f_2364169676555918648" rt="2101.3238" mz="588.346740722656" charge="0"/>
+		<Feature id="f_13948763677131756022" rt="2186.2317" mz="702.368957519531" charge="0"/>
+		<Feature id="f_14734976683592930842" rt="2189.5822" mz="783.688110351562" charge="0"/>
+		<Feature id="f_9556752857566429802" rt="2180.0636" mz="466.805236816406" charge="0"/>
+		<Feature id="f_55891184287815962" rt="2193.2675" mz="717.896362304688" charge="0"/>
+		<Feature id="f_10028979270398960541" rt="2124.8901" mz="603.300109863281" charge="0"/>
+		<Feature id="f_11711111227819808721" rt="2165.3782" mz="494.282440185547" charge="0"/>
+		<Feature id="f_5398632251410028342" rt="2041.1197" mz="1030.05798339844" charge="0"/>
+		<Feature id="f_521873653347147704" rt="2073.3568" mz="528.637817382812" charge="0"/>
+		<Feature id="f_14205927752896688977" rt="2036.6917" mz="497.615020751953" charge="0"/>
+		<Feature id="f_17434244017761933370" rt="2128.1518" mz="562.318359375" charge="0"/>
+		<Feature id="f_10322049968768438606" rt="2187.2222" mz="856.483825683594" charge="0"/>
+		<Feature id="f_3544003924805269434" rt="2104.4753" mz="419.232849121094" charge="0"/>
+		<Feature id="f_14995321990482686518" rt="2023.633" mz="813.400085449219" charge="0"/>
+		<Feature id="f_15080903512819021190" rt="2060.9345" mz="571.32421875" charge="0"/>
+		<Feature id="f_10855049793806440302" rt="2108.1908" mz="594.34765625" charge="0"/>
+		<Feature id="f_4495289395011375306" rt="2040.6084" mz="477.281616210938" charge="0"/>
+		<Feature id="f_9801016132617166139" rt="2078.5017" mz="551.611267089844" charge="0"/>
+		<Feature id="f_14709527046883897965" rt="2114.7361" mz="693.833740234375" charge="0"/>
+		<Feature id="f_653202907588213338" rt="2081.8316" mz="505.792297363281" charge="0"/>
+		<Feature id="f_11895260649360060426" rt="2111.3438" mz="574.841979980469" charge="0"/>
+		<Feature id="f_15200513063599846439" rt="2174.3106" mz="546.819213867188" charge="0"/>
+		<Feature id="f_15024609124611328715" rt="2142.1293" mz="447.744476318359" charge="0"/>
+		<Feature id="f_2861073320138533203" rt="2031.0892" mz="465.589294433594" charge="0"/>
+		<Feature id="f_5199286245585226142" rt="2088.0116" mz="677.696228027344" charge="0"/>
+		<Feature id="f_2873602512314845443" rt="2186.7146" mz="597.971008300781" charge="0"/>
+		<Feature id="f_863648856835264620" rt="2037.777" mz="559.837890625" charge="0"/>
+		<Feature id="f_16120187397928518596" rt="2091.1716" mz="797.938720703125" charge="0"/>
+		<Feature id="f_8138868886110419994" rt="2132.0543" mz="758.884521484375" charge="0"/>
+		<Feature id="f_14299847731007665988" rt="2180.6308" mz="413.899078369141" charge="0"/>
+		<Feature id="f_2322876240516675804" rt="2199.9115" mz="699.337524414062" charge="0"/>
+		<Feature id="f_8638722969446179052" rt="2019.9807" mz="397.239227294922" charge="0"/>
+		<Feature id="f_2294604529681385076" rt="2124.3916" mz="541.311157226562" charge="0"/>
+		<Feature id="f_8728314563627928297" rt="2013.6154" mz="802.913208007812" charge="0"/>
+		<Feature id="f_6252105987453474100" rt="2110.8074" mz="489.285888671875" charge="0"/>
+		<Feature id="f_502364713802520854" rt="2050.9429" mz="649.863403320312" charge="0"/>
+		<Feature id="f_1415254351869827467" rt="2173.8419" mz="767.370361328125" charge="0"/>
+		<Feature id="f_316125273706809835" rt="2128.6721" mz="737.393676757812" charge="0"/>
+		<Feature id="f_11780627647249581766" rt="2007.9941" mz="539.787231445312" charge="0"/>
+		<Feature id="f_18398446524551505893" rt="2069.9625" mz="430.581817626953" charge="0"/>
+		<Feature id="f_5309329818509595177" rt="2069.5818" mz="633.355285644531" charge="0"/>
+		<Feature id="f_6815784655575645277" rt="2131.5373" mz="849.423583984375" charge="0"/>
+		<Feature id="f_12644370745166826912" rt="2020.4554" mz="532.316772460938" charge="0"/>
+		<Feature id="f_2954766616688141743" rt="2004.7371" mz="595.828430175781" charge="0"/>
+		<Feature id="f_2071892567971190728" rt="2144.3516" mz="775.409790039062" charge="0"/>
+		<Feature id="f_297398733587951658" rt="2016.2616" mz="479.277648925781" charge="0"/>
+		<Feature id="f_15803583334050133492" rt="2134.8216" mz="783.422973632812" charge="0"/>
+		<Feature id="f_16971095144513466712" rt="2137.7517" mz="656.356018066406" charge="0"/>
+		<Feature id="f_16946766653516756550" rt="2162.349" mz="645.877746582031" charge="0"/>
+		<Feature id="f_981565697873880950" rt="2033.2616" mz="517.310729980469" charge="0"/>
+		<Feature id="f_10127973284100290273" rt="2138.2951" mz="668.85595703125" charge="0"/>
+		<Feature id="f_6899393603440563401" rt="2114.0926" mz="464.878021240234" charge="0"/>
+		<Feature id="f_12258568055052744953" rt="2151.1816" mz="515.294128417969" charge="0"/>
+		<Feature id="f_17257835949082228313" rt="2159.0591" mz="616.8583984375" charge="0"/>
+		<Feature id="f_12887771470572017387" rt="2104.0117" mz="661.865844726562" charge="0"/>
+		<Feature id="f_13318640667400551095" rt="2061.4616" mz="739.87158203125" charge="0"/>
+		<Feature id="f_4839223859155171497" rt="2183.5541" mz="510.813842773438" charge="0"/>
+		<Feature id="f_12223664900264258545" rt="2064.5822" mz="637.864196777344" charge="0"/>
+		<Feature id="f_5531051430768473685" rt="2072.5518" mz="615.834838867188" charge="0"/>
+		<Feature id="f_2813903926508566475" rt="2183.0921" mz="618.359497070312" charge="0"/>
+		<Feature id="f_12163748961203877271" rt="2023.0814" mz="526.307556152344" charge="0"/>
+		<Feature id="f_10737033483685472290" rt="2058.2125" mz="585.637634277344" charge="0"/>
+		<Feature id="f_17376208357330130186" rt="2117.1716" mz="808.067749023438" charge="0"/>
+		<Feature id="f_16636874705432794631" rt="2152.2947" mz="524.982299804688" charge="0"/>
+		<Feature id="f_4488588968409804326" rt="2079.5229" mz="422.572570800781" charge="0"/>
+		<Feature id="f_4941681242213932421" rt="2117.7637" mz="577.3388671875" charge="0"/>
+		<Feature id="f_2525699950848565807" rt="2054.9653" mz="555.630004882812" charge="0"/>
+		<Feature id="f_16444502380916145449" rt="2019.4517" mz="460.289703369141" charge="0"/>
+		<Feature id="f_15700607021480443082" rt="2014.1387" mz="574.815612792969" charge="0"/>
+		<Feature id="f_13376558462900337056" rt="2053.8522" mz="638.975280761719" charge="0"/>
+		<Feature id="f_16702343492381975459" rt="2177.4386" mz="506.799774169922" charge="0"/>
+		<Feature id="f_1810771583028620335" rt="2044.7469" mz="626.817810058594" charge="0"/>
+		<Feature id="f_17511320088732223583" rt="2091.6395" mz="729.887756347656" charge="0"/>
+		<Feature id="f_11719511531139250651" rt="2047.0916" mz="486.919860839844" charge="0"/>
+		<Feature id="f_9087409501659467585" rt="2034.4562" mz="745.918151855469" charge="0"/>
+		<Feature id="f_7815266780769078215" rt="2121.5376" mz="584.826354980469" charge="0"/>
+		<Feature id="f_979768160379954938" rt="2190.5883" mz="896.452453613281" charge="0"/>
+		<Feature id="f_5768977402168512935" rt="2161.796" mz="559.836364746094" charge="0"/>
+		<Feature id="f_1631680965149525054" rt="2067.469" mz="578.303344726562" charge="0"/>
+		<Feature id="f_18035275354003007425" rt="2196.3502" mz="412.574371337891" charge="0"/>
+		<Feature id="f_9403986985474282875" rt="2101.9402" mz="489.263641357422" charge="0"/>
+		<Feature id="f_18411803487479379780" rt="2079.0034" mz="596.85595703125" charge="0"/>
+		<Feature id="f_12645238004444485840" rt="2122.1366" mz="617.014038085938" charge="0"/>
+		<Feature id="f_13487837928884885770" rt="2138.8524" mz="683.68212890625" charge="0"/>
+		<Feature id="f_954945241854537443" rt="2144.8817" mz="505.791290283203" charge="0"/>
+		<Feature id="f_18337724486836123795" rt="2026.1216" mz="614.348205566406" charge="0"/>
+		<Feature id="f_18158330146222923714" rt="2004.2707" mz="613.8203125" charge="0"/>
+		<Feature id="f_6170983825930468875" rt="2082.2627" mz="680.371826171875" charge="0"/>
+		<Feature id="f_8721594042704975450" rt="2173.3816" mz="620.344909667969" charge="0"/>
+		<Feature id="f_5875589602460954528" rt="2155.8799" mz="530.986267089844" charge="0"/>
+		<Feature id="f_8551862340166846465" rt="2195.8717" mz="538.267456054688" charge="0"/>
+		<Feature id="f_13499996949605971151" rt="2047.5861" mz="515.603393554688" charge="0"/>
+		<Feature id="f_8344781769423183224" rt="2164.3519" mz="778.877380371094" charge="0"/>
+		<Feature id="f_3167263741368254935" rt="2033.8327" mz="611.813598632812" charge="0"/>
+		<Feature id="f_4457831556613094164" rt="2026.6918" mz="454.240692138672" charge="0"/>
+		<Feature id="f_2775356107374834010" rt="2064.0895" mz="513.272521972656" charge="0"/>
+		<Feature id="f_5493072240997817262" rt="2199.3516" mz="468.580871582031" charge="0"/>
+		<Feature id="f_8868246879848429580" rt="2176.8994" mz="626.856079101562" charge="0"/>
+		<Feature id="f_13800446718889327993" rt="2076.0063" mz="505.618225097656" charge="0"/>
+		<Feature id="f_754812755734158458" rt="2148.8786" mz="632.327453613281" charge="0"/>
+		<Feature id="f_3779670575762151009" rt="2089.0186" mz="698.883850097656" charge="0"/>
+		<Feature id="f_11278851705097030245" rt="2088.5087" mz="589.848205566406" charge="0"/>
+		<Feature id="f_1246884459771192335" rt="2043.612" mz="485.743011474609" charge="0"/>
+		<Feature id="f_10523392603087860249" rt="2022.6117" mz="394.741485595703" charge="0"/>
+		<Feature id="f_17722871402512160247" rt="2066.7217" mz="645.369201660156" charge="0"/>
+		<Feature id="f_17620880481858799333" rt="2148.3128" mz="734.046508789062" charge="0"/>
+		<Feature id="f_12798272356814837098" rt="2193.7773" mz="662.359008789062" charge="0"/>
+		<Feature id="f_6176229719258036305" rt="2095.2592" mz="668.372436523438" charge="0"/>
+		<Feature id="f_16996194287851293708" rt="2006.9718" mz="599.855895996094" charge="0"/>
+		<Feature id="f_16864791538866931202" rt="2127.6217" mz="545.839477539062" charge="0"/>
+		<Feature id="f_14057481997587996926" rt="2030.1018" mz="644.317199707031" charge="0"/>
+		<Feature id="f_7412633243599464881" rt="2164.8741" mz="626.346008300781" charge="0"/>
+		<Feature id="f_13035323783824697211" rt="2131.022" mz="566.617797851562" charge="0"/>
+		<Feature id="f_5580002204666680385" rt="2161.3021" mz="694.378112792969" charge="0"/>
+		<Feature id="f_7105430725213802012" rt="2158.1116" mz="764.373657226562" charge="0"/>
+		<Feature id="f_1756190191060248031" rt="2167.9037" mz="655.377258300781" charge="0"/>
+		<Feature id="f_1623565755938140710" rt="2092.1574" mz="470.290863037109" charge="0"/>
+		<Feature id="f_7176904481053704629" rt="2107.6663" mz="441.579193115234" charge="0"/>
+		<Feature id="f_12788990058441729016" rt="2105.0132" mz="541.78369140625" charge="0"/>
+		<Feature id="f_1081712048412351600" rt="2060.3717" mz="661.873962402344" charge="0"/>
+		<Feature id="f_5800505453280287053" rt="2145.4569" mz="582.318420410156" charge="0"/>
+		<Feature id="f_11751739914784926203" rt="2001.7224" mz="507.622894287109" charge="0"/>
+		<Feature id="f_14477686577952837707" rt="2067.0903" mz="524.782836914062" charge="0"/>
+		<Feature id="f_7594610378758466058" rt="2007.4784" mz="422.754333496094" charge="0"/>
+		<Feature id="f_17754185222812655108" rt="2057.6495" mz="615.32421875" charge="0"/>
+		<Feature id="f_826878664483911711" rt="2151.7212" mz="567.304077148438" charge="0"/>
+		<Feature id="f_9306047326251166378" rt="2010.1616" mz="535.610534667969" charge="0"/>
+		<Feature id="f_15162529808317114703" rt="2135.3614" mz="808.913208007812" charge="0"/>
+		<Feature id="f_4751495415933394732" rt="2113.5616" mz="521.964416503906" charge="0"/>
+		<Feature id="f_15407605750240189734" rt="2054.3775" mz="570.654418945312" charge="0"/>
+		<Feature id="f_523695399994516760" rt="2190.0809" mz="428.744964599609" charge="0"/>
+		<Feature id="f_17219646209022722625" rt="2154.6716" mz="792.060424804688" charge="0"/>
+		<MS2AssayQuantLayer id="ms2ql_17878767978518005529">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="MS:1001847" name="reporter ion intensity"/>
+			</DataType>
+			<ColumnIndex>a_2049280402456477368 a_3755056160283238542 a_1304725192833450044 a_7577906532021664507 </ColumnIndex>
+			<DataMatrix>
+					<Row object_ref="f_5584442417219981640">583450 431643 660362 518530 </Row>
+					<Row object_ref="f_8606479574387492396">1.52119e+06 1.35803e+06 1.89119e+06 1.96645e+06 </Row>
+					<Row object_ref="f_13280522108024865777">581324 612434 240110 314194 </Row>
+					<Row object_ref="f_15346462322949648745">139698 163591 152882 170787 </Row>
+					<Row object_ref="f_8371420409445973493">4.80905e+06 3.78953e+06 5.36791e+06 2.70241e+06 </Row>
+					<Row object_ref="f_10046437758990853557">6.14241e+07 4.80606e+07 5.39294e+07 4.50259e+07 </Row>
+					<Row object_ref="f_8815914834553071885">1.64499e+06 1.29007e+06 2.97655e+06 1.95808e+06 </Row>
+					<Row object_ref="f_17370765995188564526">2.89556e+07 2.621e+07 3.10133e+07 4.12869e+07 </Row>
+					<Row object_ref="f_7857326697179262769">628157 675286 488444 435212 </Row>
+					<Row object_ref="f_558411186852317172">857762 757546 0 942892 </Row>
+					<Row object_ref="f_13685108172197135356">1.29677e+06 921894 1.09821e+06 944718 </Row>
+					<Row object_ref="f_14906349493966703270">927379 939144 1.48716e+06 1.72501e+06 </Row>
+					<Row object_ref="f_10191540475893500993">4.67229e+06 2.83332e+06 3.23394e+06 4.20455e+06 </Row>
+					<Row object_ref="f_11960662366291142370">5.23234e+06 4.84898e+06 7.79173e+06 8.24094e+06 </Row>
+					<Row object_ref="f_7464005712800218939">5.07194e+06 4.36686e+06 3.77418e+06 3.51502e+06 </Row>
+					<Row object_ref="f_2244290171802067230">5.02519e+06 4.19768e+06 5.09588e+06 5.01432e+06 </Row>
+					<Row object_ref="f_16277088681466119836">644844 423205 472329 406085 </Row>
+					<Row object_ref="f_13597405633934889303">3.10754e+06 2.76265e+06 4.50118e+06 5.44249e+06 </Row>
+					<Row object_ref="f_5613550994682857448">1.66264e+06 1.33654e+06 1.95313e+06 2.18795e+06 </Row>
+					<Row object_ref="f_11072478599929753505">571137 310299 494626 184947 </Row>
+					<Row object_ref="f_10038030724415384431">1.63984e+06 1.27652e+06 2.25213e+06 1.86948e+06 </Row>
+					<Row object_ref="f_11376336121320571212">24863.4 11610.1 19102.8 15190.7 </Row>
+					<Row object_ref="f_18025772268182761304">2.31554e+06 1.84103e+06 2.33339e+06 2.75322e+06 </Row>
+					<Row object_ref="f_7792569869051789118">258971 242636 156520 143352 </Row>
+					<Row object_ref="f_8084838722586792818">74434.9 42918.2 38162.3 51344.8 </Row>
+					<Row object_ref="f_12071567111512614991">649851 581260 67997.4 792119 </Row>
+					<Row object_ref="f_294047553362974579">1.74907e+06 1.54513e+06 2.18349e+06 1.93331e+06 </Row>
+					<Row object_ref="f_16275717682951304577">1.52244e+06 1.10728e+06 1.05468e+06 1.48925e+06 </Row>
+					<Row object_ref="f_10270358397937336914">119234 89822 89419.6 132709 </Row>
+					<Row object_ref="f_10425877282757452242">14268 7445.67 11784.1 0 </Row>
+					<Row object_ref="f_3869560779644190847">326031 248428 381497 183069 </Row>
+					<Row object_ref="f_4926776061948707852">1.50346e+06 1.36642e+06 1.746e+06 1.97965e+06 </Row>
+					<Row object_ref="f_10019447442997059273">1.37405e+06 1.09501e+06 1.37932e+06 1.61932e+06 </Row>
+					<Row object_ref="f_17521512382982898960">148426 78649.1 111301 154855 </Row>
+					<Row object_ref="f_3975558917375332616">1.30581e+07 1.30876e+07 1.51846e+07 7.87084e+06 </Row>
+					<Row object_ref="f_18124138786193947801">1.10445e+07 8.93726e+06 1.45857e+07 7.45686e+06 </Row>
+					<Row object_ref="f_15474178099222983836">1.61693e+07 1.31994e+07 1.63816e+07 1.53608e+07 </Row>
+					<Row object_ref="f_7176457973411565890">524961 399735 445659 553210 </Row>
+					<Row object_ref="f_12345312444511084257">467380 386369 424239 360264 </Row>
+					<Row object_ref="f_2753950270856220301">1.77576e+06 1.33053e+06 2.67603e+06 1.83175e+06 </Row>
+					<Row object_ref="f_13572265436027813416">1.39543e+07 9.43509e+06 1.13341e+07 5.34772e+06 </Row>
+					<Row object_ref="f_17802208520663264867">40077.4 0 41902 0 </Row>
+					<Row object_ref="f_17562976298286704588">6.29966e+06 5.49626e+06 7.10246e+06 8.94369e+06 </Row>
+					<Row object_ref="f_18090561812098679902">423756 203289 115105 293789 </Row>
+					<Row object_ref="f_16604620828921303845">290076 296233 733963 564238 </Row>
+					<Row object_ref="f_1429414306419370055">361293 223238 391868 421672 </Row>
+					<Row object_ref="f_8852496019011703249">30829 42496.3 31624 80252.7 </Row>
+					<Row object_ref="f_927431818734862553">22932.1 15401.5 63310.6 21889.5 </Row>
+					<Row object_ref="f_18139750704429664401">48252.8 46929.7 61720.5 61315 </Row>
+					<Row object_ref="f_12384576790399157710">4.16283e+06 3.06508e+06 3.56503e+06 7.02753e+06 </Row>
+					<Row object_ref="f_4697446483316817950">656447 488985 1.10292e+06 789596 </Row>
+					<Row object_ref="f_9202274751852540453">5.23904e+06 4.55509e+06 5.53955e+06 6.46452e+06 </Row>
+					<Row object_ref="f_7568460075141399263">227776 160324 186539 153961 </Row>
+					<Row object_ref="f_2364169676555918648">550324 413955 556951 437528 </Row>
+					<Row object_ref="f_13948763677131756022">4.9726e+06 2.59237e+06 6.26362e+06 5.95558e+06 </Row>
+					<Row object_ref="f_14734976683592930842">452998 529440 427550 443376 </Row>
+					<Row object_ref="f_9556752857566429802">2.31652e+06 1.10187e+06 1.76426e+06 847414 </Row>
+					<Row object_ref="f_55891184287815962">828834 578226 662363 557768 </Row>
+					<Row object_ref="f_10028979270398960541">2.08608e+06 1.47268e+06 1.61875e+06 1.71057e+06 </Row>
+					<Row object_ref="f_11711111227819808721">2.41067e+06 1.62025e+06 2.33521e+06 2.99499e+06 </Row>
+					<Row object_ref="f_5398632251410028342">225940 186245 69823.9 121418 </Row>
+					<Row object_ref="f_521873653347147704">801336 644605 751532 954249 </Row>
+					<Row object_ref="f_14205927752896688977">99841 53052 52584.7 30914.2 </Row>
+					<Row object_ref="f_17434244017761933370">2.18089e+06 1.45656e+06 1.92236e+06 1.31152e+06 </Row>
+					<Row object_ref="f_10322049968768438606">885016 746667 871674 945873 </Row>
+					<Row object_ref="f_3544003924805269434">2.02661e+06 1.58276e+06 2.22608e+06 1.53048e+06 </Row>
+					<Row object_ref="f_14995321990482686518">70885.1 56794.2 69569 82821.8 </Row>
+					<Row object_ref="f_15080903512819021190">325121 297422 454964 373364 </Row>
+					<Row object_ref="f_10855049793806440302">131708 121770 99289.7 152752 </Row>
+					<Row object_ref="f_4495289395011375306">4.58018e+06 2.80565e+06 4.22168e+06 2.5157e+06 </Row>
+					<Row object_ref="f_9801016132617166139">79235.5 91087.7 72241.9 98692.8 </Row>
+					<Row object_ref="f_14709527046883897965">239750 165597 203789 265097 </Row>
+					<Row object_ref="f_653202907588213338">1.73972e+07 1.53521e+07 1.67707e+07 1.29124e+07 </Row>
+					<Row object_ref="f_11895260649360060426">327095 233316 247665 217274 </Row>
+					<Row object_ref="f_15200513063599846439">1.83857e+06 1.2085e+06 1.70672e+06 973301 </Row>
+					<Row object_ref="f_15024609124611328715">1.09282e+06 847450 1.26746e+06 794024 </Row>
+					<Row object_ref="f_2861073320138533203">1.12415e+06 847275 1.03499e+06 1.2887e+06 </Row>
+					<Row object_ref="f_5199286245585226142">238772 120337 82869.3 130950 </Row>
+					<Row object_ref="f_2873602512314845443">81197 63919.6 43098.4 45020.6 </Row>
+					<Row object_ref="f_863648856835264620">1.02221e+06 786968 890685 768095 </Row>
+					<Row object_ref="f_16120187397928518596">1.55993e+06 1.49984e+06 1.88716e+06 2.12923e+06 </Row>
+					<Row object_ref="f_8138868886110419994">778324 774736 987066 1.38628e+06 </Row>
+					<Row object_ref="f_14299847731007665988">27776 19940.4 31447 25676.8 </Row>
+					<Row object_ref="f_2322876240516675804">0 0 0 0 </Row>
+					<Row object_ref="f_8638722969446179052">3.45218e+06 2.65029e+06 2.66852e+06 2.49387e+06 </Row>
+					<Row object_ref="f_2294604529681385076">3.60845e+06 2.70747e+06 2.83193e+06 2.73442e+06 </Row>
+					<Row object_ref="f_8728314563627928297">779933 658892 978624 1.07013e+06 </Row>
+					<Row object_ref="f_6252105987453474100">2.54454e+06 1.81755e+06 2.46728e+06 1.2778e+06 </Row>
+					<Row object_ref="f_502364713802520854">718006 517852 725815 580906 </Row>
+					<Row object_ref="f_1415254351869827467">1.55323e+06 1.17574e+06 3.54308e+06 3.76019e+06 </Row>
+					<Row object_ref="f_316125273706809835">118555 66612.7 82298.2 96105.3 </Row>
+					<Row object_ref="f_11780627647249581766">59353.9 58256.8 56606.1 0 </Row>
+					<Row object_ref="f_18398446524551505893">2.14679e+06 1.27083e+06 1.50149e+06 2.02867e+06 </Row>
+					<Row object_ref="f_5309329818509595177">1.14987e+06 1.05354e+06 1.38056e+06 1.70711e+06 </Row>
+					<Row object_ref="f_6815784655575645277">1.05897e+06 1.00177e+06 1.66569e+06 2.07615e+06 </Row>
+					<Row object_ref="f_12644370745166826912">234376 185909 273544 170545 </Row>
+					<Row object_ref="f_2954766616688141743">239588 160286 182133 104991 </Row>
+					<Row object_ref="f_2071892567971190728">1.17022e+06 1.21962e+06 1.31648e+06 1.2639e+06 </Row>
+					<Row object_ref="f_297398733587951658">604971 450907 673620 585556 </Row>
+					<Row object_ref="f_15803583334050133492">1.07941e+06 835848 497401 640896 </Row>
+					<Row object_ref="f_16971095144513466712">0 0 0 0 </Row>
+					<Row object_ref="f_16946766653516756550">917834 774443 891492 661790 </Row>
+					<Row object_ref="f_981565697873880950">593617 326862 428136 318230 </Row>
+					<Row object_ref="f_10127973284100290273">975337 832711 969601 983341 </Row>
+					<Row object_ref="f_6899393603440563401">36905.2 32586.4 49254.2 39542.4 </Row>
+					<Row object_ref="f_12258568055052744953">99896 108993 111825 172628 </Row>
+					<Row object_ref="f_17257835949082228313">357875 290815 308809 334438 </Row>
+					<Row object_ref="f_12887771470572017387">1.66277e+07 1.41771e+07 2.39847e+07 1.90375e+07 </Row>
+					<Row object_ref="f_13318640667400551095">585675 514142 559301 644850 </Row>
+					<Row object_ref="f_4839223859155171497">3.52948e+07 1.75573e+07 2.14447e+07 7.73892e+06 </Row>
+					<Row object_ref="f_12223664900264258545">216924 161383 202934 195011 </Row>
+					<Row object_ref="f_5531051430768473685">4.32822e+06 3.86551e+06 4.72806e+06 5.27995e+06 </Row>
+					<Row object_ref="f_2813903926508566475">5.003e+07 4.26175e+07 6.33905e+07 5.85914e+07 </Row>
+					<Row object_ref="f_12163748961203877271">202196 111074 183072 59499.3 </Row>
+					<Row object_ref="f_10737033483685472290">454781 302677 297721 426443 </Row>
+					<Row object_ref="f_17376208357330130186">34569.7 13638.7 38327.1 26679.1 </Row>
+					<Row object_ref="f_16636874705432794631">64653.9 47590.9 89661.4 86186.8 </Row>
+					<Row object_ref="f_4488588968409804326">69192.4 41155.3 48918.7 32388.3 </Row>
+					<Row object_ref="f_4941681242213932421">89263.4 46242.4 63385.2 66228.2 </Row>
+					<Row object_ref="f_2525699950848565807">261965 293914 431988 401385 </Row>
+					<Row object_ref="f_16444502380916145449">3.76434e+06 1.66659e+06 2.61659e+06 1.31354e+06 </Row>
+					<Row object_ref="f_15700607021480443082">3.83885e+06 3.22602e+06 4.41833e+06 3.54436e+06 </Row>
+					<Row object_ref="f_13376558462900337056">0 55755.5 59430 74130 </Row>
+					<Row object_ref="f_16702343492381975459">3.0144e+06 2.30193e+06 2.82407e+06 1.88279e+06 </Row>
+					<Row object_ref="f_1810771583028620335">35436.9 25386.5 28544.7 27872.8 </Row>
+					<Row object_ref="f_17511320088732223583">627394 512866 641997 963116 </Row>
+					<Row object_ref="f_11719511531139250651">679614 497814 758366 760029 </Row>
+					<Row object_ref="f_9087409501659467585">987328 699769 726105 1.10575e+06 </Row>
+					<Row object_ref="f_7815266780769078215">792298 418220 719722 694842 </Row>
+					<Row object_ref="f_979768160379954938">726797 567354 37873.6 599650 </Row>
+					<Row object_ref="f_5768977402168512935">1.03614e+06 835702 661426 756402 </Row>
+					<Row object_ref="f_1631680965149525054">1.32382e+06 1.1184e+06 1.23525e+06 1.32261e+06 </Row>
+					<Row object_ref="f_18035275354003007425">33945.8 28366 35290.5 28434.3 </Row>
+					<Row object_ref="f_9403986985474282875">3.31576e+06 2.25643e+06 985438 2.66559e+06 </Row>
+					<Row object_ref="f_18411803487479379780">566843 449306 403038 331207 </Row>
+					<Row object_ref="f_12645238004444485840">761166 666453 325187 336584 </Row>
+					<Row object_ref="f_13487837928884885770">489752 338004 374536 452410 </Row>
+					<Row object_ref="f_954945241854537443">1.03789e+06 671171 2.69078e+06 433576 </Row>
+					<Row object_ref="f_18337724486836123795">575411 417859 405974 434870 </Row>
+					<Row object_ref="f_18158330146222923714">8.01961e+06 6.15263e+06 7.57406e+06 8.32194e+06 </Row>
+					<Row object_ref="f_6170983825930468875">2.05488e+06 1.71452e+06 1.69462e+06 2.35e+06 </Row>
+					<Row object_ref="f_8721594042704975450">4.7707e+07 3.83724e+07 7.7036e+07 7.36558e+07 </Row>
+					<Row object_ref="f_5875589602460954528">70365.1 52455.9 45041.8 58704.3 </Row>
+					<Row object_ref="f_8551862340166846465">339025 242672 386973 481963 </Row>
+					<Row object_ref="f_13499996949605971151">685891 441331 676056 881992 </Row>
+					<Row object_ref="f_8344781769423183224">515081 481979 587115 687597 </Row>
+					<Row object_ref="f_3167263741368254935">197861 165464 188913 255514 </Row>
+					<Row object_ref="f_4457831556613094164">595370 446111 612438 364458 </Row>
+					<Row object_ref="f_2775356107374834010">2.93973e+06 2.42318e+06 3.15882e+06 2.3225e+06 </Row>
+					<Row object_ref="f_5493072240997817262">73157.5 24454.4 54532.5 48140.8 </Row>
+					<Row object_ref="f_8868246879848429580">296974 240731 289711 429232 </Row>
+					<Row object_ref="f_13800446718889327993">1.69805e+06 1.7056e+06 2.14452e+06 1.46415e+06 </Row>
+					<Row object_ref="f_754812755734158458">152252 119543 9284.38 281471 </Row>
+					<Row object_ref="f_3779670575762151009">3.85734e+06 3.27598e+06 4.32958e+06 3.52986e+06 </Row>
+					<Row object_ref="f_11278851705097030245">1.88007e+06 1.35892e+06 1.46448e+06 1.24405e+06 </Row>
+					<Row object_ref="f_1246884459771192335">0 0 23072.8 0 </Row>
+					<Row object_ref="f_10523392603087860249">1.7408e+07 1.39717e+07 1.82218e+07 9.95207e+06 </Row>
+					<Row object_ref="f_17722871402512160247">3.46775e+07 2.72287e+07 3.99056e+07 3.90497e+07 </Row>
+					<Row object_ref="f_17620880481858799333">174150 115965 123807 224441 </Row>
+					<Row object_ref="f_12798272356814837098">1.32244e+06 1.02154e+06 1.29438e+06 1.09966e+06 </Row>
+					<Row object_ref="f_6176229719258036305">149614 119436 167044 155648 </Row>
+					<Row object_ref="f_16996194287851293708">829651 508095 746978 623187 </Row>
+					<Row object_ref="f_16864791538866931202">1.36439e+06 776404 970792 611841 </Row>
+					<Row object_ref="f_14057481997587996926">561832 414494 543023 807904 </Row>
+					<Row object_ref="f_7412633243599464881">1.45601e+06 983902 684147 1.55779e+06 </Row>
+					<Row object_ref="f_13035323783824697211">166772 126437 176786 145022 </Row>
+					<Row object_ref="f_5580002204666680385">2.0879e+06 1.81605e+06 3.02139e+06 3.40563e+06 </Row>
+					<Row object_ref="f_7105430725213802012">1.13096e+07 9.63188e+06 1.37916e+07 1.19889e+07 </Row>
+					<Row object_ref="f_1756190191060248031">952287 687673 703795 662566 </Row>
+					<Row object_ref="f_1623565755938140710">8.92011e+06 7.50624e+06 9.60318e+06 8.39012e+06 </Row>
+					<Row object_ref="f_7176904481053704629">576491 472064 823620 600757 </Row>
+					<Row object_ref="f_12788990058441729016">533840 308188 348294 442522 </Row>
+					<Row object_ref="f_1081712048412351600">615904 522548 711567 442167 </Row>
+					<Row object_ref="f_5800505453280287053">1.64622e+06 1.14199e+06 1.53525e+06 1.29269e+06 </Row>
+					<Row object_ref="f_11751739914784926203">1.04658e+06 1.04265e+06 961196 955881 </Row>
+					<Row object_ref="f_14477686577952837707">4.08351e+06 3.76696e+06 4.04522e+06 3.88327e+06 </Row>
+					<Row object_ref="f_7594610378758466058">2.08992e+06 1.90139e+06 2.44937e+06 1.421e+06 </Row>
+					<Row object_ref="f_17754185222812655108">824055 537736 457720 706245 </Row>
+					<Row object_ref="f_826878664483911711">45393.1 23729.2 37360.8 31616.7 </Row>
+					<Row object_ref="f_9306047326251166378">6.01097e+06 5.36779e+06 8.66894e+06 8.30135e+06 </Row>
+					<Row object_ref="f_15162529808317114703">358834 21148.4 73932.7 284313 </Row>
+					<Row object_ref="f_4751495415933394732">416408 325147 154094 259715 </Row>
+					<Row object_ref="f_15407605750240189734">303020 280475 230382 257952 </Row>
+					<Row object_ref="f_523695399994516760">835384 863616 772549 753721 </Row>
+					<Row object_ref="f_17219646209022722625">369939 440515 421159 470110 </Row>
+			</DataMatrix>
+		</MS2AssayQuantLayer>
+	</FeatureList>
+</MzQuantML>

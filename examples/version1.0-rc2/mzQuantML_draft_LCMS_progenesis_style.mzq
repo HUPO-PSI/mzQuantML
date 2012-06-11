@@ -29,11 +29,11 @@ Sketch of an example for using data matrices to represent quant layers
 	</AuditCollection>
 	
 	<AnalysisSummary>
-		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free"/>
-		<cvParam cvRef="PSI-MS" accession="" name="label-free raw feature quantitation" value="false"/>
-		<cvParam cvRef="PSI-MS" accession="" name="label-free peptide level quantitation" value="true"/>
-		<cvParam cvRef="PSI-MS" accession="" name="label-free protein level quantitation" value="true"/>
-		<cvParam cvRef="PSI-MS" accession="" name="label-free protein group level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free quantitation analysis"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002001" name="MS1 label-based raw feature quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002002" name="MS1 label-based peptide level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002003" name="MS1 label-based protein level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002004" name="MS1 label-based proteingroup level quantitation" value="false"/>
 	</AnalysisSummary>
 
 	<InputFiles>
@@ -55,17 +55,21 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	
 	<SoftwareList>
-		<Software id="Progenesis" version="2.3"></Software>
+		<Software id="Progenesis" version="2.3">
+			<cvParam cvRef="PSI-MS" accession="MS:1001830" name="Progenesis LC-MS"/>
+		</Software>
 	</SoftwareList>
 	
 	
 	<DataProcessingList>
 		<DataProcessing id="DP1"  software_ref="Progenesis" order="1">
 			<ProcessingMethod order="1">
-				<userParam name=""/>
+				<cvParam cvRef="PSI-MS" accession="MS:1001865" name="Progenesis automatic alignment"/>
 			</ProcessingMethod>
-		</DataProcessing>
-		
+			<ProcessingMethod order="1">
+				<cvParam cvRef="PSI-MS" accession="MS:1001867" name="Progenesis normalization"/>
+			</ProcessingMethod>
+		</DataProcessing>		
 	</DataProcessingList>
 
 	<AssayList id="AssayList1">
@@ -89,11 +93,11 @@ Sketch of an example for using data matrices to represent quant layers
 
 	<StudyVariableList>
 		<StudyVariable id="SV_group_B" name="Group B">
-			<cvParam accession="MS:1001807" cvRef="PSI-MS"    value="1" name="StudyVariable attribute"/>
+			<cvParam accession="MS:1001808" cvRef="PSI-MS" name="technical replicate"/>
 			<Assay_refs>B1</Assay_refs>
 		</StudyVariable>
 		<StudyVariable id="SV_group_E" name="Group E">
-			<cvParam accession="MS:1001807" cvRef="PSI-MS"    value="1" name="StudyVariable attribute"/>
+			<cvParam accession="MS:1001808" cvRef="PSI-MS" name="technical replicate"/>
 			<Assay_refs>E1</Assay_refs>
 		</StudyVariable>
 

@@ -67,7 +67,7 @@
 		<Assay id="a_17732402150945411857" rawFilesGroup_ref="rfg_14435107640328453146">
 			<Label>
 				<Modification massDelta="0" >
-					<cvParam cvRef="PSI-MOD" accession="TODO" name="TODO" value="none"/>
+					<cvParam cvRef="PSI-MS" accession="MS:1002038" name="unlabeled sample" value="none"/>
 				</Modification>
 			</Label>
 		</Assay>

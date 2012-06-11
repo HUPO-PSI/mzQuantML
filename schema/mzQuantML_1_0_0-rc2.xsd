@@ -613,7 +613,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The charge of this instance of Peptide. If more than one value is provided, it is assumed that this Peptide element is summarising multiple charge states of the Peptide. </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
+		<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="optional">
 			<xsd:annotation>
 				<xsd:documentation>The search database from which this peptide was identified</xsd:documentation>
 			</xsd:annotation>

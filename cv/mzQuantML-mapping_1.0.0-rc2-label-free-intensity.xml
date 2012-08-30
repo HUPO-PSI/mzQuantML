@@ -17,11 +17,11 @@
     <CvMappingRuleList>
        <!-- Add specific rules for Label free intensity -->
 	   <CvMappingRule id="AnalysisSummary_rule" cvElementPath="/MzQuantML/AnalysisSummary/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/AnalysisSummary" cvTermsCombinationLogic="AND">
-			<CvTerm termAccession="MS:1001834" useTermName="false" useTerm="false" termName="LC-MS label-free quantitation analysis" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
-			<CvTerm termAccession="MS:1002019" useTermName="false" useTerm="false" termName="label-free raw feature quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-			<CvTerm termAccession="MS:1002020" useTermName="false" useTerm="false" termName="label-free peptide level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-			<CvTerm termAccession="MS:1002021" useTermName="false" useTerm="false" termName="label-free protein level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-			<CvTerm termAccession="MS:1002022" useTermName="false" useTerm="false" termName="label-free proteingroup level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001834" useTermName="false" useTerm="true" termName="LC-MS label-free quantitation analysis" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002019" useTermName="false" useTerm="true" termName="label-free raw feature quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002020" useTermName="false" useTerm="true" termName="label-free peptide level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002021" useTermName="false" useTerm="true" termName="label-free protein level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002022" useTermName="false" useTerm="true" termName="label-free proteingroup level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 	   </CvMappingRule>
 
     </CvMappingRuleList>

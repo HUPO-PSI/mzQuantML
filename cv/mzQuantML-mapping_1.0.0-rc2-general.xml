@@ -86,7 +86,7 @@
 			<CvTerm termAccession="MS:1001807" useTermName="false" useTerm="false" termName="StudyVariable attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 		
-		<CvMappingRule id="AnalysisSummary_rule" cvElementPath="/MzQuantML/AnalysisSummary/cvParam/@accession" requirementLevel="SHOULD"  scopePath="/MzQuantML/AnalysisSummary" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="AnalysisSummary_rule" cvElementPath="/MzQuantML/AnalysisSummary/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/AnalysisSummary" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001833" useTermName="false" useTerm="false" termName="quantitation analysis summary" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 

@@ -31,10 +31,10 @@ Sketch of an example for using data matrices to represent quant layers
 	
 	<AnalysisSummary>		
 		<cvParam cvRef="PSI-MS" accession="MS:1001837" name="iTraq quantitation analysis"/> <!-- We need a general term for: "MS2 Tag-based analysis" -->
-		<cvParam cvRef="PSI-MS" accession="MS:1002024" name="MS2 tag-based analysis feature level quantitation" value="true"/>
-		<cvParam cvRef="PSI-MS" accession="MS:1002025" name="MS2 tag-based analysis group features by peptide quantitation" value="false"/>
-		<cvParam cvRef="PSI-MS" accession="MS:1002026" name="MS2 tag-based analysis protein level quantitation" value="false"/>
-		<cvParam cvRef="PSI-MS" accession="MS:1002027" name="MS2 tag-based analysis protein group level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002024" name="MS2 tag-based feature level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002025" name="MS2 tag-based peptide level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002026" name="MS2 tag-based protein level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002027" name="MS2 tag-based proteingroup level quantitation" value="false"/>
 	</AnalysisSummary>
 
 	<InputFiles>

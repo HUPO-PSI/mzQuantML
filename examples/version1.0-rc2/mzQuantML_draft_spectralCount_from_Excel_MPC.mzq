@@ -1,9 +1,9 @@
-<MzQuantML creationDate="2012-06-11T00:00:00.000+06:45" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2012-09-18T00:00:00.000+02:00" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>
-        <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.28.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
-        <Cv fullName="UNIMOD CV for modifications" version="1.2" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
-        <Cv fullName="Unit Ontology" version="1.2" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo" id="UO"/>
+        <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.34.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
+        <Cv fullName="UNIMOD CV for modifications" version="" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
+        <Cv fullName="Unit Ontology" version="" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo" id="UO"/>
     </CvList>
     <Provider analysisSoftware_ref="Microsoft_Excel_2007" id="PROV_1" name="Gerhard Mayer">
         <ContactRole contact_ref="PROV_1">
@@ -62,14 +62,70 @@
         </DataProcessing>
     </DataProcessingList>
     <AssayList id="ASSL">
-        <Assay id="ASS_1" name="30min">
+        <Assay id="ASS_0" name="vIa_30min">
             <Label>
                 <Modification massDelta="0.0">
                     <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
                 </Modification>
             </Label>
         </Assay>
-        <Assay id="ASS_2" name="120min">
+        <Assay id="ASS_1" name="20a_30min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_2" name="40a_30min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_3" name="60a_30min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_4" name="80a_30min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_5" name="vIb_120min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_6" name="20b_120min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_7" name="40b_120min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_8" name="60b_120min">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay id="ASS_9" name="80b_120min">
             <Label>
                 <Modification massDelta="0.0">
                     <cvParam cvRef="MS" accession="MS:1002038" name="unlabeled sample"/>
@@ -78,54 +134,22 @@
         </Assay>
     </AssayList>
     <StudyVariableList>
-        <StudyVariable id="SV_0" name="vIa_30min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="vIa-30min  gradient"/>
-            <Assay_refs>ASS_1</Assay_refs>
+        <StudyVariable id="SV_0" name="Ia_30min">
+            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="vIa-30min gradient"/>
+            <Assay_refs>ASS_0 ASS_1 ASS_2 ASS_3 ASS_4</Assay_refs>
         </StudyVariable>
-        <StudyVariable id="SV_1" name="20a_30min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="20a-30min  gradient"/>
-            <Assay_refs>ASS_1</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_2" name="40a_30min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="40a-30min  gradient"/>
-            <Assay_refs>ASS_1</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_3" name="60a_30min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="60a-30min  gradient"/>
-            <Assay_refs>ASS_1</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_4" name="80a_30min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="80a-30min  gradient"/>
-            <Assay_refs>ASS_2</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_5" name="vIb_120min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="vIb-120min  gradient"/>
-            <Assay_refs>ASS_2</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_6" name="20b_120min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="20b-120min  gradient"/>
-            <Assay_refs>ASS_2</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_7" name="40b_120min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="40b-120min  gradient"/>
-            <Assay_refs>ASS_2</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_8" name="60b_120min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="60b-120min  gradient"/>
-            <Assay_refs>ASS_2</Assay_refs>
-        </StudyVariable>
-        <StudyVariable id="SV_9" name="80b_120min">
-            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="80b-120min  gradient"/>
-            <Assay_refs>ASS_2</Assay_refs>
+        <StudyVariable id="SV_5" name="Ib_120min">
+            <cvParam cvRef="MS" accession="MS:1001814" name="generic experimental condition" value="vIb-120min gradient"/>
+            <Assay_refs>ASS_5 ASS_6 ASS_7 ASS_8 ASS_9</Assay_refs>
         </StudyVariable>
     </StudyVariableList>
     <RatioList>
-        <Ratio numerator_ref="ASS_1" denominator_ref="ASS_2" id="RATIO_30min_vs_120min" name="30min_vs_120min"/>
-        <Ratio numerator_ref="SV_0" denominator_ref="SV_5" id="RATIO_vIa_30min_vs_vIb_120min" name="vIa_30min_vs_vIb_120min"/>
-        <Ratio numerator_ref="SV_1" denominator_ref="SV_6" id="RATIO_20a_30min_vs_20b_120min" name="20a_30min_vs_20b_120min"/>
-        <Ratio numerator_ref="SV_2" denominator_ref="SV_7" id="RATIO_40a_30min_vs_40b_120min" name="40a_30min_vs_40b_120min"/>
-        <Ratio numerator_ref="SV_3" denominator_ref="SV_8" id="RATIO_60a_30min_vs_60b_120min" name="60a_30min_vs_60b_120min"/>
-        <Ratio numerator_ref="SV_4" denominator_ref="SV_9" id="RATIO_80a_30min_vs_80b_120min" name="80a_30min_vs_80b_120min"/>
+        <Ratio numerator_ref="ASS_0" denominator_ref="ASS_5" id="RATIO_vIa_30min_vs_vIb_120min" name="vIa_30min_vs_vIb_120min"/>
+        <Ratio numerator_ref="ASS_1" denominator_ref="ASS_6" id="RATIO_20a_30min_vs_20b_120min" name="20a_30min_vs_20b_120min"/>
+        <Ratio numerator_ref="ASS_2" denominator_ref="ASS_7" id="RATIO_40a_30min_vs_40b_120min" name="40a_30min_vs_40b_120min"/>
+        <Ratio numerator_ref="ASS_3" denominator_ref="ASS_8" id="RATIO_60a_30min_vs_60b_120min" name="60a_30min_vs_60b_120min"/>
+        <Ratio numerator_ref="ASS_4" denominator_ref="ASS_9" id="RATIO_80a_30min_vs_80b_120min" name="80a_30min_vs_80b_120min"/>
+        <Ratio numerator_ref="SV_0" denominator_ref="SV_5" id="RATIO_Ia_30min_vs_Ib_120min" name="Ia_30min_vs_Ib_120min"/>
     </RatioList>
     <ProteinList id="PROTL">
         <Protein id="PROT_15799694" accession="gi|15799694" searchDatabase_ref="SDB_1">
@@ -4758,7 +4782,7 @@
             <DataType>
                 <cvParam cvRef="MS" accession="MS:1001860" name="protein value: mean of peptide ratios"/>
             </DataType>
-            <ColumnIndex>ASS_1 ASS_2</ColumnIndex>
+            <ColumnIndex>ASS_0 ASS_1 ASS_2 ASS_3 ASS_4 ASS_5 ASS_6 ASS_7 ASS_8 ASS_9</ColumnIndex>
             <DataMatrix>
                 <Row object_ref="PROT_15799694">33.2 77.0</Row>
                 <Row object_ref="PROT_26250758">17.4 32.4</Row>
@@ -5280,7 +5304,7 @@
             <DataType>
                 <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
             </DataType>
-            <ColumnIndex>SV_0 SV_1 SV_2 SV_3 SV_4 SV_5 SV_6 SV_7 SV_8 SV_9</ColumnIndex>
+            <ColumnIndex>SV_0 SV_5</ColumnIndex>
             <DataMatrix>
                 <Row object_ref="PROT_15799694">30.0 34.0 36.0 30.0 36.0 68.0 100.0 81.0 64.0 72.0</Row>
                 <Row object_ref="PROT_26250758">35.0 25.0 12.0 14.0 1.0 48.0 45.0 33.0 29.0 7.0</Row>
@@ -5802,7 +5826,7 @@
             <DataType>
                 <cvParam cvRef="MS" accession="MS:1001852" name="normalized protein value"/>
             </DataType>
-            <ColumnIndex>SV_0 SV_1 SV_2 SV_3 SV_4 SV_5 SV_6 SV_7 SV_8 SV_9</ColumnIndex>
+            <ColumnIndex>SV_0 SV_5</ColumnIndex>
             <DataMatrix>
                 <Row object_ref="PROT_15799694">0.1667 0.1889 0.2 0.1667 0.2 0.3778 0.5556 0.45 0.3556 0.4</Row>
                 <Row object_ref="PROT_26250758">0.1944 0.1389 0.0667 0.0778 0.0056 0.2667 0.25 0.1833 0.1611 0.0389</Row>
@@ -6322,9 +6346,9 @@
         </StudyVariableQuantLayer>
         <RatioQuantLayer id="RQL">
             <DataType>
-                <cvParam cvRef="MS" accession="MS:1001848" name="simple ratio of two value"/>
+                <cvParam cvRef="MS" accession="MS:1001848" name="simple ratio of two values"/>
             </DataType>
-            <ColumnIndex>RATIO_30min_vs_120min RATIO_vIa_30min_vs_vIb_120min RATIO_20a_30min_vs_20b_120min RATIO_40a_30min_vs_40b_120min RATIO_60a_30min_vs_60b_120min RATIO_80a_30min_vs_80b_120min</ColumnIndex>
+            <ColumnIndex>RATIO_vIa_30min_vs_vIb_120min RATIO_20a_30min_vs_20b_120min RATIO_40a_30min_vs_40b_120min RATIO_60a_30min_vs_60b_120min RATIO_80a_30min_vs_80b_120min RATIO_Ia_30min_vs_Ib_120min</ColumnIndex>
             <DataMatrix>
                 <Row object_ref="PROT_15799694">0.4412 0.34 0.4444 0.4688 0.5 0.4312</Row>
                 <Row object_ref="PROT_26250758">0.7292 0.5556 0.3636 0.4828 0.1429 0.537</Row>

@@ -15,7 +15,7 @@ schema comments / issues:
 -->
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2"  creationDate="2012-04-27T09:41:00" version="1.0.0">
 	<CvList>
-		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.28.0"/>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.34.0"/>
 		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo"/>
 		<Cv id="UNIMOD" fullName="unimod modifications ontology" uri="http://www.unimod.org/obo/unimod.obo"/>
 	</CvList>
@@ -64,7 +64,7 @@ schema comments / issues:
 		<Assay id="AS_HEALTHY1">
 			<Label>
 				<Modification massDelta="0">
-					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002038" name="unlabeled sample"/>
 				</Modification>
 			</Label>	
 			<IdentificationFile_refs>IF_healthy1</IdentificationFile_refs>
@@ -72,7 +72,7 @@ schema comments / issues:
 		<Assay id="AS_HEALTHY2">
 			<Label>
 				<Modification massDelta="0">
-					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002038" name="unlabeled sample"/>
 				</Modification>
 			</Label>	
 			<IdentificationFile_refs>IF_healthy3</IdentificationFile_refs>
@@ -80,7 +80,7 @@ schema comments / issues:
 		<Assay id="AS_DISEASE1">
 			<Label>
 				<Modification massDelta="0">
-					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002038" name="unlabeled sample"/>
 				</Modification>
 			</Label>	
 			<IdentificationFile_refs>IF_disease2</IdentificationFile_refs>
@@ -88,7 +88,7 @@ schema comments / issues:
 		<Assay id="AS_DISEASE2">
 			<Label>
 				<Modification massDelta="0">
-					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002038" name="unlabeled sample"/>
 				</Modification>
 			</Label>	
 			<IdentificationFile_refs>IF_disease4</IdentificationFile_refs>

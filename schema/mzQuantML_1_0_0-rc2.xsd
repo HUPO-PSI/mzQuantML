@@ -659,26 +659,17 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>CV terms capturing the modification, sourced from an appropriate controlled vocabulary.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Feature_refs" type="xsd:IDREFS" maxOccurs="1" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>If the Peptide entity is intended as a summary of both modified and unmodified instances of the peptide, then the Feature_refs element MUST be completed to document those peptides only that are modified. If this element is excluded, it is assumed that all features have the modification. </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="location" type="xsd:int">
 			<xsd:annotation>
-				<xsd:documentation>Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1.	Specific modifications to the N-terminus should be given the location 0. Modification to the C-terminus should be given as peptide length + 1.</xsd:documentation>
+				<xsd:documentation>Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1.	Specific modifications to the N-terminus should be given the location 0. Modification to the C-terminus should be given as peptide length + 1. If the location is unknown or ambiguous, the location attribute should be omitted and CV params can be used to enumerate the options.</xsd:documentation>
 			</xsd:annotation>
-		</xsd:attribute>
-		<!-- 
-			
+		</xsd:attribute>		
 		<xsd:attribute name="residues" type="listOfChars">
 			<xsd:annotation>
-				<xsd:documentation>Specification of the residue (amino acid) on which the modification occurs. If multiple values are given, it is assumed that the exact residue modified is unknown i.e. the modification is to ONE of the residues listed. Multiple residues would usually only be specified for PMF data.</xsd:documentation>
+				<xsd:documentation>Specification of the residue (amino acid) on which the modification occurs. If multiple values are given, it is assumed that the exact residue modified is unknown i.e. the modification is to ONE of the residues listed. Multiple residues would usually only be specified for PMF data. For N or C terminal modifications, the residue attribute should be omitted.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		
-		-->
 		<xsd:attribute name="avgMassDelta" type="xsd:double">
 			<xsd:annotation>
 				<xsd:documentation>Atomic mass delta considering the natural distribution of isotopes in Daltons. </xsd:documentation>

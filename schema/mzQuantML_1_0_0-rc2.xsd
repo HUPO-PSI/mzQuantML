@@ -310,7 +310,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="unbounded">
+				maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about protein groups related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -352,7 +352,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="unbounded">
+				maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about proteins related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -518,7 +518,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="unbounded">
+				maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index must refer to Ratio elements defined in the file.  </xsd:documentation>
 				</xsd:annotation>
@@ -565,7 +565,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="unbounded">
+				maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about small molecules related to different ratios i.e. the column index must refer to Ratio elements defined in the file. </xsd:documentation>
 				</xsd:annotation>
@@ -984,6 +984,16 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Information should be provided about how ratios are calculated if they differ from simple division of numerator by denominator </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="NumeratorDataType" type="cvParamRefType" maxOccurs="1" minOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Type of data used for the numerator of the ratio e.g. cvParam = "Intensity|RawAbundance|NormalisedAbundance|PeptideCount|ConfidenceScore|Anova|MaxFoldChange|...."</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DenominatorDataType" type="cvParamRefType" maxOccurs="1" minOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Type of data used for the denominator of the ratio e.g. cvParam = "Intensity|RawAbundance|NormalisedAbundance|PeptideCount|ConfidenceScore|Anova|MaxFoldChange|...."</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="numerator_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
@@ -1031,7 +1041,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="MS2RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="unbounded">
+				maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>

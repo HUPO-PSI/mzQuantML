@@ -97,17 +97,24 @@ schema comments / issues:
 	
 	<StudyVariableList>
 		<StudyVariable id="SV1_HEALTHY" name="healthy group">
-			<cvParam accession="MS:1001813" name="experimental condition 'healthy'" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001813" name="experimental condition 'healthy" cvRef="PSI-MS"/>
 			<Assay_refs>AS_HEALTHY1 AS_HEALTHY2</Assay_refs>
 		</StudyVariable>
 		<StudyVariable id="SV2_DISEASE" name="disease group">
-			<cvParam accession="MS:1001812" name="experimental condition 'disease'" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1001812" name="experimental condition 'disease" cvRef="PSI-MS"/>
 			<Assay_refs>AS_DISEASE1 AS_DISEASE2</Assay_refs>
 		</StudyVariable>
 	</StudyVariableList>
 
 	<RatioList>
-		<Ratio id="DISEASE_VS_HEALTHY" numerator_ref="SV2_DISEASE" denominator_ref="SV1_HEALTHY"/>
+		<Ratio id="DISEASE_VS_HEALTHY" numerator_ref="SV2_DISEASE" denominator_ref="SV1_HEALTHY">
+			<NumeratorDataType>
+				<cvParam accession="MS:1001842" name="peptide PSM count" cvRef="PSI-MS"/>
+			</NumeratorDataType>
+			<DenominatorDataType>
+				<cvParam accession="MS:1001842" name="peptide PSM count" cvRef="PSI-MS"/>
+			</DenominatorDataType>
+		</Ratio>
 	</RatioList>
 
 	<ProteinList id="PROTLIST">

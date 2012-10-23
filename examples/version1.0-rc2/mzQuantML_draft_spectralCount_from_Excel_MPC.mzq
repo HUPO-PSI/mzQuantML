@@ -1,4 +1,4 @@
-<MzQuantML creationDate="2012-10-16T00:00:00.000+02:00" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2012-10-23T00:00:00.000+02:00" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2 ../../schema/mzQuantML_1_0_0-rc2.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.35.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
@@ -159,12 +159,54 @@
         </StudyVariable>
     </StudyVariableList>
     <RatioList>
-        <Ratio numerator_ref="ASS_0" denominator_ref="ASS_5" id="RATIO_vIa_30min_vs_vIb_120min" name="vIa_30min_vs_vIb_120min"/>
-        <Ratio numerator_ref="ASS_1" denominator_ref="ASS_6" id="RATIO_20a_30min_vs_20b_120min" name="20a_30min_vs_20b_120min"/>
-        <Ratio numerator_ref="ASS_2" denominator_ref="ASS_7" id="RATIO_40a_30min_vs_40b_120min" name="40a_30min_vs_40b_120min"/>
-        <Ratio numerator_ref="ASS_3" denominator_ref="ASS_8" id="RATIO_60a_30min_vs_60b_120min" name="60a_30min_vs_60b_120min"/>
-        <Ratio numerator_ref="ASS_4" denominator_ref="ASS_9" id="RATIO_80a_30min_vs_80b_120min" name="80a_30min_vs_80b_120min"/>
-        <Ratio numerator_ref="SV_0" denominator_ref="SV_5" id="RATIO_Ia_30min_vs_Ib_120min" name="Ia_30min_vs_Ib_120min"/>
+        <Ratio numerator_ref="ASS_0" denominator_ref="ASS_5" id="RATIO_vIa_30min_vs_vIb_120min" name="vIa_30min_vs_vIb_120min">
+            <NumeratorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </NumeratorDataType>
+            <DenominatorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </DenominatorDataType>
+        </Ratio>
+        <Ratio numerator_ref="ASS_1" denominator_ref="ASS_6" id="RATIO_20a_30min_vs_20b_120min" name="20a_30min_vs_20b_120min">
+            <NumeratorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </NumeratorDataType>
+            <DenominatorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </DenominatorDataType>
+        </Ratio>
+        <Ratio numerator_ref="ASS_2" denominator_ref="ASS_7" id="RATIO_40a_30min_vs_40b_120min" name="40a_30min_vs_40b_120min">
+            <NumeratorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </NumeratorDataType>
+            <DenominatorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </DenominatorDataType>
+        </Ratio>
+        <Ratio numerator_ref="ASS_3" denominator_ref="ASS_8" id="RATIO_60a_30min_vs_60b_120min" name="60a_30min_vs_60b_120min">
+            <NumeratorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </NumeratorDataType>
+            <DenominatorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </DenominatorDataType>
+        </Ratio>
+        <Ratio numerator_ref="ASS_4" denominator_ref="ASS_9" id="RATIO_80a_30min_vs_80b_120min" name="80a_30min_vs_80b_120min">
+            <NumeratorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </NumeratorDataType>
+            <DenominatorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </DenominatorDataType>
+        </Ratio>
+        <Ratio numerator_ref="SV_0" denominator_ref="SV_5" id="RATIO_Ia_30min_vs_Ib_120min" name="Ia_30min_vs_Ib_120min">
+            <NumeratorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </NumeratorDataType>
+            <DenominatorDataType>
+                <cvParam cvRef="MS" accession="MS:1001842" name="peptide PSM count"/>
+            </DenominatorDataType>
+        </Ratio>
     </RatioList>
     <ProteinList id="PROTL">
         <Protein id="PROT_15799694" accession="gi|15799694" searchDatabase_ref="SDB_1">

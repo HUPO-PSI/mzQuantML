@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://psidev.svn.sourceforge.net/svnroot/psidev/psi/tools/current/xsl/cv-mapping/CvMappingRules.xsl" type="text/xsl"?>
+<!-- mzQuantML 1.0.0 mapping file created by ME and the whole PSI-PI group -->
+<CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd" modelName="mzQuantML_1_0_0-rc.xsd" modelURI="http://code.google.com/p/mzquantml/source/browse/trunk/schema/mzQuantML_1_0_0-rc.xsd" modelVersion="1.0.0">
+
+    <CvReferenceList>
+        <CvReference cvName="PSI-MS" cvIdentifier="MS"/>
+        <CvReference cvName="MOD" cvIdentifier="MOD"/>
+		<CvReference cvName="UNIMOD" cvIdentifier="UNIMOD"/>
+        <!--CvReference cvName="Brenda" cvIdentifier="BTO"/ -->
+        <!--CvReference cvName="GO" cvIdentifier="GO"/ -->
+        <!--CvReference cvName="PATO" cvIdentifier="PATO"/ -->
+        <!--CvReference cvName="UO" cvIdentifier="UO"/ -->
+    </CvReferenceList>
+
+    <CvMappingRuleList>
+       <!-- Add specific rules for MS2-based approaches e.g. MS2AssayQuantLayer terms? -->
+       <CvMappingRule id="AnalysisSummary_rule" cvElementPath="/MzQuantML/AnalysisSummary/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/AnalysisSummary" cvTermsCombinationLogic="AND">
+			<CvTerm termAccession="MS:1002023" useTermName="false" useTerm="true" termName="MS2 tag-based analysis" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002024" useTermName="false" useTerm="true" termName="MS2 tag-based feature level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002025" useTermName="false" useTerm="true" termName="MS2 tag-based peptide level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002026" useTermName="false" useTerm="true" termName="MS2 tag-based protein level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002027" useTermName="false" useTerm="true" termName="MS2 tag-based proteingroup level quantitation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+		</CvMappingRule>
+    </CvMappingRuleList>
+</CvMapping>

@@ -407,7 +407,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Reference for the identification evidence for peptides from the referenced external file and unique identifier e.g. a link to an mzIdentML file and ID for the ProteinAmbiguityGroup.</xsd:documentation>
+					<xsd:documentation>Reference for the identification evidence for peptides from the referenced external file and unique identifier e.g. a link to an mzIdentML file and ID for the ProteinDetectionHypothesis.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="PeptideConsensus_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
@@ -463,7 +463,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 		<xsd:attribute name="id_refs" type="listOfStrings">
 			<xsd:annotation>
-				<xsd:documentation>One or more reference to the unique identifiers for objects identifying the relevant Peptide in an external file.This attribute MUST be present if an identificationFile_ref is given.</xsd:documentation>
+				<xsd:documentation>One or more reference to the unique identifiers for objects identifying the relevant Peptide in an external file. This attribute MUST be present if an identificationFile_ref is given.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="identificationFile_ref" type="xsd:IDREF">
@@ -508,19 +508,19 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="AssayQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about peptides related to different assays i.e. the column index must refer to Assays defined in the file.  </xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different assays i.e. the column index MUST refer to Assays defined in the file.  </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="StudyVariableQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about peptides related to different study variables i.e. the column index must refer to StudyVariables defined in the file. </xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index must refer to Ratio elements defined in the file.  </xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.  </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
@@ -536,7 +536,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 		<xsd:attribute name="finalResult" type="xsd:boolean" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Multiple peptide lists are allowed for reporting the evidence trail to create a final peptide list, but the final result e.g. to be loaded into a database, should be flagged with finalResult=true</xsd:documentation>
+				<xsd:documentation>Multiple peptide lists are allowed for reporting the evidence trail to create a final peptide list, but the final result e.g. to be loaded into a database, MUST be flagged with finalResult=true</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -555,19 +555,19 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="AssayQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about small molecules related to different assays i.e. the column index must refer to Assays defined in the file.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about small molecules related to different assays i.e. the column index MUST refer to Assays defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="StudyVariableQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about small molecules related to different study variables i.e. the column index must refer to StudyVariables defined in the file. </xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about small molecules related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about small molecules related to different ratios i.e. the column index must refer to Ratio elements defined in the file. </xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about small molecules related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
@@ -584,7 +584,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="PeptideConsensusType">
 		<xsd:annotation>
-			<xsd:documentation>An element representing a peptide in different assay that may or may not have been identified. If it has been identified, the sequence and modification(s) should be reported. Within the parent list, it is allowed for there to be multiple instances of the same peptide sequence, for example capturing different charge states or different modifications, if they are differentially quantified. If peptides with different modifications or charge states are aggregated, they should be represented by a single PeptideConsensus element.  </xsd:documentation>
+			<xsd:documentation>An element representing a peptide in different assay that may or may not have been identified. If it has been identified, the sequence and modification(s) SHOULD be reported. Within the parent list, it is allowed for there to be multiple instances of the same peptide sequence, for example capturing different charge states or different modifications, if they are differentially quantified. If peptides with different modifications or charge states are aggregated, they should be represented by a single PeptideConsensus element.  </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="PeptideSequence" type="sequence" minOccurs="0" maxOccurs="1">
@@ -596,7 +596,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				maxOccurs="unbounded"/>
 			<xsd:element name="EvidenceRef" minOccurs="1" maxOccurs="unbounded"
 				type="EvidenceRefType"/>
-
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Additional parameters or values about this peptide.</xsd:documentation>
@@ -692,13 +691,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<!--  
-		<xsd:attribute name="location" type="xsd:int">
-			<xsd:annotation>
-				<xsd:documentation>Location of the modification within the molecule.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		-->
 		<xsd:attribute name="avgMassDelta" type="xsd:double">
 			<xsd:annotation>
 				<xsd:documentation>Atomic mass delta considering the natural distribution of
@@ -748,7 +740,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="ColumnDefinition" type="ColumnDefinitionType" maxOccurs="1"
 				minOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Definition of the data types in each column</xsd:documentation>
+					<xsd:documentation>Definition of the data types in each column.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1">
@@ -766,7 +758,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="ColumnDefinitionType">
 		<xsd:annotation>
-			<xsd:documentation>The definition of all the columns of data about the features</xsd:documentation>
+			<xsd:documentation>The definition of all the columns of data about the features.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Column" type="ColumnType" minOccurs="1" maxOccurs="unbounded"/>
@@ -780,9 +772,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute name="index" type="xsd:int" use="required">
+		<xsd:attribute name="index" type="xsd:nonNegativeInteger" use="required">
 			<xsd:annotation>
-				<xsd:documentation>The column position within the data matrix - incrementing positive integers starting from zero. TODO - add a data type to enforce positive integers</xsd:documentation>
+				<xsd:documentation>The column position within the data matrix - incrementing positive integers starting from zero.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -802,7 +794,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:extension base="psi-mzq:listOfDoublesOrNulls">
 				<xsd:attribute name="object_ref" type="xsd:IDREF" use="required">
 					<xsd:annotation>
-						<xsd:documentation>Reference to the data type represented in this row e.g. Feature, Peptide, Protein. TODO - we should add a constraint that this should be unique within the data matrix</xsd:documentation>
+						<xsd:documentation>Reference to the data type represented in this row e.g. Feature, Peptide, Protein.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:extension>
@@ -862,7 +854,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Additional parameters about the Assay..</xsd:documentation>
+					<xsd:documentation>Additional parameters about the Assay.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
@@ -902,7 +894,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="RawFileType">
 		<xsd:annotation>
-			<xsd:documentation>A raw mass spectrometry output file that has been analysed e.g. in mzML format. The same raw file can be referenced in multiple assays, for example if it contains multiple samples differentially labelled or tagged. Note, the name raw file does not necessarily imply that the file has not been processed, since in some quant methods, processed peak list formats such as MGF or dta can be used, which could be referenced here.  </xsd:documentation>
+			<xsd:documentation>A raw mass spectrometry output file that has been analysed e.g. in mzML format. The same raw file can be referenced in multiple assays, for example if it contains multiple samples differentially labelled or tagged. Note, the name raw file does not necessarily imply that the file has not been processed, since in some quant methods, processed peak list formats such as MGF or dta can be used, which could be referenced here.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType">
@@ -976,7 +968,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="RatioType">
 		<xsd:annotation>
-			<xsd:documentation>The setup of a ratio of study variables or assays that is referenced elsewhere in the file.</xsd:documentation>
+			<xsd:documentation>The setup of a ratio of study variables or assays that is referenced elsewhere in the file. It is expected that the numerator and denominator MUST both be Assays or MUST both be StudyVariables. However, StudyVariables MAY contain 1 to many Assays, thus allowing more complex ratios to be constructed if needed via use of StudyVariables with unbalanced numbers of Assays.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="RatioCalculation" type="ParamListType" maxOccurs="1" minOccurs="0">
@@ -997,12 +989,12 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:sequence>
 		<xsd:attribute name="numerator_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Reference to a StudyVariable or an Assay</xsd:documentation>
+				<xsd:documentation>Reference to a StudyVariable or an Assay.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="denominator_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Reference to a StudyVariable or an Assay</xsd:documentation>
+				<xsd:documentation>Reference to a StudyVariable or an Assay.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
@@ -1031,19 +1023,19 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="MS2AssayQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different assays i.e. the column index must refer to Assays defined in the file.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different assays i.e. the column index MUST refer to Assays defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="MS2StudyVariableQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different study variables i.e. the column index must refer to StudyVariables defined in the file.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="MS2RatioQuantLayer" type="QuantLayerType" minOccurs="0"
 				maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
+					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
@@ -1054,7 +1046,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:sequence>
 		<xsd:attribute name="rawFilesGroup_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Refernece to the raw file or group of raw files from which this feature list was generated.</xsd:documentation>
+				<xsd:documentation>Reference to the raw file or group of raw files from which this feature list was generated.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="id" type="xsd:ID" use="required">
@@ -1081,7 +1073,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:sequence>
 		<xsd:attribute name="id" type="xsd:ID" use="required" form="unqualified">
 			<xsd:annotation>
-				<xsd:documentation>unique identifier for the feature.</xsd:documentation>
+				<xsd:documentation>Unique identifier for the feature.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="rt" type="doubleOrNullType" use="required">
@@ -1106,29 +1098,29 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 		<xsd:attribute name="spectrum_refs" type="xsd:string">
 			<xsd:annotation>
-				<xsd:documentation>An optional identifier for an individual spectrum from which this feature was detected, required only for techniques where rt mapping is not appropriate. Multiple values can be provided separated by spaces following the XSD:IDREFS style..</xsd:documentation>
+				<xsd:documentation>An optional identifier for an individual spectrum from which this feature was detected, required only for techniques where rt mapping is not appropriate. Multiple values can be provided separated by spaces following the XSD:IDREFS style.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="ModParamType" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>The modification searched for, sourced from e.g. UniMod and the mass delta</xsd:documentation>
+			<xsd:documentation>The modification searched for or used to define the label or tag for quantification. It SHOULD be sourced from UniMod, PSI-MS or PSI-MOD.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="cvParam" type="CVParamType">
 				<xsd:annotation>
-					<xsd:documentation>The name of the modification imported from a relevant CV</xsd:documentation>
+					<xsd:documentation>The name of the modification imported from a relevant CV.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="massDelta" type="xsd:float">
 			<xsd:annotation>
-				<xsd:documentation>The mass delta of the searched modification in Daltons</xsd:documentation>
+				<xsd:documentation>The mass delta of the modification in Daltons</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="residues" type="listOfChars" use="optional">
 			<xsd:annotation>
-				<xsd:documentation>The residue(s) searched with the specified modification</xsd:documentation>
+				<xsd:documentation>The residue(s) to which the modification has been applied.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -1164,7 +1156,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 		<xsd:attribute name="software_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
-				<xsd:documentation>This attribute must reference the appropriate SoftwareType.</xsd:documentation>
+				<xsd:documentation>This attribute MUST reference the appropriate SoftwareType.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required">
@@ -1220,24 +1212,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<!--  
-	<xsd:complexType name="FeatureRefType">
-		<xsd:annotation>
-			<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:attribute name="feature_ref" type="xsd:IDREF" use="required">
-			<xsd:annotation>
-				<xsd:documentation>A reference to the Feature that has been identified as this peptide.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
-			<xsd:annotation>
-				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-	</xsd:complexType>
-	
-	-->
 	<xsd:simpleType name="listOfDoubles">
 		<xsd:list itemType="xsd:double"/>
 	</xsd:simpleType>

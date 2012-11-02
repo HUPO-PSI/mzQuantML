@@ -42,7 +42,7 @@
 			<RawFile location="../msmsdata/e1.raw" id="r2"/>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile location="myidents.mzid" id="mzid1" SearchDatabase_ref="SD1"/>
+			<IdentificationFile location="myidents.mzid" id="mzid1" searchDatabase_ref="SD1"/>
 		</IdentificationFiles>
 
 		<SearchDatabase location="c:\mydb.fasta" id="SD1">
@@ -58,7 +58,7 @@
 	</SoftwareList>
 	
 	<DataProcessingList>
-		<DataProcessing id="feature_quantification" software_Ref="MaxQuant" order="1">
+		<DataProcessing id="feature_quantification" software_ref="MaxQuant" order="1">
 			<InputObject_refs>raw1</InputObject_refs>
 			<OutputObject_refs>FQL1 </OutputObject_refs>
 			<ProcessingMethod order="1"><userParam name=""/></ProcessingMethod>
@@ -72,14 +72,14 @@
 	</DataProcessingList>
 	
 	<AssayList id="AssayList1">
-		<Assay id="B1" name="B1" rawFileGroup_ref="raw1">
+		<Assay id="B1" name="B1" rawFilesGroup_ref="raw1">
 			<Label>
 				<Modification massDelta="0">
 					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
 				</Modification>
 			</Label>			
 		</Assay>
-		<Assay id="E1" name="E1" rawFileGroup_ref="raw2">
+		<Assay id="E1" name="E1" rawFilesGroup_ref="raw2">
 			<Label>
 				<Modification massDelta="0">
 					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
@@ -101,7 +101,7 @@
 	
 	
 	<ProteinGroupList id="PGList">
-		<ProteinGroup id="HSP70_HSP80"  SearchDatabase_ref="SD1">
+		<ProteinGroup id="HSP70_HSP80"  searchDatabase_ref="SD1">
 			<Protein_refs>HSP70 HSP80</Protein_refs>
 			<!-- Probably want to allow CV params to specify leading protein etc -->
 		</ProteinGroup>
@@ -119,12 +119,12 @@
 
 	
 	<ProteinList id="ProtList">
-		<Protein id="HSP70" accession="HSP70"  SearchDatabase_ref="SD1">
-			<IdentificationRef id_ref="PDH_HSP70" IdentificationFile_ref="mzid1"/>
+		<Protein id="HSP70" accession="HSP70"  searchDatabase_ref="SD1">
+			<IdentificationRef id_refs="PDH_HSP70" identificationFile_ref="mzid1"/>
 			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>			
 		</Protein>
-		<Protein id="HSP80" accession="HSP80"  SearchDatabase_ref="SD1">
-			<IdentificationRef id_ref="PDH_HSP80" IdentificationFile_ref="mzid1"/>
+		<Protein id="HSP80" accession="HSP80"  searchDatabase_ref="SD1">
+			<IdentificationRef id_refs="PDH_HSP80" identificationFile_ref="mzid1"/>
 			<PeptideConsensus_refs>PEPTIDER MLEPTIDER</PeptideConsensus_refs>
 		</Protein>
 		
@@ -160,28 +160,24 @@
 				<Row object_ref="HSP80">5400 10800</Row>
 			</DataMatrix>
 		</AssayQuantLayer>
-		
-		
-		
-		
 	</ProteinList>
 	
-
+	<!--maxquant style:report all features that can be mapped to a single peptide (both with different modifications and with different charge states) as one entity-->
 	<PeptideConsensusList id="PepList" finalResult="true">
-		<PeptideConsensus id="PEPTIDER" charge="2 3"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="PEPTIDER" charge="2 3"  searchDatabase_ref="SD1">
 			<PeptideSequence>PEPTIDER</PeptideSequence>
-			<FeatureRef feature_ref="f1_1" assay_refs="B1"/>
-			<FeatureRef feature_ref="f1_5" assay_refs="B1"/>
-			<FeatureRef feature_ref="f2_1" assay_refs="E1"/>
+			<EvidenceRef feature_ref="f1_1" assay_refs="B1"/>
+			<EvidenceRef feature_ref="f1_5" assay_refs="B1"/>
+			<EvidenceRef feature_ref="f2_1" assay_refs="E1"/>
 			<!-- In this example, there is a 2+ and 3+ peptide summed together from FeatureList1 -->
 		</PeptideConsensus>
-		<PeptideConsensus id="MLEPTIDER"  charge="2"  SearchDatabase_ref="SD1">
+		<PeptideConsensus id="MLEPTIDER"  charge="2"  searchDatabase_ref="SD1">
 			<PeptideSequence>MLEPTIDER</PeptideSequence>
 			<Modification>
 				<cvParam cvRef="PSI-MS" accession="" name="Oxidation (M)"/>				
 			</Modification>
-			<FeatureRef feature_ref="f1_2" assay_refs="B1"/>
-			<FeatureRef feature_ref="f2_2" assay_refs="B1"/>
+			<EvidenceRef feature_ref="f1_2" assay_refs="B1"/>
+			<EvidenceRef feature_ref="f2_2" assay_refs="B1"/>
 		</PeptideConsensus>
 		<AssayQuantLayer id="Peptide_Assay_quantlayer">
 			<DataType>
@@ -197,13 +193,12 @@
 	</PeptideConsensusList>
 	
 	
-	<FeatureList RawFileGroup_ref="raw1" id="FList1">
+	<FeatureList rawFilesGroup_ref="raw1" id="FList1">
 		<Feature id="f1_1" charge="2" mz="418.172" rt="26.8685"/>
 		<Feature id="f1_2" charge="2" mz="421.572" rt="27.8685"/>
 		<Feature id="f1_3" charge="2" mz="487.729" rt="26.9685"/>
 		<Feature id="f1_4" charge="2" mz="518.827" rt="26.8685"/>
 		<Feature id="f1_5" charge="3" mz="278.627" rt="35.8685"/>	<!-- Same peptide as f1_1 in a different charge state -->
-		
 		
 		<FeatureQuantLayer id="FQL1">
 			<ColumnDefinition>
@@ -238,7 +233,7 @@
 		</FeatureQuantLayer>
 	</FeatureList>
 	
-	<FeatureList RawFileGroup_ref="raw2" id="FList2">
+	<FeatureList rawFilesGroup_ref="raw2" id="FList2">
 		<Feature id="f2_1" charge="2" mz="418.172" rt="26.8685"/>
 		<Feature id="f2_2" charge="2" mz="421.572" rt="27.8685"/>
 		<Feature id="f2_3" charge="2" mz="487.729" rt="26.9685"/>

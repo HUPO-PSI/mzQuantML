@@ -37,7 +37,7 @@ Sketch of an example for using data matrices to represent quant layers
 		</RawFilesGroup>
 		<IdentificationFiles>
 			<IdentificationFile searchDatabase_ref="SD1" location="./data/4045.mzid" id="id_file1"/>
-			<IdentificationFile searchDatabase_ref="SD1" location="/data/4046.mzid" id="id_file2"/>
+			<IdentificationFile searchDatabase_ref="SD1" location="./data/4046.mzid" id="id_file2"/>
 		</IdentificationFiles>
 		<SearchDatabase location="c:\mydb.fasta" id="SD1">
 			<DatabaseName>
@@ -100,25 +100,52 @@ Sketch of an example for using data matrices to represent quant layers
 		</StudyVariable>
 	</StudyVariableList>
 	<RatioList>
-		<Ratio id="ratioE_B" numerator_ref="SV_group_E" denominator_ref="SV_group_B">
+		<Ratio id="ratioE_B_peak_intensity" numerator_ref="SV_group_E" denominator_ref="SV_group_B">
 			<RatioCalculation>
 				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
 			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</DenominatorDataType>
+		</Ratio>
+		<Ratio id="ratioE_B_signal_noise_ratio" numerator_ref="SV_group_E" denominator_ref="SV_group_B">
+			<RatioCalculation>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
+			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1001884" name="signal-to-noise ratio"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1001884" name="signal-to-noise ratio"/>
+            		</DenominatorDataType>
 		</Ratio>
 		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_L1" denominator_ref="assay_H1">
 			<RatioCalculation>
 				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
 			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</DenominatorDataType>
 		</Ratio>
 		<Ratio id="ratio_assay_L2_H2" numerator_ref="assay_L2" denominator_ref="assay_H2">
 			<RatioCalculation>
 				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
 			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</DenominatorDataType>
 		</Ratio>
 	</RatioList>
-	<ProteinGroupList id="PGLIST1">
-		<!-- TODO -->
-	</ProteinGroupList>
+
 	<ProteinList id="PList1">
 		<Protein id="P02769" accession="P02769" searchDatabase_ref="SD1">
 			<PeptideConsensus_refs>DAFLGSFYEYR KQTALVELLK YLYEIAR</PeptideConsensus_refs>
@@ -173,7 +200,7 @@ Sketch of an example for using data matrices to represent quant layers
 			<ColumnDefinition>
 				<Column index="0">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="PSI:1000042" name="Peak Intensity"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
 					</DataType>
 				</Column>
 				<Column index="1">

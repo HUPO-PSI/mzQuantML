@@ -1,0 +1,260 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
+ version="1.0.0">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		<Cv id="UNIMOD" fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo"/>
+	</CvList>
+
+	<Provider id="Provider1">
+		<ContactRole contact_ref="person1">
+			<Role>
+				<cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+			</Role>
+		</ContactRole>		
+	</Provider>
+	
+	<AuditCollection>
+		<Person id="person1" firstName="Juan" lastName="Medina-Aunon">
+			<Affiliation organization_ref="CNB"/>
+		</Person>
+		<Organization id="CNB" name="Centro Nacional de Biotecnologia-CSIC"></Organization>
+	</AuditCollection>
+	
+	<AnalysisSummary>		
+		<cvParam cvRef="PSI-MS" accession="MS:1001833" name="quantitation analysis summary"/> 
+	</AnalysisSummary>
+
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../data/4045.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../data/4046.raw" id="r2"/>
+		</RawFilesGroup>
+		<IdentificationFiles>
+			<IdentificationFile searchDatabase_ref="SD1" location="./data/4045.mzid" id="id_file1"/>
+			<IdentificationFile searchDatabase_ref="SD1" location="./data/4046.mzid" id="id_file2"/>
+		</IdentificationFiles>
+		<SearchDatabase location="c:\mydb.fasta" id="SD1">
+			<DatabaseName>
+				<userParam name="mydb.fasta"/>
+			</DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+	<SoftwareList>
+		<Software id="WarpLC" version="1.2"/>
+	</SoftwareList>
+	<DataProcessingList>
+		<DataProcessing id="feature_detection"  software_ref="WarpLC" order="1">
+			<ProcessingMethod order="1">
+				<cvParam cvRef="PSI-MS" accession="PSI:1000035" name="peak picking"/>
+			</ProcessingMethod>
+			<ProcessingMethod order="2">
+				<userParam name="peak_matching"/>
+				<cvParam cvRef="PSI-MS" accession="" name="Params for this step to go in here..."/>
+			</ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+	<AssayList id="AssayList1">
+		<Assay id="assay_L1" name="assay_L1" rawFilesGroup_ref="r1">
+			<Label>
+				<Modification massDelta="105.021464 ">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:365" name="ICPL"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_H1" name="assay_H1"  rawFilesGroup_ref="r1">
+			<Label>
+				<Modification massDelta="111.041593">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:364" name="ICPL_heavy"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_L2" name="assay_L2"  rawFilesGroup_ref="r2">
+			<Label>
+				<Modification massDelta="105.021464 ">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:365" name="ICPL"/>
+				</Modification>
+			</Label>
+		</Assay>
+		<Assay id="assay_H2" name="assay_H2" rawFilesGroup_ref="r2">
+			<Label>
+				<Modification massDelta="111.041593">
+					<cvParam cvRef="UNIMOD" accession="UNIMOD:364" name="ICPL_heavy"/>
+				</Modification>
+			</Label>
+		</Assay>
+	</AssayList>
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:1001807" cvRef="PSI-MS" value="1" name="StudyVariable attribute"/>
+			<Assay_refs>assay_L1 assay_L2</Assay_refs>
+		</StudyVariable>
+		<StudyVariable id="SV_group_E" name="Group E">
+			<cvParam accession="MS:1001807" cvRef="PSI-MS" value="1" name="StudyVariable attribute"/>
+			<Assay_refs>assay_H1 assay_H2</Assay_refs>
+		</StudyVariable>
+	</StudyVariableList>
+	<RatioList>
+		<Ratio id="ratioE_B_peak_intensity" numerator_ref="SV_group_E" denominator_ref="SV_group_B">
+			<RatioCalculation>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
+			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</DenominatorDataType>
+		</Ratio>
+		<Ratio id="ratioE_B_signal_noise_ratio" numerator_ref="SV_group_E" denominator_ref="SV_group_B">
+			<RatioCalculation>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
+			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1001884" name="signal-to-noise ratio"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1001884" name="signal-to-noise ratio"/>
+            		</DenominatorDataType>
+		</Ratio>
+		<Ratio id="ratio_assay_L1_H1" numerator_ref="assay_L1" denominator_ref="assay_H1">
+			<RatioCalculation>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
+			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</DenominatorDataType>
+		</Ratio>
+		<Ratio id="ratio_assay_L2_H2" numerator_ref="assay_L2" denominator_ref="assay_H2">
+			<RatioCalculation>
+				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
+			</RatioCalculation>
+			<NumeratorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</NumeratorDataType>
+            		<DenominatorDataType>
+                		<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+            		</DenominatorDataType>
+		</Ratio>
+	</RatioList>
+
+	<ProteinList id="PList1">
+		<Protein id="P02769" accession="P02769" searchDatabase_ref="SD1">
+			<PeptideConsensus_refs>DAFLGSFYEYR KQTALVELLK YLYEIAR</PeptideConsensus_refs>
+		</Protein>
+		<RatioQuantLayer id="Protein_assay_quant_layer">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="MS:1001134" name="protein ratio"/>
+			</DataType>
+			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="P02769">1.83 2</Row>
+			</DataMatrix>
+		</RatioQuantLayer>
+	</ProteinList>
+	<PeptideConsensusList id="PepList1" finalResult="true">
+		<PeptideConsensus id="DAFLGSFYEYR" charge="2" searchDatabase_ref="SD1">
+			<PeptideSequence>DAFLGSFYEYR</PeptideSequence>
+			<EvidenceRef feature_ref="featureB1_1" assay_refs="assay_L1"/>
+			<EvidenceRef feature_ref="featureB1_3" assay_refs="assay_H1"/>
+			<EvidenceRef feature_ref="featureE1_1" assay_refs="assay_L2"/>
+			<EvidenceRef feature_ref="featureB2_5" assay_refs="assay_H2"/>
+		</PeptideConsensus>
+		<PeptideConsensus charge="2" id="KQTALVELLK" searchDatabase_ref="SD1">
+			<PeptideSequence>KQTALVELLK</PeptideSequence>
+			<EvidenceRef feature_ref="featureB1_4" assay_refs="assay_L1"/>
+			<EvidenceRef feature_ref="featureB2_2" assay_refs="assay_L2"/>
+			<EvidenceRef feature_ref="featureE2_2" assay_refs="assay_H2"/>
+		</PeptideConsensus>
+		<PeptideConsensus id="YLYEIAR" charge="2" searchDatabase_ref="SD1">
+			<PeptideSequence>YLYEIAR</PeptideSequence>
+			<EvidenceRef feature_ref="featureB2_1" assay_refs="assay_L2"/>
+			<EvidenceRef feature_ref="featureB2_1" assay_refs="assay_H2"/>
+		</PeptideConsensus>
+		<RatioQuantLayer id="QL_1">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="MS:1001132" name="peptide ratio"/>
+			</DataType>
+			<ColumnIndex>ratio_assay_L1_H1 ratio_assay_L2_H2</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="DAFLGSFYEYR">1.39 1.83</Row>
+				<Row object_ref="KQTALVELLK">1.79 4.50</Row>
+				<Row object_ref="YLYEIAR">null 1.29</Row>
+			</DataMatrix>
+		</RatioQuantLayer>
+	</PeptideConsensusList>
+	<FeatureList rawFilesGroup_ref="raw1" id="featureList1">
+		<Feature id="featureB1_1" charge="2" mz="836.8857245" rt="103.41250773"/>
+		<Feature id="featureB1_3" charge="2" mz="836.8857245" rt="103.21965813"/>
+		<Feature id="featureB1_4" charge="2" mz="729.3929875" rt="101.961416"/>
+		<Feature id="featureE1_1" charge="2" mz="839.8957955" rt="103.78063307"/>
+		<FeatureQuantLayer id="FQL1">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1000042" name="Peak Intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1000011" name="mass resolution"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1001884" name="signal-to-noise ratio"/>
+					</DataType>
+				</Column>
+			</ColumnDefinition>
+			<DataMatrix>
+				<Row object_ref="featureB1_1">35703868.8083188 null 31.4</Row>
+				<Row object_ref="featureB1_3">35703868.8083188 null 18.5</Row>
+				<Row object_ref="featureB1_4">10672038.2173103 null 24.6</Row>
+				<Row object_ref="featureE1_1">25632317.7094254 null 10.6</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	<!-- Raw features quantified from the second raw file-->
+	<FeatureList rawFilesGroup_ref="raw2" id="FearureList2">
+		<Feature id="featureB2_1" charge="2" mz="516.761068" rt="117.7391328"/>
+		<Feature id="featureB2_2" charge="2" mz="729.3929875" rt="27.8685"/>
+		<Feature id="featureB2_5" charge="2" mz="836.8857245" rt="181.58942453"/>
+		<Feature id="featureE2_2" charge="2" mz="732.4001855" rt="27.8031"/>
+		<FeatureQuantLayer id="FQL2">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="PSI:1000042" name="Peak Intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1000011" name="mass resolution"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="MS:1001884" name="signal-to-noise ratio"/>
+					</DataType>
+				</Column>
+			</ColumnDefinition>
+			<DataMatrix>
+				<Row object_ref="featureB2_1">14117304.9569933 null 11.8</Row>
+				<Row object_ref="featureB2_2">13903788.2517015 null 24.3</Row>
+				<Row object_ref="featureB2_5">54054245.586112 null 83.1</Row>
+				<Row object_ref="featureE2_2">3213940.59416825 null null</Row>
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+</MzQuantML>

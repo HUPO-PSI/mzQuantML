@@ -1,0 +1,238 @@
+<!--
+Sketch of an example for using data matrices to represent quant layers
+-->
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
+ version="1.0.0">
+	<CvList>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
+			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+			version="2.25.0"/>
+		<Cv id="UO" fullName="Unit Ontology"
+			uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+	</CvList>
+	
+	<Provider id="Provider1">
+		<ContactRole contact_ref="person1">
+			<Role>
+				<cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+			</Role>
+		</ContactRole>		
+	</Provider>
+	
+	<AuditCollection>
+		<Person id="person1" firstName="Andy" lastName="Jones">
+			<Affiliation organization_ref="ULiv"/>
+		</Person>
+		<Organization id="ULiv" name="University of Liverpool"></Organization>
+	</AuditCollection>
+
+	<AnalysisSummary>
+		<cvParam cvRef="PSI-MS" accession="MS:1001834" name="LC-MS label-free quantitation analysis"/>
+	</AnalysisSummary>
+
+	<InputFiles>
+		<RawFilesGroup id="raw1">
+			<RawFile location="../msmsdata/b1.raw" id="r1"/>
+		</RawFilesGroup>
+		<RawFilesGroup id="raw2">
+			<RawFile location="../msmsdata/e1.raw" id="r2"/>
+		</RawFilesGroup>
+		<IdentificationFiles>
+			<IdentificationFile location="myidents.mzid" id="mzid1"/>
+		</IdentificationFiles>
+
+		<SearchDatabase location="http://www.genome.jp/kegg/" id="KEGG">
+			<DatabaseName><userParam name="KEGG"/></DatabaseName>
+		</SearchDatabase>
+	</InputFiles>
+	
+	<SoftwareList>
+		<Software id="SmallMolSearchEngine" version="2.0.5">
+			<cvParam cvRef="PSI-MS" accession="" name="SmallMolSearchEngine" value=""/>
+		</Software>
+	</SoftwareList>
+	
+	<DataProcessingList>
+		<DataProcessing id="feature_quantification" order="0" software_ref="SmallMolSearchEngine">
+			<InputObject_refs>raw1</InputObject_refs>
+			<OutputObject_refs>FQL1 SMList1</OutputObject_refs>
+			<ProcessingMethod order="1">				
+				<cvParam cvRef="PSI-MS" accession="MS:1000035" name="peak picking"/>
+			</ProcessingMethod>
+			<ProcessingMethod order="2"><userParam name="Quantification"/></ProcessingMethod>
+		</DataProcessing>
+	</DataProcessingList>
+
+	<AssayList id="AssayList1">
+		<Assay id="B1" name="B1" rawFilesGroup_ref="raw1">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>					
+		</Assay>
+		<Assay id="E1" name="E1" rawFilesGroup_ref="raw2">
+			<Label>
+				<Modification massDelta="0">
+					<cvParam cvRef="PSI-MS" accession="" name="No modification"/>
+				</Modification>
+			</Label>					
+		</Assay>		
+		
+	</AssayList>
+
+
+	<StudyVariableList>
+		<StudyVariable id="SV_group_B" name="Group B">
+			<cvParam accession="MS:1001807" cvRef="PSI-MS"    value="1" name="StudyVariable attribute"/>
+			<Assay_refs>B1</Assay_refs>
+		</StudyVariable>
+	</StudyVariableList>
+	
+	<SmallMoleculeList id="SMList1">
+		<SmallMolecule id="SM1">
+			<Modification>
+				<cvParam cvRef="PSI-MS" accession="" name=""/>
+			</Modification>
+			
+			<DBIdentificationRef id_ref="C000017" searchDatabase_ref="KEGG"/>
+			<Feature_refs>featureB_1  featureE_1</Feature_refs>
+			
+			<cvParam cvRef="PSI-MS" accession="MS:1001467" name="taxonomy: NCBI TaxID" value="1456"/>
+			<cvParam cvRef="PSI-MS" accession="" name="reliability" value="1"/>
+			<cvParam cvRef="PSI-MS" accession="" name="URI" value="http://www.genome.jp/kegg/query?C000017"/>
+			<!-- Note: there appears to be a difference between the database in 
+			which the SM was identified, compared with all the other databases in which the molecule can be found
+			
+			Probably want to encode the found ID within DBIdentificationRef and all others as cvParams
+			-->
+			
+		</SmallMolecule>
+		
+		<AssayQuantLayer id="SmallMol_abundance">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="" name="Small Molecule Abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="SM1">3456 33457</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+		<AssayQuantLayer id="SmallMol_standard_dev">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="" name="Standard deviation of small molecule abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="SM1">45.67 36.98</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+		<AssayQuantLayer id="SmallMol_standard_error">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="" name="Standard error of small molecule abundance"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="SM1">0.17 30.18</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+		
+		<!-- If the search engine score is a global attribute i.e. across all assays, this could be modelled as a global quant layer or as a CVParam on SmallMolecule - to decide -->
+		<AssayQuantLayer id="SmallMol_search_engine_score">
+			<DataType>
+				<cvParam cvRef="PSI-MS" accession="MS:1001153" name="search engine specific score"/>
+			</DataType>
+			<ColumnIndex>B1 E1</ColumnIndex>
+			<DataMatrix>
+				<Row object_ref="SM1">56 98</Row>
+			</DataMatrix>
+		</AssayQuantLayer>
+		
+		
+	</SmallMoleculeList>
+	
+	
+	<FeatureList rawFilesGroup_ref="raw1" id="FList1">
+		<Feature id="featureB_1" charge="2" mz="418.172" rt="26.8685"/>
+		<Feature id="featureB_2" charge="2" mz="421.572" rt="27.8685"/>
+		<Feature id="featureB_3" charge="2" mz="487.729" rt="26.9685"/>
+		<Feature id="featureB_4" charge="2" mz="518.827" rt="26.8685"/>
+		
+		
+		<FeatureQuantLayer id="FQL1">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+					</DataType>
+				</Column>
+				<Column index="3">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+					</DataType>
+				</Column>
+				
+			</ColumnDefinition>			
+			<DataMatrix>
+				<Row object_ref="featureB_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="featureB_2">93481.41456 98090.36288 NaN 0.146698</Row>
+				<Row object_ref="featureB_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="featureB_4">181.43671 398090.36288 793556 0.146698</Row>
+				
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+	
+	<FeatureList  rawFilesGroup_ref="raw2" id="FList2">
+		<Feature id="featureE_1" charge="2" mz="418.172" rt="26.8685"/>
+		<Feature id="featureE_2" charge="2" mz="421.572" rt="27.8685"/>
+		<Feature id="featureE_3" charge="2" mz="487.729" rt="26.9685"/>
+		<Feature id="featureE_4" charge="2" mz="518.827" rt="26.8685"/>
+		
+		<FeatureQuantLayer id="FQL2">
+			<ColumnDefinition>
+				<Column index="0">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="intensity"/>
+					</DataType>
+				</Column>
+				<Column index="1">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="raw abundance"/>
+					</DataType>
+				</Column>
+				<Column index="2">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="resolution"/>						
+					</DataType>
+				</Column>
+				<Column index="3">
+					<DataType>
+						<cvParam cvRef="PSI-MS" accession="TODO" name="mass fractional part"/>						
+					</DataType>
+				</Column>
+				
+			</ColumnDefinition>			
+			<DataMatrix>
+				<Row object_ref="featureE_1">23304.18097 16033.65284 55844.77344 0.994629</Row>
+				<Row object_ref="featureE_2">93481.41456 98090.36288 NaN 0.146698</Row>
+				<Row object_ref="featureE_3">193481.71622 298090.36288 NaN 0.546698</Row>
+				<Row object_ref="featureE_4">181.43671 398090.36288 793556 0.146698</Row>
+				
+			</DataMatrix>
+		</FeatureQuantLayer>
+	</FeatureList>
+
+</MzQuantML>

@@ -26,10 +26,18 @@ schema comments / issues:
 
 	<InputFiles>
 		<RawFilesGroup id="RFG_1">
-			<RawFile location="C:\ms\mzIdent\healthy1.raw" id="RF_1"/>
-			<RawFile location="C:\ms\mzIdent\healthy3.raw" id="RF_3"/>
-			<RawFile location="C:\ms\mzIdent\disease2.raw" id="RF_2"/>
-			<RawFile location="C:\ms\mzIdent\disease4.raw" id="RF_4"/>
+			<RawFile location="C:\ms\mzIdent\healthy1.raw" id="RF_1">
+				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
+			</RawFile>
+			<RawFile location="C:\ms\mzIdent\healthy3.raw" id="RF_3">
+				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
+			</RawFile>
+			<RawFile location="C:\ms\mzIdent\disease2.raw" id="RF_2">
+				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
+			</RawFile>
+			<RawFile location="C:\ms\mzIdent\disease4.raw" id="RF_4">
+				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
+			</RawFile>
 		</RawFilesGroup>
 		<IdentificationFiles>
 			<IdentificationFile id="IF_healthy1" location="C:\ms\mzIdent\healthy1.mzid" searchDatabase_ref="SDB1"/>
@@ -39,14 +47,14 @@ schema comments / issues:
 		</IdentificationFiles>
 		<SearchDatabase id="SDB1" location="c:\mydb.fasta" >
 			<DatabaseName>
-				<cvParam accession="MS:1001013" name="database name" value="mydb.fasta" cvRef="PSI-MS" />
+				<cvParam accession="MS:1001142" name="database IPI_human" cvRef="PSI-MS" />
 			</DatabaseName>
 		</SearchDatabase>	
 	</InputFiles>
 	
 	<SoftwareList>
 		<Software id="MS_EXCEL" version="2007">
-			<cvParam accession="MS:1001139" name="quantitation software name" value="Microsoft Excel" cvRef="PSI-MS"/>
+			<cvParam accession="MS:1002059" name="Microsoft Excel" cvRef="PSI-MS"/>
 		</Software>
 	</SoftwareList>
 
@@ -229,10 +237,21 @@ schema comments / issues:
 	</PeptideConsensusList>	
 	
 	<FeatureList rawFilesGroup_ref="RFG_1" id="FEATLIST">
-		<Feature rt="null" mz="123.55" id="FEAT_1"></Feature>
-		<Feature rt="null" mz="218.34" id="FEAT_2"></Feature>
-		<Feature rt="null" mz="96.53" id="FEAT_3"></Feature>
-		<Feature rt="null" mz="58.37" id="FEAT_4"></Feature>
-		<Feature rt="null" mz="119.21" id="FEAT_5"></Feature>
+		<Feature rt="null" mz="123.55" id="FEAT_1">
+			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
+		</Feature>
+		<Feature rt="null" mz="218.34" id="FEAT_2">
+			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
+		</Feature>
+		<Feature rt="null" mz="96.53" id="FEAT_3">
+			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
+		</Feature>
+		<Feature rt="null" mz="58.37" id="FEAT_4">
+			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
+		</Feature>
+		<Feature rt="null" mz="119.21" id="FEAT_5">
+			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
+		</Feature>
+		<cvParam accession="MS:1002122" name="counts reporting" cvRef="PSI-MS" />
 	</FeatureList>
 </MzQuantML>

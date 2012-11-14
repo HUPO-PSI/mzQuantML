@@ -80,6 +80,7 @@
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="unimod root node" isRepeatable="false" allowChildren="true" cvIdentifierRef="UNIMOD" />
             <CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="false" allowChildren="true" cvIdentifierRef="MOD" />
             <CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002038" useTermName="false" useTerm="true" termName="unlabeled sample" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 		
         <CvMappingRule id="StudyVariable_rule" cvElementPath="/MzQuantML/StudyVariableList/StudyVariable/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzQuantML/StudyVariableList/StudyVariable" cvTermsCombinationLogic="OR">

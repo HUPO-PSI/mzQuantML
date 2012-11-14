@@ -332,7 +332,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>The list of all individual proteins (i.e. ungrouped) for which quantitation values are being reported. If quantitation is done on protein groups, the constituent proteins should be listed here with no QuantLayers.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Protein" type="ProteinType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Protein" type="ProteinType" minOccurs="1" maxOccurs="unbounded"/>
 			<xsd:element name="GlobalQuantLayer" type="GlobalQuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
@@ -549,7 +549,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="GlobalQuantLayer" type="GlobalQuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Global values corresponding to the small moleculee such as the total intensity of peptide in all assays, Anova in a quantitative peptidome experiment etc. </xsd:documentation>
+					<xsd:documentation>Global values corresponding to the small molecule such as the total intensity of peptide in all assays, Anova in a quantitative peptidome experiment etc. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="AssayQuantLayer" type="QuantLayerType" minOccurs="0"

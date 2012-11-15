@@ -58,16 +58,21 @@ schema comments / issues:
 			</RawFile>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile id="IF_healthy1" location="file:///C:/ms/mzIdent/healthy1.mzid" searchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_healthy3" location="file:///C:/ms/mzIdent/healthy3.mzid" searchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_disease2" location="file:///C:/ms/mzIden/disease2.mzid" searchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_disease4" location="file:///C:/ms/mzIden/disease4.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_healthy1" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="healthy1.mzid"/>
+			<IdentificationFile id="IF_healthy3" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="healthy3.mzid"/>
+			<IdentificationFile id="IF_disease2" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="disease2.mzid"/>
+			<IdentificationFile id="IF_disease4" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="disease4.mzid"/>
 		</IdentificationFiles>
-		<SearchDatabase id="SDB1" location="file:///c:/mydb.fasta" >
+		<SearchDatabase id="SDB1" location="file:///c:/ms/db/" name="mydb.fasta">
 			<DatabaseName>
 				<cvParam accession="MS:1001142" name="database IPI_human" cvRef="PSI-MS" />
 			</DatabaseName>
-		</SearchDatabase>	
+		</SearchDatabase>
+        <SourceFile location="file:///C:/ms/src/" id="SRCF_1" name="counts_prot_per_sample.txt">
+            <FileFormat>
+                <cvParam cvRef="PSI-MS" accession="MS:1000914" name="tab delimited text file" value="Microsoft Excel"/>
+            </FileFormat>
+        </SourceFile>
 	</InputFiles>
 	
 	<SoftwareList>

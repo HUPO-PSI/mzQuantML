@@ -1,12 +1,12 @@
-<MzQuantML creationDate="2012-11-02T00:00:00.000+01:00" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2012-11-15T00:00:00.000+01:00" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>
-        <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.35.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
+        <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.37.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
         <Cv fullName="UNIMOD CV for modifications" version="" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
         <Cv fullName="Unit Ontology" version="" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo" id="UO"/>
     </CvList>
     <Provider analysisSoftware_ref="Microsoft_Excel_2007" id="PROV_1" name="Gerhard Mayer">
-        <ContactRole contact_ref="PROV_1">
+        <ContactRole contact_ref="PERS_GM">
             <Role>
                 <cvParam cvRef="MS" accession="MS:1001271" name="researcher"/>
             </Role>
@@ -20,44 +20,47 @@
     </AuditCollection>
     <AnalysisSummary>
         <cvParam cvRef="MS" accession="MS:1001836" name="spectral counting quantitation analysis"/>
+        <cvParam cvRef="MS" accession="MS:1002015" name="spectral count peptide level quantitation" value="false"/>
+        <cvParam cvRef="MS" accession="MS:1002016" name="spectral count protein level quantitation" value="true"/>
+        <cvParam cvRef="MS" accession="MS:1002017" name="spectral count proteingroup level quantitation" value="false"/>
     </AnalysisSummary>
     <InputFiles>
         <RawFilesGroup id="RF_GRP1">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_1" name="MTQ2_1661_60b_GB4_01_5706.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_1" name="MTQ2_1661_60b_GB4_01_5706.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP2">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_2" name="MTQ2_1662_80b_GB5_01_5707.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_2" name="MTQ2_1662_80b_GB5_01_5707.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP3">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_3" name="MTQ2_1659_20b_GB2_01_5704.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_3" name="MTQ2_1659_20b_GB2_01_5704.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP4">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_4" name="MTQ2_1660_40b_GB3_01_5705.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_4" name="MTQ2_1660_40b_GB3_01_5705.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP5">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_5" name="MTQ2_1658_vIb_GB1_01_5703.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_5" name="MTQ2_1658_vIb_GB1_01_5703.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP6">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_6" name="MTQ2_1656_60a_GA6_01_5700.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_6" name="MTQ2_1656_60a_GA6_01_5700.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP7">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_7" name="MTQ2_1657_80a_GA7_01_5701.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_7" name="MTQ2_1657_80a_GA7_01_5701.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP8">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_8" name="MTQ2_1655_40a_GA5_01_5699.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_8" name="MTQ2_1655_40a_GA5_01_5699.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP9">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_9" name="MTQ2_1653_vIa_GA3_01_5697.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_9" name="MTQ2_1653_vIa_GA3_01_5697.mzML"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP10">
-            <RawFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="RF_10" name="MTQ2_1654_20a_GA4_01_5698.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_10" name="MTQ2_1654_20a_GA4_01_5698.mzML"/>
         </RawFilesGroup>
-        <SearchDatabase location="C:\" id="SDB_1">
+        <SearchDatabase location="file:///C:/" id="SDB_1">
             <DatabaseName>
-                <cvParam cvRef="MS" accession="MS:1001013" name="database name" value="unknown.fasta"/>
+                <cvParam cvRef="MS" accession="MS:1001084" name="database nr" value="unknown.fasta"/>
             </DatabaseName>
         </SearchDatabase>
-        <SourceFile location="C:\Users\Gerhard\Documents\SW_Projekte\OwnProjects\ConvertSpecCnts2MzQuant\ConvertSpectCnts2MzQuant\resources\input\" id="SRCF_1" name="counts_prot_per_sample.txt">
+        <SourceFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="SRCF_1" name="counts_prot_per_sample.txt">
             <FileFormat>
                 <cvParam cvRef="MS" accession="MS:1000914" name="tab delimited text file" value="Microsoft Excel"/>
             </FileFormat>
@@ -65,7 +68,7 @@
     </InputFiles>
     <SoftwareList>
         <Software id="Microsoft_Excel_2007" version="12.0 SP2">
-            <cvParam cvRef="MS" accession="MS:1001139" name="quantitation software name" value="Microsoft Excel"/>
+            <cvParam cvRef="MS" accession="MS:1002059" name="Microsoft Excel"/>
         </Software>
     </SoftwareList>
     <DataProcessingList>

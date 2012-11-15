@@ -13,39 +13,57 @@ schema comments / issues:
 - no
 
 -->
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-11-08T15:26:00" version="1.0.0">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-11-15T14:53:00" version="1.0.0">
 	<CvList>
-		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.34.0"/>
+		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.37.0"/>
 		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo"/>
 		<Cv id="UNIMOD" fullName="unimod modifications ontology" uri="http://www.unimod.org/obo/unimod.obo"/>
 	</CvList>
 	
+    <Provider analysisSoftware_ref="MS_EXCEL" id="PROV_ID" name="Gerhard Mayer">
+        <ContactRole contact_ref="PERS_GM">
+            <Role>
+                <cvParam cvRef="PSI-MS" accession="MS:1001271" name="researcher"/>
+            </Role>
+        </ContactRole>
+    </Provider>
+    <AuditCollection>
+        <Organization id="ORG_MPC" name="MPC - Medizinisches Proteom Center, Bochum"/>
+        <Person lastName="Mayer" firstName="Gerhard" id="PERS_GM">
+            <Affiliation organization_ref="ORG_MPC"/>
+        </Person>
+    </AuditCollection>
+    
 	<AnalysisSummary>
 		<cvParam accession="MS:1001836" name="spectral counting quantitation analysis" cvRef="PSI-MS"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1001836" name="spectral counting quantitation analysis"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002015" name="spectral count peptide level quantitation" value="true"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002016" name="spectral count protein level quantitation" value="true"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002017" name="spectral count proteingroup level quantitation" value="false"/>
 	</AnalysisSummary>
 
 	<InputFiles>
 		<RawFilesGroup id="RFG_1">
-			<RawFile location="C:\ms\mzIdent\healthy1.raw" id="RF_1">
+			<RawFile location="file:///C:/ms/mzIdent/healthy1.raw" id="RF_1">
 				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
 			</RawFile>
-			<RawFile location="C:\ms\mzIdent\healthy3.raw" id="RF_3">
+			<RawFile location="file:///C:/ms/mzIdent/healthy3.raw" id="RF_3">
 				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
 			</RawFile>
-			<RawFile location="C:\ms\mzIdent\disease2.raw" id="RF_2">
+			<RawFile location="file:///C:/ms/mzIdent/disease2.raw" id="RF_2">
 				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
 			</RawFile>
-			<RawFile location="C:\ms\mzIdent\disease4.raw" id="RF_4">
+			<RawFile location="file:///C:/ms/mzIdent/disease4.raw" id="RF_4">
 				<cvParam accession="MS:1001818" name="one sample run" cvRef="PSI-MS" />
 			</RawFile>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile id="IF_healthy1" location="C:\ms\mzIdent\healthy1.mzid" searchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_healthy3" location="C:\ms\mzIdent\healthy3.mzid" searchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_disease2" location="C:\ms\mzIdent\disease2.mzid" searchDatabase_ref="SDB1"/>
-			<IdentificationFile id="IF_disease4" location="C:\ms\mzIdent\disease4.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_healthy1" location="file:///C:/ms/mzIdent/healthy1.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_healthy3" location="file:///C:/ms/mzIdent/healthy3.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease2" location="file:///C:/ms/mzIden/disease2.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease4" location="file:///C:/ms/mzIden/disease4.mzid" searchDatabase_ref="SDB1"/>
 		</IdentificationFiles>
-		<SearchDatabase id="SDB1" location="c:\mydb.fasta" >
+		<SearchDatabase id="SDB1" location="file:///c:/mydb.fasta" >
 			<DatabaseName>
 				<cvParam accession="MS:1001142" name="database IPI_human" cvRef="PSI-MS" />
 			</DatabaseName>

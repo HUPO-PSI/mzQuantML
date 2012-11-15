@@ -151,7 +151,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="BibliographicReference" type="BibliographicReferenceType"
 				minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="AssayList" type="AssayListType"/>
-			<xsd:element name="StudyVariableList" type="StudyVariableListType"/>
+			<xsd:element name="StudyVariableList" type="StudyVariableListType" minOccurs="0"/>
 			<xsd:element name="RatioList" type="RatioListType" maxOccurs="1" minOccurs="0"/>
 			<xsd:element name="ProteinGroupList" type="ProteinGroupListType" minOccurs="0"/>
 			<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0"/>
@@ -184,7 +184,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="InputFilesType">
 		<xsd:annotation>
-			<xsd:documentation>All the raw files, identification files and databases used in the quantitation</xsd:documentation>
+			<xsd:documentation>All the raw files, identification files and databases used in the quantitation.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="RawFilesGroup" type="RawFilesGroupType" minOccurs="0"
@@ -289,8 +289,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>The list of all groups of proteins with conflicting evidence for which quantitation values are being reported along with quantitative values about those protein groups. If quantitation is done on individual proteins only, ProteinGroupsList should not be included.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="ProteinGroup" type="ProteinGroupType" minOccurs="0"
-				maxOccurs="unbounded"/>
+			<xsd:element name="ProteinGroup" type="ProteinGroupType" minOccurs="1" maxOccurs="unbounded"/>
 			<xsd:element name="GlobalQuantLayer" type="GlobalQuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
@@ -403,6 +402,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:complexType name="ProteinType">
+		<xsd:annotation>
+			<xsd:documentation>One protein that has been quantified in the file, including references to peptides on which the quantification is based.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="IdentificationRef" type="IdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded">
@@ -458,7 +460,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:attribute name="assay_refs" type="xsd:IDREFS" use="required">
 			<xsd:annotation>
-				<xsd:documentation>A reference to the Assay to which this Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
+				<xsd:documentation>A reference to the Assay to which the referenced Feature belongs (e.g. in label-free analyses) or has been assigned (e.g. in label-based analyses). Multiple values MUST only be given for MS2-tag approaches where the same feature quantifies multiple assays.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="id_refs" type="listOfStrings">
@@ -628,12 +630,12 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="DBIdentificationRef" type="DBIdentificationRefType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>External database references for the small molecule identification</xsd:documentation>
+					<xsd:documentation>External database references for the small molecule identification.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Feature_refs" type="xsd:IDREFS" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Optional references to features on which peptide values in the QuantLayer were based.</xsd:documentation>
+					<xsd:documentation>Optional references to features on which quantification values about the SmallMolecule in the QuantLayer were based.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
@@ -650,7 +652,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="ModificationType">
 		<xsd:annotation>
-			<xsd:documentation>A molecule modification specification. If n modifications have been found on a peptide, there should be n instances of Modification. If multiple	modifications are provided as cvParams, it is assumed that the modification is ambiguous i.e. one modification or another. A cvParam must be provided with the identification of the modification sourced from a suitable CV e.g. UNIMOD. If the modification is not present in the CV (and this will be checked by the semantic validator within a given tolerance window), there is an _unknown modification_CVerm that must be used instead. A neutral loss should be defined as an additional CVParam within Modification. If the Peptide element is intended to represent a summary of both modified and unmodified instances of the peptide, then the Feature_refs qualifier must be used on Peptide.</xsd:documentation>
+			<xsd:documentation>A molecule modification specification. If n modifications have been found on a peptide, there should be n instances of Modification. If multiple	modifications are provided as cvParams, it is assumed that the modification is ambiguous i.e. one modification or another. A cvParam must be provided with the identification of the modification sourced from a suitable CV e.g. UNIMOD. If the modification is not present in the CV (and this will be checked by the semantic validator within a given tolerance window), there is an _unknown modification_CV term that must be used instead. A neutral loss should be defined as an additional CVParam within Modification.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="cvParam" type="CVParamType" minOccurs="1" maxOccurs="unbounded">
@@ -765,6 +767,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="ColumnType">
+		<xsd:annotation>
+			<xsd:documentation>The datatype and index position of one column of data in the DataMatrix.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="DataType" type="cvParamRefType" maxOccurs="1" minOccurs="1">
 				<xsd:annotation>
@@ -960,7 +965,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="LabelType">
 		<xsd:annotation>
-			<xsd:documentation>A specification of labels or tags used to define the assay within the raw file, such as heavy labelling or iTRAQ tag mass.</xsd:documentation>
+			<xsd:documentation>A specification of labels or tags used to define the assay within the raw file, such as heavy labelling or iTRAQ tag mass. The Label and Modification is mandatory so a specific term is provided under Modification for unlabeled sample for label-free and, for example, so-called light samples in a labelling experiment. </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Modification" type="ModParamType" maxOccurs="unbounded"/>
@@ -1556,10 +1561,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>The complete set of Contacts (people and organisations) for this file. </xsd:documentation>
 		</xsd:annotation>
-		<xsd:choice maxOccurs="unbounded">
-			<xsd:element name="Person" type="PersonType"/>
-			<xsd:element name="Organization" type="OrganizationType"/>
-		</xsd:choice>
+		<xsd:sequence>
+			<xsd:element name="Person" type="PersonType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Organization" type="OrganizationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="IdentifiableType" abstract="true">
 		<xsd:annotation>

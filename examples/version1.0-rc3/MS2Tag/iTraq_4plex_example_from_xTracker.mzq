@@ -6,10 +6,11 @@
         <Cv id="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" fullName="UNIMOD"/>
     </CvList>
     <AnalysisSummary>
-        <cvParam accession="MS:1001837" cvRef="PSI-MS" name="iTraq quantitation analysis"/>
+        <cvParam accession="MS:1002023" cvRef="PSI-MS" name="MS2 tag-based analysis"/>
         <cvParam accession="MS:1002024" cvRef="PSI-MS" value="true" name="MS2 tag-based analysis feature level quantitationn"/>
         <cvParam accession="MS:1002025" cvRef="PSI-MS" value="true" name="MS2 tag-based analysis group features by peptide quantitation"/>
         <cvParam accession="MS:1002026" cvRef="PSI-MS" value="true" name="MS2 tag-based analysis protein level quantitation"/>
+        <cvParam accession="MS:1002027" cvRef="PSI-MS" value="false" name="MS2 tag-based proteingroup level quantitation"/>
     </AnalysisSummary>
     <InputFiles>
         <RawFilesGroup id="raw1">
@@ -108,7 +109,7 @@
     <RatioList>
         <Ratio id="ratio_SV_A_B" denominator_ref="SV_group_B" numerator_ref="SV_group_A">
             <RatioCalculation>
-                <userParam name="Simple ratio calc"/>
+                <cvParam accession="MS:1001848" cvRef="PSI-MS" name="simple ratio of two values"/>
             </RatioCalculation>
             <NumeratorDataType>
                 <cvParam accession="MS:1001847" cvRef="PSI-MS" name="reporter ion intensity"/>
@@ -119,7 +120,7 @@
         </Ratio>
         <Ratio id="ratio_assay_115_114" denominator_ref="_114" numerator_ref="_115">
             <RatioCalculation>
-                <userParam name="Simple ratio calc"/>
+                <cvParam accession="MS:1001848" cvRef="PSI-MS" name="simple ratio of two values"/>
             </RatioCalculation>
             <NumeratorDataType>
                 <cvParam accession="MS:1001847" cvRef="PSI-MS" name="reporter ion intensity"/>
@@ -130,7 +131,7 @@
         </Ratio>
         <Ratio id="ratio_assay_116_114" denominator_ref="_114" numerator_ref="_116">
             <RatioCalculation>
-                <userParam name="Simple ratio calc"/>
+                <cvParam accession="MS:1001848" cvRef="PSI-MS" name="simple ratio of two values"/>
             </RatioCalculation>
             <NumeratorDataType>
                 <cvParam accession="MS:1001847" cvRef="PSI-MS" name="reporter ion intensity"/>
@@ -141,7 +142,7 @@
         </Ratio>
         <Ratio id="ratio_assay_117_114" denominator_ref="_114" numerator_ref="_117">
             <RatioCalculation>
-                <userParam name="Simple ratio calc"/>
+                <cvParam accession="MS:1001848" cvRef="PSI-MS" name="simple ratio of two values"/>
             </RatioCalculation>
             <NumeratorDataType>
                 <cvParam accession="MS:1001847" cvRef="PSI-MS" name="reporter ion intensity"/>

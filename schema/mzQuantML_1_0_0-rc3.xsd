@@ -289,7 +289,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>The list of all groups of proteins with conflicting evidence for which quantitation values are being reported along with quantitative values about those protein groups. If quantitation is done on individual proteins only, ProteinGroupsList should not be included.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="ProteinGroup" type="ProteinGroupType" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="ProteinGroup" type="ProteinGroupType" minOccurs="1"
+				maxOccurs="unbounded"/>
 			<xsd:element name="GlobalQuantLayer" type="GlobalQuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
@@ -308,8 +309,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about protein groups related to different study variables i.e. the column index must refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about protein groups related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -350,8 +350,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about proteins related to different study variables i.e. the column index must refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about proteins related to different ratios i.e. the column index must refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -519,8 +518,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about peptides related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.  </xsd:documentation>
 				</xsd:annotation>
@@ -566,8 +564,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about small molecules related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about small molecules related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file. </xsd:documentation>
 				</xsd:annotation>
@@ -665,7 +662,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:annotation>
 				<xsd:documentation>Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1.	Specific modifications to the N-terminus should be given the location 0. Modification to the C-terminus should be given as peptide length + 1. If the location is unknown or ambiguous, the location attribute should be omitted and CV params can be used to enumerate the options.</xsd:documentation>
 			</xsd:annotation>
-		</xsd:attribute>		
+		</xsd:attribute>
 		<xsd:attribute name="residues" type="listOfChars">
 			<xsd:annotation>
 				<xsd:documentation>Specification of the residue (amino acid) on which the modification occurs. If multiple values are given, it is assumed that the exact residue modified is unknown i.e. the modification is to ONE of the residues listed. Multiple residues would usually only be specified for PMF data. For N or C terminal modifications, the residue attribute should be omitted.</xsd:documentation>
@@ -875,7 +872,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 		<xsd:attribute type="xsd:IDREF" name="rawFilesGroup_ref">
 			<xsd:annotation>
-				<xsd:documentation>A reference to the RawFileGroup that the Assay is linked to.</xsd:documentation>
+				<xsd:documentation>A reference to the RawFilesGroup that the Assay is linked to.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -986,7 +983,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Type of data used for the numerator of the ratio e.g. cvParam = "Intensity|RawAbundance|NormalisedAbundance|PeptideCount|ConfidenceScore|Anova|MaxFoldChange|...."</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="DenominatorDataType" type="cvParamRefType" maxOccurs="1" minOccurs="1">
+			<xsd:element name="DenominatorDataType" type="cvParamRefType" maxOccurs="1"
+				minOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Type of data used for the denominator of the ratio e.g. cvParam = "Intensity|RawAbundance|NormalisedAbundance|PeptideCount|ConfidenceScore|Anova|MaxFoldChange|...."</xsd:documentation>
 				</xsd:annotation>
@@ -1037,8 +1035,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="MS2RatioQuantLayer" type="QuantLayerType" minOccurs="0"
-				maxOccurs="1">
+			<xsd:element name="MS2RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -1563,7 +1560,8 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Person" type="PersonType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="Organization" type="OrganizationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Organization" type="OrganizationType" minOccurs="0"
+				maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="IdentifiableType" abstract="true">

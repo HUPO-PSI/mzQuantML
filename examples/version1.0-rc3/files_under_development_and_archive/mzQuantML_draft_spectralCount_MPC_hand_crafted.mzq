@@ -28,10 +28,13 @@ schema comments / issues:
         </ContactRole>
     </Provider>
     <AuditCollection>
-        <Organization id="ORG_MPC" name="MPC - Medizinisches Proteom Center, Bochum"/>
         <Person lastName="Mayer" firstName="Gerhard" id="PERS_GM">
             <Affiliation organization_ref="ORG_MPC"/>
         </Person>
+        <Organization id="ORG_Univ_Bochum" name="University of Bochum"/>
+        <Organization id="ORG_MPC" name="MPC - Medizinisches Proteom Center, Bochum">
+            <ParentOrganization organization_ref="ORG_Univ_Bochum"/>
+        </Organization>
     </AuditCollection>
     
 	<AnalysisSummary>

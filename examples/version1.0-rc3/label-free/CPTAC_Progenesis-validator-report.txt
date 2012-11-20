@@ -1,7 +1,0 @@
-INFO: Starting validation process......
-INFO: Loading MzQuantML file......
-ERROR: [Rule: ID=PeptideConsensusGlobalQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:1001171'' didn't match the 1 specified CV term:
-  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
-WARN: [Rule: ID=SearchDatabaseName_rule]None of the given CvTerms were found at '/MzQuantML/InputFiles/SearchDatabase/databaseName/cvParam/@accession' because no values were found:
-  - Any children term of MS:1001013 (database name). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
-INFO: MzQuantML validation process is finished

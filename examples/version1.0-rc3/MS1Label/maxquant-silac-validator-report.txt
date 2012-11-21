@@ -1,8 +1,32 @@
 INFO: Starting validation process......
 INFO: Loading MzQuantML file......
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
 WARN: [Rule: ID=SearchDatabaseName_rule]None of the given CvTerms were found at '/MzQuantML/InputFiles/SearchDatabase/databaseName/cvParam/@accession' because no values were found:
   - Any children term of MS:1001013 (database name). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=FeatureListFeatureQuantLayer_rule]The result found at: /cvParam/@accession for which the values is  ''MS:000000'' didn't match any of the 2 specified CV terms:
+  - Any children term of MS:1001805 (quantification datatype). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001405 (spectrum identification result details). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
 WARN: [Rule: ID=Software_rule_1]None of the given CvTerms were found at '/MzQuantML/SoftwareList/Software/cvParam/@accession' because no values were found:
   - Any children term of MS:1001139 (quantitation software name). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
-  - MS:1001832 (quantitation software comment / customizations) or any of its children. The term can be repeated. The matching value has to be the identifier of the term, not its name., 
+  - MS:1001832 (quantitation software comment or customizations) or any of its children. The term can be repeated. The matching value has to be the identifier of the term, not its name., 
 INFO: MzQuantML validation process is finished

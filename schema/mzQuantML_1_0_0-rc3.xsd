@@ -172,6 +172,16 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The version of the schema this instance document refers to, in the format x.y.z. Changes to z should not affect prevent instance documents from validating. </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the mzQuantML file or experiment.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="name" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Optional name for the file or experiment.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 
 	<xsd:complexType name="CvListType">

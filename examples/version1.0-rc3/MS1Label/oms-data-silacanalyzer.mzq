@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" version="1.0.0">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" id="OpenMS_16587230758885883269" version="1.0.0" creationDate="2012-11-26T20:01:05">
 <CvList>
- 	<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"  uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+ 	<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"  uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.40.0"/>
 	<Cv id="PSI-MOD" fullName="Proteomics Standards Initiative Protein Modifications Vocabularies" uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" version="1.2"/>
 	<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
 </CvList>
@@ -10,6 +10,8 @@
 		<cvParam cvRef="PSI-MS" accession="MS:1001837" name="SILAC quantitation analysis"/>
 		<cvParam cvRef="PSI-MS" accession="MS:1002001" name="MS1 label-based raw feature quantitation" value="true"/>
 		<cvParam cvRef="PSI-MS" accession="MS:1002002" name="MS1 label-based peptide level quantitation" value="true"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002003" name="MS1 label-based protein level quantitation" value="false"/>
+		<cvParam cvRef="PSI-MS" accession="MS:1002004" name="MS1 label-based proteingroup level quantitation" value="false"/>
 	</AnalysisSummary>
 	<InputFiles>
 		<RawFilesGroup id="rfg_15787140749886983179">
@@ -18,13 +20,13 @@
 	</InputFiles>
 	<SoftwareList>
 		<Software id="sw_14624999835377019507" version="1.6.1386">
-			<userParam name="ProteoWizard"/>
+			<cvParam cvRef="PSI-MS" accession="MS:1000615" name="ProteoWizard"/>
 		</Software>
 		<Software id="sw_4449351221894560547" version="1.7.0">
-			<userParam name="FileFilter"/>
+			<cvParam cvRef="PSI-MS" accession="MS:1000757" name="FileFilter"/>
 		</Software>
 		<Software id="sw_15648413633758391813" version="1.9.0">
-			<userParam name="FileFilter"/>
+			<cvParam cvRef="PSI-MS" accession="MS:1000757" name="FileFilter"/>
 		</Software>
 		<Software id="sw_16995859564804444503" version="1.10.0">
 			<userParam name="SILACAnalyzer"/>
@@ -4439,7 +4441,7 @@
 					</DataType>
 				</Column>				<Column index="1">
 					<DataType>
-						<cvParam cvRef="PSI-MS" accession="MS:1001411" name="search tolerance specification"/>
+						<cvParam cvRef="PSI-MS" accession="MS:1001105" name="peptide result details"/>
 					</DataType>
 				</Column>
 				</ColumnDefinition>

@@ -1,16 +1,18 @@
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd"
  xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
- version="1.0.0">
+ id="Progenesis-Label-Free-26112012"
+ version="1.0.0"
+ creationDate="2012-11-26T13:10:55.529Z">
     <CvList>
         <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
         <Cv id="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" fullName="Unimod"/>
     </CvList>
     <AuditCollection>
-        <Person firstName="Andy" lastName="Jones" id="PERS_ARJ">
+        <Person firstName="Da" lastName="Qi" id="PERS_DQ">
             <Affiliation organization_ref="ORG_UOL"/>
         </Person>
-        <Person firstName="Da" lastName="Qi" id="PERS_DQ">
+        <Person firstName="Andy" lastName="Jones" id="PERS_ARJ">
             <Affiliation organization_ref="ORG_UOL"/>
         </Person>
         <Organization name="University of Liverpool" id="ORG_UOL"/>
@@ -62,7 +64,7 @@
         <IdentificationFiles>
             <IdentificationFile searchDatabase_ref="SD1" location="D:\Users\ddq\Documents\NetBeansProjects\progenesis-post-processor\progenesis-post-processor\src\main\resources\examples\out_CPTAC_Progen_mzid_toyexample.csv" name="out_CPTAC_Progen_mzid_toyexample.csv" id="idfile_1"/>
         </IdentificationFiles>
-        <SearchDatabase location="file:\sgd_orfs_plus_ups_prots.fasta" id="SD1">
+        <SearchDatabase location="sgd_orfs_plus_ups_prots.fasta" id="SD1">
             <DatabaseName>
                 <userParam name="sgd_orfs_plus_ups_prots.fasta"/>
             </DatabaseName>

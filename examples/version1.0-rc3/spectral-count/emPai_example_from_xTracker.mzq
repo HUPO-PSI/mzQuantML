@@ -1,4 +1,4 @@
-<MzQuantML version="1.0.0" creationDate="2012-11-02T16:00:00Z" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML id="emPai_mzQuantML_example" version="1.0.0" creationDate="2012-11-26T12:00:00Z" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.39.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
         <Cv id="UO" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo" fullName="Unit Ontology"/>

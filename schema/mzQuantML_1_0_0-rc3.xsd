@@ -136,9 +136,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>Root element of the instance document.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="CvList" type="CvListType"/>
-			<xsd:element name="Provider" type="ProviderType" minOccurs="0"/>
-			<xsd:element name="AuditCollection" type="AuditCollectionType" minOccurs="0"/>
+			<xsd:element name="CvList" type="CvListType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Provider" type="ProviderType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AuditCollection" type="AuditCollectionType" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="AnalysisSummary" type="ParamListType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Summary information about the analysis in terms of the type of analysis, any global scores or metrics and global thresholds used.</xsd:documentation>
@@ -146,19 +146,17 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="InputFiles" type="InputFilesType" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="SoftwareList" type="SoftwareListType" minOccurs="1" maxOccurs="1"/>
-			<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="1"
-				maxOccurs="1"/>
+			<xsd:element name="DataProcessingList" type="DataProcessingListType" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="BibliographicReference" type="BibliographicReferenceType"
 				minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="AssayList" type="AssayListType"/>
-			<xsd:element name="StudyVariableList" type="StudyVariableListType" minOccurs="0"/>
-			<xsd:element name="RatioList" type="RatioListType" maxOccurs="1" minOccurs="0"/>
-			<xsd:element name="ProteinGroupList" type="ProteinGroupListType" minOccurs="0"/>
-			<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0"/>
+			<xsd:element name="AssayList" type="AssayListType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StudyVariableList" type="StudyVariableListType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="RatioList" type="RatioListType" maxOccurs="1" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ProteinGroupList" type="ProteinGroupListType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="PeptideConsensusList" type="PeptideConsensusListType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<xsd:element name="SmallMoleculeList" type="SmallMoleculeListType" maxOccurs="1"
-				minOccurs="0"/>
+			<xsd:element name="SmallMoleculeList" type="SmallMoleculeListType" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="FeatureList" minOccurs="0" maxOccurs="unbounded"
 				type="FeatureListType"/>
 		</xsd:sequence>
@@ -189,9 +187,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:documentation>The list of controlled vocabularies used in the file.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Cv" type="CvType" maxOccurs="unbounded"/>
+			<xsd:element name="Cv" type="CvType" minOccurs="1" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
+	
 	<xsd:complexType name="InputFilesType">
 		<xsd:annotation>
 			<xsd:documentation>All the raw files, identification files and databases used in the quantitation.</xsd:documentation>
@@ -204,10 +203,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				maxOccurs="1"/>
 			<xsd:element name="SearchDatabase" type="SearchDatabaseType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<xsd:element name="SourceFile" type="SourceFileType" minOccurs="0" maxOccurs="unbounded"
-			/>
+			<xsd:element name="SourceFile" type="SourceFileType" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
+	
 	<xsd:complexType name="SearchDatabaseType">
 		<xsd:annotation>
 			<xsd:documentation>A database used for searching mass spectra. Examples include a set of amino acid sequence entries, or annotated spectra libraries. </xsd:documentation>
@@ -215,7 +214,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType">
 				<xsd:sequence>
-					<xsd:element name="DatabaseName" type="ParamType">
+					<xsd:element name="DatabaseName" type="ParamType" minOccurs="1" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation>The database name may be given as a cvParam if it maps exactly to one of the release databases listed in the CV, otherwise a userParam should be used. </xsd:documentation>
 						</xsd:annotation>

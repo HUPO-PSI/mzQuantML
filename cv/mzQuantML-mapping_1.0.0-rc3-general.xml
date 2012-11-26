@@ -98,6 +98,13 @@
         <CvMappingRule id="ProteinGroup_rule" cvElementPath="/MzQuantML/ProteinGroupList/ProteinGroup/cvParam/@accession" requirementLevel="MAY" scopePath="/MzQuantML/ProteinGroupList/ProteinGroup" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002113" useTermName="false" useTerm="false" termName="protein group attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
+
+		
+		<CvMappingRule id="ProteinGroupProteinRef_rule" cvElementPath="/MzQuantML/ProteinGroupList/ProteinGroup/ProteinRef/cvParam/@accession" requirementLevel="SHOULD" scopePath="/MzQuantML/ProteinGroupList/ProteinGroup/ProteinRef" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1001101" useTermName="false" useTerm="false" termName="protein group or subset relationship" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+        </CvMappingRule>
+		
+		
 		
         <CvMappingRule id="ProteinGroupGlobalQuantLayer_rule" cvElementPath="/MzQuantML/ProteinGroupList/GlobalQuantLayer/ColumnDefinition/Column/DataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/ProteinGroupList/GlobalQuantLayer/ColumnDefinition/Column/DataType" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />

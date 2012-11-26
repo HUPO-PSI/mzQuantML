@@ -388,11 +388,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Reference for the identification evidence for peptides from the referenced external file and unique identifier e.g. a link to an mzIdentML file and ID for the ProteinAmbiguityGroup.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Protein_refs" type="xsd:IDREFS" minOccurs="1" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>The proteins contributing to this protein group on which quantitative values are based. </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+			<xsd:element name="ProteinRef" type="ProteinRefType" minOccurs="1" maxOccurs="unbounded"/>
 			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Additional parameters or values about this protein group.</xsd:documentation>
@@ -407,6 +403,23 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:attribute name="searchDatabase_ref" type="xsd:IDREF" use="required">
 			<xsd:annotation>
 				<xsd:documentation>The search database from which this protein group was identified</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ProteinRefType">
+		<xsd:annotation>
+			<xsd:documentation>A reference to one of the Proteins contained within this group, along with CV terms describing the role it plays within the group, such as representative or anchor protein, same set or sub-set.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="ParamGroup" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional parameters or values about this protein, including its role within the group, such as representative or anchor protein, same set or sub-set.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
+		</xsd:sequence>
+		<xsd:attribute name="protein_ref" type="xsd:IDREF" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Reference to one of the proteins within the ProteinList.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

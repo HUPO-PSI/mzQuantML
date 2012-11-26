@@ -2,7 +2,7 @@
 <?xml-stylesheet href="https://psidev.svn.sourceforge.net/svnroot/psidev/psi/tools/current/xsl/cv-mapping/CvMappingRules.xsl" type="text/xsl"?>
 <!-- mzQuantML 1.0.0 mapping file created by ME and the whole PSI-PI group -->
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd" modelName="mzQuantML_1_0_0-rc3.xsd" modelURI="http://code.google.com/p/mzquantml/source/browse/trunk/schema/mzQuantML_1_0_0-rc3.xsd" modelVersion="1.0.0">
+    xsi:noNamespaceSchemaLocation="http://www.psidev.info/sites/default/files/CvMapping.xsd" modelName="mzQuantML_1_0_0-rc3.xsd" modelURI="http://code.google.com/p/mzquantml/source/browse/trunk/schema/mzQuantML_1_0_0-rc3.xsd" modelVersion="1.0.0">
 
     <CvReferenceList>
         <CvReference cvName="PSI-MS" cvIdentifier="MS"/>

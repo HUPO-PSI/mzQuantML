@@ -91,6 +91,17 @@
             <CvTerm termAccession="MS:1001848" useTermName="false" useTerm="true" termName="simple ratio of two values" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 		
+		<CvMappingRule id="RatioNumerator_rule" cvElementPath="/MzQuantML/RatioList/Ratio/NumeratorDataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/RatioList/Ratio/NumeratorDataType" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001405" useTermName="false" useTerm="false" termName="spectrum identification result details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+        </CvMappingRule>
+		
+		<CvMappingRule id="RatioDenominatorDataType_rule" cvElementPath="/MzQuantML/RatioList/Ratio/DenominatorDataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/RatioList/Ratio/DenominatorDataType" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001405" useTermName="false" useTerm="false" termName="spectrum identification result details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+        </CvMappingRule>
+		
+		
         <CvMappingRule id="ProteinGroupList_rule" cvElementPath="/MzQuantML/ProteinGroupList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzQuantML/ProteinGroupList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002112" useTermName="false" useTerm="false" termName="protein group list attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>

@@ -4,7 +4,7 @@ Sketch of an example for using data matrices to represent quant layers
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd"
  xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
- version="1.0.0">
+ version="1.0.0" id="SRM_toy_example">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"
 			uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"

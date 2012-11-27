@@ -151,7 +151,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="AssayList" type="AssayListType" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="StudyVariableList" type="StudyVariableListType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="RatioList" type="RatioListType" maxOccurs="1" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="RatioList" type="RatioListType" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="ProteinGroupList" type="ProteinGroupListType" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="ProteinList" type="ProteinListType" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="PeptideConsensusList" type="PeptideConsensusListType" minOccurs="0"

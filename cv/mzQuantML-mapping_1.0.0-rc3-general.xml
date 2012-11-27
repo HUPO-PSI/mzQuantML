@@ -52,9 +52,13 @@
             <CvTerm termAccession="MS:1001040" useTermName="false" useTerm="false" termName="intermediate analysis format" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 		
+        <CvMappingRule id="MethodFileFormat_rule" cvElementPath="/MzQuantML/InputFiles/MethodFiles/MethodFile/FileFormat/cvParam/@accession" requirementLevel="MUST" scopePath="/MzQuantML/InputFiles/MethodFiles/MethodFile/FileFormat" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1002128" useTermName="false" useTerm="false" termName="method file format attribute" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+        </CvMappingRule>
+		
         <CvMappingRule id="SourceFileFormat_rule" cvElementPath="/MzQuantML/InputFiles/SourceFile/FileFormat/cvParam/@accession" requirementLevel="MUST" scopePath="/MzQuantML/InputFiles/SourceFile/FileFormat" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001040" useTermName="false" useTerm="false" termName="intermediate analysis format" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
-        </CvMappingRule>
+        </CvMappingRule>		
 		
         <CvMappingRule id="SearchDatabaseName_rule" cvElementPath="/MzQuantML/InputFiles/SearchDatabase/DatabaseName/cvParam/@accession" requirementLevel="SHOULD"  scopePath="/MzQuantML/InputFiles/SearchDatabase/DatabaseName" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001013" useTermName="false" useTerm="false" termName="database name" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
@@ -91,7 +95,7 @@
             <CvTerm termAccession="MS:1001848" useTermName="false" useTerm="true" termName="simple ratio of two values" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 		
-		<CvMappingRule id="RatioNumerator_rule" cvElementPath="/MzQuantML/RatioList/Ratio/NumeratorDataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/RatioList/Ratio/NumeratorDataType" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="RatioNumeratorDataType_rule" cvElementPath="/MzQuantML/RatioList/Ratio/NumeratorDataType/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/RatioList/Ratio/NumeratorDataType" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001405" useTermName="false" useTerm="false" termName="spectrum identification result details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
@@ -100,8 +104,7 @@
             <CvTerm termAccession="MS:1001805" useTermName="false" useTerm="false" termName="quantification datatype" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001405" useTermName="false" useTerm="false" termName="spectrum identification result details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
-		
-		
+			
         <CvMappingRule id="ProteinGroupList_rule" cvElementPath="/MzQuantML/ProteinGroupList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzQuantML/ProteinGroupList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002112" useTermName="false" useTerm="false" termName="protein group list attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>

@@ -1,0 +1,252 @@
+<p>This table lists each point in the Molecular and Cellular Proteomics Publication guidelines for the analysis and documentation of peptide and protein identifications. It states the xPath/CV available to provide the required information.</p>
+<p>Do not edit this page directly because the editor on psidev.info is useless for tables. Source for this page is under svn <a href="http://code.google.com/p/mzquantml/source/browse/#svn%2Ftrunk%2Fdocumentation/mzQuantML_MCP_1.0.0.html">here</a>. You should edit the source html and copy/paste to here.</p>
+<p>The MCP document is available <a href="http://www.mcponline.org/site/misc/PhialdelphiaGuidelinesFINALDRAFT.pdf">here</a></p>
+
+<ul>
+	<li>a <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/label-free/CPTAC-Progenesis-small-example.mzq">CPTAC-Progenesis-small-example </a> - MS1 label-free intensity example from Progenesis. </li>
+	<li>b <a href="http://mzquantml.googlecode.com/svn/trunk/examples/version1.0-rc3/label-free/maxquant-label-free.mzq">maxquant-label-free </a> - MS1 label-free intensity example from MaxQuant. </li>
+	<li>c <a href="http://mzquantml.googlecode.com/svn/trunk/examples/version1.0-rc3/MS1Label/maxquant-silac.mzq" title="55merge_tandem">maxquant-silac </a> - MS1 label-based SILAC (Stable Isotope Labelling with Amino acids in Cell culture) example from MaxQuant. </li>
+	<li>d <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/MS1Label/oms-data-silacanalyzer.mzq">oms-data-silacanalyzer </a> - MS1 label-based example from OpenMS - SILACAnalyzer. </li>
+	<li>e <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/spectral-count/emPai_example_from_xTracker.mzq">emPai_example_from_xTracker </a> - MS2 spectral counting emPAI (exponentially modified Protein Abundance Index) example. </li>
+	<li>f <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/spectral-count/mzQuantML_draft_spectralCount_from_Excel_MPC.mzq">mzQuantML_draft_spectralCount_from_Excel_MPC </a> - MS2 spectral counting example of time series data from an Excel file. </li>
+	<li>g <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/MS2Tag/iTraq_4plex_example_from_xTracker.mzq">iTraq_4plex_example_from_xTracker </a> - MS2 tag-based iTRAQ (isobaric Tag for Relative and Absolute Quantitation) example from xTracker. </li>
+	<li>h <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/MS2Tag/oms-data-itraqanalyzer-id.mzq">oms-data-itraqanalyzer-id </a> - MS2 tag-based example from OpenMS - ITRAQAnalyzer. </li>
+</ul>
+
+
+<table border="2"> 
+	<tbody>
+		<tr>
+			<td><strong>MCP Section</strong></td>
+			<td width="30%"><strong>Item</strong></td>
+			<td><strong>xPath (under mzQuantML)</strong></td>
+			<td width="30%"><strong>Notes</strong></td>
+			<td><strong>a</strong></td>
+			<td><strong>b</strong></td>
+			<td><strong>c</strong></td>
+			<td><strong>d</strong></td>
+			<td><strong>e</strong></td>
+			<td><strong>f</strong></td>
+			<td><strong>g</strong></td>
+			<td><strong>h</strong></td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="21"><a name="1">1</a></td>
+			<td valign="top" rowspan="21">All relevant <strong>quantification data</strong> (as part of the peptide and protein identification tables), along with a description of how the raw data were processed to produce these measurements.</td>
+			<td valign="top">ProteinGroupList/GlobalQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td valign="top">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">ProteinGroupList/AssayQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">ProteinGroupList/StudyVariableQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">ProteinGroupList/RatioQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">ProteinList/GlobalQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">ProteinList/AssayQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">ProteinList/StudyVariableQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">ProteinList/RatioQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">PeptideConsensusList/GlobalQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">PeptideConsensusList/AssayQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">PeptideConsensusList/StudyVariableQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">PeptideConsensusList/RatioQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">SmallMoleculelist/GlobalQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">SmallMoleculelist/AssayQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">SmallMoleculelist/StudyVariableQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">SmallMoleculelist/RatioQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">FeatureList/FeatureQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">FeatureList/MS2AssayQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">FeatureList/MS2StudyVariableQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">FeatureList/MS2RatioQuantLayer/DataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="5"><a name="2">2</a></td>
+			<td valign="top" rowspan="5">A description of how the <strong>analytical reliability</strong> of measurements was validated using technical replicates and statistical methods. Citation of standard methods or specialized software may be used. However, it is essential to demonstrate that the data contained in the manuscript actually conform to the same models.</td>
+			<td valign="top">StudyVariableList/StudyVariable/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">SoftwareList/Software/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">RatioList/Ratio/NumeratorDataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">RatioList/Ratio/DenominatorDataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="3"><a name="3">3</a></td>
+			<td valign="top" rowspan="3">A description of how the <strong>biological reliability</strong> of measurements was validated using biological replicates, statistical methods, independent experiments, etc. Studies based on a single biological experiment are generally not acceptable (except as a dataset to test bioinformatic systems). If a biological replicate from the same source cannot be performed (e.g. patient sample), a large enough number of similar biological samples, appropriately justified, must be performed in order to enable sound conclusions.</td>
+			<td valign="top">StudyVariableList/StudyVariable/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">AssayList/Assay/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="4">4</a></td>
+			<td valign="top" rowspan="1">A description of the treatment of relevant <strong>systematic error effects</strong> such as interference from overlapping precursor ions, incomplete isotope labeling, bias correction for pipetting error, etc.</td>
+			<td valign="top">&nbsp;</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="5">5</a></td>
+			<td valign="top" rowspan="1">A description of the treatment of <strong>random error issues</strong> such as outlier rejection and the categorical exclusion of data by thresholds; for example, based on signal to noise or minimum ion counts.</td>
+			<td valign="top">&nbsp;</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="3"><a name="6">6</a></td>
+			<td valign="top" rowspan="3">Proper <strong>estimates of uncertainty</strong> and the <strong>methods used for the error analysis</strong>. Quantification of many proteins or peptides generally results in the need to use some form of multiple hypothesis testing correction. Whenever possible, confidence in protein quantification should be provided for each individual protein rather than the global dataset. Any conclusions drawn or hypothesis generated from the quantitative data in the manuscript must be in concert with the determined estimate of uncertainty.</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">RatioList/Ratio/NumeratorDataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">RatioList/Ratio/DenominatorDataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="7">7</a></td>
+			<td valign="top" rowspan="1">If a component is not being identified by database searching in a particular experiment, <strong>assurance of the identity of the analyte</strong> being measured and the specificity (e.g. presence/absence of interference) with which it is measured must be provided. This particularly applies to intensity-based methods such as SELDI, selected reaction monitoring / multiple reaction monitoring (SRM/MRM) and accurate mass and retention-time (AMT).</td>
+			<td valign="top">InputFiles/IdentificationFiles/IdentificationFile</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="8">8</a></td>
+			<td valign="top" rowspan="1">A description of the way <strong>multiple isoforms</strong> in a protein group were quantified.</td>
+			<td valign="top">ProteinGroupList/proteinGroup/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="4"><a name="9">9</a></td>
+			<td valign="top" rowspan="4">For <strong>spectral counting measurements</strong>, in addition to the above guidelines, additional details should be provided such as whether numbers of peptides or spectra were counted, whether modified peptides, semi-tryptic peptides or shared peptides were counted, and whether or not dynamic exclusion was used, etc.</td>
+			<td valign="top">RatioList/Ratio/NumeratorDataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">RatioList/Ratio/DenominatorDataType/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">PeptideConsensusList/PeptideConsensus/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">PeptideConsensusList/PeptideConsensus/Modification/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>

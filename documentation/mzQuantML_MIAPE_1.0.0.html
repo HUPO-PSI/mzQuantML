@@ -1,0 +1,455 @@
+<p>This table lists each point in the MIAPE guidelines and states the xPath/CV available to provide conformance.</p>
+<p>Do not edit this page directly because the editor on psidev.info is useless for tables. Source for this page is under svn <a href="http://code.google.com/p/mzquantml/source/browse/#svn%2Ftrunk%2Fdocumentation/mzQuantML_MIAPE_1.0.0.html">here</a>. You should edit the source html and copy/paste to here.</p>
+<p>The MIAPE document is available <a href="http://www.psidev.info/sites/default/files/MIAPE_Quant_v1.0_Final.pdf">here</a>, and general information about MIAPE is <a href="http://www.psidev.info/miape">here</a>.</p>
+
+<ul>
+	<li>a <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/label-free/CPTAC-Progenesis-small-example.mzq">CPTAC-Progenesis-small-example </a> - MS1 label-free intensity example from Progenesis. </li>
+	<li>b <a href="http://mzquantml.googlecode.com/svn/trunk/examples/version1.0-rc3/label-free/maxquant-label-free.mzq">maxquant-label-free </a> - MS1 label-free intensity example from MaxQuant. </li>
+	<li>c <a href="http://mzquantml.googlecode.com/svn/trunk/examples/version1.0-rc3/MS1Label/maxquant-silac.mzq" title="55merge_tandem">maxquant-silac </a> - MS1 label-based SILAC (Stable Isotope Labelling with Amino acids in Cell culture) example from MaxQuant. </li>
+	<li>d <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/MS1Label/oms-data-silacanalyzer.mzq">oms-data-silacanalyzer </a> - MS1 label-based example from OpenMS - SILACAnalyzer. </li>
+	<li>e <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/spectral-count/emPai_example_from_xTracker.mzq">emPai_example_from_xTracker </a> - MS2 spectral counting emPAI (exponentially modified Protein Abundance Index) example. </li>
+	<li>f <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/spectral-count/mzQuantML_draft_spectralCount_from_Excel_MPC.mzq">mzQuantML_draft_spectralCount_from_Excel_MPC </a> - MS2 spectral counting example of time series data from an Excel file. </li>
+	<li>g <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/MS2Tag/iTraq_4plex_example_from_xTracker.mzq">iTraq_4plex_example_from_xTracker </a> - MS2 tag-based iTRAQ (isobaric Tag for Relative and Absolute Quantitation) example from xTracker. </li>
+	<li>h <a href="http://code.google.com/p/mzquantml/source/browse/trunk/examples/version1.0-rc3/MS2Tag/oms-data-itraqanalyzer-id.mzq">oms-data-itraqanalyzer-id </a> - MS2 tag-based example from OpenMS - ITRAQAnalyzer. </li>
+</ul>
+
+<table border="2"> 
+	<tbody>
+		<tr>
+			<td><strong>MIAPE Section</strong></td>
+			<td width="30%"><strong>Item</strong></td>
+			<td><strong>xPath (under mzQuantML)</strong></td>
+			<td width="30%"><strong>Notes</strong></td>
+			<td><strong>a</strong></td>
+			<td><strong>b</strong></td>
+			<td><strong>c</strong></td>
+			<td><strong>d</strong></td>
+			<td><strong>e</strong></td>
+			<td><strong>f</strong></td>
+			<td><strong>g</strong></td>
+			<td><strong>h</strong></td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="1">1</a></td>
+			<td valign="top" rowspan="1">General features</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="1.1">1.1</a></td>
+			<td valign="top" rowspan="1">Experiment identifier or name</td>
+			<td valign="top">AssayList/@id (attribute)</td>
+			<td valign="top">no “name” possible</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="1.2">1.2</a></td>
+			<td valign="top" rowspan="2">Responsible person or role</td>
+			<td valign="top">Provider/@name (attribute)</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">AuditCollection</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="1.3">1.3</a></td>
+			<td valign="top" rowspan="1">Quantitative approach</td>
+			<td valign="top">AnalysisSummary/cvParam</td>
+			<td valign="top">child terms of MS:1001833 “quantitation analysis summary”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="2">2</a></td>
+			<td valign="top" rowspan="1">Experimental design and sample description</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="2.1">2.1</a></td>
+			<td valign="top" rowspan="1">Experimental design</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="2.1.1">2.1.1</a></td>
+			<td valign="top" rowspan="2">Groups</td>
+			<td valign="top">StudyVariableList/StudyVariable/cvParam</td>
+			<td valign="top">StudyVariable/cvParam: child terms of MS:1001807 “StudyVariable attribute” (e.g. “biological replicate” or “experimental condition 'disease'” or “generic experimental condition”)</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">AssayList/Assay/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="2.1.2">2.1.2</a></td>
+			<td valign="top" rowspan="1">Biological and technical replicates</td>
+			<td valign="top">see 2.1.1</td>
+			<td valign="top">see 2.1.1, especially child terms of MS:1001807 StudyVariable attribute (e.g. “biological replicate” and “technical replicate”)</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="2.2">2.2</a></td>
+			<td valign="top" rowspan="1">Sample / Assay description</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="3"><a name="2.2.1">2.2.1</a></td>
+			<td valign="top" rowspan="3">Labelling protocol (if applicable)</td>
+			<td valign="top">AssayList/Assay/Label/Modification/@massDelta (attribute)</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">AssayList/Assay/Label/Modification/@residues (attribute)</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">AssayList/Assay/Label/Modification/cvParam</td>
+			<td valign="top">Modification/cvParam: UNIMOD child terms of UNIMOD:0 “unimod root node” or PSI-MOD child terms of MOD:00000 “protein modification” or PSI-MS child terms of MS:1001471 “peptide modification details”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="2.2.2">2.2.2</a></td>
+			<td valign="top" rowspan="1">Sample description</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="2.2.2.1">2.2.2.1</a></td>
+			<td valign="top" rowspan="2">Sample name</td>
+			<td valign="top">InputFiles/RawFilesGroup/RawFile/@name (attribute)</td>
+			<td valign="top">Names of raw files</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">AssayList/Assay/@name (attribute)</td>
+			<td valign="top">Names of assays</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="2.2.2.2">2.2.2.2</a></td>
+			<td valign="top" rowspan="1">Sample labelling with assay definition, i.e. MS run / data set together with reporting ion mass, reagent or isotope labelled amino acid</td>
+			<td valign="top">see 2.2.1</td>
+			<td valign="top">implicit, as 2.2.1 is “per assay”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="2.2.2.3">2.2.2.3</a></td>
+			<td valign="top" rowspan="2">Replicates and/or groups</td>
+			<td valign="top">AssayList/Assay/@rawFilesGroup_ref (attribute)</td>
+			<td valign="top">Assay/@rawFilesGroup_ref: see 2.1.1</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">StudyVariableList/StudyVariable/Assay_refs</td>
+			<td valign="top">Assay_refs: in mzQuantML: references from study variables to assays</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="2.2.3">2.2.3</a></td>
+			<td valign="top" rowspan="1">Isotopic correction coefficients</td>
+			<td valign="top">TODO ARJ to insert DataProcessing</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="2.2.4">2.2.4</a></td>
+			<td valign="top" rowspan="1">Internal references</td>
+			<td valign="top">TODO Assay – user or cv Param</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="3">3</a></td>
+			<td valign="top" rowspan="1">Input data</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="3.1">3.1</a></td>
+			<td valign="top" rowspan="1">Input data type</td>
+			<td valign="top">&nbsp;</td>
+			<td valign="top">implicitly defined by AnalysisSummary</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="5"><a name="3.2">3.2</a></td>
+			<td valign="top" rowspan="5">Input data format</td>
+			<td valign="top">InputFiles/RawFilesGroup/RawFile/FileFormat</td>
+			<td valign="top">child terms of MS:1000560 “mass spectrometer file format”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/MethodFiles/MethodFile/FileFormat</td>
+			<td valign="top">A single methods file associated with this analysis e.g. a TraML file used for SRM analysis.</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/IdentificationFiles/IdentificationFile/FileFormat</td>
+			<td valign="top">child terms of MS:1001040 “intermediate analysis format”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/SearchDatabase/FileFormat</td>
+			<td valign="top">child terms of MS:1001347”database file formats”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/SourceFile/FileFormat</td>
+			<td valign="top">child terms of MS:1001040 “intermediate analysis format”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="3.3">3.3</a></td>
+			<td valign="top" rowspan="1">Input data merging</td>
+			<td valign="top">rawFilesGroup etc.</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="5"><a name="3.4">3.4</a></td>
+			<td valign="top" rowspan="5">Availability of the input data</td>
+			<td valign="top">InputFiles/RawFilesGroup/RawFile/@location (attribute)</td>
+			<td valign="top">anyURI</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/MethodFiles/MethodFile/@location (attribute)</td>
+			<td valign="top">anyURI</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/IdentificationFiles/IdentificationFile/@location (attribute)</td>
+			<td valign="top">anyURI</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/SearchDatabase/@location (attribute)</td>
+			<td valign="top">anyURI</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">InputFiles/SourceFile/@location (attribute)</td>
+			<td valign="top">anyURI</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="4">4</a></td>
+			<td valign="top" rowspan="1">Protocol</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="4.1">4.1</a></td>
+			<td valign="top" rowspan="2">Quantification software name, version and manufacturer</td>
+			<td valign="top">SoftwareList/Software/cvParam</td>
+			<td valign="top">child terms of MS:1001139 “quantitation software name” (e.g. “Mascot Distiller”, “MaxQuant”) and term MS:1001832 “quantitation software comment or customizations”</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">SoftwareList/Software/@version (attribute)</td>
+			<td valign="top">version label as xsd:string</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="4"><a name="4.2">4.2</a></td>
+			<td valign="top" rowspan="4">Description of the selection and/or matching method of features, together with the description of the method of the primary extracted quantification values determination for each feature and/or peptide.</td>
+			<td valign="top">&nbsp;</td>
+			<td valign="top">implicit by software used</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">order of explicit workflow steps</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">explicit workflow steps</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">PeptideConsensusList/AssayQuantLayer/Datatype/cvParam<br>PeptideConsensusList/RatioQuantLayer<br>PeptideConsensusList/StudyVariableQuantLayer/Datatype/cvParam<br>FeatureList/FeatureQuantLayer/Datatype/cvParam<br>FeatureList/MS2AssayQuantLayer/Datatype/cvParam<br>FeatureList/MS2RatioQuantLayer/Datatype/cvParam<br>FeatureList/MS2StudyariableQuantLayer/Datatype/cvParam</td>
+			<td valign="top">child terms of MS:1001805 “quantification datatype” (e.g. MS:1001844 “MS1 feature area” or MS:1001902 “MaxQuant:LFQ intensity”)</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="4.3">4.3</a></td>
+			<td valign="top" rowspan="1">Confidence filter of features or peptides prior to quantification</td>
+			<td valign="top">DataProcessing</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="4.4">4.4</a></td>
+			<td valign="top" rowspan="2">Description of data calculation and transformation methods</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">implicit by software used</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="4.4.1">4.4.1</a></td>
+			<td valign="top" rowspan="2">Missing values imputation and outliers removal</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="3"><a name="4.4.2">4.4.2</a></td>
+			<td valign="top" rowspan="3">Quantification values calculation and / or ratio determination from the primary extracted quantification values</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">RatioList/Ratio/RatioCalculation</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="4.4.3">4.4.3</a></td>
+			<td valign="top" rowspan="1">Replicate aggregation</td>
+			<td valign="top">StudyVariableList/StudyVariable</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="4.4.4">4.4.4</a></td>
+			<td valign="top" rowspan="2">Normalization</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="4.4.5">4.4.5</a></td>
+			<td valign="top" rowspan="2">Inference protocol for calculating protein quantification values from peptide quantification value</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="4.4.6">4.4.6</a></td>
+			<td valign="top" rowspan="2">Protocol specific corrections</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="4.5">4.5</a></td>
+			<td valign="top" rowspan="2">Description of methods for (statistical) estimation of correctnes</td>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/@order</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">DataProcessingList/DataProcessing/ProcessingMethod/cvParam</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="4.6">4.6</a></td>
+			<td valign="top" rowspan="1">Calibration curves of standards</td>
+			<td valign="top">Out of scope for mzQuantML</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="5">5</a></td>
+			<td valign="top" rowspan="1">Resulting data</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="5.1">5.1</a></td>
+			<td valign="top" rowspan="1">Quantification values at feature and/or at peptide level</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><a name="5.1.1">5.1.1</a></td>
+			<td valign="top" rowspan="2">Primary extracted quantification values for each feature, with their statistical estimation of correctness</td>
+			<td valign="top">FeatureList/FeatureQuantLayer/<XXX>Quantlayer/DataMatrix</td>
+			<td valign="top"><XXX>: Assay, Ratio, or StudyVariable</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">FeatureList/MS2<XXX>Quantlayer/DataMatrix</td>
+			<td valign="top">&nbsp;</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="5.1.2">5.1.2</a></td>
+			<td valign="top" rowspan="1">Quantification values for each peptide as a result of the aggregation of the values of the previous section (5.1.1), with their statistical estimation of correctness</td>
+			<td valign="top">PeptideConsensusList/<XXX>Quantlayer/DataMatrix</td>
+			<td valign="top"><XXX>: Global, Assay, Ratio, or StudyVariable</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr bgcolor="lightgrey">
+			<td valign="top" rowspan="1"><a name="5.2">5.2</a></td>
+			<td valign="top" rowspan="1">Quantification values at protein level</td>
+			<td valign="top">---</td>
+			<td valign="top">---</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="5.2.1">5.2.1</a></td>
+			<td valign="top" rowspan="1">Basic / raw quantification values with statistical estimation of correctness</td>
+			<td valign="top">ProteinList/<XXX>QuantLayer/DataMatrix</td>
+			<td valign="top"><XXX>: Global, Assay, Ratio, or StudyVariable</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="1"><a name="5.2.2">5.2.2</a></td>
+			<td valign="top" rowspan="1">Transformed / aggregated / combined quantification values of the proteins at group level, with their statistical estimation of correctness</td>
+			<td valign="top">ProteinGroupList/<XXX>QuantLayer/DataMatrix</td>
+			<td valign="top"><XXX>: Global, Assay, Ratio, or StudyVariable</td>
+			<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>

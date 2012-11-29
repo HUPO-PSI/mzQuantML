@@ -318,7 +318,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about protein groups related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="RatioQuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about protein groups related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -359,7 +359,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about proteins related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="RatioQuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about proteins related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -540,7 +540,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about peptides related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="RatioQuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about peptides related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.  </xsd:documentation>
 				</xsd:annotation>
@@ -586,7 +586,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about small molecules related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
+			<xsd:element name="RatioQuantLayer" type="RatioQuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about small molecules related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file. </xsd:documentation>
 				</xsd:annotation>
@@ -742,6 +742,29 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1">
 				<xsd:unique name="PK_QLROWOBJREF">
+					<xsd:selector xpath="./psi-mzq:Row"/>
+					<xsd:field xpath="@object_ref"/>
+				</xsd:unique>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier for the object within the file.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="RatioQuantLayerType">
+		<xsd:annotation>
+			<xsd:documentation>A collection of data relating to the objects within the parent list type (e.g. PeptideConsensus, Protein or ProteinGroup)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ColumnIndex" type="xsd:IDREFS" maxOccurs="1" minOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Space separated unique identifiers for each column of data, MUST refer to an object in the file i.e. Ratio elements.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1">
+				<xsd:unique name="PK_RQLROWOBJREF">
 					<xsd:selector xpath="./psi-mzq:Row"/>
 					<xsd:field xpath="@object_ref"/>
 				</xsd:unique>
@@ -1057,7 +1080,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different study variables i.e. the column index MUST refer to StudyVariables defined in the file.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="MS2RatioQuantLayer" type="QuantLayerType" minOccurs="0" maxOccurs="1">
+			<xsd:element name="MS2RatioQuantLayer" type="RatioQuantLayerType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Quant layer for reporting data values about MS2 features (e.g. iTRAQ) related to different ratios i.e. the column index MUST refer to Ratio elements defined in the file.</xsd:documentation>
 				</xsd:annotation>
@@ -1123,6 +1146,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:attribute name="spectrum_refs" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>An optional identifier for an individual spectrum from which this feature was detected, required only for techniques where rt mapping is not appropriate. Multiple values can be provided separated by spaces following the XSD:IDREFS style.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="rawFile_ref" type="xsd:IDREF" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>An optional reference to a RawFile element inside a RawFileGroup. The reference MUST only be used if multiple RawFiles are provided within a RawFilesGroup e.g. if pre-fractionation has occurred.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

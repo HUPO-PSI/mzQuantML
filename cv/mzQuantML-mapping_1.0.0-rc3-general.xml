@@ -174,11 +174,11 @@
             <CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <CvMappingRule id="PeptideConsensusList_rule" cvElementPath="/MzQuantML/PeptideConsensusList/cvParam/@accession" requirementLevel="MAY" scopePath="" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="PeptideConsensusList_rule" cvElementPath="/MzQuantML/PeptideConsensusList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzQuantML/PeptideConsensusList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002115" useTermName="false" useTerm="false" termName="peptide consensus list attribute" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <CvMappingRule id="PeptideConsensus_rule" cvElementPath="/MzQuantML/PeptideConsensusList/PeptideConsensus/cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="PeptideConsensus_rule" cvElementPath="/MzQuantML/PeptideConsensusList/PeptideConsensus/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzQuantML/PeptideConsensusList/PeptideConsensus" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002116" useTermName="false" useTerm="false" termName="peptide consensus attribute" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 

@@ -18,7 +18,7 @@
         <Organization name="University of Liverpool" id="ORG_UOL"/>
     </AuditCollection>
     <AnalysisSummary>
-        <cvParam accession="MS:1001834" cvRef="PSI-MS" name="LC-MS label-free"/>
+        <cvParam accession="MS:1001834" cvRef="PSI-MS" name="LC-MS label-free quantitation analysis"/>
         <cvParam accession="MS:1002019" cvRef="PSI-MS" value="false" name="label-free raw feature quantitation"/>
         <cvParam accession="MS:1002020" cvRef="PSI-MS" value="true" name="label-free peptide level quantitation"/>
         <cvParam accession="MS:1002021" cvRef="PSI-MS" value="true" name="label-free protein level quantitation"/>
@@ -62,7 +62,7 @@
             <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6E004_080505133441.raw" name="mam_050108o_CPTAC_study6_6E004_080505133441.raw" id="raw_11"/>
         </RawFilesGroup>
         <IdentificationFiles>
-            <IdentificationFile searchDatabase_ref="SD1" location="D:\Users\ddq\Documents\NetBeansProjects\progenesis-post-processor\progenesis-post-processor\src\main\resources\examples\out_CPTAC_Progen_mzid_toyexample.csv" name="out_CPTAC_Progen_mzid_toyexample.csv" id="idfile_1"/>
+            <IdentificationFile searchDatabase_ref="SD1" location="file://progenesis-post-processor/progenesis-post-processor/src/main/resources/examples/out_CPTAC_Progen_mzid_toyexample.csv" name="out_CPTAC_Progen_mzid_toyexample.csv" id="idfile_1"/>
         </IdentificationFiles>
         <SearchDatabase location="sgd_orfs_plus_ups_prots.fasta" id="SD1">
             <DatabaseName>

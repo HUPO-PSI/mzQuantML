@@ -1,5 +1,10 @@
 INFO: Starting validation process......
 INFO: Loading MzQuantML file......
-WARN: [Rule: ID=SearchDatabaseName_rule]None of the given CvTerms were found at '/MzQuantML/InputFiles/SearchDatabase/databaseName/cvParam/@accession' because no values were found:
+ERROR: [Rule: ID=MethodFileFormat_rule]All CvTerm (1) of this rule was removed due to inconsistencies (cf. previous messages). This rule will be removed., 
+WARN: [Rule: ID=SearchDatabaseName_rule]The result found at: /cvParam/@accession for which the values is  ''MS:1001013'' didn't match the 1 specified CV term:
   - Any children term of MS:1001013 (database name). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=Software_rule_1]None of the given CvTerms were found at '/MzQuantML/SoftwareList/Software/cvParam/@accession' because no values were found:
+  - Any children term of MS:1001139 (quantitation software name). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
+  - Any children term of MS:1001456 (analysis software). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
+ERROR: [Rule: ID=MethodFileFormat_rule]The term 'method file format attribute' (MS:1002128) doesn't have children in the ontology 'MS', yet the CvMapping recommends to use them. The CvTerm will be removed., 
 INFO: MzQuantML validation process is finished

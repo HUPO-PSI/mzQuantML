@@ -52,7 +52,7 @@
             <CvTerm termAccession="MS:1001040" useTermName="false" useTerm="false" termName="intermediate analysis format" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 		
-        <CvMappingRule id="MethodFileFormat_rule" cvElementPath="/MzQuantML/InputFiles/MethodFiles/MethodFile/FileFormat/cvParam/@accession" requirementLevel="MUST" scopePath="/MzQuantML/InputFiles/MethodFiles/MethodFile/FileFormat" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="MethodFileFormat_rule" cvElementPath="/MzQuantML/InputFiles/MethodFiles/MethodFile/FileFormat/cvParam/@accession" requirementLevel="MAY" scopePath="/MzQuantML/InputFiles/MethodFiles/MethodFile/FileFormat" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002128" useTermName="false" useTerm="false" termName="method file format attribute" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 		

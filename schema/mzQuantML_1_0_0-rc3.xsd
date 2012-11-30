@@ -181,7 +181,6 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-
 	<xsd:complexType name="CvListType">
 		<xsd:annotation>
 			<xsd:documentation>The list of controlled vocabularies used in the file.</xsd:documentation>
@@ -1211,9 +1210,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>This attribute MUST reference the appropriate SoftwareType.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required">
+		<xsd:attribute name="order" type="xsd:positiveInteger" use="required">
 			<xsd:annotation>
-				<xsd:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xsd:documentation>
+				<xsd:documentation>This attributes allows a series of consecutive steps to be placed in the correct order, start counting from 1.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -1228,9 +1227,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				</xsd:annotation>
 			</xsd:group>
 		</xsd:sequence>
-		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required">
+		<xsd:attribute name="order" type="xsd:positiveInteger" use="required">
 			<xsd:annotation>
-				<xsd:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xsd:documentation>
+				<xsd:documentation>This attributes allows a series of consecutive steps to be placed in the correct order, start counting from 1.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

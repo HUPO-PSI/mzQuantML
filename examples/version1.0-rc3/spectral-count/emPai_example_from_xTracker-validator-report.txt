@@ -1,10 +1,701 @@
 INFO: Starting validation process......
 INFO: Loading MzQuantML file......
-ERROR: [Rule: ID=MethodFileFormat_rule]All CvTerm (1) of this rule was removed due to inconsistencies (cf. previous messages). This rule will be removed., 
-WARN: [Rule: ID=SearchDatabaseName_rule]The result found at: /cvParam/@accession for which the values is  ''MS:1001013'' didn't match the 1 specified CV term:
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-SADFIGGR_00000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YVVQSGPAK_000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-LIVDYPLSIL_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-LIVDYPLSIL_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GELYATYAGETAK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GELYATYAGETAK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GELYATYAGETAK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-GFIEDSSLDLLLR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-ANADQGEGDQNEFR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-ANADQGEGDQNEFR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-ANADQGEGDQNEFR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-ANADQGEGDQNEFR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-VHGDQPFDYIGFGR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-VHGDQPFDYIGFGR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-SRGELYATYAGETAK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-SRGELYATYAGETAK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-SRGELYATYAGETAK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-WGEMQPTAPVFAAGGSR_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-QYYLNSNYTIPLASDQSLGFDFNIYR_00000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-VEAEVEAEAK_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-VKENSYADIK_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-ASLDGQYGLEK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-ASLDGQYGLEK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-RVEAEVEAEAK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-YYFTENFFAK_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-DVLVNEYGVEGGR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-VNAVGYGESRPVADNATAEGR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-VNAVGYGESRPVADNATAEGR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1777-QYPSTSTTVEGHTDSVGTDAYNQK_000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-SGAAGIDFFK_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-EIEGLELNAGR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-EIEGLELNAGR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-QGDSGSAADDLSK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-SWQVSYALDFAK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-LLPESYSGTLITSK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-LLPESYSGTLITSK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-GFVEDSHLDLFFR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-LDSDFADQNFNGNR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-LDSDFADQNFNGNR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-EIFNQVQYVVQSGPAK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-EIFNQVQYVVQSGPAK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-EIFNQVQYVVQSGPAK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2760-TKLDSDFADQNFNGNR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-GKTESLAQR_000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-LAEAEHLLR_000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-LDALPTADELEAR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-TSTSTPSPVAPDASR_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-EQVNQLQPLTPTFK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-EAAGNLVPEAQAAPATEGRP_00000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-LSALQDVGSATELVQGADDILR_0000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-LSALQDVGSATELVQGADDILR_0000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-QPVTVQVPDLAPALSALQAYVSR_00000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5258-IDFNAGQDIRPLLAGEQLAQVR_0000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4942-NQAEAYANGVVPEAR_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4942-TGITVTQVNIQSAQAPR_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4942-NAAPATGAGASAGGGSASASDLGSR_0000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4942-NAAPATGAGASAGGGSASASDLGSR_0000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4942-VLVTGQQGQNNLLYLPLDK_0000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4942-YYETVGPGLNFYFPPIDK_000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0291-SGLPAAGSSNNQR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0291-SLSIAGANGSSASSR_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0291-DFTLVAGQLEHSK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0291-ADGYVSSGYYGSGVTK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0291-LLPVTFEGGQVTSTDLK_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0291-GDGEGSTAYLITDVQIGK_000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4842-AIEVDFADVLAK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4842-NPEEVQPGEAPK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4842-SQSQSTEDADLAR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4842-SQSQSTEDADLAR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4842-ADNLNNWLGDVATR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4842-LSDPNQPNAQFYAR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4842-SWALPASESEYQEGIK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0425-LLVADQAVSK_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0425-WLVTEGLNAGDK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0425-GQATALVVNAQNK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0425-LEDGSQYPLEGR_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0425-IITEGLQFVQPGVEVK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0425-IITEGLQFVQPGVEVK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0425-IITEGLQFVQPGVEVK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1011-DRGDDYLGAR_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1011-AAGDTSSPSWPSK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1011-SLGVYYVNIAEGAK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1011-DGSGNPVLTLQSDFDR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1011-SVAPSLDAALLDEMVASMAR_00000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1011-IEPGVQSNTSEVYVLSQTR_0000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3280-DLDDTAFDSR_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3280-AFIELGGTAYK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3280-VEDDNVVADTATR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3280-ATFGGVSNSPAGSYK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3280-GIATSGGNDAGDNGNR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3280-GGLEVATTDKEFSFK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3280-ITNNNGDDDGDGFVTR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4265-AGENVGILLR_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4265-DDNGIGVSAVQK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4265-VQEEVEIVGIK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4265-AFDQIDNAPEEK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4265-LVETLDSYIPEPVR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4265-GITINTSHVEYDSAVR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2393-ALEQVAALSR_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2393-APIVASHSAPR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2393-ELVDAIDYTVK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2393-DFPNQVGIAYSPEDFR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2393-DFPNQVGIAYSPEDFR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2393-FGEYASALYGILEEEPK_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3186-VGAEQLPGEYR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3186-GALLPVELIWQPK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3186-QPGGVDEVDNALVAGIK_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3186-ATNVVDNYQQLGVVYK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3186-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2291-VGAEQLPGEYR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2291-GALLPVELIWQPK_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2291-QPGGVDEVDNALVAGIK_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2291-ATNVVDNYQQLGVVYK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2291-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5554-YTLAGTEVSALLGR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5554-GLNVDSTGAAISVPVGK_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5554-FLSQPFFVAEVFTGSPGK_000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5554-DIASLGIYPAVDPLDSTSR_0000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5554-EAPSYADQAGGNELLETGIK_00000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0865-NASQAAAYAESQGAK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0865-SIYDVDFEFIEGR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0865-IPINESADDTSQIEEFIR_000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0865-LVGSHANFGELNIPSLEGIGGSLLYLVDR_00000000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1092-EVAAQQAELTR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1092-GVLTITSATGENVK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1092-DLALQSANGSNSDADR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1092-NLNASSNDLNTSLQR_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1092-NLNASSNDLNTSLQR_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3800-AAALDVNSGR_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3800-GASSLWNNDALAR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3800-VNSEVLSAPATNGDVVVVQTQDDK_000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3800-SVGDGQGDLYNLLEPAVDGSTIYAASAEGR_000000000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2113-SNFANDLDENR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2113-NTDLGYVVQSGPLK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2113-GALLDVQEIDGLTLR_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4545-DSFNEFAQLTSR_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4545-LGLDDLASTSLETLK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4545-YAEQAQLELIYANYK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3692-EYPVASNGTSSGR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3692-DVDQLAYLTNQR_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3692-SNFSALQSQPDATK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3692-RVEVTISNDAKPVAPR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3692-NIQQLAEFLQQNPER_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1588-NLVTYQTDANGQPVSK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1588-VLAESGLNIIAATSLTDAAQQVVK_000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4238-HIDVQVVSQTR_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4238-AENIYYIGDLIQR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4238-AATILQQQLAAFVDLK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4238-LVLDLETNGTLDPEEAIR_000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5556-VVDALGNPIDGK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5556-GDFNDEIDAGIK_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5556-VGSFEQALISYFQR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5556-ELAAFAQFASDLDEATR_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4370-ADLADTEAK_000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4370-TPYSQSEAFR_0000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4370-KAEAPATPAASTQPAAPAAAPAAK_000000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0400-LSVGVEALEDLQADLAQALAK_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0400-FSFVDPTDLQAFEAALTPETR_000000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2413-FLPPLIIGAEQIDEVAR_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2413-ITEQAGVALIVDEIQSGFAR_00000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2386-ATATAQGIELALR_0000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2386-QLLEPLAEYLGDHEIGR_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5366-VLDEAVEWALK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5366-LIEFGDTDTLFTNPAK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4385-GDNEEQNVGIALLR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4385-ENTTIIDGAGVQADIEAR_000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2853-KADEALGAAQK_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA2853-AQQTADEANER_00000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3891-VLIDGQDTADLDEVTLR_00000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1288-ASSALDASTIYGNPAGLSK_0000000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1800-LPELNEEFFALFGVK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4760-EANEAYEVLSDASK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0302-GEIFALLGGSGSGK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1804-ALDAVIESVTGALK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4217-YIDQSGATVWSEPR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5178-VGLGNPNIQVSVEGDK_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5232-ATLQSAQAALSAAR_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA3279-GGLEVATTDKEFSFK_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5243-SLDAAEAYNPEGIAQR_0000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA0316-SVAELVLAEAILLLR_000000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA4206-VFDGVGELEAGR_000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA1586-NEGDTVLSNELLGK_00000000000000 contains either id_refs or identificationFileRef only
+, 
+INFO: If one of EvidenceRef attributes identificationFileRef or id_refs is present, then they both MUST be present, 
+ERROR: EvidenceRef in PeptideConsensus PA5555-NATDNAGELISDLQLIYNK_0000000000000000000 contains either id_refs or identificationFileRef only
+, 
+WARN: [Rule: ID=SearchDatabaseName_rule]None of the given CvTerms were found at '/MzQuantML/InputFiles/SearchDatabase/databaseName/cvParam/@accession' because no values were found:
   - Any children term of MS:1001013 (database name). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
-ERROR: [Rule: ID=Software_rule_1]None of the given CvTerms were found at '/MzQuantML/SoftwareList/Software/cvParam/@accession' because no values were found:
-  - Any children term of MS:1001139 (quantitation software name). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name.
-  - Any children term of MS:1001456 (analysis software). A single instance of this term can be specified. The matching value has to be the identifier of the term, not its name., 
-ERROR: [Rule: ID=MethodFileFormat_rule]The term 'method file format attribute' (MS:1002128) doesn't have children in the ontology 'MS', yet the CvMapping recommends to use them. The CvTerm will be removed., 
 INFO: MzQuantML validation process is finished

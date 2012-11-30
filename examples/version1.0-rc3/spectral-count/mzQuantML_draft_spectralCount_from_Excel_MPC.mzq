@@ -1,4 +1,4 @@
-<MzQuantML creationDate="2012-11-29T00:00:00.000+01:00" version="1.0.0" id="MZQ_SPC_EX1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2012-11-30T00:00:00.000+01:00" version="1.0.0" id="MZQ_SPC_EX1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.41.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
@@ -3838,9 +3838,6 @@
             </DataMatrix>
         </StudyVariableQuantLayer>
         <RatioQuantLayer id="RQL">
-            <DataType>
-                <cvParam cvRef="MS" accession="MS:1001848" name="simple ratio of two values"/>
-            </DataType>
             <ColumnIndex>RATIO_vIa_30min_vs_vIb_120min RATIO_20a_30min_vs_20b_120min RATIO_40a_30min_vs_40b_120min RATIO_60a_30min_vs_60b_120min RATIO_80a_30min_vs_80b_120min RATIO_Ia_30min_vs_Ib_120min</ColumnIndex>
             <DataMatrix>
                 <Row object_ref="PROT_15799694">0.4312 0.4412 0.34 0.4444 0.4688 0.5</Row>

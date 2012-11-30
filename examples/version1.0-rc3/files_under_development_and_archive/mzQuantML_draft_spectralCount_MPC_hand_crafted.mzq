@@ -13,7 +13,7 @@ schema comments / issues:
 - no
 
 -->
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-11-15T14:53:00" id="MZQ_1" version="1.0.0">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-11-30T08:33:00" id="MZQ_1" version="1.0.0">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.39.0"/>
 		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo"/>
@@ -206,9 +206,6 @@ schema comments / issues:
 
 		<!-- description see above e) -->
 		<RatioQuantLayer id="QL_protein_ratio_disease_vs_healthy">
-			<DataType>
-				<cvParam accession="MS:1001848" name="simple ratio of two value" cvRef="PSI-MS"/>
-			</DataType>
 			<ColumnIndex>DISEASE_VS_HEALTHY</ColumnIndex>
 			<DataMatrix>
 				<Row object_ref="prot1">2.171</Row>

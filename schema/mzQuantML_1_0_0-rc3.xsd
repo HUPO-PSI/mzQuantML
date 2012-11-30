@@ -571,7 +571,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:element name="GlobalQuantLayer" type="GlobalQuantLayerType" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Global values corresponding to the small molecule such as the total intensity of peptide in all assays, Anova in a quantitative peptidome experiment etc. </xsd:documentation>
+					<xsd:documentation>Global values corresponding to the small molecule such as the total intensity of the molecule in all assays, Anova etc. </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="AssayQuantLayer" type="QuantLayerType" minOccurs="0"
@@ -737,7 +737,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			</xsd:element>
 			<xsd:element name="ColumnIndex" type="xsd:IDREFS" maxOccurs="1" minOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Space separated unique identifiers for each column of data, MUST refer to an object in the file i.e. StudyVariable, Assay or Ratio, depending on the context where the QuantLayer resides.</xsd:documentation>
+					<xsd:documentation>Space separated unique identifiers for each column of data, MUST refer to an object in the file i.e. StudyVariable or Assay, depending on the context where the QuantLayer resides.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="DataMatrix" type="DataMatrixType" minOccurs="1" maxOccurs="1">
@@ -1133,9 +1133,9 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:documentation>The monoisotopic peak on the mass over charge axis in daltons over charge.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="charge" type="integerOrNullType">
+		<xsd:attribute name="charge" type="integerOrNullType" use="required">
 			<xsd:annotation>
-				<xsd:documentation>The assumed charge of the feature, used to calculate the m/z value.</xsd:documentation>
+				<xsd:documentation>The assumed charge of the feature, used to calculate the m/z value. If the charge is unknown the null type MUST be used.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="chromatogram_refs" type="xsd:string">
@@ -1150,7 +1150,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:attribute>
 		<xsd:attribute name="rawFile_ref" type="xsd:IDREF" use="optional">
 			<xsd:annotation>
-				<xsd:documentation>An optional reference to a RawFile element inside a RawFileGroup. The reference MUST only be used if multiple RawFiles are provided within a RawFilesGroup e.g. if pre-fractionation has occurred.</xsd:documentation>
+				<xsd:documentation>An optional reference to a RawFile element inside a RawFileGroup. The reference MUST be used if multiple RawFiles are provided within a RawFilesGroup, e.g. if pre-fractionation has occurred, and SHOULD not be used otherwise.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

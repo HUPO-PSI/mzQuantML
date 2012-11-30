@@ -1,4 +1,9 @@
-<MzQuantML id="iTraq_mzQuantML_example_collected_by_Univ_Cambridge" version="1.0.0" creationDate="2012-11-26T12:00:00Z" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
+ id="iTraq_mzQuantML_example_collected_by_Univ_Cambridge"
+ version="1.0.0"
+ creationDate="2012-11-26T12:00:00Z">
     <CvList>
         <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.39.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
         <Cv id="UO" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo" fullName="Unit Ontology"/>
@@ -183,9 +188,6 @@
             </DataMatrix>
         </StudyVariableQuantLayer>
         <RatioQuantLayer id="RatioQuantLayer_Proteins">
-            <DataType>
-                <cvParam accession="MS:1001134" cvRef="PSI-MS" name="Protein ratio"/>
-            </DataType>
             <ColumnIndex>ratio_SV_A_B ratio_assay_115_114 ratio_assay_116_114 ratio_assay_117_114</ColumnIndex>
             <DataMatrix>
                 <Row object_ref="DBSeq_1_sp_P00924_ENO1_YEAST">1.5688765800335178 0.8774300605025027 0.5904007385417112 0.5794867184130507</Row>
@@ -201,80 +203,80 @@
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SVYDSR_00000000-2-435.7178_SIR_62" id_refs="SII_62_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SVYDSR_00000000-2-435.7178_SIR_62" id_refs="SII_62_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00924-ENO1_YEAST-LNQLLR_00000000">
             <PeptideSequence>LNQLLR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.1_SIR_80" id_refs="SII_80_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.6_SIR_82" id_refs="SII_82_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.7256_SIR_84" id_refs="SII_84_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.7487_SIR_85" id_refs="SII_85_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.7759_SIR_86" id_refs="SII_86_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.9835_SIR_87" id_refs="SII_87_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.1_SIR_80" id_refs="SII_80_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.6_SIR_82" id_refs="SII_82_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.7256_SIR_84" id_refs="SII_84_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.7487_SIR_85" id_refs="SII_85_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.7759_SIR_86" id_refs="SII_86_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LNQLLR_00000000-2-450.9835_SIR_87" id_refs="SII_87_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00924-ENO1_YEAST-TFAEALR_000000000">
             <PeptideSequence>TFAEALR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-TFAEALR_000000000-2-475.5862_SIR_159" id_refs="SII_159_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-TFAEALR_000000000-2-476.221_SIR_160" id_refs="SII_160_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-TFAEALR_000000000-2-476.4808_SIR_167" id_refs="SII_167_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-TFAEALR_000000000-2-475.5862_SIR_159" id_refs="SII_159_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-TFAEALR_000000000-2-476.221_SIR_160" id_refs="SII_160_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-TFAEALR_000000000-2-476.4808_SIR_167" id_refs="SII_167_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00924-ENO1_YEAST-VNQIGTLSESIK_00000000000000">
             <PeptideSequence>VNQIGTLSESIK</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-VNQIGTLSESIK_00000000000000-2-716.3609_SIR_999" id_refs="SII_999_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-VNQIGTLSESIK_00000000000000-2-716.3609_SIR_999" id_refs="SII_999_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2 3" id="sp-P00924-ENO1_YEAST-LGANAILGVSLAASR_00000000000000000">
             <PeptideSequence>LGANAILGVSLAASR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-3-519.2801_SIR_1245" id_refs="SII_1245_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-3-519.9924_SIR_1262" id_refs="SII_1262_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.8815_SIR_1246" id_refs="SII_1246_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9064_SIR_1247" id_refs="SII_1247_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9066_SIR_1248" id_refs="SII_1248_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9091_SIR_1249" id_refs="SII_1249_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9164_SIR_1250" id_refs="SII_1250_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.919_SIR_1251" id_refs="SII_1251_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9195_SIR_1252" id_refs="SII_1252_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9345_SIR_1253" id_refs="SII_1253_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9364_SIR_1254" id_refs="SII_1254_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.937_SIR_1255" id_refs="SII_1255_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9973_SIR_1256" id_refs="SII_1256_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.3688_SIR_1257" id_refs="SII_1257_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.405_SIR_1259" id_refs="SII_1259_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.4069_SIR_1260" id_refs="SII_1260_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.4227_SIR_1261" id_refs="SII_1261_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.6542_SIR_1263" id_refs="SII_1263_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-3-519.2801_SIR_1245" id_refs="SII_1245_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-3-519.9924_SIR_1262" id_refs="SII_1262_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.8815_SIR_1246" id_refs="SII_1246_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9064_SIR_1247" id_refs="SII_1247_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9066_SIR_1248" id_refs="SII_1248_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9091_SIR_1249" id_refs="SII_1249_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9164_SIR_1250" id_refs="SII_1250_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.919_SIR_1251" id_refs="SII_1251_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9195_SIR_1252" id_refs="SII_1252_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9345_SIR_1253" id_refs="SII_1253_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9364_SIR_1254" id_refs="SII_1254_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.937_SIR_1255" id_refs="SII_1255_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-778.9973_SIR_1256" id_refs="SII_1256_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.3688_SIR_1257" id_refs="SII_1257_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.405_SIR_1259" id_refs="SII_1259_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.4069_SIR_1260" id_refs="SII_1260_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.4227_SIR_1261" id_refs="SII_1261_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-LGANAILGVSLAASR_00000000000000000-2-779.6542_SIR_1263" id_refs="SII_1263_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00924-ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000">
             <PeptideSequence>AAQDSFAAGWGVMVSHR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.282_SIR_2091" id_refs="SII_2091_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.283_SIR_2092" id_refs="SII_2092_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.2898_SIR_2093" id_refs="SII_2093_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3005_SIR_2095" id_refs="SII_2095_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3086_SIR_2096" id_refs="SII_2096_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3123_SIR_2097" id_refs="SII_2097_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3144_SIR_2098" id_refs="SII_2098_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3151_SIR_2099" id_refs="SII_2099_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3152_SIR_2100" id_refs="SII_2100_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3186_SIR_2101" id_refs="SII_2101_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3204_SIR_2102" id_refs="SII_2102_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.323_SIR_2104" id_refs="SII_2104_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.6323_SIR_2105" id_refs="SII_2105_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.6358_SIR_2106" id_refs="SII_2106_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.6439_SIR_2107" id_refs="SII_2107_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.282_SIR_2091" id_refs="SII_2091_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.283_SIR_2092" id_refs="SII_2092_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.2898_SIR_2093" id_refs="SII_2093_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3005_SIR_2095" id_refs="SII_2095_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3086_SIR_2096" id_refs="SII_2096_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3123_SIR_2097" id_refs="SII_2097_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3144_SIR_2098" id_refs="SII_2098_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3151_SIR_2099" id_refs="SII_2099_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3152_SIR_2100" id_refs="SII_2100_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3186_SIR_2101" id_refs="SII_2101_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.3204_SIR_2102" id_refs="SII_2102_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.323_SIR_2104" id_refs="SII_2104_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.6323_SIR_2105" id_refs="SII_2105_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.6358_SIR_2106" id_refs="SII_2106_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000000000-3-645.6439_SIR_2107" id_refs="SII_2107_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00924-ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000100000">
             <PeptideSequence>AAQDSFAAGWGVMVSHR</PeptideSequence>
@@ -285,23 +287,23 @@
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000100000-3-650.9768_SIR_2128" id_refs="SII_2128_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-AAQDSFAAGWGVMVSHR_0000000000000100000-3-650.9768_SIR_2128" id_refs="SII_2128_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00924-ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000">
             <PeptideSequence>SIVPSGASTGVHEALEMR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-661.9761_SIR_2155" id_refs="SII_2155_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.0296_SIR_2156" id_refs="SII_2156_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.2844_SIR_2157" id_refs="SII_2157_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3124_SIR_2159" id_refs="SII_2159_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3197_SIR_2161" id_refs="SII_2161_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3219_SIR_2162" id_refs="SII_2162_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3229_SIR_2163" id_refs="SII_2163_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3245_SIR_2164" id_refs="SII_2164_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.331_SIR_2165" id_refs="SII_2165_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.6658_SIR_2167" id_refs="SII_2167_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-661.9761_SIR_2155" id_refs="SII_2155_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.0296_SIR_2156" id_refs="SII_2156_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.2844_SIR_2157" id_refs="SII_2157_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3124_SIR_2159" id_refs="SII_2159_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3197_SIR_2161" id_refs="SII_2161_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3219_SIR_2162" id_refs="SII_2162_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3229_SIR_2163" id_refs="SII_2163_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.3245_SIR_2164" id_refs="SII_2164_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.331_SIR_2165" id_refs="SII_2165_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000000-3-662.6658_SIR_2167" id_refs="SII_2167_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00924-ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000100">
             <PeptideSequence>SIVPSGASTGVHEALEMR</PeptideSequence>
@@ -312,48 +314,48 @@
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
                 <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000100-3-667.6828_SIR_2195" id_refs="SII_2195_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000100-3-667.6828_SIR_2195" id_refs="SII_2195_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-VEDVDR_00000000">
             <PeptideSequence>VEDVDR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VEDVDR_00000000-2-438.7239_SIR_67" id_refs="SII_67_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VEDVDR_00000000-2-438.7239_SIR_67" id_refs="SII_67_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-TIAQYAR_000000000">
             <PeptideSequence>TIAQYAR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-TIAQYAR_000000000-2-483.7588_SIR_197" id_refs="SII_197_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-TIAQYAR_000000000-2-483.7588_SIR_197" id_refs="SII_197_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-VLVDLER_000000000">
             <PeptideSequence>VLVDLER</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VLVDLER_000000000-2-494.2518_SIR_234" id_refs="SII_234_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VLVDLER_000000000-2-494.2795_SIR_236" id_refs="SII_236_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VLVDLER_000000000-2-494.5082_SIR_237" id_refs="SII_237_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VLVDLER_000000000-2-494.2518_SIR_234" id_refs="SII_234_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VLVDLER_000000000-2-494.2795_SIR_236" id_refs="SII_236_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VLVDLER_000000000-2-494.5082_SIR_237" id_refs="SII_237_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-FAAYLER_000000000">
             <PeptideSequence>FAAYLER</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-506.5344_SIR_274" id_refs="SII_274_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-507.2122_SIR_275" id_refs="SII_275_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-507.2467_SIR_277" id_refs="SII_277_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-507.4827_SIR_278" id_refs="SII_278_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-506.5344_SIR_274" id_refs="SII_274_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-507.2122_SIR_275" id_refs="SII_275_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-507.2467_SIR_277" id_refs="SII_277_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-FAAYLER_000000000-2-507.4827_SIR_278" id_refs="SII_278_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-NLAENISR_0000000000">
             <PeptideSequence>NLAENISR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-NLAENISR_0000000000-2-530.7525_SIR_354" id_refs="SII_354_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-NLAENISR_0000000000-2-531.2584_SIR_356" id_refs="SII_356_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-NLAENISR_0000000000-2-530.7525_SIR_354" id_refs="SII_354_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-NLAENISR_0000000000-2-531.2584_SIR_356" id_refs="SII_356_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-NNVVNTMR_0000000100">
             <PeptideSequence>NNVVNTMR</PeptideSequence>
@@ -364,76 +366,76 @@
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
                 <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-NNVVNTMR_0000000100-2-554.257_SIR_461" id_refs="SII_461_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-NNVVNTMR_0000000100-2-554.257_SIR_461" id_refs="SII_461_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-VIFLENYR_0000000000">
             <PeptideSequence>VIFLENYR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.0_SIR_627" id_refs="SII_627_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.2493_SIR_629" id_refs="SII_629_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.2943_SIR_630" id_refs="SII_630_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.3244_SIR_632" id_refs="SII_632_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.5295_SIR_634" id_refs="SII_634_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.7846_SIR_636" id_refs="SII_636_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.0_SIR_627" id_refs="SII_627_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.2493_SIR_629" id_refs="SII_629_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.2943_SIR_630" id_refs="SII_630_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.3244_SIR_632" id_refs="SII_632_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.5295_SIR_634" id_refs="SII_634_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VIFLENYR_0000000000-2-599.7846_SIR_636" id_refs="SII_636_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-EIWGVEPSR_00000000000">
             <PeptideSequence>EIWGVEPSR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-EIWGVEPSR_00000000000-2-608.7588_SIR_674" id_refs="SII_674_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-EIWGVEPSR_00000000000-2-608.7882_SIR_675" id_refs="SII_675_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-EIWGVEPSR_00000000000-2-609.041_SIR_676" id_refs="SII_676_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-EIWGVEPSR_00000000000-2-608.7588_SIR_674" id_refs="SII_674_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-EIWGVEPSR_00000000000-2-608.7882_SIR_675" id_refs="SII_675_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-EIWGVEPSR_00000000000-2-609.041_SIR_676" id_refs="SII_676_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-VAAAFPGDVDR_0000000000000">
             <PeptideSequence>VAAAFPGDVDR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAAAFPGDVDR_0000000000000-2-631.2992_SIR_752" id_refs="SII_752_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAAAFPGDVDR_0000000000000-2-631.559_SIR_756" id_refs="SII_756_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAAAFPGDVDR_0000000000000-2-631.2992_SIR_752" id_refs="SII_752_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAAAFPGDVDR_0000000000000-2-631.559_SIR_756" id_refs="SII_756_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-VEDVDRLDQR_000000000000">
             <PeptideSequence>VEDVDRLDQR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VEDVDRLDQR_000000000000-2-694.8219_SIR_933" id_refs="SII_933_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VEDVDRLDQR_000000000000-2-694.8219_SIR_933" id_refs="SII_933_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-GYNAQEYYDR_000000000000">
             <PeptideSequence>GYNAQEYYDR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDR_000000000000-2-711.7629_SIR_967" id_refs="SII_967_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDR_000000000000-2-712.0512_SIR_970" id_refs="SII_970_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDR_000000000000-2-712.2879_SIR_971" id_refs="SII_971_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDR_000000000000-2-711.7629_SIR_967" id_refs="SII_967_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDR_000000000000-2-712.0512_SIR_970" id_refs="SII_970_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDR_000000000000-2-712.2879_SIR_971" id_refs="SII_971_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-DYYFALAHTVR_0000000000000">
             <PeptideSequence>DYYFALAHTVR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DYYFALAHTVR_0000000000000-3-500.224_SIR_1147" id_refs="SII_1147_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DYYFALAHTVR_0000000000000-3-500.2339_SIR_1148" id_refs="SII_1148_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DYYFALAHTVR_0000000000000-3-500.5692_SIR_1149" id_refs="SII_1149_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DYYFALAHTVR_0000000000000-3-500.224_SIR_1147" id_refs="SII_1147_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DYYFALAHTVR_0000000000000-3-500.2339_SIR_1148" id_refs="SII_1148_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DYYFALAHTVR_0000000000000-3-500.5692_SIR_1149" id_refs="SII_1149_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2 3" id="sp-P00489-PYGM_RABIT-DIVNMLMHHDR_0000000000000">
             <PeptideSequence>DIVNMLMHHDR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-2-762.7998_SIR_1177" id_refs="SII_1177_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.8954_SIR_1178" id_refs="SII_1178_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.8995_SIR_1179" id_refs="SII_1179_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9001_SIR_1180" id_refs="SII_1180_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9002_SIR_1181" id_refs="SII_1181_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9033_SIR_1182" id_refs="SII_1182_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9088_SIR_1183" id_refs="SII_1183_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9187_SIR_1184" id_refs="SII_1184_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-509.2381_SIR_1185" id_refs="SII_1185_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-2-762.7998_SIR_1177" id_refs="SII_1177_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.8954_SIR_1178" id_refs="SII_1178_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.8995_SIR_1179" id_refs="SII_1179_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9001_SIR_1180" id_refs="SII_1180_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9002_SIR_1181" id_refs="SII_1181_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9033_SIR_1182" id_refs="SII_1182_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9088_SIR_1183" id_refs="SII_1183_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-508.9187_SIR_1184" id_refs="SII_1184_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000000000-3-509.2381_SIR_1185" id_refs="SII_1185_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-DIVNMLMHHDR_0000000100000">
             <PeptideSequence>DIVNMLMHHDR</PeptideSequence>
@@ -444,127 +446,127 @@
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
                 <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000100000-3-514.2343_SIR_1209" id_refs="SII_1209_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000100000-3-514.5655_SIR_1211" id_refs="SII_1211_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000100000-3-514.2343_SIR_1209" id_refs="SII_1209_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000100000-3-514.5655_SIR_1211" id_refs="SII_1211_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-HLQIIYEINQR_0000000000000">
             <PeptideSequence>HLQIIYEINQR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-785.885_SIR_1284" id_refs="SII_1284_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-785.8855_SIR_1285" id_refs="SII_1285_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-785.9145_SIR_1288" id_refs="SII_1288_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-786.0_SIR_1291" id_refs="SII_1291_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-785.885_SIR_1284" id_refs="SII_1284_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-785.8855_SIR_1285" id_refs="SII_1285_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-785.9145_SIR_1288" id_refs="SII_1288_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-HLQIIYEINQR_0000000000000-2-786.0_SIR_1291" id_refs="SII_1291_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-LLSYVDDEAFIR_00000000000000">
             <PeptideSequence>LLSYVDDEAFIR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8643_SIR_1338" id_refs="SII_1338_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8705_SIR_1339" id_refs="SII_1339_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8779_SIR_1340" id_refs="SII_1340_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8881_SIR_1341" id_refs="SII_1341_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8991_SIR_1342" id_refs="SII_1342_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9029_SIR_1343" id_refs="SII_1343_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9036_SIR_1344" id_refs="SII_1344_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9088_SIR_1345" id_refs="SII_1345_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.912_SIR_1346" id_refs="SII_1346_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9171_SIR_1347" id_refs="SII_1347_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.0_SIR_1348" id_refs="SII_1348_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.1_SIR_1349" id_refs="SII_1349_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.3915_SIR_1351" id_refs="SII_1351_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.3984_SIR_1352" id_refs="SII_1352_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.4075_SIR_1353" id_refs="SII_1353_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.5_SIR_1354" id_refs="SII_1354_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8643_SIR_1338" id_refs="SII_1338_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8705_SIR_1339" id_refs="SII_1339_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8779_SIR_1340" id_refs="SII_1340_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8881_SIR_1341" id_refs="SII_1341_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.8991_SIR_1342" id_refs="SII_1342_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9029_SIR_1343" id_refs="SII_1343_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9036_SIR_1344" id_refs="SII_1344_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9088_SIR_1345" id_refs="SII_1345_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.912_SIR_1346" id_refs="SII_1346_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-792.9171_SIR_1347" id_refs="SII_1347_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.0_SIR_1348" id_refs="SII_1348_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.1_SIR_1349" id_refs="SII_1349_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.3915_SIR_1351" id_refs="SII_1351_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.3984_SIR_1352" id_refs="SII_1352_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.4075_SIR_1353" id_refs="SII_1353_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LLSYVDDEAFIR_00000000000000-2-793.5_SIR_1354" id_refs="SII_1354_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P00489-PYGM_RABIT-IGEEYISDLDQLR_000000000000000">
             <PeptideSequence>IGEEYISDLDQLR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-847.6_SIR_1593" id_refs="SII_1593_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-847.8249_SIR_1594" id_refs="SII_1594_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-847.8741_SIR_1595" id_refs="SII_1595_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-848.2_SIR_1596" id_refs="SII_1596_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-847.6_SIR_1593" id_refs="SII_1593_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-847.8249_SIR_1594" id_refs="SII_1594_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-847.8741_SIR_1595" id_refs="SII_1595_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-IGEEYISDLDQLR_000000000000000-2-848.2_SIR_1596" id_refs="SII_1596_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-DFNVGGYIQAVLDR_0000000000000000">
             <PeptideSequence>DFNVGGYIQAVLDR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-DFNVGGYIQAVLDR_0000000000000000-3-570.9521_SIR_1652" id_refs="SII_1652_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DFNVGGYIQAVLDR_0000000000000000-3-570.9521_SIR_1652" id_refs="SII_1652_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000">
             <PeptideSequence>ARPEFTLPVHFYGR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9692_SIR_1887" id_refs="SII_1887_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9701_SIR_1888" id_refs="SII_1888_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9787_SIR_1889" id_refs="SII_1889_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9796_SIR_1890" id_refs="SII_1890_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9805_SIR_1891" id_refs="SII_1891_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9824_SIR_1892" id_refs="SII_1892_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9897_SIR_1893" id_refs="SII_1893_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9906_SIR_1894" id_refs="SII_1894_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.0004_SIR_1895" id_refs="SII_1895_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.3011_SIR_1898" id_refs="SII_1898_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.3172_SIR_1899" id_refs="SII_1899_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.3276_SIR_1900" id_refs="SII_1900_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.344_SIR_1901" id_refs="SII_1901_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9692_SIR_1887" id_refs="SII_1887_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9701_SIR_1888" id_refs="SII_1888_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9787_SIR_1889" id_refs="SII_1889_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9796_SIR_1890" id_refs="SII_1890_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9805_SIR_1891" id_refs="SII_1891_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9824_SIR_1892" id_refs="SII_1892_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9897_SIR_1893" id_refs="SII_1893_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-611.9906_SIR_1894" id_refs="SII_1894_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.0004_SIR_1895" id_refs="SII_1895_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.3011_SIR_1898" id_refs="SII_1898_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.3172_SIR_1899" id_refs="SII_1899_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.3276_SIR_1900" id_refs="SII_1900_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-ARPEFTLPVHFYGR_0000000000000000-3-612.344_SIR_1901" id_refs="SII_1901_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-GYNAQEYYDRIPELR_00000000000000000">
             <PeptideSequence>GYNAQEYYDRIPELR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDRIPELR_00000000000000000-3-677.6473_SIR_2239" id_refs="SII_2239_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-GYNAQEYYDRIPELR_00000000000000000-3-677.6473_SIR_2239" id_refs="SII_2239_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2 3" id="sp-P00489-PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000">
             <PeptideSequence>LITAIGDVVNHDPVVGDR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.348_SIR_2244" id_refs="SII_2244_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6665_SIR_2247" id_refs="SII_2247_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6723_SIR_2248" id_refs="SII_2248_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6732_SIR_2249" id_refs="SII_2249_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6764_SIR_2250" id_refs="SII_2250_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6789_SIR_2251" id_refs="SII_2251_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6816_SIR_2252" id_refs="SII_2252_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6824_SIR_2253" id_refs="SII_2253_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6833_SIR_2254" id_refs="SII_2254_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6873_SIR_2255" id_refs="SII_2255_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6958_SIR_2256" id_refs="SII_2256_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.7085_SIR_2257" id_refs="SII_2257_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.9933_SIR_2259" id_refs="SII_2259_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.001_SIR_2260" id_refs="SII_2260_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0052_SIR_2261" id_refs="SII_2261_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0056_SIR_2262" id_refs="SII_2262_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0186_SIR_2263" id_refs="SII_2263_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0272_SIR_2264" id_refs="SII_2264_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0304_SIR_2265" id_refs="SII_2265_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.044_SIR_2266" id_refs="SII_2266_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0499_SIR_2267" id_refs="SII_2267_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-2-1017.4625_SIR_2245" id_refs="SII_2245_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-2-1017.6_SIR_2258" id_refs="SII_2258_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.348_SIR_2244" id_refs="SII_2244_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6665_SIR_2247" id_refs="SII_2247_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6723_SIR_2248" id_refs="SII_2248_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6732_SIR_2249" id_refs="SII_2249_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6764_SIR_2250" id_refs="SII_2250_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6789_SIR_2251" id_refs="SII_2251_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6816_SIR_2252" id_refs="SII_2252_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6824_SIR_2253" id_refs="SII_2253_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6833_SIR_2254" id_refs="SII_2254_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6873_SIR_2255" id_refs="SII_2255_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.6958_SIR_2256" id_refs="SII_2256_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.7085_SIR_2257" id_refs="SII_2257_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-678.9933_SIR_2259" id_refs="SII_2259_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.001_SIR_2260" id_refs="SII_2260_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0052_SIR_2261" id_refs="SII_2261_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0056_SIR_2262" id_refs="SII_2262_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0186_SIR_2263" id_refs="SII_2263_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0272_SIR_2264" id_refs="SII_2264_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0304_SIR_2265" id_refs="SII_2265_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.044_SIR_2266" id_refs="SII_2266_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-3-679.0499_SIR_2267" id_refs="SII_2267_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-2-1017.4625_SIR_2245" id_refs="SII_2245_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-LITAIGDVVNHDPVVGDR_00000000000000000000-2-1017.6_SIR_2258" id_refs="SII_2258_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000">
             <PeptideSequence>VAIQLNDTHPSLAIPELMR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.3507_SIR_2433" id_refs="SII_2433_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.3709_SIR_2434" id_refs="SII_2434_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.6795_SIR_2435" id_refs="SII_2435_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.7233_SIR_2436" id_refs="SII_2436_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.7259_SIR_2437" id_refs="SII_2437_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.7343_SIR_2438" id_refs="SII_2438_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-755.0536_SIR_2439" id_refs="SII_2439_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-755.0636_SIR_2440" id_refs="SII_2440_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-755.0699_SIR_2441" id_refs="SII_2441_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.3507_SIR_2433" id_refs="SII_2433_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.3709_SIR_2434" id_refs="SII_2434_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.6795_SIR_2435" id_refs="SII_2435_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.7233_SIR_2436" id_refs="SII_2436_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.7259_SIR_2437" id_refs="SII_2437_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-754.7343_SIR_2438" id_refs="SII_2438_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-755.0536_SIR_2439" id_refs="SII_2439_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-755.0636_SIR_2440" id_refs="SII_2440_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000000-3-755.0699_SIR_2441" id_refs="SII_2441_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000100">
             <PeptideSequence>VAIQLNDTHPSLAIPELMR</PeptideSequence>
@@ -575,25 +577,25 @@
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
                 <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000100-3-760.0591_SIR_2447" id_refs="SII_2447_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000100-3-760.0591_SIR_2447" id_refs="SII_2447_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2 3" id="sp-P00489-PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000">
             <PeptideSequence>WVDTQVVLAMPYDTPVPGYR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.3781_SIR_2583" id_refs="SII_2583_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.4078_SIR_2584" id_refs="SII_2584_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.4252_SIR_2585" id_refs="SII_2585_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.7176_SIR_2587" id_refs="SII_2587_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.7272_SIR_2588" id_refs="SII_2588_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.7653_SIR_2589" id_refs="SII_2589_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0412_SIR_2591" id_refs="SII_2591_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0543_SIR_2592" id_refs="SII_2592_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0616_SIR_2593" id_refs="SII_2593_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0774_SIR_2594" id_refs="SII_2594_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-2-1226.0112_SIR_2586" id_refs="SII_2586_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-2-1226.2_SIR_2590" id_refs="SII_2590_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.3781_SIR_2583" id_refs="SII_2583_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.4078_SIR_2584" id_refs="SII_2584_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.4252_SIR_2585" id_refs="SII_2585_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.7176_SIR_2587" id_refs="SII_2587_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.7272_SIR_2588" id_refs="SII_2588_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-817.7653_SIR_2589" id_refs="SII_2589_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0412_SIR_2591" id_refs="SII_2591_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0543_SIR_2592" id_refs="SII_2592_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0616_SIR_2593" id_refs="SII_2593_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-3-818.0774_SIR_2594" id_refs="SII_2594_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-2-1226.0112_SIR_2586" id_refs="SII_2586_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000000000000000-2-1226.2_SIR_2590" id_refs="SII_2590_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P00489-PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000100000000000">
             <PeptideSequence>WVDTQVVLAMPYDTPVPGYR</PeptideSequence>
@@ -604,135 +606,135 @@
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
                 <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000100000000000-3-823.0428_SIR_2597" id_refs="SII_2597_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000100000000000-3-823.0428_SIR_2597" id_refs="SII_2597_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-AEFVEVTK_0000000000">
             <PeptideSequence>AEFVEVTK</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-AEFVEVTK_0000000000-2-533.7711_SIR_360" id_refs="SII_360_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-AEFVEVTK_0000000000-2-533.7711_SIR_360" id_refs="SII_360_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-YLYEIAR_000000000">
             <PeptideSequence>YLYEIAR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-YLYEIAR_000000000-2-536.0149_SIR_390" id_refs="SII_390_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-YLYEIAR_000000000-2-536.4981_SIR_395" id_refs="SII_395_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-YLYEIAR_000000000-2-536.6_SIR_396" id_refs="SII_396_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-YLYEIAR_000000000-2-536.0149_SIR_390" id_refs="SII_390_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-YLYEIAR_000000000-2-536.4981_SIR_395" id_refs="SII_395_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-YLYEIAR_000000000-2-536.6_SIR_396" id_refs="SII_396_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-DLGEEHFK_0000000000">
             <PeptideSequence>DLGEEHFK</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DLGEEHFK_0000000000-2-559.2398_SIR_478" id_refs="SII_478_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DLGEEHFK_0000000000-2-559.2398_SIR_478" id_refs="SII_478_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-LVVSTQTALA_000000000000">
             <PeptideSequence>LVVSTQTALA</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LVVSTQTALA_000000000000-2-573.814_SIR_525" id_refs="SII_525_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LVVSTQTALA_000000000000-2-573.814_SIR_525" id_refs="SII_525_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-HPEYAVSVLLR_0000000000000">
             <PeptideSequence>HPEYAVSVLLR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-HPEYAVSVLLR_0000000000000-2-714.3392_SIR_986" id_refs="SII_986_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-HPEYAVSVLLR_0000000000000-2-714.3392_SIR_986" id_refs="SII_986_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="3" id="sp-P02769-ALBU_BOVIN-RHPEYAVSVLLR_00000000000000">
             <PeptideSequence>RHPEYAVSVLLR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-RHPEYAVSVLLR_00000000000000-3-528.6121_SIR_1337" id_refs="SII_1337_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-RHPEYAVSVLLR_00000000000000-3-528.6121_SIR_1337" id_refs="SII_1337_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-LGEYGFQNALIVR_000000000000000">
             <PeptideSequence>LGEYGFQNALIVR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-811.8484_SIR_1420" id_refs="SII_1420_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3498_SIR_1421" id_refs="SII_1421_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3855_SIR_1423" id_refs="SII_1423_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3894_SIR_1424" id_refs="SII_1424_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3934_SIR_1425" id_refs="SII_1425_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3937_SIR_1426" id_refs="SII_1426_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4075_SIR_1427" id_refs="SII_1427_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4118_SIR_1428" id_refs="SII_1428_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4138_SIR_1429" id_refs="SII_1429_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.419_SIR_1430" id_refs="SII_1430_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4194_SIR_1431" id_refs="SII_1431_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.435_SIR_1432" id_refs="SII_1432_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.5_SIR_1433" id_refs="SII_1433_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.7_SIR_1434" id_refs="SII_1434_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.71_SIR_1435" id_refs="SII_1435_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.8978_SIR_1436" id_refs="SII_1436_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.9027_SIR_1437" id_refs="SII_1437_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.9132_SIR_1438" id_refs="SII_1438_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.9189_SIR_1439" id_refs="SII_1439_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-813.0866_SIR_1440" id_refs="SII_1440_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-813.2_SIR_1441" id_refs="SII_1441_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-811.8484_SIR_1420" id_refs="SII_1420_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3498_SIR_1421" id_refs="SII_1421_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3855_SIR_1423" id_refs="SII_1423_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3894_SIR_1424" id_refs="SII_1424_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3934_SIR_1425" id_refs="SII_1425_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.3937_SIR_1426" id_refs="SII_1426_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4075_SIR_1427" id_refs="SII_1427_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4118_SIR_1428" id_refs="SII_1428_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4138_SIR_1429" id_refs="SII_1429_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.419_SIR_1430" id_refs="SII_1430_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.4194_SIR_1431" id_refs="SII_1431_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.435_SIR_1432" id_refs="SII_1432_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.5_SIR_1433" id_refs="SII_1433_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.7_SIR_1434" id_refs="SII_1434_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.71_SIR_1435" id_refs="SII_1435_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.8978_SIR_1436" id_refs="SII_1436_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.9027_SIR_1437" id_refs="SII_1437_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.9132_SIR_1438" id_refs="SII_1438_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-812.9189_SIR_1439" id_refs="SII_1439_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-813.0866_SIR_1440" id_refs="SII_1440_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-LGEYGFQNALIVR_000000000000000-2-813.2_SIR_1441" id_refs="SII_1441_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-VPQVSTPTLVEVSR_0000000000000000">
             <PeptideSequence>VPQVSTPTLVEVSR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-VPQVSTPTLVEVSR_0000000000000000-2-828.4244_SIR_1517" id_refs="SII_1517_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-VPQVSTPTLVEVSR_0000000000000000-2-828.4244_SIR_1517" id_refs="SII_1517_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000">
             <PeptideSequence>DAFLGSFLYEYSR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-855.8743_SIR_1651" id_refs="SII_1651_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-855.9299_SIR_1653" id_refs="SII_1653_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3825_SIR_1655" id_refs="SII_1655_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3831_SIR_1656" id_refs="SII_1656_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3897_SIR_1657" id_refs="SII_1657_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3902_SIR_1658" id_refs="SII_1658_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.4009_SIR_1659" id_refs="SII_1659_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.7_SIR_1666" id_refs="SII_1666_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.9001_SIR_1667" id_refs="SII_1667_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-855.8743_SIR_1651" id_refs="SII_1651_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-855.9299_SIR_1653" id_refs="SII_1653_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3825_SIR_1655" id_refs="SII_1655_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3831_SIR_1656" id_refs="SII_1656_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3897_SIR_1657" id_refs="SII_1657_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.3902_SIR_1658" id_refs="SII_1658_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.4009_SIR_1659" id_refs="SII_1659_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.7_SIR_1666" id_refs="SII_1666_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-DAFLGSFLYEYSR_000000000000000-2-856.9001_SIR_1667" id_refs="SII_1667_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P02769-ALBU_BOVIN-KVPQVSTPTLVEVSR_00000000000000000">
             <PeptideSequence>KVPQVSTPTLVEVSR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P02769_ALBU_BOVIN-KVPQVSTPTLVEVSR_00000000000000000-2-892.4871_SIR_1838" id_refs="SII_1838_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P02769_ALBU_BOVIN-KVPQVSTPTLVEVSR_00000000000000000-2-892.4871_SIR_1838" id_refs="SII_1838_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2" id="sp-P62894.2-CYC_BOVIN-EDLIAYLK_0000000000">
             <PeptideSequence>EDLIAYLK</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-EDLIAYLK_0000000000-2-554.789_SIR_465" id_refs="SII_465_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-EDLIAYLK_0000000000-2-554.789_SIR_465" id_refs="SII_465_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2 3" id="sp-P62894.2-CYC_BOVIN-TGPNLHGLFGR_0000000000000">
             <PeptideSequence>TGPNLHGLFGR</PeptideSequence>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-656.8002_SIR_830" id_refs="SII_830_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-656.807_SIR_831" id_refs="SII_831_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-656.8187_SIR_832" id_refs="SII_832_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-657.0821_SIR_846" id_refs="SII_846_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-657.3181_SIR_847" id_refs="SII_847_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2229_SIR_834" id_refs="SII_834_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2237_SIR_835" id_refs="SII_835_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2241_SIR_836" id_refs="SII_836_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2278_SIR_837" id_refs="SII_837_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2318_SIR_838" id_refs="SII_838_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2321_SIR_839" id_refs="SII_839_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2401_SIR_840" id_refs="SII_840_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2569_SIR_843" id_refs="SII_843_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2576_SIR_844" id_refs="SII_844_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2594_SIR_845" id_refs="SII_845_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-656.8002_SIR_830" id_refs="SII_830_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-656.807_SIR_831" id_refs="SII_831_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-656.8187_SIR_832" id_refs="SII_832_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-657.0821_SIR_846" id_refs="SII_846_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-2-657.3181_SIR_847" id_refs="SII_847_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2229_SIR_834" id_refs="SII_834_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2237_SIR_835" id_refs="SII_835_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2241_SIR_836" id_refs="SII_836_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2278_SIR_837" id_refs="SII_837_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2318_SIR_838" id_refs="SII_838_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2321_SIR_839" id_refs="SII_839_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2401_SIR_840" id_refs="SII_840_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2569_SIR_843" id_refs="SII_843_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2576_SIR_844" id_refs="SII_844_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-TGPNLHGLFGR_0000000000000-3-438.2594_SIR_845" id_refs="SII_845_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <PeptideConsensus searchDatabase_ref="SDB_itraq_test_db" charge="2 3" id="sp-P62894.2-CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000">
             <PeptideSequence>GITWGEETLMEYLENPKK</PeptideSequence>
@@ -743,11 +745,11 @@
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
                 <cvParam accession="MS:1001524" cvRef="PSI-MS" value="0" name="fragment neutral loss"/>
             </Modification>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-2-1149.4866_SIR_2458" id_refs="SII_2458_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-2-1150.1557_SIR_2463" id_refs="SII_2463_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-3-766.7007_SIR_2459" id_refs="SII_2459_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-3-766.7227_SIR_2460" id_refs="SII_2460_1" assay_refs="_114 _115 _116 _117"/>
-            <EvidenceRef feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-3-767.0385_SIR_2462" id_refs="SII_2462_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-2-1149.4866_SIR_2458" id_refs="SII_2458_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-2-1150.1557_SIR_2463" id_refs="SII_2463_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-3-766.7007_SIR_2459" id_refs="SII_2459_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-3-766.7227_SIR_2460" id_refs="SII_2460_1" assay_refs="_114 _115 _116 _117"/>
+            <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-3-767.0385_SIR_2462" id_refs="SII_2462_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
         <AssayQuantLayer id="AssayQuantLayer_Peptides_reporter_ion_intensity">
             <DataType>
@@ -805,9 +807,6 @@
             </DataMatrix>
         </AssayQuantLayer>
         <RatioQuantLayer id="RatioQuantLayer_Peptides">
-            <DataType>
-                <cvParam accession="MS:1001132" cvRef="PSI-MS" name="Peptide ratio"/>
-            </DataType>
             <ColumnIndex>ratio_assay_115_114 ratio_assay_116_114 ratio_assay_117_114</ColumnIndex>
             <DataMatrix>
                 <Row object_ref="sp-P00924-ENO1_YEAST-SVYDSR_00000000">0.842708750520898 0.6226174022900625 0.5794867184130507</Row>

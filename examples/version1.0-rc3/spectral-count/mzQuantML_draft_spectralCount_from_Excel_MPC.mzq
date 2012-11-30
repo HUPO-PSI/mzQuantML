@@ -77,7 +77,7 @@
     <DataProcessingList>
         <DataProcessing id="DP_1" software_ref="Microsoft_Excel_2007" order="1">
             <InputObject_refs>AQL_MEANS_OF_GROUPS</InputObject_refs>
-            <ProcessingMethod order="0">
+            <ProcessingMethod order="1">
                 <cvParam cvRef="MS" accession="MS:1001862" name="normalization to mean of sum of all proteins"/>
             </ProcessingMethod>
         </DataProcessing>

@@ -13,7 +13,7 @@ schema comments / issues:
 - no
 
 -->
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-11-30T08:33:00" id="MZQ_1" version="1.0.0">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-11-30T13:30:00" id="MZQ_1" version="1.0.0">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.39.0"/>
 		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo"/>
@@ -260,19 +260,19 @@ schema comments / issues:
 	</PeptideConsensusList>	
 	
 	<FeatureList rawFilesGroup_ref="RFG_1" id="FEATLIST">
-		<Feature rt="null" mz="123.55" id="FEAT_1">
+		<Feature rt="null" mz="123.55" id="FEAT_1" charge="null">
 			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
 		</Feature>
-		<Feature rt="null" mz="218.34" id="FEAT_2">
+		<Feature rt="null" mz="218.34" id="FEAT_2" charge="null">
 			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
 		</Feature>
-		<Feature rt="null" mz="96.53" id="FEAT_3">
+		<Feature rt="null" mz="96.53" id="FEAT_3" charge="null">
 			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
 		</Feature>
-		<Feature rt="null" mz="58.37" id="FEAT_4">
+		<Feature rt="null" mz="58.37" id="FEAT_4" charge="null">
 			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
 		</Feature>
-		<Feature rt="null" mz="119.21" id="FEAT_5">
+		<Feature rt="null" mz="119.21" id="FEAT_5" charge="null">
 			<cvParam accession="MS:1002121" name="spectral count feature" cvRef="PSI-MS" />
 		</Feature>
 		<cvParam accession="MS:1002122" name="counts reporting" cvRef="PSI-MS" />

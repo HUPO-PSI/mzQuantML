@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" id="OpenMS_16587230758885883269" version="1.0.0" creationDate="2012-11-26T21:49:00">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" id="OpenMS_16587230758885883269" version="1.0.0" creationDate="2012-11-30T11:20:15">
 <CvList>
  	<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"  uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.40.0"/>
 	<Cv id="PSI-MOD" fullName="Proteomics Standards Initiative Protein Modifications Vocabularies" uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" version="1.2"/>
@@ -1436,9 +1436,6 @@
 			<EvidenceRef feature_ref="f_4141062663476855150" assay_refs="a_3151552639304580883"/>
 		</PeptideConsensus>
 		<RatioQuantLayer id="q_11295789180312944910">
-					<DataType>
-						<cvParam cvRef="PSI-MS" accession="MS:1001132" name="peptide ratio"/>
-					</DataType>
 				<ColumnIndex>r_9333422244661209991 </ColumnIndex>
 				<DataMatrix>
 				<Row object_ref="c_4285183850724353536">0.549547672271729</Row>

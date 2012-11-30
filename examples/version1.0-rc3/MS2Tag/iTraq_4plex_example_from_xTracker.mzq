@@ -12,9 +12,9 @@
     </CvList>
     <AnalysisSummary>
         <cvParam accession="MS:1002023" cvRef="PSI-MS" name="MS2 tag-based analysis"/>
-        <cvParam accession="MS:1002024" cvRef="PSI-MS" value="true" name="MS2 tag-based analysis feature level quantitation"/>
-        <cvParam accession="MS:1002025" cvRef="PSI-MS" value="true" name="MS2 tag-based analysis group features by peptide quantitation"/>
-        <cvParam accession="MS:1002026" cvRef="PSI-MS" value="true" name="MS2 tag-based analysis protein level quantitation"/>
+        <cvParam accession="MS:1002024" cvRef="PSI-MS" value="true" name="MS2 tag-based feature level quantitation"/>
+        <cvParam accession="MS:1002025" cvRef="PSI-MS" value="true" name="MS2 tag-based peptide level quantitation"/>
+        <cvParam accession="MS:1002026" cvRef="PSI-MS" value="true" name="MS2 tag-based protein level quantitation"/>
         <cvParam accession="MS:1002027" cvRef="PSI-MS" value="false" name="MS2 tag-based proteingroup level quantitation"/>
     </AnalysisSummary>
     <InputFiles>
@@ -32,7 +32,7 @@
     </InputFiles>
     <SoftwareList>
         <Software version="2.0-ALPHA" id="x-Tracker">
-            <cvParam accession="MS:1002123" cvRef="PSI-MS" name="x-Tracker generic tool for quantitative proteomics"/>
+            <cvParam accession="MS:1002123" cvRef="PSI-MS" name="x-Tracker"/>
         </Software>
     </SoftwareList>
     <DataProcessingList>
@@ -104,11 +104,9 @@
     </AssayList>
     <StudyVariableList>
         <StudyVariable name="GroupA" id="SV_group_A">
-            <cvParam accession="MS:1001807" cvRef="PSI-MS" value="1" name="StudyVariable attribute"/>
             <Assay_refs>_114 _115</Assay_refs>
         </StudyVariable>
         <StudyVariable name="GroupB" id="SV_group_B">
-            <cvParam accession="MS:1001807" cvRef="PSI-MS" value="1" name="StudyVariable attribute"/>
             <Assay_refs>_116 _117</Assay_refs>
         </StudyVariable>
     </StudyVariableList>
@@ -282,7 +280,7 @@
             <PeptideSequence>AAQDSFAAGWGVMVSHR</PeptideSequence>
             <Modification monoisotopicMassDelta="15.994915" location="13">
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
-                <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
+                <cvParam accession="MS:1001524" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton" unitAccession="UO:0000221" value="63.998285" name="fragment neutral loss"/>
             </Modification>
             <Modification monoisotopicMassDelta="144.102063" location="0">
                 <cvParam accession="UNIMOD:214" cvRef="UNIMOD" name="iTRAQ4plex"/>
@@ -312,7 +310,7 @@
             </Modification>
             <Modification monoisotopicMassDelta="15.994915" location="17">
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
-                <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
+                <cvParam accession="MS:1001524" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton" unitAccession="UO:0000221" value="63.998285" name="fragment neutral loss"/>
             </Modification>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00924_ENO1_YEAST-SIVPSGASTGVHEALEMR_00000000000000000100-3-667.6828_SIR_2195" id_refs="SII_2195_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
@@ -364,7 +362,7 @@
             </Modification>
             <Modification monoisotopicMassDelta="15.994915" location="7">
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
-                <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
+                <cvParam accession="MS:1001524" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton" unitAccession="UO:0000221" value="63.998285" name="fragment neutral loss"/>
             </Modification>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-NNVVNTMR_0000000100-2-554.257_SIR_461" id_refs="SII_461_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
@@ -444,7 +442,7 @@
             </Modification>
             <Modification monoisotopicMassDelta="15.994915" location="7">
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
-                <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
+                <cvParam accession="MS:1001524" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton" unitAccession="UO:0000221" value="63.998285" name="fragment neutral loss"/>
             </Modification>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000100000-3-514.2343_SIR_1209" id_refs="SII_1209_1" assay_refs="_114 _115 _116 _117"/>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-DIVNMLMHHDR_0000000100000-3-514.5655_SIR_1211" id_refs="SII_1211_1" assay_refs="_114 _115 _116 _117"/>
@@ -575,7 +573,7 @@
             </Modification>
             <Modification monoisotopicMassDelta="15.994915" location="18">
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
-                <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
+                <cvParam accession="MS:1001524" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton" unitAccession="UO:0000221" value="63.998285" name="fragment neutral loss"/>
             </Modification>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-VAIQLNDTHPSLAIPELMR_000000000000000000100-3-760.0591_SIR_2447" id_refs="SII_2447_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
@@ -604,7 +602,7 @@
             </Modification>
             <Modification monoisotopicMassDelta="15.994915" location="10">
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
-                <cvParam accession="MS:1001524" cvRef="PSI-MS" value="63.998285" name="fragment neutral loss"/>
+                <cvParam accession="MS:1001524" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton" unitAccession="UO:0000221" value="63.998285" name="fragment neutral loss"/>
             </Modification>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P00489_PYGM_RABIT-WVDTQVVLAMPYDTPVPGYR_0000000000100000000000-3-823.0428_SIR_2597" id_refs="SII_2597_1" assay_refs="_114 _115 _116 _117"/>
         </PeptideConsensus>
@@ -743,7 +741,7 @@
             </Modification>
             <Modification monoisotopicMassDelta="15.994915" location="10">
                 <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
-                <cvParam accession="MS:1001524" cvRef="PSI-MS" value="0" name="fragment neutral loss"/>
+                <cvParam accession="MS:1001524" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton" unitAccession="UO:0000221" value="0" name="fragment neutral loss"/>
             </Modification>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-2-1149.4866_SIR_2458" id_refs="SII_2458_1" assay_refs="_114 _115 _116 _117"/>
             <EvidenceRef identificationFile_ref="id_file1" feature_ref="raw1-sp_P62894.2_CYC_BOVIN-GITWGEETLMEYLENPKK_00000000001000000000-2-1150.1557_SIR_2463" id_refs="SII_2463_1" assay_refs="_114 _115 _116 _117"/>

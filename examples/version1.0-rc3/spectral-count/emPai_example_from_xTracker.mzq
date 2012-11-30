@@ -31,7 +31,7 @@
     </InputFiles>
     <SoftwareList>
         <Software version="2.0-ALPHA" id="x-Tracker">
-            <cvParam accession="MS:1002123" cvRef="PSI-MS" name="x-Tracker generic tool for quantitative proteomics"/>
+            <cvParam accession="MS:1002123" cvRef="PSI-MS" name="x-Tracker"/>
         </Software>
     </SoftwareList>
     <DataProcessingList>
@@ -64,7 +64,6 @@
     </AssayList>
     <StudyVariableList>
         <StudyVariable name="Group" id="SV_group">
-            <cvParam accession="MS:1001807" cvRef="PSI-MS" value="1" name="StudyVariable attribute"/>
             <Assay_refs>assay1</Assay_refs>
         </StudyVariable>
     </StudyVariableList>

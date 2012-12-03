@@ -517,7 +517,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="PeptideConsensusListType">
 		<xsd:annotation>
-			<xsd:documentation>The list of all peptides objects for which quantitation values are reported.</xsd:documentation>
+			<xsd:documentation>The list of all peptides for which quantitation values are reported.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="PeptideConsensus" type="PeptideConsensusType" maxOccurs="unbounded"/>
@@ -604,7 +604,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="PeptideConsensusType">
 		<xsd:annotation>
-			<xsd:documentation>An element representing a peptide in different assay that may or may not have been identified. If it has been identified, the sequence and modification(s) SHOULD be reported. Within the parent list, it is allowed for there to be multiple instances of the same peptide sequence, for example capturing different charge states or different modifications, if they are differentially quantified. If peptides with different charge states are aggregated, they should be represented by a single PeptideConsensus element.  </xsd:documentation>
+			<xsd:documentation>An element representing a peptide in different assays that may or may not have been identified. If it has been identified, the sequence and modification(s) SHOULD be reported. Within the parent list, it is allowed for there to be multiple instances of the same peptide sequence, for example capturing different charge states or different modifications, if they are differentially quantified. If peptides with different charge states are aggregated, they should be represented by a single PeptideConsensus element.  </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="PeptideSequence" type="sequence" minOccurs="0" maxOccurs="1">

@@ -1,4 +1,4 @@
-<MzQuantML creationDate="2012-11-30T00:00:00.000+01:00" version="1.0.0" id="MZQ_SPC_EX1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2012-12-03T00:00:00.000+01:00" version="1.0.0" id="MZQ_SPC_EX1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.41.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>
@@ -29,41 +29,41 @@
     </AnalysisSummary>
     <InputFiles>
         <RawFilesGroup id="RF_GRP1">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_1" name="MTQ2_1661_60b_GB4_01_5706.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1661_60b_GB4_01_5706.mzML" id="RF_1"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP2">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_2" name="MTQ2_1662_80b_GB5_01_5707.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1662_80b_GB5_01_5707.mzML" id="RF_2"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP3">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_3" name="MTQ2_1659_20b_GB2_01_5704.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1659_20b_GB2_01_5704.mzML" id="RF_3"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP4">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_4" name="MTQ2_1660_40b_GB3_01_5705.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1660_40b_GB3_01_5705.mzML" id="RF_4"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP5">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_5" name="MTQ2_1658_vIb_GB1_01_5703.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1658_vIb_GB1_01_5703.mzML" id="RF_5"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP6">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_6" name="MTQ2_1656_60a_GA6_01_5700.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1656_60a_GA6_01_5700.mzML" id="RF_6"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP7">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_7" name="MTQ2_1657_80a_GA7_01_5701.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1657_80a_GA7_01_5701.mzML" id="RF_7"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP8">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_8" name="MTQ2_1655_40a_GA5_01_5699.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1655_40a_GA5_01_5699.mzML" id="RF_8"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP9">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_9" name="MTQ2_1653_vIa_GA3_01_5697.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1653_vIa_GA3_01_5697.mzML" id="RF_9"/>
         </RawFilesGroup>
         <RawFilesGroup id="RF_GRP10">
-            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="RF_10" name="MTQ2_1654_20a_GA4_01_5698.mzML"/>
+            <RawFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/MTQ2_1654_20a_GA4_01_5698.mzML" id="RF_10"/>
         </RawFilesGroup>
         <SearchDatabase location="file:///C:/" id="SDB_1">
             <DatabaseName>
                 <cvParam cvRef="MS" accession="MS:1001084" name="database nr"/>
             </DatabaseName>
         </SearchDatabase>
-        <SourceFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/" id="SRCF_1" name="counts_prot_per_sample.txt">
+        <SourceFile location="file:///C:/Users/Gerhard/Documents/SW_Projekte/OwnProjects/ConvertSpecCnts2MzQuant/ConvertSpectCnts2MzQuant/resources/input/counts_prot_per_sample.txt" id="SRCF_1">
             <FileFormat>
                 <cvParam cvRef="MS" accession="MS:1000914" name="tab delimited text file"/>
             </FileFormat>

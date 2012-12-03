@@ -13,7 +13,7 @@ schema comments / issues:
 - no
 
 -->
-<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-11-30T13:30:00" id="MZQ_1" version="1.0.0">
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"  creationDate="2012-12-03T15:53:00" id="MZQ_1" version="1.0.0">
 	<CvList>
 		<Cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.39.0"/>
 		<Cv id="UO" fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo"/>
@@ -61,17 +61,17 @@ schema comments / issues:
 			</RawFile>
 		</RawFilesGroup>
 		<IdentificationFiles>
-			<IdentificationFile id="IF_healthy1" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="healthy1.mzid"/>
-			<IdentificationFile id="IF_healthy3" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="healthy3.mzid"/>
-			<IdentificationFile id="IF_disease2" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="disease2.mzid"/>
-			<IdentificationFile id="IF_disease4" location="file:///C:/ms/mzIdent/" searchDatabase_ref="SDB1" name="disease4.mzid"/>
+			<IdentificationFile id="IF_healthy1" location="file:///C:/ms/mzIdent/healthy1.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_healthy3" location="file:///C:/ms/mzIdent/healthy3.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease2" location="file:///C:/ms/mzIdent/disease2.mzid" searchDatabase_ref="SDB1"/>
+			<IdentificationFile id="IF_disease4" location="file:///C:/ms/mzIdent/disease4.mzid" searchDatabase_ref="SDB1"/>
 		</IdentificationFiles>
-		<SearchDatabase id="SDB1" location="file:///c:/ms/db/" name="mydb.fasta">
+		<SearchDatabase id="SDB1" location="file:///c:/ms/db/mydb.fasta">
 			<DatabaseName>
 				<cvParam accession="MS:1001142" name="database IPI_human" cvRef="PSI-MS" />
 			</DatabaseName>
 		</SearchDatabase>
-        <SourceFile location="file:///C:/ms/src/" id="SRCF_1" name="counts_prot_per_sample.txt">
+        <SourceFile location="file:///C:/ms/src/counts_prot_per_sample.txt" id="SRCF_1">
             <FileFormat>
                 <cvParam cvRef="PSI-MS" accession="MS:1000914" name="tab delimited text file"/>
             </FileFormat>

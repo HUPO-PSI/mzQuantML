@@ -1103,7 +1103,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="FeatureType">
 		<xsd:annotation>
-			<xsd:documentation>A region on an MS1 mass spectrum, defined by the RT, MZ and optionally a mass trace. Quantitative values about features can be added in the associated QuantLayers.</xsd:documentation>
+			<xsd:documentation>A region on a (potentially) two-dimensional map of MS1 scans, defined by the retention time, mass over charge and optionally a mass trace. Quantitative values about features can be added in the associated QuantLayers. For techniques that analyse data from single scans e.g. MS2 tagging approaches, a Feature corresponds with the mz of the parent ions only.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="MassTrace" minOccurs="0" maxOccurs="1" type="psi-mzq:listOfDoubles">

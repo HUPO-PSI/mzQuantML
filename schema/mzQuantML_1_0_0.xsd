@@ -5,10 +5,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				
 -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
-	xmlns:psi-mzq="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
-	targetNamespace="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" elementFormDefault="qualified"
-	version="1.0.0-rc3">
+	xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0"
+	xmlns:psi-mzq="http://psidev.info/psi/pi/mzQuantML/1.0.0"
+	targetNamespace="http://psidev.info/psi/pi/mzQuantML/1.0.0" elementFormDefault="qualified"
+	version="1.0.0">
 	<xsd:element name="MzQuantML" type="MzQuantMLType">
 		<xsd:unique name="PK_PGLISTPG">
 			<xsd:selector xpath="./psi-mzq:ProteinGroupList/psi-mzq:ProteinGroup"/>

@@ -1,0 +1,20 @@
+Semantic validation rules
+**************************
+The parser knows this is a spectral count file due to the presence of this cvParam in AnalysisSummary: id: MS:1001836 - name: spectral counting quantitation analysis
+- One of PeptideConsensusList, ProteinList, ProteinGroupList MUST be present
+- There MUST be at least one of rawFilesGroup_Ref or identificationFile_Refs in Assay
+- There SHOULD NOT be a FeatureQuantLayer
+
+Mapping file and associated rules in brackets
+**********************************************
+Proposal for CV Terms in AnalysisSummary:
+"spectral count Peptide level quantitation" (PeptideConsensusQuantLayer MUST be present) 		= true|false   (Note - if counts are done at the peptide sequence level)
+"spectral count Protein level quantitation" (ProteinQL MUST be present)						= true|false
+"spectral count ProteinGroup level quantitation" (ProteinGroupQL MUST be present)				= true|false
+
+Implementation Notes
+**********************
+[- There SHOULD NOT be RawFiles unless RawFiles were used directly for quantification without a separate identification step]- Note from ARJ: Hard to check this
+[- if there is ProteinList, it MAY contain PeptideConsensus_refs
+- if there is ProteinList, it MAY contain IdentificationRef
+- RatioList MAY be there ]

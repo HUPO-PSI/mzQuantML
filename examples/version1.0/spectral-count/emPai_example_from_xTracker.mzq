@@ -1,0 +1,1121 @@
+<MzQuantML id="emPai_mzQuantML_example" version="1.0.0" creationDate="2012-11-26T12:00:00Z" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CvList>
+        <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.39.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
+        <Cv id="UO" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo" fullName="Unit Ontology"/>
+        <Cv id="PSI-MOD" uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" version="1.2" fullName="Proteomics Standards Initiative Protein Modifications Vocabularies"/>
+        <Cv id="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" fullName="UNIMOD"/>
+    </CvList>
+    <AnalysisSummary>
+        <cvParam accession="MS:1001836" cvRef="PSI-MS" name="spectral counting quantitation analysis"/>
+        <cvParam accession="MS:1002015" cvRef="PSI-MS" value="false" name="spectral count peptide level quantitation"/>
+        <cvParam accession="MS:1002016" cvRef="PSI-MS" value="true" name="spectral count protein level quantitation"/>
+        <cvParam accession="MS:1002017" cvRef="PSI-MS" value="false" name="spectral count proteingroup level quantitation"/>
+    </AnalysisSummary>
+    <InputFiles>
+        <RawFilesGroup id="raw1">
+            <RawFile location="emPai/4209wa3sWT2_5.mgf" id="r1"/>
+        </RawFilesGroup>
+        <IdentificationFiles>
+            <IdentificationFile location="emPai/4209wa3sWT2_5.xml" id="id_file1"/>
+        </IdentificationFiles>
+        <SearchDatabase location="Pseudomonas.fasta" id="Pseudomonas">
+            <DatabaseName>
+                <userParam name="Pseudomonas.fasta"/>
+            </DatabaseName>
+        </SearchDatabase>
+    </InputFiles>
+    <SoftwareList>
+        <Software version="2.0-ALPHA" id="x-Tracker">
+            <cvParam accession="MS:1002123" cvRef="PSI-MS" name="x-Tracker"/>
+        </Software>
+    </SoftwareList>
+    <DataProcessingList>
+        <DataProcessing order="1" software_ref="x-Tracker" id="DP1">
+            <ProcessingMethod order="1">
+                <userParam value="load identification" name="Plugin type"/>
+                <userParam value="loadMascotIdent" name="Plugin name"/>
+                <userParam value="emPai/loadMascotEmPai.xtp" name="Plugin configuration file"/>
+            </ProcessingMethod>
+            <ProcessingMethod order="2">
+                <userParam value="feature detection and quantitation" name="Plugin type"/>
+                <userParam value="emPAIquantitation" name="Plugin name"/>
+                <userParam value="emPai/emPaiQuantitation.xtp" name="Plugin configuration file"/>
+            </ProcessingMethod>
+            <ProcessingMethod order="3">
+                <userParam value="Output" name="Plugin type"/>
+                <userParam value="outputMZQ" name="Plugin name"/>
+                <userParam value="emPai/outputMZQ.xtp" name="Plugin configuration file"/>
+            </ProcessingMethod>
+        </DataProcessing>
+    </DataProcessingList>
+    <AssayList id="AssayList1">
+        <Assay rawFilesGroup_ref="raw1" name="assay1" id="assay1">
+            <Label>
+                <Modification massDelta="0.0">
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+    </AssayList>
+    <StudyVariableList>
+        <StudyVariable name="Group" id="SV_group">
+            <Assay_refs>assay1</Assay_refs>
+        </StudyVariable>
+    </StudyVariableList>
+    <ProteinList id="ProteinList">
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA0291" id="PA0291"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5178" id="PA5178"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1800" id="PA1800"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4942" id="PA4942"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA2760" id="PA2760"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1586" id="PA1586"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4238" id="PA4238"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4217" id="PA4217"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1011" id="PA1011"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA2413" id="PA2413"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1588" id="PA1588"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4385" id="PA4385"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA3692" id="PA3692"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5366" id="PA5366"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4842" id="PA4842"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA0316" id="PA0316"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA2386" id="PA2386"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA3186" id="PA3186"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4545" id="PA4545"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA0865" id="PA0865"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1804" id="PA1804"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1092" id="PA1092"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5243" id="PA5243"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1288" id="PA1288"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA2393" id="PA2393"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA2113" id="PA2113"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5555" id="PA5555"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA2853" id="PA2853"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA3279" id="PA3279"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5556" id="PA5556"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA0425" id="PA0425"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4265" id="PA4265"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA1777" id="PA1777"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5554" id="PA5554"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA0302" id="PA0302"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4760" id="PA4760"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA3891" id="PA3891"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA0958" id="PA0958"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5258" id="PA5258"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA3800" id="PA3800"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA3280" id="PA3280"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4370" id="PA4370"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA4206" id="PA4206"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA5232" id="PA5232"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA0400" id="PA0400"/>
+        <Protein searchDatabase_ref="Pseudomonas" accession="PA2291" id="PA2291"/>
+        <AssayQuantLayer id="AssayQuantLayer_Proteins_emPAI_value">
+            <DataType>
+                <cvParam accession="MS:1001905" cvRef="PSI-MS" name="emPAI value"/>
+            </DataType>
+            <ColumnIndex>assay1</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="PA0291">0.5848931924611136</Row>
+                <Row object_ref="PA5178">0.19377664171443643</Row>
+                <Row object_ref="PA1800">0.07006895569317484</Row>
+                <Row object_ref="PA4942">0.46779926762206947</Row>
+                <Row object_ref="PA2760">1.096179992453127</Row>
+                <Row object_ref="PA1586">0.10529514112602167</Row>
+                <Row object_ref="PA4238">0.5505157798326246</Row>
+                <Row object_ref="PA4217">0.08902296226373019</Row>
+                <Row object_ref="PA1011">0.7378008287493754</Row>
+                <Row object_ref="PA2413">0.17210229753348028</Row>
+                <Row object_ref="PA1588">0.1787686347935873</Row>
+                <Row object_ref="PA4385">0.14504756993828183</Row>
+                <Row object_ref="PA3692">0.7782794100389228</Row>
+                <Row object_ref="PA5366">0.21152765862858836</Row>
+                <Row object_ref="PA4842">0.9306977288832501</Row>
+                <Row object_ref="PA0316">0.10529514112602167</Row>
+                <Row object_ref="PA2386">0.1497569953977358</Row>
+                <Row object_ref="PA3186">0.4873521072935114</Row>
+                <Row object_ref="PA4545">0.2915496650148839</Row>
+                <Row object_ref="PA0865">0.5199110829529339</Row>
+                <Row object_ref="PA1804">0.5848931924611136</Row>
+                <Row object_ref="PA1092">0.46779926762206947</Row>
+                <Row object_ref="PA5243">0.1659144011798317</Row>
+                <Row object_ref="PA1288">0.12883789168468907</Row>
+                <Row object_ref="PA2393">0.4873521072935114</Row>
+                <Row object_ref="PA2113">0.24093776075171958</Row>
+                <Row object_ref="PA5555">0.12201845430196334</Row>
+                <Row object_ref="PA2853">0.7782794100389228</Row>
+                <Row object_ref="PA3279">0.08902296226373019</Row>
+                <Row object_ref="PA5556">0.3010252169108314</Row>
+                <Row object_ref="PA0425">0.6876124757881477</Row>
+                <Row object_ref="PA4265">0.6378937069540642</Row>
+                <Row object_ref="PA1777">1.7825594022071245</Row>
+                <Row object_ref="PA5554">0.46779926762206947</Row>
+                <Row object_ref="PA0302">0.12201845430196334</Row>
+                <Row object_ref="PA4760">0.08571111940220422</Row>
+                <Row object_ref="PA3891">0.09260086111737831</Row>
+                <Row object_ref="PA0958">1.5118864315095801</Row>
+                <Row object_ref="PA5258">1.2908676527677732</Row>
+                <Row object_ref="PA3800">0.40652724210523705</Row>
+                <Row object_ref="PA3280">0.7782794100389228</Row>
+                <Row object_ref="PA4370">0.2798022139979537</Row>
+                <Row object_ref="PA4206">0.11588399250774839</Row>
+                <Row object_ref="PA5232">0.08263673387405435</Row>
+                <Row object_ref="PA0400">0.23284673944206613</Row>
+                <Row object_ref="PA2291">0.53174046370208</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+    </ProteinList>
+    <PeptideConsensusList finalResult="true" id="PeptideList">
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-SADFIGGR_00000000">
+            <PeptideSequence>SADFIGGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-SADFIGGR_00000000-2-411.6925_Scan_Number_1656" identificationFile_ref="id_file1" id_refs="Scan Number: 1656" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-YVVQSGPAK_000000000">
+            <PeptideSequence>YVVQSGPAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-YVVQSGPAK_000000000-2-474.7568_Scan_Number_1205" identificationFile_ref="id_file1" id_refs="Scan Number: 1205" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-LIVDYPLSIL_0000000000">
+            <PeptideSequence>LIVDYPLSIL</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-LIVDYPLSIL_0000000000-2-573.2433_Scan_Number_3667" identificationFile_ref="id_file1" id_refs="Scan Number: 3667" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-LIVDYPLSIL_0000000000-2-573.2534_Scan_Number_3612" identificationFile_ref="id_file1" id_refs="Scan Number: 3612" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-GELYATYAGETAK_0000000000000">
+            <PeptideSequence>GELYATYAGETAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-GELYATYAGETAK_0000000000000-2-687.29_Scan_Number_1995" identificationFile_ref="id_file1" id_refs="Scan Number: 1995" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GELYATYAGETAK_0000000000000-2-687.3034_Scan_Number_1877" identificationFile_ref="id_file1" id_refs="Scan Number: 1877" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GELYATYAGETAK_0000000000000-2-687.3064_Scan_Number_1935" identificationFile_ref="id_file1" id_refs="Scan Number: 1935" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-GFIEDSSLDLLLR_0000000000000">
+            <PeptideSequence>GFIEDSSLDLLLR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3224_Scan_Number_3861" identificationFile_ref="id_file1" id_refs="Scan Number: 3861" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3254_Scan_Number_4229" identificationFile_ref="id_file1" id_refs="Scan Number: 4229" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3347_Scan_Number_4057" identificationFile_ref="id_file1" id_refs="Scan Number: 4057" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3571_Scan_Number_4756" identificationFile_ref="id_file1" id_refs="Scan Number: 4756" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3584_Scan_Number_3390" identificationFile_ref="id_file1" id_refs="Scan Number: 3390" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3624_Scan_Number_3177" identificationFile_ref="id_file1" id_refs="Scan Number: 3177" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3704_Scan_Number_3238" identificationFile_ref="id_file1" id_refs="Scan Number: 3238" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3792_Scan_Number_3297" identificationFile_ref="id_file1" id_refs="Scan Number: 3297" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.65_Scan_Number_4854" identificationFile_ref="id_file1" id_refs="Scan Number: 4854" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.7_Scan_Number_4595" identificationFile_ref="id_file1" id_refs="Scan Number: 4595" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.78_Scan_Number_4800" identificationFile_ref="id_file1" id_refs="Scan Number: 4800" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.82_Scan_Number_4318" identificationFile_ref="id_file1" id_refs="Scan Number: 4318" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.83_Scan_Number_4689" identificationFile_ref="id_file1" id_refs="Scan Number: 4689" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-ANADQGEGDQNEFR_00000000000000">
+            <PeptideSequence>ANADQGEGDQNEFR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-775.8011_Scan_Number_1417" identificationFile_ref="id_file1" id_refs="Scan Number: 1417" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-775.8156_Scan_Number_1476" identificationFile_ref="id_file1" id_refs="Scan Number: 1476" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-776.23_Scan_Number_1535" identificationFile_ref="id_file1" id_refs="Scan Number: 1535" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-776.2794_Scan_Number_1343" identificationFile_ref="id_file1" id_refs="Scan Number: 1343" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-VHGDQPFDYIGFGR_00000000000000">
+            <PeptideSequence>VHGDQPFDYIGFGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-VHGDQPFDYIGFGR_00000000000000-2-804.367_Scan_Number_2572" identificationFile_ref="id_file1" id_refs="Scan Number: 2572" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-VHGDQPFDYIGFGR_00000000000000-2-804.3908_Scan_Number_2512" identificationFile_ref="id_file1" id_refs="Scan Number: 2512" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2 3" id="PA0958-SRGELYATYAGETAK_000000000000000">
+            <PeptideSequence>SRGELYATYAGETAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-SRGELYATYAGETAK_000000000000000-3-539.5804_Scan_Number_1743" identificationFile_ref="id_file1" id_refs="Scan Number: 1743" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-SRGELYATYAGETAK_000000000000000-2-808.9001_Scan_Number_1795" identificationFile_ref="id_file1" id_refs="Scan Number: 1795" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-SRGELYATYAGETAK_000000000000000-2-808.9042_Scan_Number_1738" identificationFile_ref="id_file1" id_refs="Scan Number: 1738" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-WGEMQPTAPVFAAGGSR_00000000000000000">
+            <PeptideSequence>WGEMQPTAPVFAAGGSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-WGEMQPTAPVFAAGGSR_00000000000000000-2-881.4274_Scan_Number_2475" identificationFile_ref="id_file1" id_refs="Scan Number: 2475" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000">
+            <PeptideSequence>YAITDNLSASLYGAELEDIYR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.78_Scan_Number_4969" identificationFile_ref="id_file1" id_refs="Scan Number: 4969" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.97_Scan_Number_4920" identificationFile_ref="id_file1" id_refs="Scan Number: 4920" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.9789_Scan_Number_4338" identificationFile_ref="id_file1" id_refs="Scan Number: 4338" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.99_Scan_Number_5049" identificationFile_ref="id_file1" id_refs="Scan Number: 5049" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.01_Scan_Number_4026" identificationFile_ref="id_file1" id_refs="Scan Number: 4026" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.01_Scan_Number_4678" identificationFile_ref="id_file1" id_refs="Scan Number: 4678" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.012_Scan_Number_5018" identificationFile_ref="id_file1" id_refs="Scan Number: 5018" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.0217_Scan_Number_3822" identificationFile_ref="id_file1" id_refs="Scan Number: 3822" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.0422_Scan_Number_3976" identificationFile_ref="id_file1" id_refs="Scan Number: 3976" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.11_Scan_Number_3873" identificationFile_ref="id_file1" id_refs="Scan Number: 3873" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.2_Scan_Number_3723" identificationFile_ref="id_file1" id_refs="Scan Number: 3723" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.21_Scan_Number_5353" identificationFile_ref="id_file1" id_refs="Scan Number: 5353" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.26_Scan_Number_3369" identificationFile_ref="id_file1" id_refs="Scan Number: 3369" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3_Scan_Number_3594" identificationFile_ref="id_file1" id_refs="Scan Number: 3594" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3101_Scan_Number_3429" identificationFile_ref="id_file1" id_refs="Scan Number: 3429" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3101_Scan_Number_3922" identificationFile_ref="id_file1" id_refs="Scan Number: 3922" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3101_Scan_Number_3258" identificationFile_ref="id_file1" id_refs="Scan Number: 3258" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3199_Scan_Number_4147" identificationFile_ref="id_file1" id_refs="Scan Number: 4147" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.33_Scan_Number_4388" identificationFile_ref="id_file1" id_refs="Scan Number: 4388" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.34_Scan_Number_4821" identificationFile_ref="id_file1" id_refs="Scan Number: 4821" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.36_Scan_Number_5076" identificationFile_ref="id_file1" id_refs="Scan Number: 5076" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.41_Scan_Number_3197" identificationFile_ref="id_file1" id_refs="Scan Number: 3197" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.4399_Scan_Number_3482" identificationFile_ref="id_file1" id_refs="Scan Number: 3482" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.4399_Scan_Number_5188" identificationFile_ref="id_file1" id_refs="Scan Number: 5188" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.5601_Scan_Number_3142" identificationFile_ref="id_file1" id_refs="Scan Number: 3142" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0958-QYYLNSNYTIPLASDQSLGFDFNIYR_00000000000000000000000000">
+            <PeptideSequence>QYYLNSNYTIPLASDQSLGFDFNIYR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-QYYLNSNYTIPLASDQSLGFDFNIYR_00000000000000000000000000-2-1552.0601_Scan_Number_3343" identificationFile_ref="id_file1" id_refs="Scan Number: 3343" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="3" id="PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000">
+            <PeptideSequence>LFPQTATGFQLQSSEFEGLDLEAGHFTEGK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.76_Scan_Number_4429" identificationFile_ref="id_file1" id_refs="Scan Number: 4429" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.8_Scan_Number_4619" identificationFile_ref="id_file1" id_refs="Scan Number: 4619" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.8101_Scan_Number_4715" identificationFile_ref="id_file1" id_refs="Scan Number: 4715" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.86_Scan_Number_4377" identificationFile_ref="id_file1" id_refs="Scan Number: 4377" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.86_Scan_Number_4477" identificationFile_ref="id_file1" id_refs="Scan Number: 4477" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1777-VEAEVEAEAK_0000000000">
+            <PeptideSequence>VEAEVEAEAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-VEAEVEAEAK_0000000000-2-537.8045_Scan_Number_1282" identificationFile_ref="id_file1" id_refs="Scan Number: 1282" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1777-VKENSYADIK_0000000000">
+            <PeptideSequence>VKENSYADIK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-VKENSYADIK_0000000000-2-583.7986_Scan_Number_1266" identificationFile_ref="id_file1" id_refs="Scan Number: 1266" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1777-ASLDGQYGLEK_00000000000">
+            <PeptideSequence>ASLDGQYGLEK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-ASLDGQYGLEK_00000000000-2-590.7539_Scan_Number_1884" identificationFile_ref="id_file1" id_refs="Scan Number: 1884" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-ASLDGQYGLEK_00000000000-2-590.7601_Scan_Number_1799" identificationFile_ref="id_file1" id_refs="Scan Number: 1799" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1777-RVEAEVEAEAK_00000000000">
+            <PeptideSequence>RVEAEVEAEAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.7632_Scan_Number_5547" identificationFile_ref="id_file1" id_refs="Scan Number: 5547" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.7679_Scan_Number_5499" identificationFile_ref="id_file1" id_refs="Scan Number: 5499" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.779_Scan_Number_5409" identificationFile_ref="id_file1" id_refs="Scan Number: 5409" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.7925_Scan_Number_5454" identificationFile_ref="id_file1" id_refs="Scan Number: 5454" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8091_Scan_Number_1370" identificationFile_ref="id_file1" id_refs="Scan Number: 1370" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8137_Scan_Number_1313" identificationFile_ref="id_file1" id_refs="Scan Number: 1313" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8144_Scan_Number_1259" identificationFile_ref="id_file1" id_refs="Scan Number: 1259" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8303_Scan_Number_1432" identificationFile_ref="id_file1" id_refs="Scan Number: 1432" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1777-YYFTENFFAK_0000000000">
+            <PeptideSequence>YYFTENFFAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-YYFTENFFAK_0000000000-2-665.314_Scan_Number_2832" identificationFile_ref="id_file1" id_refs="Scan Number: 2832" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1777-DVLVNEYGVEGGR_0000000000000">
+            <PeptideSequence>DVLVNEYGVEGGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-DVLVNEYGVEGGR_0000000000000-2-703.8028_Scan_Number_2167" identificationFile_ref="id_file1" id_refs="Scan Number: 2167" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2 3" id="PA1777-VNAVGYGESRPVADNATAEGR_000000000000000000000">
+            <PeptideSequence>VNAVGYGESRPVADNATAEGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-VNAVGYGESRPVADNATAEGR_000000000000000000000-2-1067.0526_Scan_Number_1552" identificationFile_ref="id_file1" id_refs="Scan Number: 1552" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1777-VNAVGYGESRPVADNATAEGR_000000000000000000000-3-712.0_Scan_Number_1716" identificationFile_ref="id_file1" id_refs="Scan Number: 1716" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1777-QYPSTSTTVEGHTDSVGTDAYNQK_000000000000000000000000">
+            <PeptideSequence>QYPSTSTTVEGHTDSVGTDAYNQK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1777-QYPSTSTTVEGHTDSVGTDAYNQK_000000000000000000000000-2-1293.87_Scan_Number_1662" identificationFile_ref="id_file1" id_refs="Scan Number: 1662" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-SGAAGIDFFK_0000000000">
+            <PeptideSequence>SGAAGIDFFK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-SGAAGIDFFK_0000000000-2-506.731_Scan_Number_2462" identificationFile_ref="id_file1" id_refs="Scan Number: 2462" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-EIEGLELNAGR_00000000000">
+            <PeptideSequence>EIEGLELNAGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-EIEGLELNAGR_00000000000-2-600.7583_Scan_Number_2192" identificationFile_ref="id_file1" id_refs="Scan Number: 2192" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA2760-EIEGLELNAGR_00000000000-2-600.7732_Scan_Number_2127" identificationFile_ref="id_file1" id_refs="Scan Number: 2127" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-QGDSGSAADDLSK_0000000000000">
+            <PeptideSequence>QGDSGSAADDLSK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-QGDSGSAADDLSK_0000000000000-2-625.7847_Scan_Number_1245" identificationFile_ref="id_file1" id_refs="Scan Number: 1245" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-SWQVSYALDFAK_000000000000">
+            <PeptideSequence>SWQVSYALDFAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-SWQVSYALDFAK_000000000000-2-707.7897_Scan_Number_2861" identificationFile_ref="id_file1" id_refs="Scan Number: 2861" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-LLPESYSGTLITSK_00000000000000">
+            <PeptideSequence>LLPESYSGTLITSK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-LLPESYSGTLITSK_00000000000000-2-754.8321_Scan_Number_2381" identificationFile_ref="id_file1" id_refs="Scan Number: 2381" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA2760-LLPESYSGTLITSK_00000000000000-2-754.8661_Scan_Number_2320" identificationFile_ref="id_file1" id_refs="Scan Number: 2320" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-GFVEDSHLDLFFR_0000000000000">
+            <PeptideSequence>GFVEDSHLDLFFR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-GFVEDSHLDLFFR_0000000000000-2-791.3962_Scan_Number_2925" identificationFile_ref="id_file1" id_refs="Scan Number: 2925" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-LDSDFADQNFNGNR_00000000000000">
+            <PeptideSequence>LDSDFADQNFNGNR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-LDSDFADQNFNGNR_00000000000000-2-806.8167_Scan_Number_2051" identificationFile_ref="id_file1" id_refs="Scan Number: 2051" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA2760-LDSDFADQNFNGNR_00000000000000-2-807.3463_Scan_Number_2109" identificationFile_ref="id_file1" id_refs="Scan Number: 2109" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-EIFNQVQYVVQSGPAK_0000000000000000">
+            <PeptideSequence>EIFNQVQYVVQSGPAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-EIFNQVQYVVQSGPAK_0000000000000000-2-903.94_Scan_Number_2535" identificationFile_ref="id_file1" id_refs="Scan Number: 2535" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA2760-EIFNQVQYVVQSGPAK_0000000000000000-2-903.9608_Scan_Number_2473" identificationFile_ref="id_file1" id_refs="Scan Number: 2473" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA2760-EIFNQVQYVVQSGPAK_0000000000000000-2-904.27_Scan_Number_2358" identificationFile_ref="id_file1" id_refs="Scan Number: 2358" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2760-TKLDSDFADQNFNGNR_0000000000000000">
+            <PeptideSequence>TKLDSDFADQNFNGNR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2760-TKLDSDFADQNFNGNR_0000000000000000-2-921.73_Scan_Number_1951" identificationFile_ref="id_file1" id_refs="Scan Number: 1951" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-GKTESLAQR_000000000">
+            <PeptideSequence>GKTESLAQR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-GKTESLAQR_000000000-2-495.29_Scan_Number_928" identificationFile_ref="id_file1" id_refs="Scan Number: 928" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-LAEAEHLLR_000000000">
+            <PeptideSequence>LAEAEHLLR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-LAEAEHLLR_000000000-2-526.73_Scan_Number_1711" identificationFile_ref="id_file1" id_refs="Scan Number: 1711" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-LDALPTADELEAR_0000000000000">
+            <PeptideSequence>LDALPTADELEAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-LDALPTADELEAR_0000000000000-2-707.3325_Scan_Number_2335" identificationFile_ref="id_file1" id_refs="Scan Number: 2335" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-TSTSTPSPVAPDASR_000000000000000">
+            <PeptideSequence>TSTSTPSPVAPDASR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-TSTSTPSPVAPDASR_000000000000000-2-737.3302_Scan_Number_1368" identificationFile_ref="id_file1" id_refs="Scan Number: 1368" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-EQVNQLQPLTPTFK_00000000000000">
+            <PeptideSequence>EQVNQLQPLTPTFK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-EQVNQLQPLTPTFK_00000000000000-2-822.32_Scan_Number_2374" identificationFile_ref="id_file1" id_refs="Scan Number: 2374" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-EAAGNLVPEAQAAPATEGRP_00000000000000000000">
+            <PeptideSequence>EAAGNLVPEAQAAPATEGRP</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-EAAGNLVPEAQAAPATEGRP_00000000000000000000-2-975.21_Scan_Number_1923" identificationFile_ref="id_file1" id_refs="Scan Number: 1923" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-LSALQDVGSATELVQGADDILR_0000000000000000000000">
+            <PeptideSequence>LSALQDVGSATELVQGADDILR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-LSALQDVGSATELVQGADDILR_0000000000000000000000-2-1136.0682_Scan_Number_3207" identificationFile_ref="id_file1" id_refs="Scan Number: 3207" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA5258-LSALQDVGSATELVQGADDILR_0000000000000000000000-2-1136.4301_Scan_Number_3272" identificationFile_ref="id_file1" id_refs="Scan Number: 3272" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5258-QPVTVQVPDLAPALSALQAYVSR_00000000000000000000000">
+            <PeptideSequence>QPVTVQVPDLAPALSALQAYVSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-QPVTVQVPDLAPALSALQAYVSR_00000000000000000000000-2-1212.42_Scan_Number_3562" identificationFile_ref="id_file1" id_refs="Scan Number: 3562" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="3" id="PA5258-IDFNAGQDIRPLLAGEQLAQVR_0000000000000000000000">
+            <PeptideSequence>IDFNAGQDIRPLLAGEQLAQVR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5258-IDFNAGQDIRPLLAGEQLAQVR_0000000000000000000000-3-809.09_Scan_Number_2834" identificationFile_ref="id_file1" id_refs="Scan Number: 2834" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4942-NQAEAYANGVVPEAR_000000000000000">
+            <PeptideSequence>NQAEAYANGVVPEAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4942-NQAEAYANGVVPEAR_000000000000000-2-795.3723_Scan_Number_1771" identificationFile_ref="id_file1" id_refs="Scan Number: 1771" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4942-TGITVTQVNIQSAQAPR_00000000000000000">
+            <PeptideSequence>TGITVTQVNIQSAQAPR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4942-TGITVTQVNIQSAQAPR_00000000000000000-2-892.4575_Scan_Number_2070" identificationFile_ref="id_file1" id_refs="Scan Number: 2070" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4942-NAAPATGAGASAGGGSASASDLGSR_0000000000000000000000000">
+            <PeptideSequence>NAAPATGAGASAGGGSASASDLGSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4942-NAAPATGAGASAGGGSASASDLGSR_0000000000000000000000000-2-1030.9589_Scan_Number_1435" identificationFile_ref="id_file1" id_refs="Scan Number: 1435" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA4942-NAAPATGAGASAGGGSASASDLGSR_0000000000000000000000000-2-1031.4301_Scan_Number_1511" identificationFile_ref="id_file1" id_refs="Scan Number: 1511" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4942-VLVTGQQGQNNLLYLPLDK_0000000000000000000">
+            <PeptideSequence>VLVTGQQGQNNLLYLPLDK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4942-VLVTGQQGQNNLLYLPLDK_0000000000000000000-2-1057.0635_Scan_Number_2804" identificationFile_ref="id_file1" id_refs="Scan Number: 2804" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4942-YYETVGPGLNFYFPPIDK_000000000000000000">
+            <PeptideSequence>YYETVGPGLNFYFPPIDK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4942-YYETVGPGLNFYFPPIDK_000000000000000000-2-1060.8_Scan_Number_3172" identificationFile_ref="id_file1" id_refs="Scan Number: 3172" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0291-SGLPAAGSSNNQR_0000000000000">
+            <PeptideSequence>SGLPAAGSSNNQR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0291-SGLPAAGSSNNQR_0000000000000-2-629.85_Scan_Number_1194" identificationFile_ref="id_file1" id_refs="Scan Number: 1194" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0291-SLSIAGANGSSASSR_000000000000000">
+            <PeptideSequence>SLSIAGANGSSASSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0291-SLSIAGANGSSASSR_000000000000000-2-683.2944_Scan_Number_1620" identificationFile_ref="id_file1" id_refs="Scan Number: 1620" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0291-DFTLVAGQLEHSK_0000000000000">
+            <PeptideSequence>DFTLVAGQLEHSK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0291-DFTLVAGQLEHSK_0000000000000-2-722.9006_Scan_Number_2301" identificationFile_ref="id_file1" id_refs="Scan Number: 2301" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0291-ADGYVSSGYYGSGVTK_0000000000000000">
+            <PeptideSequence>ADGYVSSGYYGSGVTK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0291-ADGYVSSGYYGSGVTK_0000000000000000-2-805.8423_Scan_Number_1845" identificationFile_ref="id_file1" id_refs="Scan Number: 1845" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0291-LLPVTFEGGQVTSTDLK_00000000000000000">
+            <PeptideSequence>LLPVTFEGGQVTSTDLK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0291-LLPVTFEGGQVTSTDLK_00000000000000000-2-903.31_Scan_Number_2595" identificationFile_ref="id_file1" id_refs="Scan Number: 2595" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0291-GDGEGSTAYLITDVQIGK_000000000000000000">
+            <PeptideSequence>GDGEGSTAYLITDVQIGK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0291-GDGEGSTAYLITDVQIGK_000000000000000000-2-912.74_Scan_Number_2559" identificationFile_ref="id_file1" id_refs="Scan Number: 2559" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4842-AIEVDFADVLAK_000000000000">
+            <PeptideSequence>AIEVDFADVLAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4842-AIEVDFADVLAK_000000000000-2-645.8175_Scan_Number_2884" identificationFile_ref="id_file1" id_refs="Scan Number: 2884" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4842-NPEEVQPGEAPK_000000000000">
+            <PeptideSequence>NPEEVQPGEAPK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4842-NPEEVQPGEAPK_000000000000-2-647.7788_Scan_Number_1280" identificationFile_ref="id_file1" id_refs="Scan Number: 1280" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4842-SQSQSTEDADLAR_0000000000000">
+            <PeptideSequence>SQSQSTEDADLAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4842-SQSQSTEDADLAR_0000000000000-2-704.2711_Scan_Number_1268" identificationFile_ref="id_file1" id_refs="Scan Number: 1268" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA4842-SQSQSTEDADLAR_0000000000000-2-704.2941_Scan_Number_1323" identificationFile_ref="id_file1" id_refs="Scan Number: 1323" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4842-ADNLNNWLGDVATR_00000000000000">
+            <PeptideSequence>ADNLNNWLGDVATR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4842-ADNLNNWLGDVATR_00000000000000-2-779.8645_Scan_Number_2724" identificationFile_ref="id_file1" id_refs="Scan Number: 2724" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4842-LSDPNQPNAQFYAR_00000000000000">
+            <PeptideSequence>LSDPNQPNAQFYAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4842-LSDPNQPNAQFYAR_00000000000000-2-810.8525_Scan_Number_1852" identificationFile_ref="id_file1" id_refs="Scan Number: 1852" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4842-SWALPASESEYQEGIK_0000000000000000">
+            <PeptideSequence>SWALPASESEYQEGIK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4842-SWALPASESEYQEGIK_0000000000000000-2-897.9108_Scan_Number_2405" identificationFile_ref="id_file1" id_refs="Scan Number: 2405" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0425-LLVADQAVSK_0000000000">
+            <PeptideSequence>LLVADQAVSK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0425-LLVADQAVSK_0000000000-2-522.2817_Scan_Number_1695" identificationFile_ref="id_file1" id_refs="Scan Number: 1695" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0425-WLVTEGLNAGDK_000000000000">
+            <PeptideSequence>WLVTEGLNAGDK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0425-WLVTEGLNAGDK_000000000000-2-651.8299_Scan_Number_2401" identificationFile_ref="id_file1" id_refs="Scan Number: 2401" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0425-GQATALVVNAQNK_0000000000000">
+            <PeptideSequence>GQATALVVNAQNK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0425-GQATALVVNAQNK_0000000000000-2-657.3419_Scan_Number_1564" identificationFile_ref="id_file1" id_refs="Scan Number: 1564" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0425-LEDGSQYPLEGR_000000000000">
+            <PeptideSequence>LEDGSQYPLEGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0425-LEDGSQYPLEGR_000000000000-2-682.2867_Scan_Number_1827" identificationFile_ref="id_file1" id_refs="Scan Number: 1827" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2 3" id="PA0425-IITEGLQFVQPGVEVK_0000000000000000">
+            <PeptideSequence>IITEGLQFVQPGVEVK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0425-IITEGLQFVQPGVEVK_0000000000000000-2-878.9504_Scan_Number_2629" identificationFile_ref="id_file1" id_refs="Scan Number: 2629" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0425-IITEGLQFVQPGVEVK_0000000000000000-2-879.28_Scan_Number_2688" identificationFile_ref="id_file1" id_refs="Scan Number: 2688" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA0425-IITEGLQFVQPGVEVK_0000000000000000-3-586.65_Scan_Number_2626" identificationFile_ref="id_file1" id_refs="Scan Number: 2626" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1011-DRGDDYLGAR_0000000000">
+            <PeptideSequence>DRGDDYLGAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1011-DRGDDYLGAR_0000000000-2-569.2502_Scan_Number_1453" identificationFile_ref="id_file1" id_refs="Scan Number: 1453" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1011-AAGDTSSPSWPSK_0000000000000">
+            <PeptideSequence>AAGDTSSPSWPSK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1011-AAGDTSSPSWPSK_0000000000000-2-645.7675_Scan_Number_1615" identificationFile_ref="id_file1" id_refs="Scan Number: 1615" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1011-SLGVYYVNIAEGAK_00000000000000">
+            <PeptideSequence>SLGVYYVNIAEGAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1011-SLGVYYVNIAEGAK_00000000000000-2-742.321_Scan_Number_2528" identificationFile_ref="id_file1" id_refs="Scan Number: 2528" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1011-DGSGNPVLTLQSDFDR_0000000000000000">
+            <PeptideSequence>DGSGNPVLTLQSDFDR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1011-DGSGNPVLTLQSDFDR_0000000000000000-2-860.8795_Scan_Number_2836" identificationFile_ref="id_file1" id_refs="Scan Number: 2836" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1011-SVAPSLDAALLDEMVASMAR_00000000000000000000">
+            <PeptideSequence>SVAPSLDAALLDEMVASMAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1011-SVAPSLDAALLDEMVASMAR_00000000000000000000-2-1024.3199_Scan_Number_3524" identificationFile_ref="id_file1" id_refs="Scan Number: 3524" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1011-IEPGVQSNTSEVYVLSQTR_0000000000000000000">
+            <PeptideSequence>IEPGVQSNTSEVYVLSQTR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1011-IEPGVQSNTSEVYVLSQTR_0000000000000000000-2-1053.9883_Scan_Number_2308" identificationFile_ref="id_file1" id_refs="Scan Number: 2308" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3280-DLDDTAFDSR_0000000000">
+            <PeptideSequence>DLDDTAFDSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3280-DLDDTAFDSR_0000000000-2-577.7257_Scan_Number_2004" identificationFile_ref="id_file1" id_refs="Scan Number: 2004" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3280-AFIELGGTAYK_00000000000">
+            <PeptideSequence>AFIELGGTAYK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3280-AFIELGGTAYK_00000000000-2-585.3171_Scan_Number_2351" identificationFile_ref="id_file1" id_refs="Scan Number: 2351" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3280-VEDDNVVADTATR_0000000000000">
+            <PeptideSequence>VEDDNVVADTATR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3280-VEDDNVVADTATR_0000000000000-2-702.8031_Scan_Number_1587" identificationFile_ref="id_file1" id_refs="Scan Number: 1587" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3280-ATFGGVSNSPAGSYK_000000000000000">
+            <PeptideSequence>ATFGGVSNSPAGSYK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3280-ATFGGVSNSPAGSYK_000000000000000-2-721.8411_Scan_Number_1756" identificationFile_ref="id_file1" id_refs="Scan Number: 1756" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3280-GIATSGGNDAGDNGNR_0000000000000000">
+            <PeptideSequence>GIATSGGNDAGDNGNR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3280-GIATSGGNDAGDNGNR_0000000000000000-2-738.2847_Scan_Number_1057" identificationFile_ref="id_file1" id_refs="Scan Number: 1057" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3280-GGLEVATTDKEFSFK_000000000000000">
+            <PeptideSequence>GGLEVATTDKEFSFK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3280-GGLEVATTDKEFSFK_000000000000000-2-815.11_Scan_Number_2233" identificationFile_ref="id_file1" id_refs="Scan Number: 2233" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3280-ITNNNGDDDGDGFVTR_0000000000000000">
+            <PeptideSequence>ITNNNGDDDGDGFVTR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3280-ITNNNGDDDGDGFVTR_0000000000000000-2-855.8323_Scan_Number_1723" identificationFile_ref="id_file1" id_refs="Scan Number: 1723" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4265-AGENVGILLR_0000000000">
+            <PeptideSequence>AGENVGILLR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4265-AGENVGILLR_0000000000-2-521.2937_Scan_Number_2225" identificationFile_ref="id_file1" id_refs="Scan Number: 2225" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4265-DDNGIGVSAVQK_000000000000">
+            <PeptideSequence>DDNGIGVSAVQK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4265-DDNGIGVSAVQK_000000000000-2-602.2836_Scan_Number_1708" identificationFile_ref="id_file1" id_refs="Scan Number: 1708" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4265-VQEEVEIVGIK_00000000000">
+            <PeptideSequence>VQEEVEIVGIK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4265-VQEEVEIVGIK_00000000000-2-621.8207_Scan_Number_2181" identificationFile_ref="id_file1" id_refs="Scan Number: 2181" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4265-AFDQIDNAPEEK_000000000000">
+            <PeptideSequence>AFDQIDNAPEEK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4265-AFDQIDNAPEEK_000000000000-2-688.8145_Scan_Number_1751" identificationFile_ref="id_file1" id_refs="Scan Number: 1751" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4265-LVETLDSYIPEPVR_00000000000000">
+            <PeptideSequence>LVETLDSYIPEPVR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4265-LVETLDSYIPEPVR_00000000000000-2-815.8774_Scan_Number_2731" identificationFile_ref="id_file1" id_refs="Scan Number: 2731" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="3" id="PA4265-GITINTSHVEYDSAVR_0000000000000000">
+            <PeptideSequence>GITINTSHVEYDSAVR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4265-GITINTSHVEYDSAVR_0000000000000000-3-588.0_Scan_Number_1921" identificationFile_ref="id_file1" id_refs="Scan Number: 1921" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2393-ALEQVAALSR_0000000000">
+            <PeptideSequence>ALEQVAALSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2393-ALEQVAALSR_0000000000-2-529.2678_Scan_Number_1928" identificationFile_ref="id_file1" id_refs="Scan Number: 1928" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2393-APIVASHSAPR_00000000000">
+            <PeptideSequence>APIVASHSAPR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2393-APIVASHSAPR_00000000000-2-553.2484_Scan_Number_1138" identificationFile_ref="id_file1" id_refs="Scan Number: 1138" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2393-ELVDAIDYTVK_00000000000">
+            <PeptideSequence>ELVDAIDYTVK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2393-ELVDAIDYTVK_00000000000-2-633.3012_Scan_Number_2383" identificationFile_ref="id_file1" id_refs="Scan Number: 2383" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2393-DFPNQVGIAYSPEDFR_0000000000000000">
+            <PeptideSequence>DFPNQVGIAYSPEDFR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2393-DFPNQVGIAYSPEDFR_0000000000000000-2-927.8693_Scan_Number_2722" identificationFile_ref="id_file1" id_refs="Scan Number: 2722" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA2393-DFPNQVGIAYSPEDFR_0000000000000000-2-927.898_Scan_Number_2778" identificationFile_ref="id_file1" id_refs="Scan Number: 2778" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2393-FGEYASALYGILEEEPK_00000000000000000">
+            <PeptideSequence>FGEYASALYGILEEEPK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2393-FGEYASALYGILEEEPK_00000000000000000-2-958.4419_Scan_Number_3217" identificationFile_ref="id_file1" id_refs="Scan Number: 3217" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3186-VGAEQLPGEYR_00000000000">
+            <PeptideSequence>VGAEQLPGEYR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3186-VGAEQLPGEYR_00000000000-2-609.8041_Scan_Number_1786" identificationFile_ref="id_file1" id_refs="Scan Number: 1786" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3186-GALLPVELIWQPK_0000000000000">
+            <PeptideSequence>GALLPVELIWQPK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3186-GALLPVELIWQPK_0000000000000-2-732.351_Scan_Number_3265" identificationFile_ref="id_file1" id_refs="Scan Number: 3265" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3186-QPGGVDEVDNALVAGIK_00000000000000000">
+            <PeptideSequence>QPGGVDEVDNALVAGIK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3186-QPGGVDEVDNALVAGIK_00000000000000000-2-841.4299_Scan_Number_2501" identificationFile_ref="id_file1" id_refs="Scan Number: 2501" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3186-ATNVVDNYQQLGVVYK_0000000000000000">
+            <PeptideSequence>ATNVVDNYQQLGVVYK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3186-ATNVVDNYQQLGVVYK_0000000000000000-2-906.32_Scan_Number_2340" identificationFile_ref="id_file1" id_refs="Scan Number: 2340" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3186-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000">
+            <PeptideSequence>ADDVYDDVDGQPQGLTGNDFK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3186-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000-2-1135.29_Scan_Number_2328" identificationFile_ref="id_file1" id_refs="Scan Number: 2328" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2291-VGAEQLPGEYR_00000000000">
+            <PeptideSequence>VGAEQLPGEYR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2291-VGAEQLPGEYR_00000000000-2-609.8041_Scan_Number_1786" identificationFile_ref="id_file1" id_refs="Scan Number: 1786" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2291-GALLPVELIWQPK_0000000000000">
+            <PeptideSequence>GALLPVELIWQPK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2291-GALLPVELIWQPK_0000000000000-2-732.351_Scan_Number_3265" identificationFile_ref="id_file1" id_refs="Scan Number: 3265" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2291-QPGGVDEVDNALVAGIK_00000000000000000">
+            <PeptideSequence>QPGGVDEVDNALVAGIK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2291-QPGGVDEVDNALVAGIK_00000000000000000-2-841.4299_Scan_Number_2501" identificationFile_ref="id_file1" id_refs="Scan Number: 2501" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2291-ATNVVDNYQQLGVVYK_0000000000000000">
+            <PeptideSequence>ATNVVDNYQQLGVVYK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2291-ATNVVDNYQQLGVVYK_0000000000000000-2-906.32_Scan_Number_2340" identificationFile_ref="id_file1" id_refs="Scan Number: 2340" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2291-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000">
+            <PeptideSequence>ADDVYDDVDGQPQGLTGNDFK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2291-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000-2-1135.29_Scan_Number_2328" identificationFile_ref="id_file1" id_refs="Scan Number: 2328" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5554-YTLAGTEVSALLGR_00000000000000">
+            <PeptideSequence>YTLAGTEVSALLGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5554-YTLAGTEVSALLGR_00000000000000-2-725.8552_Scan_Number_2848" identificationFile_ref="id_file1" id_refs="Scan Number: 2848" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5554-GLNVDSTGAAISVPVGK_00000000000000000">
+            <PeptideSequence>GLNVDSTGAAISVPVGK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5554-GLNVDSTGAAISVPVGK_00000000000000000-2-792.8963_Scan_Number_2211" identificationFile_ref="id_file1" id_refs="Scan Number: 2211" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5554-FLSQPFFVAEVFTGSPGK_000000000000000000">
+            <PeptideSequence>FLSQPFFVAEVFTGSPGK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5554-FLSQPFFVAEVFTGSPGK_000000000000000000-2-979.82_Scan_Number_3322" identificationFile_ref="id_file1" id_refs="Scan Number: 3322" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5554-DIASLGIYPAVDPLDSTSR_0000000000000000000">
+            <PeptideSequence>DIASLGIYPAVDPLDSTSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5554-DIASLGIYPAVDPLDSTSR_0000000000000000000-2-995.4704_Scan_Number_3019" identificationFile_ref="id_file1" id_refs="Scan Number: 3019" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5554-EAPSYADQAGGNELLETGIK_00000000000000000000">
+            <PeptideSequence>EAPSYADQAGGNELLETGIK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5554-EAPSYADQAGGNELLETGIK_00000000000000000000-2-1031.97_Scan_Number_2342" identificationFile_ref="id_file1" id_refs="Scan Number: 2342" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0865-NASQAAAYAESQGAK_000000000000000">
+            <PeptideSequence>NASQAAAYAESQGAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0865-NASQAAAYAESQGAK_000000000000000-2-733.8187_Scan_Number_1509" identificationFile_ref="id_file1" id_refs="Scan Number: 1509" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0865-SIYDVDFEFIEGR_0000000000000">
+            <PeptideSequence>SIYDVDFEFIEGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0865-SIYDVDFEFIEGR_0000000000000-2-795.78_Scan_Number_3116" identificationFile_ref="id_file1" id_refs="Scan Number: 3116" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0865-IPINESADDTSQIEEFIR_000000000000000000">
+            <PeptideSequence>IPINESADDTSQIEEFIR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0865-IPINESADDTSQIEEFIR_000000000000000000-2-1039.36_Scan_Number_2750" identificationFile_ref="id_file1" id_refs="Scan Number: 2750" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="3" id="PA0865-LVGSHANFGELNIPSLEGIGGSLLYLVDR_00000000000000000000000000000">
+            <PeptideSequence>LVGSHANFGELNIPSLEGIGGSLLYLVDR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0865-LVGSHANFGELNIPSLEGIGGSLLYLVDR_00000000000000000000000000000-3-1014.49_Scan_Number_3599" identificationFile_ref="id_file1" id_refs="Scan Number: 3599" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1092-EVAAQQAELTR_00000000000">
+            <PeptideSequence>EVAAQQAELTR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1092-EVAAQQAELTR_00000000000-2-608.68_Scan_Number_1449" identificationFile_ref="id_file1" id_refs="Scan Number: 1449" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1092-GVLTITSATGENVK_00000000000000">
+            <PeptideSequence>GVLTITSATGENVK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1092-GVLTITSATGENVK_00000000000000-2-695.3405_Scan_Number_2029" identificationFile_ref="id_file1" id_refs="Scan Number: 2029" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1092-DLALQSANGSNSDADR_0000000000000000">
+            <PeptideSequence>DLALQSANGSNSDADR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1092-DLALQSANGSNSDADR_0000000000000000-2-817.8131_Scan_Number_1705" identificationFile_ref="id_file1" id_refs="Scan Number: 1705" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1092-NLNASSNDLNTSLQR_000000000000000">
+            <PeptideSequence>NLNASSNDLNTSLQR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1092-NLNASSNDLNTSLQR_000000000000000-2-823.8822_Scan_Number_1824" identificationFile_ref="id_file1" id_refs="Scan Number: 1824" assay_refs="assay1"/>
+            <EvidenceRef feature_ref="raw1-PA1092-NLNASSNDLNTSLQR_000000000000000-2-824.0_Scan_Number_1901" identificationFile_ref="id_file1" id_refs="Scan Number: 1901" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3800-AAALDVNSGR_0000000000">
+            <PeptideSequence>AAALDVNSGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3800-AAALDVNSGR_0000000000-2-487.2116_Scan_Number_1341" identificationFile_ref="id_file1" id_refs="Scan Number: 1341" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3800-GASSLWNNDALAR_0000000000000">
+            <PeptideSequence>GASSLWNNDALAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3800-GASSLWNNDALAR_0000000000000-2-687.8321_Scan_Number_2285" identificationFile_ref="id_file1" id_refs="Scan Number: 2285" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3800-VNSEVLSAPATNGDVVVVQTQDDK_000000000000000000000000">
+            <PeptideSequence>VNSEVLSAPATNGDVVVVQTQDDK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3800-VNSEVLSAPATNGDVVVVQTQDDK_000000000000000000000000-2-1243.6028_Scan_Number_2227" identificationFile_ref="id_file1" id_refs="Scan Number: 2227" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3800-SVGDGQGDLYNLLEPAVDGSTIYAASAEGR_000000000000000000000000000000">
+            <PeptideSequence>SVGDGQGDLYNLLEPAVDGSTIYAASAEGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3800-SVGDGQGDLYNLLEPAVDGSTIYAASAEGR_000000000000000000000000000000-2-1513.4301_Scan_Number_3246" identificationFile_ref="id_file1" id_refs="Scan Number: 3246" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2113-SNFANDLDENR_00000000000">
+            <PeptideSequence>SNFANDLDENR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2113-SNFANDLDENR_00000000000-2-647.7506_Scan_Number_1806" identificationFile_ref="id_file1" id_refs="Scan Number: 1806" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2113-NTDLGYVVQSGPLK_00000000000000">
+            <PeptideSequence>NTDLGYVVQSGPLK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2113-NTDLGYVVQSGPLK_00000000000000-2-746.14_Scan_Number_2289" identificationFile_ref="id_file1" id_refs="Scan Number: 2289" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2113-GALLDVQEIDGLTLR_000000000000000">
+            <PeptideSequence>GALLDVQEIDGLTLR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2113-GALLDVQEIDGLTLR_000000000000000-2-807.22_Scan_Number_3005" identificationFile_ref="id_file1" id_refs="Scan Number: 3005" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4545-DSFNEFAQLTSR_000000000000">
+            <PeptideSequence>DSFNEFAQLTSR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4545-DSFNEFAQLTSR_000000000000-2-707.8051_Scan_Number_2636" identificationFile_ref="id_file1" id_refs="Scan Number: 2636" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4545-LGLDDLASTSLETLK_000000000000000">
+            <PeptideSequence>LGLDDLASTSLETLK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4545-LGLDDLASTSLETLK_000000000000000-2-788.4015_Scan_Number_2970" identificationFile_ref="id_file1" id_refs="Scan Number: 2970" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4545-YAEQAQLELIYANYK_000000000000000">
+            <PeptideSequence>YAEQAQLELIYANYK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4545-YAEQAQLELIYANYK_000000000000000-2-908.89_Scan_Number_2704" identificationFile_ref="id_file1" id_refs="Scan Number: 2704" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3692-EYPVASNGTSSGR_0000000000000">
+            <PeptideSequence>EYPVASNGTSSGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3692-EYPVASNGTSSGR_0000000000000-2-663.2434_Scan_Number_1335" identificationFile_ref="id_file1" id_refs="Scan Number: 1335" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3692-DVDQLAYLTNQR_000000000000">
+            <PeptideSequence>DVDQLAYLTNQR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3692-DVDQLAYLTNQR_000000000000-2-718.3229_Scan_Number_2415" identificationFile_ref="id_file1" id_refs="Scan Number: 2415" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3692-SNFSALQSQPDATK_00000000000000">
+            <PeptideSequence>SNFSALQSQPDATK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3692-SNFSALQSQPDATK_00000000000000-2-747.3154_Scan_Number_1746" identificationFile_ref="id_file1" id_refs="Scan Number: 1746" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="3" id="PA3692-RVEVTISNDAKPVAPR_0000000000000000">
+            <PeptideSequence>RVEVTISNDAKPVAPR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3692-RVEVTISNDAKPVAPR_0000000000000000-3-584.96_Scan_Number_1522" identificationFile_ref="id_file1" id_refs="Scan Number: 1522" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3692-NIQQLAEFLQQNPER_000000000000000">
+            <PeptideSequence>NIQQLAEFLQQNPER</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3692-NIQQLAEFLQQNPER_000000000000000-2-914.454_Scan_Number_2953" identificationFile_ref="id_file1" id_refs="Scan Number: 2953" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1588-NLVTYQTDANGQPVSK_0000000000000000">
+            <PeptideSequence>NLVTYQTDANGQPVSK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1588-NLVTYQTDANGQPVSK_0000000000000000-2-868.3939_Scan_Number_1773" identificationFile_ref="id_file1" id_refs="Scan Number: 1773" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1588-VLAESGLNIIAATSLTDAAQQVVK_000000000000000000000000">
+            <PeptideSequence>VLAESGLNIIAATSLTDAAQQVVK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1588-VLAESGLNIIAATSLTDAAQQVVK_000000000000000000000000-2-1206.642_Scan_Number_3184" identificationFile_ref="id_file1" id_refs="Scan Number: 3184" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4238-HIDVQVVSQTR_00000000000">
+            <PeptideSequence>HIDVQVVSQTR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4238-HIDVQVVSQTR_00000000000-2-641.3301_Scan_Number_1566" identificationFile_ref="id_file1" id_refs="Scan Number: 1566" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4238-AENIYYIGDLIQR_0000000000000">
+            <PeptideSequence>AENIYYIGDLIQR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4238-AENIYYIGDLIQR_0000000000000-2-784.3779_Scan_Number_2843" identificationFile_ref="id_file1" id_refs="Scan Number: 2843" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4238-AATILQQQLAAFVDLK_0000000000000000">
+            <PeptideSequence>AATILQQQLAAFVDLK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4238-AATILQQQLAAFVDLK_0000000000000000-2-865.4541_Scan_Number_3341" identificationFile_ref="id_file1" id_refs="Scan Number: 3341" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4238-LVLDLETNGTLDPEEAIR_000000000000000000">
+            <PeptideSequence>LVLDLETNGTLDPEEAIR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4238-LVLDLETNGTLDPEEAIR_000000000000000000-2-999.9544_Scan_Number_2934" identificationFile_ref="id_file1" id_refs="Scan Number: 2934" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5556-VVDALGNPIDGK_000000000000">
+            <PeptideSequence>VVDALGNPIDGK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5556-VVDALGNPIDGK_000000000000-2-599.62_Scan_Number_1985" identificationFile_ref="id_file1" id_refs="Scan Number: 1985" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5556-GDFNDEIDAGIK_000000000000">
+            <PeptideSequence>GDFNDEIDAGIK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5556-GDFNDEIDAGIK_000000000000-2-647.2542_Scan_Number_2164" identificationFile_ref="id_file1" id_refs="Scan Number: 2164" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5556-VGSFEQALISYFQR_00000000000000">
+            <PeptideSequence>VGSFEQALISYFQR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5556-VGSFEQALISYFQR_00000000000000-2-822.8989_Scan_Number_3383" identificationFile_ref="id_file1" id_refs="Scan Number: 3383" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5556-ELAAFAQFASDLDEATR_00000000000000000">
+            <PeptideSequence>ELAAFAQFASDLDEATR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5556-ELAAFAQFASDLDEATR_00000000000000000-2-927.98_Scan_Number_3274" identificationFile_ref="id_file1" id_refs="Scan Number: 3274" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4370-ADLADTEAK_000000000">
+            <PeptideSequence>ADLADTEAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4370-ADLADTEAK_000000000-2-467.1891_Scan_Number_1176" identificationFile_ref="id_file1" id_refs="Scan Number: 1176" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4370-TPYSQSEAFR_0000000000">
+            <PeptideSequence>TPYSQSEAFR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4370-TPYSQSEAFR_0000000000-2-593.2401_Scan_Number_1670" identificationFile_ref="id_file1" id_refs="Scan Number: 1670" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="3" id="PA4370-KAEAPATPAASTQPAAPAAAPAAK_000000000000000000000000">
+            <PeptideSequence>KAEAPATPAASTQPAAPAAAPAAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4370-KAEAPATPAASTQPAAPAAAPAAK_000000000000000000000000-3-720.3287_Scan_Number_1333" identificationFile_ref="id_file1" id_refs="Scan Number: 1333" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0400-LSVGVEALEDLQADLAQALAK_000000000000000000000">
+            <PeptideSequence>LSVGVEALEDLQADLAQALAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0400-LSVGVEALEDLQADLAQALAK_000000000000000000000-2-1077.5303_Scan_Number_3793" identificationFile_ref="id_file1" id_refs="Scan Number: 3793" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0400-FSFVDPTDLQAFEAALTPETR_000000000000000000000">
+            <PeptideSequence>FSFVDPTDLQAFEAALTPETR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0400-FSFVDPTDLQAFEAALTPETR_000000000000000000000-2-1178.33_Scan_Number_3526" identificationFile_ref="id_file1" id_refs="Scan Number: 3526" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2413-FLPPLIIGAEQIDEVAR_00000000000000000">
+            <PeptideSequence>FLPPLIIGAEQIDEVAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2413-FLPPLIIGAEQIDEVAR_00000000000000000-2-940.9548_Scan_Number_3300" identificationFile_ref="id_file1" id_refs="Scan Number: 3300" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2413-ITEQAGVALIVDEIQSGFAR_00000000000000000000">
+            <PeptideSequence>ITEQAGVALIVDEIQSGFAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2413-ITEQAGVALIVDEIQSGFAR_00000000000000000000-2-1059.0425_Scan_Number_3553" identificationFile_ref="id_file1" id_refs="Scan Number: 3553" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2386-ATATAQGIELALR_0000000000000">
+            <PeptideSequence>ATATAQGIELALR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2386-ATATAQGIELALR_0000000000000-2-657.8636_Scan_Number_2313" identificationFile_ref="id_file1" id_refs="Scan Number: 2313" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="3" id="PA2386-QLLEPLAEYLGDHEIGR_00000000000000000">
+            <PeptideSequence>QLLEPLAEYLGDHEIGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2386-QLLEPLAEYLGDHEIGR_00000000000000000-3-651.6663_Scan_Number_2965" identificationFile_ref="id_file1" id_refs="Scan Number: 2965" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5366-VLDEAVEWALK_00000000000">
+            <PeptideSequence>VLDEAVEWALK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5366-VLDEAVEWALK_00000000000-2-637.05_Scan_Number_2754" identificationFile_ref="id_file1" id_refs="Scan Number: 2754" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5366-LIEFGDTDTLFTNPAK_0000000000000000">
+            <PeptideSequence>LIEFGDTDTLFTNPAK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5366-LIEFGDTDTLFTNPAK_0000000000000000-2-891.4047_Scan_Number_2879" identificationFile_ref="id_file1" id_refs="Scan Number: 2879" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4385-GDNEEQNVGIALLR_00000000000000">
+            <PeptideSequence>GDNEEQNVGIALLR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4385-GDNEEQNVGIALLR_00000000000000-2-764.78_Scan_Number_2467" identificationFile_ref="id_file1" id_refs="Scan Number: 2467" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4385-ENTTIIDGAGVQADIEAR_000000000000000000">
+            <PeptideSequence>ENTTIIDGAGVQADIEAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4385-ENTTIIDGAGVQADIEAR_000000000000000000-2-937.32_Scan_Number_2330" identificationFile_ref="id_file1" id_refs="Scan Number: 2330" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2853-KADEALGAAQK_00000000000">
+            <PeptideSequence>KADEALGAAQK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2853-KADEALGAAQK_00000000000-2-551.6_Scan_Number_989" identificationFile_ref="id_file1" id_refs="Scan Number: 989" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA2853-AQQTADEANER_00000000000">
+            <PeptideSequence>AQQTADEANER</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA2853-AQQTADEANER_00000000000-2-616.7474_Scan_Number_864" identificationFile_ref="id_file1" id_refs="Scan Number: 864" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3891-VLIDGQDTADLDEVTLR_00000000000000000">
+            <PeptideSequence>VLIDGQDTADLDEVTLR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3891-VLIDGQDTADLDEVTLR_00000000000000000-2-937.24_Scan_Number_2633" identificationFile_ref="id_file1" id_refs="Scan Number: 2633" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1288-ASSALDASTIYGNPAGLSK_0000000000000000000">
+            <PeptideSequence>ASSALDASTIYGNPAGLSK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1288-ASSALDASTIYGNPAGLSK_0000000000000000000-2-911.9197_Scan_Number_2259" identificationFile_ref="id_file1" id_refs="Scan Number: 2259" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1800-LPELNEEFFALFGVK_000000000000000">
+            <PeptideSequence>LPELNEEFFALFGVK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1800-LPELNEEFFALFGVK_000000000000000-2-877.4_Scan_Number_3619" identificationFile_ref="id_file1" id_refs="Scan Number: 3619" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4760-EANEAYEVLSDASK_00000000000000">
+            <PeptideSequence>EANEAYEVLSDASK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4760-EANEAYEVLSDASK_00000000000000-2-763.72_Scan_Number_2287" identificationFile_ref="id_file1" id_refs="Scan Number: 2287" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0302-GEIFALLGGSGSGK_00000000000000">
+            <PeptideSequence>GEIFALLGGSGSGK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0302-GEIFALLGGSGSGK_00000000000000-2-646.8045_Scan_Number_2759" identificationFile_ref="id_file1" id_refs="Scan Number: 2759" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1804-ALDAVIESVTGALK_00000000000000">
+            <PeptideSequence>ALDAVIESVTGALK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1804-ALDAVIESVTGALK_00000000000000-2-693.8684_Scan_Number_3130" identificationFile_ref="id_file1" id_refs="Scan Number: 3130" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4217-YIDQSGATVWSEPR_00000000000000">
+            <PeptideSequence>YIDQSGATVWSEPR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4217-YIDQSGATVWSEPR_00000000000000-2-805.24_Scan_Number_2160" identificationFile_ref="id_file1" id_refs="Scan Number: 2160" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5178-VGLGNPNIQVSVEGDK_0000000000000000">
+            <PeptideSequence>VGLGNPNIQVSVEGDK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5178-VGLGNPNIQVSVEGDK_0000000000000000-2-813.7_Scan_Number_2147" identificationFile_ref="id_file1" id_refs="Scan Number: 2147" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5232-ATLQSAQAALSAAR_00000000000000">
+            <PeptideSequence>ATLQSAQAALSAAR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5232-ATLQSAQAALSAAR_00000000000000-2-680.18_Scan_Number_2074" identificationFile_ref="id_file1" id_refs="Scan Number: 2074" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA3279-GGLEVATTDKEFSFK_000000000000000">
+            <PeptideSequence>GGLEVATTDKEFSFK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA3279-GGLEVATTDKEFSFK_000000000000000-2-815.11_Scan_Number_2233" identificationFile_ref="id_file1" id_refs="Scan Number: 2233" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5243-SLDAAEAYNPEGIAQR_0000000000000000">
+            <PeptideSequence>SLDAAEAYNPEGIAQR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5243-SLDAAEAYNPEGIAQR_0000000000000000-2-853.25_Scan_Number_2136" identificationFile_ref="id_file1" id_refs="Scan Number: 2136" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA0316-SVAELVLAEAILLLR_000000000000000">
+            <PeptideSequence>SVAELVLAEAILLLR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA0316-SVAELVLAEAILLLR_000000000000000-2-805.4399_Scan_Number_4107" identificationFile_ref="id_file1" id_refs="Scan Number: 4107" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA4206-VFDGVGELEAGR_000000000000">
+            <PeptideSequence>VFDGVGELEAGR</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA4206-VFDGVGELEAGR_000000000000-2-625.27_Scan_Number_2266" identificationFile_ref="id_file1" id_refs="Scan Number: 2266" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA1586-NEGDTVLSNELLGK_00000000000000">
+            <PeptideSequence>NEGDTVLSNELLGK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA1586-NEGDTVLSNELLGK_00000000000000-2-745.0_Scan_Number_2424" identificationFile_ref="id_file1" id_refs="Scan Number: 2424" assay_refs="assay1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="Pseudomonas" charge="2" id="PA5555-NATDNAGELISDLQLIYNK_0000000000000000000">
+            <PeptideSequence>NATDNAGELISDLQLIYNK</PeptideSequence>
+            <EvidenceRef feature_ref="raw1-PA5555-NATDNAGELISDLQLIYNK_0000000000000000000-2-1046.37_Scan_Number_3255" identificationFile_ref="id_file1" id_refs="Scan Number: 3255" assay_refs="assay1"/>
+        </PeptideConsensus>
+    </PeptideConsensusList>
+    <FeatureList id="featureList_raw1" rawFilesGroup_ref="raw1">
+        <Feature spectrum_refs="Scan Number: 1656" charge="2" mz="411.6925" rt="null" id="raw1-PA0958-SADFIGGR_00000000-2-411.6925_Scan_Number_1656"/>
+        <Feature spectrum_refs="Scan Number: 1205" charge="2" mz="474.7568" rt="null" id="raw1-PA0958-YVVQSGPAK_000000000-2-474.7568_Scan_Number_1205"/>
+        <Feature spectrum_refs="Scan Number: 3667" charge="2" mz="573.2433" rt="null" id="raw1-PA0958-LIVDYPLSIL_0000000000-2-573.2433_Scan_Number_3667"/>
+        <Feature spectrum_refs="Scan Number: 3612" charge="2" mz="573.2534" rt="null" id="raw1-PA0958-LIVDYPLSIL_0000000000-2-573.2534_Scan_Number_3612"/>
+        <Feature spectrum_refs="Scan Number: 1995" charge="2" mz="687.29" rt="null" id="raw1-PA0958-GELYATYAGETAK_0000000000000-2-687.29_Scan_Number_1995"/>
+        <Feature spectrum_refs="Scan Number: 1877" charge="2" mz="687.3034" rt="null" id="raw1-PA0958-GELYATYAGETAK_0000000000000-2-687.3034_Scan_Number_1877"/>
+        <Feature spectrum_refs="Scan Number: 1935" charge="2" mz="687.3064" rt="null" id="raw1-PA0958-GELYATYAGETAK_0000000000000-2-687.3064_Scan_Number_1935"/>
+        <Feature spectrum_refs="Scan Number: 3861" charge="2" mz="739.3224" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3224_Scan_Number_3861"/>
+        <Feature spectrum_refs="Scan Number: 4229" charge="2" mz="739.3254" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3254_Scan_Number_4229"/>
+        <Feature spectrum_refs="Scan Number: 4057" charge="2" mz="739.3347" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3347_Scan_Number_4057"/>
+        <Feature spectrum_refs="Scan Number: 4756" charge="2" mz="739.3571" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3571_Scan_Number_4756"/>
+        <Feature spectrum_refs="Scan Number: 3390" charge="2" mz="739.3584" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3584_Scan_Number_3390"/>
+        <Feature spectrum_refs="Scan Number: 3177" charge="2" mz="739.3624" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3624_Scan_Number_3177"/>
+        <Feature spectrum_refs="Scan Number: 3238" charge="2" mz="739.3704" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3704_Scan_Number_3238"/>
+        <Feature spectrum_refs="Scan Number: 3297" charge="2" mz="739.3792" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.3792_Scan_Number_3297"/>
+        <Feature spectrum_refs="Scan Number: 4854" charge="2" mz="739.65" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.65_Scan_Number_4854"/>
+        <Feature spectrum_refs="Scan Number: 4595" charge="2" mz="739.7" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.7_Scan_Number_4595"/>
+        <Feature spectrum_refs="Scan Number: 4800" charge="2" mz="739.78" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.78_Scan_Number_4800"/>
+        <Feature spectrum_refs="Scan Number: 4318" charge="2" mz="739.82" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.82_Scan_Number_4318"/>
+        <Feature spectrum_refs="Scan Number: 4689" charge="2" mz="739.83" rt="null" id="raw1-PA0958-GFIEDSSLDLLLR_0000000000000-2-739.83_Scan_Number_4689"/>
+        <Feature spectrum_refs="Scan Number: 1417" charge="2" mz="775.8011" rt="null" id="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-775.8011_Scan_Number_1417"/>
+        <Feature spectrum_refs="Scan Number: 1476" charge="2" mz="775.8156" rt="null" id="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-775.8156_Scan_Number_1476"/>
+        <Feature spectrum_refs="Scan Number: 1535" charge="2" mz="776.23" rt="null" id="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-776.23_Scan_Number_1535"/>
+        <Feature spectrum_refs="Scan Number: 1343" charge="2" mz="776.2794" rt="null" id="raw1-PA0958-ANADQGEGDQNEFR_00000000000000-2-776.2794_Scan_Number_1343"/>
+        <Feature spectrum_refs="Scan Number: 2572" charge="2" mz="804.367" rt="null" id="raw1-PA0958-VHGDQPFDYIGFGR_00000000000000-2-804.367_Scan_Number_2572"/>
+        <Feature spectrum_refs="Scan Number: 2512" charge="2" mz="804.3908" rt="null" id="raw1-PA0958-VHGDQPFDYIGFGR_00000000000000-2-804.3908_Scan_Number_2512"/>
+        <Feature spectrum_refs="Scan Number: 1743" charge="3" mz="539.5804" rt="null" id="raw1-PA0958-SRGELYATYAGETAK_000000000000000-3-539.5804_Scan_Number_1743"/>
+        <Feature spectrum_refs="Scan Number: 1795" charge="2" mz="808.9001" rt="null" id="raw1-PA0958-SRGELYATYAGETAK_000000000000000-2-808.9001_Scan_Number_1795"/>
+        <Feature spectrum_refs="Scan Number: 1738" charge="2" mz="808.9042" rt="null" id="raw1-PA0958-SRGELYATYAGETAK_000000000000000-2-808.9042_Scan_Number_1738"/>
+        <Feature spectrum_refs="Scan Number: 2475" charge="2" mz="881.4274" rt="null" id="raw1-PA0958-WGEMQPTAPVFAAGGSR_00000000000000000-2-881.4274_Scan_Number_2475"/>
+        <Feature spectrum_refs="Scan Number: 4969" charge="2" mz="1188.78" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.78_Scan_Number_4969"/>
+        <Feature spectrum_refs="Scan Number: 4920" charge="2" mz="1188.97" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.97_Scan_Number_4920"/>
+        <Feature spectrum_refs="Scan Number: 4338" charge="2" mz="1188.9789" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.9789_Scan_Number_4338"/>
+        <Feature spectrum_refs="Scan Number: 5049" charge="2" mz="1188.99" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1188.99_Scan_Number_5049"/>
+        <Feature spectrum_refs="Scan Number: 4026" charge="2" mz="1189.01" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.01_Scan_Number_4026"/>
+        <Feature spectrum_refs="Scan Number: 4678" charge="2" mz="1189.01" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.01_Scan_Number_4678"/>
+        <Feature spectrum_refs="Scan Number: 5018" charge="2" mz="1189.012" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.012_Scan_Number_5018"/>
+        <Feature spectrum_refs="Scan Number: 3822" charge="2" mz="1189.0217" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.0217_Scan_Number_3822"/>
+        <Feature spectrum_refs="Scan Number: 3976" charge="2" mz="1189.0422" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.0422_Scan_Number_3976"/>
+        <Feature spectrum_refs="Scan Number: 3873" charge="2" mz="1189.11" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.11_Scan_Number_3873"/>
+        <Feature spectrum_refs="Scan Number: 3723" charge="2" mz="1189.2" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.2_Scan_Number_3723"/>
+        <Feature spectrum_refs="Scan Number: 5353" charge="2" mz="1189.21" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.21_Scan_Number_5353"/>
+        <Feature spectrum_refs="Scan Number: 3369" charge="2" mz="1189.26" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.26_Scan_Number_3369"/>
+        <Feature spectrum_refs="Scan Number: 3594" charge="2" mz="1189.3" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3_Scan_Number_3594"/>
+        <Feature spectrum_refs="Scan Number: 3429" charge="2" mz="1189.3101" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3101_Scan_Number_3429"/>
+        <Feature spectrum_refs="Scan Number: 3922" charge="2" mz="1189.3101" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3101_Scan_Number_3922"/>
+        <Feature spectrum_refs="Scan Number: 3258" charge="2" mz="1189.3101" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3101_Scan_Number_3258"/>
+        <Feature spectrum_refs="Scan Number: 4147" charge="2" mz="1189.3199" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.3199_Scan_Number_4147"/>
+        <Feature spectrum_refs="Scan Number: 4388" charge="2" mz="1189.33" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.33_Scan_Number_4388"/>
+        <Feature spectrum_refs="Scan Number: 4821" charge="2" mz="1189.34" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.34_Scan_Number_4821"/>
+        <Feature spectrum_refs="Scan Number: 5076" charge="2" mz="1189.36" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.36_Scan_Number_5076"/>
+        <Feature spectrum_refs="Scan Number: 3197" charge="2" mz="1189.41" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.41_Scan_Number_3197"/>
+        <Feature spectrum_refs="Scan Number: 3482" charge="2" mz="1189.4399" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.4399_Scan_Number_3482"/>
+        <Feature spectrum_refs="Scan Number: 5188" charge="2" mz="1189.4399" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.4399_Scan_Number_5188"/>
+        <Feature spectrum_refs="Scan Number: 3142" charge="2" mz="1189.5601" rt="null" id="raw1-PA0958-YAITDNLSASLYGAELEDIYR_000000000000000000000-2-1189.5601_Scan_Number_3142"/>
+        <Feature spectrum_refs="Scan Number: 3343" charge="2" mz="1552.0601" rt="null" id="raw1-PA0958-QYYLNSNYTIPLASDQSLGFDFNIYR_00000000000000000000000000-2-1552.0601_Scan_Number_3343"/>
+        <Feature spectrum_refs="Scan Number: 4429" charge="3" mz="1095.76" rt="null" id="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.76_Scan_Number_4429"/>
+        <Feature spectrum_refs="Scan Number: 4619" charge="3" mz="1095.8" rt="null" id="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.8_Scan_Number_4619"/>
+        <Feature spectrum_refs="Scan Number: 4715" charge="3" mz="1095.8101" rt="null" id="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.8101_Scan_Number_4715"/>
+        <Feature spectrum_refs="Scan Number: 4377" charge="3" mz="1095.86" rt="null" id="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.86_Scan_Number_4377"/>
+        <Feature spectrum_refs="Scan Number: 4477" charge="3" mz="1095.86" rt="null" id="raw1-PA0958-LFPQTATGFQLQSSEFEGLDLEAGHFTEGK_000000000000000000000000000000-3-1095.86_Scan_Number_4477"/>
+        <Feature spectrum_refs="Scan Number: 1282" charge="2" mz="537.8045" rt="null" id="raw1-PA1777-VEAEVEAEAK_0000000000-2-537.8045_Scan_Number_1282"/>
+        <Feature spectrum_refs="Scan Number: 1266" charge="2" mz="583.7986" rt="null" id="raw1-PA1777-VKENSYADIK_0000000000-2-583.7986_Scan_Number_1266"/>
+        <Feature spectrum_refs="Scan Number: 1884" charge="2" mz="590.7539" rt="null" id="raw1-PA1777-ASLDGQYGLEK_00000000000-2-590.7539_Scan_Number_1884"/>
+        <Feature spectrum_refs="Scan Number: 1799" charge="2" mz="590.7601" rt="null" id="raw1-PA1777-ASLDGQYGLEK_00000000000-2-590.7601_Scan_Number_1799"/>
+        <Feature spectrum_refs="Scan Number: 5547" charge="2" mz="615.7632" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.7632_Scan_Number_5547"/>
+        <Feature spectrum_refs="Scan Number: 5499" charge="2" mz="615.7679" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.7679_Scan_Number_5499"/>
+        <Feature spectrum_refs="Scan Number: 5409" charge="2" mz="615.779" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.779_Scan_Number_5409"/>
+        <Feature spectrum_refs="Scan Number: 5454" charge="2" mz="615.7925" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.7925_Scan_Number_5454"/>
+        <Feature spectrum_refs="Scan Number: 1370" charge="2" mz="615.8091" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8091_Scan_Number_1370"/>
+        <Feature spectrum_refs="Scan Number: 1313" charge="2" mz="615.8137" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8137_Scan_Number_1313"/>
+        <Feature spectrum_refs="Scan Number: 1259" charge="2" mz="615.8144" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8144_Scan_Number_1259"/>
+        <Feature spectrum_refs="Scan Number: 1432" charge="2" mz="615.8303" rt="null" id="raw1-PA1777-RVEAEVEAEAK_00000000000-2-615.8303_Scan_Number_1432"/>
+        <Feature spectrum_refs="Scan Number: 2832" charge="2" mz="665.314" rt="null" id="raw1-PA1777-YYFTENFFAK_0000000000-2-665.314_Scan_Number_2832"/>
+        <Feature spectrum_refs="Scan Number: 2167" charge="2" mz="703.8028" rt="null" id="raw1-PA1777-DVLVNEYGVEGGR_0000000000000-2-703.8028_Scan_Number_2167"/>
+        <Feature spectrum_refs="Scan Number: 1552" charge="2" mz="1067.0526" rt="null" id="raw1-PA1777-VNAVGYGESRPVADNATAEGR_000000000000000000000-2-1067.0526_Scan_Number_1552"/>
+        <Feature spectrum_refs="Scan Number: 1716" charge="3" mz="712.0" rt="null" id="raw1-PA1777-VNAVGYGESRPVADNATAEGR_000000000000000000000-3-712.0_Scan_Number_1716"/>
+        <Feature spectrum_refs="Scan Number: 1662" charge="2" mz="1293.87" rt="null" id="raw1-PA1777-QYPSTSTTVEGHTDSVGTDAYNQK_000000000000000000000000-2-1293.87_Scan_Number_1662"/>
+        <Feature spectrum_refs="Scan Number: 2462" charge="2" mz="506.731" rt="null" id="raw1-PA2760-SGAAGIDFFK_0000000000-2-506.731_Scan_Number_2462"/>
+        <Feature spectrum_refs="Scan Number: 2192" charge="2" mz="600.7583" rt="null" id="raw1-PA2760-EIEGLELNAGR_00000000000-2-600.7583_Scan_Number_2192"/>
+        <Feature spectrum_refs="Scan Number: 2127" charge="2" mz="600.7732" rt="null" id="raw1-PA2760-EIEGLELNAGR_00000000000-2-600.7732_Scan_Number_2127"/>
+        <Feature spectrum_refs="Scan Number: 1245" charge="2" mz="625.7847" rt="null" id="raw1-PA2760-QGDSGSAADDLSK_0000000000000-2-625.7847_Scan_Number_1245"/>
+        <Feature spectrum_refs="Scan Number: 2861" charge="2" mz="707.7897" rt="null" id="raw1-PA2760-SWQVSYALDFAK_000000000000-2-707.7897_Scan_Number_2861"/>
+        <Feature spectrum_refs="Scan Number: 2381" charge="2" mz="754.8321" rt="null" id="raw1-PA2760-LLPESYSGTLITSK_00000000000000-2-754.8321_Scan_Number_2381"/>
+        <Feature spectrum_refs="Scan Number: 2320" charge="2" mz="754.8661" rt="null" id="raw1-PA2760-LLPESYSGTLITSK_00000000000000-2-754.8661_Scan_Number_2320"/>
+        <Feature spectrum_refs="Scan Number: 2925" charge="2" mz="791.3962" rt="null" id="raw1-PA2760-GFVEDSHLDLFFR_0000000000000-2-791.3962_Scan_Number_2925"/>
+        <Feature spectrum_refs="Scan Number: 2051" charge="2" mz="806.8167" rt="null" id="raw1-PA2760-LDSDFADQNFNGNR_00000000000000-2-806.8167_Scan_Number_2051"/>
+        <Feature spectrum_refs="Scan Number: 2109" charge="2" mz="807.3463" rt="null" id="raw1-PA2760-LDSDFADQNFNGNR_00000000000000-2-807.3463_Scan_Number_2109"/>
+        <Feature spectrum_refs="Scan Number: 2535" charge="2" mz="903.94" rt="null" id="raw1-PA2760-EIFNQVQYVVQSGPAK_0000000000000000-2-903.94_Scan_Number_2535"/>
+        <Feature spectrum_refs="Scan Number: 2473" charge="2" mz="903.9608" rt="null" id="raw1-PA2760-EIFNQVQYVVQSGPAK_0000000000000000-2-903.9608_Scan_Number_2473"/>
+        <Feature spectrum_refs="Scan Number: 2358" charge="2" mz="904.27" rt="null" id="raw1-PA2760-EIFNQVQYVVQSGPAK_0000000000000000-2-904.27_Scan_Number_2358"/>
+        <Feature spectrum_refs="Scan Number: 1951" charge="2" mz="921.73" rt="null" id="raw1-PA2760-TKLDSDFADQNFNGNR_0000000000000000-2-921.73_Scan_Number_1951"/>
+        <Feature spectrum_refs="Scan Number: 928" charge="2" mz="495.29" rt="null" id="raw1-PA5258-GKTESLAQR_000000000-2-495.29_Scan_Number_928"/>
+        <Feature spectrum_refs="Scan Number: 1711" charge="2" mz="526.73" rt="null" id="raw1-PA5258-LAEAEHLLR_000000000-2-526.73_Scan_Number_1711"/>
+        <Feature spectrum_refs="Scan Number: 2335" charge="2" mz="707.3325" rt="null" id="raw1-PA5258-LDALPTADELEAR_0000000000000-2-707.3325_Scan_Number_2335"/>
+        <Feature spectrum_refs="Scan Number: 1368" charge="2" mz="737.3302" rt="null" id="raw1-PA5258-TSTSTPSPVAPDASR_000000000000000-2-737.3302_Scan_Number_1368"/>
+        <Feature spectrum_refs="Scan Number: 2374" charge="2" mz="822.32" rt="null" id="raw1-PA5258-EQVNQLQPLTPTFK_00000000000000-2-822.32_Scan_Number_2374"/>
+        <Feature spectrum_refs="Scan Number: 1923" charge="2" mz="975.21" rt="null" id="raw1-PA5258-EAAGNLVPEAQAAPATEGRP_00000000000000000000-2-975.21_Scan_Number_1923"/>
+        <Feature spectrum_refs="Scan Number: 3207" charge="2" mz="1136.0682" rt="null" id="raw1-PA5258-LSALQDVGSATELVQGADDILR_0000000000000000000000-2-1136.0682_Scan_Number_3207"/>
+        <Feature spectrum_refs="Scan Number: 3272" charge="2" mz="1136.4301" rt="null" id="raw1-PA5258-LSALQDVGSATELVQGADDILR_0000000000000000000000-2-1136.4301_Scan_Number_3272"/>
+        <Feature spectrum_refs="Scan Number: 3562" charge="2" mz="1212.42" rt="null" id="raw1-PA5258-QPVTVQVPDLAPALSALQAYVSR_00000000000000000000000-2-1212.42_Scan_Number_3562"/>
+        <Feature spectrum_refs="Scan Number: 2834" charge="3" mz="809.09" rt="null" id="raw1-PA5258-IDFNAGQDIRPLLAGEQLAQVR_0000000000000000000000-3-809.09_Scan_Number_2834"/>
+        <Feature spectrum_refs="Scan Number: 1771" charge="2" mz="795.3723" rt="null" id="raw1-PA4942-NQAEAYANGVVPEAR_000000000000000-2-795.3723_Scan_Number_1771"/>
+        <Feature spectrum_refs="Scan Number: 2070" charge="2" mz="892.4575" rt="null" id="raw1-PA4942-TGITVTQVNIQSAQAPR_00000000000000000-2-892.4575_Scan_Number_2070"/>
+        <Feature spectrum_refs="Scan Number: 1435" charge="2" mz="1030.9589" rt="null" id="raw1-PA4942-NAAPATGAGASAGGGSASASDLGSR_0000000000000000000000000-2-1030.9589_Scan_Number_1435"/>
+        <Feature spectrum_refs="Scan Number: 1511" charge="2" mz="1031.4301" rt="null" id="raw1-PA4942-NAAPATGAGASAGGGSASASDLGSR_0000000000000000000000000-2-1031.4301_Scan_Number_1511"/>
+        <Feature spectrum_refs="Scan Number: 2804" charge="2" mz="1057.0635" rt="null" id="raw1-PA4942-VLVTGQQGQNNLLYLPLDK_0000000000000000000-2-1057.0635_Scan_Number_2804"/>
+        <Feature spectrum_refs="Scan Number: 3172" charge="2" mz="1060.8" rt="null" id="raw1-PA4942-YYETVGPGLNFYFPPIDK_000000000000000000-2-1060.8_Scan_Number_3172"/>
+        <Feature spectrum_refs="Scan Number: 1194" charge="2" mz="629.85" rt="null" id="raw1-PA0291-SGLPAAGSSNNQR_0000000000000-2-629.85_Scan_Number_1194"/>
+        <Feature spectrum_refs="Scan Number: 1620" charge="2" mz="683.2944" rt="null" id="raw1-PA0291-SLSIAGANGSSASSR_000000000000000-2-683.2944_Scan_Number_1620"/>
+        <Feature spectrum_refs="Scan Number: 2301" charge="2" mz="722.9006" rt="null" id="raw1-PA0291-DFTLVAGQLEHSK_0000000000000-2-722.9006_Scan_Number_2301"/>
+        <Feature spectrum_refs="Scan Number: 1845" charge="2" mz="805.8423" rt="null" id="raw1-PA0291-ADGYVSSGYYGSGVTK_0000000000000000-2-805.8423_Scan_Number_1845"/>
+        <Feature spectrum_refs="Scan Number: 2595" charge="2" mz="903.31" rt="null" id="raw1-PA0291-LLPVTFEGGQVTSTDLK_00000000000000000-2-903.31_Scan_Number_2595"/>
+        <Feature spectrum_refs="Scan Number: 2559" charge="2" mz="912.74" rt="null" id="raw1-PA0291-GDGEGSTAYLITDVQIGK_000000000000000000-2-912.74_Scan_Number_2559"/>
+        <Feature spectrum_refs="Scan Number: 2884" charge="2" mz="645.8175" rt="null" id="raw1-PA4842-AIEVDFADVLAK_000000000000-2-645.8175_Scan_Number_2884"/>
+        <Feature spectrum_refs="Scan Number: 1280" charge="2" mz="647.7788" rt="null" id="raw1-PA4842-NPEEVQPGEAPK_000000000000-2-647.7788_Scan_Number_1280"/>
+        <Feature spectrum_refs="Scan Number: 1268" charge="2" mz="704.2711" rt="null" id="raw1-PA4842-SQSQSTEDADLAR_0000000000000-2-704.2711_Scan_Number_1268"/>
+        <Feature spectrum_refs="Scan Number: 1323" charge="2" mz="704.2941" rt="null" id="raw1-PA4842-SQSQSTEDADLAR_0000000000000-2-704.2941_Scan_Number_1323"/>
+        <Feature spectrum_refs="Scan Number: 2724" charge="2" mz="779.8645" rt="null" id="raw1-PA4842-ADNLNNWLGDVATR_00000000000000-2-779.8645_Scan_Number_2724"/>
+        <Feature spectrum_refs="Scan Number: 1852" charge="2" mz="810.8525" rt="null" id="raw1-PA4842-LSDPNQPNAQFYAR_00000000000000-2-810.8525_Scan_Number_1852"/>
+        <Feature spectrum_refs="Scan Number: 2405" charge="2" mz="897.9108" rt="null" id="raw1-PA4842-SWALPASESEYQEGIK_0000000000000000-2-897.9108_Scan_Number_2405"/>
+        <Feature spectrum_refs="Scan Number: 1695" charge="2" mz="522.2817" rt="null" id="raw1-PA0425-LLVADQAVSK_0000000000-2-522.2817_Scan_Number_1695"/>
+        <Feature spectrum_refs="Scan Number: 2401" charge="2" mz="651.8299" rt="null" id="raw1-PA0425-WLVTEGLNAGDK_000000000000-2-651.8299_Scan_Number_2401"/>
+        <Feature spectrum_refs="Scan Number: 1564" charge="2" mz="657.3419" rt="null" id="raw1-PA0425-GQATALVVNAQNK_0000000000000-2-657.3419_Scan_Number_1564"/>
+        <Feature spectrum_refs="Scan Number: 1827" charge="2" mz="682.2867" rt="null" id="raw1-PA0425-LEDGSQYPLEGR_000000000000-2-682.2867_Scan_Number_1827"/>
+        <Feature spectrum_refs="Scan Number: 2629" charge="2" mz="878.9504" rt="null" id="raw1-PA0425-IITEGLQFVQPGVEVK_0000000000000000-2-878.9504_Scan_Number_2629"/>
+        <Feature spectrum_refs="Scan Number: 2688" charge="2" mz="879.28" rt="null" id="raw1-PA0425-IITEGLQFVQPGVEVK_0000000000000000-2-879.28_Scan_Number_2688"/>
+        <Feature spectrum_refs="Scan Number: 2626" charge="3" mz="586.65" rt="null" id="raw1-PA0425-IITEGLQFVQPGVEVK_0000000000000000-3-586.65_Scan_Number_2626"/>
+        <Feature spectrum_refs="Scan Number: 1453" charge="2" mz="569.2502" rt="null" id="raw1-PA1011-DRGDDYLGAR_0000000000-2-569.2502_Scan_Number_1453"/>
+        <Feature spectrum_refs="Scan Number: 1615" charge="2" mz="645.7675" rt="null" id="raw1-PA1011-AAGDTSSPSWPSK_0000000000000-2-645.7675_Scan_Number_1615"/>
+        <Feature spectrum_refs="Scan Number: 2528" charge="2" mz="742.321" rt="null" id="raw1-PA1011-SLGVYYVNIAEGAK_00000000000000-2-742.321_Scan_Number_2528"/>
+        <Feature spectrum_refs="Scan Number: 2836" charge="2" mz="860.8795" rt="null" id="raw1-PA1011-DGSGNPVLTLQSDFDR_0000000000000000-2-860.8795_Scan_Number_2836"/>
+        <Feature spectrum_refs="Scan Number: 3524" charge="2" mz="1024.3199" rt="null" id="raw1-PA1011-SVAPSLDAALLDEMVASMAR_00000000000000000000-2-1024.3199_Scan_Number_3524"/>
+        <Feature spectrum_refs="Scan Number: 2308" charge="2" mz="1053.9883" rt="null" id="raw1-PA1011-IEPGVQSNTSEVYVLSQTR_0000000000000000000-2-1053.9883_Scan_Number_2308"/>
+        <Feature spectrum_refs="Scan Number: 2004" charge="2" mz="577.7257" rt="null" id="raw1-PA3280-DLDDTAFDSR_0000000000-2-577.7257_Scan_Number_2004"/>
+        <Feature spectrum_refs="Scan Number: 2351" charge="2" mz="585.3171" rt="null" id="raw1-PA3280-AFIELGGTAYK_00000000000-2-585.3171_Scan_Number_2351"/>
+        <Feature spectrum_refs="Scan Number: 1587" charge="2" mz="702.8031" rt="null" id="raw1-PA3280-VEDDNVVADTATR_0000000000000-2-702.8031_Scan_Number_1587"/>
+        <Feature spectrum_refs="Scan Number: 1756" charge="2" mz="721.8411" rt="null" id="raw1-PA3280-ATFGGVSNSPAGSYK_000000000000000-2-721.8411_Scan_Number_1756"/>
+        <Feature spectrum_refs="Scan Number: 1057" charge="2" mz="738.2847" rt="null" id="raw1-PA3280-GIATSGGNDAGDNGNR_0000000000000000-2-738.2847_Scan_Number_1057"/>
+        <Feature spectrum_refs="Scan Number: 2233" charge="2" mz="815.11" rt="null" id="raw1-PA3280-GGLEVATTDKEFSFK_000000000000000-2-815.11_Scan_Number_2233"/>
+        <Feature spectrum_refs="Scan Number: 1723" charge="2" mz="855.8323" rt="null" id="raw1-PA3280-ITNNNGDDDGDGFVTR_0000000000000000-2-855.8323_Scan_Number_1723"/>
+        <Feature spectrum_refs="Scan Number: 2225" charge="2" mz="521.2937" rt="null" id="raw1-PA4265-AGENVGILLR_0000000000-2-521.2937_Scan_Number_2225"/>
+        <Feature spectrum_refs="Scan Number: 1708" charge="2" mz="602.2836" rt="null" id="raw1-PA4265-DDNGIGVSAVQK_000000000000-2-602.2836_Scan_Number_1708"/>
+        <Feature spectrum_refs="Scan Number: 2181" charge="2" mz="621.8207" rt="null" id="raw1-PA4265-VQEEVEIVGIK_00000000000-2-621.8207_Scan_Number_2181"/>
+        <Feature spectrum_refs="Scan Number: 1751" charge="2" mz="688.8145" rt="null" id="raw1-PA4265-AFDQIDNAPEEK_000000000000-2-688.8145_Scan_Number_1751"/>
+        <Feature spectrum_refs="Scan Number: 2731" charge="2" mz="815.8774" rt="null" id="raw1-PA4265-LVETLDSYIPEPVR_00000000000000-2-815.8774_Scan_Number_2731"/>
+        <Feature spectrum_refs="Scan Number: 1921" charge="3" mz="588.0" rt="null" id="raw1-PA4265-GITINTSHVEYDSAVR_0000000000000000-3-588.0_Scan_Number_1921"/>
+        <Feature spectrum_refs="Scan Number: 1928" charge="2" mz="529.2678" rt="null" id="raw1-PA2393-ALEQVAALSR_0000000000-2-529.2678_Scan_Number_1928"/>
+        <Feature spectrum_refs="Scan Number: 1138" charge="2" mz="553.2484" rt="null" id="raw1-PA2393-APIVASHSAPR_00000000000-2-553.2484_Scan_Number_1138"/>
+        <Feature spectrum_refs="Scan Number: 2383" charge="2" mz="633.3012" rt="null" id="raw1-PA2393-ELVDAIDYTVK_00000000000-2-633.3012_Scan_Number_2383"/>
+        <Feature spectrum_refs="Scan Number: 2722" charge="2" mz="927.8693" rt="null" id="raw1-PA2393-DFPNQVGIAYSPEDFR_0000000000000000-2-927.8693_Scan_Number_2722"/>
+        <Feature spectrum_refs="Scan Number: 2778" charge="2" mz="927.898" rt="null" id="raw1-PA2393-DFPNQVGIAYSPEDFR_0000000000000000-2-927.898_Scan_Number_2778"/>
+        <Feature spectrum_refs="Scan Number: 3217" charge="2" mz="958.4419" rt="null" id="raw1-PA2393-FGEYASALYGILEEEPK_00000000000000000-2-958.4419_Scan_Number_3217"/>
+        <Feature spectrum_refs="Scan Number: 1786" charge="2" mz="609.8041" rt="null" id="raw1-PA3186-VGAEQLPGEYR_00000000000-2-609.8041_Scan_Number_1786"/>
+        <Feature spectrum_refs="Scan Number: 3265" charge="2" mz="732.351" rt="null" id="raw1-PA3186-GALLPVELIWQPK_0000000000000-2-732.351_Scan_Number_3265"/>
+        <Feature spectrum_refs="Scan Number: 2501" charge="2" mz="841.4299" rt="null" id="raw1-PA3186-QPGGVDEVDNALVAGIK_00000000000000000-2-841.4299_Scan_Number_2501"/>
+        <Feature spectrum_refs="Scan Number: 2340" charge="2" mz="906.32" rt="null" id="raw1-PA3186-ATNVVDNYQQLGVVYK_0000000000000000-2-906.32_Scan_Number_2340"/>
+        <Feature spectrum_refs="Scan Number: 2328" charge="2" mz="1135.29" rt="null" id="raw1-PA3186-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000-2-1135.29_Scan_Number_2328"/>
+        <Feature spectrum_refs="Scan Number: 1786" charge="2" mz="609.8041" rt="null" id="raw1-PA2291-VGAEQLPGEYR_00000000000-2-609.8041_Scan_Number_1786"/>
+        <Feature spectrum_refs="Scan Number: 3265" charge="2" mz="732.351" rt="null" id="raw1-PA2291-GALLPVELIWQPK_0000000000000-2-732.351_Scan_Number_3265"/>
+        <Feature spectrum_refs="Scan Number: 2501" charge="2" mz="841.4299" rt="null" id="raw1-PA2291-QPGGVDEVDNALVAGIK_00000000000000000-2-841.4299_Scan_Number_2501"/>
+        <Feature spectrum_refs="Scan Number: 2340" charge="2" mz="906.32" rt="null" id="raw1-PA2291-ATNVVDNYQQLGVVYK_0000000000000000-2-906.32_Scan_Number_2340"/>
+        <Feature spectrum_refs="Scan Number: 2328" charge="2" mz="1135.29" rt="null" id="raw1-PA2291-ADDVYDDVDGQPQGLTGNDFK_000000000000000000000-2-1135.29_Scan_Number_2328"/>
+        <Feature spectrum_refs="Scan Number: 2848" charge="2" mz="725.8552" rt="null" id="raw1-PA5554-YTLAGTEVSALLGR_00000000000000-2-725.8552_Scan_Number_2848"/>
+        <Feature spectrum_refs="Scan Number: 2211" charge="2" mz="792.8963" rt="null" id="raw1-PA5554-GLNVDSTGAAISVPVGK_00000000000000000-2-792.8963_Scan_Number_2211"/>
+        <Feature spectrum_refs="Scan Number: 3322" charge="2" mz="979.82" rt="null" id="raw1-PA5554-FLSQPFFVAEVFTGSPGK_000000000000000000-2-979.82_Scan_Number_3322"/>
+        <Feature spectrum_refs="Scan Number: 3019" charge="2" mz="995.4704" rt="null" id="raw1-PA5554-DIASLGIYPAVDPLDSTSR_0000000000000000000-2-995.4704_Scan_Number_3019"/>
+        <Feature spectrum_refs="Scan Number: 2342" charge="2" mz="1031.97" rt="null" id="raw1-PA5554-EAPSYADQAGGNELLETGIK_00000000000000000000-2-1031.97_Scan_Number_2342"/>
+        <Feature spectrum_refs="Scan Number: 1509" charge="2" mz="733.8187" rt="null" id="raw1-PA0865-NASQAAAYAESQGAK_000000000000000-2-733.8187_Scan_Number_1509"/>
+        <Feature spectrum_refs="Scan Number: 3116" charge="2" mz="795.78" rt="null" id="raw1-PA0865-SIYDVDFEFIEGR_0000000000000-2-795.78_Scan_Number_3116"/>
+        <Feature spectrum_refs="Scan Number: 2750" charge="2" mz="1039.36" rt="null" id="raw1-PA0865-IPINESADDTSQIEEFIR_000000000000000000-2-1039.36_Scan_Number_2750"/>
+        <Feature spectrum_refs="Scan Number: 3599" charge="3" mz="1014.49" rt="null" id="raw1-PA0865-LVGSHANFGELNIPSLEGIGGSLLYLVDR_00000000000000000000000000000-3-1014.49_Scan_Number_3599"/>
+        <Feature spectrum_refs="Scan Number: 1449" charge="2" mz="608.68" rt="null" id="raw1-PA1092-EVAAQQAELTR_00000000000-2-608.68_Scan_Number_1449"/>
+        <Feature spectrum_refs="Scan Number: 2029" charge="2" mz="695.3405" rt="null" id="raw1-PA1092-GVLTITSATGENVK_00000000000000-2-695.3405_Scan_Number_2029"/>
+        <Feature spectrum_refs="Scan Number: 1705" charge="2" mz="817.8131" rt="null" id="raw1-PA1092-DLALQSANGSNSDADR_0000000000000000-2-817.8131_Scan_Number_1705"/>
+        <Feature spectrum_refs="Scan Number: 1824" charge="2" mz="823.8822" rt="null" id="raw1-PA1092-NLNASSNDLNTSLQR_000000000000000-2-823.8822_Scan_Number_1824"/>
+        <Feature spectrum_refs="Scan Number: 1901" charge="2" mz="824.0" rt="null" id="raw1-PA1092-NLNASSNDLNTSLQR_000000000000000-2-824.0_Scan_Number_1901"/>
+        <Feature spectrum_refs="Scan Number: 1341" charge="2" mz="487.2116" rt="null" id="raw1-PA3800-AAALDVNSGR_0000000000-2-487.2116_Scan_Number_1341"/>
+        <Feature spectrum_refs="Scan Number: 2285" charge="2" mz="687.8321" rt="null" id="raw1-PA3800-GASSLWNNDALAR_0000000000000-2-687.8321_Scan_Number_2285"/>
+        <Feature spectrum_refs="Scan Number: 2227" charge="2" mz="1243.6028" rt="null" id="raw1-PA3800-VNSEVLSAPATNGDVVVVQTQDDK_000000000000000000000000-2-1243.6028_Scan_Number_2227"/>
+        <Feature spectrum_refs="Scan Number: 3246" charge="2" mz="1513.4301" rt="null" id="raw1-PA3800-SVGDGQGDLYNLLEPAVDGSTIYAASAEGR_000000000000000000000000000000-2-1513.4301_Scan_Number_3246"/>
+        <Feature spectrum_refs="Scan Number: 1806" charge="2" mz="647.7506" rt="null" id="raw1-PA2113-SNFANDLDENR_00000000000-2-647.7506_Scan_Number_1806"/>
+        <Feature spectrum_refs="Scan Number: 2289" charge="2" mz="746.14" rt="null" id="raw1-PA2113-NTDLGYVVQSGPLK_00000000000000-2-746.14_Scan_Number_2289"/>
+        <Feature spectrum_refs="Scan Number: 3005" charge="2" mz="807.22" rt="null" id="raw1-PA2113-GALLDVQEIDGLTLR_000000000000000-2-807.22_Scan_Number_3005"/>
+        <Feature spectrum_refs="Scan Number: 2636" charge="2" mz="707.8051" rt="null" id="raw1-PA4545-DSFNEFAQLTSR_000000000000-2-707.8051_Scan_Number_2636"/>
+        <Feature spectrum_refs="Scan Number: 2970" charge="2" mz="788.4015" rt="null" id="raw1-PA4545-LGLDDLASTSLETLK_000000000000000-2-788.4015_Scan_Number_2970"/>
+        <Feature spectrum_refs="Scan Number: 2704" charge="2" mz="908.89" rt="null" id="raw1-PA4545-YAEQAQLELIYANYK_000000000000000-2-908.89_Scan_Number_2704"/>
+        <Feature spectrum_refs="Scan Number: 1335" charge="2" mz="663.2434" rt="null" id="raw1-PA3692-EYPVASNGTSSGR_0000000000000-2-663.2434_Scan_Number_1335"/>
+        <Feature spectrum_refs="Scan Number: 2415" charge="2" mz="718.3229" rt="null" id="raw1-PA3692-DVDQLAYLTNQR_000000000000-2-718.3229_Scan_Number_2415"/>
+        <Feature spectrum_refs="Scan Number: 1746" charge="2" mz="747.3154" rt="null" id="raw1-PA3692-SNFSALQSQPDATK_00000000000000-2-747.3154_Scan_Number_1746"/>
+        <Feature spectrum_refs="Scan Number: 1522" charge="3" mz="584.96" rt="null" id="raw1-PA3692-RVEVTISNDAKPVAPR_0000000000000000-3-584.96_Scan_Number_1522"/>
+        <Feature spectrum_refs="Scan Number: 2953" charge="2" mz="914.454" rt="null" id="raw1-PA3692-NIQQLAEFLQQNPER_000000000000000-2-914.454_Scan_Number_2953"/>
+        <Feature spectrum_refs="Scan Number: 1773" charge="2" mz="868.3939" rt="null" id="raw1-PA1588-NLVTYQTDANGQPVSK_0000000000000000-2-868.3939_Scan_Number_1773"/>
+        <Feature spectrum_refs="Scan Number: 3184" charge="2" mz="1206.642" rt="null" id="raw1-PA1588-VLAESGLNIIAATSLTDAAQQVVK_000000000000000000000000-2-1206.642_Scan_Number_3184"/>
+        <Feature spectrum_refs="Scan Number: 1566" charge="2" mz="641.3301" rt="null" id="raw1-PA4238-HIDVQVVSQTR_00000000000-2-641.3301_Scan_Number_1566"/>
+        <Feature spectrum_refs="Scan Number: 2843" charge="2" mz="784.3779" rt="null" id="raw1-PA4238-AENIYYIGDLIQR_0000000000000-2-784.3779_Scan_Number_2843"/>
+        <Feature spectrum_refs="Scan Number: 3341" charge="2" mz="865.4541" rt="null" id="raw1-PA4238-AATILQQQLAAFVDLK_0000000000000000-2-865.4541_Scan_Number_3341"/>
+        <Feature spectrum_refs="Scan Number: 2934" charge="2" mz="999.9544" rt="null" id="raw1-PA4238-LVLDLETNGTLDPEEAIR_000000000000000000-2-999.9544_Scan_Number_2934"/>
+        <Feature spectrum_refs="Scan Number: 1985" charge="2" mz="599.62" rt="null" id="raw1-PA5556-VVDALGNPIDGK_000000000000-2-599.62_Scan_Number_1985"/>
+        <Feature spectrum_refs="Scan Number: 2164" charge="2" mz="647.2542" rt="null" id="raw1-PA5556-GDFNDEIDAGIK_000000000000-2-647.2542_Scan_Number_2164"/>
+        <Feature spectrum_refs="Scan Number: 3383" charge="2" mz="822.8989" rt="null" id="raw1-PA5556-VGSFEQALISYFQR_00000000000000-2-822.8989_Scan_Number_3383"/>
+        <Feature spectrum_refs="Scan Number: 3274" charge="2" mz="927.98" rt="null" id="raw1-PA5556-ELAAFAQFASDLDEATR_00000000000000000-2-927.98_Scan_Number_3274"/>
+        <Feature spectrum_refs="Scan Number: 1176" charge="2" mz="467.1891" rt="null" id="raw1-PA4370-ADLADTEAK_000000000-2-467.1891_Scan_Number_1176"/>
+        <Feature spectrum_refs="Scan Number: 1670" charge="2" mz="593.2401" rt="null" id="raw1-PA4370-TPYSQSEAFR_0000000000-2-593.2401_Scan_Number_1670"/>
+        <Feature spectrum_refs="Scan Number: 1333" charge="3" mz="720.3287" rt="null" id="raw1-PA4370-KAEAPATPAASTQPAAPAAAPAAK_000000000000000000000000-3-720.3287_Scan_Number_1333"/>
+        <Feature spectrum_refs="Scan Number: 3793" charge="2" mz="1077.5303" rt="null" id="raw1-PA0400-LSVGVEALEDLQADLAQALAK_000000000000000000000-2-1077.5303_Scan_Number_3793"/>
+        <Feature spectrum_refs="Scan Number: 3526" charge="2" mz="1178.33" rt="null" id="raw1-PA0400-FSFVDPTDLQAFEAALTPETR_000000000000000000000-2-1178.33_Scan_Number_3526"/>
+        <Feature spectrum_refs="Scan Number: 3300" charge="2" mz="940.9548" rt="null" id="raw1-PA2413-FLPPLIIGAEQIDEVAR_00000000000000000-2-940.9548_Scan_Number_3300"/>
+        <Feature spectrum_refs="Scan Number: 3553" charge="2" mz="1059.0425" rt="null" id="raw1-PA2413-ITEQAGVALIVDEIQSGFAR_00000000000000000000-2-1059.0425_Scan_Number_3553"/>
+        <Feature spectrum_refs="Scan Number: 2313" charge="2" mz="657.8636" rt="null" id="raw1-PA2386-ATATAQGIELALR_0000000000000-2-657.8636_Scan_Number_2313"/>
+        <Feature spectrum_refs="Scan Number: 2965" charge="3" mz="651.6663" rt="null" id="raw1-PA2386-QLLEPLAEYLGDHEIGR_00000000000000000-3-651.6663_Scan_Number_2965"/>
+        <Feature spectrum_refs="Scan Number: 2754" charge="2" mz="637.05" rt="null" id="raw1-PA5366-VLDEAVEWALK_00000000000-2-637.05_Scan_Number_2754"/>
+        <Feature spectrum_refs="Scan Number: 2879" charge="2" mz="891.4047" rt="null" id="raw1-PA5366-LIEFGDTDTLFTNPAK_0000000000000000-2-891.4047_Scan_Number_2879"/>
+        <Feature spectrum_refs="Scan Number: 2467" charge="2" mz="764.78" rt="null" id="raw1-PA4385-GDNEEQNVGIALLR_00000000000000-2-764.78_Scan_Number_2467"/>
+        <Feature spectrum_refs="Scan Number: 2330" charge="2" mz="937.32" rt="null" id="raw1-PA4385-ENTTIIDGAGVQADIEAR_000000000000000000-2-937.32_Scan_Number_2330"/>
+        <Feature spectrum_refs="Scan Number: 989" charge="2" mz="551.6" rt="null" id="raw1-PA2853-KADEALGAAQK_00000000000-2-551.6_Scan_Number_989"/>
+        <Feature spectrum_refs="Scan Number: 864" charge="2" mz="616.7474" rt="null" id="raw1-PA2853-AQQTADEANER_00000000000-2-616.7474_Scan_Number_864"/>
+        <Feature spectrum_refs="Scan Number: 2633" charge="2" mz="937.24" rt="null" id="raw1-PA3891-VLIDGQDTADLDEVTLR_00000000000000000-2-937.24_Scan_Number_2633"/>
+        <Feature spectrum_refs="Scan Number: 2259" charge="2" mz="911.9197" rt="null" id="raw1-PA1288-ASSALDASTIYGNPAGLSK_0000000000000000000-2-911.9197_Scan_Number_2259"/>
+        <Feature spectrum_refs="Scan Number: 3619" charge="2" mz="877.4" rt="null" id="raw1-PA1800-LPELNEEFFALFGVK_000000000000000-2-877.4_Scan_Number_3619"/>
+        <Feature spectrum_refs="Scan Number: 2287" charge="2" mz="763.72" rt="null" id="raw1-PA4760-EANEAYEVLSDASK_00000000000000-2-763.72_Scan_Number_2287"/>
+        <Feature spectrum_refs="Scan Number: 2759" charge="2" mz="646.8045" rt="null" id="raw1-PA0302-GEIFALLGGSGSGK_00000000000000-2-646.8045_Scan_Number_2759"/>
+        <Feature spectrum_refs="Scan Number: 3130" charge="2" mz="693.8684" rt="null" id="raw1-PA1804-ALDAVIESVTGALK_00000000000000-2-693.8684_Scan_Number_3130"/>
+        <Feature spectrum_refs="Scan Number: 2160" charge="2" mz="805.24" rt="null" id="raw1-PA4217-YIDQSGATVWSEPR_00000000000000-2-805.24_Scan_Number_2160"/>
+        <Feature spectrum_refs="Scan Number: 2147" charge="2" mz="813.7" rt="null" id="raw1-PA5178-VGLGNPNIQVSVEGDK_0000000000000000-2-813.7_Scan_Number_2147"/>
+        <Feature spectrum_refs="Scan Number: 2074" charge="2" mz="680.18" rt="null" id="raw1-PA5232-ATLQSAQAALSAAR_00000000000000-2-680.18_Scan_Number_2074"/>
+        <Feature spectrum_refs="Scan Number: 2233" charge="2" mz="815.11" rt="null" id="raw1-PA3279-GGLEVATTDKEFSFK_000000000000000-2-815.11_Scan_Number_2233"/>
+        <Feature spectrum_refs="Scan Number: 2136" charge="2" mz="853.25" rt="null" id="raw1-PA5243-SLDAAEAYNPEGIAQR_0000000000000000-2-853.25_Scan_Number_2136"/>
+        <Feature spectrum_refs="Scan Number: 4107" charge="2" mz="805.4399" rt="null" id="raw1-PA0316-SVAELVLAEAILLLR_000000000000000-2-805.4399_Scan_Number_4107"/>
+        <Feature spectrum_refs="Scan Number: 2266" charge="2" mz="625.27" rt="null" id="raw1-PA4206-VFDGVGELEAGR_000000000000-2-625.27_Scan_Number_2266"/>
+        <Feature spectrum_refs="Scan Number: 2424" charge="2" mz="745.0" rt="null" id="raw1-PA1586-NEGDTVLSNELLGK_00000000000000-2-745.0_Scan_Number_2424"/>
+        <Feature spectrum_refs="Scan Number: 3255" charge="2" mz="1046.37" rt="null" id="raw1-PA5555-NATDNAGELISDLQLIYNK_0000000000000000000-2-1046.37_Scan_Number_3255"/>
+    </FeatureList>
+</MzQuantML>

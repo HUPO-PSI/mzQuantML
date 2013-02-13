@@ -1,0 +1,2750 @@
+<MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
+ id="Progenesis-Label-Free-26112012"
+ version="1.0.0"
+ creationDate="2012-11-26T13:10:55.529Z">
+    <CvList>
+        <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
+        <Cv id="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" fullName="Unimod"/>
+    </CvList>
+    <AuditCollection>
+        <Person firstName="Da" lastName="Qi" id="PERS_DQ">
+            <Affiliation organization_ref="ORG_UOL"/>
+        </Person>
+        <Person firstName="Andy" lastName="Jones" id="PERS_ARJ">
+            <Affiliation organization_ref="ORG_UOL"/>
+        </Person>
+        <Organization name="University of Liverpool" id="ORG_UOL"/>
+    </AuditCollection>
+    <AnalysisSummary>
+        <cvParam accession="MS:1001834" cvRef="PSI-MS" name="LC-MS label-free quantitation analysis"/>
+        <cvParam accession="MS:1002019" cvRef="PSI-MS" value="false" name="label-free raw feature quantitation"/>
+        <cvParam accession="MS:1002020" cvRef="PSI-MS" value="true" name="label-free peptide level quantitation"/>
+        <cvParam accession="MS:1002021" cvRef="PSI-MS" value="true" name="label-free protein level quantitation"/>
+        <cvParam accession="MS:1002022" cvRef="PSI-MS" value="false" name="label-free proteingroup level quantitation"/>
+    </AnalysisSummary>
+    <InputFiles>
+        <RawFilesGroup id="rg_0">
+            <RawFile location="../msmsdata/mam_042408o_CPTAC_study6_6B011.raw" name="mam_042408o_CPTAC_study6_6B011.raw" id="raw_0"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_1">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6B011.raw" name="mam_050108o_CPTAC_study6_6B011.raw" id="raw_1"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_2">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6B011_080504231912.raw" name="mam_050108o_CPTAC_study6_6B011_080504231912.raw" id="raw_2"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_3">
+            <RawFile location="../msmsdata/mam_042408o_CPTAC_study6_6C008.raw" name="mam_042408o_CPTAC_study6_6C008.raw" id="raw_3"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_4">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6C008.raw" name="mam_050108o_CPTAC_study6_6C008.raw" id="raw_4"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_5">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6C008_080505040419.raw" name="mam_050108o_CPTAC_study6_6C008_080505040419.raw" id="raw_5"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_6">
+            <RawFile location="../msmsdata/mam_042408o_CPTAC_study6_6D004.raw" name="mam_042408o_CPTAC_study6_6D004.raw" id="raw_6"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_7">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6D004.raw" name="mam_050108o_CPTAC_study6_6D004.raw" id="raw_7"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_8">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6D004_080505084927.raw" name="mam_050108o_CPTAC_study6_6D004_080505084927.raw" id="raw_8"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_9">
+            <RawFile location="../msmsdata/mam_042408o_CPTAC_study6_6E004.raw" name="mam_042408o_CPTAC_study6_6E004.raw" id="raw_9"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_10">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6E004.raw" name="mam_050108o_CPTAC_study6_6E004.raw" id="raw_10"/>
+        </RawFilesGroup>
+        <RawFilesGroup id="rg_11">
+            <RawFile location="../msmsdata/mam_050108o_CPTAC_study6_6E004_080505133441.raw" name="mam_050108o_CPTAC_study6_6E004_080505133441.raw" id="raw_11"/>
+        </RawFilesGroup>
+        <IdentificationFiles>
+            <IdentificationFile searchDatabase_ref="SD1" location="file://progenesis-post-processor/progenesis-post-processor/src/main/resources/examples/out_CPTAC_Progen_mzid_toyexample.csv" name="out_CPTAC_Progen_mzid_toyexample.csv" id="idfile_1"/>
+        </IdentificationFiles>
+        <SearchDatabase location="sgd_orfs_plus_ups_prots.fasta" id="SD1">
+            <DatabaseName>
+                <userParam name="sgd_orfs_plus_ups_prots.fasta"/>
+            </DatabaseName>
+        </SearchDatabase>
+    </InputFiles>
+    <SoftwareList>
+        <Software version="2.3" id="Progenesis">
+            <cvParam accession="MS:1001830" cvRef="PSI-MS" name="Progenesis LC-MS"/>
+        </Software>
+    </SoftwareList>
+    <DataProcessingList>
+        <DataProcessing order="1" software_ref="Progenesis" id="DP1">
+            <ProcessingMethod order="1">
+                <cvParam accession="MS:1001865" cvRef="PSI-MS" name="Progenesis automatic alignment"/>
+            </ProcessingMethod>
+            <ProcessingMethod order="2">
+                <cvParam accession="MS:1001867" cvRef="PSI-MS" name="Progenesis normalization"/>
+            </ProcessingMethod>
+        </DataProcessing>
+    </DataProcessingList>
+    <BibliographicReference doi="doi:10.1089/omi.2012.0042" title="A software toolkit and interface for performing stable isotope labelling and top3 quantification using Progenesis LC-MS" pages="489-495" issue="9" volume="16" year="2012" publication="OMICS: A Journal of Integrative Biology" authors="D. Qi, P. Brownridge, D. Xia, K. Mackay, F. F. Gonzalez-Galarza, J. Kenyani, V. Harman, R. J. Beynon and A. R. Jones" id="BF_DQ1"/>
+    <AssayList id="AssayList_1">
+        <Assay rawFilesGroup_ref="rg_0" name="mam_042408o_CPTAC_study6_6B011" id="ass_0">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_1" name="mam_050108o_CPTAC_study6_6B011" id="ass_1">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_2" name="mam_050108o_CPTAC_study6_6B011_080504231912" id="ass_2">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_3" name="mam_042408o_CPTAC_study6_6C008" id="ass_3">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_4" name="mam_050108o_CPTAC_study6_6C008" id="ass_4">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_5" name="mam_050108o_CPTAC_study6_6C008_080505040419" id="ass_5">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_6" name="mam_042408o_CPTAC_study6_6D004" id="ass_6">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_7" name="mam_050108o_CPTAC_study6_6D004" id="ass_7">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_8" name="mam_050108o_CPTAC_study6_6D004_080505084927" id="ass_8">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_9" name="mam_042408o_CPTAC_study6_6E004" id="ass_9">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_10" name="mam_050108o_CPTAC_study6_6E004" id="ass_10">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_11" name="mam_050108o_CPTAC_study6_6E004_080505133441" id="ass_11">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+    </AssayList>
+    <StudyVariableList>
+        <StudyVariable name="D" id="SV_D">
+            <cvParam accession="MS:1001808" cvRef="PSI-MS" name="technical replicate" value=""/>
+            <Assay_refs>ass_6 ass_7 ass_8</Assay_refs>
+        </StudyVariable>
+        <StudyVariable name="E" id="SV_E">
+            <cvParam accession="MS:1001808" cvRef="PSI-MS" name="technical replicate" value=""/>
+            <Assay_refs>ass_9 ass_10 ass_11</Assay_refs>
+        </StudyVariable>
+        <StudyVariable name="B" id="SV_B">
+            <cvParam accession="MS:1001808" cvRef="PSI-MS" name="technical replicate" value=""/>
+            <Assay_refs>ass_0 ass_1 ass_2</Assay_refs>
+        </StudyVariable>
+        <StudyVariable name="C" id="SV_C">
+            <cvParam accession="MS:1001808" cvRef="PSI-MS" name="technical replicate" value=""/>
+            <Assay_refs>ass_3 ass_4 ass_5</Assay_refs>
+        </StudyVariable>
+    </StudyVariableList>
+    <ProteinList id="ProtList1">
+        <Protein searchDatabase_ref="SD1" accession="YPR148C" id="prot_0">
+            <PeptideConsensus_refs>pep_FVQESLGTVSDISK_2_21254</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR159W" id="prot_1">
+            <PeptideConsensus_refs>pep_GAPEIDVLEGETDTK_2_21711</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR183W" id="prot_2">
+            <PeptideConsensus_refs>pep_LFAGMSPEMAK_2_5761 pep_VAIGEVPFTFGVR_2_7857</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR163C" id="prot_3">
+            <PeptideConsensus_refs>pep_GGGADVDWSSAR_2_10114 pep_LDPALGGGSSDR_2_8265 pep_ADLVAVLK_2_6855 pep_GSNFQGDGREDAPDLDWGAAR_3_12185</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR102C" id="prot_4">
+            <PeptideConsensus_refs>pep_QKYDADVLDK_3_2006 pep_EDTVSWFK_2_1509 pep_AEEILER_2_375 pep_VLEQLSGQTPVQSK_2_443</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR124W" id="prot_5">
+            <PeptideConsensus_refs>pep_LQEQSGNMDQNLLPAEK_2_19846 pep_KTPTQEEGCNCATDSGK_3_29728</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR133C" id="prot_6">
+            <PeptideConsensus_refs>pep_VVEATPEDGTASSQK_2_33389 pep_GSSVQTLYEQAAAR_2_19156</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR129W" id="prot_7">
+            <PeptideConsensus_refs>pep_STPQDTNVNSQSR_2_19360</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR165W" id="prot_8">
+            <PeptideConsensus_refs>pep_LVIVGDGACGK_2_5628 pep_EVFEAATR_2_3958 pep_NDPQTIEQLR_2_5279</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR191W" id="prot_9">
+            <PeptideConsensus_refs>pep_GLGNPLLYDGVER_2_13819 pep_YDYAVAEQCPVK_2_15289 pep_NAVQNESVSSPIELNFDAVK_2_31018</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR108W" id="prot_10">
+            <PeptideConsensus_refs>pep_VPNYEVSEK_2_12321 pep_SQEVEYVDPTVNR_2_17934</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR112C" id="prot_11">
+            <PeptideConsensus_refs>pep_SQLIDAENSSSAVK_2_27287</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR086W" id="prot_12">
+            <PeptideConsensus_refs>pep_VGQTLQVTEGTIK_2_30063</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR110C" id="prot_13">
+            <PeptideConsensus_refs>pep_DAENEWNVEK_2_12691 pep_QSTTFADCPVVPADPDILLAK_2_48178 pep_IGLVPLK_2_10519 pep_VTNTTSTDFPGFSK_2_9038 pep_FSPVSTASYR_2_7384</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR103W" id="prot_14">
+            <PeptideConsensus_refs>pep_ATAGNWVASQTVK_2_10657</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR154W" id="prot_15">
+            <PeptideConsensus_refs>pep_GSNVISNDVYDQINK_2_29124</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR145W" id="prot_16">
+            <PeptideConsensus_refs>pep_ATNDVEPSTYDSK_2_6989 pep_RIPSTPIDYMAIR_3_12620</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR088C" id="prot_17">
+            <PeptideConsensus_refs>pep_VTPQMMQQAQQK_2_23154</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR181C" id="prot_18">
+            <PeptideConsensus_refs>pep_SDANSNVVPVGCLYTPLK_2_21557 pep_LNPSDNYQDMAR_2_10909 pep_NSSWSCPICNSR_2_24976 pep_AGYQDDPQYADFK_2_6365 pep_AETDDGADVIR_2_10786 pep_FIDTEAGGSQAR_2_10125</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="YPR169W" id="prot_19">
+            <PeptideConsensus_refs>pep_FVDIEEQQQQK_2_35126</PeptideConsensus_refs>
+        </Protein>
+        <AssayQuantLayer id="Prot_Assay_QL1">
+            <DataType>
+                <cvParam accession="MS:1001890" cvRef="PSI-MS" name="Progenesis:protein normalised abundance"/>
+            </DataType>
+            <ColumnIndex>ass_0 ass_1 ass_2 ass_3 ass_4 ass_5 ass_6 ass_7 ass_8 ass_9 ass_10 ass_11</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="prot_1">9079.67 6680.893 6869.919 7069.431 6872.01 7488.588 5045.095 7063.636 6636.347 3902.41 4320.357 4045.954</Row>
+                <Row object_ref="prot_0">4803.127 4360.538 5238.612 4943.084 3288.852 5658.842 4137.024 5308.045 4797.989 3401.676 4031.681 3428.823</Row>
+                <Row object_ref="prot_2">59012.209 36673.617 39251.953 54411.299 36550.819 46753.94 50200.095 44723.876 47161.702 32023.572 27809.525 26133.762</Row>
+                <Row object_ref="prot_3">62166.368 39268.713 49465.607 61731.422 43531.991 42980.436 54181.2 49250.967 37178.632 46838.329 34097.099 30200.594</Row>
+                <Row object_ref="prot_4">1554935.322 1082875.505 1244322.364 1566341.232 1171230.96 1253501.112 974332.417 992007.928 985785.774 753150.923 636215.116 554170.797</Row>
+                <Row object_ref="prot_5">26353.63 15253.791 14932.349 28017.419 16333.334 17064.613 15123.714 16835.573 16668.189 11674.75 7427.702 6136.454</Row>
+                <Row object_ref="prot_6">14361.336 5463.827 9691.717 15983.442 6562.106 6711.486 11038.94 10559.844 4985.336 11644.993 10002.761 8683.371</Row>
+                <Row object_ref="prot_7">7540.375 4071.496 3894.863 8601.562 4932.661 4593.734 5679.541 3749.085 6060.624 4081.375 2113.535 2533.521</Row>
+                <Row object_ref="prot_9">26322.836 19569.281 20437.746 24840.665 17674.04 17637.879 20804.404 20186.101 19147.248 20186.249 17773.257 13272.314</Row>
+                <Row object_ref="prot_8">93489.678 69247.908 77151.301 94069.296 73028.183 90646.541 62962.08 61366.484 76016.713 41901.262 38444.293 33447.66</Row>
+                <Row object_ref="prot_10">19074.838 10778.615 15847.146 21359.94 13926.921 15424.212 13311.287 11996.757 13134.634 9706.172 7383.758 6341.316</Row>
+                <Row object_ref="prot_11">3267.893 2429.059 2811.434 2686.871 2970.81 2449.719 1510.664 2375.17 224.343 1204.695 1324.324 1531.984</Row>
+                <Row object_ref="prot_12">3282.551 2094.053 2470.046 3491.574 2622.745 2602.968 2550.708 2583.96 2220.908 1421.894 1726.33 1357.949</Row>
+                <Row object_ref="prot_14">19325.548 9652.99 10919.537 41371.372 12098.429 16245.219 10437.89 10915.795 49286.771 7094.939 7019.971 7050.206</Row>
+                <Row object_ref="prot_13">56708.12 44516.145 43744.144 54405.062 46129.091 48294.783 35837.098 43463.679 22844.143 29817.536 27971.371 23143.567</Row>
+                <Row object_ref="prot_15">4080.076 2832.665 4193.732 2446.858 2889.304 2872.673 2992.329 3690.355 10.792 3141.905 2508.514 2084.183</Row>
+                <Row object_ref="prot_16">160706.625 112025.179 141959.941 171642.479 128195.478 131238.799 137815.503 111507.647 91451.491 93296.199 73365.683 67701.725</Row>
+                <Row object_ref="prot_17">6387.161 3169.32 4228.519 6498.121 3744.919 4728.045 2661.298 4297.944 2605.328 3876.678 3167.719 3370.999</Row>
+                <Row object_ref="prot_19">851.795 1684.059 1592.525 1545.329 1364.743 2341.746 661.815 1593.788 1194.756 915.42 700.53 681.826</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+        <AssayQuantLayer id="Prot_Assay_QL2">
+            <DataType>
+                <cvParam accession="MS:1001892" cvRef="PSI-MS" name="Progenesis:protein raw abundance"/>
+            </DataType>
+            <ColumnIndex>ass_0 ass_1 ass_2 ass_3 ass_4 ass_5 ass_6 ass_7 ass_8 ass_9 ass_10 ass_11</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="prot_1">3900.385 4611.286 4622.563 3064.897 5116.417 5130.532 1843.965 7063.636 4208.854 3108.981 7309.327 5269.162</Row>
+                <Row object_ref="prot_0">2063.296 3009.73 3524.905 2143.036 2448.649 3876.948 1512.068 5308.045 3042.945 2710.056 6820.936 4465.454</Row>
+                <Row object_ref="prot_2">25350.077 25312.862 26411.463 23589.598 27213.18 32031.749 18347.961 44723.876 29910.541 25512.614 47049.106 34034.745</Row>
+                <Row object_ref="prot_3">26705.02 27104.049 33283.925 26763.181 32410.871 29446.471 19803.041 49250.967 23579.153 37315.269 57686.639 39331.096</Row>
+                <Row object_ref="prot_4">667958.91 747422.278 837267.239 679075.139 872016.533 858790.36 356115.124 992007.928 625197.658 600022.031 1076370.509 721712.458</Row>
+                <Row object_ref="prot_5">11320.819 10528.471 10047.531 12146.736 12160.657 11691.194 5527.665 16835.573 10571.174 9301.067 12566.441 7991.679</Row>
+                <Row object_ref="prot_6">6169.248 3771.242 6521.266 6929.498 4885.685 4598.129 4034.694 10559.844 3161.763 9277.36 16923.013 11308.602</Row>
+                <Row object_ref="prot_7">3239.145 2810.227 2620.736 3729.141 3672.514 3147.228 2075.853 3749.085 3843.724 3251.559 3575.75 3299.477</Row>
+                <Row object_ref="prot_9">11307.591 13507.108 13751.947 10769.478 13158.852 12083.946 7603.938 20186.101 12143.424 16082.028 30069.405 17284.914</Row>
+                <Row object_ref="prot_8">40160.682 47796.288 51912.799 40783.016 54371.67 62103.156 23012.422 61366.484 48210.75 33381.995 65041.371 43559.843</Row>
+                <Row object_ref="prot_10">8194.044 7439.615 10663.07 9260.437 10369.01 10567.334 4865.229 11996.757 8330.149 7732.736 12492.094 8258.476</Row>
+                <Row object_ref="prot_11">1403.8 1676.585 1891.73 1164.872 2211.857 1678.336 552.142 2375.17 142.281 959.759 2240.537 1995.146</Row>
+                <Row object_ref="prot_12">1410.097 1445.357 1662.02 1513.745 1952.712 1783.328 932.275 2583.96 1408.528 1132.798 2920.664 1768.495</Row>
+                <Row object_ref="prot_14">8301.742 6662.686 7347.429 17936.239 9007.643 11129.817 3815.013 10915.795 31258.286 5652.413 11876.627 9181.685</Row>
+                <Row object_ref="prot_13">24360.302 30725.931 29434.124 23586.894 34344.49 33087.401 13098.335 43463.679 14488.041 23755.104 47322.923 30140.528</Row>
+                <Row object_ref="prot_15">1752.692 1955.162 2821.837 1060.817 2151.174 1968.107 1093.686 3690.355 6.845 2503.1 4243.989 2714.292</Row>
+                <Row object_ref="prot_16">69035.297 77322.013 95520.591 74414.271 95445.374 89913.455 50371.089 111507.647 57999.678 74327.433 124122.574 88169.89</Row>
+                <Row object_ref="prot_17">2743.755 2187.528 2845.244 2817.21 2788.204 3239.247 972.695 4297.944 1652.331 3088.481 5359.255 4390.148</Row>
+                <Row object_ref="prot_19">365.908 1162.371 1071.562 669.965 1016.092 1604.361 241.891 1593.788 757.729 729.299 1185.181 887.961</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+    </ProteinList>
+    <PeptideConsensusList finalResult="true" id="PepList1">
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_GAPEIDVLEGETDTK_2_21711">
+            <PeptideSequence>GAPEIDVLEGETDTK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_216" identificationFile_ref="idfile_1" id_refs="SII_69413_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_217" identificationFile_ref="idfile_1" id_refs="SII_69415_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_218" identificationFile_ref="idfile_1" id_refs="SII_69417_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_219" identificationFile_ref="idfile_1" id_refs="SII_69414_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_220" identificationFile_ref="idfile_1" id_refs="SII_69418_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_221" identificationFile_ref="idfile_1" id_refs="SII_69416_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_222" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_223" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_224" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_225" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_226" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_227" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_QSTTFADCPVVPADPDILLAK_2_48178">
+            <PeptideSequence>QSTTFADCPVVPADPDILLAK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_72" identificationFile_ref="idfile_1" id_refs="SII_92174_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_73" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_74" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_75" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_76" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_77" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_78" identificationFile_ref="idfile_1" id_refs="SII_92176_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_79" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_80" identificationFile_ref="idfile_1" id_refs="SII_92175_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_81" identificationFile_ref="idfile_1" id_refs="SII_92177_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_82" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_83" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="3" id="pep_QKYDADVLDK_3_2006">
+            <PeptideSequence>QKYDADVLDK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_0" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_2" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_3" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_4" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_5" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_6" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_7" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_8" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_9" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_10" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_11" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_GLGNPLLYDGVER_2_13819">
+            <PeptideSequence>GLGNPLLYDGVER</PeptideSequence>
+            <EvidenceRef feature_ref="ft_60" identificationFile_ref="idfile_1" id_refs="SII_57028_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_61" identificationFile_ref="idfile_1" id_refs="SII_57030_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_62" identificationFile_ref="idfile_1" id_refs="SII_57027_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_63" identificationFile_ref="idfile_1" id_refs="SII_57031_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_64" identificationFile_ref="idfile_1" id_refs="SII_57029_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_65" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_66" identificationFile_ref="idfile_1" id_refs="SII_57032_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_67" identificationFile_ref="idfile_1" id_refs="SII_57035_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_68" identificationFile_ref="idfile_1" id_refs="SII_57036_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_69" identificationFile_ref="idfile_1" id_refs="SII_57037_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_70" identificationFile_ref="idfile_1" id_refs="SII_57034_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_71" identificationFile_ref="idfile_1" id_refs="SII_57033_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_LFAGMSPEMAK_2_5761">
+            <PeptideSequence>LFAGMSPEMAK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_192" identificationFile_ref="idfile_1" id_refs="SII_38301_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_193" identificationFile_ref="idfile_1" id_refs="SII_38302_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_194" identificationFile_ref="idfile_1" id_refs="SII_38305_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_195" identificationFile_ref="idfile_1" id_refs="SII_38300_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_196" identificationFile_ref="idfile_1" id_refs="SII_38304_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_197" identificationFile_ref="idfile_1" id_refs="SII_38306_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_198" identificationFile_ref="idfile_1" id_refs="SII_38299_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_199" identificationFile_ref="idfile_1" id_refs="SII_38307_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_200" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_201" identificationFile_ref="idfile_1" id_refs="SII_38303_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_202" identificationFile_ref="idfile_1" id_refs="SII_38309_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_203" identificationFile_ref="idfile_1" id_refs="SII_38308_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_FSPVSTASYR_2_7384">
+            <PeptideSequence>FSPVSTASYR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_492" identificationFile_ref="idfile_1" id_refs="SII_32467_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_493" identificationFile_ref="idfile_1" id_refs="SII_32468_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_494" identificationFile_ref="idfile_1" id_refs="SII_32471_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_495" identificationFile_ref="idfile_1" id_refs="SII_32466_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_496" identificationFile_ref="idfile_1" id_refs="SII_32472_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_497" identificationFile_ref="idfile_1" id_refs="SII_32473_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_498" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_499" identificationFile_ref="idfile_1" id_refs="SII_32474_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_500" identificationFile_ref="idfile_1" id_refs="SII_32470_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_501" identificationFile_ref="idfile_1" id_refs="SII_32469_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_502" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_503" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_NAVQNESVSSPIELNFDAVK_2_31018">
+            <PeptideSequence>NAVQNESVSSPIELNFDAVK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_156" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_157" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_158" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_159" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_160" identificationFile_ref="idfile_1" id_refs="SII_91058_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_161" identificationFile_ref="idfile_1" id_refs="SII_91060_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_162" identificationFile_ref="idfile_1" id_refs="SII_91059_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_163" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_164" identificationFile_ref="idfile_1" id_refs="SII_91061_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_165" identificationFile_ref="idfile_1" id_refs="SII_91062_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_166" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_167" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_VAIGEVPFTFGVR_2_7857">
+            <PeptideSequence>VAIGEVPFTFGVR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_252" identificationFile_ref="idfile_1" id_refs="SII_56117_1 SII_56108_2" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_253" identificationFile_ref="idfile_1" id_refs="SII_56111_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_254" identificationFile_ref="idfile_1" id_refs="SII_56115_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_255" identificationFile_ref="idfile_1" id_refs="SII_56114_1 SII_56109_2" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_256" identificationFile_ref="idfile_1" id_refs="SII_56113_1 SII_56104_2" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_257" identificationFile_ref="idfile_1" id_refs="SII_56107_2 SII_56112_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_258" identificationFile_ref="idfile_1" id_refs="SII_56119_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_259" identificationFile_ref="idfile_1" id_refs="SII_56118_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_260" identificationFile_ref="idfile_1" id_refs="SII_56116_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_261" identificationFile_ref="idfile_1" id_refs="SII_56120_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_262" identificationFile_ref="idfile_1" id_refs="SII_56122_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_263" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_AGYQDDPQYADFK_2_6365">
+            <PeptideSequence>AGYQDDPQYADFK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_396" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_397" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_398" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_399" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_400" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_401" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_402" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_403" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_404" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_405" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_406" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_407" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_SQLIDAENSSSAVK_2_27287">
+            <PeptideSequence>SQLIDAENSSSAVK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_132" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_133" identificationFile_ref="idfile_1" id_refs="SII_60662_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_134" identificationFile_ref="idfile_1" id_refs="SII_60661_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_135" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_136" identificationFile_ref="idfile_1" id_refs="SII_60663_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_137" identificationFile_ref="idfile_1" id_refs="SII_60664_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_138" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_139" identificationFile_ref="idfile_1" id_refs="SII_60665_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_140" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_141" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_142" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_143" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_GSNVISNDVYDQINK_2_29124">
+            <PeptideSequence>GSNVISNDVYDQINK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_24" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_25" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_26" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_27" identificationFile_ref="idfile_1" id_refs="SII_74845_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_28" identificationFile_ref="idfile_1" id_refs="SII_74846_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_29" identificationFile_ref="idfile_1" id_refs="SII_74847_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_30" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_31" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_32" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_33" identificationFile_ref="idfile_1" id_refs="SII_74850_3" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_34" identificationFile_ref="idfile_1" id_refs="SII_74848_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_35" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_SQEVEYVDPTVNR_2_17934">
+            <PeptideSequence>SQEVEYVDPTVNR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_384" identificationFile_ref="idfile_1" id_refs="SII_67047_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_385" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_386" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_387" identificationFile_ref="idfile_1" id_refs="SII_67049_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_388" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_389" identificationFile_ref="idfile_1" id_refs="SII_67050_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_390" identificationFile_ref="idfile_1" id_refs="SII_67045_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_391" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_392" identificationFile_ref="idfile_1" id_refs="SII_67048_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_393" identificationFile_ref="idfile_1" id_refs="SII_67046_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_394" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_395" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_YDYAVAEQCPVK_2_15289">
+            <PeptideSequence>YDYAVAEQCPVK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_120" identificationFile_ref="idfile_1" id_refs="SII_60016_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_121" identificationFile_ref="idfile_1" id_refs="SII_60019_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_122" identificationFile_ref="idfile_1" id_refs="SII_60022_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_123" identificationFile_ref="idfile_1" id_refs="SII_60017_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_124" identificationFile_ref="idfile_1" id_refs="SII_60020_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_125" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_126" identificationFile_ref="idfile_1" id_refs="SII_60015_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_127" identificationFile_ref="idfile_1" id_refs="SII_60011_2 SII_60021_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_128" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_129" identificationFile_ref="idfile_1" id_refs="SII_60018_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_130" identificationFile_ref="idfile_1" id_refs="SII_60024_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_131" identificationFile_ref="idfile_1" id_refs="SII_60023_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_DAENEWNVEK_2_12691">
+            <PeptideSequence>DAENEWNVEK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_48" identificationFile_ref="idfile_1" id_refs="SII_42698_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_49" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_50" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_51" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_52" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_53" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_54" identificationFile_ref="idfile_1" id_refs="SII_42697_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_55" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_56" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_57" identificationFile_ref="idfile_1" id_refs="SII_42699_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_58" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_59" identificationFile_ref="idfile_1" id_refs="SII_42700_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_EVFEAATR_2_3958">
+            <PeptideSequence>EVFEAATR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_468" identificationFile_ref="idfile_1" id_refs="SII_16339_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_469" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_470" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_471" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_472" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_473" identificationFile_ref="idfile_1" id_refs="SII_16341_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_474" identificationFile_ref="idfile_1" id_refs="SII_16338_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_475" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_476" identificationFile_ref="idfile_1" id_refs="SII_16340_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_477" identificationFile_ref="idfile_1" id_refs="SII_16342_1 SII_16343_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_478" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_479" identificationFile_ref="idfile_1" id_refs="SII_16344_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_EDTVSWFK_2_1509">
+            <PeptideSequence>EDTVSWFK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_168" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_169" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_170" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_171" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_172" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_173" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_174" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_175" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_176" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_177" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_178" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_179" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_ATAGNWVASQTVK_2_10657">
+            <PeptideSequence>ATAGNWVASQTVK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_180" identificationFile_ref="idfile_1" id_refs="SII_51468_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_181" identificationFile_ref="idfile_1" id_refs="SII_51466_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_182" identificationFile_ref="idfile_1" id_refs="SII_51465_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_183" identificationFile_ref="idfile_1" id_refs="SII_51464_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_184" identificationFile_ref="idfile_1" id_refs="SII_51467_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_185" identificationFile_ref="idfile_1" id_refs="SII_51469_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_186" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_187" identificationFile_ref="idfile_1" id_refs="SII_51471_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_188" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_189" identificationFile_ref="idfile_1" id_refs="SII_51470_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_190" identificationFile_ref="idfile_1" id_refs="SII_51473_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_191" identificationFile_ref="idfile_1" id_refs="SII_51472_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="3" id="pep_RIPSTPIDYMAIR_3_12620">
+            <PeptideSequence>RIPSTPIDYMAIR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_96" identificationFile_ref="idfile_1" id_refs="SII_66867_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_97" identificationFile_ref="idfile_1" id_refs="SII_66869_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_98" identificationFile_ref="idfile_1" id_refs="SII_66868_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_99" identificationFile_ref="idfile_1" id_refs="SII_66866_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_100" identificationFile_ref="idfile_1" id_refs="SII_66871_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_101" identificationFile_ref="idfile_1" id_refs="SII_66873_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_102" identificationFile_ref="idfile_1" id_refs="SII_66870_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_103" identificationFile_ref="idfile_1" id_refs="SII_66874_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_104" identificationFile_ref="idfile_1" id_refs="SII_66875_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_105" identificationFile_ref="idfile_1" id_refs="SII_66872_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_106" identificationFile_ref="idfile_1" id_refs="SII_66877_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_107" identificationFile_ref="idfile_1" id_refs="SII_66876_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_FVDIEEQQQQK_2_35126">
+            <PeptideSequence>FVDIEEQQQQK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_480" identificationFile_ref="idfile_1" id_refs="SII_56051_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_481" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_482" identificationFile_ref="idfile_1" id_refs="SII_56053_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_483" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_484" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_485" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_486" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_487" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_488" identificationFile_ref="idfile_1" id_refs="SII_56052_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_489" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_490" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_491" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_ADLVAVLK_2_6855">
+            <PeptideSequence>ADLVAVLK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_300" identificationFile_ref="idfile_1" id_refs="SII_10254_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_301" identificationFile_ref="idfile_1" id_refs="SII_10261_2" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_302" identificationFile_ref="idfile_1" id_refs="SII_10265_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_303" identificationFile_ref="idfile_1" id_refs="SII_10258_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_304" identificationFile_ref="idfile_1" id_refs="SII_10264_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_305" identificationFile_ref="idfile_1" id_refs="SII_10263_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_306" identificationFile_ref="idfile_1" id_refs="SII_10252_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_307" identificationFile_ref="idfile_1" id_refs="SII_10259_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_308" identificationFile_ref="idfile_1" id_refs="SII_10266_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_309" identificationFile_ref="idfile_1" id_refs="SII_10257_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_310" identificationFile_ref="idfile_1" id_refs="SII_10250_2" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_311" identificationFile_ref="idfile_1" id_refs="SII_10251_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_VGQTLQVTEGTIK_2_30063">
+            <PeptideSequence>VGQTLQVTEGTIK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_408" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_409" identificationFile_ref="idfile_1" id_refs="SII_54715_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_410" identificationFile_ref="idfile_1" id_refs="SII_54714_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_411" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_412" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_413" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_414" identificationFile_ref="idfile_1" id_refs="SII_54713_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_415" identificationFile_ref="idfile_1" id_refs="SII_54716_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_416" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_417" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_418" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_419" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_FVQESLGTVSDISK_2_21254">
+            <PeptideSequence>FVQESLGTVSDISK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_336" identificationFile_ref="idfile_1" id_refs="SII_65100_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_337" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_338" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_339" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_340" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_341" identificationFile_ref="idfile_1" id_refs="SII_65101_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_342" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_343" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_344" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_345" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_346" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_347" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_VTNTTSTDFPGFSK_2_9038">
+            <PeptideSequence>VTNTTSTDFPGFSK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_360" identificationFile_ref="idfile_1" id_refs="SII_64425_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_361" identificationFile_ref="idfile_1" id_refs="SII_64429_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_362" identificationFile_ref="idfile_1" id_refs="SII_64430_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_363" identificationFile_ref="idfile_1" id_refs="SII_64431_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_364" identificationFile_ref="idfile_1" id_refs="SII_64427_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_365" identificationFile_ref="idfile_1" id_refs="SII_64426_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_366" identificationFile_ref="idfile_1" id_refs="SII_64428_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_367" identificationFile_ref="idfile_1" id_refs="SII_64432_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_368" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_369" identificationFile_ref="idfile_1" id_refs="SII_64433_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_370" identificationFile_ref="idfile_1" id_refs="SII_64434_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_371" identificationFile_ref="idfile_1" id_refs="SII_64435_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_GSSVQTLYEQAAAR_2_19156">
+            <PeptideSequence>GSSVQTLYEQAAAR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_456" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_457" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_458" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_459" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_460" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_461" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_462" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_463" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_464" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_465" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_466" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_467" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_VLEQLSGQTPVQSK_2_443">
+            <PeptideSequence>VLEQLSGQTPVQSK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_420" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_421" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_422" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_423" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_424" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_425" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_426" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_427" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_428" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_429" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_430" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_431" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_AEEILER_2_375">
+            <PeptideSequence>AEEILER</PeptideSequence>
+            <EvidenceRef feature_ref="ft_372" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_373" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_374" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_375" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_376" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_377" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_378" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_379" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_380" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_381" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_382" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_383" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_LNPSDNYQDMAR_2_10909">
+            <PeptideSequence>LNPSDNYQDMAR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_312" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_313" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_314" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_315" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_316" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_317" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_318" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_319" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_320" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_321" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_322" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_323" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_NDPQTIEQLR_2_5279">
+            <PeptideSequence>NDPQTIEQLR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_516" identificationFile_ref="idfile_1" id_refs="SII_41042_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_517" identificationFile_ref="idfile_1" id_refs="SII_41045_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_518" identificationFile_ref="idfile_1" id_refs="SII_41046_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_519" identificationFile_ref="idfile_1" id_refs="SII_41044_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_520" identificationFile_ref="idfile_1" id_refs="SII_41047_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_521" identificationFile_ref="idfile_1" id_refs="SII_41048_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_522" identificationFile_ref="idfile_1" id_refs="SII_41043_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_523" identificationFile_ref="idfile_1" id_refs="SII_41050_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_524" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_525" identificationFile_ref="idfile_1" id_refs="SII_41049_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_526" identificationFile_ref="idfile_1" id_refs="SII_41052_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_527" identificationFile_ref="idfile_1" id_refs="SII_41051_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_VVEATPEDGTASSQK_2_33389">
+            <PeptideSequence>VVEATPEDGTASSQK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_240" identificationFile_ref="idfile_1" id_refs="SII_65641_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_241" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_242" identificationFile_ref="idfile_1" id_refs="SII_65637_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_243" identificationFile_ref="idfile_1" id_refs="SII_65640_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_244" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_245" identificationFile_ref="idfile_1" id_refs="SII_65638_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_246" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_247" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_248" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_249" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_250" identificationFile_ref="idfile_1" id_refs="SII_65639_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_251" identificationFile_ref="idfile_1" id_refs="SII_65642_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_LVIVGDGACGK_2_5628">
+            <PeptideSequence>LVIVGDGACGK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_288" identificationFile_ref="idfile_1" id_refs="SII_30230_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_289" identificationFile_ref="idfile_1" id_refs="SII_30231_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_290" identificationFile_ref="idfile_1" id_refs="SII_30232_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_291" identificationFile_ref="idfile_1" id_refs="SII_30233_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_292" identificationFile_ref="idfile_1" id_refs="SII_30237_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_293" identificationFile_ref="idfile_1" id_refs="SII_30235_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_294" identificationFile_ref="idfile_1" id_refs="SII_30229_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_295" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_296" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_297" identificationFile_ref="idfile_1" id_refs="SII_30236_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_298" identificationFile_ref="idfile_1" id_refs="SII_30239_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_299" identificationFile_ref="idfile_1" id_refs="SII_30238_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_IGLVPLK_2_10519">
+            <PeptideSequence>IGLVPLK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_264" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_265" identificationFile_ref="idfile_1" id_refs="SII_5925_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_266" identificationFile_ref="idfile_1" id_refs="SII_5923_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_267" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_268" identificationFile_ref="idfile_1" id_refs="SII_5926_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_269" identificationFile_ref="idfile_1" id_refs="SII_5924_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_270" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_271" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_272" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_273" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_274" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_275" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_LDPALGGGSSDR_2_8265">
+            <PeptideSequence>LDPALGGGSSDR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_228" identificationFile_ref="idfile_1" id_refs="SII_35365_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_229" identificationFile_ref="idfile_1" id_refs="SII_35367_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_230" identificationFile_ref="idfile_1" id_refs="SII_35371_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_231" identificationFile_ref="idfile_1" id_refs="SII_35370_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_232" identificationFile_ref="idfile_1" id_refs="SII_35369_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_233" identificationFile_ref="idfile_1" id_refs="SII_35366_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_234" identificationFile_ref="idfile_1" id_refs="SII_35368_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_235" identificationFile_ref="idfile_1" id_refs="SII_35372_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_236" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_237" identificationFile_ref="idfile_1" id_refs="SII_35374_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_238" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_239" identificationFile_ref="idfile_1" id_refs="SII_35373_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="3" id="pep_KTPTQEEGCNCATDSGK_3_29728">
+            <PeptideSequence>KTPTQEEGCNCATDSGK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_432" identificationFile_ref="idfile_1" id_refs="SII_84637_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_433" identificationFile_ref="idfile_1" id_refs="SII_84632_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_434" identificationFile_ref="idfile_1" id_refs="SII_84628_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_435" identificationFile_ref="idfile_1" id_refs="SII_84635_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_436" identificationFile_ref="idfile_1" id_refs="SII_84631_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_437" identificationFile_ref="idfile_1" id_refs="SII_84634_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_438" identificationFile_ref="idfile_1" id_refs="SII_84636_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_439" identificationFile_ref="idfile_1" id_refs="SII_84630_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_440" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_441" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_442" identificationFile_ref="idfile_1" id_refs="SII_84633_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_443" identificationFile_ref="idfile_1" id_refs="SII_84629_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_NSSWSCPICNSR_2_24976">
+            <PeptideSequence>NSSWSCPICNSR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_348" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_349" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_350" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_351" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_352" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_353" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_354" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_355" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_356" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_357" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_358" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_359" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_GGGADVDWSSAR_2_10114">
+            <PeptideSequence>GGGADVDWSSAR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_204" identificationFile_ref="idfile_1" id_refs="SII_37924_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_205" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_206" identificationFile_ref="idfile_1" id_refs="SII_37927_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_207" identificationFile_ref="idfile_1" id_refs="SII_37926_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_208" identificationFile_ref="idfile_1" id_refs="SII_37928_1 SII_37932_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_209" identificationFile_ref="idfile_1" id_refs="SII_37929_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_210" identificationFile_ref="idfile_1" id_refs="SII_37923_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_211" identificationFile_ref="idfile_1" id_refs="SII_37931_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_212" identificationFile_ref="idfile_1" id_refs="SII_37925_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_213" identificationFile_ref="idfile_1" id_refs="SII_37930_1 SII_37937_3" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_214" identificationFile_ref="idfile_1" id_refs="SII_37935_1 SII_37936_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_215" identificationFile_ref="idfile_1" id_refs="SII_37934_1 SII_37933_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_VTPQMMQQAQQK_2_23154">
+            <PeptideSequence>VTPQMMQQAQQK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_36" identificationFile_ref="idfile_1" id_refs="SII_58304_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_37" identificationFile_ref="idfile_1" id_refs="SII_58306_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_38" identificationFile_ref="idfile_1" id_refs="SII_58308_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_39" identificationFile_ref="idfile_1" id_refs="SII_58305_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_40" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_41" identificationFile_ref="idfile_1" id_refs="SII_58309_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_42" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_43" identificationFile_ref="idfile_1" id_refs="SII_58310_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_44" identificationFile_ref="idfile_1" id_refs="SII_58307_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_45" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_46" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_47" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_FIDTEAGGSQAR_2_10125">
+            <PeptideSequence>FIDTEAGGSQAR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_504" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_505" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_506" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_507" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_508" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_509" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_510" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_511" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_512" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_513" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_514" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_515" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_LQEQSGNMDQNLLPAEK_2_19846">
+            <PeptideSequence>LQEQSGNMDQNLLPAEK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_276" identificationFile_ref="idfile_1" id_refs="SII_85653_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_277" identificationFile_ref="idfile_1" id_refs="SII_85655_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_278" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_279" identificationFile_ref="idfile_1" id_refs="SII_85661_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_280" identificationFile_ref="idfile_1" id_refs="SII_85657_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_281" identificationFile_ref="idfile_1" id_refs="SII_85662_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_282" identificationFile_ref="idfile_1" id_refs="SII_85654_1 SII_85656_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_283" identificationFile_ref="idfile_1" id_refs="SII_85663_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_284" identificationFile_ref="idfile_1" id_refs="SII_85658_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_285" identificationFile_ref="idfile_1" id_refs="SII_85659_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_286" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_287" identificationFile_ref="idfile_1" id_refs="SII_85660_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="3" id="pep_GSNFQGDGREDAPDLDWGAAR_3_12185">
+            <PeptideSequence>GSNFQGDGREDAPDLDWGAAR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_324" identificationFile_ref="idfile_1" id_refs="SII_91925_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_325" identificationFile_ref="idfile_1" id_refs="SII_91929_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_326" identificationFile_ref="idfile_1" id_refs="SII_91930_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_327" identificationFile_ref="idfile_1" id_refs="SII_91924_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_328" identificationFile_ref="idfile_1" id_refs="SII_91928_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_329" identificationFile_ref="idfile_1" id_refs="SII_91927_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_330" identificationFile_ref="idfile_1" id_refs="SII_91926_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_331" identificationFile_ref="idfile_1" id_refs="SII_91933_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_332" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_333" identificationFile_ref="idfile_1" id_refs="SII_91931_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_334" identificationFile_ref="idfile_1" id_refs="SII_91934_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_335" identificationFile_ref="idfile_1" id_refs="SII_91932_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_VPNYEVSEK_2_12321">
+            <PeptideSequence>VPNYEVSEK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_108" identificationFile_ref="idfile_1" id_refs="SII_28233_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_109" identificationFile_ref="idfile_1" id_refs="SII_28231_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_110" identificationFile_ref="idfile_1" id_refs="SII_28236_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_111" identificationFile_ref="idfile_1" id_refs="SII_28229_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_112" identificationFile_ref="idfile_1" id_refs="SII_28232_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_113" identificationFile_ref="idfile_1" id_refs="SII_28234_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_114" identificationFile_ref="idfile_1" id_refs="SII_28230_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_115" identificationFile_ref="idfile_1" id_refs="SII_28238_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_116" identificationFile_ref="idfile_1" id_refs="SII_28235_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_117" identificationFile_ref="idfile_1" id_refs="SII_28237_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_118" identificationFile_ref="idfile_1" id_refs="SII_28239_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_119" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_STPQDTNVNSQSR_2_19360">
+            <PeptideSequence>STPQDTNVNSQSR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_12" identificationFile_ref="idfile_1" id_refs="SII_59403_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_13" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_14" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_15" identificationFile_ref="idfile_1" id_refs="SII_59400_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_16" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_17" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_18" identificationFile_ref="idfile_1" id_refs="SII_59401_1" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_19" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_20" identificationFile_ref="idfile_1" id_refs="SII_59398_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_21" identificationFile_ref="idfile_1" id_refs="SII_59402_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_22" identificationFile_ref="idfile_1" id_refs="SII_59399_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_23" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_SDANSNVVPVGCLYTPLK_2_21557">
+            <PeptideSequence>SDANSNVVPVGCLYTPLK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_144" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_145" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_146" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_147" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_148" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_149" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_150" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_151" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_152" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_153" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_154" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_155" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_ATNDVEPSTYDSK_2_6989">
+            <PeptideSequence>ATNDVEPSTYDSK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_84" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_85" identificationFile_ref="idfile_1" id_refs="SII_58804_1" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_86" identificationFile_ref="idfile_1" id_refs="SII_58806_1" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_87" identificationFile_ref="idfile_1" id_refs="SII_58807_1" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_88" identificationFile_ref="idfile_1" id_refs="SII_58809_1" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_89" identificationFile_ref="idfile_1" id_refs="SII_58811_1" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_90" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_91" identificationFile_ref="idfile_1" id_refs="SII_58808_1" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_92" identificationFile_ref="idfile_1" id_refs="SII_58813_1" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_93" identificationFile_ref="idfile_1" id_refs="SII_58805_1" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_94" identificationFile_ref="idfile_1" id_refs="SII_58812_1" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_95" identificationFile_ref="idfile_1" id_refs="SII_58810_1" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_AETDDGADVIR_2_10786">
+            <PeptideSequence>AETDDGADVIR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_444" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_445" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_446" assay_refs="ass_2"/>
+            <EvidenceRef feature_ref="ft_447" assay_refs="ass_3"/>
+            <EvidenceRef feature_ref="ft_448" assay_refs="ass_4"/>
+            <EvidenceRef feature_ref="ft_449" assay_refs="ass_5"/>
+            <EvidenceRef feature_ref="ft_450" assay_refs="ass_6"/>
+            <EvidenceRef feature_ref="ft_451" assay_refs="ass_7"/>
+            <EvidenceRef feature_ref="ft_452" assay_refs="ass_8"/>
+            <EvidenceRef feature_ref="ft_453" assay_refs="ass_9"/>
+            <EvidenceRef feature_ref="ft_454" assay_refs="ass_10"/>
+            <EvidenceRef feature_ref="ft_455" assay_refs="ass_11"/>
+        </PeptideConsensus>
+        <GlobalQuantLayer id="Pep_GQL1">
+            <ColumnDefinition>
+                <Column index="0">
+                    <DataType>
+                        <cvParam accession="MS:1001171" cvRef="PSI-MS" name="Mascot:score"/>
+                    </DataType>
+                </Column>
+            </ColumnDefinition>
+            <DataMatrix>
+                <Row object_ref="pep_GAPEIDVLEGETDTK_2_21711">83.67</Row>
+                <Row object_ref="pep_QSTTFADCPVVPADPDILLAK_2_48178">52.13</Row>
+                <Row object_ref="pep_QKYDADVLDK_3_2006">47.59</Row>
+                <Row object_ref="pep_GLGNPLLYDGVER_2_13819">61.16</Row>
+                <Row object_ref="pep_LFAGMSPEMAK_2_5761">46.82</Row>
+                <Row object_ref="pep_FSPVSTASYR_2_7384">48.93</Row>
+                <Row object_ref="pep_NAVQNESVSSPIELNFDAVK_2_31018">71.38</Row>
+                <Row object_ref="pep_VAIGEVPFTFGVR_2_7857">45.89</Row>
+                <Row object_ref="pep_AGYQDDPQYADFK_2_6365">57.17</Row>
+                <Row object_ref="pep_SQLIDAENSSSAVK_2_27287">78.86</Row>
+                <Row object_ref="pep_GSNVISNDVYDQINK_2_29124">54.96</Row>
+                <Row object_ref="pep_SQEVEYVDPTVNR_2_17934">70.16</Row>
+                <Row object_ref="pep_YDYAVAEQCPVK_2_15289">47.57</Row>
+                <Row object_ref="pep_DAENEWNVEK_2_12691">53.74</Row>
+                <Row object_ref="pep_EVFEAATR_2_3958">41.49</Row>
+                <Row object_ref="pep_EDTVSWFK_2_1509">41.8</Row>
+                <Row object_ref="pep_ATAGNWVASQTVK_2_10657">95.41</Row>
+                <Row object_ref="pep_RIPSTPIDYMAIR_3_12620">47.3</Row>
+                <Row object_ref="pep_FVDIEEQQQQK_2_35126">42.09</Row>
+                <Row object_ref="pep_ADLVAVLK_2_6855">50.11</Row>
+                <Row object_ref="pep_VGQTLQVTEGTIK_2_30063">61.91</Row>
+                <Row object_ref="pep_FVQESLGTVSDISK_2_21254">60.19</Row>
+                <Row object_ref="pep_VTNTTSTDFPGFSK_2_9038">79.12</Row>
+                <Row object_ref="pep_GSSVQTLYEQAAAR_2_19156">64.63</Row>
+                <Row object_ref="pep_VLEQLSGQTPVQSK_2_443">95.97</Row>
+                <Row object_ref="pep_AEEILER_2_375">54.39</Row>
+                <Row object_ref="pep_LNPSDNYQDMAR_2_10909">40.71</Row>
+                <Row object_ref="pep_NDPQTIEQLR_2_5279">62.48</Row>
+                <Row object_ref="pep_VVEATPEDGTASSQK_2_33389">40.03</Row>
+                <Row object_ref="pep_LVIVGDGACGK_2_5628">44.57</Row>
+                <Row object_ref="pep_IGLVPLK_2_10519">48.18</Row>
+                <Row object_ref="pep_LDPALGGGSSDR_2_8265">53.05</Row>
+                <Row object_ref="pep_KTPTQEEGCNCATDSGK_3_29728">49.01</Row>
+                <Row object_ref="pep_NSSWSCPICNSR_2_24976">40.24</Row>
+                <Row object_ref="pep_GGGADVDWSSAR_2_10114">82.97</Row>
+                <Row object_ref="pep_VTPQMMQQAQQK_2_23154">45</Row>
+                <Row object_ref="pep_FIDTEAGGSQAR_2_10125">91.75</Row>
+                <Row object_ref="pep_LQEQSGNMDQNLLPAEK_2_19846">59.09</Row>
+                <Row object_ref="pep_GSNFQGDGREDAPDLDWGAAR_3_12185">41.57</Row>
+                <Row object_ref="pep_VPNYEVSEK_2_12321">58.52</Row>
+                <Row object_ref="pep_STPQDTNVNSQSR_2_19360">42.13</Row>
+                <Row object_ref="pep_SDANSNVVPVGCLYTPLK_2_21557">47.49</Row>
+                <Row object_ref="pep_ATNDVEPSTYDSK_2_6989">82.19</Row>
+                <Row object_ref="pep_AETDDGADVIR_2_10786">70.46</Row>
+            </DataMatrix>
+        </GlobalQuantLayer>
+        <AssayQuantLayer id="Pep_AQL1">
+            <DataType>
+                <cvParam accession="MS:1001891" cvRef="PSI-MS" name="Progenesis:peptide normalised abundance"/>
+            </DataType>
+            <ColumnIndex>ass_0 ass_1 ass_2 ass_3 ass_4 ass_5 ass_6 ass_7 ass_8 ass_9 ass_10 ass_11</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="pep_GAPEIDVLEGETDTK_2_21711">9079.67 6680.893 6869.919 7069.431 6872.01 7488.588 5045.095 7063.636 6636.347 3902.41 4320.357 4045.954</Row>
+                <Row object_ref="pep_QSTTFADCPVVPADPDILLAK_2_48178">3299.727 576.473 43.736 1858.257 657.126 933.167 2811.395 1563.02 2621.453 3516.591 2474.139 1086.323</Row>
+                <Row object_ref="pep_QKYDADVLDK_3_2006">48572.697 36224.374 49154.991 48022.429 42519.467 43865.915 33691.767 30520.391 29488.844 31172.178 23221.642 20119.87</Row>
+                <Row object_ref="pep_GLGNPLLYDGVER_2_13819">14041.079 10370.307 11493.51 12698.35 9696.061 10021.047 9707.69 10754.69 10504.175 8528.331 7383.964 6172.554</Row>
+                <Row object_ref="pep_LFAGMSPEMAK_2_5761">25030.664 17899.384 19336.846 26564.901 19449.275 22901.059 15937.055 21527.449 16656.611 13495.235 12320.256 12043.633</Row>
+                <Row object_ref="pep_FSPVSTASYR_2_7384">15736.005 12792.928 12804.118 14132.755 14456.028 15512.023 8811.88 11793.098 10181.587 7227.684 7532.051 6258.705</Row>
+                <Row object_ref="pep_NAVQNESVSSPIELNFDAVK_2_31018">1932.113 1256.037 1464.748 1158.97 779.488 1022.748 3488.532 2756.771 3995.554 6259.873 5543.427 2916.125</Row>
+                <Row object_ref="pep_VAIGEVPFTFGVR_2_7857">33981.545 18774.233 19915.107 27846.398 17101.544 23852.881 34263.04 23196.427 30505.09 18528.337 15489.268 14090.129</Row>
+                <Row object_ref="pep_AGYQDDPQYADFK_2_6365">7377.722 3996.214 688.417 9603.539 5899.128 6693.355 9601.658 13425.175 8011.769 24927.829 26069.035 15415.62</Row>
+                <Row object_ref="pep_SQLIDAENSSSAVK_2_27287">3267.893 2429.059 2811.434 2686.871 2970.81 2449.719 1510.664 2375.17 224.343 1204.695 1324.324 1531.984</Row>
+                <Row object_ref="pep_GSNVISNDVYDQINK_2_29124">4080.076 2832.665 4193.732 2446.858 2889.304 2872.673 2992.329 3690.355 10.792 3141.905 2508.514 2084.183</Row>
+                <Row object_ref="pep_SQEVEYVDPTVNR_2_17934">9111.893 5856.032 6980.764 10032.441 6687.314 8259.717 5810.253 5657.873 6217.791 4730.748 4125.442 3882.055</Row>
+                <Row object_ref="pep_YDYAVAEQCPVK_2_15289">10349.645 7942.937 7479.487 10983.344 7198.49 6594.084 7608.181 6674.639 4647.519 5398.045 4845.866 4183.636</Row>
+                <Row object_ref="pep_DAENEWNVEK_2_12691">7883.039 5348.347 5665.56 7582.036 6208.645 4264.661 5130.018 5154.916 88.133 3769.154 3492.354 3002.745</Row>
+                <Row object_ref="pep_EVFEAATR_2_3958">38288.506 25176.089 30030.79 39445.813 27467.406 32778.694 28224.09 21364.182 19507.791 15400.428 11894.423 11955.388</Row>
+                <Row object_ref="pep_EDTVSWFK_2_1509">115418.788 96586.098 105036.136 132922.863 102414.551 104819.686 86221.26 99125.248 80283.308 66670.21 57818.998 51249.878</Row>
+                <Row object_ref="pep_ATAGNWVASQTVK_2_10657">19325.548 9652.99 10919.537 41371.372 12098.429 16245.219 10437.89 10915.795 49286.771 7094.939 7019.971 7050.206</Row>
+                <Row object_ref="pep_RIPSTPIDYMAIR_3_12620">9884.541 6620.306 7888.916 9354.503 6811.921 8001.524 8145.709 8114.468 7853.803 6088.572 5843.883 5322.739</Row>
+                <Row object_ref="pep_FVDIEEQQQQK_2_35126">851.795 1684.059 1592.525 1545.329 1364.743 2341.746 661.815 1593.788 1194.756 915.42 700.53 681.826</Row>
+                <Row object_ref="pep_ADLVAVLK_2_6855">18044.356 11895.622 13042.308 22998.46 13266.035 14394.102 19180.734 15382.983 15673.35 14713.064 10895.699 9824.226</Row>
+                <Row object_ref="pep_VGQTLQVTEGTIK_2_30063">3282.551 2094.053 2470.046 3491.574 2622.745 2602.968 2550.708 2583.96 2220.908 1421.894 1726.33 1357.949</Row>
+                <Row object_ref="pep_FVQESLGTVSDISK_2_21254">4803.127 4360.538 5238.612 4943.084 3288.852 5658.842 4137.024 5308.045 4797.989 3401.676 4031.681 3428.823</Row>
+                <Row object_ref="pep_VTNTTSTDFPGFSK_2_9038">23894.195 21094.847 20098.117 25939.717 19756.188 22509.504 15771.776 20559.708 9234.962 12373.734 11840.309 10277.21</Row>
+                <Row object_ref="pep_GSSVQTLYEQAAAR_2_19156">7107.721 5463.827 6443.709 8091.101 6149.02 5164.612 5837.929 10559.844 4985.336 8084.248 8499.959 7186.113</Row>
+                <Row object_ref="pep_VLEQLSGQTPVQSK_2_443">910529.679 618514.971 701452.612 914745.053 683875.533 816827.622 545436.062 628396.644 624888.625 446425.592 407809.778 332376.716</Row>
+                <Row object_ref="pep_AEEILER_2_375">480414.157 331550.062 388678.625 470650.887 342421.408 287987.89 308983.328 233965.645 251124.998 208882.942 147364.698 150424.334</Row>
+                <Row object_ref="pep_LNPSDNYQDMAR_2_10909">16529.71 12137.872 11411.381 16953.41 12613.979 13241.363 8942.747 10000.455 9217.711 8010.71 7040.372 5582.281</Row>
+                <Row object_ref="pep_NDPQTIEQLR_2_5279">27209.067 20618.783 22786.532 26447.481 21605.121 20014.282 19634.681 18616.145 8943.936 13654.562 12860.521 10228.275</Row>
+                <Row object_ref="pep_VVEATPEDGTASSQK_2_33389">7253.615 0 3248.008 7892.341 413.086 1546.875 5201.011 0 0 3560.745 1502.801 1497.258</Row>
+                <Row object_ref="pep_LVIVGDGACGK_2_5628">27992.105 23453.037 24333.978 28176.002 23955.656 37853.565 15103.309 21386.157 47564.986 12846.272 13689.349 11263.997</Row>
+                <Row object_ref="pep_IGLVPLK_2_10519">5895.154 4703.549 5132.613 4892.297 5051.103 5075.427 3312.029 4392.936 718.007 2930.373 2632.517 2518.584</Row>
+                <Row object_ref="pep_LDPALGGGSSDR_2_8265">17650.478 9551.145 19071.312 15394.33 14874.514 10460.788 14454.946 12762.324 7177.224 11096.57 5856.663 5325.681</Row>
+                <Row object_ref="pep_KTPTQEEGCNCATDSGK_3_29728">11463.783 3467.855 2399.249 10364.838 3343.498 3096.075 6574.439 3126.582 6408.471 3919.815 843.661 899.178</Row>
+                <Row object_ref="pep_NSSWSCPICNSR_2_24976">2153.425 2644.05 0 2652.245 2557.492 2139.991 2091.947 2483.158 26.249 1636.244 1217.14 1274.684</Row>
+                <Row object_ref="pep_GGGADVDWSSAR_2_10114">11191.367 9569.97 8827.648 11009.032 8469.388 9974.296 6777.37 7856.436 3270.225 5244.06 5332.418 5417.948</Row>
+                <Row object_ref="pep_VTPQMMQQAQQK_2_23154">6387.161 3169.32 4228.519 6498.121 3744.919 4728.045 2661.298 4297.944 2605.328 3876.678 3167.719 3370.999</Row>
+                <Row object_ref="pep_FIDTEAGGSQAR_2_10125">29074.397 17648.693 22630.678 25814.707 13757.806 22230.65 24646.047 17058.663 15450.378 15476.741 13355.568 7703.493</Row>
+                <Row object_ref="pep_LQEQSGNMDQNLLPAEK_2_19846">14889.847 11785.937 12533.101 17652.581 12989.836 13968.538 8549.275 13708.991 10259.719 7754.935 6584.041 5237.276</Row>
+                <Row object_ref="pep_GSNFQGDGREDAPDLDWGAAR_3_12185">15280.167 8251.976 8524.339 12329.601 6922.053 8151.251 13768.149 13249.224 11057.832 15784.635 12012.319 9632.739</Row>
+                <Row object_ref="pep_VPNYEVSEK_2_12321">9962.945 4922.583 8866.382 11327.499 7239.607 7164.495 7501.034 6338.884 6916.843 4975.424 3258.316 2459.26</Row>
+                <Row object_ref="pep_STPQDTNVNSQSR_2_19360">7540.375 4071.496 3894.863 8601.562 4932.661 4593.734 5679.541 3749.085 6060.624 4081.375 2113.535 2533.521</Row>
+                <Row object_ref="pep_SDANSNVVPVGCLYTPLK_2_21557">10430.922 7449.424 7300.366 9762.09 7678.913 7703.994 8760.466 7846.004 5977.248 6522.02 5345.458 4302.739</Row>
+                <Row object_ref="pep_ATNDVEPSTYDSK_2_6989">33998.273 27363.888 34013.218 45354.316 32799.465 31305.439 35804.855 24861.199 39862.982 22512.913 15788.697 17459.994</Row>
+                <Row object_ref="pep_AETDDGADVIR_2_10786">17497.928 8818.573 12476.62 19293.134 11815.826 8596.929 12565.458 10022.111 10850.779 8449.075 5179.539 4925.39</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+        <AssayQuantLayer id="Pep_AQL2">
+            <DataType>
+                <cvParam accession="MS:1001893" cvRef="PSI-MS" name="Progenesis:peptide raw abundance"/>
+            </DataType>
+            <ColumnIndex>ass_0 ass_1 ass_2 ass_3 ass_4 ass_5 ass_6 ass_7 ass_8 ass_9 ass_10 ass_11</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="pep_GAPEIDVLEGETDTK_2_21711">3900.385 4611.286 4622.563 3064.897 5116.417 5130.532 1843.965 7063.636 4208.854 3108.981 7309.327 5269.162</Row>
+                <Row object_ref="pep_QSTTFADCPVVPADPDILLAK_2_48178">1417.475 397.893 29.429 805.633 489.25 639.325 1027.555 1563.02 1662.559 2801.606 4185.834 1414.749</Row>
+                <Row object_ref="pep_QKYDADVLDK_3_2006">20865.541 25002.786 33074.921 20819.753 31657.017 30053.124 12314.224 30520.391 18702.193 24834.324 39287.169 26202.681</Row>
+                <Row object_ref="pep_GLGNPLLYDGVER_2_13819">6031.674 7157.793 7733.638 5505.272 7219.008 6865.553 3548.127 10754.69 6661.879 6794.37 12492.443 8038.693</Row>
+                <Row object_ref="pep_LFAGMSPEMAK_2_5761">10752.508 12354.512 13011.185 11517.008 14480.568 15689.822 5824.939 21527.449 10563.831 10751.415 20843.832 15684.768</Row>
+                <Row object_ref="pep_FSPVSTASYR_2_7384">6759.77 8829.934 8615.507 6127.147 10762.946 10627.494 3220.712 11793.098 6457.29 5758.168 12742.982 8150.89</Row>
+                <Row object_ref="pep_NAVQNESVSSPIELNFDAVK_2_31018">829.984 866.942 985.585 502.463 580.352 700.698 1275.046 2756.771 2534.03 4987.13 9378.56 3797.753</Row>
+                <Row object_ref="pep_VAIGEVPFTFGVR_2_7857">14597.569 12958.35 13400.279 12072.591 12732.612 16341.927 12523.022 23196.427 19346.71 14761.198 26205.274 18349.977</Row>
+                <Row object_ref="pep_AGYQDDPQYADFK_2_6365">3169.273 2758.267 463.215 4163.54 4392.077 4585.707 3509.373 13425.175 5081.164 19859.561 44104.485 20076.202</Row>
+                <Row object_ref="pep_SQLIDAENSSSAVK_2_27287">1403.8 1676.585 1891.73 1164.872 2211.857 1678.336 552.142 2375.17 142.281 959.759 2240.537 1995.146</Row>
+                <Row object_ref="pep_GSNVISNDVYDQINK_2_29124">1752.692 1955.162 2821.837 1060.817 2151.174 1968.107 1093.686 3690.355 6.845 2503.1 4243.989 2714.292</Row>
+                <Row object_ref="pep_SQEVEYVDPTVNR_2_17934">3914.227 4041.95 4697.147 4349.487 4978.906 5658.842 2123.627 5657.873 3943.401 3768.904 6979.564 5055.712</Row>
+                <Row object_ref="pep_YDYAVAEQCPVK_2_15289">4445.933 5482.374 5032.723 4761.744 5359.492 4517.695 2780.764 6674.639 2947.514 4300.527 8198.402 5448.468</Row>
+                <Row object_ref="pep_DAENEWNVEK_2_12691">3386.344 3691.536 3812.186 3287.133 4622.522 2921.776 1875.004 5154.916 55.895 3002.818 5908.485 3910.56</Row>
+                <Row object_ref="pep_EVFEAATR_2_3958">16447.725 17377.039 20206.819 17101.427 20450.306 22457.121 10315.807 21364.182 12372.085 12269.249 20123.392 15569.843</Row>
+                <Row object_ref="pep_EDTVSWFK_2_1509">49580.845 66665.652 70675.669 57627.68 76250.701 71813.367 31513.572 99125.248 50916.677 53114.978 97820.16 66744.18</Row>
+                <Row object_ref="pep_ATAGNWVASQTVK_2_10657">8301.742 6662.686 7347.429 17936.239 9007.643 11129.817 3815.013 10915.795 31258.286 5652.413 11876.627 9181.685</Row>
+                <Row object_ref="pep_RIPSTPIDYMAIR_3_12620">4246.136 4569.467 5308.215 4055.573 5071.679 5481.951 2977.229 8114.468 4980.98 4850.658 9886.882 6931.955</Row>
+                <Row object_ref="pep_FVDIEEQQQQK_2_35126">365.908 1162.371 1071.562 669.965 1016.092 1604.361 241.891 1593.788 757.729 729.299 1185.181 887.961</Row>
+                <Row object_ref="pep_ADLVAVLK_2_6855">7751.376 8210.596 8775.778 9970.804 9876.96 9861.592 7010.492 15382.983 9940.234 11721.638 18433.716 12794.37</Row>
+                <Row object_ref="pep_VGQTLQVTEGTIK_2_30063">1410.097 1445.357 1662.02 1513.745 1952.712 1783.328 932.275 2583.96 1408.528 1132.798 2920.664 1768.495</Row>
+                <Row object_ref="pep_FVQESLGTVSDISK_2_21254">2063.296 3009.73 3524.905 2143.036 2448.649 3876.948 1512.068 5308.045 3042.945 2710.056 6820.936 4465.454</Row>
+                <Row object_ref="pep_VTNTTSTDFPGFSK_2_9038">10264.311 14560.084 13523.42 11245.964 14709.074 15421.562 5764.529 20559.708 5856.929 9857.935 20031.841 13384.304</Row>
+                <Row object_ref="pep_GSSVQTLYEQAAAR_2_19156">3053.288 3771.242 4335.779 3507.834 4578.13 3538.344 2133.743 10559.844 3161.763 6440.577 14380.522 9358.68</Row>
+                <Row object_ref="pep_VLEQLSGQTPVQSK_2_443">391139.363 426911.373 471986.447 396580.65 509165.82 559619.517 199354.992 628396.644 396312.176 355659.38 689946.54 432863.691</Row>
+                <Row object_ref="pep_AEEILER_2_375">206373.16 228842.468 261530.202 204047.056 254942.995 197304.352 112932.336 233965.645 159266.612 166413.349 249316.641 195901.906</Row>
+                <Row object_ref="pep_LNPSDNYQDMAR_2_10909">7100.724 8377.802 7678.377 7350.02 9391.485 9071.835 3268.543 10000.455 5845.988 6381.991 11911.143 7269.964</Row>
+                <Row object_ref="pep_NDPQTIEQLR_2_5279">11688.292 14231.495 15332.375 11466.101 16085.66 13712.052 7176.408 18616.145 5672.356 10878.348 21757.87 13320.574</Row>
+                <Row object_ref="pep_VVEATPEDGTASSQK_2_33389">3115.96 0 2185.487 3421.664 307.555 1059.785 1900.951 0 0 2836.783 2542.491 1949.921</Row>
+                <Row object_ref="pep_LVIVGDGACGK_2_5628">12024.665 16187.754 16373.605 12215.488 17835.703 25933.983 5520.207 21386.157 30166.308 10234.398 23160.109 14669.425</Row>
+                <Row object_ref="pep_IGLVPLK_2_10519">2532.402 3246.484 3453.582 2121.018 3760.698 3477.243 1210.535 4392.936 455.369 2334.577 4453.782 3280.025</Row>
+                <Row object_ref="pep_LDPALGGGSSDR_2_8265">7582.177 6592.391 12832.515 6674.093 11074.521 7166.825 5283.233 12762.324 4551.885 8840.441 9908.503 6935.787</Row>
+                <Row object_ref="pep_KTPTQEEGCNCATDSGK_3_29728">4924.537 2393.583 1614.383 4493.596 2489.335 2121.162 2402.935 3126.582 4064.332 3122.847 1427.335 1171.025</Row>
+                <Row object_ref="pep_NSSWSCPICNSR_2_24976">925.054 1824.976 0 1149.86 1904.129 1466.136 764.599 2483.158 16.648 1303.567 2059.199 1660.058</Row>
+                <Row object_ref="pep_GGGADVDWSSAR_2_10114">4807.514 6605.384 5939.86 4772.881 6305.713 6833.524 2477.105 7856.436 2074.018 4177.85 9021.567 7055.949</Row>
+                <Row object_ref="pep_VTPQMMQQAQQK_2_23154">2743.755 2187.528 2845.244 2817.21 2788.204 3239.247 972.695 4297.944 1652.331 3088.481 5359.255 4390.148</Row>
+                <Row object_ref="pep_FIDTEAGGSQAR_2_10125">12489.589 12181.48 15227.505 11191.767 10243.098 15230.515 9008.045 17058.663 9798.823 12330.046 22595.406 10032.479</Row>
+                <Row object_ref="pep_LQEQSGNMDQNLLPAEK_2_19846">6396.283 8134.889 8433.148 7653.14 9671.322 9570.032 3124.73 13708.991 6506.842 6178.22 11139.106 6820.654</Row>
+                <Row object_ref="pep_GSNFQGDGREDAPDLDWGAAR_3_12185">6563.954 5695.678 5735.772 5345.403 5153.676 5584.531 5032.211 13249.224 7013.016 12575.34 20322.853 12544.991</Row>
+                <Row object_ref="pep_VPNYEVSEK_2_12321">4279.816 3397.665 5965.923 4910.95 5390.105 4908.491 2741.602 6338.884 4386.748 3963.832 5512.53 3202.765</Row>
+                <Row object_ref="pep_STPQDTNVNSQSR_2_19360">3239.145 2810.227 2620.736 3729.141 3672.514 3147.228 2075.853 3749.085 3843.724 3251.559 3575.75 3299.477</Row>
+                <Row object_ref="pep_SDANSNVVPVGCLYTPLK_2_21557">4480.847 5141.741 4912.198 4232.278 5717.181 5278.109 3201.92 7846.004 3790.845 5195.978 9043.628 5603.579</Row>
+                <Row object_ref="pep_ATNDVEPSTYDSK_2_6989">14604.755 18887.102 22886.476 19663.013 24420.184 21447.775 13086.551 24861.199 25281.602 17935.64 26711.858 22738.649</Row>
+                <Row object_ref="pep_AETDDGADVIR_2_10786">7516.645 6086.755 8395.144 8364.389 8797.236 5889.871 4592.631 10022.111 6881.7 6731.229 8762.922 6414.476</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+    </PeptideConsensusList>
+    <FeatureList id="Flist0" rawFilesGroup_ref="rg_0">
+        <Feature charge="3" mz="398.871" rt="38.47" id="ft_0">
+            <MassTrace>38.016 398.871 38.923 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.493" id="ft_12">
+            <MassTrace>22.206 717.335 22.779 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="57.728" id="ft_24">
+            <MassTrace>57.456 833.408 58.0 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="36.014" id="ft_36">
+            <MassTrace>35.765 709.349 36.263 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="41.452" id="ft_48">
+            <MassTrace>41.169 617.272 41.736 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="64.178" id="ft_60">
+            <MassTrace>63.765 701.87 64.59 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.413" id="ft_72">
+            <MassTrace>76.127 1129.574 76.7 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="30.457" id="ft_84">
+            <MassTrace>30.128 713.82 30.786 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="66.559" id="ft_96">
+            <MassTrace>65.839 511.613 67.28 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="33.31" id="ft_108">
+            <MassTrace>32.909 532.766 33.711 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="44.201" id="ft_120">
+            <MassTrace>43.916 721.835 44.486 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="40.377" id="ft_132">
+            <MassTrace>40.219 724.865 40.536 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.745" id="ft_144">
+            <MassTrace>66.385 967.489 67.106 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.939" id="ft_156">
+            <MassTrace>72.629 1081.044 73.25 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="60.741" id="ft_168">
+            <MassTrace>60.28 506.242 61.201 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="46.231" id="ft_180">
+            <MassTrace>45.888 666.849 46.573 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="57.246" id="ft_192">
+            <MassTrace>56.81 591.288 57.681 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="40.278" id="ft_204">
+            <MassTrace>40.043 589.266 40.512 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="59.717" id="ft_216">
+            <MassTrace>59.336 787.385 60.099 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="33.449" id="ft_228">
+            <MassTrace>33.115 572.783 33.783 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="25.789" id="ft_240">
+            <MassTrace>25.642 759.868 25.936 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="80.032" id="ft_252">
+            <MassTrace>79.225 696.389 80.839 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="54.74" id="ft_264">
+            <MassTrace>54.286 370.257 55.194 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="52.461" id="ft_276">
+            <MassTrace>52.143 957.965 52.779 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.815" id="ft_288">
+            <MassTrace>41.375 544.792 42.255 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="57.515" id="ft_300">
+            <MassTrace>56.567 414.762 58.463 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="41.302" id="ft_312">
+            <MassTrace>41.015 712.317 41.588 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="58.594" id="ft_324">
+            <MassTrace>58.192 745.335 58.996 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="55.245" id="ft_336">
+            <MassTrace>55.006 755.393 55.483 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.803" id="ft_348">
+            <MassTrace>44.62 734.309 44.985 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="53.453" id="ft_360">
+            <MassTrace>53.083 751.362 53.823 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="35.116" id="ft_372">
+            <MassTrace>34.72 430.229 35.512 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.782" id="ft_384">
+            <MassTrace>43.392 768.37 44.173 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="47.403" id="ft_396">
+            <MassTrace>47.059 758.841 47.747 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="47.827" id="ft_408">
+            <MassTrace>47.535 687.385 48.119 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.68" id="ft_420">
+            <MassTrace>43.188 757.415 44.173 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.774" id="ft_432">
+            <MassTrace>21.55 628.269 21.998 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="33.31" id="ft_444">
+            <MassTrace>32.96 581.273 33.66 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.909" id="ft_456">
+            <MassTrace>55.402 740.386 56.417 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="34.146" id="ft_468">
+            <MassTrace>33.716 461.735 34.577 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="40.126" id="ft_480">
+            <MassTrace>39.997 696.344 40.255 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="43.48" id="ft_492">
+            <MassTrace>43.075 557.78 43.884 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="32.227" id="ft_504">
+            <MassTrace>31.948 626.301 32.507 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="42.317" id="ft_516">
+            <MassTrace>41.927 607.312 42.707 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist1" rawFilesGroup_ref="rg_1">
+        <Feature charge="3" mz="398.871" rt="38.125" id="ft_1">
+            <MassTrace>37.672 398.871 38.579 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.103" id="ft_13">
+            <MassTrace>21.816 717.335 22.389 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="57.738" id="ft_25">
+            <MassTrace>57.466 833.408 58.01 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="35.691" id="ft_37">
+            <MassTrace>35.442 709.349 35.94 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="41.3" id="ft_49">
+            <MassTrace>41.016 617.272 41.584 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="64.088" id="ft_61">
+            <MassTrace>63.676 701.87 64.501 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.63" id="ft_73">
+            <MassTrace>76.344 1129.574 76.916 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="30.059" id="ft_85">
+            <MassTrace>29.73 713.82 30.388 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="66.573" id="ft_97">
+            <MassTrace>65.853 511.613 67.294 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="32.861" id="ft_109">
+            <MassTrace>32.46 532.766 33.262 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.837" id="ft_121">
+            <MassTrace>43.552 721.835 44.122 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="39.991" id="ft_133">
+            <MassTrace>39.832 724.865 40.149 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.867" id="ft_145">
+            <MassTrace>66.506 967.489 67.228 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.977" id="ft_157">
+            <MassTrace>72.667 1081.044 73.288 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="60.478" id="ft_169">
+            <MassTrace>60.017 506.242 60.939 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="45.775" id="ft_181">
+            <MassTrace>45.433 666.849 46.117 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="57.299" id="ft_193">
+            <MassTrace>56.863 591.288 57.734 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="39.862" id="ft_205">
+            <MassTrace>39.627 589.266 40.096 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="59.541" id="ft_217">
+            <MassTrace>59.159 787.385 59.922 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="33.012" id="ft_229">
+            <MassTrace>32.678 572.783 33.345 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="25.105" id="ft_241">
+            <MassTrace>24.958 759.868 25.252 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="80.22" id="ft_253">
+            <MassTrace>79.413 696.389 81.027 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="54.505" id="ft_265">
+            <MassTrace>54.051 370.257 54.959 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="52.269" id="ft_277">
+            <MassTrace>51.95 957.965 52.587 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.592" id="ft_289">
+            <MassTrace>41.152 544.792 42.032 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="57.545" id="ft_301">
+            <MassTrace>56.597 414.762 58.493 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="41.156" id="ft_313">
+            <MassTrace>40.869 712.317 41.442 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="58.618" id="ft_325">
+            <MassTrace>58.216 745.335 59.02 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="55.101" id="ft_337">
+            <MassTrace>54.862 755.393 55.339 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.573" id="ft_349">
+            <MassTrace>44.39 734.309 44.755 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="53.197" id="ft_361">
+            <MassTrace>52.828 751.362 53.567 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="34.806" id="ft_373">
+            <MassTrace>34.411 430.229 35.202 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.592" id="ft_385">
+            <MassTrace>43.202 768.37 43.982 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="46.956" id="ft_397">
+            <MassTrace>46.612 758.841 47.299 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="47.53" id="ft_409">
+            <MassTrace>47.238 687.385 47.823 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.544" id="ft_421">
+            <MassTrace>43.051 757.415 44.036 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.47" id="ft_433">
+            <MassTrace>21.246 628.269 21.694 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="32.861" id="ft_445">
+            <MassTrace>32.511 581.273 33.212 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.873" id="ft_457">
+            <MassTrace>55.365 740.386 56.38 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="33.799" id="ft_469">
+            <MassTrace>33.369 461.735 34.229 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="39.671" id="ft_481">
+            <MassTrace>39.541 696.344 39.8 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="43.447" id="ft_493">
+            <MassTrace>43.042 557.78 43.851 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.443" id="ft_505">
+            <MassTrace>31.163 626.301 31.722 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="42.006" id="ft_517">
+            <MassTrace>41.615 607.312 42.396 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist2" rawFilesGroup_ref="rg_2">
+        <Feature charge="3" mz="398.871" rt="37.488" id="ft_2">
+            <MassTrace>37.034 398.871 37.941 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="21.699" id="ft_14">
+            <MassTrace>21.413 717.335 21.986 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="56.816" id="ft_26">
+            <MassTrace>56.544 833.408 57.088 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="35.137" id="ft_38">
+            <MassTrace>34.888 709.349 35.386 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="40.647" id="ft_50">
+            <MassTrace>40.363 617.272 40.93 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="63.517" id="ft_62">
+            <MassTrace>63.105 701.87 63.929 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.024" id="ft_74">
+            <MassTrace>75.738 1129.574 76.311 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="29.301" id="ft_86">
+            <MassTrace>28.972 713.82 29.63 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="65.628" id="ft_98">
+            <MassTrace>64.908 511.613 66.349 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="32.171" id="ft_110">
+            <MassTrace>31.77 532.766 32.572 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.304" id="ft_122">
+            <MassTrace>43.019 721.835 43.589 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="39.414" id="ft_134">
+            <MassTrace>39.256 724.865 39.573 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.029" id="ft_146">
+            <MassTrace>65.669 967.489 66.39 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="71.982" id="ft_158">
+            <MassTrace>71.672 1081.044 72.293 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="59.579" id="ft_170">
+            <MassTrace>59.118 506.242 60.04 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="45.208" id="ft_182">
+            <MassTrace>44.865 666.849 45.55 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="56.477" id="ft_194">
+            <MassTrace>56.041 591.288 56.912 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="39.277" id="ft_206">
+            <MassTrace>39.042 589.266 39.511 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="58.958" id="ft_218">
+            <MassTrace>58.576 787.385 59.339 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="32.322" id="ft_230">
+            <MassTrace>31.988 572.783 32.655 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="24.689" id="ft_242">
+            <MassTrace>24.542 759.868 24.836 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="79.739" id="ft_254">
+            <MassTrace>78.932 696.389 80.547 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="53.75" id="ft_266">
+            <MassTrace>53.295 370.257 54.204 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="51.432" id="ft_278">
+            <MassTrace>51.113 957.965 51.75 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="40.962" id="ft_290">
+            <MassTrace>40.522 544.792 41.402 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="56.646" id="ft_302">
+            <MassTrace>55.698 414.762 57.594 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="40.513" id="ft_314">
+            <MassTrace>40.227 712.317 40.8 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="57.848" id="ft_326">
+            <MassTrace>57.446 745.335 58.25 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="54.405" id="ft_338">
+            <MassTrace>54.166 755.393 54.643 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="43.705" id="ft_350">
+            <MassTrace>43.522 734.309 43.887 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="52.392" id="ft_362">
+            <MassTrace>52.023 751.362 52.762 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="34.297" id="ft_374">
+            <MassTrace>33.901 430.229 34.693 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.067" id="ft_386">
+            <MassTrace>42.677 768.37 43.457 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="46.326" id="ft_398">
+            <MassTrace>45.982 758.841 46.67 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="46.765" id="ft_410">
+            <MassTrace>46.473 687.385 47.057 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.001" id="ft_422">
+            <MassTrace>42.509 757.415 43.494 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.12" id="ft_434">
+            <MassTrace>20.896 628.269 21.344 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="32.171" id="ft_446">
+            <MassTrace>31.821 581.273 32.521 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.156" id="ft_458">
+            <MassTrace>54.649 740.386 55.664 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="33.187" id="ft_470">
+            <MassTrace>32.757 461.735 33.617 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="39.073" id="ft_482">
+            <MassTrace>38.943 696.344 39.202 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="42.74" id="ft_494">
+            <MassTrace>42.336 557.78 43.144 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.199" id="ft_506">
+            <MassTrace>30.919 626.301 31.478 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="41.411" id="ft_518">
+            <MassTrace>41.021 607.312 41.801 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist3" rawFilesGroup_ref="rg_3">
+        <Feature charge="3" mz="398.871" rt="38.414" id="ft_3">
+            <MassTrace>37.96 398.871 38.867 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.771" id="ft_15">
+            <MassTrace>22.485 717.335 23.058 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="57.598" id="ft_27">
+            <MassTrace>57.326 833.408 57.87 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="36.067" id="ft_39">
+            <MassTrace>35.818 709.349 36.316 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="41.309" id="ft_51">
+            <MassTrace>41.025 617.272 41.593 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="64.098" id="ft_63">
+            <MassTrace>63.686 701.87 64.511 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.084" id="ft_75">
+            <MassTrace>75.798 1129.574 76.371 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="30.427" id="ft_87">
+            <MassTrace>30.098 713.82 30.756 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="66.391" id="ft_99">
+            <MassTrace>65.67 511.613 67.111 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="33.283" id="ft_111">
+            <MassTrace>32.882 532.766 33.684 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.96" id="ft_123">
+            <MassTrace>43.676 721.835 44.245 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="40.222" id="ft_135">
+            <MassTrace>40.063 724.865 40.38 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.539" id="ft_147">
+            <MassTrace>66.179 967.489 66.9 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.751" id="ft_159">
+            <MassTrace>72.44 1081.044 73.062 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="60.624" id="ft_171">
+            <MassTrace>60.163 506.242 61.085 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="46.041" id="ft_183">
+            <MassTrace>45.699 666.849 46.383 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="57.102" id="ft_195">
+            <MassTrace>56.667 591.288 57.538 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="40.12" id="ft_207">
+            <MassTrace>39.885 589.266 40.354 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="59.63" id="ft_219">
+            <MassTrace>59.248 787.385 60.011 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="33.437" id="ft_231">
+            <MassTrace>33.103 572.783 33.77 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="25.979" id="ft_243">
+            <MassTrace>25.832 759.868 26.126 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="80.07" id="ft_255">
+            <MassTrace>79.263 696.389 80.877 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="54.604" id="ft_267">
+            <MassTrace>54.15 370.257 55.058 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="52.407" id="ft_279">
+            <MassTrace>52.089 957.965 52.726 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.655" id="ft_291">
+            <MassTrace>41.215 544.792 42.095 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="57.377" id="ft_303">
+            <MassTrace>56.429 414.762 58.325 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="41.156" id="ft_315">
+            <MassTrace>40.87 712.317 41.443 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="58.585" id="ft_327">
+            <MassTrace>58.183 745.335 58.987 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="55.092" id="ft_339">
+            <MassTrace>54.854 755.393 55.331 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.541" id="ft_351">
+            <MassTrace>44.358 734.309 44.723 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="53.354" id="ft_363">
+            <MassTrace>52.984 751.362 53.724 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="35.135" id="ft_375">
+            <MassTrace>34.739 430.229 35.53 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.605" id="ft_387">
+            <MassTrace>43.215 768.37 43.995 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="47.285" id="ft_399">
+            <MassTrace>46.941 758.841 47.628 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="47.704" id="ft_411">
+            <MassTrace>47.412 687.385 47.996 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.501" id="ft_423">
+            <MassTrace>43.009 757.415 43.994 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="22.024" id="ft_435">
+            <MassTrace>21.8 628.269 22.248 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="33.283" id="ft_447">
+            <MassTrace>32.933 581.273 33.633 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.74" id="ft_459">
+            <MassTrace>55.232 740.386 56.247 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="34.012" id="ft_471">
+            <MassTrace>33.582 461.735 34.442 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="39.969" id="ft_483">
+            <MassTrace>39.84 696.344 40.098 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="43.295" id="ft_495">
+            <MassTrace>42.891 557.78 43.699 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.979" id="ft_507">
+            <MassTrace>31.7 626.301 32.258 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="42.169" id="ft_519">
+            <MassTrace>41.779 607.312 42.56 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist4" rawFilesGroup_ref="rg_4">
+        <Feature charge="3" mz="398.871" rt="38.392" id="ft_4">
+            <MassTrace>37.939 398.871 38.846 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.047" id="ft_16">
+            <MassTrace>21.761 717.335 22.334 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="57.661" id="ft_28">
+            <MassTrace>57.389 833.408 57.933 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="35.879" id="ft_40">
+            <MassTrace>35.63 709.349 36.128 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="41.362" id="ft_52">
+            <MassTrace>41.078 617.272 41.646 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="64.373" id="ft_64">
+            <MassTrace>63.961 701.87 64.786 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.749" id="ft_76">
+            <MassTrace>76.462 1129.574 77.035 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="30.054" id="ft_88">
+            <MassTrace>29.725 713.82 30.383 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="66.712" id="ft_100">
+            <MassTrace>65.992 511.613 67.432 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="33.014" id="ft_112">
+            <MassTrace>32.613 532.766 33.415 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="44.044" id="ft_124">
+            <MassTrace>43.759 721.835 44.329 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="40.341" id="ft_136">
+            <MassTrace>40.182 724.865 40.499 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.859" id="ft_148">
+            <MassTrace>66.498 967.489 67.22 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="73.06" id="ft_160">
+            <MassTrace>72.749 1081.044 73.371 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="60.674" id="ft_172">
+            <MassTrace>60.213 506.242 61.134 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="46.178" id="ft_184">
+            <MassTrace>45.835 666.849 46.52 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="57.299" id="ft_196">
+            <MassTrace>56.864 591.288 57.734 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="40.243" id="ft_208">
+            <MassTrace>40.008 589.266 40.477 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="59.856" id="ft_220">
+            <MassTrace>59.474 787.385 60.237 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="33.25" id="ft_232">
+            <MassTrace>32.916 572.783 33.583 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="25.145" id="ft_244">
+            <MassTrace>24.998 759.868 25.293 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="80.31" id="ft_256">
+            <MassTrace>79.503 696.389 81.117 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="54.746" id="ft_268">
+            <MassTrace>54.291 370.257 55.2 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="52.604" id="ft_280">
+            <MassTrace>52.286 957.965 52.922 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.706" id="ft_292">
+            <MassTrace>41.267 544.792 42.146 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="57.499" id="ft_304">
+            <MassTrace>56.551 414.762 58.447 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="41.215" id="ft_316">
+            <MassTrace>40.929 712.317 41.502 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="58.702" id="ft_328">
+            <MassTrace>58.3 745.335 59.104 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="55.254" id="ft_340">
+            <MassTrace>55.015 755.393 55.492 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.997" id="ft_352">
+            <MassTrace>44.814 734.309 45.179 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="53.522" id="ft_364">
+            <MassTrace>53.152 751.362 53.892 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="35.007" id="ft_376">
+            <MassTrace>34.611 430.229 35.403 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.829" id="ft_388">
+            <MassTrace>43.439 768.37 44.22 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="47.457" id="ft_400">
+            <MassTrace>47.113 758.841 47.801 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="47.917" id="ft_412">
+            <MassTrace>47.625 687.385 48.21 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.777" id="ft_424">
+            <MassTrace>43.284 757.415 44.269 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.398" id="ft_436">
+            <MassTrace>21.174 628.269 21.622 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="33.014" id="ft_448">
+            <MassTrace>32.663 581.273 33.364 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.924" id="ft_460">
+            <MassTrace>55.416 740.386 56.431 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="33.944" id="ft_472">
+            <MassTrace>33.514 461.735 34.374 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="40.097" id="ft_484">
+            <MassTrace>39.968 696.344 40.226 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="43.666" id="ft_496">
+            <MassTrace>43.262 557.78 44.071 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.509" id="ft_508">
+            <MassTrace>31.229 626.301 31.788 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="42.198" id="ft_520">
+            <MassTrace>41.808 607.312 42.588 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist5" rawFilesGroup_ref="rg_5">
+        <Feature charge="3" mz="398.871" rt="37.122" id="ft_5">
+            <MassTrace>36.668 398.871 37.575 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="21.631" id="ft_17">
+            <MassTrace>21.344 717.335 21.917 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="56.401" id="ft_29">
+            <MassTrace>56.129 833.408 56.673 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="34.529" id="ft_41">
+            <MassTrace>34.28 709.349 34.778 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="40.111" id="ft_53">
+            <MassTrace>39.827 617.272 40.394 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="63.414" id="ft_65">
+            <MassTrace>63.002 701.87 63.827 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="75.8" id="ft_77">
+            <MassTrace>75.513 1129.574 76.086 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="28.978" id="ft_89">
+            <MassTrace>28.649 713.82 29.308 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="65.798" id="ft_101">
+            <MassTrace>65.077 511.613 66.518 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="31.717" id="ft_113">
+            <MassTrace>31.316 532.766 32.118 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.035" id="ft_125">
+            <MassTrace>42.75 721.835 43.32 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="39.101" id="ft_137">
+            <MassTrace>38.942 724.865 39.259 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="65.999" id="ft_149">
+            <MassTrace>65.638 967.489 66.359 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.011" id="ft_161">
+            <MassTrace>71.701 1081.044 72.322 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="59.551" id="ft_173">
+            <MassTrace>59.09 506.242 60.012 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="44.914" id="ft_185">
+            <MassTrace>44.572 666.849 45.257 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="56.125" id="ft_197">
+            <MassTrace>55.69 591.288 56.56 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="38.989" id="ft_209">
+            <MassTrace>38.754 589.266 39.223 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="58.589" id="ft_221">
+            <MassTrace>58.207 787.385 58.97 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="31.858" id="ft_233">
+            <MassTrace>31.524 572.783 32.192 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="24.454" id="ft_245">
+            <MassTrace>24.307 759.868 24.601 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="79.456" id="ft_257">
+            <MassTrace>78.649 696.389 80.263 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="53.451" id="ft_269">
+            <MassTrace>52.997 370.257 53.905 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="51.073" id="ft_281">
+            <MassTrace>50.755 957.965 51.391 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="40.592" id="ft_293">
+            <MassTrace>40.152 544.792 41.031 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="56.278" id="ft_305">
+            <MassTrace>55.33 414.762 57.226 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="40.053" id="ft_317">
+            <MassTrace>39.767 712.317 40.34 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="57.371" id="ft_329">
+            <MassTrace>56.969 745.335 57.773 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="54.075" id="ft_341">
+            <MassTrace>53.837 755.393 54.313 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="43.542" id="ft_353">
+            <MassTrace>43.36 734.309 43.725 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="52.052" id="ft_365">
+            <MassTrace>51.682 751.362 52.422 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="33.853" id="ft_377">
+            <MassTrace>33.457 430.229 34.249 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="42.727" id="ft_389">
+            <MassTrace>42.337 768.37 43.117 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="45.986" id="ft_401">
+            <MassTrace>45.642 758.841 46.329 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="46.375" id="ft_413">
+            <MassTrace>46.083 687.385 46.667 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="42.641" id="ft_425">
+            <MassTrace>42.148 757.415 43.133 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.043" id="ft_437">
+            <MassTrace>20.819 628.269 21.267 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="31.717" id="ft_449">
+            <MassTrace>31.367 581.273 32.067 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="54.722" id="ft_461">
+            <MassTrace>54.214 740.386 55.23 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="32.599" id="ft_473">
+            <MassTrace>32.169 461.735 33.029 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="38.77" id="ft_485">
+            <MassTrace>38.641 696.344 38.9 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="42.419" id="ft_497">
+            <MassTrace>42.015 557.78 42.823 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="30.821" id="ft_509">
+            <MassTrace>30.542 626.301 31.101 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="41.137" id="ft_521">
+            <MassTrace>40.747 607.312 41.527 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist6" rawFilesGroup_ref="rg_6">
+        <Feature charge="3" mz="398.871" rt="38.126" id="ft_6">
+            <MassTrace>37.673 398.871 38.58 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.823" id="ft_18">
+            <MassTrace>22.536 717.335 23.109 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="57.398" id="ft_30">
+            <MassTrace>57.126 833.408 57.67 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="35.74" id="ft_42">
+            <MassTrace>35.491 709.349 35.989 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="41.059" id="ft_54">
+            <MassTrace>40.776 617.272 41.343 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="63.828" id="ft_66">
+            <MassTrace>63.415 701.87 64.24 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.247" id="ft_78">
+            <MassTrace>75.961 1129.574 76.534 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="30.385" id="ft_90">
+            <MassTrace>30.056 713.82 30.714 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="66.228" id="ft_102">
+            <MassTrace>65.508 511.613 66.948 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="33.099" id="ft_114">
+            <MassTrace>32.698 532.766 33.5 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.812" id="ft_126">
+            <MassTrace>43.527 721.835 44.097 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="39.948" id="ft_138">
+            <MassTrace>39.79 724.865 40.107 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.363" id="ft_150">
+            <MassTrace>66.002 967.489 66.724 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.567" id="ft_162">
+            <MassTrace>72.256 1081.044 72.877 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="60.453" id="ft_174">
+            <MassTrace>59.993 506.242 60.914 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="45.943" id="ft_186">
+            <MassTrace>45.601 666.849 46.286 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="56.896" id="ft_198">
+            <MassTrace>56.461 591.288 57.332 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="39.843" id="ft_210">
+            <MassTrace>39.608 589.266 40.077 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="59.45" id="ft_222">
+            <MassTrace>59.068 787.385 59.831 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="33.238" id="ft_234">
+            <MassTrace>32.905 572.783 33.572 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="25.899" id="ft_246">
+            <MassTrace>25.752 759.868 26.046 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="79.745" id="ft_258">
+            <MassTrace>78.937 696.389 80.552 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="54.397" id="ft_270">
+            <MassTrace>53.943 370.257 54.851 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="52.168" id="ft_282">
+            <MassTrace>51.85 957.965 52.486 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.414" id="ft_294">
+            <MassTrace>40.974 544.792 41.854 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="57.178" id="ft_306">
+            <MassTrace>56.23 414.762 58.126 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="40.929" id="ft_318">
+            <MassTrace>40.642 712.317 41.215 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="58.402" id="ft_330">
+            <MassTrace>58.0 745.335 58.805 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="54.892" id="ft_342">
+            <MassTrace>54.654 755.393 55.13 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.349" id="ft_354">
+            <MassTrace>44.166 734.309 44.531 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="53.137" id="ft_366">
+            <MassTrace>52.767 751.362 53.507 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="34.85" id="ft_378">
+            <MassTrace>34.454 430.229 35.245 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.45" id="ft_390">
+            <MassTrace>43.06 768.37 43.841 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="47.092" id="ft_402">
+            <MassTrace>46.748 758.841 47.435 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="47.485" id="ft_414">
+            <MassTrace>47.193 687.385 47.777 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.333" id="ft_426">
+            <MassTrace>42.841 757.415 43.826 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.974" id="ft_438">
+            <MassTrace>21.75 628.269 22.198 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="33.099" id="ft_450">
+            <MassTrace>32.749 581.273 33.449 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.519" id="ft_462">
+            <MassTrace>55.011 740.386 56.026 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="33.984" id="ft_474">
+            <MassTrace>33.554 461.735 34.414 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="39.695" id="ft_486">
+            <MassTrace>39.566 696.344 39.824 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="43.096" id="ft_498">
+            <MassTrace>42.692 557.78 43.5 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.93" id="ft_510">
+            <MassTrace>31.651 626.301 32.21 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="41.915" id="ft_522">
+            <MassTrace>41.525 607.312 42.305 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist7" rawFilesGroup_ref="rg_7">
+        <Feature charge="3" mz="398.871" rt="38.046" id="ft_7">
+            <MassTrace>37.593 398.871 38.499 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.28" id="ft_19">
+            <MassTrace>21.994 717.335 22.567 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="57.396" id="ft_31">
+            <MassTrace>57.124 833.408 57.668 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="35.749" id="ft_43">
+            <MassTrace>35.5 709.349 35.998 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="41.123" id="ft_55">
+            <MassTrace>40.839 617.272 41.407 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="64.093" id="ft_67">
+            <MassTrace>63.68 701.87 64.505 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.463" id="ft_79">
+            <MassTrace>76.177 1129.574 76.749 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="29.617" id="ft_91">
+            <MassTrace>29.288 713.82 29.947 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="66.494" id="ft_103">
+            <MassTrace>65.774 511.613 67.214 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="32.711" id="ft_115">
+            <MassTrace>32.31 532.766 33.112 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.782" id="ft_127">
+            <MassTrace>43.497 721.835 44.067 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="39.901" id="ft_139">
+            <MassTrace>39.743 724.865 40.06 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.66" id="ft_151">
+            <MassTrace>66.299 967.489 67.021 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.988" id="ft_163">
+            <MassTrace>72.677 1081.044 73.298 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="60.44" id="ft_175">
+            <MassTrace>59.979 506.242 60.901 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="45.82" id="ft_187">
+            <MassTrace>45.478 666.849 46.162 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="56.987" id="ft_199">
+            <MassTrace>56.552 591.288 57.422 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="39.782" id="ft_211">
+            <MassTrace>39.547 589.266 40.017 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="59.69" id="ft_223">
+            <MassTrace>59.308 787.385 60.072 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="32.956" id="ft_235">
+            <MassTrace>32.622 572.783 33.29 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="24.918" id="ft_247">
+            <MassTrace>24.771 759.868 25.065 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="80.1" id="ft_259">
+            <MassTrace>79.293 696.389 80.907 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="54.53" id="ft_271">
+            <MassTrace>54.076 370.257 54.984 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="52.31" id="ft_283">
+            <MassTrace>51.992 957.965 52.629 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.454" id="ft_295">
+            <MassTrace>41.014 544.792 41.894 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="57.213" id="ft_307">
+            <MassTrace>56.265 414.762 58.161 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="40.95" id="ft_319">
+            <MassTrace>40.664 712.317 41.237 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="58.464" id="ft_331">
+            <MassTrace>58.062 745.335 58.866 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="55.017" id="ft_343">
+            <MassTrace>54.778 755.393 55.255 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.337" id="ft_355">
+            <MassTrace>44.154 734.309 44.519 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="53.164" id="ft_367">
+            <MassTrace>52.794 751.362 53.534 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="34.703" id="ft_379">
+            <MassTrace>34.307 430.229 35.098 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.462" id="ft_391">
+            <MassTrace>43.072 768.37 43.852 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="46.983" id="ft_403">
+            <MassTrace>46.639 758.841 47.327 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="47.398" id="ft_415">
+            <MassTrace>47.106 687.385 47.69 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.375" id="ft_427">
+            <MassTrace>42.882 757.415 43.867 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.612" id="ft_439">
+            <MassTrace>21.388 628.269 21.836 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="32.711" id="ft_451">
+            <MassTrace>32.361 581.273 33.062 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.86" id="ft_463">
+            <MassTrace>55.352 740.386 56.367 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="33.689" id="ft_475">
+            <MassTrace>33.259 461.735 34.119 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="39.608" id="ft_487">
+            <MassTrace>39.479 696.344 39.737 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="43.191" id="ft_499">
+            <MassTrace>42.787 557.78 43.595 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.362" id="ft_511">
+            <MassTrace>31.083 626.301 31.641 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="41.867" id="ft_523">
+            <MassTrace>41.477 607.312 42.257 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist8" rawFilesGroup_ref="rg_8">
+        <Feature charge="3" mz="398.871" rt="36.948" id="ft_8">
+            <MassTrace>36.495 398.871 37.402 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="21.796" id="ft_20">
+            <MassTrace>21.509 717.335 22.082 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="56.821" id="ft_32">
+            <MassTrace>56.549 833.408 57.093 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="34.436" id="ft_44">
+            <MassTrace>34.187 709.349 34.685 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="40.059" id="ft_56">
+            <MassTrace>39.775 617.272 40.343 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="63.344" id="ft_68">
+            <MassTrace>62.931 701.87 63.756 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.003" id="ft_80">
+            <MassTrace>75.716 1129.574 76.289 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="28.776" id="ft_92">
+            <MassTrace>28.446 713.82 29.105 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="65.778" id="ft_104">
+            <MassTrace>65.057 511.613 66.498 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="31.9" id="ft_116">
+            <MassTrace>31.499 532.766 32.301 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="42.9" id="ft_128">
+            <MassTrace>42.615 721.835 43.185 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="38.625" id="ft_140">
+            <MassTrace>38.467 724.865 38.784 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="65.916" id="ft_152">
+            <MassTrace>65.555 967.489 66.277 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.286" id="ft_164">
+            <MassTrace>71.975 1081.044 72.596 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="59.966" id="ft_176">
+            <MassTrace>59.506 506.242 60.427 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="44.98" id="ft_188">
+            <MassTrace>44.638 666.849 45.322 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="56.385" id="ft_200">
+            <MassTrace>55.95 591.288 56.821 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="38.523" id="ft_212">
+            <MassTrace>38.288 589.266 38.758 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="58.614" id="ft_224">
+            <MassTrace>58.232 787.385 58.995 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="31.981" id="ft_236">
+            <MassTrace>31.647 572.783 32.315 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="24.173" id="ft_248">
+            <MassTrace>24.026 759.868 24.32 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="79.731" id="ft_260">
+            <MassTrace>78.924 696.389 80.538 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="53.585" id="ft_272">
+            <MassTrace>53.131 370.257 54.039 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="51.179" id="ft_284">
+            <MassTrace>50.861 957.965 51.498 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="40.561" id="ft_296">
+            <MassTrace>40.121 544.792 41.001 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="56.628" id="ft_308">
+            <MassTrace>55.68 414.762 57.576 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="39.845" id="ft_320">
+            <MassTrace>39.558 712.317 40.131 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="57.693" id="ft_332">
+            <MassTrace>57.291 745.335 58.095 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="54.164" id="ft_344">
+            <MassTrace>53.925 755.393 54.402 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="43.57" id="ft_356">
+            <MassTrace>43.387 734.309 43.752 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="52.343" id="ft_368">
+            <MassTrace>51.973 751.362 52.712 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="33.806" id="ft_380">
+            <MassTrace>33.41 430.229 34.202 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="42.514" id="ft_392">
+            <MassTrace>42.124 768.37 42.905 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="46.356" id="ft_404">
+            <MassTrace>46.013 758.841 46.7 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="46.713" id="ft_416">
+            <MassTrace>46.421 687.385 47.005 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="41.98" id="ft_428">
+            <MassTrace>41.488 757.415 42.473 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.002" id="ft_440">
+            <MassTrace>20.778 628.269 21.226 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="31.9" id="ft_452">
+            <MassTrace>31.55 581.273 32.25 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="54.931" id="ft_464">
+            <MassTrace>54.423 740.386 55.439 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="32.244" id="ft_476">
+            <MassTrace>31.814 461.735 32.674 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="38.374" id="ft_488">
+            <MassTrace>38.245 696.344 38.504 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="41.822" id="ft_500">
+            <MassTrace>41.418 557.78 42.227 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="30.687" id="ft_512">
+            <MassTrace>30.407 626.301 30.966 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="41.129" id="ft_524">
+            <MassTrace>40.738 607.312 41.519 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist9" rawFilesGroup_ref="rg_9">
+        <Feature charge="3" mz="398.871" rt="37.737" id="ft_9">
+            <MassTrace>37.284 398.871 38.19 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.257" id="ft_21">
+            <MassTrace>21.97 717.335 22.543 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="56.796" id="ft_33">
+            <MassTrace>56.524 833.408 57.068 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="35.398" id="ft_45">
+            <MassTrace>35.149 709.349 35.647 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="40.712" id="ft_57">
+            <MassTrace>40.429 617.272 40.996 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="63.223" id="ft_69">
+            <MassTrace>62.811 701.87 63.635 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="75.589" id="ft_81">
+            <MassTrace>75.303 1129.574 75.875 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="29.773" id="ft_93">
+            <MassTrace>29.444 713.82 30.102 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="65.539" id="ft_105">
+            <MassTrace>64.819 511.613 66.259 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="32.661" id="ft_117">
+            <MassTrace>32.26 532.766 33.062 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.422" id="ft_129">
+            <MassTrace>43.138 721.835 43.707 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="39.601" id="ft_141">
+            <MassTrace>39.443 724.865 39.76 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="65.706" id="ft_153">
+            <MassTrace>65.345 967.489 66.066 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="71.969" id="ft_165">
+            <MassTrace>71.658 1081.044 72.279 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="59.772" id="ft_177">
+            <MassTrace>59.311 506.242 60.233 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="45.409" id="ft_189">
+            <MassTrace>45.067 666.849 45.751 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="56.303" id="ft_201">
+            <MassTrace>55.868 591.288 56.739 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="39.498" id="ft_213">
+            <MassTrace>39.263 589.266 39.732 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="58.794" id="ft_225">
+            <MassTrace>58.412 787.385 59.175 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="32.841" id="ft_237">
+            <MassTrace>32.507 572.783 33.174 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="25.351" id="ft_249">
+            <MassTrace>25.204 759.868 25.498 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="79.207" id="ft_261">
+            <MassTrace>78.4 696.389 80.014 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="53.837" id="ft_273">
+            <MassTrace>53.383 370.257 54.291 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="51.654" id="ft_285">
+            <MassTrace>51.336 957.965 51.972 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.074" id="ft_297">
+            <MassTrace>40.634 544.792 41.514 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="56.576" id="ft_309">
+            <MassTrace>55.628 414.762 57.524 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="40.558" id="ft_321">
+            <MassTrace>40.272 712.317 40.845 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="57.766" id="ft_333">
+            <MassTrace>57.364 745.335 58.168 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="54.314" id="ft_345">
+            <MassTrace>54.076 755.393 54.552 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.036" id="ft_357">
+            <MassTrace>43.854 734.309 44.219 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="52.605" id="ft_369">
+            <MassTrace>52.235 751.362 52.975 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="34.468" id="ft_381">
+            <MassTrace>34.072 430.229 34.864 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.058" id="ft_393">
+            <MassTrace>42.668 768.37 43.448 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="46.574" id="ft_405">
+            <MassTrace>46.23 758.841 46.918 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="46.994" id="ft_417">
+            <MassTrace>46.702 687.385 47.286 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="42.959" id="ft_429">
+            <MassTrace>42.467 757.415 43.452 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.604" id="ft_441">
+            <MassTrace>21.38 628.269 21.828 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="32.661" id="ft_453">
+            <MassTrace>32.311 581.273 33.011 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="54.954" id="ft_465">
+            <MassTrace>54.447 740.386 55.462 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="33.478" id="ft_477">
+            <MassTrace>33.048 461.735 33.908 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="39.346" id="ft_489">
+            <MassTrace>39.216 696.344 39.475 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="42.748" id="ft_501">
+            <MassTrace>42.344 557.78 43.153 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.502" id="ft_513">
+            <MassTrace>31.222 626.301 31.781 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="41.593" id="ft_525">
+            <MassTrace>41.203 607.312 41.983 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist10" rawFilesGroup_ref="rg_10">
+        <Feature charge="3" mz="398.871" rt="37.841" id="ft_10">
+            <MassTrace>37.387 398.871 38.294 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="22.229" id="ft_22">
+            <MassTrace>21.943 717.335 22.516 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="57.063" id="ft_34">
+            <MassTrace>56.791 833.408 57.335 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="35.545" id="ft_46">
+            <MassTrace>35.296 709.349 35.794 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="41.02" id="ft_58">
+            <MassTrace>40.736 617.272 41.304 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="63.592" id="ft_70">
+            <MassTrace>63.18 701.87 64.005 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="76.16" id="ft_82">
+            <MassTrace>75.874 1129.574 76.446 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="29.872" id="ft_94">
+            <MassTrace>29.543 713.82 30.201 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="66.051" id="ft_106">
+            <MassTrace>65.331 511.613 66.771 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="32.771" id="ft_118">
+            <MassTrace>32.37 532.766 33.172 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="43.775" id="ft_130">
+            <MassTrace>43.491 721.835 44.06 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="39.879" id="ft_142">
+            <MassTrace>39.721 724.865 40.038 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="66.218" id="ft_154">
+            <MassTrace>65.857 967.489 66.579 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="72.631" id="ft_166">
+            <MassTrace>72.32 1081.044 72.941 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="60.243" id="ft_178">
+            <MassTrace>59.782 506.242 60.703 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="45.691" id="ft_190">
+            <MassTrace>45.349 666.849 46.033 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="56.616" id="ft_202">
+            <MassTrace>56.181 591.288 57.051 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="39.773" id="ft_214">
+            <MassTrace>39.539 589.266 40.008 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="59.21" id="ft_226">
+            <MassTrace>58.828 787.385 59.591 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="32.935" id="ft_238">
+            <MassTrace>32.601 572.783 33.269 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="24.95" id="ft_250">
+            <MassTrace>24.803 759.868 25.097 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="79.837" id="ft_262">
+            <MassTrace>79.029 696.389 80.644 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="54.139" id="ft_274">
+            <MassTrace>53.685 370.257 54.593 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="51.945" id="ft_286">
+            <MassTrace>51.626 957.965 52.263 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="41.408" id="ft_298">
+            <MassTrace>40.968 544.792 41.848 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="56.864" id="ft_310">
+            <MassTrace>55.916 414.762 57.812 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="40.859" id="ft_322">
+            <MassTrace>40.572 712.317 41.145 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="58.239" id="ft_334">
+            <MassTrace>57.837 745.335 58.641 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="54.77" id="ft_346">
+            <MassTrace>54.531 755.393 55.008 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="44.312" id="ft_358">
+            <MassTrace>44.129 734.309 44.494 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="52.862" id="ft_370">
+            <MassTrace>52.492 751.362 53.232 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="34.629" id="ft_382">
+            <MassTrace>34.233 430.229 35.025 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="43.461" id="ft_394">
+            <MassTrace>43.071 768.37 43.851 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="46.983" id="ft_406">
+            <MassTrace>46.639 758.841 47.327 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="47.449" id="ft_418">
+            <MassTrace>47.157 687.385 47.741 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="43.372" id="ft_430">
+            <MassTrace>42.88 757.415 43.865 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="21.463" id="ft_442">
+            <MassTrace>21.239 628.269 21.687 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="32.771" id="ft_454">
+            <MassTrace>32.421 581.273 33.122 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="55.393" id="ft_466">
+            <MassTrace>54.885 740.386 55.901 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="33.443" id="ft_478">
+            <MassTrace>33.013 461.735 33.873 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="39.47" id="ft_490">
+            <MassTrace>39.341 696.344 39.599 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="43.184" id="ft_502">
+            <MassTrace>42.78 557.78 43.588 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="31.333" id="ft_514">
+            <MassTrace>31.053 626.301 31.612 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="41.941" id="ft_526">
+            <MassTrace>41.551 607.312 42.331 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+    <FeatureList id="Flist11" rawFilesGroup_ref="rg_11">
+        <Feature charge="3" mz="398.871" rt="36.59" id="ft_11">
+            <MassTrace>36.136 398.871 37.043 399.871</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="717.335" rt="21.383" id="ft_23">
+            <MassTrace>21.096 717.335 21.67 718.835</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="833.408" rt="55.855" id="ft_35">
+            <MassTrace>55.583 833.408 56.127 834.908</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="709.349" rt="34.265" id="ft_47">
+            <MassTrace>34.016 709.349 34.514 710.849</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="617.272" rt="39.386" id="ft_59">
+            <MassTrace>39.102 617.272 39.67 618.772</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="701.87" rt="62.392" id="ft_71">
+            <MassTrace>61.979 701.87 62.804 703.37</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1129.574" rt="75.297" id="ft_83">
+            <MassTrace>75.011 1129.574 75.583 1131.074</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="713.82" rt="28.27" id="ft_95">
+            <MassTrace>27.941 713.82 28.599 715.32</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="511.613" rt="64.965" id="ft_107">
+            <MassTrace>64.245 511.613 65.686 512.613</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="532.766" rt="31.227" id="ft_119">
+            <MassTrace>30.826 532.766 31.628 534.266</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="721.835" rt="41.997" id="ft_131">
+            <MassTrace>41.712 721.835 42.282 723.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="724.865" rt="38.346" id="ft_143">
+            <MassTrace>38.188 724.865 38.505 726.365</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="967.489" rt="65.041" id="ft_155">
+            <MassTrace>64.68 967.489 65.402 968.989</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="1081.044" rt="71.365" id="ft_167">
+            <MassTrace>71.054 1081.044 71.676 1082.544</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="506.242" rt="58.736" id="ft_179">
+            <MassTrace>58.275 506.242 59.197 507.742</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="666.849" rt="44.2" id="ft_191">
+            <MassTrace>43.858 666.849 44.542 668.349</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="591.288" rt="55.437" id="ft_203">
+            <MassTrace>55.001 591.288 55.872 592.788</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="589.266" rt="38.249" id="ft_215">
+            <MassTrace>38.014 589.266 38.483 590.766</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="787.385" rt="57.967" id="ft_227">
+            <MassTrace>57.585 787.385 58.348 788.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="572.783" rt="31.431" id="ft_239">
+            <MassTrace>31.097 572.783 31.764 574.283</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="759.868" rt="24.045" id="ft_251">
+            <MassTrace>23.898 759.868 24.192 761.368</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.389" rt="78.98" id="ft_263">
+            <MassTrace>78.173 696.389 79.787 697.889</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="370.257" rt="53.019" id="ft_275">
+            <MassTrace>52.565 370.257 53.473 371.757</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="957.965" rt="50.773" id="ft_287">
+            <MassTrace>50.455 957.965 51.091 959.465</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="544.792" rt="39.732" id="ft_299">
+            <MassTrace>39.292 544.792 40.172 546.292</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="414.762" rt="55.669" id="ft_311">
+            <MassTrace>54.721 414.762 56.617 416.262</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="712.317" rt="39.238" id="ft_323">
+            <MassTrace>38.951 712.317 39.524 713.817</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="745.335" rt="56.69" id="ft_335">
+            <MassTrace>56.288 745.335 57.092 746.335</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="755.393" rt="53.512" id="ft_347">
+            <MassTrace>53.274 755.393 53.75 756.893</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="734.309" rt="42.663" id="ft_359">
+            <MassTrace>42.481 734.309 42.846 735.809</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="751.362" rt="51.577" id="ft_371">
+            <MassTrace>51.208 751.362 51.947 752.862</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="430.229" rt="33.268" id="ft_383">
+            <MassTrace>32.872 430.229 33.664 431.729</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="768.37" rt="41.711" id="ft_395">
+            <MassTrace>41.321 768.37 42.101 769.87</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="758.841" rt="45.141" id="ft_407">
+            <MassTrace>44.797 758.841 45.485 760.341</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="687.385" rt="45.588" id="ft_419">
+            <MassTrace>45.296 687.385 45.88 688.885</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="757.415" rt="41.652" id="ft_431">
+            <MassTrace>41.159 757.415 42.144 758.915</MassTrace>
+        </Feature>
+        <Feature charge="3" mz="628.269" rt="20.764" id="ft_443">
+            <MassTrace>20.54 628.269 20.988 629.269</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="581.273" rt="31.227" id="ft_455">
+            <MassTrace>30.877 581.273 31.577 582.773</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="740.386" rt="54.178" id="ft_467">
+            <MassTrace>53.67 740.386 54.686 741.886</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="461.735" rt="32.101" id="ft_479">
+            <MassTrace>31.671 461.735 32.531 463.235</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="696.344" rt="38.102" id="ft_491">
+            <MassTrace>37.972 696.344 38.231 697.844</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="557.78" rt="41.527" id="ft_503">
+            <MassTrace>41.123 557.78 41.932 559.28</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="626.301" rt="30.236" id="ft_515">
+            <MassTrace>29.957 626.301 30.516 627.801</MassTrace>
+        </Feature>
+        <Feature charge="2" mz="607.312" rt="40.226" id="ft_527">
+            <MassTrace>39.836 607.312 40.616 608.812</MassTrace>
+        </Feature>
+        <cvParam accession="MS:1001826" cvRef="PSI-MS" name="mass trace reporting: rectangles"/>
+    </FeatureList>
+</MzQuantML>

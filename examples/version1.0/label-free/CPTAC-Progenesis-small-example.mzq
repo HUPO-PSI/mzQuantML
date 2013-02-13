@@ -1,6 +1,6 @@
 <MzQuantML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd"
- xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0 ../../../schema/mzQuantML_1_0_0.xsd"
+ xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0"
  id="Progenesis-Label-Free-26112012"
  version="1.0.0"
  creationDate="2012-11-26T13:10:55.529Z">

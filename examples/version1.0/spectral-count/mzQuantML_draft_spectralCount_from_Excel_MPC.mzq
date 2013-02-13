@@ -1,4 +1,4 @@
-<MzQuantML creationDate="2012-12-03T00:00:00.000+01:00" version="1.0.0" id="MZQ_SPC_EX1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3 ../../../schema/mzQuantML_1_0_0-rc3.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0-rc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2012-12-03T00:00:00.000+01:00" version="1.0.0" id="MZQ_SPC_EX1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0 ../../../schema/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabulary" version="3.41.0" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="MS"/>

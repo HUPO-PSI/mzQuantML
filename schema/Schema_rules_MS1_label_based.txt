@@ -4,7 +4,7 @@ The parser knows this is a MS1 label-based approach due to the presence of this 
 - ONE of PeptideConsensusList, ProteinList, ProteinGroupList MUST be present
 - There MUST not be any MS2QuantLayers	
 - The file MUST contain two or more assays references to the same rawFileGroup
-- At least one of the grouped assays that reference to a common rawFileGroup MUST have the "Label" element.
+- At least one of the grouped assays that reference to a common rawFileGroup MUST have the "Label/Modification" element containing a CV term for the label applied (in most cases the file will contain one of the grouped assays with the "unlabeled sample" CV term with accession="MS:1002038")
 	
 
 Mapping file and associated rules in brackets

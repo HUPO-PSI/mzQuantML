@@ -1,0 +1,342 @@
+<MzQuantML id="SRM-1242013" version="1.0.0" creationDate="2013-04-12T16:16:32.874+01:00" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0 ../../../schema/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CvList>
+        <Cv id="PSI-MS" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"/>
+        <Cv id="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" fullName="Unimod"/>
+        <Cv id="PSI-MOD" uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" fullName="Proteomics Standards Initiative Protein Modifications Vocabularies"/>
+    </CvList>
+    <AuditCollection>
+        <Person firstName="Andy" lastName="Jones" id="PERS_ARJ">
+            <Affiliation organization_ref="ORG_UOL"/>
+        </Person>
+        <Person firstName="Da" lastName="Qi" id="PERS_DQ">
+            <Affiliation organization_ref="ORG_UOL"/>
+        </Person>
+        <Organization name="University of Liverpool" id="ORG_UOL"/>
+    </AuditCollection>
+    <AnalysisSummary>
+        <cvParam accession="MS:1001838" cvRef="PSI-MS" name="SRM quantitation analysis"/>
+        <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="true" name="SRM raw feature quantitation"/>
+        <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="true" name="SRM peptide level quantitation"/>
+        <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="true" name="SRM protein level quantitation"/>
+        <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="false" name="SRM proteingroup level quantitation"/>
+    </AnalysisSummary>
+    <InputFiles>
+        <RawFilesGroup id="rg_0">
+            <RawFile location="../msmsdata/2011aug06_CC026_B3_10fmol_SRM_list_A.raw" name="2011aug06_CC026_B3_10fmol_SRM_list_A.raw" id="raw_0"/>
+        </RawFilesGroup>
+        <SearchDatabase location="sgd_orfs_plus_ups_prots.fasta" id="SD1">
+            <DatabaseName>
+                <userParam name="sgd_orfs_plus_ups_prots.fasta"/>
+            </DatabaseName>
+        </SearchDatabase>
+    </InputFiles>
+    <SoftwareList>
+        <Software version="1.4" id="Skyline">
+            <cvParam accession="MS:1000922" cvRef="PSI-MS" name="Skyline"/>
+        </Software>
+    </SoftwareList>
+    <DataProcessingList>
+        <DataProcessing order="1" software_ref="Skyline" id="feature_quantification">
+            <ProcessingMethod order="1">
+                <cvParam accession="MS:1001861" cvRef="PSI-MS" name="quantification data processing"/>
+            </ProcessingMethod>
+        </DataProcessing>
+    </DataProcessingList>
+    <AssayList id="AssayList_1">
+        <Assay rawFilesGroup_ref="rg_0" name="2011aug06_CC026_B3_10fmol_SRM_list_A_light" id="ass_0">
+            <Label>
+                <Modification>
+                    <cvParam accession="MS:1002038" cvRef="PSI-MS" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay rawFilesGroup_ref="rg_0" name="2011aug06_CC026_B3_10fmol_SRM_list_A_heavy" id="ass_1">
+            <Label>
+                <Modification>
+                    <cvParam accession="MOD:00188" cvRef="PSI-MOD" value="6.020129" name="13C(6) Silac label"/>
+                </Modification>
+            </Label>
+        </Assay>
+    </AssayList>
+    <RatioList>
+        <Ratio name="Ratio for peptide" id="ratio1" denominator_ref="ass_1" numerator_ref="ass_0"/>
+    </RatioList>
+    <ProteinList id="ProtList1">
+        <Protein searchDatabase_ref="SD1" accession="Protein_A" id="prot_0">
+            <PeptideConsensus_refs>pep_EVDIGIPDATGR pep_TFTDCFNCLPIAAIIDEK pep_FLYDGIR</PeptideConsensus_refs>
+        </Protein>
+        <Protein searchDatabase_ref="SD1" accession="Protein_B" id="prot_1">
+            <PeptideConsensus_refs>pep_FDTSAQSDR pep_IDESEVGEFIIPYYVQDEK pep_EAVSGILGK</PeptideConsensus_refs>
+        </Protein>
+    </ProteinList>
+    <PeptideConsensusList finalResult="true" id="PepList1">
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_EVDIGIPDATGR">
+            <PeptideSequence>EVDIGIPDATGR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_0" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_1" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_2" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_3" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_4" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_5" assay_refs="ass_1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_TFTDCFNCLPIAAIIDEK">
+            <PeptideSequence>TFTDCFNCLPIAAIIDEK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_6" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_7" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_8" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_9" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_10" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_11" assay_refs="ass_1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_FLYDGIR">
+            <PeptideSequence>FLYDGIR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_12" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_13" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_14" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_15" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_16" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_17" assay_refs="ass_1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_FDTSAQSDR">
+            <PeptideSequence>FDTSAQSDR</PeptideSequence>
+            <EvidenceRef feature_ref="ft_18" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_19" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_20" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_21" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_22" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_23" assay_refs="ass_1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_IDESEVGEFIIPYYVQDEK">
+            <PeptideSequence>IDESEVGEFIIPYYVQDEK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_24" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_25" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_26" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_27" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_28" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_29" assay_refs="ass_1"/>
+        </PeptideConsensus>
+        <PeptideConsensus searchDatabase_ref="SD1" charge="2" id="pep_EAVSGILGK">
+            <PeptideSequence>EAVSGILGK</PeptideSequence>
+            <EvidenceRef feature_ref="ft_30" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_31" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_32" assay_refs="ass_0"/>
+            <EvidenceRef feature_ref="ft_33" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_34" assay_refs="ass_1"/>
+            <EvidenceRef feature_ref="ft_35" assay_refs="ass_1"/>
+        </PeptideConsensus>
+        <RatioQuantLayer id="PepRQL_1">
+            <ColumnIndex>ratio1</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="pep_EVDIGIPDATGR">1.4664</Row>
+                <Row object_ref="pep_TFTDCFNCLPIAAIIDEK">0.9136</Row>
+                <Row object_ref="pep_FLYDGIR">1.6701</Row>
+                <Row object_ref="pep_FDTSAQSDR">0.0079</Row>
+                <Row object_ref="pep_IDESEVGEFIIPYYVQDEK">0.1855</Row>
+                <Row object_ref="pep_EAVSGILGK">0.6757</Row>
+            </DataMatrix>
+        </RatioQuantLayer>
+    </PeptideConsensusList>
+    <FeatureList id="Flist_0" rawFilesGroup_ref="rg_0">
+        <Feature charge="2" mz="621.819866" rt="37.44" id="ft_0">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1014.52145" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="621.819866" rt="37.43" id="ft_1">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="786.410442" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="621.819866" rt="37.43" id="ft_2">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="404.225208" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="624.829931" rt="37.4" id="ft_3">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1020.541579" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="624.829931" rt="37.43" id="ft_4">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="792.430571" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="624.829931" rt="37.43" id="ft_5">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="410.245337" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1064.508108" rt="58.12" id="ft_6">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="969.561523" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1064.508108" rt="58.12" id="ft_7">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="688.387582" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1064.508108" rt="58.1" id="ft_8">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="504.266404" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1067.518172" rt="58.16" id="ft_9">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="975.581652" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1067.518172" rt="58.12" id="ft_10">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="694.407711" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1067.518172" rt="58.12" id="ft_11">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="510.286533" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="442.237253" rt="37.94" id="ft_12">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="736.398815" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="442.237253" rt="37.94" id="ft_13">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="623.314751" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="442.237253" rt="37.94" id="ft_14">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="460.251423" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="445.247317" rt="37.94" id="ft_15">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="742.418944" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="445.247317" rt="37.94" id="ft_16">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="629.33488" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="445.247317" rt="37.94" id="ft_17">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="466.271552" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="513.727977" rt="21.13" id="ft_18">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="764.353322" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="513.727977" rt="21.25" id="ft_19">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="663.305643" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="513.727977" rt="21.1" id="ft_20">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="576.273615" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="516.738042" rt="21.08" id="ft_21">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="770.373451" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="516.738042" rt="21.08" id="ft_22">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="669.325772" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="516.738042" rt="21.08" id="ft_23">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="582.293744" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1137.046632" rt="#N/A" id="ft_24">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1154.572816" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1137.046632" rt="52.54" id="ft_25">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1041.488752" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1137.046632" rt="52.54" id="ft_26">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="781.37266" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1140.056696" rt="52.55" id="ft_27">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1160.592945" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1140.056696" rt="52.48" id="ft_28">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1047.508881" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="1140.056696" rt="52.56" id="ft_29">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="787.392789" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="437.255642" rt="32.41" id="ft_30">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="673.424302" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="437.255642" rt="32.41" id="ft_31">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="574.355888" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="437.255642" rt="32.41" id="ft_32">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="487.323859" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="440.265707" rt="32.41" id="ft_33">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="679.444431" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="440.265707" rt="32.41" id="ft_34">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="580.376017" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <Feature charge="2" mz="440.265707" rt="32.41" id="ft_35">
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="493.343988" name="Q3 mz"/>
+            <cvParam accession="MS:100XXXX" cvRef="PSI-MS" value="1" name="Q3 charge"/>
+        </Feature>
+        <FeatureQuantLayer id="FQL_0">
+            <ColumnDefinition>
+                <Column index="0">
+                    <DataType>
+                        <cvParam accession="MS:100XXXX" cvRef="PSI-MS" name="Q3 area"/>
+                    </DataType>
+                </Column>
+                <Column index="1">
+                    <DataType>
+                        <cvParam accession="MS:100XXXX" cvRef="PSI-MS" name="Q3 background"/>
+                    </DataType>
+                </Column>
+                <Column index="2">
+                    <DataType>
+                        <cvParam accession="MS:100XXXX" cvRef="PSI-MS" name="Q3 peakrank"/>
+                    </DataType>
+                </Column>
+            </ColumnDefinition>
+            <DataMatrix>
+                <Row object_ref="ft_0">328336 3496 3</Row>
+                <Row object_ref="ft_1">1317551 14338 1</Row>
+                <Row object_ref="ft_2">577761 26196 2</Row>
+                <Row object_ref="ft_3">218022 2112 3</Row>
+                <Row object_ref="ft_4">889469 20326 1</Row>
+                <Row object_ref="ft_5">408951 14572 2</Row>
+                <Row object_ref="ft_6">106467 2456 1</Row>
+                <Row object_ref="ft_7">37812 3081 3</Row>
+                <Row object_ref="ft_8">85776 2166 2</Row>
+                <Row object_ref="ft_9">113267 3384 1</Row>
+                <Row object_ref="ft_10">51216 4029 3</Row>
+                <Row object_ref="ft_11">87319 2778 2</Row>
+                <Row object_ref="ft_12">645524 34431 3</Row>
+                <Row object_ref="ft_13">5357665 123180 1</Row>
+                <Row object_ref="ft_14">943204 58872 2</Row>
+                <Row object_ref="ft_15">412632 15592 3</Row>
+                <Row object_ref="ft_16">3201454 161677 1</Row>
+                <Row object_ref="ft_17">545277 23261 2</Row>
+                <Row object_ref="ft_18">7346 2052 1</Row>
+                <Row object_ref="ft_19">3969 934 2</Row>
+                <Row object_ref="ft_20">3879 827 3</Row>
+                <Row object_ref="ft_21">759474 15065 1</Row>
+                <Row object_ref="ft_22">590242 11960 2</Row>
+                <Row object_ref="ft_23">572458 10188 3</Row>
+                <Row object_ref="ft_24">0 0 0</Row>
+                <Row object_ref="ft_25">5947 841 1</Row>
+                <Row object_ref="ft_26">1251 843 2</Row>
+                <Row object_ref="ft_27">8981 1017 2</Row>
+                <Row object_ref="ft_28">33487 1108 1</Row>
+                <Row object_ref="ft_29">5325 1090 3</Row>
+                <Row object_ref="ft_30">376706 37134 3</Row>
+                <Row object_ref="ft_31">1686720 85874 1</Row>
+                <Row object_ref="ft_32">762233 101956 2</Row>
+                <Row object_ref="ft_33">539506 64202 3</Row>
+                <Row object_ref="ft_34">2504163 96184 1</Row>
+                <Row object_ref="ft_35">1137990 39063 2</Row>
+            </DataMatrix>
+        </FeatureQuantLayer>
+    </FeatureList>
+</MzQuantML>

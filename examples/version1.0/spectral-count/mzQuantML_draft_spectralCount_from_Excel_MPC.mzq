@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <MzQuantML creationDate="2012-12-03T00:00:00.000+01:00" version="1.0.0" id="MZQ_SPC_EX1" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0 ../../../schema/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications" version="1.010.7" uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/mod/data/PSI-MOD.obo" id="MOD"/>

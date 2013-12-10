@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!-- Skyline labelled experiment output-->
-<MzQuantML creationDate="2013-12-05T12:32:46.903Z" version="1.0.0" id="SRM-5122013" xsi:schemaLocation="http://www.psidev.info/files/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2013-12-10T14:08:27.853Z" version="1.0.0" id="SRM-10122013" xsi:schemaLocation="http://www.psidev.info/files/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" version="2.25.0" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="PSI-MS"/>
         <Cv fullName="Unimod" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
@@ -60,16 +59,6 @@
             </Label>
         </Assay>
     </AssayList>
-    <RatioList>
-        <Ratio numerator_ref="ass_0" denominator_ref="ass_1" name="Ratio for peptide" id="ratio1">
-            <NumeratorDataType>
-                <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 area"/>
-            </NumeratorDataType>
-            <DenominatorDataType>
-                <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 area"/>
-            </DenominatorDataType>
-        </Ratio>
-    </RatioList>
     <ProteinList id="ProtList1">
         <Protein accession="Protein_A" searchDatabase_ref="SD1" id="prot_0">
             <PeptideConsensus_refs>pep_FLYDGIR pep_TFTDCFNCLPIAAIIDEK pep_EVDIGIPDATGR</PeptideConsensus_refs>
@@ -133,224 +122,213 @@
             <EvidenceRef assay_refs="ass_1" feature_ref="ft_22"/>
             <EvidenceRef assay_refs="ass_1" feature_ref="ft_23"/>
         </PeptideConsensus>
-        <RatioQuantLayer id="PepRQL_1">
-            <ColumnIndex>ratio1</ColumnIndex>
-            <DataMatrix>
-                <Row object_ref="pep_EVDIGIPDATGR">1.4664</Row>
-                <Row object_ref="pep_IDESEVGEFIIPYYVQDEK">0.1855</Row>
-                <Row object_ref="pep_TFTDCFNCLPIAAIIDEK">0.9136</Row>
-                <Row object_ref="pep_EAVSGILGK">0.6757</Row>
-                <Row object_ref="pep_FLYDGIR">1.6701</Row>
-                <Row object_ref="pep_FDTSAQSDR">0.0079</Row>
-            </DataMatrix>
-        </RatioQuantLayer>
     </PeptideConsensusList>
     <FeatureList rawFilesGroup_ref="rg_0" id="Flist_0">
         <Feature rt="21.11" mz="513.727977" charge="2" id="ft_19">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="663.305643"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="21.25"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="663.305643"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="21.25"/>
         </Feature>
         <Feature rt="32.41" mz="440.265707" charge="2" id="ft_35">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="493.343988"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="32.41"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="493.343988"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="32.41"/>
         </Feature>
         <Feature rt="37.94" mz="445.247317" charge="2" id="ft_17">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="466.271552"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.94"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="466.271552"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.94"/>
         </Feature>
         <Feature rt="21.11" mz="513.727977" charge="2" id="ft_18">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="764.353322"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="21.13"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="764.353322"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="21.13"/>
         </Feature>
         <Feature rt="32.41" mz="440.265707" charge="2" id="ft_33">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="679.444431"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="32.41"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="679.444431"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="32.41"/>
         </Feature>
         <Feature rt="37.94" mz="445.247317" charge="2" id="ft_15">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="742.418944"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.94"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="742.418944"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.94"/>
         </Feature>
         <Feature rt="32.41" mz="440.265707" charge="2" id="ft_34">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="580.376017"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="32.41"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="580.376017"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="32.41"/>
         </Feature>
         <Feature rt="37.94" mz="445.247317" charge="2" id="ft_16">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="629.33488"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.94"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="629.33488"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.94"/>
         </Feature>
         <Feature rt="37.94" mz="442.237253" charge="2" id="ft_13">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="623.314751"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.94"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="623.314751"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.94"/>
         </Feature>
         <Feature rt="37.94" mz="442.237253" charge="2" id="ft_14">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="460.251423"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.94"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="460.251423"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.94"/>
         </Feature>
         <Feature rt="58.14" mz="1067.518172" charge="2" id="ft_11">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="510.286533"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="58.12"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="510.286533"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="58.12"/>
         </Feature>
         <Feature rt="37.94" mz="442.237253" charge="2" id="ft_12">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="736.398815"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.94"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="736.398815"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.94"/>
         </Feature>
         <Feature rt="21.11" mz="516.738042" charge="2" id="ft_21">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="770.373451"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="21.08"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="770.373451"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="21.08"/>
         </Feature>
         <Feature rt="21.11" mz="513.727977" charge="2" id="ft_20">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="576.273615"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="21.1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="576.273615"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="21.1"/>
         </Feature>
         <Feature rt="21.11" mz="516.738042" charge="2" id="ft_22">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="669.325772"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="21.08"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="669.325772"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="21.08"/>
         </Feature>
         <Feature rt="21.11" mz="516.738042" charge="2" id="ft_23">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="582.293744"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="21.08"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="582.293744"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="21.08"/>
         </Feature>
         <Feature rt="52.51" mz="1137.046632" charge="2" id="ft_24">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="1154.572816"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="null"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1154.572816"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="null"/>
         </Feature>
         <Feature rt="52.51" mz="1137.046632" charge="2" id="ft_25">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="1041.488752"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="52.54"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1041.488752"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="52.54"/>
         </Feature>
         <Feature rt="52.51" mz="1137.046632" charge="2" id="ft_26">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="781.37266"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="52.54"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="781.37266"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="52.54"/>
         </Feature>
         <Feature rt="52.51" mz="1140.056696" charge="2" id="ft_27">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="1160.592945"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="52.55"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1160.592945"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="52.55"/>
         </Feature>
         <Feature rt="52.51" mz="1140.056696" charge="2" id="ft_28">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="1047.508881"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="52.48"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1047.508881"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="52.48"/>
         </Feature>
         <Feature rt="52.51" mz="1140.056696" charge="2" id="ft_29">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="787.392789"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="52.56"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="787.392789"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="52.56"/>
         </Feature>
         <Feature rt="37.43" mz="624.829931" charge="2" id="ft_3">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="1020.541579"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.4"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1020.541579"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.4"/>
         </Feature>
         <Feature rt="37.43" mz="621.819866" charge="2" id="ft_2">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="404.225208"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.43"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="404.225208"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.43"/>
         </Feature>
         <Feature rt="58.14" mz="1067.518172" charge="2" id="ft_10">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="694.407711"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="58.12"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="694.407711"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="58.12"/>
         </Feature>
         <Feature rt="37.43" mz="621.819866" charge="2" id="ft_1">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="786.410442"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.43"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="786.410442"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.43"/>
         </Feature>
         <Feature rt="37.43" mz="621.819866" charge="2" id="ft_0">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="1014.52145"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.44"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1014.52145"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.44"/>
         </Feature>
         <Feature rt="32.41" mz="437.255642" charge="2" id="ft_30">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="673.424302"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="32.41"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="673.424302"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="32.41"/>
         </Feature>
         <Feature rt="58.14" mz="1064.508108" charge="2" id="ft_7">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="688.387582"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="58.12"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="688.387582"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="58.12"/>
         </Feature>
         <Feature rt="58.14" mz="1064.508108" charge="2" id="ft_6">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="969.561523"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="58.12"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="969.561523"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="58.12"/>
         </Feature>
         <Feature rt="32.41" mz="437.255642" charge="2" id="ft_32">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="487.323859"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="32.41"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="487.323859"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="32.41"/>
         </Feature>
         <Feature rt="37.43" mz="624.829931" charge="2" id="ft_5">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="410.245337"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.43"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="410.245337"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.43"/>
         </Feature>
         <Feature rt="32.41" mz="437.255642" charge="2" id="ft_31">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="574.355888"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="32.41"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="574.355888"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="32.41"/>
         </Feature>
         <Feature rt="37.43" mz="624.829931" charge="2" id="ft_4">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="792.430571"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="37.43"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="792.430571"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="37.43"/>
         </Feature>
         <Feature rt="58.14" mz="1067.518172" charge="2" id="ft_9">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="975.581652"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="58.16"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="975.581652"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="58.16"/>
         </Feature>
         <Feature rt="58.14" mz="1064.508108" charge="2" id="ft_8">
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 mz" value="504.266404"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 charge" value="1"/>
-            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 retention time" value="58.1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="504.266404"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product retention time" value="58.1"/>
         </Feature>
         <FeatureQuantLayer id="FQL_0">
             <ColumnDefinition>
                 <Column index="0">
                     <DataType>
-                        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 area"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:1001858" name="XIC area"/>
                     </DataType>
                 </Column>
                 <Column index="1">
                     <DataType>
-                        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 background"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="product background"/>
                     </DataType>
                 </Column>
                 <Column index="2">
                     <DataType>
-                        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 peakrank"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000926" name="product interpretation rank"/>
                     </DataType>
                 </Column>
                 <Column index="3">
                     <DataType>
-                        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 height"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000042" name="product intensity"/>
                     </DataType>
                 </Column>
                 <Column index="4">
                     <DataType>
-                        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="Q3 areaNormalized"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:1001859" name="normalized XIC area"/>
                     </DataType>
                 </Column>
             </ColumnDefinition>

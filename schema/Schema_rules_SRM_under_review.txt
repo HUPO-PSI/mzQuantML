@@ -1,0 +1,21 @@
+Semantic validation rules
+**************************
+The parser knows this is a SRM file due to the presence of this cvParam in AnalysisSummary: id: MS:1001838 - name: SRM quantitation analysis
+
+- At least one of the label-free and MS1 label-based cv terms MUST be presnet in AnalysisSummary:
+	MS:1001834: "LC-MS label-free quantitation analysis"
+	MS:1002018: "MS1 Label-based analysis"
+
+- There MUST be at least one FeatureList
+
+Mapping file and associated rules in brackets
+*************************************************
+
+The following MUST be present in AnalysisSummary with values of true or false (add cv terms to PSI-MS)
+MS:1002281: "SRM feature level quantitation" (FeatureQuantLayer MUST be present)						= true|false
+MS:1002282: "SRM peptide level quantitation" (PeptideConsensusQuantLayer MUST be present)           	= true|false			
+MS:1002283: "SRM protein level quantitation" (ProteinQL MUST be present)								= true|false
+MS:1002284: "SRM proteingroup level quantitation" (ProteinGroupQL MUST be present)						= true|false
+
+Implementation Notes
+**********************

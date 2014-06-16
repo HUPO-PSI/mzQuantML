@@ -2,9 +2,11 @@ Semantic validation rules
 **************************
 The parser knows this is a SRM file due to the presence of this cvParam in AnalysisSummary: id: MS:1001838 - name: SRM quantitation analysis
 
-- At least one of the label-free and MS1 label-based cv terms MUST be presnet in AnalysisSummary:
-	MS:1001834: "LC-MS label-free quantitation analysis"
-	MS:1002018: "MS1 Label-based analysis"
+Exactly one of the label-free and MS1 label-based cv terms MUST be presnet in AnalysisSummary:
+
+MS:1001834: "LC-MS label-free quantitation analysis"
+MS:1002018: "MS1 Label-based analysis"
+
 
 - There MUST be at least one FeatureList
 
@@ -12,10 +14,39 @@ Mapping file and associated rules in brackets
 *************************************************
 
 The following MUST be present in AnalysisSummary with values of true or false (add cv terms to PSI-MS)
-MS:1002281: "SRM feature level quantitation" (FeatureQuantLayer MUST be present)						= true|false
-MS:1002282: "SRM peptide level quantitation" (PeptideConsensusQuantLayer MUST be present)           	= true|false			
+MS:1002281: "SRM feature level quantitation" (FeatureQuantLayer MUST be present)							= true|false
+MS:1002282: "SRM peptide level quantitation" (PeptideConsensusQuantLayer MUST be present) 
+                        = true|false			
 MS:1002283: "SRM protein level quantitation" (ProteinQL MUST be present)								= true|false
-MS:1002284: "SRM proteingroup level quantitation" (ProteinGroupQL MUST be present)						= true|false
+MS:1002284: "SRM proteingroup level quantitation" (ProteinGroupQL MUST be present)						        = true|false
+
+The follwing CV mapping rules are hard coded in validator:
+
+
+<CvMappingRuleList>
+
+        <CvMappingRule id="SRM_Feature_rule_1" cvElementPath="/MzQuantML/FeatureList/Feature/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzQuantML/FeatureList/Feature" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1000827" useTermName="false" useTerm="false" termName="isolation window target m/z" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+        </CvMappingRule>
+		
+	<CvMappingRule id="SRM_Feature_rule_2" cvElementPath="/MzQuantML/FeatureList/Feature/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzQuantML/FeatureList/Feature" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1000828" useTermName="false" useTerm="false" termName="isolation window lower offset" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+	    <CvTerm termAccession="MS:1000829" useTermName="false" useTerm="false" termName="isolation window upper offset" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+        </CvMappingRule>
+		
+	<CvMappingRule id="SRM_Product_retention_time_rule" cvElementPath="/MzQuantML/FeatureList/Feature/cvParam/@accession" requirementLevel="SHOULD"  scopePath="/MzQuantML/FeatureList/Feature" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:100XXXX" useTermName="false" useTerm="false" termName="product retention time" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+        </CvMappingRule>
+				
+	<CvMappingRule id="SRM_Product_charge" cvElementPath="/MzQuantML/FeatureList/Feature/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzQuantML/FeatureList/Feature" cvTermsCombinationLogic="OR">
+	    <CvTerm termAccession="MS:1000041" useTermName="false" useTerm="false" termName="charge state" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+	</CvMappingRule>
+		
+        <CvMappingRule id="SRM_FeatureListFeatureQuantLayer_rule" cvElementPath="/MzQuantML/FeatureList/FeatureQuantLayer/ColumnDefinition/Column/DataType/cvParam/@accession" requirementLevel="SHOULD"  scopePath="/MzQuantML/FeatureList/FeatureQuantLayer/ColumnDefinition/Column/DataType" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1001858" useTermName="false" useTerm="false" termName="XIC area" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+        </CvMappingRule>
+
+</CvMappingRuleList>
 
 Implementation Notes
 **********************

@@ -2,16 +2,21 @@ Semantic validation rules
 **************************
 The parser knows this is an absolute quantitation file due to the presence of this cvParam in AnalysisSummary: id: MS:XXXXXXX - name: absolute quantitation analysis
 
-Exactly one of the label-free or MS1 label-based cv terms MUST be presnet in AnalysisSummary:
+Exactly one of the following cv terms MUST also be present in AnalysisSummary, and the validator follows all existing rules for these techniques.
 
 MS:1001834: "LC-MS label-free quantitation analysis"
 MS:1002018: "MS1 Label-based analysis"
+MS:1001836: "spectral counting quantitation analysis"
+MS:1002023: "MS2 Tag-based analysis"
 
-- The following MuST be present in AnalysisSummary with values of ture of false :
+The following term MAY also be used if an SRM analysis has been performed in label-free or MS1 label-based mode:
 
-MS:XXXXXXX: "peptide internal reference used" (an AssayQuantLayer of "internal reference abundance" MUST be present in PeptideConsensusList) = 	true|false
-MS:XXXXXXX: "protein internal reference used" (an AssayQuantLayer of "internal reference abundance" MUST be present in ProteinList = 	true|false
+MS:1001838 - name: SRM quantitation analysis
 
+The following MUST both be present in AnalysisSummary with values of true of false :
+
+MS:XXXXXXX: "peptide internal reference used" (if true, an AssayQuantLayer of "internal reference abundance" MUST be present in PeptideConsensusList) 
+MS:XXXXXXX: "protein internal reference used" (if true, an AssayQuantLayer of "internal reference abundance" MUST be present in ProteinList)
 
 - If either value of CV term "peptide internal reference used" or "protein internal reference used" is true, there MUST be a AssayQuantLayer in PeptideConsensusList or ProteinList respectively, of data type -- "internal reference abundance", with appropriate unit.
 

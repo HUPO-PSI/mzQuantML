@@ -2,12 +2,18 @@ Semantic validation rules
 **************************
 The parser knows this is a SRM file due to the presence of this cvParam in AnalysisSummary: id: MS:1001838 - name: SRM quantitation analysis
 
-Exactly one of the label-free and MS1 label-based cv terms MUST be presnet in AnalysisSummary:
+Exactly one of the label-free and MS1 label-based cv terms MUST be present in AnalysisSummary:
 
 MS:1001834: "LC-MS label-free quantitation analysis"
 MS:1002018: "MS1 Label-based analysis"
 
 
+- Two cv terms MUST NOT be present in AnalysisSummary for SRM technique:
+
+MS:1001836: "spectral counting quantitation analysis"
+MS:1002023: "MS2 Tag-based analysis"
+
+ 
 - There MUST be at least one FeatureList
 
 Mapping file and associated rules in brackets

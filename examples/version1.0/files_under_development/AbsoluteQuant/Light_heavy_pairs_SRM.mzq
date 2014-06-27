@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MzQuantML creationDate="2014-06-27T14:51:03.936+01:00" version="1.0.0" id="SRM-2762014"  xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CvList>
+        <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" version="2.25.0" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="PSI-MS"/>
+        <Cv fullName="Unimod" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
+        <Cv fullName="Proteomics Standards Initiative Protein Modifications Vocabularies" uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" id="PSI-MOD"/>
+        <Cv fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo" id="UO"/>
+    </CvList>
+    <AuditCollection>
+        <Person lastName="Jones" firstName="Andy" id="PERS_ARJ">
+            <Affiliation organization_ref="ORG_UOL"/>
+        </Person>
+        <Person lastName="Qi" firstName="Da" id="PERS_DQ">
+            <Affiliation organization_ref="ORG_UOL"/>
+        </Person>
+        <Organization id="ORG_UOL" name="University of Liverpool"/>
+    </AuditCollection>
+    <AnalysisSummary>
+        <cvParam cvRef="PSI-MS" accession="MS:1001838" name="SRM quantitation analysis"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002018" name="MS1 Label-based analysis"/>
+        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="absolute quantitation analysis"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002281" name="SRM feature level quantitation" value="true"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002282" name="SRM peptide level quantitation" value="true"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002283" name="SRM protein level quantitation" value="true"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002284" name="SRM proteingroup level quantitation" value="false"/>
+        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="peptide internal reference used" value="true"/>
+        <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="protein internal reference used" value="false"/>
+    </AnalysisSummary>
+    <InputFiles>
+        <RawFilesGroup id="rg_0">
+            <RawFile location="../msmsdata/2011aug06_CC026_B3_10fmol_SRM_list_A.raw" id="raw_0" name="2011aug06_CC026_B3_10fmol_SRM_list_A.raw"/>
+        </RawFilesGroup>
+        <SearchDatabase location="sgd_orfs_plus_ups_prots.fasta" id="SD1">
+            <DatabaseName>
+                <userParam name="sgd_orfs_plus_ups_prots.fasta"/>
+            </DatabaseName>
+        </SearchDatabase>
+    </InputFiles>
+    <SoftwareList>
+        <Software version="1.4" id="Skyline">
+            <cvParam cvRef="PSI-MS" accession="MS:1000922" name="Skyline"/>
+        </Software>
+    </SoftwareList>
+    <DataProcessingList>
+        <DataProcessing software_ref="Skyline" order="1" id="feature_quantification">
+            <ProcessingMethod order="1">
+                <cvParam cvRef="PSI-MS" accession="MS:1001861" name="quantification data processing"/>
+            </ProcessingMethod>
+        </DataProcessing>
+    </DataProcessingList>
+    <AssayList id="AssayList_1">
+        <Assay name="2011aug06_CC026_B3_10fmol_SRM_list_A_heavy" rawFilesGroup_ref="rg_0" id="ass_0">
+            <Label>
+                <Modification>
+                    <cvParam cvRef="PSI-MOD" accession="MOD:00188" name="13C(6) Silac label" value="6.020129"/>
+                </Modification>
+            </Label>
+        </Assay>
+        <Assay name="2011aug06_CC026_B3_10fmol_SRM_list_A_light" rawFilesGroup_ref="rg_0" id="ass_1">
+            <Label>
+                <Modification>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002038" name="unlabeled sample"/>
+                </Modification>
+            </Label>
+        </Assay>
+    </AssayList>
+    <RatioList>
+        <Ratio numerator_ref="ass_1" denominator_ref="ass_0" name="Ratio for peptide" id="ratio1">
+            <NumeratorDataType>
+                <cvParam cvRef="PSI-MS" accession="MS:1001858" name="XIC area"/>
+            </NumeratorDataType>
+            <DenominatorDataType>
+                <cvParam cvRef="PSI-MS" accession="MS:1001858" name="XIC area"/>
+            </DenominatorDataType>
+        </Ratio>
+    </RatioList>
+    <ProteinList id="ProtList1">
+        <Protein accession="Protein_B" searchDatabase_ref="SD1" id="prot_0">
+            <PeptideConsensus_refs>pep_FDTSAQSDR pep_IDESEVGEFIIPYYVQDEK pep_EAVSGILGK</PeptideConsensus_refs>
+        </Protein>
+        <Protein accession="Protein_A" searchDatabase_ref="SD1" id="prot_1">
+            <PeptideConsensus_refs>pep_TFTDCFNCLPIAAIIDEK pep_FLYDGIR pep_EVDIGIPDATGR</PeptideConsensus_refs>
+        </Protein>
+    </ProteinList>
+    <PeptideConsensusList finalResult="true" id="PepList1">
+        <PeptideConsensus charge="2" searchDatabase_ref="SD1" id="pep_TFTDCFNCLPIAAIIDEK">
+            <PeptideSequence>TFTDCFNCLPIAAIIDEK</PeptideSequence>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_10"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_11"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_6"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_7"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_8"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_9"/>
+        </PeptideConsensus>
+        <PeptideConsensus charge="2" searchDatabase_ref="SD1" id="pep_IDESEVGEFIIPYYVQDEK">
+            <PeptideSequence>IDESEVGEFIIPYYVQDEK</PeptideSequence>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_24"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_25"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_26"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_27"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_28"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_29"/>
+        </PeptideConsensus>
+        <PeptideConsensus charge="2" searchDatabase_ref="SD1" id="pep_FLYDGIR">
+            <PeptideSequence>FLYDGIR</PeptideSequence>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_12"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_13"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_14"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_15"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_16"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_17"/>
+        </PeptideConsensus>
+        <PeptideConsensus charge="2" searchDatabase_ref="SD1" id="pep_EAVSGILGK">
+            <PeptideSequence>EAVSGILGK</PeptideSequence>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_30"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_31"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_32"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_33"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_34"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_35"/>
+        </PeptideConsensus>
+        <PeptideConsensus charge="2" searchDatabase_ref="SD1" id="pep_FDTSAQSDR">
+            <PeptideSequence>FDTSAQSDR</PeptideSequence>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_22"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_23"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_18"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_19"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_20"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_21"/>
+        </PeptideConsensus>
+        <PeptideConsensus charge="2" searchDatabase_ref="SD1" id="pep_EVDIGIPDATGR">
+            <PeptideSequence>EVDIGIPDATGR</PeptideSequence>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_0"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_1"/>
+            <EvidenceRef assay_refs="ass_1" feature_ref="ft_2"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_3"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_4"/>
+            <EvidenceRef assay_refs="ass_0" feature_ref="ft_5"/>
+        </PeptideConsensus>
+        <AssayQuantLayer id="Peptide_AQL_REF">
+            <DataType>
+                <cvParam cvRef="PSI-MS" accession="MS:100XXXX" name="internal reference abundance" unitAccession="MS:100XXXX" unitName="molecules per cell" unitCvRef="PSI-MS"/>
+            </DataType>
+            <ColumnIndex>ass_0</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="pep_TFTDCFNCLPIAAIIDEK">1000</Row>
+                <Row object_ref="pep_IDESEVGEFIIPYYVQDEK">1000</Row>
+                <Row object_ref="pep_FLYDGIR">1000</Row>
+                <Row object_ref="pep_EAVSGILGK">1000</Row>
+                <Row object_ref="pep_FDTSAQSDR">1000</Row>
+                <Row object_ref="pep_EVDIGIPDATGR">1000</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+        <AssayQuantLayer id="Peptide_AQL_Absolute_Quant">
+            <DataType>
+                <cvParam cvRef="PSI-MS" accession="MS:1001137" name="absolute quantity" unitAccession="MS:100XXXX" unitName="molecules per cell" unitCvRef="PSI-MS"/>
+            </DataType>
+            <ColumnIndex>ass_1</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="pep_TFTDCFNCLPIAAIIDEK">1107.8074753545259</Row>
+                <Row object_ref="pep_FLYDGIR">1504.0798484627715</Row>
+                <Row object_ref="pep_IDESEVGEFIIPYYVQDEK">368.9541132699463</Row>
+                <Row object_ref="pep_EVDIGIPDATGR">1582.8573740534198</Row>
+                <Row object_ref="pep_EAVSGILGK">611.944544701811</Row>
+                <Row object_ref="pep_FDTSAQSDR">8.570711126195857</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
+        <RatioQuantLayer id="PepRQL_1">
+            <ColumnIndex>ratio1</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="pep_TFTDCFNCLPIAAIIDEK">0.9136</Row>
+                <Row object_ref="pep_IDESEVGEFIIPYYVQDEK">0.1855</Row>
+                <Row object_ref="pep_FLYDGIR">1.6701</Row>
+                <Row object_ref="pep_EAVSGILGK">0.6757</Row>
+                <Row object_ref="pep_FDTSAQSDR">0.0079</Row>
+                <Row object_ref="pep_EVDIGIPDATGR">1.4664</Row>
+            </DataMatrix>
+        </RatioQuantLayer>
+    </PeptideConsensusList>
+    <FeatureList rawFilesGroup_ref="rg_0" id="Flist_0">
+        <Feature rt="21.11" mz="516.738042" charge="2" id="ft_22">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="669.325772"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="21.08" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="21.11" mz="516.738042" charge="2" id="ft_23">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="582.293744"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="21.08" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="52.51" mz="1137.046632" charge="2" id="ft_24">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1154.572816"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="null" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="52.51" mz="1137.046632" charge="2" id="ft_25">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1041.488752"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="52.54" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="52.51" mz="1137.046632" charge="2" id="ft_26">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="781.37266"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="52.54" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="52.51" mz="1140.056696" charge="2" id="ft_27">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1160.592945"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="52.55" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="52.51" mz="1140.056696" charge="2" id="ft_28">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1047.508881"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="52.48" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="52.51" mz="1140.056696" charge="2" id="ft_29">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="787.392789"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="52.56" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="32.41" mz="437.255642" charge="2" id="ft_30">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="673.424302"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="32.41" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="32.41" mz="437.255642" charge="2" id="ft_31">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="574.355888"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="32.41" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="58.14" mz="1067.518172" charge="2" id="ft_10">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="694.407711"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="58.12" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="32.41" mz="437.255642" charge="2" id="ft_32">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="487.323859"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="32.41" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="58.14" mz="1067.518172" charge="2" id="ft_11">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="510.286533"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="58.12" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="32.41" mz="440.265707" charge="2" id="ft_33">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="679.444431"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="32.41" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.94" mz="442.237253" charge="2" id="ft_12">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="736.398815"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.94" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="32.41" mz="440.265707" charge="2" id="ft_34">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="580.376017"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="32.41" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.94" mz="442.237253" charge="2" id="ft_13">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="623.314751"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.94" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="32.41" mz="440.265707" charge="2" id="ft_35">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="493.343988"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="32.41" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.94" mz="442.237253" charge="2" id="ft_14">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="460.251423"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.94" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.94" mz="445.247317" charge="2" id="ft_15">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="742.418944"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.94" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.94" mz="445.247317" charge="2" id="ft_16">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="629.33488"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.94" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.94" mz="445.247317" charge="2" id="ft_17">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="466.271552"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.94" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="21.11" mz="513.727977" charge="2" id="ft_18">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="764.353322"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="21.13" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="21.11" mz="513.727977" charge="2" id="ft_19">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="663.305643"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="21.25" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.43" mz="621.819866" charge="2" id="ft_0">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1014.52145"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.44" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.43" mz="621.819866" charge="2" id="ft_1">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="786.410442"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.43" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.43" mz="621.819866" charge="2" id="ft_2">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="404.225208"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.43" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.43" mz="624.829931" charge="2" id="ft_3">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="1020.541579"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.4" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.43" mz="624.829931" charge="2" id="ft_4">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="792.430571"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.43" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="37.43" mz="624.829931" charge="2" id="ft_5">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="410.245337"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="37.43" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="58.14" mz="1064.508108" charge="2" id="ft_6">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="969.561523"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="58.12" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="58.14" mz="1064.508108" charge="2" id="ft_7">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="688.387582"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="58.12" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="58.14" mz="1064.508108" charge="2" id="ft_8">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="504.266404"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="58.1" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="58.14" mz="1067.518172" charge="2" id="ft_9">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="975.581652"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="58.16" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="21.11" mz="513.727977" charge="2" id="ft_20">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="576.273615"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="21.1" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <Feature rt="21.11" mz="516.738042" charge="2" id="ft_21">
+            <cvParam cvRef="PSI-MS" accession="MS:1000827" name="isolation window target m/z" value="770.373451"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000041" name="charge state" value="1"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1000895" name="local retention time" value="21.08" unitAccession="UO:0000031" unitName="minute" unitCvRef="UO"/>
+        </Feature>
+        <FeatureQuantLayer id="FQL_0">
+            <ColumnDefinition>
+                <Column index="0">
+                    <DataType>
+                        <cvParam cvRef="PSI-MS" accession="MS:1001858" name="XIC area"/>
+                    </DataType>
+                </Column>
+                <Column index="1">
+                    <DataType>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002414" name="product background"/>
+                    </DataType>
+                </Column>
+                <Column index="2">
+                    <DataType>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000926" name="product interpretation rank"/>
+                    </DataType>
+                </Column>
+                <Column index="3">
+                    <DataType>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000042" name="peak intensity"/>
+                    </DataType>
+                </Column>
+                <Column index="4">
+                    <DataType>
+                        <cvParam cvRef="PSI-MS" accession="MS:1001859" name="normalized XIC area"/>
+                    </DataType>
+                </Column>
+            </ColumnDefinition>
+            <DataMatrix>
+                <Row object_ref="ft_22">590242 11960 2 110372 0.048864</Row>
+                <Row object_ref="ft_23">572458 10188 3 106224 0.047392000000000004</Row>
+                <Row object_ref="ft_24">0 0 0 0 0.0</Row>
+                <Row object_ref="ft_25">5947 841 1 878 4.86E-4</Row>
+                <Row object_ref="ft_26">1251 843 2 312 1.0200000000000001E-4</Row>
+                <Row object_ref="ft_27">8981 1017 2 1010 7.430000000000001E-4</Row>
+                <Row object_ref="ft_28">33487 1108 1 3211 0.002772</Row>
+                <Row object_ref="ft_29">5325 1090 3 617 4.41E-4</Row>
+                <Row object_ref="ft_30">376706 37134 3 37690 0.030756000000000002</Row>
+                <Row object_ref="ft_31">1686720 85874 1 173753 0.137712</Row>
+                <Row object_ref="ft_10">51216 4029 3 3942 0.00424</Row>
+                <Row object_ref="ft_32">762233 101956 2 76789 0.062232</Row>
+                <Row object_ref="ft_11">87319 2778 2 7010 0.007229</Row>
+                <Row object_ref="ft_33">539506 64202 3 60855 0.044664</Row>
+                <Row object_ref="ft_12">645524 34431 3 59076 0.052704</Row>
+                <Row object_ref="ft_34">2504163 96184 1 282576 0.20731100000000002</Row>
+                <Row object_ref="ft_13">5357665 123180 1 460149 0.437427</Row>
+                <Row object_ref="ft_35">1137990 39063 2 127579 0.09420999999999999</Row>
+                <Row object_ref="ft_14">943204 58872 2 79480 0.07700800000000001</Row>
+                <Row object_ref="ft_15">412632 15592 3 38733 0.034159999999999996</Row>
+                <Row object_ref="ft_16">3201454 161677 1 307042 0.265038</Row>
+                <Row object_ref="ft_17">545277 23261 2 52279 0.045141999999999995</Row>
+                <Row object_ref="ft_18">7346 2052 1 1701 6.0E-4</Row>
+                <Row object_ref="ft_19">3969 934 2 592 3.2399999999999996E-4</Row>
+                <Row object_ref="ft_0">328336 3496 3 29344 0.026806999999999997</Row>
+                <Row object_ref="ft_1">1317551 14338 1 138735 0.107571</Row>
+                <Row object_ref="ft_2">577761 26196 2 66654 0.047171000000000005</Row>
+                <Row object_ref="ft_3">218022 2112 3 20185 0.018049</Row>
+                <Row object_ref="ft_4">889469 20326 1 85889 0.073636</Row>
+                <Row object_ref="ft_5">408951 14572 2 42223 0.033856000000000004</Row>
+                <Row object_ref="ft_6">106467 2456 1 10922 0.008693</Row>
+                <Row object_ref="ft_7">37812 3081 3 3086 0.003087</Row>
+                <Row object_ref="ft_8">85776 2166 2 7006 0.0070030000000000005</Row>
+                <Row object_ref="ft_9">113267 3384 1 8017 0.009377</Row>
+                <Row object_ref="ft_20">3879 827 3 813 3.17E-4</Row>
+                <Row object_ref="ft_21">759474 15065 1 145801 0.062874</Row>
+            </DataMatrix>
+        </FeatureQuantLayer>
+    </FeatureList>
+</MzQuantML>

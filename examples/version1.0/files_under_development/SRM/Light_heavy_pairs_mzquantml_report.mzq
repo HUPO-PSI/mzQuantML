@@ -1,26 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<MzQuantML creationDate="2014-06-12T16:44:04.414+01:00" version="1.0.0" id="SRM-1262014" xsi:schemaLocation="http://www.psidev.info/files/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<MzQuantML creationDate="2015-01-28T14:16:08.066Z" version="1.0.0" id="SRM-2812015" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0 http://www.psidev.info/sites/default/files/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" version="2.25.0" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="PSI-MS"/>
         <Cv fullName="Unimod" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
         <Cv fullName="Proteomics Standards Initiative Protein Modifications Vocabularies" uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo" id="PSI-MOD"/>
-        <Cv fullName="Unit Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo" id="UO"/>
+        <Cv fullName="Units Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo" id="UO"/>
     </CvList>
     <AuditCollection>
-        <Person lastName="Jones" firstName="Andy" id="PERS_ARJ">
-            <Affiliation organization_ref="ORG_UOL"/>
+        <Person lastName="Jones" firstName="Andy" id="PERSON1">
+            <Affiliation organization_ref="ORG1"/>
         </Person>
-        <Person lastName="Qi" firstName="Da" id="PERS_DQ">
-            <Affiliation organization_ref="ORG_UOL"/>
-        </Person>
-        <Organization id="ORG_UOL" name="University of Liverpool"/>
+        <Organization id="ORG1" name="University of Liverpool"/>
     </AuditCollection>
     <AnalysisSummary>
         <cvParam cvRef="PSI-MS" accession="MS:1001838" name="SRM quantitation analysis"/>
         <cvParam cvRef="PSI-MS" accession="MS:1002018" name="MS1 Label-based analysis"/>
         <cvParam cvRef="PSI-MS" accession="MS:1002281" name="SRM feature level quantitation" value="true"/>
         <cvParam cvRef="PSI-MS" accession="MS:1002282" name="SRM peptide level quantitation" value="true"/>
-        <cvParam cvRef="PSI-MS" accession="MS:1002283" name="SRM protein level quantitation" value="true"/>
+        <cvParam cvRef="PSI-MS" accession="MS:1002283" name="SRM protein level quantitation" value="false"/>
         <cvParam cvRef="PSI-MS" accession="MS:1002284" name="SRM proteingroup level quantitation" value="false"/>
     </AnalysisSummary>
     <InputFiles>
@@ -37,11 +34,26 @@
         <Software version="1.4" id="Skyline">
             <cvParam cvRef="PSI-MS" accession="MS:1000922" name="Skyline"/>
         </Software>
+        <Software version="1.0" id="Srm_Convertor">
+            <userParam name="SRM mzQuantML Convertor"/>
+        </Software>
     </SoftwareList>
     <DataProcessingList>
         <DataProcessing software_ref="Skyline" order="1" id="feature_quantification">
             <ProcessingMethod order="1">
                 <cvParam cvRef="PSI-MS" accession="MS:1001861" name="quantification data processing"/>
+            </ProcessingMethod>
+        </DataProcessing>
+        <DataProcessing software_ref="Srm_Convertor" order="2" id="conversion">
+            <ProcessingMethod order="1">
+                <userParam name="Skyline file conversion"/>
+            </ProcessingMethod>
+        </DataProcessing>
+        <DataProcessing software_ref="Srm_Convertor" order="2" id="peptide_quantification">
+            <InputObject_refs>Flist_0</InputObject_refs>
+            <OutputObject_refs>PepList1</OutputObject_refs>
+            <ProcessingMethod order="2">
+                <userParam name="peptide quantification calculation by summing feature quantification"/>
             </ProcessingMethod>
         </DataProcessing>
     </DataProcessingList>
@@ -134,6 +146,20 @@
             <EvidenceRef assay_refs="ass_0" feature_ref="ft_4"/>
             <EvidenceRef assay_refs="ass_0" feature_ref="ft_5"/>
         </PeptideConsensus>
+        <AssayQuantLayer id="Peptide_AQL_AREA">
+            <DataType>
+                <cvParam cvRef="PSI-MS" accession="MS:1001858" name="XIC area"/>
+            </DataType>
+            <ColumnIndex>ass_1 ass_0</ColumnIndex>
+            <DataMatrix>
+                <Row object_ref="pep_TFTDCFNCLPIAAIIDEK">230055.0 251802.0</Row>
+                <Row object_ref="pep_IDESEVGEFIIPYYVQDEK">7198.0 38812.0</Row>
+                <Row object_ref="pep_FLYDGIR">6946393.0 4159363.0</Row>
+                <Row object_ref="pep_EAVSGILGK">2825659.0 4181659.0</Row>
+                <Row object_ref="pep_FDTSAQSDR">15194.0 1922174.0</Row>
+                <Row object_ref="pep_EVDIGIPDATGR">2223648.0 1516442.0</Row>
+            </DataMatrix>
+        </AssayQuantLayer>
         <RatioQuantLayer id="PepRQL_1">
             <ColumnIndex>ratio1</ColumnIndex>
             <DataMatrix>

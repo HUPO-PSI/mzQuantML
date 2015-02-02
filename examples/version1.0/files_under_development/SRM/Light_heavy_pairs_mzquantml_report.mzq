@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="GBK" standalone="yes"?>
-<MzQuantML creationDate="2015-01-28T14:16:08.066Z" version="1.0.0" id="SRM-2812015" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0 http://www.psidev.info/sites/default/files/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MzQuantML creationDate="2015-01-30T12:27:32.596Z" version="1.0.0" id="SRM-3012015" xsi:schemaLocation="http://psidev.info/psi/pi/mzQuantML/1.0.0 http://www.psidev.info/sites/default/files/mzQuantML_1_0_0.xsd" xmlns="http://psidev.info/psi/pi/mzQuantML/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CvList>
         <Cv fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" version="2.25.0" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" id="PSI-MS"/>
         <Cv fullName="Unimod" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
@@ -7,7 +7,7 @@
         <Cv fullName="Units Ontology" uri="http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo" id="UO"/>
     </CvList>
     <AuditCollection>
-        <Person lastName="Jones" firstName="Andy" id="PERSON1">
+        <Person lastName="Qi" firstName="Da" id="PERSON1">
             <Affiliation organization_ref="ORG1"/>
         </Person>
         <Organization id="ORG1" name="University of Liverpool"/>
@@ -35,7 +35,7 @@
             <cvParam cvRef="PSI-MS" accession="MS:1000922" name="Skyline"/>
         </Software>
         <Software version="1.0" id="Srm_Convertor">
-            <userParam name="SRM mzQuantML Convertor"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1002536" name="Skyline mzQuantML converter"/>
         </Software>
     </SoftwareList>
     <DataProcessingList>

@@ -244,7 +244,7 @@
         </CvMappingRule>
 
         <CvMappingRule id="DataProcessing_rule" cvElementPath="/MzQuantML/DataProcessingList/DataProcessing/ProcessingMethod/cvParam/@accession" requirementLevel="MAY" scopePath="/MzQuantML/DataProcessingList/DataProcessing/ProcessingMethod" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="MS:1001861" useTermName="false" useTerm="false" termName="quantification data processing" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001861" useTermName="false" useTerm="true" termName="quantification data processing" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
     </CvMappingRuleList>

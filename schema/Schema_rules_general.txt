@@ -19,11 +19,16 @@ Failure of a rule with a SHOULD causes a WARNING to be produced
 
 Mapping file additions and associated rules
 *********************************************
-- There MUST be ONE or MORE cvParams in AnalysisSummary for the general type of technique. We support four techniques in level 1 release (add following cvParams where they do not already exist): 
-"MS2 Tag-based analysis"  (General term needed? Otherwise we could just use specific terms for iTRAQ / TMT etc?)
-"MS1 Label-based analysis" (General term needed? Otherwise we could just use specific terms for SILAC / N15 etc?)
+- There MUST be ONE or MORE cvParams in AnalysisSummary for the general type of technique. We support five techniques in level 1 release: 
+id: MS:1002023 - name: MS2 Tag-based analysis
+id: MS:1002018 - name: MS1 Label-based analysis
 id: MS:1001834 - name: LC-MS label-free quantitation analysis
 id: MS:1001836 - name: spectral counting quantitation analysis
+id: MS:1001838 - name: SRM quantitation analysis
+
+- If "SRM quantitation analysis" is present in <AnlaysisSummary>, either "LC-MS label-free quantitation analysis" or "MS1 Label-based analysis" MUST be present in <AnlaysisSummary>.
+
+- If "SRM quantitation analysis" is not present in <AnlaysisSummary>, EXACTLY ONE of the other four CV terms MUST be present in <AnalysisSummary>
 
 
 Additional notes or discussed rules not currently to implement

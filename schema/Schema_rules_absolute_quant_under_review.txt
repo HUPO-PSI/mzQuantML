@@ -13,11 +13,11 @@ The following term MAY also be used if an SRM analysis has been performed in lab
 
 MS:1001838 - name: SRM quantitation analysis
 
-The following MUST both be present in AnalysisSummary with values of true of false :
+The following MUST both be present in AnalysisSummary with values of true or false :
 
 MS:XXXXXXX: "peptide internal reference used" (if true, an AssayQuantLayer of "internal reference abundance" MUST be present in PeptideConsensusList) 
 MS:XXXXXXX: "protein internal reference used" (if true, an AssayQuantLayer of "internal reference abundance" MUST be present in ProteinList)
 
-- If either value of CV term "peptide internal reference used" or "protein internal reference used" is true, there MUST be a AssayQuantLayer in PeptideConsensusList or ProteinList respectively, of data type -- "internal reference abundance", with appropriate unit.
+- If either value of CV term "peptide internal reference used" or "protein internal reference used" is true, there MUST be an AssayQuantLayer in PeptideConsensusList or ProteinList respectively, of data type -- "internal reference abundance", with appropriate unit.
 
 - There SHOULD be at least one peptide-level, protein-level or protein group-level AssayQuantLayer containing absolute abundance values for all peptides or proteins.
